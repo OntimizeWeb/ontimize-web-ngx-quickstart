@@ -1,0 +1,43 @@
+{
+  "APP_TITLE" : "demoQuickstart",
+  "VERSION" : "Versión",
+
+  "USERNAME" : "Usuario",
+  "PASSWORD" : "Contraseña",
+  "LOGIN" : "Entrar",
+  "LOGOUT" : "Salir",
+
+  "HOME" : "Inicio",
+  "HELP" : "Ayuda",
+  "ABOUT" : "Acerca de",
+  "CUSTOMERS" : "Clientes",
+
+  "ERROR_REQUIRED_FIELD" : "El campo es requerido",
+  "ERROR_MIN_LENGTH_REQUIRED" : "El valor introducido tiene que tener una longitud mínima de 8 caracteres",
+  "ERROR_SESSION_EXPIRED" : "La sesión ha caducado",
+  "ERROR_USER_REQUIRED" : "Nombre de usuario incorrecto.",
+  "ERROR_PASS_REQUIRED" : "Contraseña incorrecta.",
+  "ERROR_USER_PASS_INCORRECT" : "Usuario o contraseña incorrecta.",
+
+  "GENERAL" : "General",
+  "NAME" : "Nombre",
+  "SURNAME" : "Apellidos",
+  "CUSTOMERTYPEID": "Tipo cliente",
+  "LATITUDE" : "Latitud",
+  "LONGITUDE" : "Longitud",
+  "STARTDATE" : "Fecha inicio",
+  "EMAIL" : "Email",
+  "ADDRESS" : "Dirección",
+  "ACCOUNTS" : "Cuentas",
+  "DATE_":"Fecha de movimiento",
+  "CONCEPT":"Concepto",
+  "MOVEMENT":"Movimiento",
+  "MOVEMENTTYPES":"Tipo de movimiento",
+  "MOVEMENTTYPEID":"Tipo de movimiento",
+  "DATA": "Datos genéricos",
+  "CUSTOMER_DATA": "Datos cliente",
+  "ACCOUNT_NUMBER": "Número de cuenta",
+  "BALANCE": "Saldo",
+  "MOVEMENT_DATA": "Datos del movimiento",
+  "TRANSACTIONS": "Movimientos"
+}

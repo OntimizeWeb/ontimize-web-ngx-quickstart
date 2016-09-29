@@ -1,0 +1,23 @@
+<o-bar-menu title="APP_TITLE">
+
+  <o-bar-menu-group title="VIEW">
+    <o-bar-menu-item title="CUSTOMERS" icon="people" route="/main/customers"></o-bar-menu-item>
+    <o-bar-menu-item title="ACCOUNTS" icon="credit_card" route="/main/accounts"></o-bar-menu-item>
+    <!--<o-bar-menu-item title="EMPLOYEES" icon="airline_seat_recline_normal" route="/main/employees"></o-bar-menu-item>-->
+  </o-bar-menu-group>
+  <o-bar-menu-group title="HELP">
+    <o-bar-menu-item title="ABOUT" icon="info" route="/about"></o-bar-menu-item>
+    <o-bar-menu-item title="HELP" icon="help" route="/help"></o-bar-menu-item>
+  </o-bar-menu-group>
+  <o-bar-menu-item title="VERSION" [action]="showVersionCallback"></o-bar-menu-item>
+
+
+  <o-bar-menu-group title="OPTIONS">
+    <o-bar-menu-group title="LANGUAGE">
+      <o-locale-bar-menu-item title="English" locale="en"></o-locale-bar-menu-item>
+      <o-locale-bar-menu-item title="Español" locale="es"></o-locale-bar-menu-item>
+    </o-bar-menu-group>
+    <o-bar-menu-separator></o-bar-menu-separator>
+    <o-bar-menu-item title="LOGOUT" icon="power_settings_new" route="/login" confirm="MESSAGES.CONFIRM_LOGOUT"></o-bar-menu-item>
+  </o-bar-menu-group>
+</o-bar-menu>

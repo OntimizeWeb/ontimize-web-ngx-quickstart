@@ -1,0 +1,52 @@
+<!--<div layout="row" layout-padding layout-align="center center">
+
+  <div layout="column" flex="50" layout-align="center top">-->
+    <o-form layout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D" entity="EAccounts"
+      keys="ACCOUNTID" #oForm class="md-whiteframe-5dp" columns="ENTITYID;OFFICEID;CDID;ANID;CUSTOMERID">
+      <div layout="column" layout-fill>
+
+        <div layout="row" layout-padding>
+
+          <div layout="column" class="md-whiteframe-1dp">
+            <div layout="row">
+              <span class="container-title" layout-padding>{{ 'ACCOUNT_NUMBER' | oTranslate }}</span>
+            </div>
+            <div layout="row">
+              <o-text-input attr="ENTITYID" layout-padding [data]="oForm.getDataValue('ENTITYID')" class="account align-right"></o-text-input>
+              <o-text-input attr="OFFICEID" layout-padding [data]="oForm.getDataValue('OFFICEID')" class="account align-right"></o-text-input>
+              <o-text-input attr="CDID" layout-padding [data]="oForm.getDataValue('CDID')" class="account align-right"></o-text-input>
+              <o-text-input attr="ANID" layout-padding [data]="oForm.getDataValue('ANID')" class="align-right"></o-text-input>
+            </div>
+          </div>
+
+          <div layout="row" layout-padding></div>
+
+          <div layout="column" flex="30" class="md-whiteframe-1dp no-padding">
+            <div layout="row">
+              <span class="container-title" layout-padding>{{ 'BALANCE' | oTranslate }}</span>
+            </div>
+            <div layout="row">
+              <o-currency-input attr="BALANCE" flex layout-padding [data]="oForm.getDataValue('BALANCE')"  class="align-right"></o-currency-input>
+            </div>
+          </div>
+
+          <div layout="row" flex></div>
+
+        </div>
+
+        <div layout="row" flex layout-padding>
+          <o-table entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
+            visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
+            keys="MOVEMENTID" parent-keys="ACCOUNTID" sort-columns="DATE_" query-on-init="false" query-rows="6"
+            quick-filter="yes" detail-form-route="transactions">
+            <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
+            <o-table-column attr="CONCEPT" title="CONCEPT"></o-table-column>
+            <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
+            <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES"></o-table-column>
+          </o-table>
+        </div>
+
+      </div>
+    </o-form>
+  <!--</div>
+</div>-->

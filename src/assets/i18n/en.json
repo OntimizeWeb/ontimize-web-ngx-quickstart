@@ -1,0 +1,43 @@
+{
+  "APP_TITLE" : "demoQuickstart",
+  "VERSION" : "Version",
+
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "LOGIN": "Login",
+  "LOGOUT": "Logout",
+
+  "HOME" : "Home",
+  "HELP" : "Help",
+  "ABOUT" : "About",
+  "CUSTOMERS" : "Customers",
+
+  "ERROR_REQUIRED_FIELD" : "Field is required",
+  "ERROR_MIN_LENGTH_REQUIRED" : "The value length entered must be at least 8 characters.",
+  "ERROR_SESSION_EXPIRED" : "Session expired.",
+  "ERROR_USER_REQUIRED" : "Incorrect username.",
+  "ERROR_PASS_REQUIRED" : "Incorrect password.",
+  "ERROR_USER_PASS_INCORRECT" : "Invalid username or password.",
+
+  "GENERAL" : "General",
+  "NAME" : "Name",
+  "SURNAME" : "Surname",
+  "CUSTOMERTYPEID": "Customer type",
+  "LATITUDE" : "Latitude",
+  "LONGITUDE" : "Longitude",
+  "STARTDATE" : "Start date",
+  "EMAIL" : "Email",
+  "ADDRESS" : "Address",
+  "ACCOUNTS" : "Accounts",
+  "DATE_":"Operation date",
+  "CONCEPT":"Concept",
+  "MOVEMENT":"Movement",
+  "MOVEMENTTYPES":"Movement types",
+  "MOVEMENTTYPEID":"Movement types",
+  "DATA": "Main data",
+  "CUSTOMER_DATA": "Customer data",
+  "ACCOUNT_NUMBER": "Account number",
+  "BALANCE": "Balance",
+  "MOVEMENT_DATA": "Movement data",
+  "TRANSACTIONS": "Transactions"
+}

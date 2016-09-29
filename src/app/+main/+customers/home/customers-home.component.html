@@ -1,0 +1,14 @@
+<div layout="column" layout-align="center top" layout-fill>
+
+    <o-table attr="customers" entity="ECustomers" title="CUSTOMERS" layout-padding flex="95"
+        columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
+        sort-columns="SURNAME" keys="CUSTOMERID" query-on-init="true" query-rows="6" quick-filter="yes">
+      <o-table-column attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"></o-table-column>
+      <o-table-column attr="NAME" title="NAME"></o-table-column>
+      <o-table-column attr="SURNAME" title="SURNAME"></o-table-column>
+      <o-table-column attr="ADDRESS" title="ADDRESS"></o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-column attr="EMAIL" title="EMAIL"></o-table-column>
+    </o-table>
+
+</div>

@@ -1,0 +1,50 @@
+    <o-form layout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" entity="ECustomers" keys="CUSTOMERID"
+      #oForm class="md-whiteframe-5dp" stay-in-record-after-insert="yes">
+
+            <div layout="column" layout-padding>
+
+              <div layout="column" class="md-whiteframe-1dp">
+                <div layout="row">
+                  <span class="container-title" layout-padding>{{ 'CUSTOMER_DATA' | oTranslate }}</span>
+                </div>
+                <div layout="row" layout-padding>
+                  <div layout="column" flex="75">
+                      <div layout="row">
+                        <o-nif-input attr="ID" [data]="oForm.getDataValue('ID')" ></o-nif-input>
+                        <div layout-padding></div>
+                        <o-date-input attr="STARTDATE" [data]="oForm.getDataValue('STARTDATE')" ></o-date-input>
+                        <div flex></div>
+                      </div>
+
+                    <o-text-input attr="NAME" flex  [data]="oForm.getDataValue('NAME')"></o-text-input>
+                    <o-text-input attr="SURNAME" flex  [data]="oForm.getDataValue('SURNAME')" ></o-text-input>
+                  </div>
+                  <div flex="25" layout-aling="center center">
+                    <o-image attr="PHOTO" [data]="oForm.getDataValue('PHOTO')" emptyimage="assets/images/no-image.png"></o-image>
+                  </div>
+                </div>
+
+              </div>
+
+              <div layout-padding></div>
+
+
+              <div layout="row">
+                <o-text-input attr="ADDRESS" flex layout-padding [data]="oForm.getDataValue('ADDRESS')" ></o-text-input>
+              </div>
+              <div layout="row">
+                <o-email-input attr="EMAIL" flex layout-padding [data]="oForm.getDataValue('EMAIL')" ></o-email-input>
+                <o-list-picker attr="CUSTOMERTYPEID" layout-padding [data]="oForm.getDataValue('CUSTOMERTYPEID')"
+                    query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
+                    entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+                    visible-columns="DESCRIPTION" separator=" - "
+                    ></o-list-picker>
+              </div>
+
+              <div layout="row">
+                <o-textarea-input attr="COMMENTS" flex layout-padding [data]="oForm.getDataValue('COMMENTS')" rows="6"></o-textarea-input>
+              </div>
+
+            </div>
+
+    </o-form>

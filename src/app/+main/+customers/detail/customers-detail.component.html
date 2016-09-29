@@ -1,0 +1,85 @@
+<!--<div layout="row" layout-padding layout-align="center center">-->
+
+  <!--<div layout="column" layout-fill layout-align="center top" >-->
+    <o-form layout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" entity="ECustomers" keys="CUSTOMERID"
+      #oForm class="md-whiteframe-5dp">
+
+      <md-tab-group flex="96">
+
+        <md-tab>
+          <template md-tab-label>{{ 'DATA' | oTranslate }}</template>
+          <template md-tab-content >
+            <div layout="column" layout-padding>
+
+              <div layout="column" class="md-whiteframe-1dp">
+                <div layout="row">
+                  <span class="container-title" layout-padding>{{ 'CUSTOMER_DATA' | oTranslate }}</span>
+                </div>
+                <div layout="row" layout-padding>
+                  <div layout="column" flex="75">
+                      <div layout="row">
+                        <o-nif-input attr="ID" [data]="oForm.getDataValue('ID')" ></o-nif-input>
+                        <div layout-padding></div>
+                        <o-date-input attr="STARTDATE" [data]="oForm.getDataValue('STARTDATE')" ></o-date-input>
+                        <div flex></div>
+                      </div>
+
+                    <o-text-input attr="NAME" flex  [data]="oForm.getDataValue('NAME')"></o-text-input>
+                    <o-text-input attr="SURNAME" flex  [data]="oForm.getDataValue('SURNAME')" ></o-text-input>
+                  </div>
+                  <div flex="25" layout-aling="center center">
+                    <o-image attr="PHOTO" [data]="oForm.getDataValue('PHOTO')" emptyimage="assets/images/no-image.png"></o-image>
+                  </div>
+                </div>
+
+              </div>
+
+              <div layout-padding></div>
+
+
+              <div layout="row">
+                <o-text-input attr="ADDRESS" flex layout-padding [data]="oForm.getDataValue('ADDRESS')" ></o-text-input>
+              </div>
+              <div layout="row">
+                <o-email-input attr="EMAIL" flex layout-padding [data]="oForm.getDataValue('EMAIL')" ></o-email-input>
+                <o-list-picker attr="CUSTOMERTYPEID" layout-padding [data]="oForm.getDataValue('CUSTOMERTYPEID')"
+                    query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
+                    entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+                    visible-columns="DESCRIPTION" separator=" - "
+                    ></o-list-picker>
+              </div>
+              <!--<div layout="row" >
+                <o-real-input attr="LATITUDE" flex layout-padding [data]="oForm.getDataValue('LATITUDE')" max-decimal-digits="10" ></o-real-input>
+                <o-real-input attr="LONGITUDE" flex layout-padding  [data]="oForm.getDataValue('LONGITUDE')" max-decimal-digits="10" ></o-real-input>
+              </div>-->
+
+              <div layout="row">
+                <o-textarea-input attr="COMMENTS" flex layout-padding [data]="oForm.getDataValue('COMMENTS')" rows="6"></o-textarea-input>
+              </div>
+
+            </div>
+          </template>
+        </md-tab>
+
+        <md-tab>
+          <template md-tab-label>{{ 'ACCOUNTS' | oTranslate }}</template>
+          <template md-tab-content>
+            <div layout="column" layout-padding>
+              <o-table entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
+                    visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
+                    sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="CUSTOMERID" query-on-init="false" query-rows="6"
+                    quick-filter="yes" detail-form-route="accounts">
+                    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+                    <o-table-column attr="ACCOUNT" title="ACCOUNT"></o-table-column>
+                    <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
+                    <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+              </o-table>
+            </div>
+          </template>
+        </md-tab>
+
+      </md-tab-group>
+
+    </o-form>
+  <!--</div>
+</div>-->

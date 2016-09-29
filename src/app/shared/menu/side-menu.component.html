@@ -1,0 +1,12 @@
+<o-side-menu title="APP_TITLE">
+  <o-side-menu-group>
+    <o-side-menu-item title="CUSTOMERS" icon="people" route="/main/customers"></o-side-menu-item>
+    <o-side-menu-item title="ACCOUNTS" icon="credit_card" route="/main/accounts"></o-side-menu-item>
+    <o-side-menu-separator></o-side-menu-separator>
+    <o-side-menu-item title="ABOUT" icon="info" route="/about"></o-side-menu-item>
+    <o-side-menu-item title="HELP" icon="help" route="/help"></o-side-menu-item>
+    <o-side-menu-item title="VERSION" [action]="showVersionCallback"></o-side-menu-item>
+    <o-side-menu-separator></o-side-menu-separator>
+    <o-side-menu-item title="LOGOUT" icon="power_settings_new" route="/login" confirm="MESSAGES.CONFIRM_LOGOUT"></o-side-menu-item>
+  </o-side-menu-group>
+</o-side-menu>

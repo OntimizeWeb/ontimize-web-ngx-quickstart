@@ -1,0 +1,50 @@
+<!--<div layout="row" layout-padding layout-align="center center">-->
+
+  <div layout="column" layout-fill layout-align="center top">
+    <o-form layout="column" show-header="yes" label-header="TRANSACTIONS" header-actions="R;U;D" entity="EMovements"
+      keys="MOVEMENTID" #oForm columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
+      <div layout="column" layout-padding>
+
+         <div layout="column" class="md-whiteframe-1dp">
+            <div layout="row">
+              <span class="container-title" layout-padding>{{ 'ACCOUNT_NUMBER' | oTranslate }}</span>
+            </div>
+            <div layout="row" flex>
+              <o-text-input attr="ENTITYID" enabled="no" layout-padding [data]="oForm.getDataValue('ENTITYID')"></o-text-input>
+              <o-text-input attr="OFFICEID" enabled="no" layout-padding [data]="oForm.getDataValue('OFFICEID')"></o-text-input>
+              <o-text-input attr="CDID" enabled="no" layout-padding [data]="oForm.getDataValue('CDID')"></o-text-input>
+              <o-text-input attr="ANID" enabled="no" layout-padding [data]="oForm.getDataValue('ANID')"></o-text-input>
+            </div>
+         </div>
+         <div layout-padding></div>
+
+         <div layout="column" class="md-whiteframe-1dp">
+            <div layout="row">
+              <span class="container-title" layout-padding>{{ 'MOVEMENT_DATA' | oTranslate }}</span>
+            </div>
+
+            <div layout="row" flex>
+              <o-text-input attr="CONCEPT" flex layout-padding [data]="oForm.getDataValue('CONCEPT')"></o-text-input>
+            </div>
+
+            <div layout="row" flex>
+              <o-currency-input attr="MOVEMENT" flex layout-padding [data]="oForm.getDataValue('MOVEMENT')"></o-currency-input>
+              <o-combo attr="MOVEMENTTYPEID" flex layout-padding [data]="oForm.getDataValue('MOVEMENTTYPEID')"
+                      query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
+                      entity="EMovementTypes" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION"
+                      visible-columns="DESCRIPTION"
+                      ></o-combo>
+              <o-date-input attr="DATE_" layout-padding [data]="oForm.getDataValue('DATE_')" ></o-date-input>
+            </div>
+         </div>
+          <div layout-padding></div>
+
+        <div layout="column" class="md-whiteframe-1dp">
+          <o-textarea-input attr="COMMENTS" flex layout-padding [data]="oForm.getDataValue('COMMENTS')"></o-textarea-input>
+        </div>
+
+      </div>
+    </o-form>
+  </div>
+
+<!--</div>-->
