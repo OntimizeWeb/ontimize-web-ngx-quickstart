@@ -6,9 +6,7 @@
 
       <md-tab-group flex="96">
 
-        <md-tab>
-          <template md-tab-label>{{ 'DATA' | oTranslate }}</template>
-          <template md-tab-content >
+        <md-tab label="{{ 'DATA' | oTranslate }}">
             <div layout="column" layout-padding>
 
               <div layout="column" class="md-whiteframe-1dp">
@@ -58,12 +56,9 @@
               </div>
 
             </div>
-          </template>
         </md-tab>
 
-        <md-tab>
-          <template md-tab-label>{{ 'ACCOUNTS' | oTranslate }}</template>
-          <template md-tab-content>
+        <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
             <div layout="column" layout-padding>
               <o-table entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
                     visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
@@ -75,7 +70,6 @@
                     <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
               </o-table>
             </div>
-          </template>
         </md-tab>
 
       </md-tab-group>

@@ -7,3 +7,29 @@
 .no-padding {
   padding: 0px !important;
 }
+
+/* Temas predefinidos.
+
+Escoger uno de la siguiente lista de imports
+
+*/
+
+@import 'node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.scss';
+
+/*@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';*/
+
+/*@import 'node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.scss';*/
+
+/*@import 'node_modules/@angular/material/core/theming/prebuilt/purple-green.scss';*/
+
+/*Transferir al framework el tema para que se configuren los componentes de acuerdo a la
+
+gama de colores seleccionada
+
+*/
+
+@import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
+
+@include o-material-theme($theme);
+
+/* Extra style definition of app */

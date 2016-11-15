@@ -15,30 +15,7 @@ const map: any = {
   '@angular/router': 'vendor/@angular/router/bundles/router.umd.js',
   '@angular/forms': 'vendor/@angular/forms/bundles/forms.umd.js',
 
-
-
-
-  '@angular2-material/button': 'vendor/@angular2-material/button/button.umd.js',
-  '@angular2-material/button-toggle': 'vendor/@angular2-material/button-toggle/button-toggle.umd.js',
-  '@angular2-material/card': 'vendor/@angular2-material/card/card.umd.js',
-  '@angular2-material/checkbox': 'vendor/@angular2-material/checkbox/checkbox.umd.js',
-  '@angular2-material/core': 'vendor/@angular2-material/core/core.umd.js',
-  '@angular2-material/grid-list': 'vendor/@angular2-material/grid-list/grid-list.umd.js',
-  '@angular2-material/icon': 'vendor/@angular2-material/icon/icon.umd.js',
-  '@angular2-material/input': 'vendor/@angular2-material/input/input.umd.js',
-  '@angular2-material/list': 'vendor/@angular2-material/list/list.umd.js',
-  '@angular2-material/menu': 'vendor/@angular2-material/menu/menu.umd.js',
-  '@angular2-material/progress-bar': 'vendor/@angular2-material/progress-bar/progress-bar.umd.js',
-  '@angular2-material/progress-circle': 'vendor/@angular2-material/progress-circle/progress-circle.umd.js',
-  '@angular2-material/radio': 'vendor/@angular2-material/radio/radio.umd.js',
-  '@angular2-material/sidenav': 'vendor/@angular2-material/sidenav/sidenav.umd.js',
-  '@angular2-material/slide-toggle': 'vendor/@angular2-material/slide-toggle/slide-toggle.umd.js',
-  '@angular2-material/slider': 'vendor/@angular2-material/slider/slider.umd.js',
-  '@angular2-material/tabs': 'vendor/@angular2-material/tabs/tabs.umd.js',
-  '@angular2-material/toolbar': 'vendor/@angular2-material/toolbar/toolbar.umd.js',
-  '@angular2-material/tooltip': 'vendor/@angular2-material/tooltip/tooltip.umd.js'
-
-
+  '@angular/material': 'vendor/@angular/material/material.umd.js'
 
 };
 
