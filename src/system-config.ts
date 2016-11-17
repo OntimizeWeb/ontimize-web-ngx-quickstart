@@ -3,7 +3,6 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'app': 'src/app',
   'main': 'main.js',
 
   '@angular/core': 'vendor/@angular/core/bundles/core.umd.js',
@@ -21,7 +20,6 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
-  'app': {main: 'main', defaultExtension: 'js'},
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
