@@ -1,0 +1,28 @@
+/**
+ * Mixin that creates a new stacking context.
+ * see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+ */
+.md-subheader {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 0 0 0 0;
+  position: relative; }
+  .md-subheader .md-subheader-inner {
+    display: block;
+    padding: 16px; }
+  .md-subheader .md-subheader-content {
+    display: block;
+    z-index: 1;
+    position: relative; }
+
+.md-subheader {
+  color: rgba(0, 0, 0, 0.54);
+  background-color: white; }
+  .md-subheader.md-primary {
+    color: #009688; }
+  .md-subheader.md-accent {
+    color: #9c27b0; }
+  .md-subheader.md-warn {
+    color: #f44336; }

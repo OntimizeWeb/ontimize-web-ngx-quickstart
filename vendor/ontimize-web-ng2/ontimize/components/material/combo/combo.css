@@ -1,0 +1,149 @@
+/**
+ * Mixin that creates a new stacking context.
+ * see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+ */
+/**
+ * This mixin hides an element visually.
+ * That means it's still accessible for screen-readers but not visible in view.
+ */
+/**
+ * Forces an element to grow to fit floated contents; used as as an alternative to
+ * `overflow: hidden;` because it doesn't cut off contents.
+ */
+/**
+ * A mixin, which generates temporary ink ripple on a given component.
+ * When $bindToParent is set to true, it will check for the focused class on the same selector as you included
+ * that mixin.
+ * It is also possible to specify the color palette of the temporary ripple. By default it uses the
+ * accent palette for its background.
+ */
+/**
+ * Undo the red box-shadow glow added by Firefox on invalid combos.
+ * See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-ui-invalid
+ */
+:-moz-ui-invalid {
+  box-shadow: none; }
+
+/**
+ * Applies a floating placeholder above the combo itself.
+ */
+md-combo {
+  display: inline-block;
+  position: relative;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: left; }
+  [dir='rtl'] md-combo {
+    text-align: right; }
+
+.md-combo-wrapper {
+  margin: 16px 0; }
+
+.md-combo-table {
+  display: inline-table;
+  flex-flow: column;
+  vertical-align: bottom;
+  width: 100%; }
+  .md-combo-table > * {
+    display: table-cell; }
+
+.md-combo-element {
+  font: inherit;
+  /* remove default appearance from select */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-flex-preferred-size: auto;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 100%; }
+  .md-combo-element.md-end {
+    text-align: right; }
+    [dir='rtl'] .md-combo-element.md-end {
+      text-align: left; }
+
+.md-combo-infix {
+  position: relative;
+  width: 100%; }
+
+.md-combo-placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  display: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  transform: translateY(0);
+  transform-origin: bottom left;
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), scale 400ms cubic-bezier(0.25, 0.8, 0.25, 1), color 400ms cubic-bezier(0.25, 0.8, 0.25, 1), width 400ms cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .md-combo-placeholder.md-empty {
+    display: block;
+    cursor: text; }
+  .md-combo-placeholder.md-float:not(.md-empty), .md-combo-placeholder.md-float.md-focused {
+    display: block;
+    padding-bottom: 5px;
+    transform: translateY(-100%) scale(0.75);
+    width: 133.33333%; }
+  [dir='rtl'] .md-combo-placeholder {
+    transform-origin: bottom right; }
+
+combo:-webkit-autofill + .md-combo-placeholder {
+  display: block;
+  padding-bottom: 5px;
+  transform: translateY(-100%) scale(0.75);
+  width: 133.33333%; }
+
+.md-combo-underline {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  margin-top: 4px;
+  border-top-width: 1px;
+  border-top-style: solid; }
+  .md-combo-underline.md-disabled {
+    border-top: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
+    background-position: 0;
+    background-size: 4px 1px;
+    background-repeat: repeat-x; }
+  .md-combo-underline .md-combo-ripple {
+    position: absolute;
+    height: 2px;
+    z-index: 1;
+    top: -1px;
+    width: 100%;
+    transform-origin: top;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .md-combo-underline .md-combo-ripple.md-focused {
+      opacity: 1;
+      transform: scaleY(1); }
+
+.combo-arrow-btn {
+  position: absolute;
+  top: 0px;
+  right: 4px;
+  /* Default icon formatting */
+  /* Additional formatting for arrow icon */ }
+  .combo-arrow-btn i {
+    display: inline-block;
+    font-style: normal;
+    position: relative; }
+  .combo-arrow-btn i.arrow-down {
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 0.2em solid #757575;
+    border-top: 0.2em solid #757575;
+    transform: rotate(135deg);
+    margin: 0;
+    padding: 0; }
+
+.md-combo {
+  height: 60px; }
+  .md-combo .md-hint {
+    bottom: 4px; }

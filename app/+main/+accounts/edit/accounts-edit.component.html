@@ -1,0 +1,18 @@
+<div layout="row" layout-padding layout-align="center center">
+
+  <div layout="column" flex="50" layout-align="center top">
+    <o-form layout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D;I" entity="EAccounts"
+      keys="ACCOUNTID" #oForm class="md-whiteframe-5dp" columns="ENTITYID;OFFICEID;CDID;ANID">
+      <div layout="column">
+
+        <div layout="row" flex>
+          <o-text-input attr="ENTITYID" flex layout-padding [data]="oForm.getDataValue('ENTITYID')" enabled="false"></o-text-input>
+          <o-text-input attr="OFFICEID" flex layout-padding [data]="oForm.getDataValue('OFFICEID')"></o-text-input>
+          <o-text-input attr="CDID" flex layout-padding [data]="oForm.getDataValue('CDID')"></o-text-input>
+          <o-text-input attr="ANID" flex layout-padding [data]="oForm.getDataValue('ANID')"></o-text-input>
+        </div>
+
+      </div>
+    </o-form>
+  </div>
+</div>

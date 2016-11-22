@@ -1,0 +1,123 @@
+/**
+ * Mixin that creates a new stacking context.
+ * see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+ */
+/**
+ * This mixin hides an element visually.
+ * That means it's still accessible for screen-readers but not visible in view.
+ */
+/**
+ * Forces an element to grow to fit floated contents; used as as an alternative to
+ * `overflow: hidden;` because it doesn't cut off contents.
+ */
+/**
+ * A mixin, which generates temporary ink ripple on a given component.
+ * When $bindToParent is set to true, it will check for the focused class on the same selector as you included
+ * that mixin.
+ * It is also possible to specify the color palette of the temporary ripple. By default it uses the
+ * accent palette for its background.
+ */
+/**
+ * Undo the red box-shadow glow added by Firefox on invalid inputs.
+ * See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-ui-invalid
+ */
+:-moz-ui-invalid {
+  box-shadow: none; }
+
+/**
+ * Applies a floating placeholder above the input itself.
+ */
+.ckeditor {
+  height: auto; }
+
+ckeditor {
+  display: inline-block;
+  position: relative;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: left; }
+  [dir='rtl'] ckeditor {
+    text-align: right; }
+
+.md-ckeditor-wrapper {
+  margin: 16px 0; }
+
+.md-ckeditor-table {
+  display: inline-table;
+  flex-flow: column;
+  vertical-align: bottom;
+  width: 100%; }
+  .md-ckeditor-table > * {
+    display: table-cell; }
+
+.md-ckeditor-infix {
+  position: relative; }
+
+.md-ckeditor-placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  display: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  transform: translateY(0);
+  transform-origin: bottom left;
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), scale 400ms cubic-bezier(0.25, 0.8, 0.25, 1), color 400ms cubic-bezier(0.25, 0.8, 0.25, 1), width 400ms cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .md-ckeditor-placeholder.md-empty {
+    display: block;
+    cursor: text;
+    top: 65px; }
+  .md-ckeditor-placeholder.md-float:not(.md-empty), .md-ckeditor-placeholder.md-float.md-focused {
+    display: block;
+    padding-bottom: 5px;
+    transform: translateY(-100%) scale(0.75);
+    width: 133.33333%;
+    top: 0px; }
+  [dir='rtl'] .md-ckeditor-placeholder {
+    transform-origin: bottom right; }
+
+input:-webkit-autofill + .md-ckeditor-placeholder {
+  display: block;
+  padding-bottom: 5px;
+  transform: translateY(-100%) scale(0.75);
+  width: 133.33333%; }
+
+.md-ckeditor-underline {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  margin-top: 4px;
+  border-top-width: 1px;
+  border-top-style: solid; }
+  .md-ckeditor-underline.md-disabled {
+    border-top: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
+    background-position: 0;
+    background-size: 4px 1px;
+    background-repeat: repeat-x; }
+  .md-ckeditor-underline .md-ckeditor-ripple {
+    position: absolute;
+    height: 2px;
+    z-index: 1;
+    top: -1px;
+    width: 100%;
+    transform-origin: top;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1), opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .md-ckeditor-underline .md-ckeditor-ripple.md-focused {
+      opacity: 1;
+      transform: scaleY(1); }
+
+.md-ckeditor {
+  height: auto; }
+  .md-ckeditor .md-ckeditor-wrapper .md-hint {
+    bottom: -0.5em; }
+  .md-ckeditor .cke {
+    border-bottom: none !important; }
+  .md-ckeditor .cke_top {
+    padding: 0px !important; }

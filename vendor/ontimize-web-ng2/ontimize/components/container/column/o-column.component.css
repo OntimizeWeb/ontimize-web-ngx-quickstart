@@ -1,0 +1,4 @@
+.o-column {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
