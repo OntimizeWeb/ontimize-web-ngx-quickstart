@@ -4,14 +4,14 @@
 * Choose one of the following imports
 */
 /*@import 'node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.scss';*/
-/*@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';*/
+@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';
 /*@import 'node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.scss';*/
 /*@import 'node_modules/@angular/material/core/theming/prebuilt/purple-green.scss';*/
 
 /*
 * Import custom theme
 */
-@import 'my-custom-app-theme.scss';
+/*@import 'my-custom-app-theme.scss';*/
 
 
 /*
@@ -31,12 +31,16 @@
 * Other app styles
 */
 
-.container-title {
-    color: rgba(0, 0, 0, 0.54);
-    font-weight: 700;
-    font-size: 18px;
-}
-
 .no-padding {
   padding: 0px !important;
+}
+
+.customer-picture{
+  .input-image {
+
+    .input-image-preview {
+      width: 200px;
+      height: 200px;
+    }
+  }
 }
