@@ -8,9 +8,4 @@ import {Component} from '@angular/core';
 })
 export class NewCustomerComponent {
 
-  constructor(  ) {
-    console.log('constructor new customer ');
-  }
-
-
 }

@@ -1,4 +1,4 @@
-<o-form layout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" entity="ECustomers" keys="CUSTOMERID"
+<o-form layout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;I;U;D" entity="ECustomers" keys="CUSTOMERID"
   #oForm>
 
   <md-tab-group layout-fill>
@@ -6,49 +6,36 @@
     <md-tab label="{{ 'DATA' | oTranslate }}">
       <div layout="column" layout-padding>
 
-        <div layout="column" class="md-whiteframe-1dp">
-          <div layout="row">
-            <span class="container-title" layout-padding>{{ 'CUSTOMER_DATA' | oTranslate }}</span>
-          </div>
-          <div layout="row" layout-padding>
-            <div layout="column" flex="75">
-              <div layout="row">
-                <o-nif-input attr="ID"></o-nif-input>
-                <div layout-padding></div>
-                <o-date-input attr="STARTDATE"></o-date-input>
-                <div flex></div>
-              </div>
-
-              <o-text-input attr="NAME" flex></o-text-input>
-              <o-text-input attr="SURNAME" flex></o-text-input>
+        <o-row attr="row1" layout-align="start stretch">
+          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" elevation="2" flex="75" layout-padding>
+            <div layout="row">
+              <o-nif-input attr="ID"></o-nif-input>
+              <div layout-padding></div>
+              <o-date-input attr="STARTDATE"></o-date-input>
+              <div flex></div>
             </div>
-            <div flex="25" layout-aling="center center">
-              <o-image attr="PHOTO" [data]="oForm.getDataValue('PHOTO')" empty-image="./assets/images/no-image.png"></o-image>
-            </div>
-          </div>
 
-        </div>
+            <div layout="row">
+              <o-text-input attr="NAME" flex layout-fill></o-text-input>
+              <div layout-padding></div>
+              <o-list-picker attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes"
+                enabled="yes" filter="yes" value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+                visible-columns="DESCRIPTION" separator=" - "></o-list-picker>
+            </div>
+            <o-text-input attr="SURNAME"  layout-fill></o-text-input>
+          </o-column>
+          <o-column flex="25" layout-align="center center">
+            <o-image attr="PHOTO" layout-fill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+          </o-column>
+        </o-row>
 
         <div layout-padding></div>
 
-
-        <div layout="row">
-          <o-text-input attr="ADDRESS" flex layout-padding [data]="oForm.getDataValue('ADDRESS')"></o-text-input>
-        </div>
-        <div layout="row">
-          <o-email-input attr="EMAIL" flex layout-padding [data]="oForm.getDataValue('EMAIL')"></o-email-input>
-          <o-list-picker attr="CUSTOMERTYPEID" layout-padding [data]="oForm.getDataValue('CUSTOMERTYPEID')" query-on-init="no" query-on-bind="yes"
-            enabled="yes" filter="yes" value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
-            visible-columns="DESCRIPTION" separator=" - "></o-list-picker>
-        </div>
-        <!--<div layout="row" >
-                <o-real-input attr="LATITUDE" flex layout-padding [data]="oForm.getDataValue('LATITUDE')" max-decimal-digits="10" ></o-real-input>
-                <o-real-input attr="LONGITUDE" flex layout-padding  [data]="oForm.getDataValue('LONGITUDE')" max-decimal-digits="10" ></o-real-input>
-              </div>-->
-
-        <div layout="row">
-          <o-textarea-input attr="COMMENTS" flex layout-padding [data]="oForm.getDataValue('COMMENTS')" rows="6"></o-textarea-input>
-        </div>
+        <o-column attr="other_data" layout-padding layout-align="start stretch">
+          <o-text-input attr="ADDRESS" ></o-text-input>
+          <o-email-input attr="EMAIL" ></o-email-input>
+          <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>
+        </o-column>
 
       </div>
     </md-tab>

@@ -1,50 +1,37 @@
-<!--<div layout="row" layout-padding layout-align="center center">-->
+<div layout="column" layout-fill layout-align="center top">
+  <o-form layout="column" show-header="yes" label-header="TRANSACTIONS" header-actions="R;U;D" entity="EMovements" keys="MOVEMENTID"
+    #oForm columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
 
-  <div layout="column" layout-fill layout-align="center top">
-    <o-form layout="column" show-header="yes" label-header="TRANSACTIONS" header-actions="R;U;D" entity="EMovements"
-      keys="MOVEMENTID" #oForm columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
-      <div layout="column" layout-padding>
+    <o-row attr="main_row" layout-align="center stretch">
+      <o-column attr="col_left" layout-padding flex="60">
 
-         <div layout="column" class="md-whiteframe-1dp">
-            <div layout="row">
-              <span class="container-title" layout-padding>{{ 'ACCOUNT_NUMBER' | oTranslate }}</span>
-            </div>
-            <div layout="row" flex>
-              <o-text-input attr="ENTITYID" enabled="no" layout-padding [data]="oForm.getDataValue('ENTITYID')"></o-text-input>
-              <o-text-input attr="OFFICEID" enabled="no" layout-padding [data]="oForm.getDataValue('OFFICEID')"></o-text-input>
-              <o-text-input attr="CDID" enabled="no" layout-padding [data]="oForm.getDataValue('CDID')"></o-text-input>
-              <o-text-input attr="ANID" enabled="no" layout-padding [data]="oForm.getDataValue('ANID')"></o-text-input>
-            </div>
-         </div>
-         <div layout-padding></div>
+        <o-row attr="row1" title-label="ACCOUNT_NUMBER" elevation="1" layout-fill>
+          <o-text-input attr="ENTITYID" enabled="no" layout-padding class="mask-field"></o-text-input>
+          <o-text-input attr="OFFICEID" enabled="no" layout-padding class="mask-field"></o-text-input>
+          <o-text-input attr="CDID" enabled="no" layout-padding class="mask-field"></o-text-input>
+          <o-text-input attr="ANID" enabled="no" layout-padding></o-text-input>
+        </o-row>
 
-         <div layout="column" class="md-whiteframe-1dp">
-            <div layout="row">
-              <span class="container-title" layout-padding>{{ 'MOVEMENT_DATA' | oTranslate }}</span>
-            </div>
+        <o-column attr="col1" title-label="MOVEMENT_DATA" elevation="1" layout-fill>
+          <div layout="row" flex layout-fill>
+            <o-text-input attr="CONCEPT" flex layout-padding></o-text-input>
+          </div>
+          <div layout="row" flex layout-fill>
+            <o-currency-input attr="MOVEMENT" flex layout-padding required="yes"></o-currency-input>
+            <o-combo attr="MOVEMENTTYPEID" flex layout-padding query-on-init="no" query-on-bind="yes"
+              enabled="yes" value-column="MOVEMENTTYPEID" entity="EMovementTypes" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION"
+              visible-columns="DESCRIPTION" required="yes"></o-combo>
+            <o-date-input attr="DATE_" layout-padding required="yes"></o-date-input>
+          </div>
+        </o-column>
 
-            <div layout="row" flex>
-              <o-text-input attr="CONCEPT" flex layout-padding [data]="oForm.getDataValue('CONCEPT')"></o-text-input>
-            </div>
+      </o-column>
 
-            <div layout="row" flex>
-              <o-currency-input attr="MOVEMENT" flex layout-padding [data]="oForm.getDataValue('MOVEMENT')"></o-currency-input>
-              <o-combo attr="MOVEMENTTYPEID" flex layout-padding [data]="oForm.getDataValue('MOVEMENTTYPEID')"
-                      query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
-                      entity="EMovementTypes" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION"
-                      visible-columns="DESCRIPTION"
-                      ></o-combo>
-              <o-date-input attr="DATE_" layout-padding [data]="oForm.getDataValue('DATE_')" ></o-date-input>
-            </div>
-         </div>
-          <div layout-padding></div>
+      <o-column attr="col_right" layout-padding flex="40">
+        <o-textarea-input attr="COMMENTS" flex layout-padding class="comments"
+          layout-fill></o-textarea-input>
+      </o-column>
+    </o-row>
 
-        <div layout="column" class="md-whiteframe-1dp">
-          <o-textarea-input attr="COMMENTS" flex layout-padding [data]="oForm.getDataValue('COMMENTS')"></o-textarea-input>
-        </div>
-
-      </div>
-    </o-form>
-  </div>
-
-<!--</div>-->
+  </o-form>
+</div>
