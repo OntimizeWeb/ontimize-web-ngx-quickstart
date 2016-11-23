@@ -46,7 +46,11 @@
   font-size: 1.5em; }
 
 .o-list-container {
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+  .o-list-container .md-list {
+    overflow: auto; }
   .o-list-container .spinner-container {
     position: absolute;
     top: 0px;
@@ -59,3 +63,6 @@
       display: none; }
     .o-list-container .spinner-container path {
       stroke-width: 5px; }
+
+.fill-remaining {
+  flex: 1 1 auto; }
