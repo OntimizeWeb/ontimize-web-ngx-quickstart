@@ -8,6 +8,11 @@ the foundation for most of the documentation samples and potentially a good star
 We are ikely to accept suggestions about how to grow this QuickStart.
 Please keep that in mind when posting issues and PRs.
 
+## Live demo
+
+Check out application demo <a href="https://ontimizeweb.github.io/ontimize-web-ng2-quickstart" target="_blank" title="live demo">
+here</a>
+
 ## Prerequisites
 
 Node.js and npm are essential to Ontimize Web and Angular development.
