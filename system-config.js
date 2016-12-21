@@ -24,11 +24,9 @@ var barrels = [
     // App specific barrels.
     'app',
     'app/shared',
-    'app/shared/topbar',
     'app/+login',
     'app/+main/+customers',
     'app/+main/+accounts',
-    'app/+main/+employees',
     'app/+main/+home',
     'app/+main/+help',
     'app/+main/+about',
@@ -51,6 +49,12 @@ cliSystemConfigPackages['colresizable'] = { main: 'colResizable-1.6.min' };
 cliSystemConfigPackages['pdfmake'] = { main: 'build/pdfmake.min' };
 cliSystemConfigPackages['ng2-translate'] = { main: 'ng2-translate' };
 cliSystemConfigPackages['ontimize-web-ng2'] = { main: 'ontimize' };
+// ontimize chart module
+cliSystemConfigPackages['ontimize-web-ng2-charts'] = { main: 'o-chart' };
+// third party dependencies
+cliSystemConfigPackages['d3'] = { main: 'd3.min' };
+cliSystemConfigPackages['nvd3'] = { main: 'build/nv.d3.min' };
+cliSystemConfigPackages['ng2-nvd3'] = { main: 'ng2-nvd3' };
 // Apply the CLI SystemJS configuration.
 System.config({
     map: {
@@ -66,6 +70,10 @@ System.config({
         'pdfmake': 'vendor/pdfmake',
         'ng2-translate': 'vendor/ng2-translate',
         'ontimize-web-ng2': 'vendor/ontimize-web-ng2',
+        'ontimize-web-ng2-charts': 'vendor/ontimize-web-ng2-charts',
+        'd3': 'vendor/d3',
+        'nvd3': 'vendor/nvd3',
+        'ng2-nvd3': 'vendor/ng2-nvd3/build/lib'
     },
     packages: cliSystemConfigPackages
 });

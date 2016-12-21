@@ -47,5 +47,6 @@
   "ANID": "Account",
   "BALANCE": "Balance",
   "MOVEMENT_DATA": "Movement data",
-  "TRANSACTIONS": "Transactions"
+  "TRANSACTIONS": "Transactions",
+  "ACCOUNT_INFO": "Account info"
 }
