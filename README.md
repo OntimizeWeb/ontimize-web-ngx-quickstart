@@ -80,7 +80,9 @@ The `npm start` command first compiles the application,
 then simultaneously re-compiles and runs the server.
 Both the compiler and the server watch for file changes.
 
-Shut it down manually with Ctrl-C.
+You can test the app in your browser into the url [http://localhost:4200](http://localhost:4200)
 
-You're ready to write your application.
+You can shut the server down manually with Ctrl-C.
+
+You're ready to write your own application.
 
