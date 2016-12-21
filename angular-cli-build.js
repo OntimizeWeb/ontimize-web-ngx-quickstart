@@ -18,6 +18,16 @@ module.exports = function(defaults) {
         'ontimize-web-ng2/*.js',
         'ontimize-web-ng2/ontimize/**/*.js',
 
+        'ontimize-web-ng2-charts/*.js',
+        'ontimize-web-ng2-charts/src/**/*.js',
+
+        'd3/*min.js',
+        'nvd3/build/*min.js',
+        'ng2-nvd3/build/lib/*.js',
+
+        'ontimize-web-ng2-charts/**/*.css',
+        'nvd3/build/*.+(css|css.map)',
+
         'ng2-translate/**/*.js',
         'moment/**/*.js',
         'jquery/dist/jquery.min.js',

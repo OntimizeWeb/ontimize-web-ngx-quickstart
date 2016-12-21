@@ -15,7 +15,6 @@ const map: any = {
   '@angular/forms': 'vendor/@angular/forms/bundles/forms.umd.js',
 
   '@angular/material': 'vendor/@angular/material/material.umd.js'
-
 };
 
 /** User packages configuration. */
@@ -64,6 +63,13 @@ cliSystemConfigPackages['pdfmake'] = { main: 'build/pdfmake.min' };
 cliSystemConfigPackages['ng2-translate'] = { main: 'ng2-translate' };
 cliSystemConfigPackages['ontimize-web-ng2'] = { main: 'ontimize' };
 
+// ontimize chart module
+cliSystemConfigPackages['ontimize-web-ng2-charts'] = { main: 'o-chart' };
+// third party dependencies
+cliSystemConfigPackages['d3'] = { main: 'd3.min' };
+cliSystemConfigPackages['nvd3'] = { main: 'build/nv.d3.min' };
+cliSystemConfigPackages['ng2-nvd3'] = { main: 'ng2-nvd3' };
+
 /** Type declaration for ambient System. */
 declare var System: any;
 
@@ -82,6 +88,10 @@ System.config({
     'pdfmake': 'vendor/pdfmake',
     'ng2-translate': 'vendor/ng2-translate',
     'ontimize-web-ng2': 'vendor/ontimize-web-ng2',
+    'ontimize-web-ng2-charts': 'vendor/ontimize-web-ng2-charts',
+    'd3': 'vendor/d3',
+    'nvd3': 'vendor/nvd3',
+    'ng2-nvd3': 'vendor/ng2-nvd3/build/lib'
   },
   packages: cliSystemConfigPackages
 });
