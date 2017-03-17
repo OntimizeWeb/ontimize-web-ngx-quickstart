@@ -1,7 +1,7 @@
 o-side-menu .o-side-menu-icon-open {
   cursor: pointer; }
 
-o-side-menu md-sidenav-layout.menu-opened {
+o-side-menu md-sidenav-container.menu-opened {
   position: fixed;
   top: 0;
   left: 0;

@@ -7,11 +7,3 @@ span.icon-btn {
     padding-top: 4px; }
   span.icon-btn.md-disabled {
     cursor: default; }
-
-.md-input {
-  height: 60px; }
-  .md-input .md-hint {
-    bottom: 4px; }
-
-.md-textarea .md-hint {
-  bottom: -0.5em !important; }

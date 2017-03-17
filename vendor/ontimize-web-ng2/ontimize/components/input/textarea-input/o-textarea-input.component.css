@@ -1,5 +1,5 @@
-.md-textarea.no-resize textarea {
+.md-textarea.no-resize {
   resize: none; }
 
-.md-textarea textarea {
+.md-textarea {
   resize: vertical; }

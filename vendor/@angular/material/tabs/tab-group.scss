@@ -1,4 +1,5 @@
 @import '../core/style/variables';
+@import '../core/style/layout-common';
 @import 'tabs-common';
 
 :host {
@@ -7,14 +8,10 @@
   font-family: $md-font-family;
 }
 
-// Styling for the heading containing the tab labels
-.md-tab-header {
-  @include tab-header;
-}
-
 // Wraps each tab label
 .md-tab-label {
   @include tab-label;
+  position: relative;
 }
 
 @media ($md-xsmall) {
@@ -23,28 +20,35 @@
   }
 }
 
-// The ink bar that displays next to the active tab
-md-ink-bar {
-  @include ink-bar;
+:host[md-stretch-tabs] .md-tab-label {
+  flex-basis: 0;
+  flex-grow: 1;
 }
 
-// The bottom section of the view; contains the tab bodies 
+// The bottom section of the view; contains the tab bodies
 .md-tab-body-wrapper {
   position: relative;
   overflow: hidden;
-  flex-grow: 1;
   display: flex;
+  transition: height $md-tab-animation-duration $ease-in-out-curve-function;
 }
 
-// Wraps each tab body 
-.md-tab-body {
-  display: none;
-  overflow: auto;
-  box-sizing: border-box;
-  flex-grow: 1;
-  flex-shrink: 1;
-  &.md-tab-active {
-    display: block;
+// Wraps each tab body
+md-tab-body {
+  @include md-fill;
+  display: block;
+  overflow: hidden;
+
+  &.md-tab-body-active {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    flex-grow: 1;
+  }
+
+  :host.md-tab-group-dynamic-height &.md-tab-body-active {
+    overflow-y: hidden;
   }
 }
 

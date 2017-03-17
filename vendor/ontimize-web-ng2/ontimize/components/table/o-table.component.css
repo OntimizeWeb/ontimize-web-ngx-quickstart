@@ -611,7 +611,7 @@
   .o-table .o-table-menu-button {
     position: absolute;
     top: 4px;
-    right: 4px; }
+    right: 0px; }
     .o-table .o-table-menu-button .material-icons {
       top: 7px;
       position: absolute;
