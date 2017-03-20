@@ -5,3 +5,20 @@ o-bar-menu{
   right: 0px;
   z-index: 900;
 }
+
+.github-icon {
+  margin: 0px;
+  display: inline-block;
+  height: 64px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+
+  padding: 21px 0;
+  box-sizing: border-box;
+
+  a {
+    float: right;
+    line-height: 1;
+  }
+}

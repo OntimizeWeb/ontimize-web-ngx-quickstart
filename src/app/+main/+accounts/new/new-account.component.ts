@@ -9,7 +9,7 @@ import {Component} from '@angular/core';
 export class NewAccountComponent {
 
   constructor(  ) {
-    console.log('constructor new account ');
+    // console.log('constructor new account ');
   }
 
 }

@@ -11,6 +11,8 @@ import {DialogService} from 'ontimize-web-ng2/ontimize';
 })
 export class BarMenuComponent implements OnInit {
 
+  ontimizeWebVersion = '1.2.0';
+
   public showVersionCallback: Function;
 
   constructor(private router: Router, private actRoute: ActivatedRoute,
@@ -22,7 +24,7 @@ export class BarMenuComponent implements OnInit {
   }
 
   public showVersion() {
-    this.dialogService.alert('VERSION', '0.0.1');
+    this.dialogService.alert('VERSION', this.ontimizeWebVersion);
   }
 
 }
