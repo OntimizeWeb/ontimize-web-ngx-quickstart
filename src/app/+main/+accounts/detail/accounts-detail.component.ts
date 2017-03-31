@@ -44,7 +44,7 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit{
   protected onChartData(data: Object) {
     console.log(data);
     if (data.hasOwnProperty('ACCOUNTID') && this.service !== null) {
-      console.log(data['ACCOUNTID']);
+      // console.log(data['ACCOUNTID']);
       let filter = {
         'ACCOUNTID': data['ACCOUNTID']
       };
@@ -131,4 +131,7 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit{
     return filtered;
   }
 
+  onTableDataChange(args) {
+    // console.log('onTableDataChange');
+  }
 }

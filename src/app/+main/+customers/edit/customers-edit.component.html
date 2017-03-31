@@ -1,5 +1,5 @@
 <customers-edit-form layout="column" header-mode="none" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D"
-  entity="ECustomers" keys="CUSTOMERID" #oForm >
+  entity="ECustomers" keys="CUSTOMERID" #oForm>
 
   <md-tab-group layout-fill>
 
@@ -18,11 +18,11 @@
             <div layout="row">
               <o-text-input attr="NAME" flex layout-fill required="yes"></o-text-input>
               <div layout-padding></div>
-              <o-list-picker attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes"
-                enabled="yes" filter="yes" value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
-                visible-columns="DESCRIPTION" separator=" - "></o-list-picker>
+              <o-list-picker attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
+                entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
+                separator=" - "></o-list-picker>
             </div>
-            <o-text-input attr="SURNAME"  layout-fill required="yes"></o-text-input>
+            <o-text-input attr="SURNAME" layout-fill required="yes"></o-text-input>
           </o-column>
           <o-column flex="25" layout-align="center center">
             <o-image attr="PHOTO" layout-fill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
@@ -32,8 +32,8 @@
         <div layout-padding></div>
 
         <o-column attr="other_data" layout-padding layout-align="start stretch">
-          <o-text-input attr="ADDRESS" ></o-text-input>
-          <o-email-input attr="EMAIL" ></o-email-input>
+          <o-text-input attr="ADDRESS"></o-text-input>
+          <o-email-input attr="EMAIL"></o-email-input>
           <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>
         </o-column>
 
@@ -45,10 +45,9 @@
         <o-table entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
           sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="CUSTOMERID" query-on-init="false" query-rows="6" quick-filter="yes"
-          detail-form-route="accounts">
+          detail-button-in-row="false" insert-button="no">
           <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="ACCOUNT" title="ACCOUNT"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="�" currency-symbol-position="right" thousand-separator="."
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
             decimal-separator=","></o-table-column>
           <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
         </o-table>
