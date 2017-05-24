@@ -1,4 +1,4 @@
-import {Config} from 'ontimize-web-ng2/ontimize';
+import { Config } from 'ontimize-web-ng2';
 
 import { SERVICE_CONFIG } from './shared/app.services.config';
 

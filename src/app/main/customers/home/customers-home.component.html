@@ -1,0 +1,12 @@
+<div layout="column" layout-align="center top" layout-fill>
+  <o-table attr="customers" entity="ECustomers" title="CUSTOMERS" layout-padding show-table-buttons-text="yes" flex select-all-checkbox="no"
+    columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
+    sort-columns="SURNAME" keys="CUSTOMERID" query-on-init="true" query-rows="10" quick-filter="yes" edit-button-in-row="yes"
+    pageable="yes">
+
+    <o-table-column width="55px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png"
+      avatar="yes">
+    </o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+  </o-table>
+</div>

@@ -1,10 +1,10 @@
-@import 'node_modules/@angular/material/core/theming/all-theme';
+@import 'node_modules/@angular/material/theming';
 
 // Include non-theme styles for core.
-@include md-core();
+@include mat-core();
 
 /* Color definitions */
-$md-custom-primary: (
+$mat-custom-primary: (
   50: #bdf5b3,
   100: #82eb6f,
   200: #57e53e,
@@ -40,14 +40,13 @@ $md-custom-primary: (
 
 
 // Define a theme.
-$primary: md-palette($md-custom-primary);
-$accent:  md-palette($md-amber, A200, A100, A400);
+$primary: mat-palette($mat-custom-primary);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
 
 /* Light theme */
-$theme: md-light-theme($primary, $accent);
+$theme: mat-light-theme($primary, $accent);
 
 /* Dark theme */
-/*$theme: md-dark-theme($primary, $accent);*/
+// $theme: mat-dark-theme($primary, $accent);
 
-// Include all theme styles for the components.
 @include angular-material-theme($theme);
