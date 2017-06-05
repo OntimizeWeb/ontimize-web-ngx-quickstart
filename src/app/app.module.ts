@@ -1,53 +1,38 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
-  ontimizeProviders
-  // ,
-  // OntimizeWebModule
+  APP_CONFIG,
+  ONTIMIZE_MODULES,
+  ONTIMIZE_PROVIDERS,
+  OntimizeWebModule
 } from 'ontimize-web-ng2';
 
 import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';
-// import {
-//   OChartModule,
-//   chartsProviders
-// } from 'ontimize-web-ng2-charts/o-chart';
 
 import { AppRoutingModule } from './app-routing.module';
-import { LoginModule } from './login/login.module';
-import { SharedModule } from './shared/shared.module';
 import { MainModule } from './main/main.module';
+import { LoginModule } from './login/login.module';
 
-const standardProviders = [
-  ontimizeProviders({
-    config: CONFIG
-  })
-  // ,
-  // chartsProviders()
-];
-
-// Defining custom providers (if needed)
-const customProviders = [
+export const customProviders: any = [
 ];
 
 @NgModule({
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    // SharedModule,
-    // OChartModule,
-    // LoginModule,
+    ONTIMIZE_MODULES,
+    // OntimizeWebModule,
     MainModule,
+    LoginModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent
   ],
   providers: [
-    ...standardProviders,
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ...ONTIMIZE_PROVIDERS,
     ...customProviders
   ],
   bootstrap: [AppComponent]

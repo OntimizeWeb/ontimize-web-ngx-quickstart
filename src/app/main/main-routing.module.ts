@@ -6,20 +6,28 @@ import { MainComponent } from './main.component';
 import { AccountsModule } from './accounts/accounts.module';
 import { CustomersModule } from './customers/customers.module';
 
-const routes: Routes = [
+export function loadCustomersModule() {
+  return CustomersModule;
+}
+
+export function loadAccountsModule() {
+  return AccountsModule;
+}
+
+export const routes: Routes = [
   {
     path: 'main',
     component: MainComponent,
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
     children: [
-      { path: '', redirectTo: 'customers', pathMatch: 'prefix' },
+      { path: '', redirectTo: 'customers', pathMatch: 'full' },
       {
         path: 'customers',
-        loadChildren: () => CustomersModule
+        loadChildren: loadCustomersModule
       },
       {
         path: 'accounts',
-        loadChildren: () => AccountsModule
+        loadChildren: loadAccountsModule
       }
     ]
   }

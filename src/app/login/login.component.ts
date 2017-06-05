@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import { LoginService, NavigationService, APP_CONFIG, Config } from 'ontimize-web-ng2';
 
 @Component({
-  moduleId: module.id,
   selector: 'login',
   styleUrls: ['./login.component.scss'],
   templateUrl: './login.component.html'
@@ -16,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   user: FormControl;
   password: FormControl;
-  sessionExpired: boolean = false;
+  sessionExpired = false;
 
   router: Router;
 
@@ -30,10 +29,10 @@ export class LoginComponent implements OnInit {
 
     this.router = router;
 
-    let qParamObs: Observable<any> = this.actRoute.queryParams;
+    const qParamObs: Observable<any> = this.actRoute.queryParams;
     qParamObs.subscribe(params => {
       if (params) {
-        let isDetail = params['session-expired'];
+        const isDetail = params['session-expired'];
         if (isDetail === 'true') {
           this.sessionExpired = true;
         } else {
@@ -48,8 +47,8 @@ export class LoginComponent implements OnInit {
     this.removeSessionToken();
     this.navigation.setVisible(false);
 
-    let userCtrl: FormControl = new FormControl('', Validators.required);
-    let pwdCtrl: FormControl = new FormControl('', Validators.required);
+    const userCtrl: FormControl = new FormControl('', Validators.required);
+    const pwdCtrl: FormControl = new FormControl('', Validators.required);
 
     this.loginForm = new FormGroup({});
     this.loginForm.addControl('username', userCtrl);
@@ -66,10 +65,10 @@ export class LoginComponent implements OnInit {
       alert('Campos no válidos');
     }
 
-    let userName = this.loginForm.value['username'];
-    let password = this.loginForm.value['password'];
+    const userName = this.loginForm.value['username'];
+    const password = this.loginForm.value['password'];
     if (userName && userName.length > 0 && password && password.length > 0) {
-      let self = this;
+      const self = this;
       this.loginService.login(userName, password)
         .subscribe(() => {
           self.sessionExpired = false;
@@ -88,8 +87,8 @@ export class LoginComponent implements OnInit {
   }
 
   removeSessionToken() {
-    let appConf: Config = this.injector.get(APP_CONFIG);
-    let token = appConf.uuid;
+    const appConf: Config = this.injector.get(APP_CONFIG);
+    const token = appConf.uuid;
     localStorage.setItem(token, JSON.stringify({}));
   }
 

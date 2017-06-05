@@ -20,11 +20,20 @@
       "prefix": "app",
       "styles": [
         "../node_modules/ontimize-web-ng2/ontimize.scss",
+        "../node_modules/ontimize-web-ng2-charts/styles.scss",
         "assets/css/loader.scss",
         "assets/css/app.scss",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/jquery-ui/ui/widgets/datepicker.js",
+        "../node_modules/colresizable/colResizable-1.6.min.js",
+        "../node_modules/pdfmake/build/pdfmake.js",
+        "../node_modules/pdfmake/build/vfs_fonts.js",
+        "assets/js/domchange.js",
+        "assets/js/keyboard.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

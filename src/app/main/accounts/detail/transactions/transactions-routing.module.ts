@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'new', component: AccountTransactionsDetailComponent },
   { path: ':MOVEMENTID', component: AccountTransactionsDetailComponent },
   { path: ':MOVEMENTID/edit', component: AccountTransactionsDetailComponent }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

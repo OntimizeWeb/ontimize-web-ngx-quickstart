@@ -15,14 +15,18 @@ export const ACCOUNTS_MODULE_DECLARATIONS = [
   AccountsNewComponent
 ];
 
-const routes: Routes = [
+export function loadTransactionsModule() {
+  return TransactionsModule;
+}
+
+export const routes: Routes = [
   { path: '', component: AccountsHomeComponent },
   { path: 'new', component: AccountsNewComponent },
   { path: ':ACCOUNTID', component: AccountsDetailComponent },
   { path: ':ACCOUNTID/edit', component: AccountsEditComponent },
   {
     path: ':ACCOUNTID/transactions',
-    loadChildren: () => TransactionsModule
+    loadChildren: loadTransactionsModule
   }
 ];
 

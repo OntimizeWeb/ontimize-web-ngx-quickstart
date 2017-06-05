@@ -23,7 +23,7 @@
         <div layout="row" layout-padding></div>
 
         <o-column layout-align="start stretch" elevation="1" flex>
-          <!--<o-chart type="pie" layout-fill [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID"></o-chart>-->
+          <o-chart type="pie" layout-fill [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID"></o-chart>
         </o-column>
       </div>
 
@@ -39,8 +39,8 @@
         </o-table>
       </div>
       <div layout="row" flex layout-padding>
-        <!--<o-chart type="line" x-label="Time" y-label="Amount (€)" layout-fill [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT"
-          x-data-type="time" parent-keys="ACCOUNTID"></o-chart>-->
+        <o-chart type="line" x-label="Time" y-label="Amount (€)" layout-fill [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT"
+          x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
       </div>
     </div>
   </o-form>

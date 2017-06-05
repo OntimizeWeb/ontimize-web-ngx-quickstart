@@ -6,8 +6,6 @@ import { BarMenuComponent } from './menu/bar-menu.component';
 
 import { CommonModule } from '@angular/common';
 
-// import { OChartModule } from 'ontimize-web-ng2-charts';
-
 @NgModule({
   imports: [
     OntimizeWebModule

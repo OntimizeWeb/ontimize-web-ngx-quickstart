@@ -1,41 +1,42 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactory } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginModule } from './login/login.module';
-
-import { MainModule } from './main/main.module';
 import { AboutModule } from './main/about/about.module';
 import { HelpModule } from './main/help/help.module';
 import { HomeModule } from './main/home/home.module';
 
 import { AppComponent } from './app.component';
 
-const routes: Routes = [
+export function loadAboutModule() {
+  return AboutModule;
+}
+
+export function loadHelpModule() {
+  return HelpModule;
+}
+
+export function loadHomeModule() {
+  return HomeModule;
+}
+
+export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'prefix' },
-  // {
-  //   path: 'main',
-  //   loadChildren: () => MainModule
-  // },
-  {
-    path: 'login',
-    loadChildren: () => LoginModule
-  },
   {
     path: 'about',
-    loadChildren: () => AboutModule
+    loadChildren: loadAboutModule
   },
   {
     path: 'help',
-    loadChildren: () => HelpModule
+    loadChildren: loadHelpModule
   },
   {
     path: 'home',
-    loadChildren: () => HomeModule
+    loadChildren: loadHomeModule
   }
 ];
 
 const opt = {
-  enableTracing: true
+  enableTracing: false
   // true if you want to print navigation routes
 };
 

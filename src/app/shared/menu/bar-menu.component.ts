@@ -4,14 +4,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DialogService } from 'ontimize-web-ng2';
 
 @Component({
-  moduleId: module.id,
   selector: 'bar-menu',
   templateUrl: './bar-menu.component.html',
   styleUrls: ['./bar-menu.component.scss']
 })
 export class BarMenuComponent implements OnInit {
 
-  ontimizeWebVersion = '2.0.0-rc.0';
+  ontimizeWebVersion = '2.0.0-rc.1';
 
   public showVersionCallback: Function;
 

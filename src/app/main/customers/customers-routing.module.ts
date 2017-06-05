@@ -15,14 +15,18 @@ export const CUSTOMERS_MODULE_DECLARATIONS = [
   CustomersNewComponent
 ];
 
-const routes: Routes = [
+export function loadAccountsModule() {
+  return AccountsModule;
+}
+
+export const routes: Routes = [
   { path: '', component: CustomersHomeComponent },
   { path: 'new', component: CustomersNewComponent },
   { path: ':CUSTOMERID', component: CustomersDetailComponent },
   { path: ':CUSTOMERID/edit', component: CustomersEditComponent },
   {
     path: ':CUSTOMERID/accounts',
-    loadChildren: () => AccountsModule
+    loadChildren: loadAccountsModule
   }
 ];
 

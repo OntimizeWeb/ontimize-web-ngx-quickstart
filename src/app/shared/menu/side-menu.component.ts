@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DialogService } from 'ontimize-web-ng2';
 
 @Component({
-  moduleId: module.id,
   selector: 'side-menu',
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss']
