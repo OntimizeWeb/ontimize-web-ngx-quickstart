@@ -1,9 +1,0 @@
-/*@import 'ontimize/components/material/style/default-theme.scss';
-@import 'ontimize/components/material/style/mixins.scss';
-@import 'ontimize/components/material/style/variables.scss';*/
-span.icon-btn {
-  cursor: pointer; }
-  span.icon-btn i {
-    padding-top: 4px; }
-  span.icon-btn.md-disabled {
-    cursor: default; }

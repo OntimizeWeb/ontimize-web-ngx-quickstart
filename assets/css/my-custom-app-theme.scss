@@ -1,0 +1,52 @@
+@import 'node_modules/@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+/* Color definitions */
+$mat-custom-primary: (
+  50: #bdf5b3,
+  100: #82eb6f,
+  200: #57e53e,
+  300: #33c11a,
+  400: #2ca617,
+  500: #258b13,
+  600: #1e700f,
+  700: #17550c,
+  800: #103a08,
+  900: #081f04,
+  A100: #bdf5b3,
+  A200: #82eb6f,
+  A400: #2ca617,
+  A700: #17550c,
+
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+
+// Define a theme.
+$primary: mat-palette($mat-custom-primary);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+
+/* Light theme */
+$theme: mat-light-theme($primary, $accent);
+
+/* Dark theme */
+// $theme: mat-dark-theme($primary, $accent);
+
+@include angular-material-theme($theme);
