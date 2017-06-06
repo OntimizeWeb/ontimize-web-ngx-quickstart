@@ -1,11 +1,17 @@
 import { enableProdMode } from '@angular/core';
-import { ontimizeBootstrap } from 'ontimize-web-ng2/ontimize/MainLauncher';
-import { AppModule, CONFIG } from './app/';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-enableProdMode();
+import { AppModule } from './app/app.module';
+import { CONFIG } from './app/app.config';
 
-// Boostraping app...
-ontimizeBootstrap(AppModule, CONFIG).then(appRef => {
-  console.log('initialized... ');
+import { environment } from './environments/environment';
+import { ontimizePostBootstrap } from 'ontimize-web-ng2';
+
+// if (environment.production) {
+  enableProdMode();
+// }
+
+const promise = platformBrowserDynamic().bootstrapModule(AppModule);
+promise.then(ontimizePostBootstrap).catch(err => {
+  console.error(err.message);
 });
-

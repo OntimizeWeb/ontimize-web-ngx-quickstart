@@ -3,6 +3,8 @@
 # compiled output
 /dist
 /tmp
+/compiled
+*.metadata.json
 
 # dependencies
 /node_modules

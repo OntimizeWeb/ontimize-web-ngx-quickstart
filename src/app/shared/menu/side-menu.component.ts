@@ -1,13 +1,12 @@
-import {Component, OnInit, NgZone, Inject} from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Component, OnInit, NgZone, Inject } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
-import {DialogService} from 'ontimize-web-ng2/ontimize';
+import { DialogService } from 'ontimize-web-ng2';
 
 @Component({
-  moduleId: module.id,
   selector: 'side-menu',
-  templateUrl: 'side-menu.component.html',
-  styleUrls: ['side-menu.component.css']
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent implements OnInit {
 
@@ -16,7 +15,7 @@ export class SideMenuComponent implements OnInit {
   public showVersionCallback: Function;
 
   constructor(private router: Router, private actRoute: ActivatedRoute,
-      private zone: NgZone, @Inject(DialogService) dialogService: DialogService) {
+    private zone: NgZone, @Inject(DialogService) dialogService: DialogService) {
     this.dialogService = dialogService;
     this.showVersionCallback = this.showVersion.bind(this);
   }
