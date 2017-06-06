@@ -22,7 +22,6 @@ export const customProviders: any = [
 @NgModule({
   imports: [
     ONTIMIZE_MODULES,
-    // OntimizeWebModule,
     MainModule,
     LoginModule,
     AppRoutingModule
