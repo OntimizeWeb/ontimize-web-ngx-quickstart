@@ -39,7 +39,7 @@
     "lodash": "^4.17.4",
     "ng2-nvd3": "git+https://github.com/daominhsangvn/ng2-nvd3.git",
     "nvd3": "^1.8.4",
-    "ontimize-web-ng2": "file:..\\..\\ontimize-web-ng2-VERSIONS\\2.0.0-rc.5\\ontimize-web-ng2\\dist\\ontimize-web-ng2-2.0.0-rc.5.tgz",
+    "ontimize-web-ng2": "2.0.0-rc.5",
     "ontimize-web-ng2-charts": "2.0.0-rc.1",
     "reflect-metadata": "0.1.10",
     "rxjs": "^5.4.2",
