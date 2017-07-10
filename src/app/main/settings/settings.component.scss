@@ -1,0 +1,27 @@
+.user-info {
+
+  padding: 36px 36px;
+
+  .user-info-avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-bottom: 16px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .social-logos {
+    padding: 16px 0 0 0;
+    .social-logo {
+      height: 21px;
+      margin: 0 7px 2px 0;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+}
+

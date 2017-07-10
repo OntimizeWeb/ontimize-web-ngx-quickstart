@@ -1,7 +1,19 @@
-<div layout="column" layout-align="center top" layout-fill>
+<div fxFill fxLayout="column" fxLayoutAlign="center top" class="o-table-wrapper">
+  <o-table
+    entity="EAccounts" keys="ACCOUNTID"
+    detail-button-in-row="yes"
+    edit-button-in-row="yes"
 
-  <o-table attr="accounts" entity="EAccounts" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID" visible-columns="ENTITYID;OFFICEID;CDID;ANID"
-    sort-columns="ANID" keys="ACCOUNTID" query-on-init="true" query-rows="15" quick-filter="yes" pageable="yes" edit-button-in-row="yes">
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
+    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    sort-columns="ANID"  query-on-init="true" query-rows="15"
+    quick-filter="yes" pageable="yes">
+
+    <o-table-column attr="ENTITYID" title="ENTITYID" width="14%" class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="OFFICEID" title="OFFICEID" width="14%" class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="CDID" title="CDID" width="14%" class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="ANID" title="ANID" width="14%" class="o-table-column-centered"></o-table-column>
 
   </o-table>
 

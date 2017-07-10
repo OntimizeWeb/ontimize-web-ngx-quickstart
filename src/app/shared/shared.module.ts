@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ng2';
-// import { NavigationBarService } from './navigation-bar.service';
-import { SideMenuComponent } from './menu/side-menu.component';
-import { BarMenuComponent } from './menu/bar-menu.component';
-
 import { CommonModule } from '@angular/common';
+
+import { MovementTypesCellRendererComponent } from './movement-types-cell-renderer';
+
 
 @NgModule({
   imports: [
     OntimizeWebModule
   ],
   declarations: [
-    SideMenuComponent,
-    BarMenuComponent
+    MovementTypesCellRendererComponent
   ],
   exports: [
     CommonModule,
-    SideMenuComponent,
-    BarMenuComponent
+    MovementTypesCellRendererComponent
   ]
 })
 export class SharedModule { }

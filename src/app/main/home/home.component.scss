@@ -1,3 +1,12 @@
-.bg {
-  background-color: darkred;
+.module-list {
+  md-card {
+    height: 150px;
+    width: 275px;
+    border-radius : 3px;
+    .mat-card-avatar {
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+  }
 }
