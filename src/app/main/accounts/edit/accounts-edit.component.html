@@ -2,7 +2,7 @@
 
   <div fxLayout="column" fxFlex="70" fxLayoutAlign="center top">
     <o-form
-      entity="EAccounts" keys="ACCOUNTID"
+      service="branches" entity="account" keys="ACCOUNTID"
       columns="ENTITYID;OFFICEID;CDID;ANID"
       fxLayout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D;I"
       #oForm class="standalone-form-container">

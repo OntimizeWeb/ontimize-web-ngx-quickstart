@@ -1,7 +1,5 @@
-<o-form
-  entity="ECustomers" keys="CUSTOMERID"
-  fxLayout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D"
-  #oForm stay-in-record-after-insert="yes" class="standalone-form-container" label-header="{{ 'NEW_CUSTOMER' | oTranslate}}">
+<o-form service="customers" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" label-header="CUSTOMERS"
+  header-actions="R;U;D" #oForm stay-in-record-after-insert="yes" class="standalone-form-container" label-header="{{ 'NEW_CUSTOMER' | oTranslate}}">
 
   <o-row attr="row1" layout-align="start stretch">
 
@@ -19,7 +17,7 @@
 
       <div fxLayout="row" fxLayoutAlign="start center">
         <o-list-picker attr="CUSTOMERTYPEID" fxFlex="30" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
-          value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+          value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
           visible-columns="DESCRIPTION" separator=" - ">
         </o-list-picker>
       </div>

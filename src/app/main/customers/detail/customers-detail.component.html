@@ -1,4 +1,5 @@
-<o-form entity="ECustomers" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;I;U" #oForm>
+<o-form service="customers" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;I;U"
+  #oForm>
 
   <md-tab-group fxFill>
 
@@ -21,7 +22,7 @@
 
             <div fxLayout="row" fxLayoutAlign="start center">
               <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
-                entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
+                service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
                 separator=" - " class="margin-right-24">
               </o-list-picker>
             </div>
@@ -45,10 +46,10 @@
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div fxLayout="column" layout-padding>
-        <o-table #accountsTable entity="ECustomerAccountBalance" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
-          detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
+        <o-table #accountsTable service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
+          detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" select-all-checkbox="no"
-          query-on-init="false" query-rows="6" quick-filter="yes" pageable="yes" delete-button="false" insert-button="no">
+          query-on-init="false" query-rows="6" quick-filter="yes" pageable="no" delete-button="false" insert-button="no">
 
           <o-table-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-table-button>
 
@@ -60,11 +61,12 @@
           <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
         </o-table>
 
-        <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
+<!-- Falta attr -->
+        <!-- <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
           query-on-bind="no" [static-data]="availableAccountsToAdd" required="no" enabled="yes" filter="yes" keys="ACCOUNTID"
           value-column="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;ACCOUNTTYP" visible-columns="ACCOUNT;BALANCE"
           separator=" - " dialog-width="600px">
-        </o-list-picker>
+        </o-list-picker> -->
       </div>
 
     </md-tab>
@@ -75,7 +77,7 @@
       </div>
     </md-tab>
   </md-tab-group>
-<!--
+  <!--
   <o-map #oMapMarker center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
     layer-panel-visible="no" fxFlex>
     <o-map-layer layer-type="marker" layer-id="office_marker" layer-center="42.240599;-8.720727" layer-menu-label="Office headquarters "

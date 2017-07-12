@@ -1,6 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="center top" fxFill>
-  <!--entity="EAccounts" keys="ACCOUNTID"-->
-  <o-form entity="Users" keys="USER_" fxLayout="row" show-header="no" stay-in-record-after-edit="yes" label-header="SETTINGS"
+  <o-form service="users" entity="user" keys="USER_" fxLayout="row" show-header="no" stay-in-record-after-edit="yes" label-header="SETTINGS"
     header-actions="R;U" #oForm>
     <div fxLayout="row" fxLayoutAlign="space-between start" fxFill>
 
@@ -44,7 +43,8 @@
             <div fxLayout="column" layout-padding>
               <o-row layout-align="start center">
                 <o-column layout-align="center center" fxFlex="30" layout-padding>
-                  <o-image [data]="userInfo.avatar" attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+                   <o-image [data]="userInfo.avatar" attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image> 
+                  <!-- <o-image [data]="userInfo.avatar" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image> -->
                 </o-column>
               </o-row>
             </div>
@@ -55,9 +55,11 @@
               <o-row layout-align="start center">
                 <o-column layout-align="center center" fxFlex="30" layout-padding>
                   <o-text-input attr="USER_" enabled="no" label="USERNAME" fxFill></o-text-input>
-                  <o-password-input #oldPassword attr="OLD_PASSWORD" label="PASSWORD" fxFill></o-password-input>
+                   <o-password-input #oldPassword attr="OLD_PASSWORD" label="PASSWORD" fxFill></o-password-input> 
+                  <!-- <o-password-input #oldPassword label="PASSWORD" fxFill></o-password-input> -->
                   <o-password-input #newPassword attr="PASSWORD" label="NEW_PASSWORD" automatic-binding="no" fxFill></o-password-input>
-                  <o-password-input #confirmPassword attr="CONFIRM_PASSWORD" label="CONFIRM_PASSWORD" fxFill></o-password-input>
+                   <o-password-input #confirmPassword attr="CONFIRM_PASSWORD" label="CONFIRM_PASSWORD" fxFill></o-password-input> 
+                  <!-- <o-password-input #confirmPassword label="CONFIRM_PASSWORD" fxFill></o-password-input> -->
                   <o-button type="RAISED" label="CONFIRM" (click)="changePassword()"></o-button>
                 </o-column>
               </o-row>

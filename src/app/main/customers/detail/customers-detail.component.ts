@@ -31,13 +31,11 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
   protected yAxis = 'MOVEMENT';
   protected xAxis = 'MOVEMENTTYPES';
 
-
   @ViewChild('accountsTable') accountsTable: OTableComponent;
   @ViewChild('oForm') form: OFormComponent;
   @ViewChild('accountListPicker') accountListPicker: OListPickerComponent;
 
   availableAccountsToAdd: Array<any> = [];
-
 
   constructor(protected injector: Injector) {
     this.realPipe = new ORealPipe(this.injector);
@@ -50,7 +48,7 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
   protected configureService() {
     this.service = this.injector.get(OntimizeService);
     const conf = this.service.getDefaultServiceConfiguration();
-    conf['entity'] = 'ECustomerAccountBalance';
+    conf['path'] = '/customers';
     this.service.configureService(conf);
   }
 
@@ -71,9 +69,9 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
         'CUSTOMERID': data['CUSTOMERID']
       };
 
-      const columnsStr = 'ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE';
+      const columnsStr = 'ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE';
       const columns = columnsStr.split(';');
-      this.service.query(filter, columns).subscribe((resp) => {
+      this.service.query(filter, columns, 'customerAccount').subscribe((resp) => {
         if (resp.code === 0) {
           this.adaptResult(resp.data);
         } else {

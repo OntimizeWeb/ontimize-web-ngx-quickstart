@@ -1,4 +1,4 @@
-<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" entity="EBranches" keys="OFFICEID"
+<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" service="branches" entity="branch" keys="OFFICEID"
   #oForm columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT">
 
   <div fxLayout="row" fxFill>
@@ -20,10 +20,10 @@
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div fxLayout="column" layout-padding>
-        <o-table #accountsTable entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
+        <o-table #accountsTable service="customers" entity="customerAccount" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
           sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="5" quick-filter="yes"
-          detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="yes" delete-button="no" insert-button="no">
+          detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="no" delete-button="no" insert-button="no">
 
           <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
           <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."

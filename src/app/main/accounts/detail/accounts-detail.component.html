@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutAlign="center top" fxFill class="account-detail">
-  <o-form entity="EAccounts" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column" show-header="yes"
-    header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
+  <o-form service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column"
+    show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
 
 
     <o-column attr="main_column" layout-align="center stretch">
@@ -22,7 +22,7 @@
               <md-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</md-icon>
             </div>
 
-            <o-list #customerList entity="ECustomerAccounts" keys="CUSTOMERACCOUNTID" columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID"
+            <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID"
               query-on-init="no" query-on-bind="yes" title="" refresh-button="no" insert-button="no" selectable="false" quick-filter="false"
               dense="yes" pageable="no" detail-button-in-row="no" edit-button-in-row="no" controls="no">
               <md-list-item *ngFor="let row of customerList.dataArray">
@@ -58,10 +58,10 @@
 
       <div fxLayout="row" class="vertical-padding-8">
         <div fxLayout="row" class="rounded-panel" layout-padding>
-          <o-table entity="EMovements" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
+          <o-table service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
             edit-button-in-row="true" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
             visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"
-            query-rows="5" select-all-checkbox="true" quick-filter="yes" (change)="onTableDataChange($event)" pageable="yes">
+            query-rows="5" select-all-checkbox="true" quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
 
             <o-table-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-table-column>
             <o-table-column attr="CONCEPT" title="CONCEPT" width="18%"></o-table-column>

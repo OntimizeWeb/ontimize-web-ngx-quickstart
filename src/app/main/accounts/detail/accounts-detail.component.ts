@@ -67,7 +67,7 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
   protected configureService() {
     this.service = this.injector.get(OntimizeService);
     const conf = this.service.getDefaultServiceConfiguration();
-    conf['entity'] = 'EMovements';
+    conf['path'] = '/movements';
     this.service.configureService(conf);
   }
 
@@ -77,7 +77,7 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
         'ACCOUNTID': data['ACCOUNTID']
       };
       const columns = [this.yAxis, this.xAxis, 'DATE_'];
-      this.service.query(filter, columns).subscribe((resp) => {
+      this.service.query(filter, columns, 'movement').subscribe((resp) => {
         if (resp.code === 0) {
           this.adaptResult(resp.data);
         } else {
@@ -176,17 +176,17 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
       op: 'NOT IN',
       rop: relatedCustomersIds
     };
-    this.service.query(customerFilter, ['ID', 'NAME', 'SURNAME'], 'ECustomers').subscribe((resp) => {
-      if (resp.code === 0) {
-        this.availableCustomersToAdd = resp.data.filter(
-          customerItem => (relatedCustomersIds.indexOf(customerItem['CUSTOMERID']) === -1));
-        const self = this;
-        setTimeout(function () {
-          self.customerListPicker.onClickListpicker(null);
-        }, 0);
+    // this.service.query(customerFilter, ['ID', 'NAME', 'SURNAME'], 'ECustomers').subscribe((resp) => {
+    //   if (resp.code === 0) {
+    //     this.availableCustomersToAdd = resp.data.filter(
+    //       customerItem => (relatedCustomersIds.indexOf(customerItem['CUSTOMERID']) === -1));
+    //     const self = this;
+    //     setTimeout(function () {
+    //       self.customerListPicker.onClickListpicker(null);
+    //     }, 0);
 
-      }
-    });
+    //   }
+    // });
   }
 
   onNewCustomerSelected(customerId) {
