@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 
 @Component({
   selector: 'o-app',
@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(protected injector: Injector) {
   }
 
   ngOnInit() {

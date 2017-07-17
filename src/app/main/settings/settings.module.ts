@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ng2';
 import { SharedModule } from '../../shared/shared.module';
-import { HelpComponent } from './help.component';
-import { HelpRoutingModule } from './help-routing.module';
+import { SettingsComponent } from './settings.component';
+import { SettingsRoutingModule } from './settings-routing.module';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    HelpRoutingModule
+    SettingsRoutingModule
   ],
   declarations: [
-    HelpComponent
+    SettingsComponent
   ]
 })
-export class HelpModule { }
+export class SettingsModule { }

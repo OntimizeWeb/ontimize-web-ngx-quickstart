@@ -1,0 +1,42 @@
+<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" entity="EBranches" keys="OFFICEID"
+  #oForm columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT">
+
+  <div fxLayout="row" fxFill>
+    <o-column class="rounded-panel" fxFill layout-align="start start" title-label="BRANCH_INFO">
+      <div fxLayout="row" fxLayoutAlign="start center" fxFill>
+        <o-text-input attr="OFFICEID" fxFlex="20" class="horizontal-padding-8"></o-text-input>
+        <o-text-input attr="PHONE" fxFlex="15" class="horizontal-padding-8"></o-text-input>
+        <o-date-input attr="STARTDATE" fxFlex="15" class="horizontal-padding-8"></o-date-input>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <o-text-input attr="NAME" fxFlex="35" class="horizontal-padding-8"></o-text-input>
+        <o-text-input attr="ADDRESS" fxFlex="65" class="horizontal-padding-8"></o-text-input>
+      </div>
+    </o-column>
+  </div>
+
+
+  <md-tab-group fxFill class="vertical-padding-8">
+
+    <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+      <div fxLayout="column" layout-padding>
+        <o-table #accountsTable entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
+          visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
+          sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="5" quick-filter="yes"
+          detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="yes" delete-button="no" insert-button="no">
+
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+            decimal-separator=",">
+          </o-table-column>
+          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+        </o-table>
+      </div>
+    </md-tab>
+    <md-tab label="{{ 'BRANCH_PLAN' | oTranslate }}">
+      <o-image attr="BRANCHPLAN" class="branch-plan" fxFill empty-image="./assets/images/no-image.png"></o-image>
+    </md-tab>
+
+  </md-tab-group>
+
+</o-form>

@@ -1,37 +1,13 @@
 import { NgModule, NgModuleFactory } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AboutModule } from './main/about/about.module';
-import { HelpModule } from './main/help/help.module';
-import { HomeModule } from './main/home/home.module';
-
-import { AppComponent } from './app.component';
-
-export function loadAboutModule() {
-  return AboutModule;
-}
-
-export function loadHelpModule() {
-  return HelpModule;
-}
-
-export function loadHomeModule() {
-  return HomeModule;
-}
+import { AuthGuardService } from 'ontimize-web-ng2';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'prefix' },
   {
-    path: 'about',
-    loadChildren: loadAboutModule
-  },
-  {
-    path: 'help',
-    loadChildren: loadHelpModule
-  },
-  {
-    path: 'home',
-    loadChildren: loadHomeModule
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'prefix',
+    canActivate: [AuthGuardService]
   }
 ];
 

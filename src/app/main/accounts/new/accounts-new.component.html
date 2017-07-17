@@ -1,18 +1,19 @@
-<div layout="row" layout-padding layout-align="center center">
+<div fxLayout="row" layout-padding fxLayoutAlign="center center">
 
-  <div layout="column" flex="50" layout-align="center top">
-    <o-form layout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D;I" entity="EAccounts"
-      keys="ACCOUNTID" #oForm class="mat-elevation-z5" columns="ENTITYID;OFFICEID;CDID;ANID">
-      <div layout="column">
+  <div fxLayout="column" fxFlex="50" fxLayoutAlign="center top">
+    <o-form
+      entity="EAccounts" keys="ACCOUNTID"
+      fxLayout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D;I"
+      #oForm class="standalone-form-container" columns="ENTITYID;OFFICEID;CDID;ANID">
 
-        <div layout="row" flex>
-          <o-text-input attr="ENTITYID" flex layout-padding enabled="false"></o-text-input>
-          <o-text-input attr="OFFICEID" flex layout-padding></o-text-input>
-          <o-text-input attr="CDID" flex layout-padding></o-text-input>
-          <o-text-input attr="ANID" flex layout-padding></o-text-input>
+      <o-column title-label="ACCOUNT_INFO">
+        <div fxLayout="row" fxFlex>
+          <o-text-input attr="ENTITYID" fxFlex layout-padding enabled="false"></o-text-input>
+          <o-text-input attr="OFFICEID" fxFlex layout-padding></o-text-input>
+          <o-text-input attr="CDID" fxFlex layout-padding></o-text-input>
+          <o-text-input attr="ANID" fxFlex layout-padding></o-text-input>
         </div>
-
-      </div>
+      </o-column>
     </o-form>
   </div>
 </div>

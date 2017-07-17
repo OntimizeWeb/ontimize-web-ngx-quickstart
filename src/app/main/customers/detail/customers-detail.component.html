@@ -1,61 +1,84 @@
-<o-form layout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;I;U;D" entity="ECustomers" keys="CUSTOMERID"
-  #oForm>
+<o-form entity="ECustomers" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;I;U" #oForm>
 
-  <md-tab-group layout-fill>
+  <md-tab-group fxFill>
 
     <md-tab label="{{ 'DATA' | oTranslate }}">
-      <div layout="column" layout-padding>
+      <div fxLayout="column" layout-padding>
 
-        <o-row attr="row1" layout-align="start stretch">
-          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" elevation="2" flex="75" layout-padding>
-            <div layout="row">
-              <o-nif-input attr="ID"></o-nif-input>
-              <div layout-padding></div>
-              <o-date-input attr="STARTDATE"></o-date-input>
-              <div flex></div>
+        <o-row attr="row1" layout-align="space-between center">
+
+          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <o-nif-input attr="ID" fxFlex="30" class="margin-right-24"></o-nif-input>
+              <o-date-input attr="STARTDATE" fxFlex="30"></o-date-input>
             </div>
 
-            <div layout="row">
-              <o-text-input attr="NAME" flex layout-fill></o-text-input>
-              <div layout-padding></div>
-              <o-list-picker attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <o-text-input attr="NAME" fxFlex="30" class="margin-right-24"></o-text-input>
+              <o-text-input attr="SURNAME" fxFlex="50"></o-text-input>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
                 entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-                separator=" - "></o-list-picker>
+                separator=" - " class="margin-right-24">
+              </o-list-picker>
             </div>
-            <o-text-input attr="SURNAME" layout-fill></o-text-input>
           </o-column>
-          <o-column flex="25" layout-align="center center">
-            <o-image attr="PHOTO" layout-fill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+
+          <o-column fxFlex="40" layout-align="center center">
+            <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
           </o-column>
         </o-row>
 
         <div layout-padding></div>
 
-        <o-column attr="other_data" layout-padding layout-align="start stretch">
+        <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding layout-align="start stretch">
           <o-text-input attr="ADDRESS"></o-text-input>
           <o-email-input attr="EMAIL"></o-email-input>
-          <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>
+          <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
         </o-column>
 
       </div>
     </md-tab>
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <div layout="column" layout-padding>
-        <o-table entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
-          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
-          sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="CUSTOMERID" query-on-init="false" query-rows="6" quick-filter="yes"
-          detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="yes">
+      <div fxLayout="column" layout-padding>
+        <o-table #accountsTable entity="ECustomerAccountBalance" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
+          detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
+          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" select-all-checkbox="no"
+          query-on-init="false" query-rows="6" quick-filter="yes" pageable="yes" delete-button="false" insert-button="no">
 
+          <o-table-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-table-button>
+
+          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
           <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
           <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
             decimal-separator=",">
           </o-table-column>
           <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
         </o-table>
+
+        <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
+          query-on-bind="no" [static-data]="availableAccountsToAdd" required="no" enabled="yes" filter="yes" keys="ACCOUNTID"
+          value-column="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;ACCOUNTTYP" visible-columns="ACCOUNT;BALANCE"
+          separator=" - " dialog-width="600px">
+        </o-list-picker>
       </div>
+
     </md-tab>
 
-  </md-tab-group>
+    <md-tab label="{{ 'LOCATION' | oTranslate }}">
+      <div fxLayout="column" layout-padding>
 
+      </div>
+    </md-tab>
+  </md-tab-group>
+<!--
+  <o-map #oMapMarker center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
+    layer-panel-visible="no" fxFlex>
+    <o-map-layer layer-type="marker" layer-id="office_marker" layer-center="42.240599;-8.720727" layer-menu-label="Office headquarters "
+      layer-menu-label-secondary="Location of office headquarters"></o-map-layer>
+  </o-map>-->
 </o-form>

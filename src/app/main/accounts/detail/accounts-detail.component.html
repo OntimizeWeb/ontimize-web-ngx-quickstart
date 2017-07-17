@@ -1,47 +1,79 @@
-<div layout="column" layout-align="center top" layout-fill>
-  <o-form layout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D" entity="EAccounts" keys="ACCOUNTID"
-    #oForm>
-    <div layout="column" layout-fill>
+<div fxLayout="column" fxLayoutAlign="center top" fxFill class="account-detail">
+  <o-form entity="EAccounts" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column" show-header="yes"
+    header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
 
-      <div layout="row" layout-padding>
 
-        <o-column layout-align="start stretch" title-label="ACCOUNT_INFO" elevation="1">
-          <!--title-label="ACCOUNT_NUMBER" elevation="1"-->
-          <o-row attr="row1">
-            <o-text-input attr="ENTITYID" layout-padding class="account align-right"></o-text-input>
-            <o-text-input attr="OFFICEID" layout-padding class="account align-right"></o-text-input>
-            <o-text-input attr="CDID" layout-padding class="account align-right"></o-text-input>
-            <o-text-input attr="ANID" layout-padding class="align-right"></o-text-input>
-          </o-row>
-          <!-- title-label="BALANCE" elevation="1" -->
-          <o-row attr="row2">
-            <o-currency-input attr="BALANCE" flex layout-padding class="align-right"></o-currency-input>
-          </o-row>
-          <div layout="row" layout-padding flex></div>
-        </o-column>
+    <o-column attr="main_column" layout-align="center stretch">
 
-        <div layout="row" layout-padding></div>
+      <div fxLayout="row" class="vertical-padding-8">
+        <o-row attr="row1" fxFlex layout-padding layout-align="space-between center" class="rounded-panel" title-label="ACCOUNT">
 
-        <o-column layout-align="start stretch" elevation="1" flex>
-          <o-chart type="pie" layout-fill [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID"></o-chart>
-        </o-column>
+          <o-column layout-align="center center" fxFlex="50">
+            <div fxLayout="column" fxLayoutAlign="center start">
+              <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
+              <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true,  decimalDigits:2} }} €</span>
+            </div>
+          </o-column>
+
+          <o-column layout-align="center start" fxFlex="50" class="customer-list-container">
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <span class="account-detail-span-title">{{ 'CUSTOMERS' | oTranslate | uppercase }}</span>
+              <md-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</md-icon>
+            </div>
+
+            <o-list #customerList entity="ECustomerAccounts" keys="CUSTOMERACCOUNTID" columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID"
+              query-on-init="no" query-on-bind="yes" title="" refresh-button="no" insert-button="no" selectable="false" quick-filter="false"
+              dense="yes" pageable="no" detail-button-in-row="no" edit-button-in-row="no" controls="no">
+              <md-list-item *ngFor="let row of customerList.dataArray">
+                <h4 md-line>{{row.NAME}} {{ row.SURNAME }}</h4>
+                <md-icon md-list-icon (click)="onRemoveCustomerClick(row)">delete</md-icon>
+              </md-list-item>
+            </o-list>
+
+            <o-list-picker class="display-none" (onChange)="onNewCustomerSelected($event)" #customerListPicker query-on-init="no" automatic-binding="no"
+              query-on-bind="no" [static-data]="availableCustomersToAdd" required="no" enabled="yes" filter="yes" keys="CUSTOMERID"
+              value-column="CUSTOMERID" parent-keys="ACCOUNTID" columns="ID;NAME;SURNAME" visible-columns="ID;NAME;SURNAME"
+              separator=" - " dialog-width="500px">
+            </o-list-picker>
+          </o-column>
+
+        </o-row>
       </div>
 
-      <div layout="row" flex layout-padding>
-        <o-table entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
-          keys="MOVEMENTID" parent-keys="ACCOUNTID" sort-columns="DATE_" query-on-init="false" query-rows="6" select-all-checkbox="false"
-          quick-filter="yes" detail-form-route="transactions" (change)="onTableDataChange($event)" pageable="yes" edit-form-route="transactions"
-          edit-button-in-row="true">
 
-          <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
-          <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
-            decimal-separator=","></o-table-column>
-        </o-table>
+      <div fxLayout="row" flex class="vertical-padding-8">
+        <div fxLayout="row" fxFlex class="rounded-panel">
+          <o-column layout-align="center center" layout-padding title-label="ACCOUNT_TRANSACTIONS_CHART" fxFlex="35">
+            <o-chart #pieChart chart-height="350" type="pie" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID">
+            </o-chart>
+          </o-column>
+          <o-column layout-align="center center" layout-padding title-label="ACCOUNT_BALANCE_CHART" fxFlex="65" class="line-chart">
+            <o-chart chart-height="350" type="line" x-label="{{ 'TIME' | oTranslate }}" y-label="{{ 'AMOUNT' | oTranslate }}" fxFill
+              [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID">
+            </o-chart>
+          </o-column>
+        </div>
       </div>
-      <div layout="row" flex layout-padding>
-        <o-chart type="line" x-label="Time" y-label="Amount (€)" layout-fill [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT"
-          x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
+
+      <div fxLayout="row" class="vertical-padding-8">
+        <div fxLayout="row" class="rounded-panel" layout-padding>
+          <o-table entity="EMovements" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
+            edit-button-in-row="true" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
+            visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"
+            query-rows="5" select-all-checkbox="true" quick-filter="yes" (change)="onTableDataChange($event)" pageable="yes">
+
+            <o-table-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-table-column>
+            <o-table-column attr="CONCEPT" title="CONCEPT" width="18%"></o-table-column>
+            <o-table-column attr="MOVEMENT" title="MOVEMENT" width="18%" type="currency" currency-symbol="€" currency-symbol-position="right"
+              thousand-separator="." decimal-separator=","></o-table-column>
+            <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES">
+              <movement-types-cell-renderer>
+              </movement-types-cell-renderer>
+            </o-table-column>
+          </o-table>
+        </div>
       </div>
-    </div>
+    </o-column>
   </o-form>
 </div>

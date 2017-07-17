@@ -60,7 +60,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
     if (!this.loginForm.valid) {
       alert('Campos no válidos');
     }
