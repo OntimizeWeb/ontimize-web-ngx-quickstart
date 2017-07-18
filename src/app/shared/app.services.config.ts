@@ -15,6 +15,10 @@ export const SERVICE_CONFIG: Object = {
 
   'movements': {
     'path': '/movements'
-  }
+  },
+
+  'employees': {
+    'path': '/employees'
+  },
 
 };

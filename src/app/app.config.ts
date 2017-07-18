@@ -5,15 +5,16 @@ import { MENU_CONFIG } from './shared/app.menu.config';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  // apiEndpoint: 'https://try.ontimize.com/qsallcomponents-server-wsrest/rest',
-  // apiEndpoint: 'http://IMATIA211:8089/qsallcomponents-server-wsrest',
+  // apiEndpoint: 'http://localhost:9080/QSAllComponents-jee/services/rest',
   apiEndpoint: 'http://localhost:9080/qsallcomponents-jee/services/rest',
+  // apiEndpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest',
 
-  //  Application identifier. Is the unique package identifier of the app. It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.
-  uuid: 'com.ontimize.web.galiciatic.demo',
+  //  Application identifier. Is the unique package identifier of the app.
+  // It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.
+  uuid: 'com.ontimize.web.quickstart',
 
   // Title of the app
-  title: 'Galicia TIC demo',
+  title: 'Ontimize Web Quickstart',
 
   //  Language of the application.
   locale: 'es',

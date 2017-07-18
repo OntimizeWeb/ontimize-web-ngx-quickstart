@@ -10,6 +10,7 @@ import { SettingsModule } from './settings/settings.module';
 import { CustomersModule } from './customers/customers.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { BranchesModule } from './branches/branches.module';
+import { EmployeesModule } from './employees/employees.module';
 
 export function loadHomeModule() {
   return HomeModule;
@@ -35,6 +36,9 @@ export function loadBranchesModule() {
   return BranchesModule;
 }
 
+export function loadEmployeesModule() {
+  return EmployeesModule;
+}
 
 export const routes: Routes = [
   {
@@ -66,6 +70,10 @@ export const routes: Routes = [
       {
         path: 'branches',
         loadChildren: loadBranchesModule
+      },
+      {
+        path: 'employees',
+        loadChildren: loadEmployeesModule
       }
     ]
   }

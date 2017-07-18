@@ -83,5 +83,15 @@
   "Banking fees": "Banking fees",
   "Direct debit": "Direct debit",
   "Automatic Cash": "Automatic Cash",
-  "ADD_ACCOUNT": "Add account"
+  "ADD_ACCOUNT": "Add account",
+  "EMPLOYEES": "Employees",
+  "EMPLOYEES_SUBTITLE": "Employees module",
+  "EMPLOYEES_CONTENT": "Personal information about employees",
+  "EMPLOYEEID": "Id",
+  "EMPLOYEENAME": "Name",
+  "EMPLOYEESURNAME": "Surname",
+  "EMPLOYEEADDRESS": "Address",
+  "EMPLOYEESTARTDATE": "Start date",
+  "EMPLOYEEEMAIL": "Email",
+  "EMPLOYEETYPEID": "Employee type"
 }

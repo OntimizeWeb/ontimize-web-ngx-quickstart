@@ -14,7 +14,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     items: [
       { id: 'customers', name: 'CUSTOMERS', route: '/main/customers', icon: 'people' },
       { id: 'accounts', name: 'ACCOUNTS', route: '/main/accounts', icon: 'credit_card' },
-      { id: 'branches', name: 'BRANCHES', route: '/main/branches', icon: 'account_balance' }
+      { id: 'branches', name: 'BRANCHES', route: '/main/branches', icon: 'account_balance' },
+      { id: 'employees', name: 'EMPLOYEES', route: '/main/employees', icon: 'person' }
     ]
   },
   {
