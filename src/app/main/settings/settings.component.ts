@@ -13,8 +13,7 @@ import {
   OFormComponent,
   OPasswordInputComponent,
   DialogService,
-  LoginService,
-  Mode
+  LoginService
 } from 'ontimize-web-ng2';
 
 @Component({

@@ -184,7 +184,6 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
     //     setTimeout(function () {
     //       self.customerListPicker.onClickListpicker(null);
     //     }, 0);
-
     //   }
     // });
   }

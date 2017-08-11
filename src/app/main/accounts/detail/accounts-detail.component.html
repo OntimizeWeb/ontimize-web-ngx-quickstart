@@ -2,7 +2,6 @@
   <o-form service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column"
     show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
 
-
     <o-column attr="main_column" layout-align="center stretch">
 
       <div fxLayout="row" class="vertical-padding-8">
@@ -30,17 +29,16 @@
                 <md-icon md-list-icon (click)="onRemoveCustomerClick(row)">delete</md-icon>
               </md-list-item>
             </o-list>
-
-            <o-list-picker class="display-none" (onChange)="onNewCustomerSelected($event)" #customerListPicker query-on-init="no" automatic-binding="no"
-              query-on-bind="no" [static-data]="availableCustomersToAdd" required="no" enabled="yes" filter="yes" keys="CUSTOMERID"
-              value-column="CUSTOMERID" parent-keys="ACCOUNTID" columns="ID;NAME;SURNAME" visible-columns="ID;NAME;SURNAME"
-              separator=" - " dialog-width="500px">
+            <!--  -->
+            <o-list-picker attr="customersPicker" class="display-none" (onChange)="onNewCustomerSelected($event)" #customerListPicker
+              query-on-init="no" automatic-binding="no" query-on-bind="no" [static-data]="availableCustomersToAdd" required="no"
+              enabled="yes" filter="yes" keys="CUSTOMERID" value-column="CUSTOMERID" parent-keys="ACCOUNTID" columns="ID;NAME;SURNAME"
+              visible-columns="ID;NAME;SURNAME" separator=" - " dialog-width="500px">
             </o-list-picker>
           </o-column>
 
         </o-row>
       </div>
-
 
       <div fxLayout="row" flex class="vertical-padding-8">
         <div fxLayout="row" fxFlex class="rounded-panel">
