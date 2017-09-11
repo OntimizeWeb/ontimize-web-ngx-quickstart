@@ -27,7 +27,7 @@ export class SettingsComponent implements AfterViewInit {
   protected loginService: LoginService;
   protected dialogService: DialogService;
   protected oUserInfoService: OUserInfoService;
-  protected userInfo: UserInfo;
+  public userInfo: UserInfo;
 
   @ViewChild('oForm') oForm: OFormComponent;
   @ViewChild('oldPassword') oldPassword: OPasswordInputComponent;
