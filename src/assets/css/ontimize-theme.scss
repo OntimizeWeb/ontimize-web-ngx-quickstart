@@ -179,9 +179,11 @@
         }
 
         .o-table-container table {
-            margin-top: 16px;
-            margin-bottom: 16px;
 
+            &:not(.fixedHeader-floating) {
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
 
             thead tr th {
                 font-weight: 700;
