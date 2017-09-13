@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
@@ -15,9 +14,6 @@
     "lib": [
       "es2016",
       "dom"
-    ],
-    "files": [
-      "main"
     ]
   },
   "angularCompilerOptions": {
