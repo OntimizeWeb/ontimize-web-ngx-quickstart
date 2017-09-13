@@ -5,17 +5,11 @@ import { BranchesDetailComponent } from './detail/branches-detail.component';
 import { BranchesEditComponent } from './edit/branches-edit.component';
 import { BranchesHomeComponent } from './home/branches-home.component';
 
-import { AccountsModule } from '../accounts/accounts.module';
-
 export const BRANCHES_MODULE_DECLARATIONS = [
   BranchesDetailComponent,
   BranchesEditComponent,
   BranchesHomeComponent
 ];
-
-export function loadAccountsModule() {
-  return AccountsModule;
-}
 
 export const routes: Routes = [
   { path: '', component: BranchesHomeComponent },
@@ -24,7 +18,7 @@ export const routes: Routes = [
   { path: ':OFFICEID/edit', component: BranchesEditComponent },
   {
     path: ':OFFICEID/accounts',
-    loadChildren: loadAccountsModule
+    loadChildren: '../accounts/accounts.module#AccountsModule'
   }
 ];
 

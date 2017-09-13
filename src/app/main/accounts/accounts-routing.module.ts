@@ -6,18 +6,12 @@ import { AccountsEditComponent } from './edit/accounts-edit.component';
 import { AccountsHomeComponent } from './home/accounts-home.component';
 import { AccountsNewComponent } from './new/accounts-new.component';
 
-import { TransactionsModule } from './detail/transactions/transactions.module';
-
 export const ACCOUNTS_MODULE_DECLARATIONS = [
   AccountsDetailComponent,
   AccountsEditComponent,
   AccountsHomeComponent,
   AccountsNewComponent
 ];
-
-export function loadTransactionsModule() {
-  return TransactionsModule;
-}
 
 export const routes: Routes = [
   { path: '', component: AccountsHomeComponent },
@@ -26,7 +20,7 @@ export const routes: Routes = [
   { path: ':ACCOUNTID/edit', component: AccountsEditComponent },
   {
     path: ':ACCOUNTID/transactions',
-    loadChildren: loadTransactionsModule
+    loadChildren: './detail/transactions/transactions.module#TransactionsModule'
   }
 ];
 
