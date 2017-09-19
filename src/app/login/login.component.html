@@ -1,23 +1,25 @@
-<div fxLayout="row" fxFill fxLayoutAlign="center center" class="login-outer-container">
+<div fxLayout="row" fxLayoutAlign="center center" class="login-outer-container">
 
   <div fxLayout="column" fxLayoutAlign="center" class="login-inner-container md-whiteframe-1dp">
 
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" >
 
-      <div fxLayout="column" fxLayoutAlign="center center" class="logo-container md-whiteframe-4dp">
+      <div  fxLayoutAlign="center center" class="logo-container md-whiteframe-4dp">
         <img src="./assets/images/ontimize.png">
       </div>
 
-      <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
+      <p class="session-expired" *ngIf="sessionExpired"  >{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
 
-      <md-input-container fxFill>
-        <input mdInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
-      </md-input-container>
-
-      <md-input-container fxFill>
-        <input mdInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
-      </md-input-container>
-
+      <div fxLayout="row">
+        <md-input-container fxFill>
+          <input mdInput  #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+        </md-input-container>
+      </div>
+      <div fxLayout="row">
+        <md-input-container fxFill>
+          <input mdInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
+        </md-input-container>
+      </div>
       <button md-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
       <div layout-padding></div>
       <div layout-padding></div>
