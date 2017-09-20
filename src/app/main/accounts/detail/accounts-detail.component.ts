@@ -26,15 +26,15 @@ import { ChartSeries, OChartComponent } from 'ontimize-web-ng2-charts';
 })
 export class AccountsDetailComponent implements AfterContentInit, OnInit {
 
-  protected data: Array<Object>;
-  protected lineData: Array<ChartSeries>;
+  public data: Array<Object>;
+  public lineData: Array<ChartSeries>;
   protected service: OntimizeService;
   protected translateService: OTranslateService;
 
   protected accountId;
   protected yAxis = 'MOVEMENT';
   protected xAxis = 'MOVEMENTTYPES';
-  protected formLabel = '';
+  public formLabel = '';
 
   @ViewChild(forwardRef(() => OFormComponent)) form: OFormComponent;
   @ViewChild('customerListPicker') customerListPicker: OListPickerComponent;

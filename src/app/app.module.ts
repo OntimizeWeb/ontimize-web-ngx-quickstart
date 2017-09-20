@@ -7,8 +7,7 @@ import {
 import {
   APP_CONFIG,
   ONTIMIZE_MODULES,
-  ONTIMIZE_PROVIDERS,
-  OntimizeWebModule
+  ONTIMIZE_PROVIDERS
 } from 'ontimize-web-ng2';
 
 import { CONFIG } from './app.config';

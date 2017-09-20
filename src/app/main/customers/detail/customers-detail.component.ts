@@ -14,7 +14,7 @@ import {
   ORealPipe
 } from 'ontimize-web-ng2';
 import { Observable } from 'rxjs/Observable';
-import { ChartSeries } from 'ontimize-web-ng2-charts';
+// import { ChartSeries } from 'ontimize-web-ng2-charts';
 
 @Component({
   selector: 'customers-detail',
@@ -83,22 +83,22 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
 
   adaptResult(data: Array<any>) {
     if (data && data.length) {
-      this.customerAccountsData = this.processCustomerAccountsData(data);
+      // this.customerAccountsData = this.processCustomerAccountsData(data);
     }
   }
 
-  processCustomerAccountsData(data: Array<Object>): Array<ChartSeries> {
-    const values = [];
-    const self = this;
-    data.forEach((item: any, index: number) => {
-      const val = {
-        'x': item['ACCOUNT'],
-        'y': Math.abs(item['BALANCE'])
-      };
-      values.push(val);
-    });
-    return values;
-  }
+  // processCustomerAccountsData(data: Array<Object>): Array<ChartSeries> {
+  //   const values = [];
+  //   const self = this;
+  //   data.forEach((item: any, index: number) => {
+  //     const val = {
+  //       'x': item['ACCOUNT'],
+  //       'y': Math.abs(item['BALANCE'])
+  //     };
+  //     values.push(val);
+  //   });
+  //   return values;
+  // }
 
   onAddAccount() {
     (this.accountListPicker as any)._isReadOnly = false;
