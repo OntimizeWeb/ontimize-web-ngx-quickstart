@@ -29,7 +29,7 @@ o-form {
     padding-bottom: 0px;
     background: #eeeeee;
   }
-  form {
+  form:not(.form-no-toolbar) {
     top: 66px!important;
   }
 }
