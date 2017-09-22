@@ -1,36 +1,33 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="login-outer-container">
+<div fxLayout="row" fxFill fxLayoutAlign="center center" class="login-outer-container">
 
-  <div fxLayout="column" fxLayoutAlign="center" class="login-inner-container md-whiteframe-1dp">
+    <div fxLayout="column" fxLayoutAlign="center" class="login-inner-container md-whiteframe-1dp">
 
-    <form [formGroup]="loginForm" (ngSubmit)="login()" >
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-      <div  fxLayoutAlign="center center" class="logo-container md-whiteframe-4dp">
-        <img src="./assets/images/ontimize.png">
-      </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="logo-container md-whiteframe-4dp">
+          <img src="./assets/images/ontimize.png">
+        </div>
 
-      <p class="session-expired" *ngIf="sessionExpired"  >{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
+        <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
 
-      <div fxLayout="row">
-        <md-input-container fxFill>
-          <input mdInput  #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
-        </md-input-container>
-      </div>
-      
-      <div fxLayout="row">
-        <md-input-container fxFill>
+        <md-form-field style="width:100%;">
+          <input mdInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+        </md-form-field>
+
+        <md-form-field style="width:100%;">
           <input mdInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
-        </md-input-container>
-      </div>
-      <button md-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
-      <div layout-padding></div>
-      <div layout-padding></div>
-      <div fxLayout="column" fxLayoutAlign="center center" layout-padding>
-        <span class="title_text">{{ 'EXAMPLE_LOGIN_INFO' | oTranslate }}:</span>
-        <span class="dark_text">{{ 'USERNAME' | oTranslate }} : demo</span>
-        <span class="dark_text">{{ 'PASSWORD' | oTranslate }} : demouser</span>
-      </div>
-    </form>
+        </md-form-field>
+
+        <button md-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+        <div layout-padding></div>
+        <div layout-padding></div>
+        <div fxLayout="column" fxLayoutAlign="center center" layout-padding>
+          <span class="title_text">{{ 'EXAMPLE_LOGIN_INFO' | oTranslate }}:</span>
+          <span class="dark_text">{{ 'USERNAME' | oTranslate }} : demo</span>
+          <span class="dark_text">{{ 'PASSWORD' | oTranslate }} : demouser</span>
+        </div>
+      </form>
+
+    </div>
 
   </div>
-
-</div>
