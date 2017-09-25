@@ -24,11 +24,11 @@
           sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="5" quick-filter="yes"
           detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="no" delete-button="no" insert-button="no">
 
-         <o-datatable-column>attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
-         <o-datatable-column>attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+         <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
+         <o-datatable-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
             decimal-separator=",">
           </o-datatable-column>
-         <o-datatable-column>attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
+         <o-datatable-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
         </o-datatable>
       </div>
     </md-tab>
