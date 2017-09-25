@@ -1,17 +1,17 @@
 <div fxFill fxLayout="column" layout-padding fxLayoutAlign="center top" class="o-table-wrapper">
 
-  <o-table attr="employees"
+  <o-datatable attr="employees"
     service="employees" entity="employee"
     title="EMPLOYEES"
     columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"
     visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL" sort-columns="SURNAME"
     keys="EMPLOYEEID" query-on-init="true" query-rows="10" quick-filter="yes" detail-button-in-row="no">
-    <o-table-column attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image"
+   <o-datatable-column attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image"
       image-type="base64" empty-image="assets/images/no-image.png"  avatar="yes">
-    </o-table-column>
-    <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE"
+    </o-datatable-column>
+   <o-datatable-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE"
       type="date" format="LL">
-    </o-table-column>
-  </o-table>
+    </o-datatable-column>
+  </o-datatable>
 
 </div>

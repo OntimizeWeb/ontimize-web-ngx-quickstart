@@ -4,14 +4,15 @@ import { OntimizeWebModule } from 'ontimize-web-ng2';
 import { SharedModule } from '../../shared/shared.module';
 import { BranchesRoutingModule, BRANCHES_MODULE_DECLARATIONS } from './branches-routing.module';
 import { OChartModule } from 'ontimize-web-ng2-charts';
-
+import { ODataTableModule } from 'ontimize-web-ngx-datatable';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
     OChartModule,
-    BranchesRoutingModule
+    BranchesRoutingModule,
+    ODataTableModule
   ],
   declarations: BRANCHES_MODULE_DECLARATIONS,
   exports: BRANCHES_MODULE_DECLARATIONS

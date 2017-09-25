@@ -1,5 +1,6 @@
 import { Component, Inject, forwardRef, Injector } from '@angular/core';
-import { ITableCellRenderer, OTableColumnComponent, OTranslateService } from 'ontimize-web-ng2';
+import { IDataTableCellRenderer, ODataTableColumnComponent} from 'ontimize-web-ngx-datatable';
+import { OTranslateService } from 'ontimize-web-ng2';
 import * as $ from 'jquery';
 
 
@@ -7,11 +8,11 @@ import * as $ from 'jquery';
   selector: 'movement-types-cell-renderer',
   template: ''
 })
-export class MovementTypesCellRendererComponent implements ITableCellRenderer {
+export class MovementTypesCellRendererComponent implements IDataTableCellRenderer {
   translateService: OTranslateService;
   constructor(
-    @Inject(forwardRef(() => OTableColumnComponent))
-    tableColumn: OTableColumnComponent,
+    @Inject(forwardRef(() => ODataTableColumnComponent))
+    tableColumn: ODataTableColumnComponent,
     protected injector: Injector
   ) {
     tableColumn.registerRenderer(this);

@@ -56,20 +56,20 @@
 
       <div fxLayout="row" class="vertical-padding-8">
         <div fxLayout="row" class="rounded-panel" layout-padding>
-          <o-table service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
+          <o-datatable service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
             edit-button-in-row="true" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
             visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"
             query-rows="5" select-all-checkbox="true" quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
 
-            <o-table-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-table-column>
-            <o-table-column attr="CONCEPT" title="CONCEPT" width="18%"></o-table-column>
-            <o-table-column attr="MOVEMENT" title="MOVEMENT" width="18%" type="currency" currency-symbol="€" currency-symbol-position="right"
-              thousand-separator="." decimal-separator=","></o-table-column>
-            <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES">
+           <o-datatable-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-datatable-column>
+           <o-datatable-column attr="CONCEPT" title="CONCEPT" width="18%"></o-datatable-column>
+           <o-datatable-column attr="MOVEMENT" title="MOVEMENT" width="18%" type="currency" currency-symbol="€" currency-symbol-position="right"
+              thousand-separator="." decimal-separator=","></o-datatable-column>
+           <o-datatable-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES">
               <movement-types-cell-renderer>
               </movement-types-cell-renderer>
-            </o-table-column>
-          </o-table>
+            </o-datatable-column>
+          </o-datatable>
         </div>
       </div>
     </o-column>

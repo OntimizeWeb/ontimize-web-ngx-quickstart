@@ -22,6 +22,9 @@
 @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
+@import 'node_modules/ontimize-web-ngx-datatable/o-datatable-theme.scss';
+@include o-datatable-theme($theme);
+
 /*
 * Propagate theme to screen styles definition.
 */

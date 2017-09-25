@@ -6,12 +6,14 @@ import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';
 import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
 import { EmployeesEditComponent } from './employees-edit/employees-edit.component';
+import { ODataTableModule } from 'ontimize-web-ngx-datatable';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    EmployeesRoutingModule
+    EmployeesRoutingModule,
+    ODataTableModule
   ],
   declarations: [EmployeesHomeComponent, EmployeesDetailComponent, EmployeesEditComponent]
 })
