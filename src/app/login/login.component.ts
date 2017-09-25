@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, NgZone, Injector } from '@angular/core';
+import { Component, OnInit, Inject, NgZone, Injector, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -8,7 +8,8 @@ import { LoginService, NavigationService, APP_CONFIG, Config } from 'ontimize-we
 @Component({
   selector: 'login',
   styleUrls: ['./login.component.scss'],
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
 
@@ -60,7 +61,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
     if (!this.loginForm.valid) {
       alert('Campos no válidos');
     }

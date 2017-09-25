@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  Injector,
+  APP_INITIALIZER
+} from '@angular/core';
 
 import {
   APP_CONFIG,
   ONTIMIZE_MODULES,
-  ONTIMIZE_PROVIDERS,
-  OntimizeWebModule
+  ONTIMIZE_PROVIDERS
 } from 'ontimize-web-ng2';
 
 import { CONFIG } from './app.config';
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainModule } from './main/main.module';
 import { LoginModule } from './login/login.module';
 
+// Defining custom providers (if needed)...
 export const customProviders: any = [
 ];
 
@@ -29,11 +31,13 @@ export const customProviders: any = [
   declarations: [
     AppComponent
   ],
+  bootstrap: [
+    AppComponent
+  ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
   ],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

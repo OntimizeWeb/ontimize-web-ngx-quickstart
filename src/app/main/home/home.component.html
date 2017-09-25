@@ -1,7 +1,21 @@
-<side-menu></side-menu>
-
-<div layout="row" layout-padding layout-align="center center">
-    <p>
-      HOME component
-    </p>
-</div>
+<md-grid-list cols="2" rowHeight="250px" class="module-list">
+  <md-grid-tile *ngFor="let item of cardItems">
+    <md-card>
+      <md-card-header>
+        <div md-card-avatar class="example-header-image">
+          <md-icon>{{ item.icon }}</md-icon>
+        </div>
+        <md-card-title>{{ item.name | oTranslate }}</md-card-title>
+        <md-card-subtitle>{{ item.name + '_SUBTITLE' | oTranslate }}</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <p>
+          {{ item.name + '_CONTENT' | oTranslate }}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="goToItemModule(item)">{{ 'GO_TO_MODULE' | oTranslate | uppercase }}</button>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>

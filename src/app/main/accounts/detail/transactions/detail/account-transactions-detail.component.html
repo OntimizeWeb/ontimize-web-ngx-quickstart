@@ -1,35 +1,30 @@
-<div layout="column" layout-fill layout-align="center top">
-  <o-form layout="column" show-header="yes" label-header="TRANSACTIONS" header-actions="R;U;D" entity="EMovements" keys="MOVEMENTID"
-    #oForm columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
+<div fxLayout="column" fxFill fxLayoutAlign="center top">
+  <o-form fxLayout="column" show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID" #oForm class="standalone-form-container"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
 
-    <o-row attr="main_row" layout-align="center stretch">
-      <o-column attr="col_left" layout-padding flex="60">
+    <o-row attr="main_row" fxFill fxFlex layout-align="center stretch">
+      <o-column attr="col_left" layout-padding fxFlex="55">
 
-        <o-row attr="row1" title-label="ACCOUNT_NUMBER" elevation="1" layout-fill>
+        <o-row attr="row1" title-label="ACCOUNT_NUMBER" fxFill layout-align="start center">
           <o-text-input attr="ENTITYID" enabled="no" layout-padding class="mask-field"></o-text-input>
           <o-text-input attr="OFFICEID" enabled="no" layout-padding class="mask-field"></o-text-input>
           <o-text-input attr="CDID" enabled="no" layout-padding class="mask-field"></o-text-input>
           <o-text-input attr="ANID" enabled="no" layout-padding></o-text-input>
         </o-row>
 
-        <o-column attr="col1" title-label="MOVEMENT_DATA" elevation="1" layout-fill>
-          <div layout="row" flex layout-fill>
-            <o-text-input attr="CONCEPT" flex layout-padding></o-text-input>
-          </div>
-          <div layout="row" flex layout-fill>
-            <o-currency-input attr="MOVEMENT" flex layout-padding required="yes"></o-currency-input>
-            <o-combo attr="MOVEMENTTYPEID" flex layout-padding query-on-init="no" query-on-bind="yes"
-              enabled="yes" value-column="MOVEMENTTYPEID" entity="EMovementTypes" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION"
-              visible-columns="DESCRIPTION" required="yes"></o-combo>
-            <o-date-input attr="DATE_" layout-padding required="yes"></o-date-input>
-          </div>
-        </o-column>
+        <o-row attr="row2" title-label="MOVEMENT_DATA" fxFill layout-align="start center">
+          <o-text-input attr="CONCEPT" layout-padding fxFlex style="padding-left: 0;"></o-text-input>
+          <o-currency-input attr="MOVEMENT" fxFlex layout-padding required="yes"></o-currency-input>
+          <o-combo attr="MOVEMENTTYPEID" fxFlex layout-padding query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
+            service="movements" entity="movementType" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
+            required="yes"></o-combo>
+          <o-date-input attr="DATE_" layout-padding required="yes"></o-date-input>
+        </o-row>
 
       </o-column>
 
-      <o-column attr="col_right" layout-padding flex="40">
-        <o-textarea-input attr="COMMENTS" flex layout-padding class="comments"
-          layout-fill></o-textarea-input>
+      <o-column attr="col_right" layout-padding fxFill fxFlex="45">
+        <o-textarea-input attr="COMMENTS" class="comments" fxFill></o-textarea-input>
       </o-column>
     </o-row>
 

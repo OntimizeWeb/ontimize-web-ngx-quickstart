@@ -1,59 +1,45 @@
-<o-form layout="column" header-mode="none" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D"
-  entity="ECustomers" keys="CUSTOMERID" #oForm>
+<o-form service="customers" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" label-header="CUSTOMERS"
+  header-actions="R;U;D" #oForm>
 
-  <md-tab-group layout-fill>
 
-    <md-tab label="{{ 'DATA' | oTranslate }}">
-      <div layout="column" layout-padding>
+  <div fxLayout="column" layout-padding class="rounded-panel">
 
-        <o-row attr="row1" layout-align="start stretch">
-          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" elevation="2" flex="75" layout-padding>
-            <div layout="row">
-              <o-nif-input attr="ID" required="yes"></o-nif-input>
-              <div layout-padding></div>
-              <o-date-input attr="STARTDATE" required="yes"></o-date-input>
-              <div flex></div>
-            </div>
+    <o-row attr="row1" layout-align="start stretch">
 
-            <div layout="row">
-              <o-text-input attr="NAME" flex layout-fill required="yes"></o-text-input>
-              <div layout-padding></div>
-              <o-list-picker attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
-                entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-                separator=" - "></o-list-picker>
-            </div>
-            <o-text-input attr="SURNAME" layout-fill required="yes"></o-text-input>
-          </o-column>
-          <o-column flex="25" layout-align="center center">
-            <o-image attr="PHOTO" layout-fill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
-          </o-column>
-        </o-row>
+      <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
 
-        <div layout-padding></div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
+          <o-date-input attr="STARTDATE" fxFlex="30" required="yes"></o-date-input>
+        </div>
 
-        <o-column attr="other_data" layout-padding layout-align="start stretch">
-          <o-text-input attr="ADDRESS"></o-text-input>
-          <o-email-input attr="EMAIL"></o-email-input>
-          <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>
-        </o-column>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <o-text-input attr="NAME" fxFlex="30" class="margin-right-24" required="yes"></o-text-input>
+          <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
 
-      </div>
-    </md-tab>
+        </div>
 
-    <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <div layout="column" layout-padding>
-        <o-table entity="ECustomerAccountBalance" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
-          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
-          sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="CUSTOMERID" query-on-init="false" query-rows="6" quick-filter="yes"
-          detail-button-in-row="false" insert-button="no">
-          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
-            decimal-separator=","></o-table-column>
-          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-        </o-table>
-      </div>
-    </md-tab>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
+            value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+            visible-columns="DESCRIPTION" separator=" - " class="margin-right-24"></o-list-picker>
+        </div>
 
-  </md-tab-group>
+      </o-column>
+
+      <o-column fxFlex="40" layout-align="center center">
+        <o-image attr="PHOTO" sql-type="OTHER" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+      </o-column>
+    </o-row>
+
+    <div layout-padding></div>
+
+    <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding fxLayoutAlign="start stretch">
+      <o-text-input attr="ADDRESS"></o-text-input>
+      <o-email-input attr="EMAIL"></o-email-input>
+      <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+    </o-column>
+
+  </div>
 
 </o-form>

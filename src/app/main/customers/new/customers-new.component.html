@@ -1,33 +1,36 @@
-<o-form layout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" entity="ECustomers" keys="CUSTOMERID"
-  #oForm class="mat-elevation-z5" stay-in-record-after-insert="yes">
-
+<o-form service="customers" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" label-header="CUSTOMERS"
+  header-actions="R;U;D" #oForm stay-in-record-after-insert="yes" class="standalone-form-container" label-header="{{ 'NEW_CUSTOMER' | oTranslate}}">
 
   <o-row attr="row1" layout-align="start stretch">
-    <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" elevation="2" flex="75" layout-padding>
-      <div layout="row">
-        <o-nif-input attr="ID" required="yes"></o-nif-input>
-        <div layout-padding></div>
+
+    <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
         <o-date-input attr="STARTDATE" required="yes"></o-date-input>
-        <div flex></div>
+        <div fxFlex></div>
       </div>
 
-      <div layout="row">
-        <o-text-input attr="NAME" flex layout-fill required="yes"></o-text-input>
-        <div layout-padding></div>
-        <o-list-picker attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
-          entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-          separator=" - "></o-list-picker>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <o-text-input attr="NAME" fxFlex="30" class="margin-right-24" fxFill required="yes"></o-text-input>
+        <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
       </div>
-      <o-text-input attr="SURNAME" layout-fill required="yes"></o-text-input>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <o-list-picker attr="CUSTOMERTYPEID" fxFlex="30" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
+          value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+          visible-columns="DESCRIPTION" separator=" - ">
+        </o-list-picker>
+      </div>
+
     </o-column>
-    <o-column flex="25" layout-align="center center">
-      <o-image attr="PHOTO" layout-fill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+    <o-column fxFlex="40" layout-align="center center">
+      <o-image attr="PHOTO" sql-type="OTHER" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
     </o-column>
   </o-row>
 
   <div layout-padding></div>
 
-  <o-column attr="other_data" layout-padding layout-align="start stretch">
+  <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding layout-align="start stretch">
     <o-text-input attr="ADDRESS"></o-text-input>
     <o-email-input attr="EMAIL"></o-email-input>
     <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>

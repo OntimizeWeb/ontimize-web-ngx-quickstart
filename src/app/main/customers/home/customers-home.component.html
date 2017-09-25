@@ -1,11 +1,15 @@
-<div layout="column" layout-align="center top" layout-fill>
-  <o-table attr="customers" entity="ECustomers" title="CUSTOMERS" layout-padding show-table-buttons-text="yes" flex select-all-checkbox="yes"
-    columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
-    sort-columns="SURNAME" keys="CUSTOMERID" query-on-init="true" query-rows="10" quick-filter="yes" edit-button-in-row="yes"
-    pageable="yes">
-    <o-table-column width="55px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png"
+<div fxFill fxLayout="column" fxLayoutAlign="center top" class="o-table-wrapper">
+  <o-datatable
+    service="customers" entity="customer" keys="CUSTOMERID"
+    detail-button-in-row="yes"
+    edit-button-in-row="yes"
+    columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
+    visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
+    fxFlex layout-padding attr="customers" title="CUSTOMERS" show-table-buttons-text="yes" select-all-checkbox="yes" sort-columns="SURNAME"
+    query-on-init="true" query-rows="10" quick-filter="yes" pageable="no" row-height="medium">
+   <o-datatable-column width="10px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png"
       avatar="yes">
-    </o-table-column>
-    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-  </o-table>
+    </o-datatable-column>
+   <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
+  </o-datatable>
 </div>
