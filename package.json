@@ -5,6 +5,8 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
+    "aot": "npm run clean:all && npm run aot:compile && npm run aot:bundle && npm run styles",
+    "aot:bundle": "webpack --config config/webpack-aot.config.js --bail",
     "aot:compile": "node_modules/.bin/ngc -p tsconfig.aot.json",
     "start": "npm run clean:all && npm run aot:compile && ng serve --port=4209",
     "clean": "rimraf dist",
@@ -15,12 +17,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "production": "npm run clean && ng build --aot=false --target -prod --base-href /ontimize-web-ng2-quickstart/",
-    "ngComp": "npm run component && npm run moduleR",
-    "component": "ng generate component --skip-import=true --spec=false process.env.component || 'empty'",
-    "module": "ng generate module main/customers/",
-    "moduleR": "ng generate module --routing  process.env.component || 'empty'",
-    "install-ng2": "rimraf node_modules/ontimize-web-ng2 && npm install",
-    "xxx": "npm run install-ng2 && npm start"
+    "styles": "node-sass src/styles-aot.scss dist/assets/css/app.css --output-style compressed"
   },
   "private": true,
   "dependencies": {
@@ -42,9 +39,9 @@
     "@ngx-translate/http-loader": "1.0.2",
     "core-js": "^2.4.1",
     "lodash": "^4.17.4",
-    "ontimize-web-ng2": "file:///C:\\Users\\patricia.martinez\\Documents\\ontimize web\\ontimize-web-ng2\\dist\\ontimize-web-ng2-2.0.0-rc.8.tgz",
-    "ontimize-web-ng2-charts": "file:///C:\\Users\\patricia.martinez\\Documents\\ontimize web\\ontimize-web-ng2-charts-2.0.0-rc.3.tgz",
-    "ontimize-web-ngx-datatable":"file:///C:\\Users\\patricia.martinez\\Documents\\ontimize web\\ontimize-web-ngx-datatable_1.0.1\\dist\\ontimize-web-ngx-datatable-1.0.1.tgz",
+    "ontimize-web-ng2": "2.0.0-rc.8",
+    "ontimize-web-ng2-charts": "2.0.0-rc.3",
+    "ontimize-web-ngx-datatable": "1.0.0",
     "reflect-metadata": "0.1.10",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.12"
