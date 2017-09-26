@@ -14,7 +14,7 @@ import {
   OPasswordInputComponent,
   DialogService,
   LoginService
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-settings',

@@ -40,7 +40,7 @@
         </o-row>
       </div>
 
-      <div fxLayout="row" flex class="vertical-padding-8">
+      <div fxLayout="row" class="vertical-padding-8">
         <div fxLayout="row" fxFlex class="rounded-panel">
           <o-column layout-align="center center" layout-padding title-label="ACCOUNT_TRANSACTIONS_CHART" fxFlex="35">
             <o-chart #pieChart chart-height="350" type="pie" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID">
@@ -55,7 +55,7 @@
       </div>
 
       <div fxLayout="row" class="vertical-padding-8">
-        <div fxLayout="row" class="rounded-panel" layout-padding>
+        <div fxLayout="row" fxFlex class="rounded-panel" layout-padding>
           <o-datatable service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
             edit-button-in-row="true" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
             visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"

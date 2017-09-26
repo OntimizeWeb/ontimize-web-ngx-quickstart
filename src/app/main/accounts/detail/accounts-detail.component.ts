@@ -14,9 +14,9 @@ import {
   OListPickerComponent,
   OListComponent,
   OTranslateService
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
-import { ChartSeries, OChartComponent } from 'ontimize-web-ng2-charts';
+import { ChartSeries, OChartComponent } from 'ontimize-web-ngx-charts';
 
 @Component({
   selector: 'accounts-detail',

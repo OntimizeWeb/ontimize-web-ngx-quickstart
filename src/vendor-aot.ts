@@ -6,9 +6,9 @@ import '@angular/http';
 import '@angular/router';
 import '@angular/forms';
 
-import 'ontimize-web-ng2';
-// import 'ontimize-web-ng2-charts';
-// import 'ontimize-web-ng2-map';
+import 'ontimize-web-ngx';
+// import 'ontimize-web-ngx-charts';
+// import 'ontimize-web-ngx-map';
 
 // '@angular/animations'
 // '@angular/cdk'

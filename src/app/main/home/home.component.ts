@@ -11,7 +11,7 @@ import {
   MenuRootItem,
   MenuGroup,
   MenuItemRoute
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
 const MENU_GROUP_RENDER_CARDS = ['views'];
 

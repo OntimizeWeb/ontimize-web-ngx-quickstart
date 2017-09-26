@@ -12,9 +12,9 @@ import {
   OListPickerComponent,
   OTableComponent,
   ORealPipe
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 import { Observable } from 'rxjs/Observable';
-// import { ChartSeries } from 'ontimize-web-ng2-charts';
+// import { ChartSeries } from 'ontimize-web-ngx-charts';
 
 @Component({
   selector: 'customers-detail',

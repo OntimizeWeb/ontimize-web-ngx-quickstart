@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ontimize-web-ng2-quickstart"
+    "name": "ontimize-web-ngx-quickstart"
   },
   "apps": [
     {
@@ -18,8 +18,8 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "styles": [
-        "../node_modules/ontimize-web-ng2/ontimize.scss",
-        "../node_modules/ontimize-web-ng2-charts/styles.scss",
+        "../node_modules/ontimize-web-ngx/ontimize.scss",
+        "../node_modules/ontimize-web-ngx-charts/styles.scss",
         "../node_modules/ontimize-web-ngx-datatable/styles.scss",
         "../node_modules/flag-icon-css/sass/_flag-icon.scss",
         "assets/css/app.scss",

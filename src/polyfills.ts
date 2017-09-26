@@ -55,9 +55,9 @@ import 'core-js/es7/reflect';
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
-import 'ontimize-web-ng2';
-// import 'ontimize-web-ng2-charts';
-// import 'ontimize-web-ng2-map';
+import 'ontimize-web-ngx';
+// import 'ontimize-web-ngx-charts';
+// import 'ontimize-web-ngx-map';
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

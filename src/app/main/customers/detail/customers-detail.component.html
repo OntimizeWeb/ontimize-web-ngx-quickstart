@@ -8,27 +8,27 @@
 
         <o-row attr="row1" layout-align="space-between center">
 
-          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" fxFlex.sm="100" fxFlex.xs="100" layout-padding>
 
             <div fxLayout="row" fxLayoutAlign="start center">
-              <o-nif-input attr="ID" fxFlex="30" class="margin-right-24"></o-nif-input>
-              <o-date-input attr="STARTDATE" fxFlex="30"></o-date-input>
+              <o-nif-input attr="ID"  class="margin-right-24" fxFlex.xl="30" fxFlex.lg="30" fxFlex="50"></o-nif-input>
+              <o-date-input attr="STARTDATE" fxFlex.xl="30" fxFlex.lg="30" fxFlex="50"></o-date-input>
             </div>
 
             <div fxLayout="row" fxLayoutAlign="start center">
-              <o-text-input attr="NAME" fxFlex="30" class="margin-right-24"></o-text-input>
+              <o-text-input attr="NAME"  class="margin-right-24" fxFlex.lg="30" fxFlex.xl="30" fxFlex="50"></o-text-input>
               <o-text-input attr="SURNAME" fxFlex="50"></o-text-input>
             </div>
 
             <div fxLayout="row" fxLayoutAlign="start center">
-              <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
+              <o-list-picker fxFlex="100" fxFlex.xl="30"  fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
                 service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
                 separator=" - " class="margin-right-24">
               </o-list-picker>
             </div>
           </o-column>
 
-          <o-column fxFlex="40" layout-align="center center">
+          <o-column fxFlex="40" layout-align="center center"  fxFlex.sm="100" fxFlex.xs="100">
             <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
           </o-column>
         </o-row>

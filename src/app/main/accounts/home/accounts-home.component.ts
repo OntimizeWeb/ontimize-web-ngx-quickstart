@@ -10,7 +10,7 @@ import {
 import {
   OntimizeService,
   OFormComponent
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
 @Component({
   selector: 'accounts-home',
