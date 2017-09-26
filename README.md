@@ -10,7 +10,7 @@ Please keep that in mind when posting issues and PRs.
 
 ## Live demo
 
-Check out application demo <a href="https://ontimizeweb.github.io/ontimize-web-ng2-quickstart" target="_blank" title="live demo">
+Check out application demo <a href="https://ontimizeweb.github.io/ontimize-web-ngx-quickstart" target="_blank" title="live demo">
 here</a>
 
 ## Prerequisites
@@ -30,11 +30,11 @@ We recommend [nvm](https://github.com/creationix/nvm) for managing multiple vers
 
 Clone this repo into new project folder (e.g., `my-proj`).
 ```bash
-git clone  https://github.com/ontimizeweb/ontimize-web-ng2-quickstart  my-proj
+git clone  https://github.com/ontimizeweb/ontimize-web-ngx-quickstart  my-proj
 cd my-proj
 ```
 
-We have no intention of updating the source on `ontimizeweb/ontimize-web-ng2-quickstart`.
+We have no intention of updating the source on `ontimizeweb/ontimize-web-ngx-quickstart`.
 Discard everything "git-like" by deleting the `.git` folder.
 ```bash
 rm -rf .git  # non-Windows

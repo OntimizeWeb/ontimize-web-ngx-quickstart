@@ -1,6 +1,6 @@
 {
-  "name": "ontimize-web-ng2-quickstart",
-  "version": "2.0.0-rc.2",
+  "name": "ontimize-web-ngx-quickstart",
+  "version": "2.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -16,7 +16,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "npm run clean && ng build --aot=false --target -prod --base-href /ontimize-web-ng2-quickstart/",
+    "production": "npm run clean && ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "styles": "node-sass src/styles-aot.scss dist/assets/css/app.css --output-style compressed"
   },
   "private": true,
