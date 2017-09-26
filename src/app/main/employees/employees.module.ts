@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { OntimizeWebModule } from 'ontimize-web-ng2';
+import { OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';

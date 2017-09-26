@@ -1,6 +1,6 @@
 import { Component, Inject, forwardRef, Injector } from '@angular/core';
 import { IDataTableCellRenderer, ODataTableColumnComponent} from 'ontimize-web-ngx-datatable';
-import { OTranslateService } from 'ontimize-web-ng2';
+import { OTranslateService } from 'ontimize-web-ngx';
 import * as $ from 'jquery';
 
 

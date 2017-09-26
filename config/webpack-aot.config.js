@@ -42,57 +42,8 @@ const config = {
   module: {
     rules: [
       { test: /\.ts$/, loader: '@ngtools/webpack', exclude: /\.node_modules/ },
-      // {
-      //   test: /\.ts$/,
-      //   loaders: [
-      //     '@ngtools/webpack',
-      //     // 'angular2-template-loader?aot=true',
-      //     // 'awesome-typescript-loader?configFileName=src/tsconfig.aot.json'
-
-      //     // 'awesome-typescript-loader?configFileName=src/tsconfig.aot.json',
-      //   ]
-      // },
       { test: /\.(html|css)$/, loader: 'raw-loader', exclude: /\.async\.(html|css)$/ },
       { test: /\.scss$/, loaders: ['raw-loader', 'sass-loader'] }
-      // {
-      //   test: /\.scss$/,
-      //   exclude: [
-      //     "node_modules/ontimize-web-ng2/ontimize.scss",
-      //     "node_modules/flag-icon-css/sass/_flag-icon.scss",
-      //     "src/assets/css/loader.scss",
-      //     "src/assets/css/app.scss",
-      //     "src/styles.css"
-      //   ],
-      //   loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
-      // }
-
-      // {
-      //     include: [
-      // //     "node_modules/ontimize-web-ng2/ontimize.scss",
-      // //     "node_modules/flag-icon-css/sass/_flag-icon.scss",
-      // //     "src/assets/css/loader.scss",
-      // //     "src/assets/css/app.scss",
-      // //     "src/styles.css"
-      //     ],
-      //     test: /\.styl$/,
-      //     use: [
-      //       "style-loader",
-      //       {
-      //         loader: "css-loader",
-      //         options: {
-      //           sourceMap: false,
-      //           importLoaders: 1
-      //         }
-      //       },
-      //       {
-      //         loader: stylus-loader,
-      //         options: {
-      //           sourceMap: false,
-      //           paths: []
-      //         }
-      //       }
-      //     ]
-      //   },
     ]
   },
   plugins: [

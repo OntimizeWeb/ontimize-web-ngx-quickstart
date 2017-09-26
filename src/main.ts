@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { CONFIG } from './app/app.config';
 
 import { environment } from './environments/environment';
-import { ontimizePostBootstrap } from 'ontimize-web-ng2';
+import { ontimizePostBootstrap } from 'ontimize-web-ngx';
 
 // if (environment.production) {
   enableProdMode();

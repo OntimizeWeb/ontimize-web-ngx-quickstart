@@ -8,7 +8,7 @@ import {
   APP_CONFIG,
   ONTIMIZE_MODULES,
   ONTIMIZE_PROVIDERS
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
 import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';

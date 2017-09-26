@@ -6,7 +6,7 @@ import { AppModuleNgFactory } from './app/app.module.ngfactory';
 // import { COMPILER_PROVIDERS } from '@angular/compiler';
 
 
-import { ontimizePostBootstrap } from 'ontimize-web-ng2';
+import { ontimizePostBootstrap } from 'ontimize-web-ngx';
 
 // if (environment.production) {
 enableProdMode();
