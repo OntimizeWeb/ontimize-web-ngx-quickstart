@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -17,7 +17,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "production": "npm run clean && ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
-    "styles": "node-sass src/styles-aot.scss dist/assets/css/app.css --output-style compressed"
+    "styles": "node-sass src/styles-aot.scss dist/assets/css/app.css --output-style compressed",
+    "install-ng2":"rimraf node_modules/ontimize-web-ngx && rimraf node_modules/ontimize-web-ngx-datatable  && npm install",
+    "xxx":"npm run install-ng2 && npm start"
   },
   "private": true,
   "dependencies": {
@@ -39,9 +41,9 @@
     "@ngx-translate/http-loader": "1.0.2",
     "core-js": "^2.4.1",
     "lodash": "^4.17.4",
-    "ontimize-web-ngx": "2.0.0",
+    "ontimize-web-ngx": "2.0.1",
     "ontimize-web-ngx-charts": "2.0.0",
-    "ontimize-web-ngx-datatable": "1.0.1",
+    "ontimize-web-ngx-datatable": "1.0.2",
     "ontimize-web-ngx-theming": "1.0.0",
     "reflect-metadata": "0.1.10",
     "rxjs": "^5.4.2",
