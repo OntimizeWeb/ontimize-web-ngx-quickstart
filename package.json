@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -41,7 +41,7 @@
     "lodash": "^4.17.4",
     "ontimize-web-ngx": "2.0.0",
     "ontimize-web-ngx-charts": "2.0.0",
-    "ontimize-web-ngx-datatable": "1.0.1",
+    "ontimize-web-ngx-datatable": "1.0.2",
     "ontimize-web-ngx-theming": "1.0.0",
     "reflect-metadata": "0.1.10",
     "rxjs": "^5.4.2",

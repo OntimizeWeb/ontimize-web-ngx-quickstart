@@ -29,7 +29,8 @@
           </o-column>
 
           <o-column fxFlex="40" layout-align="center center"  fxFlex.sm="100" fxFlex.xs="100">
-            <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+            
+            <o-image attr="PHOTO" class="customer-picture" empty-image="./assets/images/no-image.png" style="width:100%"></o-image>
           </o-column>
         </o-row>
 
@@ -45,7 +46,7 @@
     </md-tab>
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <div fxLayout="column" layout-padding>
+      <div layout-padding>
         <o-datatable #accountsTable service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
           detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" select-all-checkbox="no"
