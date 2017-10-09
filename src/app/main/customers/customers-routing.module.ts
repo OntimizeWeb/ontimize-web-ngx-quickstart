@@ -5,6 +5,11 @@ import { CustomersDetailComponent } from './detail/customers-detail.component';
 import { CustomersEditComponent } from './edit/customers-edit.component';
 import { CustomersHomeComponent } from './home/customers-home.component';
 import { CustomersNewComponent } from './new/customers-new.component';
+import { AccountsModule } from '../accounts/accounts.module';
+
+export function loadAccountsModule() {
+  return AccountsModule;
+}
 
 export const CUSTOMERS_MODULE_DECLARATIONS = [
   CustomersDetailComponent,
@@ -20,7 +25,7 @@ export const routes: Routes = [
   { path: ':CUSTOMERID/edit', component: CustomersEditComponent },
   {
     path: ':CUSTOMERID/accounts',
-    loadChildren: '../accounts/accounts.module#AccountsModule'
+    loadChildren: loadAccountsModule
   }
 ];
 

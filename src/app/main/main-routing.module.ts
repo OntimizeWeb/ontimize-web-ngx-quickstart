@@ -4,41 +4,61 @@ import { AuthGuardService } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
+import { HomeModule } from './home/home.module';
+import { AboutModule } from './about/about.module';
+import { SettingsModule } from './settings/settings.module';
+import { CustomersModule } from './customers/customers.module';
+import { AccountsModule } from './accounts/accounts.module';
+import { BranchesModule } from './branches/branches.module';
+import { EmployeesModule } from './employees/employees.module';
+
+
+export function loadHomeModule() {
+  return HomeModule;
+}
+
+export function loadAboutModule() {
+  return AboutModule;
+}
+
+export function loadSettingsModule() {
+  return SettingsModule;
+}
+
+export function loadCustomersModule() {
+  return CustomersModule;
+}
+
+export function loadAccountsModule() {
+  return AccountsModule;
+}
+
+export function loadBranchesModule() {
+  return BranchesModule;
+}
+
+export function loadEmployeesModule() {
+  return EmployeesModule;
+}
+
 export const routes: Routes = [
-    {
-        path: 'main',
-        component: MainComponent,
-        canActivate: [AuthGuardService],
-        children: [
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            {
-                path: 'home',
-                loadChildren: './home/home.module#HomeModule'
-            }, {
-                path: 'about',
-                loadChildren: './about/about.module#AboutModule'
-            }, {
-                path: 'settings',
-                loadChildren: './settings/settings.module#SettingsModule'
-            }, {
-                path: 'customers',
-                loadChildren: './customers/customers.module#CustomersModule'
-            }, {
-                path: 'accounts',
-                loadChildren: './accounts/accounts.module#AccountsModule'
-            }, {
-                path: 'branches',
-                loadChildren: './branches/branches.module#BranchesModule'
-            }, {
-                path: 'employees',
-                loadChildren: './employees/employees.module#EmployeesModule'
-            }
-        ]
-    }
+  {
+    path: '', component: MainComponent, canActivate: [AuthGuardService],
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', loadChildren: loadHomeModule },
+      { path: 'about', loadChildren: loadAboutModule },
+      { path: 'settings', loadChildren: loadSettingsModule },
+      { path: 'customers', loadChildren: loadCustomersModule },
+      { path: 'accounts', loadChildren: loadAccountsModule },
+      { path: 'branches', loadChildren: loadBranchesModule },
+      { path: 'employees', loadChildren: loadEmployeesModule }
+    ]
+  }
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class MainRoutingModule { }
