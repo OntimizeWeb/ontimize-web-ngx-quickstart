@@ -5,24 +5,15 @@ const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const ngToolsWebpack = require('@ngtools/webpack');
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
-const { GlobCopyWebpackPlugin, NamedLazyChunksWebpackPlugin, BaseHrefWebpackPlugin } = require('@angular/cli/plugins/webpack');
-
+const CompressionPlugin = require("compression-webpack-plugin");
+const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
 
 const config = {
   entry: {
-    main: helpers.root('src/main-aot.ts'),
-    polyfills: helpers.root('src/polyfills.ts'),
-    vendor: helpers.root('src/vendor-aot.ts'),
-    scripts: [
-      helpers.root('node_modules/jquery/dist/jquery.js'),
-      helpers.root('node_modules/colresizable/colResizable-1.6.min.js'),
-      helpers.root('node_modules/pdfmake/build/pdfmake.js'),
-      helpers.root('node_modules/pdfmake/build/vfs_fonts.js'),
-      helpers.root('src/assets/js/domchange.js'),
-      helpers.root('src/assets/js/keyboard.js')
-    ]
+    main: helpers.root('tmp-src/main-aot.ts'),
+    polyfills: helpers.root('tmp-src/polyfills.ts'),
+    vendor: helpers.root('tmp-src/vendor-aot.ts'),
+    scripts: APP_SCRIPTS
   },
 
   // devtool: 'source-map',
@@ -83,12 +74,9 @@ const config = {
       "async": "common"
     }),
 
-
-
     new ngToolsWebpack.AotPlugin({
-      // tsConfigPath: helpers.root('src/tsconfig.aot.json'),
       tsConfigPath: helpers.root('tsconfig.aot.json'),
-      entryModule: helpers.root('src/app/app.module#AppModule')
+      entryModule: helpers.root('tmp-src/app/app.module#AppModule')
     }),
 
     new HtmlWebpackPlugin({
@@ -121,6 +109,15 @@ const config = {
         negate_iife: false // we need this for lazy v8
       }
     }),
+
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
+
 
     new GlobCopyWebpackPlugin({
       "patterns": [
