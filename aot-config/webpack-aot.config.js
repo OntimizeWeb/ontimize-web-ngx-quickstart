@@ -75,12 +75,12 @@ const config = {
     }),
 
     new ngToolsWebpack.AotPlugin({
-      tsConfigPath: helpers.root('aot-config/tsconfig.aot.json'),
+      tsConfigPath: helpers.root('tsconfig.aot.json'),
       entryModule: helpers.root('tmp-src/app/app.module#AppModule')
     }),
 
     new HtmlWebpackPlugin({
-      template: helpers.root('config/index.ejs')
+      template: helpers.root('aot-config/index.ejs')
     }),
 
     new webpack.optimize.UglifyJsPlugin({
