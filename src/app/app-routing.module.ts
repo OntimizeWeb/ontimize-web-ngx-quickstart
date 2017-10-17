@@ -1,4 +1,4 @@
-import { NgModule, NgModuleFactory } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
@@ -14,7 +14,7 @@ export function loadMainModule() {
 }
 
 export const routes: Routes = [
-  { path: 'main', loadChildren: loadMainModule },
+  { path: 'main', loadChildren: loadMainModule, canActivate: [AuthGuardService] },
   { path: 'login', loadChildren: loadLoginModule },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];

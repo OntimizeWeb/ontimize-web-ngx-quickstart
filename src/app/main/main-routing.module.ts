@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
@@ -43,7 +42,7 @@ export function loadEmployeesModule() {
 
 export const routes: Routes = [
   {
-    path: '', component: MainComponent, canActivate: [AuthGuardService],
+    path: '', component: MainComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', loadChildren: loadHomeModule },
