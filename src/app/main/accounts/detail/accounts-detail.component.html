@@ -23,7 +23,7 @@
 
             <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID"
               query-on-init="no" query-on-bind="yes" title="" refresh-button="no" insert-button="no" selectable="false" quick-filter="false"
-              dense="yes" pageable="no" detail-button-in-row="no" edit-button-in-row="no" controls="no">
+              dense="yes" pageable="no" controls="no">
               <md-list-item *ngFor="let row of customerList.dataArray">
                 <h4 md-line>{{row.NAME}} {{ row.SURNAME }}</h4>
                 <md-icon md-list-icon (click)="onRemoveCustomerClick(row)">delete</md-icon>
