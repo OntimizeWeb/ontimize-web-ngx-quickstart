@@ -32,7 +32,7 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
   protected xAxis = 'MOVEMENTTYPES';
 
   @ViewChild('accountsTable') accountsTable: OTableComponent;
-  @ViewChild('oForm') form: OFormComponent;
+  @ViewChild('oDetailForm') form: OFormComponent;
   @ViewChild('accountListPicker') accountListPicker: OListPickerComponent;
 
   availableAccountsToAdd: Array<any> = [];

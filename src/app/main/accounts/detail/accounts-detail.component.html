@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="center top" fxFill class="account-detail">
-  <o-form service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column"
+  <o-form editable-detail="false" service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column"
     show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
 
     <o-column attr="main_column" layout-align="center stretch">

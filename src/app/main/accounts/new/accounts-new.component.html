@@ -1,19 +1,15 @@
 <div fxLayout="row" layout-padding fxLayoutAlign="center center">
 
   <div fxLayout="column" fxFlex="50" fxLayoutAlign="center top">
-    <o-form
-      service="branches" entity="account" keys="ACCOUNTID"
-      fxLayout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D;I"
-      #oForm class="standalone-form-container" columns="ENTITYID;OFFICEID;CDID;ANID">
+    <o-form #oForm service="branches" entity="account" keys="ACCOUNTID" columns="ENTITYID;OFFICEID;CDID;ANID" header-actions="R;U;D;I"
+      label-header="ACCOUNTS" class="standalone-form-container">
 
-      <o-column title-label="ACCOUNT_INFO">
-        <div fxLayout="row" fxFlex>
-          <o-text-input attr="ENTITYID" fxFlex layout-padding enabled="false"></o-text-input>
-          <o-text-input attr="OFFICEID" fxFlex layout-padding></o-text-input>
-          <o-text-input attr="CDID" fxFlex layout-padding></o-text-input>
-          <o-text-input attr="ANID" fxFlex layout-padding></o-text-input>
-        </div>
-      </o-column>
+      <o-row title-label="ACCOUNT_INFO">
+        <o-text-input attr="ENTITYID" fxFlex layout-padding enabled="false"></o-text-input>
+        <o-text-input attr="OFFICEID" fxFlex layout-padding></o-text-input>
+        <o-text-input attr="CDID" fxFlex layout-padding></o-text-input>
+        <o-text-input attr="ANID" fxFlex layout-padding></o-text-input>
+      </o-row>
     </o-form>
   </div>
 </div>
