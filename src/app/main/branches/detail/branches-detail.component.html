@@ -1,6 +1,6 @@
-<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" service="branches" entity="branch" keys="OFFICEID"
+<o-form editable-detail="false" fxLayout="column" show-header="yes" header-actions="R;I;U;D" service="branches" entity="branch" keys="OFFICEID"
   #oForm columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT">
-  
+
     <o-column class="rounded-panel" fxFill  title-label="BRANCH_INFO">
       <div fxLayout="row" fxLayoutAlign="start center">
         <o-text-input attr="OFFICEID" xl.fxFlex="20" fxFlex="20"  class="margin-right-24" ></o-text-input>
@@ -12,10 +12,10 @@
         <o-text-input attr="ADDRESS" fxFlex="65"  class="margin-right-24"></o-text-input>
       </div>
     </o-column>
-  
 
 
-  <md-tab-group fxFill class="vertical-padding-8"> 
+
+  <md-tab-group fxFill class="vertical-padding-8">
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div layout-padding>

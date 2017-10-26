@@ -5,7 +5,6 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';
 import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
-import { EmployeesEditComponent } from './employees-edit/employees-edit.component';
 import { ODataTableModule } from 'ontimize-web-ngx-datatable';
 
 @NgModule({
@@ -15,6 +14,6 @@ import { ODataTableModule } from 'ontimize-web-ngx-datatable';
     EmployeesRoutingModule,
     ODataTableModule
   ],
-  declarations: [EmployeesHomeComponent, EmployeesDetailComponent, EmployeesEditComponent]
+  declarations: [EmployeesHomeComponent, EmployeesDetailComponent]
 })
 export class EmployeesModule { }

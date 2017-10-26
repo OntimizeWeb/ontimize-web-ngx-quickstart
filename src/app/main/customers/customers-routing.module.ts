@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CustomersDetailComponent } from './detail/customers-detail.component';
-import { CustomersEditComponent } from './edit/customers-edit.component';
+// import { CustomerDetailFormComponent } from './detail/customers-detail-form.component';
 import { CustomersHomeComponent } from './home/customers-home.component';
 import { CustomersNewComponent } from './new/customers-new.component';
 import { AccountsModule } from '../accounts/accounts.module';
@@ -13,7 +13,7 @@ export function loadAccountsModule() {
 
 export const CUSTOMERS_MODULE_DECLARATIONS = [
   CustomersDetailComponent,
-  CustomersEditComponent,
+  // CustomerDetailFormComponent,
   CustomersHomeComponent,
   CustomersNewComponent
 ];
@@ -22,11 +22,7 @@ export const routes: Routes = [
   { path: '', component: CustomersHomeComponent },
   { path: 'new', component: CustomersNewComponent },
   { path: ':CUSTOMERID', component: CustomersDetailComponent },
-  { path: ':CUSTOMERID/edit', component: CustomersEditComponent },
-  {
-    path: ':CUSTOMERID/accounts',
-    loadChildren: loadAccountsModule
-  }
+  { path: ':CUSTOMERID/accounts', loadChildren: loadAccountsModule }
 ];
 
 @NgModule({
