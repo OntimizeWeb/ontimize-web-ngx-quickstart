@@ -56,6 +56,7 @@
   "BRANCHES": "Sucursales",
   "BRANCH_INFO": "Información de la sucursal",
   "BRANCH_PLAN": "Plano",
+  "BRANCHPLAN": "Plano",
   "USER_DATA": "Datos del usuario",
   "USER_IMAGE": "Imagen del usuario",
   "CHANGE_PASSWORD": "Cambiar contraseña",
@@ -93,5 +94,6 @@
   "EMPLOYEEADDRESS": "Dirección",
   "EMPLOYEESTARTDATE": "Fecha inicio",
   "EMPLOYEEEMAIL": "Email",
-  "EMPLOYEETYPEID": "Tipo empleado"
+  "EMPLOYEETYPEID": "Tipo empleado",
+  "BRANCH_PLAN_UPLOADED": "El plano ha sido cargado"
 }
