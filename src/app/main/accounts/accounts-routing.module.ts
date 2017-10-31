@@ -5,6 +5,9 @@ import { AccountsDetailComponent } from './detail/accounts-detail.component';
 import { AccountsEditComponent } from './edit/accounts-edit.component';
 import { AccountsHomeComponent } from './home/accounts-home.component';
 import { AccountsNewComponent } from './new/accounts-new.component';
+import { TransactionsModule } from './detail/transactions/transactions.module';
+
+export function loadTransactionsModule() {  return TransactionsModule; }
 
 export const ACCOUNTS_MODULE_DECLARATIONS = [
   AccountsDetailComponent,
@@ -18,10 +21,7 @@ export const routes: Routes = [
   { path: 'new', component: AccountsNewComponent },
   { path: ':ACCOUNTID', component: AccountsDetailComponent },
   { path: ':ACCOUNTID/edit', component: AccountsEditComponent },
-  {
-    path: ':ACCOUNTID/transactions',
-    loadChildren: './detail/transactions/transactions.module#TransactionsModule'
-  }
+  { path: ':ACCOUNTID/transactions', loadChildren: loadTransactionsModule }
 ];
 
 @NgModule({

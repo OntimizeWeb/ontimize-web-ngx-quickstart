@@ -9,8 +9,7 @@ export const TRANSACTIONS_MODULE_DECLARATIONS = [
 
 const routes: Routes = [
   { path: 'new', component: AccountTransactionsDetailComponent },
-  { path: ':MOVEMENTID', component: AccountTransactionsDetailComponent },
-  { path: ':MOVEMENTID/edit', component: AccountTransactionsDetailComponent }
+  { path: ':MOVEMENTID', component: AccountTransactionsDetailComponent }
 ];
 
 @NgModule({

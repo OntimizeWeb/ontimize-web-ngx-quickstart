@@ -1,8 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
 import { AppModule } from './app/app.module';
-import { CONFIG } from './app/app.config';
 
 import { environment } from './environments/environment';
 import { ontimizePostBootstrap } from 'ontimize-web-ngx';

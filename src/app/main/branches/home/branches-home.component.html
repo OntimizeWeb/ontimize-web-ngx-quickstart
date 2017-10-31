@@ -1,11 +1,9 @@
 <div fxFill fxLayout="column" fxLayoutAlign="center top" class="o-table-wrapper">
 
-  <o-datatable #table fxFlex layout-padding attr="branches" service="branches" entity="branch" title="BRANCHES" show-table-buttons-text="yes" select-all-checkbox="yes"
-    columns="OFFICEID;NAME;ADDRESS;STARTDATE" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID"
-    query-on-init="true" query-rows="10" quick-filter="yes" edit-button-in-row="yes" pageable="no" row-height="medium">
-
-   <o-datatable-column attr="OFFICEID" title="OFFICEID" width="15%" class="o-table-column-centered"></o-datatable-column>
-   <o-datatable-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-datatable-column>
+  <o-datatable #table layout-padding attr="branches" service="branches" entity="branch" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
+    visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="-1" pageable="no">
+    <o-datatable-column attr="OFFICEID" title="OFFICEID" width="15%" class="o-table-column-centered"></o-datatable-column>
+    <o-datatable-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-datatable-column>
   </o-datatable>
 
 </div>

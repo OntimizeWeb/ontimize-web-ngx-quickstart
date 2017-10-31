@@ -1,13 +1,11 @@
 <div fxFill fxLayout="column" fxLayoutAlign="center top" class="o-table-wrapper">
   <o-datatable
     service="branches" entity="account" keys="ACCOUNTID"
-    detail-button-in-row="yes"
-    edit-button-in-row="yes"
 
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
-    sort-columns="ANID"  query-on-init="true" query-rows="15"
+    sort-columns="ANID"  query-rows="15"
     quick-filter="yes" pageable="no">
 
    <o-datatable-column attr="ENTITYID" title="ENTITYID" width="14%" class="o-table-column-centered"></o-datatable-column>
