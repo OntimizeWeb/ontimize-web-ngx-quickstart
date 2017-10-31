@@ -1,39 +1,44 @@
-<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" service="branches" entity="branch" keys="OFFICEID"
-  #oForm columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT">
-  
-    <o-column class="rounded-panel" fxFill  title-label="BRANCH_INFO">
-      <div fxLayout="row" fxLayoutAlign="start center">
-        <o-text-input attr="OFFICEID" xl.fxFlex="20" fxFlex="20"  class="margin-right-24" ></o-text-input>
-        <o-text-input attr="PHONE" xl.fxFlex="15" lg.fxFlex="15"  fxFlex="20" class="margin-right-24"></o-text-input>
-        <o-date-input attr="STARTDATE" xl.fxFlex="15" fxFlex="20" class="margin-right-24" ></o-date-input>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <o-text-input attr="NAME" fxFlex="35"  class="margin-right-24"></o-text-input>
-        <o-text-input attr="ADDRESS" fxFlex="65"  class="margin-right-24"></o-text-input>
-      </div>
-    </o-column>
-  
+<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" service="branches" entity="branch" keys="OFFICEID" #oForm
+  columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT">
+
+  <o-column class="rounded-panel" fxFill title-label="BRANCH_INFO">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <o-text-input #officeId attr="OFFICEID" xl.fxFlex="20" fxFlex="20" class="margin-right-24"></o-text-input>
+      <o-text-input attr="PHONE" xl.fxFlex="15" lg.fxFlex="15" fxFlex="20" class="margin-right-24"></o-text-input>
+      <o-date-input attr="STARTDATE" xl.fxFlex="15" fxFlex="20" class="margin-right-24"></o-date-input>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <o-text-input attr="NAME" fxFlex="35" class="margin-right-24"></o-text-input>
+      <o-text-input attr="ADDRESS" fxFlex="65" class="margin-right-24"></o-text-input>
+    </div>
+  </o-column>
 
 
-  <md-tab-group fxFill class="vertical-padding-8"> 
+
+  <md-tab-group fxFill class="vertical-padding-8">
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div layout-padding>
         <o-datatable #accountsTable service="customers" entity="customerAccount" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
           sort-columns="STARTDATE" keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="5" quick-filter="yes"
-          detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="no" delete-button="no" insert-button="no">
+          detail-form-route="accounts" edit-form-route="accounts" edit-button-in-row="yes" pageable="no" delete-button="no"
+          insert-button="no">
 
-         <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
-         <o-datatable-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+          <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
+          <o-datatable-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
             decimal-separator=",">
           </o-datatable-column>
-         <o-datatable-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
+          <o-datatable-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
         </o-datatable>
       </div>
     </md-tab>
     <md-tab label="{{ 'BRANCH_PLAN' | oTranslate }}">
-      <o-image attr="BRANCHPLAN" class="branch-plan" fxFill empty-image="./assets/images/no-image.png"></o-image>
+      <o-column>
+        <o-file-input attr="BRANCH_PLAN" service="branches" entity="plan" accept-file-type="image/*" show-info="yes" (onUploadFile)="onUploadFile($event)"
+          [additional-data]="getFileData()" layout-padding></o-file-input>
+        <o-image attr="BRANCHPLAN" class="branch-plan" fxFill empty-image="./assets/images/no-image.png" enabled="no"></o-image>
+      </o-column>
     </md-tab>
 
   </md-tab-group>
