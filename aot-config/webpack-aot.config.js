@@ -13,7 +13,7 @@ const config = {
     main: helpers.root('tmp-src/main-aot.ts'),
     polyfills: helpers.root('tmp-src/polyfills.ts'),
     vendor: helpers.root('tmp-src/vendor-aot.ts'),
-    scripts: APP_SCRIPTS
+    scripts: ["tmp-src/../node_modules/jquery/dist/jquery.js","tmp-src/../node_modules/colresizable/colResizable-1.6.min.js","tmp-src/../node_modules/pdfmake/build/pdfmake.js","tmp-src/../node_modules/pdfmake/build/vfs_fonts.js","tmp-src/assets/js/domchange.js","tmp-src/assets/js/keyboard.js"]
   },
 
   // devtool: 'source-map',
