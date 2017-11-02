@@ -56,6 +56,7 @@
   "BRANCHES": "Branches",
   "BRANCH_INFO": "Branch info",
   "BRANCH_PLAN": "Branches",
+  "BRANCHPLAN": "Plan",
   "USER_DATA": "User data",
   "USER_IMAGE": "User image",
   "CHANGE_PASSWORD": "Change password",
@@ -93,5 +94,6 @@
   "EMPLOYEEADDRESS": "Address",
   "EMPLOYEESTARTDATE": "Start date",
   "EMPLOYEEEMAIL": "Email",
-  "EMPLOYEETYPEID": "Employee type"
+  "EMPLOYEETYPEID": "Employee type",
+  "BRANCH_PLAN_UPLOADED": "Branch plan uploaded"
 }
