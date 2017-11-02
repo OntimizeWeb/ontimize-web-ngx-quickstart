@@ -11,18 +11,6 @@
   margin-right: 24px;
 }
 
-o-form {
-  o-form-toolbar.o-form-toolbar-floating {
-    top: 56px!important;
-    // right: 16px!important;
-    padding-top: 16px;
-    padding-bottom: 0px;
-    background: #eeeeee;
-  }
-  form:not(.form-no-toolbar) {
-    top: 66px!important;
-  }
-}
 
 .line-chart .nv-x.nv-axis .nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMin-x text {
   transform: translate(0px, 0px) rotate(-90deg);

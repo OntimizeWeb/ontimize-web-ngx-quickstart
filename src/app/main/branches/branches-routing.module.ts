@@ -4,6 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { BranchesDetailComponent } from './detail/branches-detail.component';
 import { BranchesEditComponent } from './edit/branches-edit.component';
 import { BranchesHomeComponent } from './home/branches-home.component';
+import { AccountsModule } from '../accounts/accounts.module';
+
+export function loadAccountsModule() {
+  return AccountsModule;
+}
 
 export const BRANCHES_MODULE_DECLARATIONS = [
   BranchesDetailComponent,
@@ -16,10 +21,7 @@ export const routes: Routes = [
   { path: 'new', component: BranchesEditComponent },
   { path: ':OFFICEID', component: BranchesDetailComponent },
   { path: ':OFFICEID/edit', component: BranchesEditComponent },
-  {
-    path: ':OFFICEID/accounts',
-    loadChildren: '../accounts/accounts.module#AccountsModule'
-  }
+  { path: ':OFFICEID/accounts', loadChildren: loadAccountsModule }
 ];
 
 

@@ -1,14 +1,22 @@
-import { NgModule, NgModuleFactory } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
+import { LoginModule } from './login/login.module';
+import { MainModule } from './main/main.module';
+
+export function loadLoginModule() {
+  return LoginModule;
+}
+
+export function loadMainModule() {
+  return MainModule;
+}
+
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'main',
-    pathMatch: 'prefix',
-    canActivate: [AuthGuardService]
-  }
+  { path: 'main', loadChildren: loadMainModule, canActivate: [AuthGuardService] },
+  { path: 'login', loadChildren: loadLoginModule },
+  { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
 const opt = {

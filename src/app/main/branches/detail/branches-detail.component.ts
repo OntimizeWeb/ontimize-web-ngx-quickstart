@@ -1,8 +1,12 @@
 import {
   ViewEncapsulation,
   Component,
-  OnInit
+  OnInit,
+  ViewChild
 } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx'
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'branches-detail',
@@ -12,9 +16,26 @@ import {
 })
 export class BranchesDetailComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('officeId')
+  officeId: OTextInputComponent;
 
-  ngOnInit() {
+  constructor(
+    public snackBar: MdSnackBar,
+    private translateService: OTranslateService
+  ) { }
+
+  ngOnInit() { }
+
+  getFileData() {
+    return {
+      'OFFICEID': this.officeId.getValue()
+    };
+  }
+
+  onUploadFile(e: Event) {
+    this.snackBar.open(this.translateService.get("BRANCH_PLAN_UPLOADED"), this.translateService.get("ACCEPT"), {
+      duration: 2000,
+    });
   }
 
 }
