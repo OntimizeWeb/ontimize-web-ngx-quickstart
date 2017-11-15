@@ -1,6 +1,6 @@
 <div fxLayout="column" fxFill fxLayoutAlign="center top">
-  <o-form fxLayout="column" show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID" #oForm class="standalone-form-container"
-    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
+  <o-form fxLayout="column" show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID"
+    #oForm class="standalone-form-container" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
 
     <o-row attr="main_row" fxFill fxFlex layout-align="center stretch">
       <o-column attr="col_left" layout-padding fxFlex="55">
@@ -13,18 +13,18 @@
         </o-row>
 
         <o-row attr="row2" title-label="MOVEMENT_DATA" fxFill layout-align="start center">
-          <o-text-input attr="CONCEPT" layout-padding fxFlex style="padding-left: 0;"></o-text-input>
-          <o-currency-input attr="MOVEMENT" fxFlex layout-padding required="yes"></o-currency-input>
-          <o-combo attr="MOVEMENTTYPEID" fxFlex layout-padding query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
+          <o-text-input attr="CONCEPT" layout-padding fxFlex></o-text-input>
+          <o-currency-input attr="MOVEMENT" layout-padding required="yes" fxFlex></o-currency-input>
+          <o-combo attr="MOVEMENTTYPEID" layout-padding query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
             service="movements" entity="movementType" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-            required="yes"></o-combo>
-          <o-date-input attr="DATE_" layout-padding required="yes"></o-date-input>
+            required="yes" fxFlex></o-combo>
+          <o-date-input attr="DATE_" layout-padding required="yes" fxFlex></o-date-input>
         </o-row>
 
       </o-column>
 
-      <o-column attr="col_right" layout-padding fxFill fxFlex="45">
-        <o-textarea-input attr="COMMENTS" class="comments" fxFill></o-textarea-input>
+      <o-column attr="col_right" layout-padding fxFill fxFlex="45" layout-align="end center">
+        <o-textarea-input attr="COMMENTS" class="comments" rows="10" fxFill></o-textarea-input>
       </o-column>
     </o-row>
 
