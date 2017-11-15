@@ -9,11 +9,6 @@ import { CustomersModule } from './customers/customers.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { BranchesModule } from './branches/branches.module';
 import { EmployeesModule } from './employees/employees.module';
-// import { ExtraModule } from './extra/extra.module';
-
-// export function loadExtraModule() {
-//   return ExtraModule;
-// }
 
 export function loadHomeModule() {
   return HomeModule;
@@ -48,7 +43,6 @@ export const routes: Routes = [
     path: '', component: MainComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      // { path: 'extra', loadChildren: loadExtraModule },
       { path: 'home', loadChildren: loadHomeModule },
       { path: 'about', loadChildren: loadAboutModule },
       { path: 'settings', loadChildren: loadSettingsModule },
