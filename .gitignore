@@ -9,6 +9,7 @@
 *.ngstyle.ts
 *.d.ts
 /aot-config/*_original.*
+/src/app/main/extra
 
 # dependencies
 /node_modules

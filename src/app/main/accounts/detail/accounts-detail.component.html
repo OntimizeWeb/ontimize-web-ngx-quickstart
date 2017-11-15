@@ -56,10 +56,10 @@
 
       <div fxLayout="row" class="vertical-padding-8">
         <div fxLayout="row" fxFlex class="rounded-panel" layout-padding>
-          <o-datatable service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-button-in-row="true" detail-form-route="transactions"
-            edit-button-in-row="true" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
+          <o-datatable service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-form-route="transactions"
+            edit-form-route="transactions" detail-mode="click" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
             visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"
-            query-rows="5" select-all-checkbox="true" quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
+            query-rows="5" quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
 
            <o-datatable-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-datatable-column>
            <o-datatable-column attr="CONCEPT" title="CONCEPT" width="18%"></o-datatable-column>
