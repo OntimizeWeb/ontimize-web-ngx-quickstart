@@ -33,7 +33,7 @@ export class BranchesDetailComponent implements OnInit {
   }
 
   onUploadFile(e: Event) {
-    this.snackBar.open(this.translateService.get("BRANCH_PLAN_UPLOADED"), this.translateService.get("ACCEPT"), {
+    this.snackBar.open(this.translateService.get('BRANCH_PLAN_UPLOADED'), this.translateService.get('ACCEPT'), {
       duration: 2000,
     });
   }
