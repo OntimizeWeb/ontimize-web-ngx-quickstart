@@ -13,7 +13,6 @@ import { FormControl } from '@angular/forms';
     }
   ],
   templateUrl: './o-form.component.html',
-  styleUrls: ['./o-form.component.scss'],
   inputs: OFormComponent.DEFAULT_INPUTS_O_FORM,
   outputs: OFormComponent.DEFAULT_OUTPUTS_O_FORM,
   encapsulation: ViewEncapsulation.None,
