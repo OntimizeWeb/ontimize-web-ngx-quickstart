@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, Injector } from '@angular/core';
+import { NavigationService } from "ontimize-web-ngx";
 
 @Component({
   selector: 'o-app',
@@ -8,6 +9,8 @@ import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 export class AppComponent implements OnInit {
 
   constructor(protected injector: Injector) {
+    const navigationService = injector.get(NavigationService);
+    navigationService.initialize();
   }
 
   ngOnInit() {
