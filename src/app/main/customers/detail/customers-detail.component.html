@@ -1,5 +1,5 @@
-<customers-detail-form service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U" #oDetailForm
-  keys="CUSTOMERID" keys-sql-types="INTEGER">
+<customers-detail-form service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D"
+  #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER">
 
   <md-tab-group fxFill>
 
@@ -27,9 +27,9 @@
               </o-list-picker>
 
               <!-- <o-combo fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
-                filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
-                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
-              </o-combo> -->
+                  filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
+                  columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
+                </o-combo> -->
             </div>
           </o-column>
 
@@ -48,20 +48,22 @@
     </md-tab>
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <o-datatable #accountsTable service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
-        detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
+      <!-- detail-button-in-row="yes" edit-button-in-row="yes" -->
+
+      <o-table #accountsTable service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-form-route="accounts"
+        edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
         visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false"
         query-rows="6" quick-filter="yes" pageable="no" insert-button="no" row-height="medium" class="vertical-padding-8">
 
-        <o-datatable-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-datatable-button>
+        <o-table-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-table-button>
 
-        <o-datatable-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-datatable-column>
-        <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
-        <o-datatable-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+        <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+        <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+        <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
           decimal-separator=",">
-        </o-datatable-column>
-        <o-datatable-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
-      </o-datatable>
+        </o-table-column>
+        <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+      </o-table>
 
       <!-- Falta attr -->
       <!-- <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"

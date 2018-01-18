@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { CommonModule } from '@angular/common';
-import { MovementTypesCellRendererComponent } from './movement-types-cell-renderer';
 
+import { MENU_COMPONENTS } from './app.menu.config';
+import { MovementTypesCellRendererComponent } from './movement-types-renderer/movement-types-cell-renderer';
 
 @NgModule({
   imports: [
     OntimizeWebModule
   ],
   declarations: [
-    MovementTypesCellRendererComponent
+    MovementTypesCellRendererComponent,
+    ...MENU_COMPONENTS
   ],
   exports: [
     CommonModule,
-    MovementTypesCellRendererComponent
-  ]
+    MovementTypesCellRendererComponent,
+    ...MENU_COMPONENTS
+  ],
+  entryComponents: [...MENU_COMPONENTS]
 })
 export class SharedModule { }

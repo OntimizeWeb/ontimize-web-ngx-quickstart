@@ -1,16 +1,16 @@
 <div fxLayout="column" fxLayoutAlign="center top" fxFill class="account-detail">
-  <o-form editable-detail="false" service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID" fxLayout="column"
-    show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
+  <o-form editable-detail="false" service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID"
+    fxLayout="column" show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel">
 
     <o-column attr="main_column" layout-align="center stretch">
 
-      <div fxLayout="row" class="vertical-padding-8">
+      <div fxLayout="row">
         <o-row attr="row1" fxFlex layout-padding layout-align="space-between center" class="rounded-panel" title-label="ACCOUNT">
 
           <o-column layout-align="center center" fxFlex="50">
             <div fxLayout="column" fxLayoutAlign="center start">
               <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
-              <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true,  decimalDigits:2} }} €</span>
+              <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true, decimalDigits:2} }} €</span>
             </div>
           </o-column>
 
@@ -29,7 +29,7 @@
                 <md-icon md-list-icon (click)="onRemoveCustomerClick(row)">delete</md-icon>
               </md-list-item>
             </o-list>
-            <!--  -->
+
             <o-list-picker attr="customersPicker" class="display-none" (onChange)="onNewCustomerSelected($event)" #customerListPicker
               query-on-init="no" automatic-binding="no" query-on-bind="no" [static-data]="availableCustomersToAdd" required="no"
               enabled="yes" filter="yes" keys="CUSTOMERID" value-column="CUSTOMERID" parent-keys="ACCOUNTID" columns="ID;NAME;SURNAME"
@@ -54,22 +54,24 @@
         </div>
       </div>
 
-      <div fxLayout="row" class="vertical-padding-8">
+      <div fxLayout="row">
         <div fxLayout="row" fxFlex class="rounded-panel" layout-padding>
-          <o-datatable service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-form-route="transactions"
-            edit-form-route="transactions" detail-mode="click" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
-            visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"
-            query-rows="5" quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
+          <o-table fxFlex service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-form-route="transactions"
+            edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
+            title="MOVEMENTS" sort-columns="DATE_" query-on-init="false" query-rows="5" quick-filter="yes" (change)="onTableDataChange($event)"
+            pageable="no">
 
-           <o-datatable-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-datatable-column>
-           <o-datatable-column attr="CONCEPT" title="CONCEPT" width="18%"></o-datatable-column>
-           <o-datatable-column attr="MOVEMENT" title="MOVEMENT" width="18%" type="currency" currency-symbol="€" currency-symbol-position="right"
-              thousand-separator="." decimal-separator=","></o-datatable-column>
-           <o-datatable-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES">
+            <o-table-columns-filter></o-table-columns-filter>
+
+            <o-table-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-table-column>
+            <o-table-column attr="CONCEPT" title="CONCEPT" width="18%"></o-table-column>
+            <o-table-column attr="MOVEMENT" title="MOVEMENT" width="18%" type="currency" currency-symbol="€" currency-symbol-position="right"
+              thousand-separator="." decimal-separator=","></o-table-column>
+            <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES">
               <movement-types-cell-renderer>
               </movement-types-cell-renderer>
-            </o-datatable-column>
-          </o-datatable>
+            </o-table-column>
+          </o-table>
         </div>
       </div>
     </o-column>
