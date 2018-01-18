@@ -11,20 +11,20 @@ export const MENU_CONFIG: MenuRootItem[] = [
         name: 'CUSTOMERS',
         tooltip: 'CUSTOMERS_CONTENT',
         route: '/main/customers',
-        icon: 'people',
-        image: './assets/images/ontimize.png',
-        component: CardContentComponent,
-        'component-inputs': {
-          color:
-          'red'
-        }
+        icon: 'people'
+        // ,
+        // component: CardContentComponent,
+        // 'component-inputs': {
+        //   color:
+        //   'red'
+        // }
       },
       {
         id: 'accounts',
         name: 'ACCOUNTS',
+        tooltip: 'ACCOUNTS_CONTENT',
         route: '/main/accounts',
         icon: 'credit_card',
-        image: './assets/images/ontimize.png'
         // ,
         // component: CardContentComponent,
         // 'component-inputs': {
@@ -34,23 +34,27 @@ export const MENU_CONFIG: MenuRootItem[] = [
       {
         id: 'branches',
         name: 'BRANCHES',
+        tooltip: 'BRANCHES_CONTENT',
         route: '/main/branches',
-        icon: 'account_balance',
-        component: CardContentComponent,
-        'component-inputs': {
-          color: 'blue'
-        }
+        icon: 'account_balance'
+        // ,
+        // component: CardContentComponent,
+        // 'component-inputs': {
+        //   color: 'blue'
+        // }
       },
       {
         id: 'employees',
         name: 'EMPLOYEES',
+        tooltip: 'EMPLOYEES_CONTENT',
         route: '/main/employees',
-        icon: 'person',
-        component: CardContentComponent,
-        'component-inputs': {
-          color: 'yellow'
-        }
-      },
+        icon: 'person'
+        // ,
+        // component: CardContentComponent,
+        // 'component-inputs': {
+        //   color: 'yellow'
+        // }
+      }
     ]
   },
   {
