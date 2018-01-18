@@ -3,15 +3,13 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../../shared/shared.module';
 import { AccountsRoutingModule, ACCOUNTS_MODULE_DECLARATIONS } from './accounts-routing.module';
 import { OChartModule } from 'ontimize-web-ngx-charts';
-import { ODataTableModule } from 'ontimize-web-ngx-datatable';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
     OChartModule,
-    AccountsRoutingModule,
-    ODataTableModule
+    AccountsRoutingModule
   ],
   declarations: ACCOUNTS_MODULE_DECLARATIONS,
   exports: ACCOUNTS_MODULE_DECLARATIONS

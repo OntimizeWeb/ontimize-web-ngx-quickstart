@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -32,17 +32,20 @@
     "@ngx-translate/core": "8.0.0",
     "@ngx-translate/http-loader": "1.0.2",
     "core-js": "^2.4.1",
+    "express": "^4.16.2",
+    "cors": "2.8.4",
+    "body-parser": "~1.5.2",
     "lodash": "^4.17.4",
-    "ontimize-web-ngx": "2.1.0-rc.1",
+    "ontimize-web-ngx": "2.1.0-rc.3",
     "ontimize-web-ngx-charts": "2.0.1",
-    "ontimize-web-ngx-datatable": "1.0.5",
-    "ontimize-web-ngx-theming": "1.0.2",
+    "ontimize-web-ngx-datatable": "1.0.6",
+    "ontimize-web-ngx-theming": "1.0.4",
     "reflect-metadata": "0.1.3",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.12"
   },
   "devDependencies": {
-    "ontimize-web-ngx-tools": "1.0.2",
+    "ontimize-web-ngx-tools": "1.0.3",
     "@angular/cli": "1.3.2",
     "@angular/compiler-cli": "4.3.6",
     "@types/jasmine": "2.5.38",

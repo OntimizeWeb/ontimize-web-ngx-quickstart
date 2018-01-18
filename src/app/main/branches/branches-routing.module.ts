@@ -20,6 +20,7 @@ export const routes: Routes = [
   { path: '', component: BranchesHomeComponent },
   { path: 'new', component: BranchesEditComponent },
   { path: ':OFFICEID', component: BranchesDetailComponent },
+  { path: ':OFFICEID/edit', component: BranchesEditComponent },
   { path: ':OFFICEID/accounts', loadChildren: loadAccountsModule }
 ];
 

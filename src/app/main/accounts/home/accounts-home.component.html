@@ -1,10 +1,13 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start">
-  <o-datatable service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+  <o-table service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP" fxFlex attr="accounts" title="ACCOUNTS" sort-columns="ANID" query-rows="15"
-    pageable="no" row-height="medium">
-    <o-datatable-column attr="ENTITYID" title="ENTITYID" width="14%" class="o-table-column-centered"></o-datatable-column>
-    <o-datatable-column attr="OFFICEID" title="OFFICEID" width="14%" class="o-table-column-centered"></o-datatable-column>
-    <o-datatable-column attr="CDID" title="CDID" width="14%" class="o-table-column-centered"></o-datatable-column>
-    <o-datatable-column attr="ANID" title="ANID" width="14%" class="o-table-column-centered"></o-datatable-column>
-  </o-datatable>
+    pageable="no">
+
+    <o-table-columns-filter></o-table-columns-filter>
+
+    <o-table-column attr="ENTITYID" title="ENTITYID" width="14%" class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="OFFICEID" title="OFFICEID" width="14%" class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="CDID" title="CDID" width="14%" class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="ANID" title="ANID" width="14%" class="o-table-column-centered"></o-table-column>
+  </o-table>
 </div>
