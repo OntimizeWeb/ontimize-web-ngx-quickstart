@@ -73,6 +73,13 @@
         </o-list-picker> -->
     </md-tab>
 
+    <md-tab label="{{ 'DOCUMENTS' | oTranslate }}">
+      <div fxLayout="column" layout-padding>
+        <o-text-input attr="ID_DMS_DOC"></o-text-input>
+        <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>
+      </div>
+    </md-tab>
+
     <!-- <md-tab label="{{ 'LOCATION' | oTranslate }}">
       <div fxLayout="column" layout-padding>
 
