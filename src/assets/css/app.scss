@@ -25,6 +25,8 @@
 @import 'node_modules/ontimize-web-ngx-datatable/o-datatable-theme.scss';
 @include o-datatable-theme($theme);
 
+@import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
+@include o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
 */
