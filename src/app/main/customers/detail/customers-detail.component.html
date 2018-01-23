@@ -1,5 +1,5 @@
 <customers-detail-form service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D"
-  #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER">
+  #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
 
   <md-tab-group fxFill>
 
@@ -75,7 +75,6 @@
 
     <md-tab label="{{ 'DOCUMENTS' | oTranslate }}">
       <div fxLayout="column" layout-padding>
-        <o-text-input attr="ID_DMS_DOC"></o-text-input>
         <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>
       </div>
     </md-tab>
