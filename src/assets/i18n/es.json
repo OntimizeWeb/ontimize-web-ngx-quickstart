@@ -94,5 +94,6 @@
   "EMPLOYEESTARTDATE": "Fecha inicio",
   "EMPLOYEEEMAIL": "Email",
   "EMPLOYEETYPEID": "Tipo empleado",
-  "BRANCH_PLAN_UPLOADED": "El plano ha sido cargado"
+  "BRANCH_PLAN_UPLOADED": "El plano ha sido cargado",
+  "DOCUMENTS" : "Documentos"
 }
