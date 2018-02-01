@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
+  apiEndpoint: 'http://10.7.0.214:9080/qsallcomponents-jee/services/rest',
   production: false
 };
