@@ -1,5 +1,5 @@
 <!-- <o-form-layout-manager mode="dialog" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=", "> -->
-
+<o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=",">
   <div fxFill fxLayout="column" fxLayoutAlign="start">
     <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
@@ -15,4 +15,4 @@
     </o-table>
   </div>
 
-<!-- </o-form-layout-manager> -->
+</o-form-layout-manager>

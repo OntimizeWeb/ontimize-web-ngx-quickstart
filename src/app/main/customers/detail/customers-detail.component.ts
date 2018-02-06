@@ -1,25 +1,16 @@
-import {
-  Injector,
-  ViewChild,
-  Component,
-  OnInit,
-  AfterContentInit
-} from '@angular/core';
-
-import {
-  OFormComponent,
-  OntimizeService,
-  OListPickerComponent,
-  OTableComponent,
-  ORealPipe
-} from 'ontimize-web-ngx';
+import { Injector, ViewChild, Component, OnInit, AfterContentInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe } from 'ontimize-web-ngx';
 // import { ChartSeries } from 'ontimize-web-ngx-charts';
 
 @Component({
   selector: 'customers-detail',
   templateUrl: './customers-detail.component.html',
-  styleUrls: ['./customers-detail.component.scss']
+  styleUrls: ['./customers-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.customers-detail]': 'true'
+  }
 })
 export class CustomersDetailComponent implements OnInit, AfterContentInit {
   protected realPipe: ORealPipe;
