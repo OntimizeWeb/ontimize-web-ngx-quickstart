@@ -25,10 +25,6 @@
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/colresizable/colResizable-1.6.min.js",
-        "../node_modules/pdfmake/build/pdfmake.js",
-        "../node_modules/pdfmake/build/vfs_fonts.js",
         "assets/js/domchange.js",
         "assets/js/keyboard.js"
       ],
