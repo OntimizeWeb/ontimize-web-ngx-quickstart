@@ -44,14 +44,14 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.form.onFormDataLoaded.subscribe(data => {
-      if (data.hasOwnProperty('CUSTOMERID')) {
-        this.customerId = data['CUSTOMERID'];
-      }
-      this.onChartData(data);
-    }, error => {
-      console.log(error);
-    });
+    // this.form.onFormDataLoaded.subscribe(data => {
+    //   if (data.hasOwnProperty('CUSTOMERID')) {
+    //     this.customerId = data['CUSTOMERID'];
+    //   }
+    //   this.onChartData(data);
+    // }, error => {
+    //   console.log(error);
+    // });
   }
 
   protected onChartData(data: Object) {
