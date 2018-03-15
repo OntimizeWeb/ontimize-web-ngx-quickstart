@@ -6,6 +6,7 @@
   "LOGOUT": "Logout",
   "VIEW": "Views",
   "HOME": "Home",
+  "MAIN": "Home",
   "HELP": "Help",
   "ABOUT": "About",
   "CUSTOMERS": "Customers",
@@ -94,5 +95,6 @@
   "EMPLOYEESTARTDATE": "Start date",
   "EMPLOYEEEMAIL": "Email",
   "EMPLOYEETYPEID": "Employee type",
-  "BRANCH_PLAN_UPLOADED": "Branch plan uploaded"
+  "BRANCH_PLAN_UPLOADED": "Branch plan uploaded",
+  "DOCUMENTS" : "Documents"
 }

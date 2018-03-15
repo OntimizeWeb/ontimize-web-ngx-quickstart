@@ -1,12 +1,15 @@
 import { Config } from 'ontimize-web-ngx';
-
 import { SERVICE_CONFIG } from './shared/app.services.config';
 import { MENU_CONFIG } from './shared/app.menu.config';
+import { environment } from '../environments/environment';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest',
-  // apiEndpoint: 'http://localhost:9080/qsallcomponents-jee/services/rest',
+  apiEndpoint: environment.apiEndpoint,
+
+  bundle: {
+    path: 'bundle'
+  },
 
   //  Application identifier. Is the unique package identifier of the app.
   // It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.
