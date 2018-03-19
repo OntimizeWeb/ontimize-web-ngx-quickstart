@@ -11,18 +11,18 @@
         <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
 
         <div fxLayout="row">
-          <md-form-field fxFill>
+          <mat-form-field fxFill>
             <input mdInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
-          </md-form-field>
+          </mat-form-field>
         </div>
         <div fxLayout="row">
-            <md-form-field fxFill>
+            <mat-form-field fxFill>
               <input mdInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
-            </md-form-field>
+            </mat-form-field>
         </div>
-      
 
-        <button md-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+
+        <button mat-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
         <div layout-padding></div>
         <div layout-padding></div>
         <div fxLayout="column" fxLayoutAlign="center center" layout-padding>

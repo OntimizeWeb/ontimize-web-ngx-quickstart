@@ -20,16 +20,16 @@
 
               <div fxLayout="row" fxLayoutAlign="start center">
                 <span class="account-detail-span-title">{{ 'CUSTOMERS' | oTranslate | uppercase }}</span>
-                <md-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</md-icon>
+                <mat-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</mat-icon>
               </div>
 
               <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID"
                 query-on-init="no" query-on-bind="yes" title="" refresh-button="no" insert-button="no" selectable="false" quick-filter="false"
                 dense="yes" pageable="no" controls="no">
-                <md-list-item *ngFor="let row of customerList.dataArray">
-                  <h4 md-line>{{row.NAME}} {{ row.SURNAME }}</h4>
-                  <md-icon md-list-icon (click)="onRemoveCustomerClick(row)">delete</md-icon>
-                </md-list-item>
+                <mat-list-item *ngFor="let row of customerList.dataArray">
+                  <h4 mat-line>{{row.NAME}} {{ row.SURNAME }}</h4>
+                  <mat-icon mat-list-icon (click)="onRemoveCustomerClick(row)">delete</mat-icon>
+                </mat-list-item>
               </o-list>
 
               <o-list-picker attr="customersPicker" class="display-none" (onChange)="onNewCustomerSelected($event)" #customerListPicker

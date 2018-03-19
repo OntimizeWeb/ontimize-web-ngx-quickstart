@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { OFileManagerModule} from 'ontimize-web-ngx-filemanager';
+// import { OFileManagerModule} from 'ontimize-web-ngx-filemanager';
 import { SharedModule } from '../../shared/shared.module';
 import { CustomersRoutingModule, CUSTOMERS_MODULE_DECLARATIONS } from './customers-routing.module';
 
@@ -8,8 +8,9 @@ import { CustomersRoutingModule, CUSTOMERS_MODULE_DECLARATIONS } from './custome
   imports: [
     SharedModule,
     OntimizeWebModule,
-    CustomersRoutingModule,
-    OFileManagerModule
+    CustomersRoutingModule
+    // ,
+    // OFileManagerModule
   ],
   declarations: CUSTOMERS_MODULE_DECLARATIONS,
   exports: CUSTOMERS_MODULE_DECLARATIONS,

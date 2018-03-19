@@ -1,7 +1,7 @@
 <div fxFill fxLayout="column" fxLayoutAlign="center top">
   <o-table fxFill attr="employees" service="employees" entity="employee" title="EMPLOYEES" columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"
     visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL" keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME"
-    query-rows="10" detail-mode="none" insert-button="no">
+    query-rows="10" detail-mode="none" insert-button="no" pageable="no">
     <!-- <o-table-column width="10px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>

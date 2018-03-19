@@ -3,9 +3,9 @@
   <customers-detail-form service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D"
     #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
     <!-- show-header-navigation="yes" -->
-    <md-tab-group fxFill>
+    <mat-tab-group fxFill>
 
-      <md-tab label="{{ 'DATA' | oTranslate }}">
+      <mat-tab label="{{ 'DATA' | oTranslate }}">
         <div fxLayout="column" layout-padding>
 
           <o-row attr="row1" layout-padding layout-align="space-between center">
@@ -47,9 +47,9 @@
           </o-column>
 
         </div>
-      </md-tab>
+      </mat-tab>
 
-      <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+      <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
         <!-- detail-button-in-row="yes" edit-button-in-row="yes" -->
 
         <o-table #accountsTable service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-form-route="accounts"
@@ -73,15 +73,15 @@
           value-column="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;ACCOUNTTYP" visible-columns="ACCOUNT;BALANCE"
           separator=" - " dialog-width="600px">
         </o-list-picker> -->
-      </md-tab>
+      </mat-tab>
 
-      <md-tab label="{{ 'DOCUMENTS' | oTranslate }}">
+      <!-- <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
         <div fxLayout="column" layout-padding>
           <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
         </div>
-      </md-tab>
+      </mat-tab> -->
 
-    </md-tab-group>
+    </mat-tab-group>
 
   </customers-detail-form>
 

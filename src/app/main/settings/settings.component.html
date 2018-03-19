@@ -14,8 +14,8 @@
       </div>
 
       <div fxLayout="column" fxFill fxFlex="80">
-        <md-tab-group fxFill>
-          <md-tab label="{{ 'USER_DATA' | oTranslate }}">
+        <mat-tab-group fxFill>
+          <mat-tab label="{{ 'USER_DATA' | oTranslate }}">
             <div fxLayout="column" layout-padding>
               <o-row attr="row1" layout-align="space-between center">
                 <o-column layout-align="center center" layout-padding>
@@ -37,35 +37,35 @@
                 </o-column>
               </o-row>
             </div>
-          </md-tab>
+          </mat-tab>
 
-          <md-tab label="{{ 'USER_IMAGE' | oTranslate }}">
+          <mat-tab label="{{ 'USER_IMAGE' | oTranslate }}">
             <div fxLayout="column" layout-padding>
               <o-row layout-align="start center">
                 <o-column layout-align="center center" fxFlex="30" layout-padding>
-                   <o-image [data]="userInfo.avatar" attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image> 
+                   <o-image [data]="userInfo.avatar" attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image>
                   <!-- <o-image [data]="userInfo.avatar" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image> -->
                 </o-column>
               </o-row>
             </div>
-          </md-tab>
+          </mat-tab>
 
-          <md-tab label="{{ 'CHANGE_PASSWORD' | oTranslate }}">
+          <mat-tab label="{{ 'CHANGE_PASSWORD' | oTranslate }}">
             <div fxLayout="column" layout-padding>
               <o-row layout-align="start center">
                 <o-column layout-align="center center" fxFlex="30" layout-padding>
                   <o-text-input attr="USER_" enabled="no" label="USERNAME" fxFill></o-text-input>
-                   <o-password-input #oldPassword attr="OLD_PASSWORD" label="PASSWORD" fxFill></o-password-input> 
+                   <o-password-input #oldPassword attr="OLD_PASSWORD" label="PASSWORD" fxFill></o-password-input>
                   <!-- <o-password-input #oldPassword label="PASSWORD" fxFill></o-password-input> -->
                   <o-password-input #newPassword attr="PASSWORD" label="NEW_PASSWORD" automatic-binding="no" fxFill></o-password-input>
-                   <o-password-input #confirmPassword attr="CONFIRM_PASSWORD" label="CONFIRM_PASSWORD" fxFill></o-password-input> 
+                   <o-password-input #confirmPassword attr="CONFIRM_PASSWORD" label="CONFIRM_PASSWORD" fxFill></o-password-input>
                   <!-- <o-password-input #confirmPassword label="CONFIRM_PASSWORD" fxFill></o-password-input> -->
                   <o-button type="RAISED" label="CONFIRM" (click)="changePassword()"></o-button>
                 </o-column>
               </o-row>
             </div>
-          </md-tab>
-        </md-tab-group>
+          </mat-tab>
+        </mat-tab-group>
       </div>
     </div>
   </o-form>
