@@ -19,8 +19,8 @@
 @import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
-// @import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
-// @include o-filemanager-table-theme($theme);
+@import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
+@include o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
 */
