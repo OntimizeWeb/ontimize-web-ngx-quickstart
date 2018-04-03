@@ -2,8 +2,6 @@ const helpers = require('./helpers');
 var path = require('path');
 var webpack = require('webpack');
 
-const nodeModules = path.join(process.cwd(), 'node_modules');
-
 // Webpack Plugins
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
@@ -18,7 +16,7 @@ const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
 module.exports = {
 
   entry: {
-    app: helpers.root('tmp-src/main.ts'),
+    main: helpers.root('tmp-src/main.ts'),
     polyfills: helpers.root('tmp-src/polyfills.ts'),
     vendor: helpers.root('tmp-src/vendor-aot.ts')
   },
@@ -64,11 +62,38 @@ module.exports = {
     new ProgressPlugin(),
 
     new CommonsChunkPlugin({
+      name: ['main', 'vendor', 'polyfills']
+    }),
+    // , 'scripts'
+
+    new CommonsChunkPlugin({
+      "name": [
+        "inline"
+      ],
+      "minChunks": null
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       minChunks: function (module) {
-        return module.resource && module.resource.startsWith(nodeModules)
+        return module.context && module.context.indexOf("node_modules") !== -1;
       },
-      chunks: ["main"]
+      "chunks": [
+        "main"
+      ]
+    }),
+
+    new CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
+    }),
+
+    new CommonsChunkPlugin({
+      "name": [
+        "main"
+      ],
+      "minChunks": 2,
+      "async": "common"
     }),
 
     new AngularCompilerPlugin({
