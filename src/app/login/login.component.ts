@@ -13,7 +13,7 @@ import { LoginService, NavigationService, APP_CONFIG, Config } from 'ontimize-we
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm: FormGroup = new FormGroup({});
   user: FormControl;
   password: FormControl;
   sessionExpired = false;
@@ -45,13 +45,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    this.removeSessionToken();
     this.navigation.setVisible(false);
 
     const userCtrl: FormControl = new FormControl('', Validators.required);
     const pwdCtrl: FormControl = new FormControl('', Validators.required);
 
-    this.loginForm = new FormGroup({});
     this.loginForm.addControl('username', userCtrl);
     this.loginForm.addControl('password', pwdCtrl);
 
@@ -84,12 +82,6 @@ export class LoginComponent implements OnInit {
         break;
       default: break;
     }
-  }
-
-  removeSessionToken() {
-    const appConf: Config = this.injector.get(APP_CONFIG);
-    const token = appConf.uuid;
-    localStorage.setItem(token, JSON.stringify({}));
   }
 
 }

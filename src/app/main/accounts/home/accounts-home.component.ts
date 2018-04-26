@@ -1,16 +1,4 @@
-import {
-  Injector,
-  ViewChild,
-  OnInit,
-  AfterViewInit,
-  ViewEncapsulation,
-  Component
-} from '@angular/core';
-
-import {
-  OntimizeService,
-  OFormComponent
-} from 'ontimize-web-ngx';
+import { Injector, ViewEncapsulation, Component } from '@angular/core';
 
 @Component({
   selector: 'accounts-home',
@@ -18,31 +6,11 @@ import {
   templateUrl: './accounts-home.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class AccountsHomeComponent implements OnInit, AfterViewInit {
+export class AccountsHomeComponent {
 
-  @ViewChild('filtersForm') filtersForm: OFormComponent;
-
-  protected service: OntimizeService;
-  protected officesArray: Array<Object>;
-  protected accountTypesArray: Array<Object>;
 
   constructor(protected injector: Injector) {
   }
 
-  ngOnInit() {
-    this.configureService();
-  }
 
-  protected configureService() {
-    this.service = this.injector.get(OntimizeService);
-    const conf = this.service.getDefaultServiceConfiguration();
-    conf['entity'] = 'EAccounts';
-    this.service.configureService(conf);
-  }
-
-  ngAfterViewInit() {
-    if (this.filtersForm) {
-      this.filtersForm.setFormMode(2);
-    }
-  }
 }
