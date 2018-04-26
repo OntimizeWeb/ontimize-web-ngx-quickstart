@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port=4209 --host=10.7.0.214",
+    "start": "ng serve --port=4209",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
