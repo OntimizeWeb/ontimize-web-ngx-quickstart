@@ -1,7 +1,7 @@
-import { Injector, ViewChild, Component, OnInit, AfterContentInit, ViewEncapsulation } from '@angular/core';
+import { Injector, ViewChild, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe } from 'ontimize-web-ngx';
-// import { ChartSeries } from 'ontimize-web-ngx-charts';
+import { ChartSeries } from 'ontimize-web-ngx-charts';
 
 @Component({
   selector: 'customers-detail',
@@ -12,7 +12,7 @@ import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent,
     '[class.customers-detail]': 'true'
   }
 })
-export class CustomersDetailComponent implements OnInit, AfterContentInit {
+export class CustomersDetailComponent implements OnInit {
   protected realPipe: ORealPipe;
   protected customerAccountsData: Array<Object>;
   protected totalBalanceData: Array<Object>;
@@ -29,6 +29,7 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
   availableAccountsToAdd: Array<any> = [];
 
   constructor(protected injector: Injector) {
+    this.service = this.injector.get(OntimizeService);
     this.realPipe = new ORealPipe(this.injector);
   }
 
@@ -37,59 +38,11 @@ export class CustomersDetailComponent implements OnInit, AfterContentInit {
   }
 
   protected configureService() {
-    this.service = this.injector.get(OntimizeService);
     const conf = this.service.getDefaultServiceConfiguration();
     conf['path'] = '/customers';
     this.service.configureService(conf);
   }
 
-  ngAfterContentInit() {
-    // this.form.onFormDataLoaded.subscribe(data => {
-    //   if (data.hasOwnProperty('CUSTOMERID')) {
-    //     this.customerId = data['CUSTOMERID'];
-    //   }
-    //   this.onChartData(data);
-    // }, error => {
-    //   console.log(error);
-    // });
-  }
-
-  protected onChartData(data: Object) {
-    if (data.hasOwnProperty('CUSTOMERID') && this.service) {
-      const filter = {
-        'CUSTOMERID': data['CUSTOMERID']
-      };
-
-      const columnsStr = 'ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE';
-      const columns = columnsStr.split(';');
-      this.service.query(filter, columns, 'customerAccount').subscribe((resp) => {
-        if (resp.code === 0) {
-          this.adaptResult(resp.data);
-        } else {
-          alert('Impossible to query data!');
-        }
-      });
-    }
-  }
-
-  adaptResult(data: Array<any>) {
-    if (data && data.length) {
-      // this.customerAccountsData = this.processCustomerAccountsData(data);
-    }
-  }
-
-  // processCustomerAccountsData(data: Array<Object>): Array<ChartSeries> {
-  //   const values = [];
-  //   const self = this;
-  //   data.forEach((item: any, index: number) => {
-  //     const val = {
-  //       'x': item['ACCOUNT'],
-  //       'y': Math.abs(item['BALANCE'])
-  //     };
-  //     values.push(val);
-  //   });
-  //   return values;
-  // }
 
   onAddAccount() {
     (this.accountListPicker as any)._isReadOnly = false;

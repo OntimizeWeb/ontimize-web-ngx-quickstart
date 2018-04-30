@@ -8,8 +8,8 @@ import { CustomersRoutingModule, CUSTOMERS_MODULE_DECLARATIONS } from './custome
   imports: [
     SharedModule,
     OntimizeWebModule,
-    CustomersRoutingModule,
-    OFileManagerModule
+    OFileManagerModule,
+    CustomersRoutingModule
   ],
   declarations: CUSTOMERS_MODULE_DECLARATIONS,
   exports: CUSTOMERS_MODULE_DECLARATIONS,

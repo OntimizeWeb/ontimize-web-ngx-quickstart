@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx'
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'branches-detail',
@@ -20,7 +20,7 @@ export class BranchesDetailComponent implements OnInit {
   officeId: OTextInputComponent;
 
   constructor(
-    public snackBar: MdSnackBar,
+    public snackBar: MatSnackBar,
     private translateService: OTranslateService
   ) { }
 

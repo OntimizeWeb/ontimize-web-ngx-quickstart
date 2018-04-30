@@ -2,7 +2,7 @@
   keys="OFFICEID" #oForm columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT"
   show-header-navigation="yes">
 
-  <o-column class="rounded-panel" fxFill title-label="BRANCH_INFO">
+  <o-column class="rounded-panel" title-label="BRANCH_INFO">
     <div fxLayout="row" fxLayoutAlign="start center">
       <o-text-input #officeId attr="OFFICEID" xl.fxFlex="20" fxFlex="20" class="margin-right-24"></o-text-input>
       <o-text-input attr="PHONE" xl.fxFlex="15" lg.fxFlex="15" fxFlex="20" class="margin-right-24"></o-text-input>
@@ -14,11 +14,9 @@
     </div>
   </o-column>
 
+  <mat-tab-group class="vertical-padding-8">
 
-
-  <md-tab-group fxFill class="vertical-padding-8">
-
-    <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+    <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div layout-padding>
         <o-table #accountsTable service="customers" entity="customerAccount" title="ACCOUNTS" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE;ENDDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE;ENDDATE"
@@ -33,15 +31,15 @@
           <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
         </o-table>
       </div>
-    </md-tab>
-    <md-tab label="{{ 'BRANCH_PLAN' | oTranslate }}">
+    </mat-tab>
+    <mat-tab label="{{ 'BRANCH_PLAN' | oTranslate }}">
       <o-column>
         <!-- <o-file-input attr="BRANCH_PLAN" service="branches" entity="plan" accept-file-type="image/*" show-info="yes" (onUploadFile)="onUploadFile($event)"
           [additional-data]="getFileData()" layout-padding></o-file-input> -->
-        <o-image attr="BRANCHPLAN" class="branch-plan" fxFill empty-image="./assets/images/no-image.png" enabled="no"></o-image>
+        <o-image attr="BRANCHPLAN" class="branch-plan" empty-image="./assets/images/no-image.png" enabled="no"></o-image>
       </o-column>
-    </md-tab>
+    </mat-tab>
 
-  </md-tab-group>
+  </mat-tab-group>
 
 </o-form>

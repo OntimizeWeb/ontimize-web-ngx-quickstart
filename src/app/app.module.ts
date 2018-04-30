@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  Injector,
-  APP_INITIALIZER
-} from '@angular/core';
+import { Injector, APP_INITIALIZER } from '@angular/core';
 
 import {
   APP_CONFIG,
@@ -35,6 +32,6 @@ export const customProviders: any = [
     { provide: APP_CONFIG, useValue: CONFIG },
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
-  ],
+  ]
 })
 export class AppModule { }
