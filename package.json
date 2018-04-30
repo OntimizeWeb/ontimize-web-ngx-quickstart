@@ -6,15 +6,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=4209",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "production": "ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-quickstart/",
-    "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/quickstart/",
-    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
-    "zzz": "npm run xxx && npm start"
+    "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/quickstart/"
   },
   "private": true,
   "dependencies": {
@@ -39,10 +33,10 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20",
-    "ontimize-web-ngx": "file:C:\\workspace\\github\\ontimize-web-ng2-VERSIONS\\3.0.0-rc.0\\ontimize-web-ngx\\dist\\ontimize-web-ngx-3.0.0-rc.0.tgz",
-    "ontimize-web-ngx-charts": "file:C:\\workspace\\github\\CHARTS\\ontimize-web-ng2-charts\\dist\\ontimize-web-ngx-charts-3.0.0-rc.0.tgz",
-    "ontimize-web-ngx-filemanager": "file:C:\\workspace\\github\\FILEMANAGER\\ontimize-web-ngx-filemanager\\dist\\ontimize-web-ngx-filemanager-3.0.0-rc.0.tgz",
-    "ontimize-web-ngx-theming": "file:C:\\workspace\\github\\THEMING\\ontimize-web-ng2-theming\\dist\\ontimize-web-ngx-theming-1.1.0.tgz",
+    "ontimize-web-ngx": "3.0.0-rc.0",
+    "ontimize-web-ngx-charts": "3.0.0-rc.0",
+    "ontimize-web-ngx-filemanager": "3.0.0-rc.0",
+    "ontimize-web-ngx-theming": "1.1.0",
     "classlist.js": "^1.1.20150312",
     "intl": "^1.2.5",
     "web-animations-js": "^2.3.1"
@@ -57,7 +51,7 @@
     "html-webpack-plugin": "3.2.0",
     "jasmine-spec-reporter": "~3.2.0",
     "node-sass": "4.7.2",
-    "ontimize-web-ngx-tools": "file:C:\\workspace\\github\\TOOLS\\ontimize-web-ngx-tools\\ontimize-web-ngx-tools-1.0.4.tgz",
+    "ontimize-web-ngx-tools": "1.0.4",
     "ts-node": "~2.0.0",
     "typescript": "2.4.2",
     "webpack": "3.11.0"
