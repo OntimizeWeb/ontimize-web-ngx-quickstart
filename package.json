@@ -1,15 +1,12 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "production": "ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-quickstart/",
     "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/quickstart/"
