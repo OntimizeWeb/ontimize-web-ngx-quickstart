@@ -96,5 +96,6 @@
   "EMPLOYEEEMAIL": "Email",
   "EMPLOYEETYPEID": "Employee type",
   "BRANCH_PLAN_UPLOADED": "Branch plan uploaded",
-  "DOCUMENTS" : "Documents"
+  "DOCUMENTS": "Documents",
+  "FILTERS": "Filters"
 }

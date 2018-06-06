@@ -2,6 +2,7 @@
   > .rounded-panel:first-child {
     margin-right: 4px;
   }
+
   > .rounded-panel:last-child {
     margin-left: 4px;
   }
@@ -11,10 +12,10 @@
   margin-right: 24px;
 }
 
-
 .line-chart .nv-x.nv-axis .nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMin-x text {
   transform: translate(0px, 0px) rotate(-90deg);
 }
+
 .line-chart .nv-x.nv-axis .nvd3 text {
   transform-origin: left;
   transform: translate(-10px, 0px) rotate(-90deg);
@@ -32,6 +33,7 @@
   padding-bottom: 2px;
 }
 
-// o-row > .o-container {
-//   width: 100%;
-// }
+employees-home {
+  display: flex;
+  height: 100%;
+}
