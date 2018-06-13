@@ -1,13 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'account-transactions-detail',
   styleUrls: ['./account-transactions-detail.component.scss'],
-  templateUrl: './account-transactions-detail.component.html',
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './account-transactions-detail.component.html'
 })
-export class AccountTransactionsDetailComponent {
-
-  constructor() { }
-
-}
+export class AccountTransactionsDetailComponent { }
