@@ -23,20 +23,20 @@
             </div>
 
             <div fxLayout="row" fxLayoutAlign="start center">
-              <o-list-picker fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
+              <!-- <o-list-picker fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
                 filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
                 columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
-              </o-list-picker>
+              </o-list-picker> -->
 
-              <!-- <o-combo fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
-                  filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
-                  columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
-                </o-combo> -->
+              <o-combo fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
+                filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
+                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
+              </o-combo>
             </div>
           </o-column>
 
           <o-column fxFlex="40" layout-align="center center" fxFlex.sm="100" fxFlex.xs="100">
-            <o-image attr="PHOTO" class="customer-picture" empty-image="./assets/images/no-image.png" style="width:100%"></o-image>
+            <o-image attr="PHOTO" class="customer-picture" empty-image="./assets/images/no-image.png" sql-type="VARCHAR" fxFill></o-image>
           </o-column>
         </o-row>
 

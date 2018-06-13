@@ -6,9 +6,12 @@
       <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
     </o-row>
 
-    <o-list-picker attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+    <!-- <o-list-picker attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
       value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" width="33%">
-    </o-list-picker>
+    </o-list-picker> -->
+    <o-combo attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+      value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" width="33%">
+    </o-combo>
 
     <o-row layout-align="end">
       <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="RAISED" label="Filter" class="filter-button"></o-button>
