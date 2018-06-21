@@ -12,7 +12,8 @@
             <o-column layout-align="center center" fxFlex="50">
               <div fxLayout="column" fxLayoutAlign="center start">
                 <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
-                <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true, decimalDigits:2} }} €</span>
+                <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true, minDecimalDigits:2, maxDecimalDigits:2} }}
+                  €</span>
               </div>
             </o-column>
 
