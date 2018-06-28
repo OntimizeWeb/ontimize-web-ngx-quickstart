@@ -1,5 +1,5 @@
 <o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
-  <div fxLayout="column" fxLayoutAlign="center top" fxFill class="account-detail">
+  <div fxLayout="column" fxFill class="account-detail">
     <o-form editable-detail="false" service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
       fxLayout="column" show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel"
       show-header-navigation="yes">
