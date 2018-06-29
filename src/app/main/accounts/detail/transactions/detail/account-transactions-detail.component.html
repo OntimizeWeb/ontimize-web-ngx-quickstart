@@ -1,7 +1,7 @@
-<o-form fxLayout="column" show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID"
-  columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS" layout-direction="row" class="rounded-panel form-account-transactions-detail">
+<o-form show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS"
+  layout-direction="row" class="form-account-transactions-detail">
 
-  <o-column attr="col_left" fxFlex="60" layout-padding>
+  <o-column attr="col_left" fxFlex="60" layout-padding class="margin-right-24 rounded-panel">
     <o-row attr="row1" title-label="ACCOUNT_NUMBER">
       <o-text-input attr="ENTITYID" enabled="no" layout-padding class="mask-field"></o-text-input>
       <o-text-input attr="OFFICEID" enabled="no" layout-padding class="mask-field"></o-text-input>
@@ -19,8 +19,8 @@
     </o-row>
   </o-column>
 
-  <o-row attr="col_right" fxFlex="40" layout-padding>
-    <o-textarea-input attr="COMMENTS" class="comments" rows="10" fxFill></o-textarea-input>
+  <o-row attr="col_right" fxFlex="40" layout-padding class="rounded-panel">
+    <o-textarea-input attr="COMMENTS" class="comments" rows="12" fxFill></o-textarea-input>
   </o-row>
 
 </o-form>
