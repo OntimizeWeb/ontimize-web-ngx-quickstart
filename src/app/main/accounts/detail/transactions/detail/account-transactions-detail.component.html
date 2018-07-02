@@ -1,32 +1,26 @@
-<div fxLayout="column" fxFill fxLayoutAlign="center top">
-  <o-form fxLayout="column" show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID"
-    #oForm class="standalone-form-container" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS">
+<o-form show-header="yes" header-actions="R;U;D" service="movements" entity="movement" keys="MOVEMENTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS"
+  layout-direction="row" class="form-account-transactions-detail">
 
-    <o-row attr="main_row" fxFill fxFlex layout-align="center stretch">
-      <o-column attr="col_left" layout-padding fxFlex="55">
-
-        <o-row attr="row1" title-label="ACCOUNT_NUMBER" fxFill layout-align="start center">
-          <o-text-input attr="ENTITYID" enabled="no" layout-padding class="mask-field"></o-text-input>
-          <o-text-input attr="OFFICEID" enabled="no" layout-padding class="mask-field"></o-text-input>
-          <o-text-input attr="CDID" enabled="no" layout-padding class="mask-field"></o-text-input>
-          <o-text-input attr="ANID" enabled="no" layout-padding></o-text-input>
-        </o-row>
-
-        <o-row attr="row2" title-label="MOVEMENT_DATA" fxFill layout-align="start center">
-          <o-text-input attr="CONCEPT" layout-padding fxFlex></o-text-input>
-          <o-currency-input attr="MOVEMENT" layout-padding required="yes" fxFlex></o-currency-input>
-          <o-combo attr="MOVEMENTTYPEID" layout-padding query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
-            service="movements" entity="movementType" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-            required="yes" fxFlex></o-combo>
-          <o-date-input attr="DATE_" layout-padding required="yes" fxFlex></o-date-input>
-        </o-row>
-
-      </o-column>
-
-      <o-column attr="col_right" layout-padding fxFill fxFlex="45" layout-align="end center">
-        <o-textarea-input attr="COMMENTS" class="comments" rows="10" fxFill></o-textarea-input>
-      </o-column>
+  <o-column attr="col_left" fxFlex="60" layout-padding class="margin-right-24 rounded-panel">
+    <o-row attr="row1" title-label="ACCOUNT_NUMBER">
+      <o-text-input attr="ENTITYID" enabled="no" layout-padding class="mask-field"></o-text-input>
+      <o-text-input attr="OFFICEID" enabled="no" layout-padding class="mask-field"></o-text-input>
+      <o-text-input attr="CDID" enabled="no" layout-padding class="mask-field"></o-text-input>
+      <o-text-input attr="ANID" enabled="no" layout-padding></o-text-input>
     </o-row>
 
-  </o-form>
-</div>
+    <o-row attr="row2" title-label="MOVEMENT_DATA">
+      <o-text-input attr="CONCEPT" layout-padding fxFlex></o-text-input>
+      <o-currency-input attr="MOVEMENT" layout-padding required="yes" fxFlex></o-currency-input>
+      <o-combo attr="MOVEMENTTYPEID" layout-padding query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"
+        service="movements" entity="movementType" keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
+        required="yes" fxFlex></o-combo>
+      <o-date-input attr="DATE_" layout-padding required="yes" fxFlex></o-date-input>
+    </o-row>
+  </o-column>
+
+  <o-row attr="col_right" fxFlex="40" layout-padding class="rounded-panel">
+    <o-textarea-input attr="COMMENTS" class="comments" rows="12" fxFill></o-textarea-input>
+  </o-row>
+
+</o-form>

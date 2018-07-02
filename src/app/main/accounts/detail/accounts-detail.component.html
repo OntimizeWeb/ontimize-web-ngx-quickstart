@@ -1,5 +1,5 @@
 <o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
-  <div fxLayout="column" fxLayoutAlign="center top" fxFill class="account-detail">
+  <div fxLayout="column" fxFill class="account-detail">
     <o-form editable-detail="false" service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
       fxLayout="column" show-header="yes" header-actions="R;U;D" #oForm (onFormDataLoaded)="onFormDataLoaded($event)" [label-header]="formLabel"
       show-header-navigation="yes">
@@ -12,7 +12,8 @@
             <o-column layout-align="center center" fxFlex="50">
               <div fxLayout="column" fxLayoutAlign="center start">
                 <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
-                <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true, decimalDigits:2} }} €</span>
+                <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true, minDecimalDigits:2, maxDecimalDigits:2} }}
+                  €</span>
               </div>
             </o-column>
 

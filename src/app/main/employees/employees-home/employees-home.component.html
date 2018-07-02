@@ -1,12 +1,35 @@
-<div fxFill fxLayout="column" fxLayoutAlign="center top">
-  <o-table fxFill attr="employees" service="employees" entity="employee" title="EMPLOYEES" columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"
-    visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL" keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME"
-    query-rows="10" detail-mode="none" insert-button="no" pageable="no">
-    <!-- <o-table-column width="10px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no">
-      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-      </o-table-cell-renderer-image>
-    </o-table-column> -->
-    <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL">
-    </o-table-column>
-  </o-table>
-</div>
+<o-form editable-detail="no" show-header="no">
+
+  <o-column title-label="{{ 'FILTERS' | oTranslate }}">
+    <o-row layout-align="space-between center">
+      <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
+      <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
+    </o-row>
+
+    <!-- <o-list-picker attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+      value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" width="33%">
+    </o-list-picker> -->
+    <o-combo attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+      value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" width="33%">
+    </o-combo>
+
+    <o-row layout-align="end">
+      <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="RAISED" label="Filter" class="filter-button"></o-button>
+      <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="RAISED" label="Clear" class="filter-button"></o-button>
+    </o-row>
+  </o-column>
+
+  <o-filter-builder #filterBuilder attr="thefilter" filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID" [target]="tableEmployees"
+    query-on-change="no" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
+
+  <o-column title-label="{{ 'EMPLOYEES' | oTranslate }}">
+    <o-table #tableEmployees attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
+      visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
+      sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" pageable="yes">
+      <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
+        <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPENAME"></o-table-cell-renderer-service>
+      </o-table-column>
+    </o-table>
+  </o-column>
+</o-form>

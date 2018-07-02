@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): any {
+    this.loginService.sessionExpired();
     this.navigation.setVisible(false);
 
     const userCtrl: FormControl = new FormControl('', Validators.required);

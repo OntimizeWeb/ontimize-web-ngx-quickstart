@@ -1,7 +1,5 @@
 import { Injector, ViewChild, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe } from 'ontimize-web-ngx';
-import { ChartSeries } from 'ontimize-web-ngx-charts';
 
 @Component({
   selector: 'customers-detail',
@@ -13,6 +11,7 @@ import { ChartSeries } from 'ontimize-web-ngx-charts';
   }
 })
 export class CustomersDetailComponent implements OnInit {
+
   protected realPipe: ORealPipe;
   protected customerAccountsData: Array<Object>;
   protected totalBalanceData: Array<Object>;
@@ -65,7 +64,8 @@ export class CustomersDetailComponent implements OnInit {
             element['ACCOUNT'] = element['ENTITYID'] + ' ' + element['OFFICEID'] + ' ' + element['CDID'] + ' ' + element['ANID'];
             element['BALANCE'] = this.realPipe.transform(element['BALANCE'], {
               grouping: true,
-              decimalDigits: 2
+              minDecimalDigits: 2,
+              maxDecimalDigits: 2
             }) + '€';
           });
           this.availableAccountsToAdd = resp.data.filter(
