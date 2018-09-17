@@ -1,7 +1,7 @@
 <o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
   <o-form #oForm service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
     editable-detail="false" show-header="yes" header-actions="R;U;D" [label-header]="formLabel" show-header-navigation="yes"
-    (onFormDataLoaded)="onFormDataLoaded($event)">
+    (onDataLoaded)="onFormDataLoaded($event)">
 
     <div fxLayout="row">
       <o-row attr="row1" fxFlex layout-padding layout-align="space-between center" class="rounded-panel" title-label="ACCOUNT">
