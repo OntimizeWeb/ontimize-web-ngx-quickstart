@@ -16,7 +16,6 @@ export class MovementTypesCellRendererComponent extends OBaseTableCellRenderer {
   constructor(protected injector: Injector) {
     super(injector);
     // mover al constructor del OBaseTableCellRenderer ?
-    this.initialize();
     this.translateService = this.injector.get(OTranslateService);
   }
 
