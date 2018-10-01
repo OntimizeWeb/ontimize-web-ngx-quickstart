@@ -19,7 +19,7 @@
 
           <div fxLayout="row" fxLayoutAlign="start center">
             <span class="account-detail-span-title">{{ 'CUSTOMERS' | oTranslate | uppercase }}</span>
-            <mat-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</mat-icon>
+            <!-- <mat-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</mat-icon> -->
           </div>
 
           <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
