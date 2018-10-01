@@ -1,5 +1,13 @@
-.movements-list .fill-remaining {
-  height: calc(100% - 64px);
+.movements-list {
+  .fill-remaining {
+    height: calc(100% - 64px);
+  }
+
+  .o-list-container {
+    .mat-list {
+      padding: 0 8px;
+    }
+  }
 }
 
 .nv-pieLabels {
@@ -13,6 +21,7 @@
 }
 
 .account-detail-balance {
+  margin-left: 16px;
   font-size: 24px;
   cursor: default;
 }

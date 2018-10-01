@@ -9,7 +9,8 @@
         <o-column layout-align="center center" fxFlex="50">
           <div fxLayout="column" fxLayoutAlign="center start">
             <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
-            <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true, minDecimalDigits:2, maxDecimalDigits:2} }} €
+            <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true,
+              minDecimalDigits:2, maxDecimalDigits:2} }} €
             </span>
           </div>
         </o-column>
@@ -21,34 +22,35 @@
             <mat-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</mat-icon>
           </div>
 
-          <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID" columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID"
-            query-on-init="no" query-on-bind="yes" refresh-button="no" insert-button="no" selectable="false" quick-filter="false"
-            dense="yes" controls="no">
+          <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
+            columns="CUSTOMERACCOUNTID;CUSTOMERID;ACCOUNTID;NAME;SURNAME;ID" query-on-init="no" query-on-bind="yes"
+            refresh-button="no" insert-button="no" selectable="false" quick-filter="false" dense="yes" controls="no">
             <mat-list-item *ngFor="let row of customerList.dataArray">
               <h4 mat-line>{{row.NAME}} {{ row.SURNAME }}</h4>
               <mat-icon mat-list-icon (click)="onRemoveCustomerClick(row)">delete</mat-icon>
             </mat-list-item>
           </o-list>
 
-          <o-list-picker attr="customersPicker" class="display-none" (onChange)="onNewCustomerSelected($event)" #customerListPicker
-            query-on-init="no" automatic-binding="no" query-on-bind="no" [static-data]="availableCustomersToAdd" required="no"
-            enabled="yes" filter="yes" keys="CUSTOMERID" value-column="CUSTOMERID" parent-keys="ACCOUNTID" columns="ID;NAME;SURNAME"
-            visible-columns="ID;NAME;SURNAME" separator=" - " dialog-width="500px">
+          <o-list-picker attr="customersPicker" class="display-none" (onChange)="onNewCustomerSelected($event)"
+            #customerListPicker query-on-init="no" automatic-binding="no" query-on-bind="no" [static-data]="availableCustomersToAdd"
+            required="no" enabled="yes" filter="yes" keys="CUSTOMERID" value-column="CUSTOMERID" parent-keys="ACCOUNTID"
+            columns="ID;NAME;SURNAME" visible-columns="ID;NAME;SURNAME" separator=" - " dialog-width="500px">
           </o-list-picker>
         </o-column>
 
       </o-row>
     </div>
 
-    <div fxLayout="row wrap">
+    <div fxLayout="row wrap" class="rounded-panel vertical-margin-8">
       <o-column title-label="ACCOUNT_TRANSACTIONS_CHART" layout-fill="yes" layout-padding fxFlex fxFlex.lt-lg="100">
-        <o-chart #pieChart chart-height="350" type="pie" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID"></o-chart>
+        <o-chart #pieChart chart-height="350" type="pie" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
+          parent-keys="ACCOUNTID"></o-chart>
       </o-column>
 
       <o-column title-label="MOVEMENTS" layout-padding>
         <o-list #movementsList attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
           columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" detail-form-route="transactions"
-          pageable="yes" controls="yes" style="height: 450px" class="movements-list">
+          pageable="yes" controls="no" style="height: 450px" class="movements-list">
           <mat-card *ngFor="let rowData of movementsList.dataArray" [o-list-item]="rowData">
             <mat-card-content fxLayout="column">
               <div fxLayout="row">
@@ -64,9 +66,9 @@
       </o-column>
     </div>
 
-    <o-column title-label="ACCOUNT_BALANCE_CHART">
-      <o-chart chart-height="350" type="line" x-label="{{ 'TIME' | oTranslate }}" y-label="{{ 'AMOUNT' | oTranslate }}" [data]="lineData"
-        x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
+    <o-column title-label="ACCOUNT_BALANCE_CHART" class="rounded-panel">
+      <o-chart chart-height="350" type="line" x-label="{{ 'TIME' | oTranslate }}" y-label="{{ 'AMOUNT' | oTranslate }}"
+        [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
     </o-column>
 
   </o-form>
