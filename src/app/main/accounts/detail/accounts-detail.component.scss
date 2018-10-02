@@ -1,61 +1,65 @@
-.account-detail {
-
-   o-form-navigation {
-    margin-left: 24px;
+.movements-list {
+  .fill-remaining {
+    height: calc(100% - 64px);
   }
 
-  .nv-pieLabels {
-    display: none;
-  }
-
-  .nv-wrap.nv-pieChart g .nv-pieWrap.nvd3-svg .nv-wrap.nv-pie {
-    transform: translate(0, 30px);
-  }
-
-  .account-detail-span-title {
-    color: rgba(0, 0, 0, 0.38);
-    cursor: default;
-    font-size: 12px;
-
-  }
-  .account-detail-balance {
-    font-size: 24px;
-    cursor: default;
-  }
-
-  .account-detail-add-customer {
-    font-size: 20px;
-    cursor: pointer;
-    padding: 2px 4px;
-    width: 20px;
-    height: 20px;
-  }
-
-  .customer-list-container {
-    o-list {
-      min-width: 100%;
+  .o-list-container {
+    .mat-list {
+      padding: 0 8px;
     }
-    .o-list-container {
-      max-height: 90px;
-      overflow: auto;
+  }
+}
 
-      .mat-list[dense] .mat-list-item {
-        .mat-list-text {
-          width: auto;
-        }
-        .mat-list-item-content {
-          height: 24px;
-          cursor: default;
-        }
-        .mat-icon {
-          cursor: pointer;
-          width: 16px;
-          font-size: 16px;
-          padding: 4px 0;
-          box-sizing: border-box;
-        }
+.nv-pieLabels {
+  display: none;
+}
+
+.account-detail-span-title {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+  font-size: 12px;
+}
+
+.account-detail-balance {
+  margin-left: 16px;
+  font-size: 24px;
+  cursor: default;
+}
+
+.account-detail-add-customer {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 2px 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.customer-list-container {
+  o-list {
+    min-width: 100%;
+  }
+
+  .o-list-container {
+    max-height: 90px;
+    overflow: auto;
+
+    .mat-list[dense] .mat-list-item {
+      .mat-list-text {
+        width: auto;
       }
 
+      .mat-list-item-content {
+        height: 24px;
+        cursor: default;
+      }
+
+      .mat-icon {
+        cursor: pointer;
+        width: 16px;
+        font-size: 16px;
+        padding: 4px 0;
+        box-sizing: border-box;
+      }
     }
   }
 }
