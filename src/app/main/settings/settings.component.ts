@@ -1,20 +1,5 @@
-import {
-  ViewEncapsulation,
-  Injector,
-  Component,
-  ViewChild,
-  AfterViewInit
-} from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-
-import {
-  UserInfo,
-  OUserInfoService,
-  OFormComponent,
-  OPasswordInputComponent,
-  DialogService,
-  LoginService
-} from 'ontimize-web-ngx';
+import { ViewEncapsulation, Injector, Component, ViewChild, AfterViewInit } from '@angular/core';
+import { UserInfo, OUserInfoService, OFormComponent, OPasswordInputComponent, DialogService, LoginService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-settings',

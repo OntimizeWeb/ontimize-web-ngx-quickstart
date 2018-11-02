@@ -1,21 +1,5 @@
-import {
-    ViewEncapsulation,
-    Component,
-    ViewChild,
-    AfterContentInit,
-    forwardRef,
-    Injector,
-    OnInit
-} from '@angular/core';
-
-import {
-    OFormComponent,
-    OntimizeService,
-    OListPickerComponent,
-    OListComponent,
-    OTranslateService
-} from 'ontimize-web-ngx';
-
+import { ViewEncapsulation, Component, ViewChild, AfterContentInit, forwardRef, Injector, OnInit } from '@angular/core';
+import { OFormComponent, OntimizeService, OListPickerComponent, OListComponent, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, OChartComponent } from 'ontimize-web-ngx-charts';
 
 @Component({
