@@ -40,7 +40,8 @@
     "ontimize-web-ngx-theming": "1.2.0",
     "classlist.js": "^1.1.20150312",
     "intl": "^1.2.5",
-    "web-animations-js": "^2.3.1"
+    "web-animations-js": "^2.3.1",
+    "@nois/ng2-nvd3": "git+https://github.com/daominhsangvn/ng2-nvd3.git"
   },
   "devDependencies": {
     "@angular/cli": "1.7.3",

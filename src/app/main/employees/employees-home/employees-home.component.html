@@ -23,7 +23,7 @@
     query-on-change="no" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
 
   <o-column title-label="{{ 'EMPLOYEES' | oTranslate }}">
-    <o-table #tableEmployees attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
+    <o-table #tableEmployees attr="employees" service="employees" entity="EEmployees" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
       visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
       sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" pageable="yes">
       <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
