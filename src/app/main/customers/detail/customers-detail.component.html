@@ -1,7 +1,7 @@
 <!-- <o-form-container breadcrumb="yes" breadcrumb-label-columns="NAME;SURNAME" breadcrumb-separator=", "> -->
 
-<customers-detail-form service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D"
-  #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
+<customers-detail-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+  header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
   <!-- show-header-navigation="yes" -->
   <mat-tab-group fxFill>
 
@@ -10,7 +10,8 @@
 
         <o-row attr="row1" layout-padding layout-align="space-between center">
 
-          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="70" fxFlex.sm="100" fxFlex.xs="100" layout-padding>
+          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="70" fxFlex.sm="100" fxFlex.xs="100"
+            layout-padding>
 
             <div fxLayout="row" fxLayoutAlign="start center">
               <o-nif-input attr="ID" class="margin-right-24" fxFlex.xl="30" fxFlex.lg="30" fxFlex="50"></o-nif-input>
@@ -28,9 +29,10 @@
                 columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
               </o-list-picker> -->
 
-              <o-combo fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
-                filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
-                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
+              <o-combo fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no"
+                query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType"
+                keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - "
+                class="margin-right-24">
               </o-combo>
             </div>
           </o-column>
@@ -50,8 +52,8 @@
     <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <!-- detail-button-in-row="yes" edit-button-in-row="yes" -->
 
-      <o-table #accountsTable service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-form-route="accounts"
-        edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
+      <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount" parent-keys="CUSTOMERID"
+        keys="ACCOUNTID" detail-form-route="accounts" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
         visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false"
         query-rows="6" quick-filter="yes" pageable="no" insert-button="no" row-height="medium" class="vertical-padding-8">
 
@@ -59,8 +61,8 @@
 
         <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
         <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-        <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
-          decimal-separator=",">
+        <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+          thousand-separator="." decimal-separator=",">
         </o-table-column>
         <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
       </o-table>

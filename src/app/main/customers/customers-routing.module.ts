@@ -21,8 +21,23 @@ export const CUSTOMERS_MODULE_DECLARATIONS = [
 export const routes: Routes = [
   { path: '', component: CustomersHomeComponent },
   { path: 'new', component: CustomersNewComponent },
-  { path: ':CUSTOMERID', component: CustomersDetailComponent },
-  { path: ':CUSTOMERID/accounts', loadChildren: loadAccountsModule }
+  {
+    path: ':CUSTOMERID',
+    component: CustomersDetailComponent,
+    data: {
+      oPermission: {
+        permissionId: 'customer-detail-permissions'
+      }
+    }
+  },
+  {
+    path: ':CUSTOMERID/accounts', loadChildren: loadAccountsModule,
+    data: {
+      oPermission: {
+        permissionId: 'customer-detail-permissions'
+      }
+    }
+  }
 ];
 
 @NgModule({
