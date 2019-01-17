@@ -4,12 +4,14 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
+    "zzz": "npm run xxx && npm start",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4400",
     "build": "ng build",
     "production": "ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "production-aot": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web-ngx-quickstart/",
-    "production-aot-server": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/"
+    "production-aot-server": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/v4/"
   },
   "private": true,
   "dependencies": {
@@ -34,10 +36,10 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "file:C:\\workspace\\github\\ontimize-web-ng2-VERSIONS\\4.0.0-rc.0\\ontimize-web-ngx\\dist\\ontimize-web-ngx-4.0.0-rc.0.tgz",
-    "ontimize-web-ngx-charts": "file:C:\\workspace\\github\\CHARTS\\ontimize-web-ngx-charts@4.0.0-rc.0\\dist\\ontimize-web-ngx-charts-4.0.0.tgz",
-    "ontimize-web-ngx-filemanager": "file:C:\\workspace\\github\\FILEMANAGER\\ontimize-web-ngx-filemanager@4.0.0-rc.0\\dist\\ontimize-web-ngx-filemanager-4.0.0-rc.0.tgz",
-    "ontimize-web-ngx-theming": "file:C:\\workspace\\github\\THEMING\\ontimize-web-ng2-theming\\dist\\ontimize-web-ngx-theming-4.0.0.tgz",
+    "ontimize-web-ngx": "4.0.0-rc.1",
+    "ontimize-web-ngx-charts": "4.0.0-rc.1",
+    "ontimize-web-ngx-filemanager": "file:C:\\workspace\\github\\4.x.x\\ontimize-web-ngx-filemanager\\dist\\ontimize-web-ngx-filemanager-4.0.0-rc.1.tgz",
+    "ontimize-web-ngx-theming": "4.0.0-rc.1",
     "classlist.js": "^1.1.20150312",
     "intl": "^1.2.5",
     "web-animations-js": "^2.3.1"
@@ -52,7 +54,7 @@
     "copy-webpack-plugin": "4.5.4",
     "html-webpack-plugin": "4.0.0-beta.2",
     "node-sass": "4.9.4",
-    "ontimize-web-ngx-tools": "file:C:\\workspace\\github\\TOOLS\\ontimize-web-ngx-tools\\ontimize-web-ngx-tools-2.0.0.tgz",
+    "ontimize-web-ngx-tools": "4.0.0-rc.0",
     "ts-node": "~2.0.0",
     "typescript": "2.9.2",
     "webpack": "4.18.0",
