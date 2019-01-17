@@ -2,14 +2,14 @@
   layout-direction="row" class="form-account-transactions-detail">
 
   <o-column attr="col_left" fxFlex="60" layout-padding class="margin-right-24 rounded-panel">
-    <o-row attr="row1" title-label="ACCOUNT_NUMBER">
+    <o-row attr="row1" title="ACCOUNT_NUMBER">
       <o-text-input attr="ENTITYID" enabled="no" layout-padding class="mask-field"></o-text-input>
       <o-text-input attr="OFFICEID" enabled="no" layout-padding class="mask-field"></o-text-input>
       <o-text-input attr="CDID" enabled="no" layout-padding class="mask-field"></o-text-input>
       <o-text-input attr="ANID" enabled="no" layout-padding></o-text-input>
     </o-row>
 
-    <o-row attr="row2" title-label="MOVEMENT_DATA">
+    <o-row attr="row2" title="MOVEMENT_DATA">
       <o-text-input attr="CONCEPT" layout-padding fxFlex></o-text-input>
       <o-currency-input attr="MOVEMENT" layout-padding required="yes" fxFlex></o-currency-input>
       <o-combo attr="MOVEMENTTYPEID" layout-padding query-on-init="no" query-on-bind="yes" enabled="yes" value-column="MOVEMENTTYPEID"

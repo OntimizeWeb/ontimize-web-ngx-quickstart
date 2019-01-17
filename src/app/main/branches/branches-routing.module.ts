@@ -19,7 +19,15 @@ export const BRANCHES_MODULE_DECLARATIONS = [
 export const routes: Routes = [
   { path: '', component: BranchesHomeComponent },
   { path: 'new', component: BranchesEditComponent },
-  { path: ':OFFICEID', component: BranchesDetailComponent },
+  {
+    path: ':OFFICEID', component: BranchesDetailComponent,
+    data: {
+      oPermission: {
+        permissionId: 'branch-detail-permissions',
+        restrictedPermissionsRedirect: '403'
+      }
+    }
+  },
   { path: ':OFFICEID/edit', component: BranchesEditComponent },
   { path: ':OFFICEID/accounts', loadChildren: loadAccountsModule }
 ];

@@ -4,7 +4,7 @@
     (onDataLoaded)="onFormDataLoaded($event)">
 
     <div fxLayout="row">
-      <o-row attr="row1" fxFlex layout-padding layout-align="space-between center" class="rounded-panel" title-label="ACCOUNT">
+      <o-row attr="row1" fxFlex layout-padding layout-align="space-between center" class="rounded-panel" title="ACCOUNT">
 
         <o-column layout-align="center center" fxFlex="50">
           <div fxLayout="column" fxLayoutAlign="center start">
@@ -42,12 +42,12 @@
     </div>
 
     <div fxLayout="row wrap" class="rounded-panel vertical-margin-8">
-      <o-column title-label="ACCOUNT_TRANSACTIONS_CHART" layout-fill="yes" layout-padding fxFlex fxFlex.lt-lg="100">
+      <o-column title="ACCOUNT_TRANSACTIONS_CHART" layout-fill="yes" layout-padding fxFlex fxFlex.lt-lg="100">
         <o-chart #pieChart chart-height="350" type="pie" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
           parent-keys="ACCOUNTID"></o-chart>
       </o-column>
 
-      <o-column title-label="MOVEMENTS" layout-padding>
+      <o-column title="MOVEMENTS" layout-padding>
         <o-list #movementsList attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
           columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" detail-form-route="transactions"
           pageable="yes" controls="no" style="height: 450px" class="movements-list">
@@ -66,7 +66,7 @@
       </o-column>
     </div>
 
-    <o-column title-label="ACCOUNT_BALANCE_CHART" class="rounded-panel">
+    <o-column title="ACCOUNT_BALANCE_CHART" class="rounded-panel">
       <o-chart chart-height="350" type="line" x-label="{{ 'TIME' | oTranslate }}" y-label="{{ 'AMOUNT' | oTranslate }}"
         [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
     </o-column>
