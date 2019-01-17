@@ -1,8 +1,8 @@
-<o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=",">
+<o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator="," attr="o-form-layout-customer-home">
   <div fxFill fxLayout="column" fxLayoutAlign="start">
     <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
-      row-height="medium" select-all-checkbox="true" pageable="yes">
+      row-height="medium" select-all-checkbox="true" pageable="yes"  >
 
       <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
 
@@ -11,6 +11,7 @@
       </o-table-column>
       <o-table-column attr="NAME" title="NAME" orderable="no"></o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-context-menu></o-table-context-menu>
     </o-table>
   </div>
 </o-form-layout-manager>

@@ -24,6 +24,7 @@ export const routes: Routes = [
     data: {
       oPermission: {
         permissionId: 'branch-detail-permissions',
+        // restrictedPermissionsRedirect: '/main/customers'
         restrictedPermissionsRedirect: '403'
       }
     }
