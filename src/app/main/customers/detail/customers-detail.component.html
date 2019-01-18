@@ -1,64 +1,45 @@
 <!-- <o-form-container breadcrumb="yes" breadcrumb-label-columns="NAME;SURNAME" breadcrumb-separator=", "> -->
+<mat-tab-group fxFill>
 
-<customers-detail-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
-  header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
-  <!-- show-header-navigation="yes" -->
-  <mat-tab-group fxFill>
+  <mat-tab label="{{ 'DATA' | oTranslate }}">
+    <o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+      header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
 
-    <mat-tab label="{{ 'DATA' | oTranslate }}">
-      <div fxLayout="column" layout-padding>
+      <o-row title="CUSTOMER_DATA" icon="person_pin" attr="row1" llayout-align="start stretch">
 
-        <o-row attr="row1" layout-padding layout-align="space-between center">
+        <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
 
-          <o-column title="CUSTOMER_DATA" layout-align="start stretch" fxFlex="70" fxFlex.sm="100" fxFlex.xs="100"
-            layout-padding>
+        <div fxLayout="row" fxLayoutAlign="start start" fxFlex>
+          <o-nif-input attr="ID"></o-nif-input>
+          <o-text-input attr="NAME"></o-text-input>
+          <o-text-input attr="SURNAME"></o-text-input>
+          <o-date-input attr="STARTDATE"></o-date-input>
+          <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes" value-column="CUSTOMERTYPEID"
+            service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+            visible-columns="DESCRIPTION" separator=" - ">
+          </o-combo>
+        </div>
 
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <o-nif-input attr="ID" class="margin-right-24" fxFlex.xl="30" fxFlex.lg="30" fxFlex="50"></o-nif-input>
-              <o-date-input attr="STARTDATE" fxFlex.xl="30" fxFlex.lg="30" fxFlex="50"></o-date-input>
-            </div>
+      </o-row>
 
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <o-text-input attr="NAME" class="margin-right-24" fxFlex.lg="30" fxFlex.xl="30" fxFlex="50"></o-text-input>
-              <o-text-input attr="SURNAME" fxFlex="50"></o-text-input>
-            </div>
+      <o-row title="CONTACT_DATA" icon="info" attr="row2" layout-align="start start">
+        <o-text-input attr="ADDRESS"></o-text-input>
+        <o-email-input attr="EMAIL"></o-email-input>
+      </o-row>
 
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <!-- <o-list-picker fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes"
-                filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
-                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " class="margin-right-24">
-              </o-list-picker> -->
+      <o-column title="COMMENTS" icon="message" attr="row3" layout-align="start stretch">
+        <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+      </o-column>
+    </o-form>
+  </mat-tab>
 
-              <o-combo fxFlex="100" fxFlex.xl="30" fxFlex.lg="30" attr="CUSTOMERTYPEID" query-on-init="no"
-                query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID" service="customers" entity="customerType"
-                keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - "
-                class="margin-right-24">
-              </o-combo>
-            </div>
-          </o-column>
-
-          <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
-        </o-row>
-
-        <o-column attr="other_data" title="CONTACT_DATA" layout-padding layout-align="start stretch">
-          <o-text-input attr="ADDRESS"></o-text-input>
-          <o-email-input attr="EMAIL"></o-email-input>
-          <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
-        </o-column>
-
-      </div>
-    </mat-tab>
-
-    <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <!-- detail-button-in-row="yes" edit-button-in-row="yes" -->
-
+  <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+    <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no"
+      keys="CUSTOMERID" keys-sql-types="INTEGER">
       <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount" parent-keys="CUSTOMERID"
         keys="ACCOUNTID" detail-form-route="accounts" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
         visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false"
         query-rows="6" quick-filter="yes" pageable="no" insert-button="no" row-height="medium" class="vertical-padding-8">
-
-        <!-- <o-table-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-table-button> -->
-
         <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
         <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
         <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
@@ -66,23 +47,15 @@
         </o-table-column>
         <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
       </o-table>
+    </o-form>
+  </mat-tab>
 
-      <!-- Falta attr -->
-      <!-- <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
-          query-on-bind="no" [static-data]="availableAccountsToAdd" required="no" enabled="yes" filter="yes" keys="ACCOUNTID"
-          value-column="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;ACCOUNTTYP" visible-columns="ACCOUNT;BALANCE"
-          separator=" - " dialog-width="600px">
-        </o-list-picker> -->
-    </mat-tab>
+  <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
+    <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no"
+      keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
+      <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
+    </o-form>
+  </mat-tab>
 
-    <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
-      <div fxLayout="column" layout-padding>
-        <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
-      </div>
-    </mat-tab>
-
-  </mat-tab-group>
-
-</customers-detail-form>
-
+</mat-tab-group>
 <!-- </o-form-container> -->
