@@ -4,8 +4,6 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
-    "zzz": "npm run xxx && npm start",
     "ng": "ng",
     "start": "ng serve --port 4400",
     "build": "ng build",
@@ -38,7 +36,7 @@
     "reflect-metadata": "0.1.12",
     "ontimize-web-ngx": "4.0.0-rc.1",
     "ontimize-web-ngx-charts": "4.0.0-rc.1",
-    "ontimize-web-ngx-filemanager": "file:C:\\workspace\\github\\4.x.x\\ontimize-web-ngx-filemanager\\dist\\ontimize-web-ngx-filemanager-4.0.0-rc.1.tgz",
+    "ontimize-web-ngx-filemanager": "4.0.0-rc.1",
     "ontimize-web-ngx-theming": "4.0.0-rc.1",
     "classlist.js": "^1.1.20150312",
     "intl": "^1.2.5",
