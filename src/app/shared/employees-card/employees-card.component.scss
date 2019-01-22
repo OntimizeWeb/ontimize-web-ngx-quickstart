@@ -19,7 +19,13 @@
     padding-top: 2px;
   }
 
-  .employees-card-chart > div > nvd3 > svg line {
-    display: none;
+  .employees-card-chart > div > nvd3 {
+    > svg line {
+      display: none;
+    }
+
+    .nvd3.nv-multibarHorizontal .nv-groups text {
+      font-size: 24px;
+    }
   }
 }
