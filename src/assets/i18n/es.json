@@ -97,5 +97,16 @@
   "EMPLOYEETYPEID": "Tipo empleado",
   "BRANCH_PLAN_UPLOADED": "El plano ha sido cargado",
   "DOCUMENTS": "Documentos",
-  "FILTERS": "Filtros"
+  "FILTERS": "Filtros",
+  "CUSTOMER_TYPE": "Tipos de clientes",
+  "EMPLOYEES_TOTAL": "Total empleados",
+  "EMPLOYEES_CATEGORIES": "Categorías profesionales",
+  "BRANCHES_TOTAL": "Total sucursales",
+  "BRANCHES_NATIONAL": "Nacional",
+  "BRANCHES_INTERNATIONAL": "Internacional",
+  "ACCOUNTS_TYPE": "Tipos de cuentas",
+  "ACCOUNT_TYPE_SAVINGS": "Ahorro",
+  "ACCOUNT_TYPE_CHECKING": "Corriente",
+  "ACCOUNT_TYPE_PAYROLL": "Nómina",
+  "ACCOUNT_TYPE_MARKET": "Valores"
 }

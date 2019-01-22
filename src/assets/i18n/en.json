@@ -97,5 +97,16 @@
   "EMPLOYEETYPEID": "Employee type",
   "BRANCH_PLAN_UPLOADED": "Branch plan uploaded",
   "DOCUMENTS": "Documents",
-  "FILTERS": "Filters"
+  "FILTERS": "Filters",
+  "CUSTOMER_TYPE": "Customer types",
+  "EMPLOYEES_TOTAL": "Total employees",
+  "EMPLOYEES_CATEGORIES": "Professional categories",
+  "BRANCHES_TOTAL": "Total branches",
+  "BRANCHES_NATIONAL": "National",
+  "BRANCHES_INTERNATIONAL": "International",
+  "ACCOUNTS_TYPE": "Account types",
+  "ACCOUNT_TYPE_SAVINGS": "Savings",
+  "ACCOUNT_TYPE_CHECKING": "Checking",
+  "ACCOUNT_TYPE_PAYROLL": "Payroll",
+  "ACCOUNT_TYPE_MARKET": "Money market"
 }
