@@ -3,13 +3,14 @@
 
   <mat-tab label="{{ 'DATA' | oTranslate }}">
     <o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
-      header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
+      header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
+      show-header-navigation="yes" show-header-actions-text="no">
 
-      <o-row title="CUSTOMER_DATA" icon="person_pin" attr="row1" llayout-align="start stretch">
+      <o-row title="CUSTOMER_DATA" icon="person_pin" attr="row1" layout-align="start stretch" layout-gap="14px">
 
         <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
 
-        <div fxLayout="row" fxLayoutAlign="start start" fxFlex>
+        <div fxLayout="row" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
           <o-nif-input attr="ID"></o-nif-input>
           <o-text-input attr="NAME"></o-text-input>
           <o-text-input attr="SURNAME"></o-text-input>
@@ -22,9 +23,13 @@
 
       </o-row>
 
-      <o-row title="CONTACT_DATA" icon="info" attr="row2" layout-align="start start">
-        <o-text-input attr="ADDRESS"></o-text-input>
-        <o-email-input attr="EMAIL"></o-email-input>
+      <o-row title="CONTACT_DATA" icon="info" attr="row2" layout-align="start start" layout-gap="14px">
+        <o-text-input attr="ADDRESS" width="350px"></o-text-input>
+        <o-text-input attr="COUNTRY"></o-text-input>
+        <o-text-input attr="STATE"></o-text-input>
+        <o-text-input attr="ZIPCODE"></o-text-input>
+        <o-text-input attr="PHONE"></o-text-input>
+        <o-email-input attr="EMAIL" width="250px"></o-email-input>
       </o-row>
 
       <o-column title="COMMENTS" icon="message" attr="row3" layout-align="start stretch">
