@@ -9,8 +9,8 @@
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 @include ontimize-theme-styles($theme);
 
-// @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
-// @include ontimize-theme-styles-lite($theme);
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+@include ontimize-theme-styles-lite($theme);
 
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework

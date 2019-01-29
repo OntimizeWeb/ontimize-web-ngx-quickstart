@@ -1,0 +1,21 @@
+.customers-card {
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  width: 90%;
+
+  .customers-card-title {
+    color: #cccccc;
+    font-weight: bold;
+  }
+
+  .customers-card-chart > div > nvd3 {
+    > svg line {
+      display: none;
+    }
+
+    .nvd3.nv-multibarHorizontal .nv-groups text {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "4.0.0-rc.0",
+  "version": "4.0.0-rc.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4400",
+    "start": "ng serve --port 4400 --host 10.7.0.147",
     "build": "ng build",
     "production": "ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "production-aot": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web-ngx-quickstart/",
@@ -34,10 +34,11 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "4.0.0-rc.1",
-    "ontimize-web-ngx-charts": "4.0.0-rc.1",
+    "ontimize-web-ngx": "file:C:\\workspace\\github\\4.x.x\\ontimize-web-ngx\\dist\\ontimize-web-ngx-4.0.0-rc.2.tgz",
+    "ontimize-web-ngx-charts": "file:C:\\workspace\\github\\4.x.x\\ontimize-web-ngx-charts\\dist\\ontimize-web-ngx-charts-4.0.0-rc.2.tgz",
     "ontimize-web-ngx-filemanager": "4.0.0-rc.1",
-    "ontimize-web-ngx-theming": "4.0.0-rc.1",
+    "ontimize-web-ngx-map": "4.0.0-rc.1",
+    "ontimize-web-ngx-theming": "file:C:\\workspace\\github\\4.x.x\\ontimize-web-ngx-theming\\dist\\ontimize-web-ngx-theming-4.0.0-rc.2.tgz",
     "classlist.js": "^1.1.20150312",
     "intl": "^1.2.5",
     "web-animations-js": "^2.3.1"

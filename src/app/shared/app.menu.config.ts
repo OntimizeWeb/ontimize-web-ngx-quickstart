@@ -1,5 +1,9 @@
 import { MenuRootItem } from 'ontimize-web-ngx';
-import { CardContentComponent } from './card-content/card-content.component';
+
+import { AccountsCardComponent } from './accounts-card/accounts-card.component';
+import { BranchesCardComponent } from './branches-card/branches-card.component';
+import { CustomersCardComponent } from './customers-card/customers-card.component';
+import { EmployeesCardComponent } from './employees-card/employees-card.component';
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
@@ -13,12 +17,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
         route: '/main/customers',
         icon: 'people',
         image: 'assets/images/ic_clientes.png',
-        // ,
-        // component: CardContentComponent,
-        // 'component-inputs': {
-        //   color:
-        //   'red'
-        // }
+        component: CustomersCardComponent
       },
       {
         id: 'accounts',
@@ -26,12 +25,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
         tooltip: 'ACCOUNTS_CONTENT',
         route: '/main/accounts',
         icon: 'credit_card',
-        image: 'assets/images/ic_cuentas.png'
-        // ,
-        // component: CardContentComponent,
-        // 'component-inputs': {
-        //   color: 'green'
-        // }
+        image: 'assets/images/ic_cuentas.png',
+        component: AccountsCardComponent
       },
       {
         id: 'branches',
@@ -39,12 +34,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
         tooltip: 'BRANCHES_CONTENT',
         route: '/main/branches',
         icon: 'account_balance',
-        image: 'assets/images/ic_sucursales.png'
-        // ,
-        // component: CardContentComponent,
-        // 'component-inputs': {
-        //   color: 'blue'
-        // }
+        image: 'assets/images/ic_sucursales.png',
+        component: BranchesCardComponent
       },
       {
         id: 'employees',
@@ -52,12 +43,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
         tooltip: 'EMPLOYEES_CONTENT',
         route: '/main/employees',
         icon: 'person',
-        image: 'assets/images/ic_empleados.png'
-        // ,
-        // component: CardContentComponent,
-        // 'component-inputs': {
-        //   color: 'yellow'
-        // }
+        image: 'assets/images/ic_empleados.png',
+        component: EmployeesCardComponent
       }
     ]
   },
@@ -71,5 +58,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
 ];
 
 export const MENU_COMPONENTS = [
-  CardContentComponent
+  AccountsCardComponent,
+  CustomersCardComponent,
+  BranchesCardComponent,
+  EmployeesCardComponent
 ];

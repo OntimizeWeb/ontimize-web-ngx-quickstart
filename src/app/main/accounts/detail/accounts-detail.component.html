@@ -4,20 +4,22 @@
     header-actions="R;U;D" [label-header]="formLabel" show-header-navigation="yes" (onDataLoaded)="onFormDataLoaded($event)">
 
     <div fxLayout="row">
-      <o-row attr="row1" fxFlex layout-padding layout-align="space-between center" class="rounded-panel" title="ACCOUNT">
-
-        <o-column layout-align="center center" fxFlex="50">
-          <div fxLayout="column" fxLayoutAlign="center start">
-            <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
-            <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true,
-              minDecimalDigits:2, maxDecimalDigits:2} }} €
-            </span>
-          </div>
+      <o-row attr="row1" fxFlex layout-padding layout-align="space-between start" class="rounded-panel" title-label="ACCOUNT">
+        <o-column fxFlex="30">
+          <span class="account-detail-span-title">{{ 'BALANCE' | oTranslate | uppercase }}</span>
+          <span class="account-detail-balance">{{ oForm.getDataValue('BALANCE').value | oReal: {grouping:true,
+            minDecimalDigits:2, maxDecimalDigits:2} }} €
+          </span>
         </o-column>
+        <o-column fxFlex="30">
 
-        <o-column layout-align="center start" fxFlex="50" class="customer-list-container">
+          <span class="account-detail-span-title">{{ 'IBAN' | oTranslate | uppercase }}</span>
+          <span class="account-detail-iban">{{ ibanLabel }} </span>
 
-          <div fxLayout="row" fxLayoutAlign="start center">
+        </o-column>
+        <o-column layout-align="center start" fxFlex="30" class="customer-list-container">
+
+          <div fxLayout="row">
             <span class="account-detail-span-title">{{ 'CUSTOMERS' | oTranslate | uppercase }}</span>
             <!-- <mat-icon class="account-detail-add-customer" (click)="onAddCustomerClick()">add_circle_outline</mat-icon> -->
           </div>
@@ -41,35 +43,57 @@
       </o-row>
     </div>
 
-    <div fxLayout="row wrap" class="rounded-panel vertical-margin-8">
-      <o-column title="ACCOUNT_TRANSACTIONS_CHART" layout-fill="yes" layout-padding fxFlex fxFlex.lt-lg="100">
-        <o-chart #pieChart chart-height="350" type="pie" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-          parent-keys="ACCOUNTID"></o-chart>
+    <div fxLayout="row wrap" class="rounded-panel vertical-margin-8" fxLayoutAlign="space-between start" layout-padding>
+      <o-column title-label="ACCOUNT_TRANSACTIONS_CHART" layout-fill="yes"  fxFlex="45" fxFlex.lt-lg="100">
+        <o-chart #pieChart chart-height="350" type="donutChart" [data]="data" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
+          parent-keys="ACCOUNTID" [chart-parameters]="chartParameters"></o-chart>
+      </o-column>
+      <o-column title-label="ACCOUNT_BALANCE_CHART" layout-fill="yes" fxFlex="45" fxFlex.lt-lg="100">
+        <o-chart chart-height="350" type="stackedAreaChart" x-label="{{ 'TIME' | oTranslate }}" y-label="{{ 'AMOUNT' | oTranslate }}"
+          [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"
+          [chart-parameters]="chartParametersStackedArea"></o-chart>
       </o-column>
 
-      <o-column title="MOVEMENTS" layout-padding>
-        <o-list #movementsList attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
-          columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" detail-form-route="transactions"
-          pageable="yes" controls="no" style="height: 450px" class="movements-list">
-          <mat-card *ngFor="let rowData of movementsList.dataArray" [o-list-item]="rowData">
-            <mat-card-content fxLayout="column">
-              <div fxLayout="row">
-                <span fxFlex class="account-detail-balance">{{ rowData.CONCEPT }}</span>
-                <span class="account-detail-balance">{{ rowData.MOVEMENT | currency:'EUR' }}</span>
-              </div>
-              <div fxLayout="row" fxLayoutAlign="end">
-                <span>{{ rowData.DATE_ | date }}</span>
-              </div>
-            </mat-card-content>
-          </mat-card>
-        </o-list>
-      </o-column>
+    </div>
+    <!-- <o-column title-label="MOVEMENTS" layout-padding>
+      <o-list #movementsList attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
+        columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" detail-form-route="transactions"
+        pageable="yes" controls="no" style="height: 450px" class="movements-list">
+        <mat-card *ngFor="let rowData of movementsList.dataArray" [o-list-item]="rowData">
+          <mat-card-content fxLayout="column">
+            <div fxLayout="row">
+              <span fxFlex class="account-detail-balance">{{ rowData.CONCEPT }}</span>
+              <span class="account-detail-balance">{{ rowData.MOVEMENT | currency:'EUR' }}</span>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end">
+              <span>{{ rowData.DATE_ | date }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </o-list>
+    </o-column> -->
+
+    <div fxLayout="row">
+      <div fxLayout="row" fxFlex class="rounded-panel" layout-padding>
+        <o-table fxFlex service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
+          detail-form-route="transactions" insert-form-route="transactions/new" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
+          visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false"
+          query-rows="5" quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
+
+          <o-table-columns-filter></o-table-columns-filter>
+
+          <o-table-column attr="DATE_" title="DATE_" type="date" format="LL" width="30%"></o-table-column>
+          <o-table-column attr="CONCEPT" title="CONCEPT" width="18%"></o-table-column>
+          <o-table-column attr="MOVEMENT" title="MOVEMENT" width="18%" type="currency" currency-symbol="€"
+            currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
+          <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES">
+            <movement-types-cell-renderer>
+            </movement-types-cell-renderer>
+          </o-table-column>
+        </o-table>
+      </div>
     </div>
 
-    <o-column title="ACCOUNT_BALANCE_CHART" class="rounded-panel">
-      <o-chart chart-height="350" type="line" x-label="{{ 'TIME' | oTranslate }}" y-label="{{ 'AMOUNT' | oTranslate }}"
-        [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
-    </o-column>
 
   </o-form>
 </o-form-container>

@@ -19,11 +19,14 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
     protected yAxis = 'MOVEMENT';
     protected xAxis = 'MOVEMENTTYPES';
     public formLabel = '';
+    public ibanLabel = '';
 
     @ViewChild(forwardRef(() => OFormComponent)) form: OFormComponent;
     @ViewChild('customerListPicker') customerListPicker: OListPickerComponent;
     @ViewChild('customerList') customerList: OListComponent;
-    @ViewChild('pieChart') pieChart: OChartComponent;
+
+    chartParameters: DonutChartConfiguration;
+    chartParametersStackedArea: StackedAreaChartConfiguration;
 
     availableCustomersToAdd: Array<any> = [];
 
@@ -31,6 +34,15 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
         protected injector: Injector
     ) {
         this.translateService = this.injector.get(OTranslateService);
+        this.chartParameters = new DonutChartConfiguration();
+        this.chartParameters.legendPosition = 'right';
+
+        this.chartParametersStackedArea = new StackedAreaChartConfiguration();
+        this.chartParametersStackedArea.showControls = false;
+        // this.chartParametersStackedArea.useInteractiveGuideline= true;
+        this.chartParametersStackedArea.color = ["#FF0000", "#00FF00"];
+
+
     }
 
     ngOnInit() {
@@ -46,7 +58,7 @@ export class AccountsDetailComponent implements AfterContentInit, OnInit {
         }
         this.onChartData(data);
         this.formLabel = data['ACCOUNTTYP'];
-        // this.formLabel = data['ENTITYID'] + '-' + data['OFFICEID'] + '-' + data['CDID'] + '-' + data['ANID'];
+        this.ibanLabel = data['ENTITYID'] + '-' + data['OFFICEID'] + '-' + data['CDID'] + '-' + data['ANID'];
     }
 
     protected configureService() {
