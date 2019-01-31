@@ -1,52 +1,33 @@
-import { ViewEncapsulation, Injector, Component, ViewChild, AfterViewInit } from '@angular/core';
-import { UserInfo, OUserInfoService, OFormComponent, OPasswordInputComponent, DialogService, LoginService } from 'ontimize-web-ngx';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { MatRadioChange } from '@angular/material';
+import { AppConfig, OTranslateService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.app-settings]': 'true'
+  }
 })
-export class SettingsComponent implements AfterViewInit {
-  //  implements OnInit
-  protected loginService: LoginService;
-  protected dialogService: DialogService;
-  protected oUserInfoService: OUserInfoService;
-  public userInfo: UserInfo;
+export class SettingsComponent {
 
-  @ViewChild('oForm') oForm: OFormComponent;
-  @ViewChild('oldPassword') oldPassword: OPasswordInputComponent;
-  @ViewChild('newPassword') newPassword: OPasswordInputComponent;
-  @ViewChild('confirmPassword') confirmPassword: OPasswordInputComponent;
+  public availableLangs: string[] = [];
+  public currentLang: string;
 
   constructor(
-    protected injector: Injector
+    protected appConfig: AppConfig,
+    protected translateService: OTranslateService
   ) {
-    this.loginService = this.injector.get(LoginService);
-    this.dialogService = this.injector.get(DialogService);
-    this.oUserInfoService = this.injector.get(OUserInfoService);
-    this.userInfo = this.oUserInfoService.getUserInfo();
+    this.availableLangs = this.appConfig.getConfiguration().applicationLocales;
+    this.currentLang = this.translateService.getCurrentLang();
   }
 
-  // ngOnInit() {
-  //   this.oForm.setFormMode(2);
-  // }
-
-  ngAfterViewInit() {
-    this.oForm.setFormMode(2);
-    this.oForm.queryData({
-      USER_: this.loginService.getSessionInfo().user
-    });
-  }
-
-  changePassword() {
-    if (this.newPassword.getValue() !== this.confirmPassword.getValue()) {
-      this.dialogService.error('ERROR', 'WRONG_PASSWORD_MATCH');
-      return;
+  changeLang(e: MatRadioChange): void {
+    if (this.translateService && this.translateService.getCurrentLang() !== e.value) {
+      this.translateService.use(e.value);
     }
   }
 
-  updateUserData() {
-    this.oForm._editAction();
-  }
 }

@@ -1,72 +1,10 @@
-<div fxLayout="column" fxLayoutAlign="center top" fxFill>
-  <o-form service="users" entity="user" keys="USER_" fxLayout="row" show-header="no" stay-in-record-after-edit="yes" label-header="SETTINGS"
-    header-actions="R;U" #oForm>
-    <div fxLayout="row" fxLayoutAlign="space-between start" fxFill>
+<div fxLayout="column" fxFlex="60" class="settings-container">
+  <span>{{ 'SETTINGS' | oTranslate }}</span>
 
-      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="20">
+  <o-column title="LANGUAGE" layout-align="center stretch" class="setting-column" layout-padding>
+    <mat-radio-group [value]="currentLang" (change)="changeLang($event)">
+      <mat-radio-button *ngFor="let lang of availableLangs" [value]="lang">{{ 'LANG_' + lang | oTranslate }}</mat-radio-button>
+    </mat-radio-group>
+  </o-column>
 
-        <div fxLayout="column" fxLayoutAlign="center center" class="rounded-panel user-info">
-          <div fxLayout="row" fxLayoutAlign="center center" class="user-info-avatar-wrapper">
-            <img [src]="userInfo.avatar" />
-          </div>
-          {{ userInfo.username }}
-        </div>
-      </div>
-
-      <div fxLayout="column" fxFill fxFlex="80">
-        <mat-tab-group fxFill>
-          <mat-tab label="{{ 'USER_DATA' | oTranslate }}">
-            <div fxLayout="column" layout-padding>
-              <o-row attr="row1" layout-align="space-between center">
-                <o-column layout-align="center center" layout-padding>
-
-                  <div fxLayout="row" fxFill fxLayoutAlign="start center">
-                    <o-text-input attr="NAME" fxFlex="35" class="margin-right-24"></o-text-input>
-                    <o-text-input attr="SURNAME" fxFlex="65"></o-text-input>
-                  </div>
-
-                  <div fxLayout="row" fxFill fxLayoutAlign="start center">
-                    <o-nif-input attr="NIF" fxFlex="35" class="margin-right-24"></o-nif-input>
-                    <!--<o-date-input attr="BIRTHDATE" fxFlex="65"></o-date-input>-->
-                  </div>
-
-                  <!--<o-text-input attr="ADDRESS" fxFill></o-text-input>-->
-                  <o-email-input attr="EMAIL" fxFill></o-email-input>
-
-                  <o-button type="RAISED" label="CONFIRM" (click)="updateUserData()"></o-button>
-                </o-column>
-              </o-row>
-            </div>
-          </mat-tab>
-
-          <mat-tab label="{{ 'USER_IMAGE' | oTranslate }}">
-            <div fxLayout="column" layout-padding>
-              <o-row layout-align="start center">
-                <o-column layout-align="center center" fxFlex="30" layout-padding>
-                   <o-image [data]="userInfo.avatar" attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image>
-                  <!-- <o-image [data]="userInfo.avatar" fxFill class="customer-picture" empty-image="./assets/images/no-image.png" automatic-binding="no"></o-image> -->
-                </o-column>
-              </o-row>
-            </div>
-          </mat-tab>
-
-          <mat-tab label="{{ 'CHANGE_PASSWORD' | oTranslate }}">
-            <div fxLayout="column" layout-padding>
-              <o-row layout-align="start center">
-                <o-column layout-align="center center" fxFlex="30" layout-padding>
-                  <o-text-input attr="USER_" enabled="no" label="USERNAME" fxFill></o-text-input>
-                   <o-password-input #oldPassword attr="OLD_PASSWORD" label="PASSWORD" fxFill></o-password-input>
-                  <!-- <o-password-input #oldPassword label="PASSWORD" fxFill></o-password-input> -->
-                  <o-password-input #newPassword attr="PASSWORD" label="NEW_PASSWORD" automatic-binding="no" fxFill></o-password-input>
-                   <o-password-input #confirmPassword attr="CONFIRM_PASSWORD" label="CONFIRM_PASSWORD" fxFill></o-password-input>
-                  <!-- <o-password-input #confirmPassword label="CONFIRM_PASSWORD" fxFill></o-password-input> -->
-                  <o-button type="RAISED" label="CONFIRM" (click)="changePassword()"></o-button>
-                </o-column>
-              </o-row>
-            </div>
-          </mat-tab>
-        </mat-tab-group>
-      </div>
-    </div>
-  </o-form>
 </div>

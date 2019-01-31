@@ -111,5 +111,7 @@
   "ACCOUNT_TYPE_SAVINGS": "Ahorro",
   "ACCOUNT_TYPE_CHECKING": "Corriente",
   "ACCOUNT_TYPE_PAYROLL": "Nómina",
-  "ACCOUNT_TYPE_MARKET": "Valores"
+  "ACCOUNT_TYPE_MARKET": "Valores",
+  "LANG_en": "Inglés",
+  "LANG_es": "Español"
 }
