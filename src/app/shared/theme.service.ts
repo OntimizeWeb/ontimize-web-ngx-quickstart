@@ -44,15 +44,7 @@ export class ThemeService {
   constructor(
     private config: AppConfig,
     private _styleManager: StyleManager
-  ) {
-    const theme = this.getStoredTheme();
-    if (!Util.isDefined(theme)) {
-      this.currentTheme = this.availableThemes[0];
-      this.storeTheme(this.currentTheme);
-    } else {
-      this.installTheme(theme);
-    }
-  }
+  ) { }
 
   storeTheme(theme: DocsSiteTheme): void {
     const locStrgData = JSON.parse(window.localStorage[this.config.getConfiguration().uuid]);
