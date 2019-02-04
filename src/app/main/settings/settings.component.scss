@@ -11,13 +11,32 @@
         overflow: hidden;
       }
 
-      .mat-radio-group {
-        display: inline-flex;
-        flex-direction: column;
+      .mat-radio-group .mat-radio-button {
+        padding: 4px 14px;
 
-        .mat-radio-button {
-          padding: 4px 14px;
+        .theme-option {
+          height: 36px;
+          width: 36px;
+
+          .theme-option-background {
+            border-radius: 50%;
+            height: 100%;
+          }
         }
+      }
+
+      .theme-radio-group {
+        .mat-radio-container {
+          display: none !important;
+        }
+
+        .mat-radio-label-content {
+          padding: 0;
+        }
+      }
+
+      .mat-slide-toggle {
+        padding-left: 14px;
       }
     }
   }
