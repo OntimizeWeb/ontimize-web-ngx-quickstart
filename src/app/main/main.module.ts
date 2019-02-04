@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CommonModule } from '@angular/common';
+
 import { SharedModule } from '../shared/shared.module';
-import { MainComponent } from './main.component';
+import { StyleManager } from '../shared/style-manager/style-manager';
+import { ThemeService } from '../shared/theme.service';
 import { MainRoutingModule } from './main-routing.module';
+import { MainComponent } from './main.component';
 
 @NgModule({
   imports: [
-    SharedModule,
+    MainRoutingModule,
     OntimizeWebModule,
-    MainRoutingModule
+    SharedModule
   ],
   declarations: [
     MainComponent
+  ],
+  providers: [
+    StyleManager,
+    ThemeService
   ]
 })
 export class MainModule { }

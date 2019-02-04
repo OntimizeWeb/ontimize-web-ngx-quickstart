@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { OntimizeService } from 'ontimize-web-ngx';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
+import { DocsSiteTheme, ThemeService } from '../theme.service';
+
 @Component({
   selector: 'employees-card',
   templateUrl: './employees-card.component.html',
@@ -18,7 +20,8 @@ export class EmployeesCardComponent {
 
   constructor(
     private ontimizeService: OntimizeService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private _themeService: ThemeService
   ) {
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('employees'));
     this.ontimizeService.query(void 0, ['EMPLOYEEID'], 'employee').subscribe(
@@ -37,10 +40,11 @@ export class EmployeesCardComponent {
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
     this.chartParameters.margin.left = 60;
-    this.chartParameters.color = ['#ffcc00', '#c5c5c5', '#242424'];
     this.chartParameters.yDataType = 'intGrouped';
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
+    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
+    this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
   }
 
 }

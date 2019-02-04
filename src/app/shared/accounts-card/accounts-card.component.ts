@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { PieChartConfiguration, DonutChartConfiguration } from 'ontimize-web-ngx-charts';
+import { DonutChartConfiguration } from 'ontimize-web-ngx-charts';
+
+import { DocsSiteTheme, ThemeService } from '../theme.service';
 
 @Component({
   selector: 'accounts-card',
@@ -14,7 +16,9 @@ export class AccountsCardComponent {
 
   public chartParameters: DonutChartConfiguration;
 
-  constructor() {
+  constructor(
+    private _themeService: ThemeService
+  ) {
     this.chartParameters = new DonutChartConfiguration();
     this.chartParameters.legendPosition = 'right';
     this.chartParameters.height = 150;
@@ -22,11 +26,12 @@ export class AccountsCardComponent {
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
     this.chartParameters.margin.left = 0;
-    this.chartParameters.color = ['#ffcc00', '#eeeeee', '#c5c5c5', '#242424'];
     this.chartParameters.labelType = 'value';
     this.chartParameters.labelSunbeamLayout = false;
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
+    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
+    this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', theme.primary];
   }
 
 }

@@ -113,5 +113,7 @@
   "ACCOUNT_TYPE_PAYROLL": "Nómina",
   "ACCOUNT_TYPE_MARKET": "Valores",
   "LANG_en": "Inglés",
-  "LANG_es": "Español"
+  "LANG_es": "Español",
+  "THEME": "Tema",
+  "DARK_MODE": "Modo nocturno"
 }
