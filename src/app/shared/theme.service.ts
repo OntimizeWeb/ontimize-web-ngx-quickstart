@@ -47,41 +47,39 @@ export class ThemeService {
   ) { }
 
   storeTheme(theme: DocsSiteTheme): void {
-    const locStrgData = JSON.parse(window.localStorage[this.config.getConfiguration().uuid]);
-    locStrgData[ThemeService.STORAGE_KEY] = theme;
-    window.localStorage[this.config.getConfiguration().uuid] = JSON.stringify(locStrgData);
+    const locStrgData = window.localStorage[this.config.getConfiguration().uuid] || '{}';
+    const storedData = JSON.parse(locStrgData);
+    storedData[ThemeService.STORAGE_KEY] = theme;
+    window.localStorage[this.config.getConfiguration().uuid] = JSON.stringify(storedData);
     this.onThemeUpdate.emit(theme);
   }
 
   getStoredTheme(): DocsSiteTheme {
-    const locStrgData = JSON.parse(window.localStorage[this.config.getConfiguration().uuid]);
-    return locStrgData[ThemeService.STORAGE_KEY];
+    const locStrgData = window.localStorage[this.config.getConfiguration().uuid] || '{}';
+    return JSON.parse(locStrgData)[ThemeService.STORAGE_KEY] || this.getDefaultTheme();
   }
 
   installTheme(theme: DocsSiteTheme): void {
     this.currentTheme = this._getCurrentThemeFromHref(theme.href);
     if (!Util.isDefined(this.currentTheme)) {
-      this.currentTheme = this.availableThemes[0];
+      this.currentTheme = this.getDefaultTheme();
     }
 
-    if (theme.isDefault) {
-      if (theme.isDark) {
-        this._styleManager.setStyle('theme', `./assets/custom-themes/${theme.href_dark}`);
-      } else {
-        this._styleManager.removeStyle('theme');
-      }
+    if (theme.isDark) {
+      this._styleManager.setStyle('theme', `./assets/themes/${theme.href_dark}`);
     } else {
-      if (theme.isDark) {
-        this._styleManager.setStyle('theme', `./assets/custom-themes/${theme.href_dark}`);
-      } else {
-        this._styleManager.setStyle('theme', `./assets/custom-themes/${theme.href}`);
-      }
+      this._styleManager.setStyle('theme', `./assets/themes/${theme.href}`);
     }
+
     this.currentTheme.isDark = theme.isDark;
 
     if (this.currentTheme) {
       this.storeTheme(this.currentTheme);
     }
+  }
+
+  getDefaultTheme(): DocsSiteTheme {
+    return this.availableThemes[0];
   }
 
   private _getCurrentThemeFromHref(href: string): DocsSiteTheme {
