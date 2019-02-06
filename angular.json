@@ -28,7 +28,6 @@
             "styles": [
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
-              "src/assets/css/app.scss",
               "src/styles.scss"
             ],
             "scripts": [
@@ -87,7 +86,6 @@
             "styles": [
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
-              "src/assets/css/app.scss",
               "src/styles.scss"
             ],
             "assets": [
