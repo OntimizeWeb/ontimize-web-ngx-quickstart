@@ -8,7 +8,6 @@
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 // @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 // @include ontimize-theme-styles($theme);
-
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
 @include ontimize-theme-styles-lite($theme);
 
@@ -24,6 +23,8 @@
 */
 @import '../../app/login/login.theme.scss';
 @include login-theme($theme);
+@import '../../app/main/accounts/detail/accounts-detail.theme.scss';
+@include accounts-detail-theme($theme);
 
 /*
 * Other app styles

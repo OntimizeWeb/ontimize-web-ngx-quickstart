@@ -115,5 +115,6 @@
   "LANG_en": "Inglés",
   "LANG_es": "Español",
   "THEME": "Tema",
-  "DARK_MODE": "Modo nocturno"
+  "DARK_MODE": "Modo nocturno",
+  "AVG_BALANCE": "Saldo medio"
 }
