@@ -124,6 +124,7 @@ export class AccountsDetailComponent {
     this.balanceChartParams.y1Axis.showMaxMin = false;
     this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
     this.balanceChartParams.x1Axis.tickPadding = 10;
+    this.balanceChartParams.y1Axis.tickPadding = 10;
   }
 
   private _configurePieChart(locale: any): void {
@@ -132,7 +133,7 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.right = 0;
     this.movementTypesChartParams.margin.bottom = 0;
     this.movementTypesChartParams.margin.left = 0;
-    this.movementTypesChartParams.legendPosition = 'right';
+    this.movementTypesChartParams.legendPosition = 'bottom';
     this.movementTypesChartParams.legend.vers = 'furious';
     this.movementTypesChartParams.legend.width = '150';
     this.movementTypesChartParams.labelType = 'value';
