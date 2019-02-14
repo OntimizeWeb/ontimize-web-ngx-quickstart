@@ -36,7 +36,7 @@
 
       <o-row layout-gap="30px">
         <o-column title="MOVEMENTS" class="movement-list-container" fxFlex="40">
-          <o-form-layout-manager title="MOVEMENT" label-columns="CONCEPT" fxFill>
+          <o-form-layout-manager attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" fxFill>
             <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
               columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
               class="movement-list">
