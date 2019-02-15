@@ -5,7 +5,9 @@ import {
   APP_CONFIG,
   ONTIMIZE_MODULES,
   ONTIMIZE_PROVIDERS,
-  OntimizeWebModule
+  OntimizeWebModule,
+  O_MAT_ERROR_OPTIONS,
+  O_INPUTS_OPTIONS
 } from 'ontimize-web-ngx';
 
 import { CONFIG } from './app.config';
@@ -14,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Defining custom providers (if needed)...
 export const customProviders: any = [
+  { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } },
+  { provide: O_INPUTS_OPTIONS, useValue: { iconColor: 'accent' } }
 ];
 
 @NgModule({

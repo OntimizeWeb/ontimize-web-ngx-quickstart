@@ -16,7 +16,7 @@
 * After define theme, it is necessary to transfer color to Ontimize Web framework
 */
 @import 'node_modules/ontimize-web-ngx/theme.scss';
-@include o-material-theme($theme);
+@include o-material-theme($theme, $lite-typography);
 @import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
 @include o-filemanager-table-theme($theme);
 /*
