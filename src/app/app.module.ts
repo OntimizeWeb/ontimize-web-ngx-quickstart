@@ -1,8 +1,5 @@
-import { registerLocaleData } from '@angular/common';
-import localeEn from '@angular/common/locales/en';
-import localeEs from '@angular/common/locales/es';
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule, OTranslateService } from 'ontimize-web-ngx';
+import { NgModule } from '@angular/core';
+import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule, O_MAT_ERROR_OPTIONS, O_INPUTS_OPTIONS } from 'ontimize-web-ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +11,8 @@ import { ThemeService } from './shared/theme.service';
 // Defining custom providers (if needed)...
 export const customProviders: any = [
   D3LocaleService,
+  { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } },
+  { provide: O_INPUTS_OPTIONS, useValue: { iconColor: 'accent' } },
   StyleManager,
   ThemeService
 ];
