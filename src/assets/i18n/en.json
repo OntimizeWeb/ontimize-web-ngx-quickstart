@@ -111,5 +111,9 @@
   "ACCOUNT_TYPE_SAVINGS": "Savings",
   "ACCOUNT_TYPE_CHECKING": "Checking",
   "ACCOUNT_TYPE_PAYROLL": "Payroll",
-  "ACCOUNT_TYPE_MARKET": "Money market"
+  "ACCOUNT_TYPE_MARKET": "Money market",
+  "LANG_en": "English",
+  "LANG_es": "Spanish",
+  "THEME": "Theme",
+  "DARK_MODE": "Dark Mode"
 }

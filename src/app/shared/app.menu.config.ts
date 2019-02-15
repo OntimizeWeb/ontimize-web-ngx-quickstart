@@ -51,6 +51,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
   {
     id: 'general', name: 'GENERAL', icon: 'info_outline', opened: false,
     items: [
+      { id: 'settings', name: 'SETTINGS', route: '/main/settings', icon: 'settings' },
       { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' }
     ]
   },

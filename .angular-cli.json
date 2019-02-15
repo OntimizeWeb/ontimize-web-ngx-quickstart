@@ -27,7 +27,6 @@
         "../node_modules/ontimize-web-ngx/ontimize.scss",
         "../node_modules/ontimize-web-ngx-charts/styles.scss",
         "../node_modules/ontimize-web-ngx-map/styles.scss",
-        "assets/css/app.scss",
         "styles.scss"
       ],
       "scripts": [

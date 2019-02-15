@@ -10,6 +10,7 @@
 *.d.ts
 /aot-config/*_original.*
 /src/app/main/extra
+/src/assets/themes/*.css
 
 # dependencies
 /node_modules

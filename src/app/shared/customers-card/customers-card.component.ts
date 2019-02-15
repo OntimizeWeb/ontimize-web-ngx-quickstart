@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
+import { DocsSiteTheme, ThemeService } from '../theme.service';
+
 @Component({
   selector: 'customers-card',
   templateUrl: './customers-card.component.html',
@@ -14,7 +16,9 @@ export class CustomersCardComponent {
 
   public chartParameters: MultiBarHorizontalChartConfiguration;
 
-  constructor() {
+  constructor(
+    private _themeService: ThemeService
+  ) {
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.showLegend = false;
     this.chartParameters.showControls = false;
@@ -24,10 +28,11 @@ export class CustomersCardComponent {
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
     this.chartParameters.margin.left = 60;
-    this.chartParameters.color = ['#ffcc00', '#c5c5c5', '#242424'];
     this.chartParameters.yDataType = 'intGrouped';
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
+    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
+    this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
   }
 
 }
