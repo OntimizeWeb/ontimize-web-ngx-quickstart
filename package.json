@@ -9,7 +9,7 @@
     "build": "npm run build-themes && ng build",
     "production": "npm run build-themes && ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "production-aot": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web-ngx-quickstart/",
-    "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/v4/",
+    "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/",
     "build-themes": "node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
   },
   "private": true,
