@@ -20,9 +20,10 @@
           <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
             <span class="customers-list-title">{{ 'CUSTOMERS' | oTranslate }}</span>
             <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
-              columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME" query-on-init="no" query-on-bind="yes" controls="no">
+              columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
               <mat-list-item *ngFor="let customer of customerList.dataArray">
-                <mat-icon mat-list-icon color="accent">person</mat-icon>
+                <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
+                <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
                 <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
               </mat-list-item>
             </o-list>
