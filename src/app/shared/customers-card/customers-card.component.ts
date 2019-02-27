@@ -3,6 +3,8 @@ import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { DocsSiteTheme, ThemeService } from '../theme.service';
 
+declare var d3: any;
+
 @Component({
   selector: 'customers-card',
   templateUrl: './customers-card.component.html',
@@ -33,6 +35,12 @@ export class CustomersCardComponent {
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
     this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
+    if (theme.isDark) {
+      this.chartParameters.callback = () => {
+        d3.selectAll('.customers-card-chart .nv-axis text').style('fill', '#cccccc');
+        d3.selectAll('.customers-card-chart .nv-groups text').style('fill', '#cccccc');
+      };
+    }
   }
 
 }

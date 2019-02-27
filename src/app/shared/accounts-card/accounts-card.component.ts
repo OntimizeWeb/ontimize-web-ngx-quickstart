@@ -3,6 +3,8 @@ import { DonutChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { DocsSiteTheme, ThemeService } from '../theme.service';
 
+declare var d3: any;
+
 @Component({
   selector: 'accounts-card',
   templateUrl: './accounts-card.component.html',
@@ -21,6 +23,7 @@ export class AccountsCardComponent {
   ) {
     this.chartParameters = new DonutChartConfiguration();
     this.chartParameters.legendPosition = 'right';
+    this.chartParameters.legend.margin.top = 16;
     this.chartParameters.height = 150;
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
@@ -32,6 +35,12 @@ export class AccountsCardComponent {
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
     this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', theme.primary];
+    if (theme.isDark) {
+      this.chartParameters.callback = () => {
+        d3.selectAll('.accounts-card-chart .nv-pieLabels text').style('fill', '#cccccc');
+        d3.selectAll('.accounts-card-chart .nv-legend-text').style('fill', '#cccccc');
+      };
+    }
   }
 
 }
