@@ -2,10 +2,10 @@
   <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
     columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R;U;D"
     [label-header]="formLabel" show-header-navigation="yes" (onDataLoaded)="onFormDataLoaded($event)">
-    <o-column layout-gap="30px">
+    <o-column layout-gap="24px">
 
-      <o-row layout-gap="30px">
-        <o-row title="ACCOUNT_INFO" class="account-info-container" fxFlex="40" layout-align="space-around start">
+      <o-row layout-gap="26px">
+        <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
           <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
             <span class="account-form-label">{{ 'BALANCE' | oTranslate }}</span>
             <span class="account-form-value balance"
@@ -29,14 +29,14 @@
             </o-list>
           </div>
         </o-row>
-        <o-column title="BALANCE" class="balance-chart-container" fxFlex="60">
+        <o-column title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
           <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
             chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart>
         </o-column>
       </o-row>
 
-      <o-row layout-gap="30px">
-        <o-column title="MOVEMENTS" class="movement-list-container" fxFlex="40">
+      <o-row layout-gap="26px">
+        <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
           <o-form-layout-manager attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" fxFill>
             <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
               columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
@@ -44,7 +44,11 @@
               <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" [class.movement-list-item-transfer]="row.MOVEMENTTYPEID===1"
                 [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2" [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3"
                 [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4" class="movement-list-item">
-                <img mat-list-icon [src]="row.MOVEMENTTYPEID ? './assets/images/ontimize.png' : './assets/images/ontimize.png'">
+                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
+                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
+                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
+                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
+                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
                 <span mat-line class="concept">{{ row.CONCEPT }}</span>
                 <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
                 <span class="amount">{{ row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
@@ -52,7 +56,7 @@
             </o-list>
           </o-form-layout-manager>
         </o-column>
-        <o-column title="MOVEMENTTYPES" class="movement-chart-container" fxFlex="60">
+        <o-column title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60">
           <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
             query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart"></o-chart>
         </o-column>

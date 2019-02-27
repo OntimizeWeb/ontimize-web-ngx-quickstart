@@ -12,6 +12,8 @@
   .movement-chart-container,
   .movement-list-container {
     border-radius: 5px;
+    background-color: white;
+    margin: 2px;
   }
 
   .account-form-label {
@@ -55,6 +57,7 @@
         margin: 8px;
 
         .mat-list-icon {
+          border-radius: 0;
           height: 46px;
           padding: 0;
           width: 46px;

@@ -64,48 +64,50 @@ export class AccountsDetailComponent {
   }
 
   private processLineData(data: any[]): void {
-    const balanceSerie: ChartSeries = {
-      key: this.translateService.get('BALANCE'),
-      values: []
-    };
+    if (data && data.length) {
+      const balanceSerie: ChartSeries = {
+        key: this.translateService.get('BALANCE'),
+        values: []
+      };
 
-    const movementSerie: ChartSeries = {
-      bar: true,
-      key: this.translateService.get('MOVEMENT'),
-      values: []
-    };
+      const movementSerie: ChartSeries = {
+        bar: true,
+        key: this.translateService.get('MOVEMENT'),
+        values: []
+      };
 
-    let avgBalance = data[0].MOVEMENT;
-    let balance = data[0].MOVEMENT;
-    data.forEach((item: any, i: number) => {
-      if (i !== 0) {
-        balance = this._increment(balance, item.MOVEMENT);
-      }
+      let avgBalance = data[0] ? data[0].MOVEMENT : 0;
+      let balance = data[0] ? data[0].MOVEMENT : 0;
+      data.forEach((item: any, i: number) => {
+        if (i !== 0) {
+          balance = this._increment(balance, item.MOVEMENT);
+        }
 
-      let color: string;
-      switch (item.MOVEMENTTYPEID) {
-        case 1:
-          color = AccountsDetailComponent.colorTransfer;
-          break;
-        case 2:
-          color = AccountsDetailComponent.colorCash;
-          break;
-        case 3:
-          color = AccountsDetailComponent.colorSalary;
-          break;
-        case 4:
-          color = AccountsDetailComponent.colorDebit;
-          break;
-      }
+        let color: string;
+        switch (item.MOVEMENTTYPEID) {
+          case 1:
+            color = AccountsDetailComponent.colorTransfer;
+            break;
+          case 2:
+            color = AccountsDetailComponent.colorCash;
+            break;
+          case 3:
+            color = AccountsDetailComponent.colorSalary;
+            break;
+          case 4:
+            color = AccountsDetailComponent.colorDebit;
+            break;
+        }
 
-      avgBalance += balance;
-      const date = new Date(item.DATE_);
-      balanceSerie.values.push({ x: date, y: balance });
-      movementSerie.values.push({ x: date, y: item.MOVEMENT, color: color });
-    });
+        avgBalance += balance;
+        const date = new Date(item.DATE_);
+        balanceSerie.values.push({ x: date, y: balance });
+        movementSerie.values.push({ x: date, y: item.MOVEMENT, color: color });
+      });
 
-    this.avgBalance = avgBalance / data.length;
-    this.lineData = [balanceSerie, movementSerie];
+      this.avgBalance = avgBalance / data.length;
+      this.lineData = [balanceSerie, movementSerie];
+    }
   }
 
   private _increment(val1: number, val2: number): number {
@@ -125,6 +127,10 @@ export class AccountsDetailComponent {
     this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
     this.balanceChartParams.x1Axis.tickPadding = 10;
     this.balanceChartParams.y1Axis.tickPadding = 10;
+    this.balanceChartParams.legend.margin.top = 2;
+    this.balanceChartParams.legend.margin.right = 0;
+    this.balanceChartParams.legend.margin.bottom = 2;
+    this.balanceChartParams.legend.margin.left = 0;
   }
 
   private _configurePieChart(locale: any): void {
