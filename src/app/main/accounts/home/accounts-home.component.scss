@@ -3,7 +3,9 @@
   height: calc(100% - 16px);
   width: calc(100% - 16px);
   padding: 8px;
-
+  .mat-sidenav-filters{
+    top:62px;
+  }
   .label-balance{
     display: block;
     position: relative;
@@ -12,6 +14,10 @@
   }
   .container-date{
     padding:20px 0;
+  }
+
+  .mat-sidenav-content{
+    padding-left:36px;
   }
 }
 
@@ -24,20 +30,15 @@
 .accounts-sidenav-container {
   padding-left: 20px;
 }
-// .example-sidenav-container {
-//   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-//      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-//   flex: 1;
-// }
 
-.list-accounts {
-  .mat-card {
+
+.list-accounts .o-list-container .mat-list {
+  .o-list-item.mat-card{
     &:not([class*=mat-elevation-z]) {
       box-shadow: none;
     }
-    padding: 29px 21px;
+    padding: 16px 22px;
     margin-bottom: 28px;
-    border:1px solid #eeeeee;
   }
 
   label,
@@ -55,12 +56,14 @@
 
   .info-account {
     &.border-right {
-      border-right: 1.5px solid;
+      border-right-style: solid;
+      border-right-width: 1.5px;
     }
 
     &.border-bottom {
       padding: 8px 0;
-      border-bottom: 1.5px solid;
+      border-bottom-style: solid;
+      border-bottom-width: 1.5px;
     }
 
     label,

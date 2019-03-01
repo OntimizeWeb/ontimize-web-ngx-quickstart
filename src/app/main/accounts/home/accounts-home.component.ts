@@ -51,10 +51,10 @@ export class AccountsHomeComponent implements OnDestroy {
       filters.push(beOfficeID);
     }
     //control
-    let control = this.formFilter.getFieldReference('CDID').getValue();
-    if (Util.isDefined(control) && control!=='') {
-      let beCDID = FilterExpressionUtils.buildExpressionLike('CDID', control);
-      filters.push(beCDID);
+    let cuenta = this.formFilter.getFieldReference('ANID').getValue();
+    if (Util.isDefined(cuenta) && cuenta!=='') {
+      let beANID = FilterExpressionUtils.buildExpressionLike('ANID', cuenta);
+      filters.push(beANID);
     }
     //type
     let typ = this.formFilter.getFieldReference('ACCOUNTTYPEID').getValue();
