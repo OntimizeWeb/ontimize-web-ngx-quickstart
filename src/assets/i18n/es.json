@@ -56,7 +56,7 @@
   "ACCOUNT_CLIENTS": "Clientes asociados",
   "ADD_ACCOUNT_CLIENT": "Añadir",
   "REMOVE_ACCOUNT_CLIENT": "Eliminar",
-  "ACCOUNTTYP": "Tipo",
+  "ACCOUNTTYPEID": "Tipo",
   "BRANCHES": "Sucursales",
   "BRANCH_INFO": "Información de la sucursal",
   "BRANCH_PLAN": "Plano",
@@ -116,5 +116,9 @@
   "LANG_es": "Español",
   "THEME": "Tema",
   "DARK_MODE": "Modo nocturno",
-  "AVG_BALANCE": "Saldo medio"
+  "AVG_BALANCE": "Saldo medio",
+  "AVAILABLE_BALANCE": "Saldo disponible",
+  "APPLY_FILTER":"Aplicar filtro",
+  "DELETE_FILTER":"Borrar filtro",
+  "ACCOUNTTYP":"Alias"
 }

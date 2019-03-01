@@ -1,0 +1,11 @@
+@import 'node_modules/@angular/material/theming';
+@mixin account-home-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .list-accounts {
+    .mat-card .info-account.border-right,
+    .mat-card .info-account.border-bottom {
+      border-color: mat-color($accent);
+    }
+  }
+}

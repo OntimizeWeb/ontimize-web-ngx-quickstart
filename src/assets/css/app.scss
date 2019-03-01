@@ -23,6 +23,10 @@
 */
 @import '../../app/login/login.theme.scss';
 @include login-theme($theme);
+
+@import '../../app/main/accounts/home/account-home.theme.scss';
+@include account-home-theme($theme);
+
 @import '../../app/main/accounts/detail/accounts-detail.theme.scss';
 @include accounts-detail-theme($theme);
 

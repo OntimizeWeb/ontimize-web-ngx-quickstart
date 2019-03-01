@@ -1,0 +1,89 @@
+.mat-sidenav-containers-filters {
+  position: absolute;
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+  padding: 8px;
+
+  .label-balance{
+    display: block;
+    position: relative;
+    font-size: 14px;
+    margin-bottom:10px;
+  }
+  .container-date{
+    padding:20px 0;
+  }
+}
+
+.accounts-filters {
+  padding: 6px 33px;
+}
+
+
+
+.accounts-sidenav-container {
+  padding-left: 20px;
+}
+// .example-sidenav-container {
+//   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+//      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+//   flex: 1;
+// }
+
+.list-accounts {
+  .mat-card {
+    &:not([class*=mat-elevation-z]) {
+      box-shadow: none;
+    }
+    padding: 29px 21px;
+    margin-bottom: 28px;
+    border:1px solid #eeeeee;
+  }
+
+  label,
+  span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px; //igual que los inputs
+  }
+
+  label {
+    font-weight: bold;
+    color: #242424;
+  }
+
+  .info-account {
+    &.border-right {
+      border-right: 1.5px solid;
+    }
+
+    &.border-bottom {
+      padding: 8px 0;
+      border-bottom: 1.5px solid;
+    }
+
+    label,
+    span {
+      padding-bottom: 12px;
+    }
+
+  }
+
+  .balance-account {
+    label,
+    span {
+      padding-top: 12px;
+      font-size: 18px;
+    }
+
+    span {
+      color: #4c4d4d;
+      &.date{
+        font-size:12px
+      }
+    }
+
+  }
+
+}

@@ -1,16 +1,88 @@
-<!-- <o-form-layout-manager mode="tab" title="ACCOUNTS" label-columns="ACCOUNTTYP" separator="-"> -->
-  <div fxFill fxLayout="column" fxLayoutAlign="start">
-    <o-table service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-      visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP" fxFlex attr="accounts" title="ACCOUNTS" sort-columns="ANID"
-      query-rows="15" pageable="no">
+<mat-sidenav-container class="mat-sidenav-containers-filters">
+  <mat-sidenav #sidenav opened [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches">
+    <o-form #formFilter editable-detail="no" show-header="no">
 
-      <o-table-columns-filter></o-table-columns-filter>
+      <div fxLayout="column" fxLayoutGap="26px" class="accounts-filters">
+        <o-text-input #entityid attr="ENTITYID" read-only="no"></o-text-input>
+        <o-text-input attr="OFFICEID" read-only="no"></o-text-input>
+        <o-combo attr="ACCOUNTTYPEID" read-only="no" service="branches" entity="accountTypeAggregate"
+          columns="ACCOUNTTYPEID;ACCOUNTTYPENAME" value-column="ACCOUNTTYPEID" keys="ACCOUNTTYPEID"
+          visible-columns="ACCOUNTTYPENAME"></o-combo>
+        <o-text-input attr="CDID" read-only="no"></o-text-input>
+        <div class="container-date"  fxLayout="column" fxLayoutGap="26px">
+          <o-date-input attr="STARTDATE" read-only="no"></o-date-input>
+          <o-date-input attr="ENDDATE" read-only="no"></o-date-input>
+        </div>
+        <label class="mat-form-field-label label-balance">{{'BALANCE' | oTranslate}}</label>
+        <o-slider attr="BALANCE" read-only="no" min="0" max="100000" step="1000" thumb-label="true"></o-slider>
 
-      <o-table-column attr="ENTITYID" title="ENTITYID" width="14%" class="o-table-column-centered"></o-table-column>
-      <o-table-column attr="OFFICEID" title="OFFICEID" width="14%" class="o-table-column-centered"></o-table-column>
-      <o-table-column attr="CDID" title="CDID" width="14%" class="o-table-column-centered"></o-table-column>
-      <o-table-column attr="ANID" title="ANID" width="14%" class="o-table-column-centered"></o-table-column>
-      <o-table-context-menu view-detail="yes" edit="false"></o-table-context-menu>
-    </o-table>
-  </div>
-<!-- </o-form-layout-manager> -->
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+          <o-button attr="applyfilter" type="STROKED" label="APPLY_FILTER" (click)="filterAccounts()">
+          </o-button>
+          <o-button attr="deletefilter" type="BASIC" icon="delete" (clear)="clearFilterAccounts()"
+            label="DELETE_FILTER">
+          </o-button>
+        </div>
+
+
+      </div>
+    </o-form>
+  </mat-sidenav>
+
+  <mat-sidenav-content layout-padding>
+    <div fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+        <o-button (click)="sidenav.toggle()" icon="filter_list" type="ICON"> </o-button>
+
+        <o-button (click)="listAccount.reloadData()" label="REFRESH" type="STROKED"> </o-button>
+
+      </div>
+
+      <o-list #listAccount service="branches" entity="account" keys="ACCOUNTID"
+        columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP;ACCOUNTTYPEID"
+        class="list-accounts" controls="no">
+        <mat-card *ngFor="let account of listAccount.dataArray" o-list-item>
+          <div fxLayout="row wrap" fxLayoutAlign="center center">
+
+            <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex="75" fxFlex.lt-lg="100"
+              class="info-account" ngClass.lt-lg="border-bottom" ngClass="border-right">
+              <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlexFill>
+                <div fxLayout="column" fxFlex="10" fxFlex.md="20" fxFlex.lt-md="40">
+                  <label>{{'ACCOUNT'| oTranslate}}</label></div>
+                <div fxLayout="column" fxFlex="40" fxFlex.md="30" fxFlex.lt-md="60"> <span>{{account.ANID}}</span></div>
+                <div fxLayout="column" fxFlex="10" fxFlex.md="20" fxFlex.lt-md="40">
+                  <label>{{'ALIAS'| oTranslate}}</label></div>
+                <div fxLayout="column" fxFlex="40" fxFlex.md="30" fxFlex.lt-md="60"><span>{{account.ACCOUNTTYP}}</span>
+                </div>
+                <div fxLayout="column" fxFlex="10" fxFlex.md="20" fxFlex.lt-md="40">
+                  <label>{{'ENTITYID'| oTranslate}}</label></div>
+                <div fxLayout="column" fxFlex="40" fxFlex.md="30" fxFlex.lt-md="60"> <span>{{account.ENTITYID}}</span>
+                </div>
+                <div fxLayout="column" fxFlex="10" fxFlex.md="20" fxFlex.lt-md="40">
+                  <label>{{'CDID'| oTranslate}}</label></div>
+                <div fxLayout="column" fxFlex="40" fxFlex.md="30" fxFlex.lt-md="60"> <span>{{account.CDID}}</span></div>
+                <div fxLayout="column" fxFlex="10" fxFlex.md="20" fxFlex.lt-md="40">
+                  <label>{{'OFFICEID'| oTranslate}}</label></div>
+                <div fxLayout="column" fxFlex="40" fxFlex.md="30" fxFlex.lt-md="60"> <span>{{account.OFFICEID}}</span>
+                </div>
+                <div fxLayout="column" fxFlex="10" fxFlex.md="20" fxFlex.lt-md="40">
+                  <label>{{'ACCOUNTTYP'| oTranslate}}</label></div>
+                <div fxLayout="column" fxFlex="40" fxFlex.md="30" fxFlex.lt-md="60">
+                  <span>{{account.ACCOUNTTYPENAME}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlex="25" fxFlex.lt-lg="100" class="balance-account">
+              <label>{{'AVAILABLE_BALANCE'| oTranslate}}</label>
+              <span>{{account.BALANCE | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+              <div fxLayout="row" fxLayoutAlign="end" fxFill>
+                <span class="date">{{account.STARTDATE | date:'short'}} </span>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </o-list>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
