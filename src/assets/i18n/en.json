@@ -117,6 +117,7 @@
   "THEME": "Theme",
   "DARK_MODE": "Dark Mode",
   "AVG_BALANCE": "Average balance",
+  "FILTER_BALANCE":"Balance (€)",
   "AVAILABLE_BALANCE": "Available balance",
   "APPLY_FILTER":"Apply filter",
   "DELETE_FILTER":"Delete filter",

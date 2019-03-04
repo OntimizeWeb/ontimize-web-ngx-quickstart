@@ -120,5 +120,6 @@
   "AVAILABLE_BALANCE": "Saldo disponible",
   "APPLY_FILTER":"Aplicar filtro",
   "DELETE_FILTER":"Borrar filtro",
-  "ACCOUNTTYP":"Alias"
+  "ACCOUNTTYP":"Alias",
+  "FILTER_BALANCE":"Balance (€)"
 }

@@ -98,7 +98,28 @@ export class AccountsHomeComponent implements OnDestroy {
   }
 
   clearFilterAccounts(){
+    let inputs:Object = this.formFilter.getComponents();
+    console.log(inputs);
+    // inputs.forEach(element) => {
+    //   this.formFilter.clearFieldValue(element.attr);
+    // });
+    let self= this;
+    Object.keys(inputs).forEach((x:any)=>{
+      self.formFilter.clearFieldValue(x);}
+      );
     this.listAccount.queryData({}, { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
+  }
+
+  formatLabelSlider(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'K';
+    }
+
+    return value;
   }
 
 
