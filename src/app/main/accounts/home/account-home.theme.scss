@@ -4,7 +4,8 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
 
-  .mat-sidenav-container-accounts-home {
+  .mat-sidenav-container-account-home {
+    .o-slider .mat-slider-thumb-label-text,
     label,
     span {
       color: mat-color($foreground, secondary-text);
@@ -16,12 +17,6 @@
         border-color: mat-color($accent);
       }
 
-    }
-
-    .o-slider {
-      .mat-slider-thumb-label-text {
-        //color: mat-color($primary,A700);
-      }
     }
   }
 }

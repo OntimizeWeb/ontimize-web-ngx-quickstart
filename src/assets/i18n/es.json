@@ -121,5 +121,8 @@
   "APPLY_FILTER":"Aplicar filtro",
   "DELETE_FILTER":"Borrar filtro",
   "ACCOUNTTYP":"Alias",
-  "FILTER_BALANCE":"Balance (€)"
+  "FILTER_BALANCE":"Balance (€)",
+  "HIDE_FILTERS":"Ocultar filtros",
+  "SHOW_FILTERS":"Mostrar filtros",
+  "RELOAD_DATA":"Refrescar datos"
 }

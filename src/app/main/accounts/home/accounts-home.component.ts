@@ -2,6 +2,7 @@ import { ViewEncapsulation, Component, OnDestroy, ChangeDetectorRef, ViewChild }
 
 import { MediaMatcher } from '@angular/cdk/layout';
 import { IExpression, FilterExpressionUtils, OListComponent, Util, Codes, IFilterBuilderCmpTarget, OTextInputComponent, OFormComponent, IFormDataComponent } from 'ontimize-web-ngx';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'accounts-home',
@@ -22,6 +23,10 @@ export class AccountsHomeComponent implements OnDestroy {
 
   @ViewChild('formFilter')
   private formFilter: OFormComponent;
+
+  @ViewChild('sidenav')
+  private sidenav: MatSidenav;
+  
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -91,18 +96,18 @@ export class AccountsHomeComponent implements OnDestroy {
       ce = filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
     }
 
-    // console.log(filters);
 
     this.listAccount.queryData(FilterExpressionUtils.buildBasicExpression(ce), { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
 
   }
 
+  reloadData(){
+    this.filterAccounts();
+  }
+
   clearFilterAccounts(){
     let inputs:Object = this.formFilter.getComponents();
-    console.log(inputs);
-    // inputs.forEach(element) => {
-    //   this.formFilter.clearFieldValue(element.attr);
-    // });
+  
     let self= this;
     Object.keys(inputs).forEach((x:any)=>{
       self.formFilter.clearFieldValue(x);}
@@ -120,6 +125,10 @@ export class AccountsHomeComponent implements OnDestroy {
     }
 
     return value;
+  }
+
+  toogleSidenav(){
+    this.sidenav.toggle()
   }
 
 

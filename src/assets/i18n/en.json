@@ -121,5 +121,9 @@
   "AVAILABLE_BALANCE": "Available balance",
   "APPLY_FILTER":"Apply filter",
   "DELETE_FILTER":"Delete filter",
-  "ACCOUNTTYP":"Alias"
+  "ACCOUNTTYP":"Alias",
+  "HIDE_FILTERS":"Hide filters",
+  "SHOW_FILTERS":"Show filters",
+  "RELOAD_DATA":"Reload data"
+
 }
