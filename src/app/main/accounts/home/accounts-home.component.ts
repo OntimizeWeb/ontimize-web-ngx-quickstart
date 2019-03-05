@@ -26,7 +26,7 @@ export class AccountsHomeComponent implements OnDestroy {
 
   @ViewChild('sidenav')
   private sidenav: MatSidenav;
-  
+
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -39,79 +39,59 @@ export class AccountsHomeComponent implements OnDestroy {
   }
 
 
-  filterAccounts() {
+  createFilter(values: Array<{ attr, value }>): IExpression {
 
     let filters = [];
-    //entity
-    let entity = this.formFilter.getFieldReference('ENTITYID').getValue();
-    if (Util.isDefined(entity) && entity!=='') {
-      let beEntity = FilterExpressionUtils.buildExpressionLike('ENTITYID', entity);
-      filters.push(beEntity);
-    }
+    values.forEach(fil => {
+      if (fil.value) {
 
-    //office
-    let office = this.formFilter.getFieldReference('OFFICEID').getValue();
-    if (Util.isDefined(office) && office!=='') {
-      let beOfficeID = FilterExpressionUtils.buildExpressionLike('OFFICEID', office);
-      filters.push(beOfficeID);
-    }
-    //control
-    let cuenta = this.formFilter.getFieldReference('ANID').getValue();
-    if (Util.isDefined(cuenta) && cuenta!=='') {
-      let beANID = FilterExpressionUtils.buildExpressionLike('ANID', cuenta);
-      filters.push(beANID);
-    }
-    //type
-    let typ = this.formFilter.getFieldReference('ACCOUNTTYPEID').getValue();
-    if (Util.isDefined(typ) &&  typ!=='') {
-      let beACCOUNTTYP = FilterExpressionUtils.buildExpressionEquals('ACCOUNTTYPEID', typ);
-      filters.push(beACCOUNTTYP);
-    }
+        if (fil.attr === 'ENTITYID' || fil.attr === 'OFFICEID' || fil.attr === 'ANID') {
+          filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
+        }
 
-    //startdate
-    let startDate = this.formFilter.getFieldReference('STARTDATE').getValue();
-    if (Util.isDefined(startDate)) {
-      let beSTARTDATE = FilterExpressionUtils.buildExpressionMoreEqual('STARTDATE', startDate);
-      filters.push(beSTARTDATE);
-    }
+        if (fil.attr === 'ACCOUNTTYPEID') {
+          filters.push(FilterExpressionUtils.buildExpressionEquals(fil.attr, fil.value));
+        }
 
-    //startdate
-    let endDate = this.formFilter.getFieldReference('ENDDATE').getValue();
-    if (Util.isDefined(endDate)) {
-      let beENDDATE = FilterExpressionUtils.buildExpressionLess('ENDDATE', endDate);
-      filters.push(beENDDATE);
-    }
+        //startdate
+        if (fil.attr === 'STARTDATE') {
+          filters.push(FilterExpressionUtils.buildExpressionMoreEqual(fil.attr, fil.value));
+        }
 
-    //balance
-    let balance = this.formFilter.getFieldReference('BALANCE').getValue();
-    if (Util.isDefined(balance) && balance > 0) {
-      let beBALANCE = FilterExpressionUtils.buildExpressionLessEqual('BALANCE', balance);
-      filters.push(beBALANCE);
-    }
+        //startdate
+        if (fil.attr === 'ENDDATE') {
+          filters.push(FilterExpressionUtils.buildExpressionLessEqual(fil.attr, fil.value));
+        }
 
+        //balance
+        if (fil.attr === 'BALANCE') {
+          filters.push(FilterExpressionUtils.buildExpressionLessEqual(fil.attr, fil.value));
+        }
+      }
 
-
+    });
     let ce: IExpression;
     if (filters.length > 0) {
       ce = filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
     }
 
-
-    this.listAccount.queryData(FilterExpressionUtils.buildBasicExpression(ce), { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
+    return ce;
+    // this.listAccount.queryData(FilterExpressionUtils.buildBasicExpression(ce), { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
 
   }
 
-  reloadData(){
-    this.filterAccounts();
+  reloadData() {
+    this.listAccount.reloadData();
   }
 
-  clearFilterAccounts(){
-    let inputs:Object = this.formFilter.getComponents();
-  
-    let self= this;
-    Object.keys(inputs).forEach((x:any)=>{
-      self.formFilter.clearFieldValue(x);}
-      );
+  clearFilterAccounts() {
+    let inputs: Object = this.formFilter.getComponents();
+
+    let self = this;
+    Object.keys(inputs).forEach((x: any) => {
+      self.formFilter.clearFieldValue(x);
+    }
+    );
     this.listAccount.queryData({}, { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
   }
 
@@ -127,7 +107,7 @@ export class AccountsHomeComponent implements OnDestroy {
     return value;
   }
 
-  toogleSidenav(){
+  toogleSidenav() {
     this.sidenav.toggle()
   }
 

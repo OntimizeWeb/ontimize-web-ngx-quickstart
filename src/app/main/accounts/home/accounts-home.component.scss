@@ -1,5 +1,5 @@
 .list-accounts .mat-card,
-.mat-sidenav-filters .o-form {
+.mat-sidenav-filters .accounts-filters {
   border: 1px solid #dddddd;
 }
 
@@ -50,6 +50,11 @@
 
         .o-list-container {
           .mat-list {
+            @media (min-width: 1400px) {
+              .mat-card {
+                width: 80%;
+              }
+            }
             @media (min-width: 1700px) {
               .mat-card {
                 width: 60%;
@@ -61,7 +66,7 @@
                 box-shadow: none;
               }
               padding: 16px 22px;
-              margin-bottom: 28px;
+              margin-bottom: 20px;
 
               label,
               span {
