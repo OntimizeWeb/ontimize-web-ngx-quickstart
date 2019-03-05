@@ -4,9 +4,9 @@
   show-header-navigation="yes" (onDataLoaded)="onFormDataLoaded($event)">
 
   <o-column >
-    <div fxLayout="row wrap" fxLayoutGap="14px">
+    <div fxLayout="row wrap" fxLayoutGap="14px" fxLayoutAlign="space-between">
       <o-column title="BRANCH_INFO" icon="info" fxFlex="55" fxFlex.md="100" class="vertical-margin-10">
-        <div fxLayout="row wrap" fxLayoutGap="14px">
+        <div fxLayout="row wrap" fxLayoutGap="14px" >
           <o-text-input #officeId attr="OFFICEID" fxFlex="20" class="form-field"></o-text-input>
           <o-text-input attr="NAME" fxFlex class="form-field"></o-text-input>
         </div>
@@ -17,7 +17,7 @@
         </div>
         
       </o-column>
-      <div fxFlex="43" fxFlex.md="100" *ngIf="hasGPSPositition()">
+      <div fxFlex="40" fxFlex.md="100" *ngIf="hasGPSPositition()">
         <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
           layer-panel-visible="no" base-layer-ids="CartoDB.Positron;Esri;OpenStreetMap.HOT;OpenStreetMap.BlackAndWhite">
           <o-map-layer layer-type="marker" layer-id="office_marker" [layer-center]="getPositionGPS()"

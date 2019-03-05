@@ -7,17 +7,18 @@
   $color-red-numbers: #f44336;
   $color-gray: #bcbcbe;
 
-  .account-form-label {
-    color: $color-gray;
+  $foreground: map-get($theme, foreground);
+
+  .account-form-label,
+  .customers .customers-list-title {
+    color: mat-color($foreground, secondary-text);
   }
 
   .account-form-value.balance.red-numbers {
     color: $color-red-numbers;
   }
 
-  .customers .customers-list-title {
-    color: $color-gray;
-  }
+
 
   .movement-list.o-list .movement-list-item.mat-list-item {
     &.movement-list-item-transfer {

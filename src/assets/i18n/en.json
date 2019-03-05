@@ -125,6 +125,7 @@
   "ACCOUNTTYP":"Alias",
   "HIDE_FILTERS":"Hide filters",
   "SHOW_FILTERS":"Show filters",
-  "RELOAD_DATA":"Reload data"
+  "RELOAD_DATA":"Reload data",
+  "ACCONT_OWNERS":"Account owners"
 
 }

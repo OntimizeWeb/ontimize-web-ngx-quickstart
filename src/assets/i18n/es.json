@@ -125,5 +125,6 @@
   "FILTER_BALANCE":"Balance (€)",
   "HIDE_FILTERS":"Ocultar filtros",
   "SHOW_FILTERS":"Mostrar filtros",
-  "RELOAD_DATA":"Refrescar datos"
+  "RELOAD_DATA":"Refrescar datos",
+  "ACCONT_OWNERS":"Titulares"
 }
