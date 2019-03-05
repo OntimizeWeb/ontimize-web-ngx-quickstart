@@ -21,6 +21,11 @@
               "src/favicon.ico",
               {
                 "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
                 "input": "node_modules/ontimize-web-ngx/assets",
                 "output": "/assets"
               }
@@ -28,6 +33,7 @@
             "styles": [
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
+              "node_modules/ontimize-web-ngx-map/styles.scss",
               "src/styles.scss"
             ],
             "scripts": [

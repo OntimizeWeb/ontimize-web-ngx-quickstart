@@ -12,7 +12,10 @@ import { MatSnackBar } from '@angular/material';
   selector: 'branches-detail',
   templateUrl: './branches-detail.component.html',
   styleUrls: ['./branches-detail.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.branches-detail]': 'true'
+  }
 })
 export class BranchesDetailComponent implements OnInit {
 
