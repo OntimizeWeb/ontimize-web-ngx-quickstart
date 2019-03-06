@@ -111,5 +111,8 @@ export class AccountsHomeComponent implements OnDestroy {
     this.sidenav.toggle()
   }
 
+  trackByIndex(index: number, obj: any): any {
+    return index;
+  }
 
 }
