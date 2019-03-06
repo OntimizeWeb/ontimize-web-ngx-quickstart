@@ -1,0 +1,5 @@
+<p class="employees-card-title" fxFlex>{{ 'EMPLOYEES_TOTAL' | oTranslate }}</p>
+<p class="employees-card-employees-amount" fxFlex>{{ employeesAmount }}</p>
+<p class="employees-card-title" fxFlex>{{ 'EMPLOYEES_CATEGORIES' | oTranslate }}</p>
+<o-chart type="multiBarHorizontalChart" x-label="Axis x" y-label="Axis Y" service="employees" entity="employeeTypeAggregate"
+  x-axis="EMPLOYEETYPENAME" y-axis="AMOUNT" [chart-parameters]="chartParameters" class="employees-card-chart" fxFlex></o-chart>

@@ -1,27 +1,43 @@
-.user-info {
+.app-settings {
+  height: 100%;
 
-  padding: 36px 36px;
+  .settings-container {
+    height: 90%;
+    margin: auto;
 
-  .user-info-avatar-wrapper {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 100%;
-    margin-bottom: 16px;
+    .setting-column {
+      &.o-column > .o-container .o-container-scroll,
+      &.o-row > .o-container .o-container-scroll {
+        overflow: hidden;
+      }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  .social-logos {
-    padding: 16px 0 0 0;
-    .social-logo {
-      height: 21px;
-      margin: 0 7px 2px 0;
-      vertical-align: middle;
-      cursor: pointer;
+      .mat-radio-group .mat-radio-button {
+        padding: 4px 14px;
+
+        .theme-option {
+          height: 36px;
+          width: 36px;
+
+          .theme-option-background {
+            border-radius: 50%;
+            height: 100%;
+          }
+        }
+      }
+
+      .theme-radio-group {
+        .mat-radio-container {
+          display: none !important;
+        }
+
+        .mat-radio-label-content {
+          padding: 0;
+        }
+      }
+
+      .mat-slide-toggle {
+        padding-left: 14px;
+      }
     }
   }
 }
-

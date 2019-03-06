@@ -1,0 +1,22 @@
+@import 'node_modules/@angular/material/theming';
+@mixin account-home-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+
+  .mat-sidenav-container-account-home {
+    .o-slider .mat-slider-thumb-label-text,
+    label,
+    span {
+      color: mat-color($foreground, secondary-text);
+    }
+
+    .list-accounts {
+      .mat-card .info-account.border-bottom,
+      .mat-card .info-account.border-right {
+        border-color: mat-color($accent);
+      }
+
+    }
+  }
+}

@@ -1,212 +1,165 @@
-import {
-    ViewEncapsulation,
-    Component,
-    ViewChild,
-    AfterContentInit,
-    forwardRef,
-    Injector,
-    OnInit
-} from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { OFormComponent, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
+import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 
-import {
-    OFormComponent,
-    OntimizeService,
-    OListPickerComponent,
-    OListComponent,
-    OTranslateService
-} from 'ontimize-web-ngx';
+import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 
-import { ChartSeries, OChartComponent } from 'ontimize-web-ngx-charts';
+declare var d3: any;
 
 @Component({
-    selector: 'accounts-detail',
-    styleUrls: ['./accounts-detail.component.scss'],
-    templateUrl: './accounts-detail.component.html',
-    encapsulation: ViewEncapsulation.None
+  selector: 'accounts-detail',
+  styleUrls: ['./accounts-detail.component.scss'],
+  templateUrl: './accounts-detail.component.html',
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.accounts-detail]': 'true'
+  }
 })
-export class AccountsDetailComponent implements AfterContentInit, OnInit {
+export class AccountsDetailComponent {
 
-    public data: Array<Object>;
-    public lineData: Array<ChartSeries>;
-    protected service: OntimizeService;
-    protected translateService: OTranslateService;
+  private static colorSalary: string = '#92b558';
+  private static colorDebit: string = '#951630';
+  private static colorTransfer: string = '#f2552c';
+  private static colorCash: string = '#424476';
+  private static colorBalance: string = '#2196f3';
 
-    protected accountId;
-    protected yAxis = 'MOVEMENT';
-    protected xAxis = 'MOVEMENTTYPES';
-    public formLabel = '';
+  public formLabel: string;
+  public avgBalance: number;
 
-    @ViewChild(forwardRef(() => OFormComponent)) form: OFormComponent;
-    @ViewChild('customerListPicker') customerListPicker: OListPickerComponent;
-    @ViewChild('customerList') customerList: OListComponent;
-    @ViewChild('pieChart') pieChart: OChartComponent;
+  public lineData: ChartSeries[];
 
-    availableCustomersToAdd: Array<any> = [];
+  public balanceChartParams: LinePlusBarFocusChartConfiguration;
+  public movementTypesChartParams: PieChartConfiguration;
 
-    constructor(
-        protected injector: Injector
-    ) {
-        this.translateService = this.injector.get(OTranslateService);
-    }
+  @ViewChild('oForm')
+  private oForm: OFormComponent;
 
-    ngOnInit() {
-        this.configureService();
-    }
+  constructor(
+    private ontimizeService: OntimizeService,
+    private translateService: OTranslateService,
+    private d3LocaleService: D3LocaleService
+  ) {
+    const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+    this._configureLineBarChart(d3Locale);
+    this._configurePieChart(d3Locale);
+  }
 
-    ngAfterContentInit() {
-    }
+  public onFormDataLoaded(data: any): void {
+    this.formLabel = data.ACCOUNTTYP;
 
-    onFormDataLoaded(data: any) {
-        if (data.hasOwnProperty('ACCOUNTID')) {
-            this.accountId = data['ACCOUNTID'];
+    this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('movements'));
+    if (data.hasOwnProperty('ACCOUNTID') && this.ontimizeService !== null) {
+      const filter = {
+        ACCOUNTID: data.ACCOUNTID
+      };
+      const columns = ['MOVEMENT', 'DATE_', 'MOVEMENTTYPEID'];
+      this.ontimizeService.query(filter, columns, 'movement', { ACCOUNTID: 4 }).subscribe(resp => {
+        if (resp.code === 0) {
+          this.processLineData(resp.data);
+        } else {
+          console.error(resp);
         }
-        this.onChartData(data);
-        this.formLabel = data['ACCOUNTTYP'];
-        // this.formLabel = data['ENTITYID'] + '-' + data['OFFICEID'] + '-' + data['CDID'] + '-' + data['ANID'];
+      });
     }
+  }
 
-    protected configureService() {
-        this.service = this.injector.get(OntimizeService);
-        const conf = this.service.getDefaultServiceConfiguration();
-        conf['path'] = '/movements';
-        this.service.configureService(conf);
-    }
+  private processLineData(data: any[]): void {
+    if (data && data.length) {
+      const balanceSerie: ChartSeries = {
+        key: this.translateService.get('BALANCE'),
+        values: []
+      };
 
-    protected onChartData(data: Object) {
-        if (data.hasOwnProperty('ACCOUNTID') && this.service !== null) {
-            const filter = {
-                'ACCOUNTID': data['ACCOUNTID']
-            };
-            const columns = [this.yAxis, this.xAxis, 'DATE_'];
-            this.service.query(filter, columns, 'movement').subscribe((resp) => {
-                if (resp.code === 0) {
-                    this.adaptResult(resp.data);
-                } else {
-                    alert('Impossible to query data!');
-                }
-            });
+      const movementSerie: ChartSeries = {
+        bar: true,
+        key: this.translateService.get('MOVEMENT'),
+        values: []
+      };
+
+      let avgBalance = data[0] ? data[0].MOVEMENT : 0;
+      let balance = data[0] ? data[0].MOVEMENT : 0;
+      data.forEach((item: any, i: number) => {
+        if (i !== 0) {
+          balance = this._increment(balance, item.MOVEMENT);
         }
-    }
 
-    /**
-     * Creates chart data grouping movements by category 'Movement type'
-     *  */
-    adaptResult(data: Array<any>) {
-        if (data && data.length) {
-            this.data = this.processValues(data);
-            this.lineData = this.processLineData(data);
+        let color: string;
+        switch (item.MOVEMENTTYPEID) {
+          case 1:
+            color = AccountsDetailComponent.colorTransfer;
+            break;
+          case 2:
+            color = AccountsDetailComponent.colorCash;
+            break;
+          case 3:
+            color = AccountsDetailComponent.colorSalary;
+            break;
+          case 4:
+            color = AccountsDetailComponent.colorDebit;
+            break;
         }
+
+        avgBalance += balance;
+        const date = new Date(item.DATE_);
+        balanceSerie.values.push({ x: date, y: balance });
+        movementSerie.values.push({ x: date, y: item.MOVEMENT, color: color });
+      });
+
+      this.avgBalance = avgBalance / data.length;
+      this.lineData = [balanceSerie, movementSerie];
     }
+  }
 
-    processLineData(data: Array<Object>): Array<ChartSeries> {
-        const balanceSerie: ChartSeries = {
-            'key': 'BALANCE',
-            'values': []
-        };
+  private _increment(val1: number, val2: number): number {
+    return (parseInt(Number(val1 * 100).toFixed(2)) + parseInt(Number(val2 * 100).toFixed(2))) / 100;
+  }
 
-        const movementSerie: ChartSeries = {
-            'key': 'MOVEMENT',
-            'values': []
-        };
+  private _configureLineBarChart(locale: any): void {
+    this.balanceChartParams = new LinePlusBarFocusChartConfiguration();
+    this.balanceChartParams.margin.top = 20;
+    this.balanceChartParams.margin.right = 80;
+    this.balanceChartParams.margin.bottom = 20;
+    this.balanceChartParams.margin.left = 80;
+    this.balanceChartParams.focusEnable = false;
+    this.balanceChartParams.color = [AccountsDetailComponent.colorBalance];
+    this.balanceChartParams.yDataType = locale.numberFormat('$,f');
+    this.balanceChartParams.y1Axis.showMaxMin = false;
+    this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
+    this.balanceChartParams.x1Axis.tickPadding = 10;
+    this.balanceChartParams.y1Axis.tickPadding = 10;
+    this.balanceChartParams.legend.margin.top = 2;
+    this.balanceChartParams.legend.margin.right = 0;
+    this.balanceChartParams.legend.margin.bottom = 2;
+    this.balanceChartParams.legend.margin.left = 0;
+  }
 
-        let balance = 0;
-        const self = this;
-        data.forEach((item: any) => {
-            balance += item['MOVEMENT'];
-            const val = {
-                'x': item['DATE_'],
-                'y': balance
-            };
-            balanceSerie.values.push(val);
-            const value = {
-                'x': item['DATE_'],
-                'y': item['MOVEMENT']
-            };
-            movementSerie.values.push(value);
-        });
-        const val = [];
-        val.push(balanceSerie);
-        val.push(movementSerie);
-        return val;
-    }
+  private _configurePieChart(locale: any): void {
+    this.movementTypesChartParams = new PieChartConfiguration();
+    this.movementTypesChartParams.margin.top = 0;
+    this.movementTypesChartParams.margin.right = 0;
+    this.movementTypesChartParams.margin.bottom = 0;
+    this.movementTypesChartParams.margin.left = 0;
+    this.movementTypesChartParams.legendPosition = 'bottom';
+    this.movementTypesChartParams.legend.vers = 'furious';
+    this.movementTypesChartParams.legend.width = '150';
+    this.movementTypesChartParams.labelType = 'value';
+    this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
+    this.movementTypesChartParams.colorData = [{
+      value: 'Salary',
+      color: AccountsDetailComponent.colorSalary
+    },
+    {
+      value: 'Direct debit',
+      color: AccountsDetailComponent.colorDebit
+    },
+    {
+      value: 'Transfer',
+      color: AccountsDetailComponent.colorTransfer
+    },
+    {
+      value: 'Automatic Cash',
+      color: AccountsDetailComponent.colorCash
+    }];
+  }
 
-    processValues(data: Array<Object>): Array<Object> {
-        const values = [];
-        const self = this;
-        data.forEach((item: any, index: number) => {
-            const itemLabel = this.translateService.get(item[self.xAxis]);
-            const filtered = self.filterCategory(itemLabel, values);
-            if (filtered && filtered.length === 0) {
-                const val = {
-                    'x': itemLabel,
-                    'y': Math.abs(item[self.yAxis])
-                };
-                values.push(val);
-            } else {
-                filtered[0]['y'] += Math.abs(item[self.yAxis]);
-            }
-        });
-        return values;
-    }
-
-    filterCategory(category: string, values: Array<Object>) {
-        let filtered = [];
-        if (values && values.length) {
-            filtered = values.filter((val: Object) => {
-                if (val['x'] === category) {
-                    return true;
-                }
-            });
-        }
-        return filtered;
-    }
-
-    onTableDataChange(args) {
-        console.log('onTableDataChange');
-    }
-
-    onAddCustomerClick() {
-        (this.customerListPicker as any)._isReadOnly = false;
-        const relatedCustomersIds = [];
-        (this.customerList as any).dataArray.forEach(element => {
-            relatedCustomersIds.push(element['CUSTOMERID']);
-        });
-        const customerFilter = {};
-        customerFilter['@basic_expression'] = {
-            lop: 'CUSTOMERID',
-            op: 'NOT IN',
-            rop: relatedCustomersIds
-        };
-        // this.service.query(customerFilter, ['ID', 'NAME', 'SURNAME'], 'ECustomers').subscribe((resp) => {
-        //   if (resp.code === 0) {
-        //     this.availableCustomersToAdd = resp.data.filter(
-        //       customerItem => (relatedCustomersIds.indexOf(customerItem['CUSTOMERID']) === -1));
-        //     const self = this;
-        //     setTimeout(function () {
-        //       self.customerListPicker.onClickListpicker(null);
-        //     }, 0);
-        //   }
-        // });
-    }
-
-    onNewCustomerSelected(customerId) {
-        if (customerId && this.accountId) {
-            this.service.insert({
-                ACCOUNTID: this.accountId,
-                CUSTOMERID: customerId
-            }, 'ECustomerAccounts').subscribe((resp) => {
-                this.customerList.reloadData();
-            });
-        }
-    }
-
-    onRemoveCustomerClick(customerData) {
-        if (customerData && customerData['CUSTOMERACCOUNTID'] !== undefined) {
-            this.service.delete({
-                CUSTOMERACCOUNTID: customerData['CUSTOMERACCOUNTID']
-            }, 'ECustomerAccounts').subscribe((resp) => {
-                this.customerList.reloadData();
-            });
-        }
-    }
 }

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { OMapModule } from 'ontimize-web-ngx-map';
 import { SharedModule } from '../../shared/shared.module';
 import { BranchesRoutingModule, BRANCHES_MODULE_DECLARATIONS } from './branches-routing.module';
-import { OChartModule } from 'ontimize-web-ngx-charts';
 
 @NgModule({
   imports: [
     SharedModule,
+    BranchesRoutingModule,
+    OMapModule,
     OntimizeWebModule,
-    OChartModule,
     BranchesRoutingModule
   ],
   declarations: BRANCHES_MODULE_DECLARATIONS,

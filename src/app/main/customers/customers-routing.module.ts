@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CustomersDetailComponent } from './detail/customers-detail.component';
-import { CustomerDetailFormComponent } from './detail/form/customers-detail-form.component';
 import { CustomersHomeComponent } from './home/customers-home.component';
 import { CustomersNewComponent } from './new/customers-new.component';
 import { AccountsModule } from '../accounts/accounts.module';
@@ -13,7 +12,6 @@ export function loadAccountsModule() {
 
 export const CUSTOMERS_MODULE_DECLARATIONS = [
   CustomersDetailComponent,
-  CustomerDetailFormComponent,
   CustomersHomeComponent,
   CustomersNewComponent
 ];
