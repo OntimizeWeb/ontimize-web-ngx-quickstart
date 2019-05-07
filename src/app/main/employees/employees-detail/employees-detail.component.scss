@@ -1,0 +1,52 @@
+.employee-detail {
+  .image {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 130px;
+    justify-content: center;
+    overflow: hidden;
+    width: 130px;
+
+    img {
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+
+  .mat-divider {
+    border-top-color: #ffcc00;
+    border-top-width: 2px;
+    margin: 6px;
+    width: 26px;
+  }
+
+  .employee-name {
+    font-size: 18px;
+  }
+
+  .employee-type {
+    color: #b8b8b8;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .employee-office {
+    font-size: 14px;
+  }
+
+  .employee-data {
+    span {
+      align-items: center;
+      display: flex;
+      padding-top: 4px;
+
+      .mat-icon {
+        color: #b8b8b8;
+        margin-right: 12px;
+      }
+    }
+  }
+}

@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
-  selector: 'app-employees-detail',
+  selector: 'employees-detail',
   templateUrl: './employees-detail.component.html',
   styleUrls: ['./employees-detail.component.scss']
 })
-export class EmployeesDetailComponent implements OnInit {
+export class EmployeesDetailComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
 }
