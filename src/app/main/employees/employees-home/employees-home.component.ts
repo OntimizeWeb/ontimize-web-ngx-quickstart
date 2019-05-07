@@ -41,14 +41,12 @@ export class EmployeesHomeComponent {
   }
 
   public getImageSrc(base64: string): any {
-    return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64) : './assets/images/no-image.png';
+    return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64) : './assets/images/no-image-transparent.png';
   }
 
   public openDetail(data: any): void {
-    console.log(data);
     this.dialog.open(EmployeesDetailComponent, {
       height: '330px',
-      // width: '520px',
       data: data
     });
   }
