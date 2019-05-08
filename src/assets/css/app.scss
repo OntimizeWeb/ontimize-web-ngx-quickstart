@@ -30,6 +30,9 @@
 @import '../../app/main/accounts/detail/accounts-detail.theme.scss';
 @include accounts-detail-theme($theme);
 
+@import '../../app//main//employees/employees.theme.scss';
+@include employees-theme($theme);
+
 /*
 * Other app styles
 */

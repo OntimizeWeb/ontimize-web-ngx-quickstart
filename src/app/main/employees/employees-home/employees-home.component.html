@@ -1,13 +1,13 @@
 <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
 
-  <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}">
-    <o-row layout-gap="16px">
+  <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="outline">
+    <o-row layout-gap="18px">
       <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
       <o-text-input attr="SURNAME" read-only="no" fxFlex></o-text-input>
       <o-combo attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
         value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="33"></o-combo>
     </o-row>
-    <o-row layout-gap="16px">
+    <o-row layout-gap="18px">
       <o-text-input attr="EMAIL" read-only="no" fxFlex="33"></o-text-input>
       <o-combo attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID" keys="OFFICEID"
         visible-columns="NAME" fxFlex></o-combo>
@@ -24,10 +24,10 @@
   <!-- <o-form-layout-manager attr="o-form-layout-employees" label-columns="EMPLOYEENAME;EMPLOYEESURNAME" separator="," fxFlex> -->
   <o-grid #grid attr="employees" service="employees" entity="employee"
     columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;ADDRESS;EMPLOYEEPHONE"
-    keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME" pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="24px"
+    keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME" pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px"
     detail-mode="none">
     <o-grid-item *ngFor="let item of grid.dataArray">
-      <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="center center" class="employee-item mat-elevation-z1">
+      <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item mat-elevation-z1">
         <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
           <mat-divider fxFlex></mat-divider>
           <div class="image">

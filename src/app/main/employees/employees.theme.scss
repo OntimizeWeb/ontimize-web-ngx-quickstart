@@ -1,0 +1,28 @@
+@import 'node_modules/@angular/material/theming';
+@mixin employees-theme($theme) {
+  $accent: map-get($theme, accent);
+  $emp-icon-color: #b8b8b8;
+
+  employees-home {
+    .employee-item {
+      .image-container .mat-divider {
+        border-top-color: mat-color($accent);
+      }
+
+      .employee-data span .square {
+        background-color: mat-color($accent);
+      }
+    }
+  }
+
+  employees-detail {
+    .mat-divider {
+      border-top-color: mat-color($accent);
+    }
+
+    .employee-data span .mat-icon,
+    .employee-type {
+      color: $emp-icon-color;
+    }
+  }
+}

@@ -47,6 +47,7 @@ export class EmployeesHomeComponent {
   public openDetail(data: any): void {
     this.dialog.open(EmployeesDetailComponent, {
       height: '330px',
+      width: '520px',
       data: data
     });
   }

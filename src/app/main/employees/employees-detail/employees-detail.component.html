@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="space-evenly stretch" class="employee-detail" fxFill>
 
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="24px">
-    <div fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40">
       <div class="image">
         <img [src]="getImageSrc(data.EMPLOYEEPHOTO)">
       </div>
@@ -10,7 +10,7 @@
       <span class="employee-type">{{ 'EMPLOYEETYPE_' + data.EMPLOYEETYPEID | oTranslate }}</span>
       <mat-divider></mat-divider>
     </div>
-    <div fxLayout="column" class="employee-data">
+    <div fxLayout="column" fxFlex="60" class="employee-data">
       <span *ngIf="data.EMPLOYEEEMAIL">
         <mat-icon>email</mat-icon>{{ data.EMPLOYEEEMAIL }}
       </span>
@@ -29,6 +29,8 @@
 
 </div>
 
-<!-- <o-form service="employees" entity="employee" keys="EMPLOYEEID" keys-sql-types="INTEGER">
+<!-- <o-form service="employees" entity="employee" keys="EMPLOYEEID" keys-sql-types="INTEGER" show-header-navigation="yes">
+  <o-text-input attr="EMPLOYEENAME"></o-text-input>
+  <o-text-input attr="EMPLOYEESURNAME"></o-text-input>
   <o-image attr="EMPLOYEEPHOTO" emptyimage="./assets/images/no-image.png"></o-image>
 </o-form> -->
