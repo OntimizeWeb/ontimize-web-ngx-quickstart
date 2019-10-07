@@ -33,10 +33,10 @@
     "@ngx-translate/http-loader": "3.0.1",
     "classlist.js": "^1.1.20150312",
     "core-js": "2.5.7",
-    "ontimize-web-ngx": "4.0.6",
-    "ontimize-web-ngx-charts": "4.0.3",
-    "ontimize-web-ngx-filemanager": "4.0.0",
-    "ontimize-web-ngx-map": "4.0.0",
+    "ontimize-web-ngx": "4.0.7",
+    "ontimize-web-ngx-charts": "4.0.4",
+    "ontimize-web-ngx-filemanager": "4.0.1",
+    "ontimize-web-ngx-map": "4.0.1",
     "ontimize-web-ngx-theming": "4.0.2",
     "reflect-metadata": "0.1.12",
     "rxjs": "6.3.3",
@@ -58,6 +58,7 @@
     "typescript": "2.9.2",
     "webpack": "4.18.0",
     "webpack-cli": "3.1.0",
-    "webpack-dev-server": ">=3.1.11"
+    "webpack-dev-server": ">=3.1.11",
+    "webpack-pwa-manifest": "4.0.0"
   }
 }
