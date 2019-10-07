@@ -64,6 +64,7 @@
   "BRANCHPLAN": "Plan",
   "USER_DATA": "User data",
   "USER_IMAGE": "User image",
+  "PHOTO":"Photo",
   "CHANGE_PASSWORD": "Change password",
   "NEW_PASSWORD": "New password",
   "CONFIRM_PASSWORD": "Confirm new password",
