@@ -7,6 +7,9 @@ var GlobCopyWebpackPlugin = require("copy-webpack-plugin");
 var webpack = require("webpack");
 var helpers = require("./helpers");
 
+var path = require('path');
+const WebpackPwaPlugin = require('webpack-pwa-manifest');
+
 module.exports = {
   mode: "production",
   devtool: "nosources-source-map",
@@ -89,6 +92,23 @@ module.exports = {
       test: /\.js$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+
+    new WebpackPwaPlugin({
+      name: "Quickstart PWA App",
+      short_name: "quickstart",
+      theme_color: "#1976d2",
+      background_color: "#fafafa",
+      display: "standalone",
+      orientation: "landscape",
+      scope: "/",
+      start_url: "index.html",
+      icons: [
+        {
+          src: path.resolve('./src/assets/images/ontimize.png'),
+          sizes: [48, 96, 128, 192, 256, 512]
+        }
+      ]
     })
   ]
 };
