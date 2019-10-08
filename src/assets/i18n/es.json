@@ -80,6 +80,7 @@
   "/main/about": "Información",
   "/main/settings": "Configuración",
   "PHONE": "Teléfono",
+  "PHOTO":"Foto",
   "EXAMPLE_LOGIN_INFO": "Usuario y contraseña de ejemplo",
   "TIME": "Fecha",
   "AMOUNT": "Cantidad (€)",
