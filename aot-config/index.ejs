@@ -9,6 +9,9 @@
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Manifest for PWA -->
+  <link rel="manifest" id="manifest-file">
+  <meta name="theme-color" content="#242424">
 
   <!-- Styling -->
   <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
@@ -26,6 +29,16 @@
   </div>
   <!-- The application tag-->
   <o-app></o-app>
+  <script>
+    var linkManifest = document.querySelector('#manifest-file');
+    window.innerWidth < 960
+      ? linkManifest.setAttribute('href', './manifest-mobile.json')
+      : linkManifest.setAttribute('href', './manifest.json');
+  </script>
+
+  <noscript>
+    <h3>Sorry, but app is not avaliable without JavaScript</h3>
+  </noscript>
 
 </body>
 

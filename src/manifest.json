@@ -1,0 +1,43 @@
+{
+  "name": "Quickstart PWA App",
+  "short_name": "Quickstart",
+  "orientation": "landscape",
+  "display": "standalone",
+  "start_url": "index.html",
+  "description": "Quickstart app",
+  "background_color": "#ccd5dd",
+  "theme_color": "#002757",
+  "icons": [
+    
+    {
+      "src": "icon_512x512.49b7c1068a3e823cafbbc93ee668cf90.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.5a33e6d514a214bd3c74a51b03915a29.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.b88c6ddd5e997a970106e207280f070a.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.e9d5cec6eb4af6cd09ba54d51342e1d0.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.3026e7eece02b69b3552da7513d93622.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_48x48.18f2efa3931f72b4c806607131ddca7b.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ]
+}

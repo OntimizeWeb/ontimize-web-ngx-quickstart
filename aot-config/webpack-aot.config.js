@@ -67,6 +67,8 @@ module.exports = {
       { context: "src", from: "assets/themes/**/*", to: "./", ignore: ["*.scss"] },
       { context: "src", from: "assets/i18n/**/*", to: "./" },
       { context: "src", from: "assets/images/**/*", to: "./" },
+      { from: "src/manifest.json", to: "./" },
+      { from: "src/manifest-mobile.json", to: "./"},
       { from: "src/favicon.ico", to: "./" }
     ]),
 

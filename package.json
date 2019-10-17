@@ -10,7 +10,10 @@
     "production": "npm run build-themes && ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
     "production-aot": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web-ngx-quickstart/",
     "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/",
-    "build-themes": "node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
+    "production-aot-serverpwa": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstartpwa/ && npm run build-ngsw",
+    "build-themes": "node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive",
+    "build-ngsw": "npm run build-ngsw-config && node cp-ngsw-dist.js",
+    "build-ngsw-config": "node_modules/.bin/ngsw-config dist src/ngsw-config.json /ontimizeweb/quickstartpwa/ "
   },
   "private": true,
   "dependencies": {
@@ -27,7 +30,9 @@
     "@angular/platform-browser": "6.1.10",
     "@angular/platform-browser-dynamic": "6.1.10",
     "@angular/platform-server": "6.1.10",
+    "@angular/pwa": "0.6.8",
     "@angular/router": "6.1.10",
+    "@angular/service-worker": "6.1.10",
     "@angular/upgrade": "6.1.10",
     "@ngx-translate/core": "10.0.2",
     "@ngx-translate/http-loader": "3.0.1",

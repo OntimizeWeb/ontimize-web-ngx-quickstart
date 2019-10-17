@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule, O_MAT_ERROR_OPTIONS, O_INPUTS_OPTIONS } from 'ontimize-web-ngx';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { APP_CONFIG, OntimizeWebModule, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, O_INPUTS_OPTIONS, O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
@@ -21,7 +22,8 @@ export const customProviders: any = [
   imports: [
     AppRoutingModule,
     ONTIMIZE_MODULES,
-    OntimizeWebModule
+    OntimizeWebModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production })
   ],
   declarations: [
     AppComponent
