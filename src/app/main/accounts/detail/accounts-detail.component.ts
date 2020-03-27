@@ -31,7 +31,7 @@ export class AccountsDetailComponent {
   // public balanceChartParams: LinePlusBarFocusChartConfiguration;
   // public movementTypesChartParams: PieChartConfiguration;
 
-  @ViewChild('oForm')
+  @ViewChild('oForm', { static: false })
   private oForm: OFormComponent;
 
   constructor(

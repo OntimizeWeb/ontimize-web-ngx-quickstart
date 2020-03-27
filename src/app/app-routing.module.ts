@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService, PermissionsGuardService } from 'ontimize-web-ngx';
 
 export const routes: Routes = [
-  { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
+  {
+    path: 'login',
+    canActivate: [AuthGuardService],
+    canActivateChild: [PermissionsGuardService],
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
+  },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 

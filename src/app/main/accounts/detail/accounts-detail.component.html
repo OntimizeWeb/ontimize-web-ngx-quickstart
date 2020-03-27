@@ -30,8 +30,8 @@
           </div>
         </o-row>
         <o-column title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
-          <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
-            chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart>
+          <!-- <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
+            chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart> -->
         </o-column>
       </o-row>
 
@@ -58,8 +58,8 @@
           <!-- </o-form-layout-manager> -->
         </o-column>
         <o-column title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60">
-          <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-            query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart"></o-chart>
+          <!-- <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
+            query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart"></o-chart> -->
         </o-column>
       </o-row>
 

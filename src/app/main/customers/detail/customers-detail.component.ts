@@ -21,9 +21,9 @@ export class CustomersDetailComponent implements OnInit {
   protected yAxis = 'MOVEMENT';
   protected xAxis = 'MOVEMENTTYPES';
 
-  @ViewChild('accountsTable') accountsTable: OTableComponent;
-  @ViewChild('oDetailForm') form: OFormComponent;
-  @ViewChild('accountListPicker') accountListPicker: OListPickerComponent;
+  @ViewChild('accountsTable', { static: false }) accountsTable: OTableComponent;
+  @ViewChild('oDetailForm', { static: false }) form: OFormComponent;
+  @ViewChild('accountListPicker', { static: false }) accountListPicker: OListPickerComponent;
 
   availableAccountsToAdd: Array<any> = [];
 

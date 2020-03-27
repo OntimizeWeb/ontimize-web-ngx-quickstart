@@ -1,7 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSidenav } from '@angular/material';
-import { FilterExpressionUtils, IExpression, OFormComponent, OListComponent } from 'ontimize-web-ngx';
+import { FilterExpressionUtils, Expression, OFormComponent, OListComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'accounts-home',
@@ -38,7 +38,7 @@ export class AccountsHomeComponent implements OnDestroy {
   }
 
 
-  createFilter(values: Array<{ attr, value }>): IExpression {
+  createFilter(values: Array<{ attr, value }>): Expression {
 
     let filters = [];
     values.forEach(fil => {
@@ -69,7 +69,7 @@ export class AccountsHomeComponent implements OnDestroy {
       }
 
     });
-    let ce: IExpression;
+    let ce: Expression;
     if (filters.length > 0) {
       ce = filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
     }

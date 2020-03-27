@@ -21,7 +21,7 @@ export class SettingsComponent {
   public currentTheme: DocsSiteTheme;
   public darkDefaultMode: boolean = false;
 
-  @ViewChild('toggleDark')
+  @ViewChild('toggleDark', { static: false })
   private toggleDark: MatSlideToggle;
 
   constructor(
