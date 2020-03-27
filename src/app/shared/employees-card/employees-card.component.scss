@@ -1,0 +1,31 @@
+.employees-card {
+  display: block !important;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  width: 90%;
+
+  .employees-card-title {
+    color: #cccccc;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .employees-card-employees-amount {
+    color: #202020;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 2px;
+  }
+
+  .employees-card-chart > div > nvd3 {
+    > svg line {
+      display: none;
+    }
+
+    .nvd3.nv-multibarHorizontal .nv-groups text {
+      font-size: 24px;
+    }
+  }
+}

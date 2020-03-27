@@ -1,0 +1,113 @@
+.accounts-detail {
+  display: block;
+  height: 100%;
+
+  .o-form-container-content,
+  form {
+    height: 100%;
+  }
+
+  .account-info-container,
+  .balance-chart-container,
+  .movement-chart-container,
+  .movement-list-container {
+    border-radius: 5px;
+    background-color: white;
+    margin: 2px;
+  }
+
+  .account-form-label {
+    font-size: 80%;
+    padding-top: 8px;
+  }
+
+  .account-form-value {
+    padding-bottom: 6px;
+    padding-left: 8px;
+    text-align: right;
+
+    &.balance {
+      font-size: 200%;
+    }
+  }
+
+  .data-container {
+    height: 75%;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+
+  .customers {
+    .customers-list-title {
+      font-size: 80%;
+      font-weight: normal;
+    }
+
+    .mat-list .mat-list-item {
+      height: 32px;
+    }
+  }
+
+  .o-form-layout-manager {
+    max-height: 400px;
+
+    .movement-list.o-list {
+      .movement-list-item.mat-list-item {
+        border-style: solid;
+        border-width: 0 0 0 5px;
+        margin: 8px;
+
+        .mat-list-icon {
+          border-radius: 0;
+          height: 46px;
+          padding: 0;
+          width: 46px;
+        }
+
+        .mat-list-item-content {
+          border-style: solid;
+          border-width: 1px 1px 1px 0;
+          padding: 0 13px 0 19px;
+
+          .mat-list-text {
+            padding-left: 28px;
+
+            .concept {
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .date {
+              opacity: .5;
+            }
+          }
+
+          .amount {
+            font-size: 24px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  o-chart.balance-chart > div > nvd3 > svg line {
+    display: none;
+  }
+
+  o-chart.movements-chart {
+    margin: auto 0;
+
+    .nv-pie path {
+      fill-opacity: .9;
+    }
+
+    .nv-pie .hover path {
+      fill-opacity: 1;
+    }
+
+    .nv-label text {
+      fill: #e0e0e0 !important;
+    }
+  }
+}

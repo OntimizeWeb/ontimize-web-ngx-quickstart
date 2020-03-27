@@ -1,0 +1,44 @@
+@import 'node_modules/@angular/material/theming';
+@mixin accounts-detail-theme($theme) {
+  $color-salary: #92b558;
+  $color-debit: #951630;
+  $color-transfer: #f2552c;
+  $color-cash: #424476;
+  $color-red-numbers: #f44336;
+  $color-gray: #bcbcbe;
+
+  $foreground: map-get($theme, foreground);
+
+  .account-form-label,
+  .customers .customers-list-title {
+    color: mat-color($foreground, secondary-text);
+  }
+
+  .account-form-value.balance.red-numbers {
+    color: $color-red-numbers;
+  }
+
+
+
+  .movement-list.o-list .movement-list-item.mat-list-item {
+    &.movement-list-item-transfer {
+      border-color: $color-transfer;
+    }
+
+    &.movement-list-item-cash {
+      border-color: $color-cash;
+    }
+
+    &.movement-list-item-salary {
+      border-color: $color-salary;
+    }
+
+    &.movement-list-item-debit {
+      border-color: $color-debit;
+    }
+
+    .mat-list-item-content {
+      border-color: $color-gray;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.accounts-card {
+  display: block !important;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  width: 90%;
+
+  .accounts-card-title {
+    color: #cccccc;
+    font-weight: bold;
+  }
+}
