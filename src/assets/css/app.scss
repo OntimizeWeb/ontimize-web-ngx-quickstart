@@ -16,8 +16,9 @@
 */
 @import 'node_modules/ontimize-web-ngx/theme.scss';
 @include o-material-theme($theme, $lite-typography);
-@import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
-@include o-filemanager-table-theme($theme);
+
+// @import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
+// @include o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
 */
@@ -30,8 +31,8 @@
 @import '../../app/main/accounts/detail/accounts-detail.theme.scss';
 @include accounts-detail-theme($theme);
 
-@import '../../app//main/employees/employees.theme.scss';
-@include employees-theme($theme);
+// @import '../../app/main/employees/employees.theme.scss';
+// @include employees-theme($theme);
 
 @import '../../app//main/about/about.theme.scss';
 @include about-theme($theme);
