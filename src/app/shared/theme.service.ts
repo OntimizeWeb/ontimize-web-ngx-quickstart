@@ -12,7 +12,9 @@ export interface DocsSiteTheme {
   isDefault?: boolean;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ThemeService {
 
   private static STORAGE_KEY = 'theme';
