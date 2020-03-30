@@ -1,27 +1,27 @@
 import { Config } from 'ontimize-web-ngx';
-
-import { MENU_CONFIG } from './shared/app.menu.config';
 import { SERVICE_CONFIG } from './shared/app.services.config';
+import { MENU_CONFIG } from './shared/app.menu.config';
+import { environment } from '../environments/environment';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'https://try.imatia.com/ontimizeweb/services/qsallcomponents-jee/services/rest',
+  apiEndpoint: environment.apiEndpoint,
+
   bundle: {
     path: 'bundle'
   },
-  // Application identifier. Is the unique package identifier of the app.
-  // It is used when storing or managing temporal data related with the app.
-  // By default is set as 'ontimize-web-uuid'.
-  uuid: 'com.ontimize.web.ngx.jee.seed',
+
+  //  Application identifier. Is the unique package identifier of the app.
+  // It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.
+  uuid: 'com.ontimize.web.quickstart',
 
   // Title of the app
-  title: 'JEE seed',
+  title: 'Ontimize Web Quickstart',
 
   //  Language of the application.
   locale: 'en',
 
-  // The service type used (Ontimize REST standart, Ontimize REST JEE
-  // or custom implementation) in the whole application.
+  // The service type used (Ontimize REST standart, Ontimize REST JEE or custom implementation) in the whole application.
   serviceType: 'OntimizeEE',
 
   // Configuration parameters of application services.
@@ -30,4 +30,11 @@ export const CONFIG: Config = {
   appMenuConfiguration: MENU_CONFIG,
 
   applicationLocales: ['es', 'en']
+  // ,
+
+  // permissionsConfiguration: {
+  //   service: 'test'
+  // },
+
+  // permissionsServiceType: 'OntimizeEEPermissions'
 };

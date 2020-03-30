@@ -1,0 +1,14 @@
+<o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home">
+  <div fxFill fxLayout="column" fxLayoutAlign="start">
+
+    <o-table #table attr="branches" service="branches" entity="branch" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
+      visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID"
+      query-rows="10" pageable="no" row-height="medium">
+      <o-table-column attr="OFFICEID" title="OFFICEID" width="15%" class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="STARTDATE" title="OPENING_DATE" width="22%" type="date" format="LL"></o-table-column>
+      <o-table-context-menu></o-table-context-menu>
+    </o-table>
+
+  </div>
+
+</o-form-layout-manager>

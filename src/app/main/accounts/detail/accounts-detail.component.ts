@@ -39,9 +39,9 @@ export class AccountsDetailComponent {
     private translateService: OTranslateService,
     private d3LocaleService: D3LocaleService
   ) {
-    const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
-    this._configureLineBarChart(d3Locale);
-    this._configurePieChart(d3Locale);
+    // const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+    // this._configureLineBarChart(d3Locale);
+    // this._configurePieChart(d3Locale);
   }
 
   public onFormDataLoaded(data: any): void {

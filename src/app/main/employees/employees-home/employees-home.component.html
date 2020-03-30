@@ -1,0 +1,57 @@
+<o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
+
+  <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="outline">
+    <o-row layout-gap="18px">
+      <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
+      <o-text-input attr="SURNAME" read-only="no" fxFlex></o-text-input>
+      <o-combo attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType"
+        columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID"
+        visible-columns="EMPLOYEETYPENAME" fxFlex="33"></o-combo>
+    </o-row>
+    <o-row layout-gap="18px">
+      <o-text-input attr="EMAIL" read-only="no" fxFlex="33"></o-text-input>
+      <o-combo attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME"
+        value-column="OFFICEID" keys="OFFICEID" visible-columns="NAME" fxFlex></o-combo>
+      <o-row layout-align="end center" fxFlex="33">
+        <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="RAISED" label="Clear" layout-padding>
+        </o-button>
+        <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="RAISED" label="Filter" layout-padding>
+        </o-button>
+      </o-row>
+    </o-row>
+    <o-filter-builder #filterBuilder attr="thefilter"
+      filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID:EMPLOYEETYPE;EMPLOYEEEMAIL:EMAIL;OFFICEID:OFFICE"
+      [target]="grid" [expression-builder]="createFilter"></o-filter-builder>
+  </o-column-collapsible>
+
+  <div fxLayout="column" fxFlex="1 1 auto">
+    <o-grid #grid attr="employees" service="employees" entity="employee"
+      columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE"
+      quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID"
+      keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME" pageable="yes" query-rows="16" fixed-header="yes"
+      refresh-button="no" gutter-size="18px" detail-mode="none">
+      <o-grid-item *ngFor="let item of grid.dataArray">
+        <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center"
+          class="employee-item mat-elevation-z1">
+          <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
+            <mat-divider fxFlex></mat-divider>
+            <div class="image">
+              <img [src]="getImageSrc(item.EMPLOYEEPHOTO)">
+            </div>
+            <mat-divider fxFlex></mat-divider>
+          </div>
+
+          <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
+            <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
+            <span>{{ item.EMPLOYEEEMAIL }}</span>
+            <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.OFFICEID]} }}
+              <div class="square"></div>
+              {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}</span>
+            <span>{{ item.ADDRESS }}</span>
+          </div>
+        </div>
+      </o-grid-item>
+    </o-grid>
+  </div>
+
+</o-form>
