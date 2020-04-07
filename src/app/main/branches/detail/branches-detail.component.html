@@ -17,10 +17,10 @@
 
       </o-column>
       <div fxFlex="40" fxFlex.md="100" *ngIf="hasGPSPositition()">
-        <!-- <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
+        <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
           layer-panel-visible="no" base-layer-ids="CartoDB.Positron;Esri;OpenStreetMap.HOT;OpenStreetMap.BlackAndWhite">
           <o-map-layer layer-type="marker" layer-id="office_marker" [layer-center]="getPositionGPS()" [layer-menu-label]="name"></o-map-layer>
-        </o-map> -->
+        </o-map>
       </div>
     </div>
   </o-column>

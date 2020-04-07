@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import {
   APP_CONFIG,
   O_INPUTS_OPTIONS,
@@ -26,7 +27,8 @@ export const customProviders: any = [
   imports: [
     ONTIMIZE_MODULES,
     OntimizeWebModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
