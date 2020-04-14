@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-// import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
+import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { DocsSiteTheme, ThemeService } from '../theme.service';
 
@@ -16,31 +16,31 @@ declare var d3: any;
 })
 export class CustomersCardComponent {
 
-  // public chartParameters: MultiBarHorizontalChartConfiguration;
+  public chartParameters: MultiBarHorizontalChartConfiguration;
 
   constructor(
     private _themeService: ThemeService
   ) {
-    // this.chartParameters = new MultiBarHorizontalChartConfiguration();
-    // this.chartParameters.showLegend = false;
-    // this.chartParameters.showControls = false;
-    // this.chartParameters.y1Axis.showMaxMin = false;
-    // this.chartParameters.x1Axis.showMaxMin = false;
-    // this.chartParameters.margin.top = 0;
-    // this.chartParameters.margin.right = 0;
-    // this.chartParameters.margin.bottom = 0;
-    // this.chartParameters.margin.left = 60;
-    // this.chartParameters.yDataType = 'intGrouped';
-    // this.chartParameters.valueType = 'intGrouped';
-    // this.chartParameters.showTooltip = false;
-    // const theme: DocsSiteTheme = this._themeService.getStoredTheme();
-    // this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
-    // if (theme.isDark) {
-    //   this.chartParameters.callback = () => {
-    //     d3.selectAll('.customers-card-chart .nv-axis text').style('fill', '#cccccc');
-    //     d3.selectAll('.customers-card-chart .nv-groups text').style('fill', '#cccccc');
-    //   };
-    // }
+    this.chartParameters = new MultiBarHorizontalChartConfiguration();
+    this.chartParameters.showLegend = false;
+    this.chartParameters.showControls = false;
+    this.chartParameters.y1Axis.showMaxMin = false;
+    this.chartParameters.x1Axis.showMaxMin = false;
+    this.chartParameters.margin.top = 0;
+    this.chartParameters.margin.right = 0;
+    this.chartParameters.margin.bottom = 0;
+    this.chartParameters.margin.left = 60;
+    this.chartParameters.yDataType = 'intGrouped';
+    this.chartParameters.valueType = 'intGrouped';
+    this.chartParameters.showTooltip = false;
+    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
+    this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
+    if (theme.isDark) {
+      this.chartParameters.callback = () => {
+        d3.selectAll('.customers-card-chart .nv-axis text').style('fill', '#cccccc');
+        d3.selectAll('.customers-card-chart .nv-groups text').style('fill', '#cccccc');
+      };
+    }
   }
 
 }

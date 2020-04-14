@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-// import { DonutChartConfiguration } from 'ontimize-web-ngx-charts';
+import { DonutChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { DocsSiteTheme, ThemeService } from '../theme.service';
 
@@ -16,31 +16,31 @@ declare var d3: any;
 })
 export class AccountsCardComponent {
 
-  // public chartParameters: DonutChartConfiguration;
+  public chartParameters: DonutChartConfiguration;
 
   constructor(
     private _themeService: ThemeService
   ) {
-    // this.chartParameters = new DonutChartConfiguration();
-    // this.chartParameters.legendPosition = 'right';
-    // this.chartParameters.legend.margin.top = 16;
-    // this.chartParameters.height = 150;
-    // this.chartParameters.margin.top = 0;
-    // this.chartParameters.margin.right = 0;
-    // this.chartParameters.margin.bottom = 0;
-    // this.chartParameters.margin.left = 0;
-    // this.chartParameters.labelType = 'value';
-    // this.chartParameters.labelSunbeamLayout = false;
-    // this.chartParameters.valueType = 'intGrouped';
-    // this.chartParameters.showTooltip = false;
-    // const theme: DocsSiteTheme = this._themeService.getStoredTheme();
-    // this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', theme.primary];
-    // if (theme.isDark) {
-    //   this.chartParameters.callback = () => {
-    //     d3.selectAll('.accounts-card-chart .nv-pieLabels text').style('fill', '#cccccc');
-    //     d3.selectAll('.accounts-card-chart .nv-legend-text').style('fill', '#cccccc');
-    //   };
-    // }
+    this.chartParameters = new DonutChartConfiguration();
+    this.chartParameters.legendPosition = 'right';
+    this.chartParameters.legend.margin.top = 16;
+    this.chartParameters.height = 150;
+    this.chartParameters.margin.top = 0;
+    this.chartParameters.margin.right = 0;
+    this.chartParameters.margin.bottom = 0;
+    this.chartParameters.margin.left = 0;
+    this.chartParameters.labelType = 'value';
+    this.chartParameters.labelSunbeamLayout = false;
+    this.chartParameters.valueType = 'intGrouped';
+    this.chartParameters.showTooltip = false;
+    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
+    this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', theme.primary];
+    if (theme.isDark) {
+      this.chartParameters.callback = () => {
+        d3.selectAll('.accounts-card-chart .nv-pieLabels text').style('fill', '#cccccc');
+        d3.selectAll('.accounts-card-chart .nv-legend-text').style('fill', '#cccccc');
+      };
+    }
   }
 
 }

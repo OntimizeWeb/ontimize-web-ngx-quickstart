@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
-// import { OChartModule } from 'ontimize-web-ngx-charts';
+import { OChartModule } from 'ontimize-web-ngx-charts';
 
 import { MENU_COMPONENTS } from './app.menu.config';
 import { MovementTypesCellRendererComponent } from './movement-types-renderer/movement-types-cell-renderer';
@@ -9,7 +9,7 @@ import { MovementTypesCellRendererComponent } from './movement-types-renderer/mo
 @NgModule({
   imports: [
     OntimizeWebModule,
-    // OChartModule
+    OChartModule
   ],
   declarations: [
     MovementTypesCellRendererComponent,
