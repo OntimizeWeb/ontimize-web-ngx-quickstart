@@ -8,9 +8,9 @@ export const environment = {
   production: false,
   versions: {
     core: '8.0.0',
-    charts: '',
-    filemanager: '',
-    map: '',
+    charts: '8.0.0',
+    filemanager: '8.0.0',
+    map: '8.0.0',
     theming: '4.0.2'
   }
 };

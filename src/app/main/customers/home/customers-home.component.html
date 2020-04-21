@@ -1,20 +1,23 @@
-<o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=","
-  attr="o-form-layout-customer-home" title-data-origin="customers_form_edit">
+<o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator="," attr="o-form-layout-customer-home"
+  title-data-origin="customers_form_edit">
   <div fxFill fxLayout="column" fxLayoutAlign="start">
+    <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
+      row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" query-rows="25">
 
-    <o-table #table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
-      columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
-      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10"
-      quick-filter="yes" row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes"
-      query-rows="25" quick-filter="yes">
-      <o-table-quickfilter (onChange)="onQuickfilterChange($event, table)"></o-table-quickfilter>
       <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
 
       <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image"
-        image-type="base64" empty-image="assets/images/no-image.png" avatar="yes" tooltip="yes">
+        image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-column>
       <o-table-column attr="NAME" title="NAME" orderable="no"></o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
+        <o-table-cell-renderer-service service="customers" entity="customerType"
+          value-column="DESCRIPTION" translate="no"
+          columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+        </o-table-cell-renderer-service>
+      </o-table-column>
       <o-table-context-menu></o-table-context-menu>
     </o-table>
   </div>
