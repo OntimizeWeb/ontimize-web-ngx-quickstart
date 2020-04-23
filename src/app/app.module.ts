@@ -1,13 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import {
-  APP_CONFIG,
-  O_INPUTS_OPTIONS,
-  O_MAT_ERROR_OPTIONS,
-  ONTIMIZE_MODULES,
-  ONTIMIZE_PROVIDERS,
-  OntimizeWebModule,
-} from 'ontimize-web-ngx';
+import { APP_CONFIG, O_INPUTS_OPTIONS, O_MAT_ERROR_OPTIONS, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,12 +20,12 @@ export const customProviders: any = [
 
 
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [AppComponent],
   imports: [
     ONTIMIZE_MODULES,
     OntimizeWebModule,
     AppRoutingModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
