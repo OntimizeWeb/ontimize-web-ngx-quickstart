@@ -19,7 +19,7 @@
   "GENERAL": "General",
   "NAME": "Nombre",
   "SURNAME": "Apellidos",
-  "CUSTOMERTYPEID": "Tipo cliente",
+  "CUSTOMERTYPEID": "Tipo",
   "LATITUDE": "Latitud",
   "LONGITUDE": "Longitud",
   "STARTDATE": "Fecha inicio",

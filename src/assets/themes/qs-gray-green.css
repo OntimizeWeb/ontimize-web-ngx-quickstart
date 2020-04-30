@@ -3584,14 +3584,15 @@ textarea:disabled {
 .o-app-header nav .menu-button {
   background: transparent; }
 
-.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item > a.is-selected,
+.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item:focus,
 .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item > a:focus,
-.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item > a:hover, .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item:focus, .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item:hover,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item > a.is-selected,
+.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item > a:hover, .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item:hover,
+.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) > .o-app-sidenav-item > a.is-selected,
+.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item:focus,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item > a:focus,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item > a:hover,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item:focus,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item:hover {
+.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item:hover,
+.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) > .o-app-sidenav-item > a.is-selected {
   color: #7daa4c; }
 
 .o-app-sidenav .o-app-sidenav-sidenav {
@@ -3786,6 +3787,15 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
     background: rgba(0, 0, 0, 0.12); }
   .md-drppicker .ranges ul li:hover {
     background: rgba(0, 0, 0, 0.12); }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.o-filemanager-table .filemanager-breadcrumb .breadcrumb-root {
+  color: rgba(60, 67, 67, 0.54); }
+
+.upload-progress-container > div {
+  background-color: #fafafa; }
 
 /*
 * Propagate theme to screen styles definition.
