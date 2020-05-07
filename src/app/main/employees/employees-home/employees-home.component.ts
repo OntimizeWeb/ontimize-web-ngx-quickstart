@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { FilterExpressionUtils, Expression } from 'ontimize-web-ngx';
+import { Expression, FilterExpressionUtils } from 'ontimize-web-ngx';
 
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 

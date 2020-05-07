@@ -26,7 +26,7 @@
 
   <div fxLayout="column" fxFlex="1 1 auto">
     <o-grid #grid attr="employees" service="employees" entity="employee"
-      columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE"
+      columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE;NAME"
       quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID"
       keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME" pageable="yes" query-rows="16" fixed-header="yes"
       refresh-button="no" gutter-size="18px" detail-mode="none">
@@ -44,7 +44,7 @@
           <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
             <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
             <span>{{ item.EMPLOYEEEMAIL }}</span>
-            <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.OFFICEID]} }}
+            <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.NAME]} }}
               <div class="square"></div>
               {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}</span>
             <span>{{ item.ADDRESS }}</span>
