@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatRadioChange, MatSlideToggle, MatSlideToggleChange } from '@angular/material';
-import { AppConfig, OTranslateService } from 'ontimize-web-ngx';
+import { AppConfig, OTranslateService, Util } from 'ontimize-web-ngx';
 
 import { DocsSiteTheme, ThemeService } from '../../shared/theme.service';
 
@@ -19,7 +19,7 @@ export class SettingsComponent {
   public currentLang: string;
   public availableThemes: DocsSiteTheme[];
   public currentTheme: DocsSiteTheme;
-  public darkDefaultMode: boolean = false;
+  public darkDefaultMode = false;
 
   @ViewChild('toggleDark', { static: false })
   private toggleDark: MatSlideToggle;
@@ -31,7 +31,7 @@ export class SettingsComponent {
   ) {
     this.availableThemes = this._themeService.availableThemes;
     this.currentTheme = this._themeService.currentTheme;
-    this.darkDefaultMode = this.currentTheme.isDark;
+    this.darkDefaultMode = Util.isDefined(this.currentTheme) ? this.currentTheme.isDark : false;
     this.availableLangs = this._appConfig.getConfiguration().applicationLocales;
     this.currentLang = this._translateService.getCurrentLang();
 
