@@ -75,7 +75,7 @@
             }
           }
         },
-        " e": {
+        "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ontimize-web-ngx-quickstart:build"
