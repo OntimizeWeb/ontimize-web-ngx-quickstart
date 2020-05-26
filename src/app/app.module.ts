@@ -35,7 +35,7 @@ export const customProviders: any = [
     OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw.json', { enabled: environment.production })
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },

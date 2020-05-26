@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/src/assets/themes/*.css
 # Only exists if Bazel was run
 /bazel-out
 
