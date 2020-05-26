@@ -7,7 +7,6 @@
     "lint": "ng lint",
     "build": "npm run build-themes && ng build",
     "production": "npm run build-themes && ng build --base-href /ontimize-web-ngx-quickstart",
-    "production-aot": "npm run build-themes && ng build --aot --base-href /ontimize-web-ngx-quickstart",
     "production-aot-server": "npm run build-themes && ng build --aot --base-href /ontimize-web-ngx-quickstart",
     "production-aot-serverpwa": "npm run build-themes && ng build --prod --base-href /ontimize-web-ngx-quickstartpwa && npm run build-ngsw",
     "build-themes": "node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive",
