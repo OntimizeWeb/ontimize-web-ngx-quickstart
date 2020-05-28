@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ontimize-web-ngx-quickstart",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -38,7 +38,37 @@
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-map/styles.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/assets/themes/ontimize.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/ontimize-dark.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/qs-blue-yellow-dark.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/qs-blue-yellow.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/qs-gray-green-dark.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/qs-gray-green.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              }
             ],
             "scripts": [
             ]
@@ -53,6 +83,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
+              "serviceWorker": true,
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
