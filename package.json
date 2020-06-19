@@ -7,13 +7,13 @@
     "ng": "ng",
     "start": "npm run build-themes && ng serve --port 4400",
     "build": "npm run build-themes && ng build",
-    "production": "npm run build-themes && ng build --aot=false --target -prod --base-href /ontimize-web-ngx-quickstart/",
-    "production-aot": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web-ngx-quickstart/",
-    "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/",
-    "production-aot-serverpwa": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstartpwa/ && npm run build-ngsw",
+    "production": "npm run build-themes && ng build --aot=false --baseHref=ontimize-web-ngx-quickstart",
+    "production-aot": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href=ontimize-web-ngx-quickstart",
+    "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href=ontimize-web-ngx-quickstart",
+    "production-aot-serverpwa": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href=ontimize-web-quickstart-pwa --environment=environment.pwa.ts && npm run build-ngsw",
     "build-themes": "node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive",
     "build-ngsw": "npm run build-ngsw-config && node cp-ngsw-dist.js",
-    "build-ngsw-config": "node_modules/.bin/ngsw-config dist src/ngsw-config.json /ontimizeweb/quickstartpwa/ "
+    "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json /ontimizeweb/quickstartpwa/"
   },
   "private": true,
   "dependencies": {
@@ -59,7 +59,7 @@
     "copy-webpack-plugin": "4.5.4",
     "fstream": "1.0.12",
     "handlebars": "4.7.3",
-    "html-webpack-plugin": "4.0.0-beta.2",
+    "html-webpack-plugin": "4.3.0",
     "js-yaml": "3.13.1",
     "kind-of": "6.0.3",
     "lodash.mergewith": "4.6.2",
