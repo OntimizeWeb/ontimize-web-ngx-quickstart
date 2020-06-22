@@ -10,10 +10,10 @@
     "production": "npm run build-themes && ng build --aot=false --baseHref=ontimize-web-ngx-quickstart",
     "production-aot": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href=ontimize-web-ngx-quickstart",
     "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/",
-    "production-aot-serverpwa": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web/quickstart-pwa/ --environment=environment.pwa.ts && npm run build-ngsw",
+    "production-aot-serverpwa": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web/quickstart/ --environment=environment.pwa.ts && npm run build-ngsw",
     "build-themes": "node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive",
     "build-ngsw": "npm run build-ngsw-config && node cp-ngsw-dist.js",
-    "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json /ontimizeweb/quickstartpwa/"
+    "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json /ontimizeweb/quickstart/"
   },
   "private": true,
   "dependencies": {
