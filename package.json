@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "npm run build-themes && ng serve --port 4400",
     "build": "npm run build-themes && ng build",
-    "production": "npm run build-themes && ng build --aot=false --baseHref=ontimize-web-ngx-quickstart",
+    "production": "npm run build-themes && ng build --aot=false --baseHref /ontimize-web-ngx-quickstart/",
     "production-aot": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href=ontimize-web-ngx-quickstart",
     "production-aot-server": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimizeweb/quickstart/",
     "production-aot-serverpwa": "npm run build-themes && ontimize-web-ngx production-aot --project-name ontimize-web-ngx-quickstart --href /ontimize-web/quickstart/ --environment=environment.pwa.ts && npm run build-ngsw",
