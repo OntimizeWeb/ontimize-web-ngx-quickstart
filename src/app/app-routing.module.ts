@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService, PermissionsGuardService } from 'ontimize-web-ngx';
 
 import { LoginModule } from './login/login.module';
