@@ -1,7 +1,7 @@
 export const environment = {
   apiEndpoint: 'https://try.imatia.com/ontimizeweb/services/qsallcomponents-jee/services/rest',
   production: true,
-  pwa: false,
+  pwa: true,
   versions: {
     core: '4.1.2',
     charts: '4.0.4',
