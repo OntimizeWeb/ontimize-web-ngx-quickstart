@@ -13,7 +13,7 @@
               <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
               <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
               <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
-              <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="string">
+              <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp">
               </o-date-input>
               <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes"
                 value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
@@ -64,7 +64,7 @@
     <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
       <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
         keys-sql-types="INTEGER" columns="ID_DMS_DOC">
-        <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
+        <!-- <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table> -->
       </o-form>
     </mat-tab>
 
