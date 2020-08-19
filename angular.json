@@ -70,8 +70,7 @@
                 "bundleName": "assets/themes"
               }
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -109,7 +108,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ontimize-web-ngx-quickstart:build"
+            "browserTarget": "ontimize-web-ngx-quickstart:build",
+            "sourceMap": {
+              "scripts": true,
+              "styles": false,
+              "vendor": true
+            }
           },
           "configurations": {
             "production": {
@@ -167,6 +171,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ontimize-web-ngx-quickstart"
 }
