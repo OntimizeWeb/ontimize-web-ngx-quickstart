@@ -3,10 +3,10 @@ export const environment = {
   production: true,
   pwa: true,
   versions: {
-    core: '4.1.2',
-    charts: '4.0.4',
-    filemanager: '4.0.1',
-    map: '4.0.1',
+    core: '4.1.3',
+    charts: '4.0.5',
+    filemanager: '4.0.3',
+    map: '4.0.3',
     theming: '4.0.2',
     tools: '4.0.0'
   }
