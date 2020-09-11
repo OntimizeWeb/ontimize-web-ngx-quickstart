@@ -42,32 +42,32 @@
               {
                 "input": "src/assets/themes/ontimize.scss",
                 "lazy": true,
-                "bundleName": "assets/themes"
+                "bundleName": "assets/themes/ontimize"
               },
               {
                 "input": "src/assets/themes/ontimize-dark.scss",
                 "lazy": true,
-                "bundleName": "assets/themes"
+                "bundleName": "assets/themes/ontimize-dark"
               },
               {
                 "input": "src/assets/themes/qs-blue-yellow-dark.scss",
                 "lazy": true,
-                "bundleName": "assets/themes"
+                "bundleName": "assets/themes/qs-blue-yellow-dark"
               },
               {
                 "input": "src/assets/themes/qs-blue-yellow.scss",
                 "lazy": true,
-                "bundleName": "assets/themes"
+                "bundleName": "assets/themes/qs-blue-yellow"
               },
               {
                 "input": "src/assets/themes/qs-gray-green-dark.scss",
                 "lazy": true,
-                "bundleName": "assets/themes"
+                "bundleName": "assets/themes/qs-gray-green-dark"
               },
               {
                 "input": "src/assets/themes/qs-gray-green.scss",
                 "lazy": true,
-                "bundleName": "assets/themes"
+                "bundleName": "assets/themes/qs-gray-green"
               }
             ],
             "scripts": []
