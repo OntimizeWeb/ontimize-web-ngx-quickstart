@@ -22,7 +22,11 @@
             "extractCss": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
+              "src/assets/css/loader.css",
+              "src/assets/i18n",
+              "src/assets/icons",
+              "src/assets/images",
+              "src/assets/js",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images",
