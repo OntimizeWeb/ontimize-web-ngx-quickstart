@@ -3221,44 +3221,44 @@ textarea {
 .o-row-collapsible > .o-container.mat-expansion-panel {
   background-color: inherit; }
 
-.o-column > .o-container > .mat-expansion-panel-header,
-.o-column > .o-container > .o-container-title,
 .o-column > .o-container > .o-container-header,
-.o-column-collapsible > .o-container > .mat-expansion-panel-header,
-.o-column-collapsible > .o-container > .o-container-title,
+.o-column > .o-container > .o-container-title,
+.o-column > .o-container > .mat-expansion-panel-header,
 .o-column-collapsible > .o-container > .o-container-header,
-.o-row > .o-container > .mat-expansion-panel-header,
-.o-row > .o-container > .o-container-title,
+.o-column-collapsible > .o-container > .o-container-title,
+.o-column-collapsible > .o-container > .mat-expansion-panel-header,
 .o-row > .o-container > .o-container-header,
-.o-row-collapsible > .o-container > .mat-expansion-panel-header,
+.o-row > .o-container > .o-container-title,
+.o-row > .o-container > .mat-expansion-panel-header,
+.o-row-collapsible > .o-container > .o-container-header,
 .o-row-collapsible > .o-container > .o-container-title,
-.o-row-collapsible > .o-container > .o-container-header {
+.o-row-collapsible > .o-container > .mat-expansion-panel-header {
   border-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87); }
-  .o-column > .o-container > .mat-expansion-panel-header .mat-tab-label,
-  .o-column > .o-container > .mat-expansion-panel-header .mat-tab-link,
-  .o-column > .o-container > .o-container-title .mat-tab-label,
-  .o-column > .o-container > .o-container-title .mat-tab-link,
   .o-column > .o-container > .o-container-header .mat-tab-label,
   .o-column > .o-container > .o-container-header .mat-tab-link,
-  .o-column-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-label,
-  .o-column-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-link,
-  .o-column-collapsible > .o-container > .o-container-title .mat-tab-label,
-  .o-column-collapsible > .o-container > .o-container-title .mat-tab-link,
+  .o-column > .o-container > .o-container-title .mat-tab-label,
+  .o-column > .o-container > .o-container-title .mat-tab-link,
+  .o-column > .o-container > .mat-expansion-panel-header .mat-tab-label,
+  .o-column > .o-container > .mat-expansion-panel-header .mat-tab-link,
   .o-column-collapsible > .o-container > .o-container-header .mat-tab-label,
   .o-column-collapsible > .o-container > .o-container-header .mat-tab-link,
-  .o-row > .o-container > .mat-expansion-panel-header .mat-tab-label,
-  .o-row > .o-container > .mat-expansion-panel-header .mat-tab-link,
-  .o-row > .o-container > .o-container-title .mat-tab-label,
-  .o-row > .o-container > .o-container-title .mat-tab-link,
+  .o-column-collapsible > .o-container > .o-container-title .mat-tab-label,
+  .o-column-collapsible > .o-container > .o-container-title .mat-tab-link,
+  .o-column-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-label,
+  .o-column-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-link,
   .o-row > .o-container > .o-container-header .mat-tab-label,
   .o-row > .o-container > .o-container-header .mat-tab-link,
-  .o-row-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-label,
-  .o-row-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-link,
+  .o-row > .o-container > .o-container-title .mat-tab-label,
+  .o-row > .o-container > .o-container-title .mat-tab-link,
+  .o-row > .o-container > .mat-expansion-panel-header .mat-tab-label,
+  .o-row > .o-container > .mat-expansion-panel-header .mat-tab-link,
+  .o-row-collapsible > .o-container > .o-container-header .mat-tab-label,
+  .o-row-collapsible > .o-container > .o-container-header .mat-tab-link,
   .o-row-collapsible > .o-container > .o-container-title .mat-tab-label,
   .o-row-collapsible > .o-container > .o-container-title .mat-tab-link,
-  .o-row-collapsible > .o-container > .o-container-header .mat-tab-label,
-  .o-row-collapsible > .o-container > .o-container-header .mat-tab-link {
+  .o-row-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-label,
+  .o-row-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-link {
     color: rgba(0, 0, 0, 0.87); }
 
 .o-column > .o-container > .o-container-title span,
@@ -3267,6 +3267,10 @@ textarea {
 .o-row-collapsible > .o-container > .o-container-title span {
   font-size: 14px;
   font-weight: 400; }
+
+.o-column-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title,
+.o-row-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title {
+  border: none; }
 
 .o-column-collapsible.o-appearance-outline > .o-container .o-container-title,
 .o-column.o-appearance-outline > .o-container .o-container-title,
@@ -3391,8 +3395,15 @@ textarea:disabled {
 
 .o-table .mat-table .mat-header-row .mat-header-cell {
   color: rgba(0, 0, 0, 0.87); }
+  .o-table .mat-table .mat-header-row .mat-header-cell .column-filter-icon {
+    color: rgba(0, 0, 0, 0.12); }
+  .o-table .mat-table .mat-header-row .mat-header-cell .column-filter-icon-active,
   .o-table .mat-table .mat-header-row .mat-header-cell .column-filter-icon.active {
-    color: #ffcc00; }
+    color: #757575; }
+  .o-table .mat-table .mat-header-row .mat-header-cell .o-table-header-indicator-numbered {
+    bottom: -12px;
+    right: -6px;
+    color: rgba(0, 0, 0, 0.54); }
 
 .o-table .mat-table .mat-row:hover {
   cursor: pointer;
@@ -3557,6 +3568,9 @@ textarea:disabled {
 .o-table-visible-columns-dialog .mat-list.large .mat-list-item {
   height: 38px; }
 
+.o-list-container .mat-toolbar {
+  background: transparent; }
+
 .o-list-container .primary-text {
   color: rgba(0, 0, 0, 0.87); }
 
@@ -3680,6 +3694,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
       border-top: 1px solid rgba(255, 255, 255, 0.5); }
     .o-bar-menu .toggle:hover {
       background-color: rgba(255, 255, 255, 0.15); } }
+
+.o-grid .mat-toolbar {
+  background: transparent; }
 
 .o-grid .o-grid-container .o-loading-blocker .o-spinner-container {
   background-color: #fafafa; }
@@ -3848,6 +3865,12 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
+
+.account-info-container,
+.balance-chart-container,
+.movement-chart-container,
+.movement-list-container {
+  background: white; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

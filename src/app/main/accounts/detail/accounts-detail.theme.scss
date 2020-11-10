@@ -6,7 +6,7 @@
   $color-cash: #424476;
   $color-red-numbers: #f44336;
   $color-gray: #bcbcbe;
-
+  $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
   .account-form-label,
@@ -17,8 +17,6 @@
   .account-form-value.balance.red-numbers {
     color: $color-red-numbers;
   }
-
-
 
   .movement-list.o-list .movement-list-item.mat-list-item {
     &.movement-list-item-transfer {
@@ -40,5 +38,12 @@
     .mat-list-item-content {
       border-color: $color-gray;
     }
+  }
+
+  .account-info-container,
+  .balance-chart-container,
+  .movement-chart-container,
+  .movement-list-container {
+    background: mat-color($background, card);
   }
 }
