@@ -8,7 +8,7 @@
   "start_url": "./",
   "icons": [
     {
-      "src": "assets/icons/ontimize-16.png",
+      "src": "assets/icons/ontimize16.png",
       "sizes": "16x16",
       "type": "image/png",
       "purpose": "maskable any"
