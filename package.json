@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -40,8 +40,8 @@
     "core-js": "2.5.7",
     "ontimize-web-ngx": "4.2.0",
     "ontimize-web-ngx-charts": "4.0.5",
-    "ontimize-web-ngx-filemanager": "4.0.3",
-    "ontimize-web-ngx-map": "4.0.3",
+    "ontimize-web-ngx-filemanager": "4.0.4",
+    "ontimize-web-ngx-map": "4.0.4",
     "ontimize-web-ngx-theming": "4.0.2",
     "reflect-metadata": "0.1.12",
     "rxjs": "6.3.3",
