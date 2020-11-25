@@ -3401,8 +3401,6 @@ textarea:disabled {
   .o-table .mat-table .mat-header-row .mat-header-cell .column-filter-icon.active {
     color: #757575; }
   .o-table .mat-table .mat-header-row .mat-header-cell .o-table-header-indicator-numbered {
-    bottom: -12px;
-    right: -6px;
     color: rgba(0, 0, 0, 0.54); }
 
 .o-table .mat-table .mat-row:hover {
