@@ -30,7 +30,7 @@
     "@angular/router": "~8.2.14",
     "@angular/upgrade": "~8.2.14",
     "hammerjs": "^2.0.8",
-    "ontimize-web-ngx": "file:ontimize-web-ngx-8.2.0-SNAPSHOT-0.tgz",
+    "ontimize-web-ngx": "8.1.1",
     "ontimize-web-ngx-charts": "8.0.0",
     "ontimize-web-ngx-filemanager": "8.1.0",
     "ontimize-web-ngx-map": "8.0.1",
