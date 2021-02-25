@@ -3212,6 +3212,29 @@ textarea {
 .o-dialog-class .mat-dialog-actions > button {
   margin-left: 12px; }
 
+/*global styles about drag/drop in dialogs table*/
+.cdk-drag-preview {
+  width: 100%;
+  display: block; }
+  .cdk-drag-preview .mat-list-item-content {
+    font-size: 14px;
+    color: white;
+    padding: 6px;
+    flex-direction: row;
+    align-items: center;
+    background-color: #303030;
+    display: flex;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 2px; }
+    .cdk-drag-preview .mat-list-item-content .mat-list-icon {
+      padding: 4px; }
+    .cdk-drag-preview .mat-list-item-content .mat-list-text {
+      padding-left: 16px; }
+
+.cdk-drop-list-dragging .o-drag-list-item-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1); }
+
 .toolbar-breadcrumb {
   background-color: #212121; }
   .toolbar-breadcrumb a {
@@ -3407,7 +3430,23 @@ textarea:disabled {
   .o-table .mat-table .mat-header-row .mat-header-cell .o-table-header-indicator-numbered {
     color: rgba(255, 255, 255, 0.7); }
 
-.o-table .mat-table .mat-row:hover {
+.o-table .mat-table .mat-row.o-table-group-row-level-1 {
+  font-weight: 900;
+  background-color: #464646; }
+
+.o-table .mat-table .mat-row.o-table-group-row-level-2 {
+  font-weight: 800;
+  background-color: #575757; }
+
+.o-table .mat-table .mat-row.o-table-group-row-level-3 {
+  font-weight: 700;
+  background-color: #686868; }
+
+.o-table .mat-table .mat-row.o-table-group-row-level-4 {
+  font-weight: 600;
+  background-color: #7a7a7a; }
+
+.o-table .mat-table .mat-row:hover:not(.o-table-group-row) {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.18); }
 
@@ -3592,6 +3631,12 @@ textarea:disabled {
     border-color: rgba(255, 255, 255, 0.78); }
     .o-list-picker-dialog mat-toolbar .o-list-picker-search.o-list-picker-search .mat-input-underline .mat-input-ripple {
       background-color: white; }
+
+.o-app-header nav.o-app-header-primary {
+  background-color: #464f64; }
+
+.o-app-header nav.o-app-header-accent {
+  background-color: #ffcc00; }
 
 .o-app-header nav .sidenav-toggle {
   color: white;
