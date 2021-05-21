@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService, NavigationService } from 'ontimize-web-ngx';
+import { LoginService, NavigationService } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     private actRoute: ActivatedRoute,
     router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
-    @Inject(AuthService) private authService: AuthService,
+    @Inject(LoginService) private loginService: LoginService,
     public injector: Injector
   ) {
     this.router = router;
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    this.authService.clearSessionData();
+    this.loginService.sessionExpired();
     this.navigation.setVisible(false);
 
     const userCtrl: FormControl = new FormControl('', Validators.required);
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.addControl('username', userCtrl);
     this.loginForm.addControl('password', pwdCtrl);
 
-    if (this.authService.isLoggedIn()) {
+    if (this.loginService.isLoggedIn()) {
       this.router.navigate(['../'], { relativeTo: this.actRoute });
     }
   }
@@ -62,11 +62,11 @@ export class LoginComponent implements OnInit {
       alert('Campos no válidos');
     }
 
-    const userName = this.loginForm.value.username;
-    const password = this.loginForm.value.password;
+    const userName = this.loginForm.value['username'];
+    const password = this.loginForm.value['password'];
     if (userName && userName.length > 0 && password && password.length > 0) {
       const self = this;
-      this.authService.login(userName, password)
+      this.loginService.login(userName, password)
         .subscribe(() => {
           self.sessionExpired = false;
           self.router.navigate(['../'], { relativeTo: this.actRoute });
