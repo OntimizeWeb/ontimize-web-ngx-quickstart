@@ -1,4 +1,4 @@
-import { Component, Inject, Injector, NgZone, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, Injector, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService, NavigationService } from 'ontimize-web-ngx';
@@ -21,12 +21,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private actRoute: ActivatedRoute,
-    private zone: NgZone,
     router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(LoginService) private loginService: LoginService,
-    public injector: Injector) {
-
+    public injector: Injector
+  ) {
     this.router = router;
 
     const qParamObs: Observable<any> = this.actRoute.queryParams;
