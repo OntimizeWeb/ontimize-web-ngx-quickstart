@@ -37,7 +37,7 @@
 
       <o-row layout-gap="26px">
         <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
-          <o-form-layout-manager attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%" dialog-max-width="90%"
+          <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%" dialog-max-width="90%"
             dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
             <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
               columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
