@@ -21,8 +21,8 @@ export class ThemeService {
 
   public availableThemes = [
     {
-      primary: '#0d0d0d',
-      accent: '#ffad00',
+      primary: '#1464a5',
+      accent: '#1464a5',
       href: 'ontimize.css',
       href_dark: 'ontimize-dark.css',
       isDefault: true
