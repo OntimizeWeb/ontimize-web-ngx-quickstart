@@ -6,9 +6,9 @@
     "start": "npm run build:themes && ng serve --port 4800",
     "lint": "ng lint",
     "build": "ng build",
-    "production": "ng build --base-href /ontimize-web-ngx-quickstart",
-    "production-aot-server": "ng build --aot --base-href /ontimizeweb/v8/quickstart/",
-    "production-aot-serverpwa": "ng build --prod --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
+    "production": "npm run build:themes && ng build --base-href /ontimize-web-ngx-quickstart",
+    "production-aot-server": "npm run build:themes && ng build --aot --base-href /ontimizeweb/v8/quickstart/",
+    "production-aot-serverpwa": "npm run build:themes && ng build --prod --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa",
     "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
@@ -31,14 +31,15 @@
     "@angular/router": "~8.2.14",
     "@angular/upgrade": "~8.2.14",
     "hammerjs": "^2.0.8",
-    "ontimize-web-ngx": "8.4.0",
+    "ontimize-web-ngx": "ontimize-web-ngx-8.5.0-SNAPSHOT-0.tgz",
     "ontimize-web-ngx-charts": "8.0.0",
     "ontimize-web-ngx-filemanager": "8.4.0",
     "ontimize-web-ngx-map": "8.0.1",
-    "ontimize-web-ngx-theming": "8.0.1",
+    "ontimize-web-ngx-theming": "ontimize-web-ngx-theming-8.1.0-SNAPSHOT-3.tgz",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "node-sass": "4.14.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.25",
