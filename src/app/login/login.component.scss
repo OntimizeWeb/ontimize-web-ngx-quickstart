@@ -6,6 +6,8 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 
   .login-outer-container {
     width: 100%;
@@ -17,6 +19,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    overflow: auto;
 
     .login-bg-container {
       background-image: url('/assets/images/login_bg.png');
@@ -43,16 +46,15 @@
 
     .wrapp-login {
       width: 640px;
-      min-height: 100vh;
-      border-radius: 2px;
-      position: relative;
+      min-height: 100%;
 
       .login-inner-container {
         width: 100%;
-        padding: 144px 120px 172px;
 
         form {
           padding: 16px;
+          min-height: 600px;
+          min-width: 368px;
         }
 
         .logo-container {
@@ -110,7 +112,7 @@
 
     div {
       height: 40px;
-      margin-right: 129px;
+      margin-right: 138px;
 
       span {
         font-size: 11px;
@@ -120,4 +122,31 @@
 
   }
 
+}
+@media(max-width:576px) {
+  .full-page {
+
+    .login-outer-container {
+      .wrapp-login {
+        width: 100%;
+        min-height: 100%;
+
+        .login-inner-container {
+          width: 100%;
+
+          form {
+            min-width: auto;
+            min-height: auto;
+          }
+        }
+      }
+    }
+
+    .footer-container {
+      div {
+        margin: 0 auto;
+        place-content: center !important;
+      }
+    }
+  }
 }
