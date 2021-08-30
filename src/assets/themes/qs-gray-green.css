@@ -1177,7 +1177,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   margin: 0 0 16px; }
 
 .mat-h3, .mat-subheading-2, .mat-typography h3 {
-  font: 400 15px/21px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 14px/21px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h4, .mat-subheading-1, .mat-typography h4 {
@@ -1519,7 +1519,7 @@ input.mat-input-element {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-list-base .mat-list-item {
-  font-size: 15px; }
+  font-size: 14px; }
   .mat-list-base .mat-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1530,7 +1530,7 @@ input.mat-input-element {
       font-size: 12px; }
 
 .mat-list-base .mat-list-option {
-  font-size: 15px; }
+  font-size: 14px; }
   .mat-list-base .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1574,7 +1574,7 @@ input.mat-input-element {
 
 .mat-option {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 15px; }
+  font-size: 14px; }
 
 .mat-optgroup-label {
   font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
@@ -3146,8 +3146,8 @@ textarea {
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-title {
   border-bottom: 1px solid #3c4343;
-  line-height: 15px;
-  font-size: 15px; }
+  line-height: 14px;
+  font-size: 14px; }
   .o-dialog-class .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-title .mat-icon {
@@ -4034,12 +4034,23 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* stylelint-enable */
 .login-outer-container {
   background-color: #fafafa; }
-  .login-outer-container .login-inner-container {
+  .login-outer-container .wrapp-login {
     background-color: white; }
-    .login-outer-container .login-inner-container .logo-container {
+    .login-outer-container .wrapp-login .login-inner-container {
       background-color: white; }
-    .login-outer-container .login-inner-container .session-expired {
-      color: #f44336; }
+      .login-outer-container .wrapp-login .login-inner-container .logo-container {
+        background-color: white; }
+      .login-outer-container .wrapp-login .login-inner-container .session-expired {
+        color: #f44336; }
+      .login-outer-container .wrapp-login .login-inner-container .title_text {
+        color: #121212; }
+      .login-outer-container .wrapp-login .login-inner-container .link_text {
+        color: #3c4343; }
+
+.footer-container {
+  background-color: #3c4343; }
+  .footer-container div span {
+    color: white; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

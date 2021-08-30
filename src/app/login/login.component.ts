@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService, NavigationService } from 'ontimize-web-ngx';
+import { AuthService, LocalStorageService, NavigationService, SessionInfo, Util } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = new FormGroup({});
-  user: FormControl;
-  password: FormControl;
+  userCtrl: FormControl = new FormControl('', Validators.required);
+  pwdCtrl: FormControl = new FormControl('', Validators.required);
   sessionExpired = false;
 
   router: Router;
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     router: Router,
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(AuthService) private authService: AuthService,
+    @Inject(LocalStorageService) private localStorageService,
     public injector: Injector
   ) {
     this.router = router;
@@ -43,25 +44,38 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    this.authService.clearSessionData();
     this.navigation.setVisible(false);
 
-    const userCtrl: FormControl = new FormControl('', Validators.required);
-    const pwdCtrl: FormControl = new FormControl('', Validators.required);
-
-    this.loginForm.addControl('username', userCtrl);
-    this.loginForm.addControl('password', pwdCtrl);
+    this.loginForm.addControl('username', this.userCtrl);
+    this.loginForm.addControl('password', this.pwdCtrl);
 
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['../'], { relativeTo: this.actRoute });
+    } else {
+      this.authService.clearSessionData();
     }
   }
 
-  login() {
-    if (!this.loginForm.valid) {
-      alert('Campos no válidos');
-    }
+  // TODO. Uncomment this when enabling feature of Remember me
+  // NOTE: Fix isLoggedIn method when using JEE service
+  //        Add new utility method to authService of isRememberedMe
+  // ngAfterViewInit(): any {
+  //   if (this.authService.isLoggedIn()) {
+  //     return;
+  //   }
+  //   const appData = this.localStorageService.getStoredData();
+  //   const sessionData: SessionInfo = appData[LocalStorageService.SESSION_STORAGE_KEY] || {};
 
+  //   if (appData && Util.isDefined(appData['rememberme'])) {
+  //     if (Util.parseBoolean(appData['rememberme'], false)) {
+  //       this.loginForm.patchValue({ 'username': sessionData.user });
+  //     } else {
+  //       this.loginForm.patchValue({ 'username': ''});
+  //     }
+  //   }
+  // }
+
+  login() {
     const userName = this.loginForm.value.username;
     const password = this.loginForm.value.password;
     if (userName && userName.length > 0 && password && password.length > 0) {
