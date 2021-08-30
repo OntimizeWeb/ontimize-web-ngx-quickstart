@@ -23,8 +23,9 @@
           color: #f44336;
         }
 
-        .title_text {
-          color: #121212;
+        .title_text,
+        .login_info {
+          color: mat-color($foreground, text);
         }
 
         .link_text {

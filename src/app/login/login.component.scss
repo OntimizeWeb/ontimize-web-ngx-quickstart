@@ -87,8 +87,12 @@
           font-size: 9pt;
         }
 
+        .login_info,
         .title_text {
           font-size: 14px;
+        }
+
+        .title_text {
           font-weight: 600;
         }
 
@@ -125,7 +129,6 @@
 }
 @media(max-width:576px) {
   .full-page {
-
     .login-outer-container {
       .wrapp-login {
         width: 100%;
