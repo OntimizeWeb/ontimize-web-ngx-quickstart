@@ -1,57 +1,44 @@
 @import 'node_modules/@angular/material/theming';
-@mixin main-theme($theme) {
+@mixin main-theme($theme, $typography) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  $white-bg: #fafafa;
-
-  .application-layout-content-wrapper {
-    background: $white-bg;
+  .branches-card-branches-amount,
+  .employees-card-employees-amount,
+  .o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
+  .o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+    font-size: mat-font-size($typography, headline);
+    font-weight: 600;
   }
 
-  .o-app-sidenav.o-app-sidenav {
-    .o-app-sidenav-menuitem.o-app-sidenav-item .mat-button-focus-overlay {
-      background: none;
+  .o-card-menu-item {
+    .nvd3 text {
+      font-family: mat-font-family($typography);
     }
+  }
 
-    .o-app-sidenav-container {
-      .o-app-sidenav-sidenav {
-        .mat-ripple {
-          display: none;
-        }
-        background: $white-bg;
+  .card-title {
+    color: mat-color($foreground, text);
+    font-size: mat-font-size($typography, subheading-2);
+    font-weight: mat-font-weight($typography, subheading-2);
+    margin: 12px 0;
 
-        .o-app-sidenav-item,
-        .sidenav-toggle {
-          // color: mat-color($primary, 0.54);
-          color: mat-color($primary, 0.72);
-        }
-
-        .o-app-sidenav-menugroup {
-          &:hover {
-            color: mat-color($accent);
-          }
-          color: mat-color($primary, 0.84);
-
-          &.active {
-            background: $white-bg;
-
-            + .o-app-sidenav-menugroup-items-container ul {
-              background: $white-bg;
-              box-shadow: none;
-            }
-          }
-        }
-
-        &.mat-drawer {
-          box-shadow: 1px 0 2px rgba(0,0,0,0.24);
-        }
-      }
+    &:first-child {
+      margin-top: 0;
     }
+  }
+
+  .branches-card-branches-amount,
+  .employees-card-employees-amount {
+    color: mat-color($primary);
 
   }
 
+  .o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+    fill: mat-color($primary);
+    font-family: mat-font-family($typography);
+  }
 }
