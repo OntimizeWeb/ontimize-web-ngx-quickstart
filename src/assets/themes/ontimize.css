@@ -563,7 +563,6 @@ textarea.cdk-textarea-autosize-measuring {
 
 /* Color definitions */
 /* Light theme */
-/* Dark theme */
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -599,6 +598,9 @@ textarea.cdk-textarea-autosize-measuring {
 *  5) http://godban.com.ua/projects/flexgrid
 *
 */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 [layout-padding-vertical] {
   padding: 4px 0; }
 
@@ -663,7 +665,7 @@ o-app-header .o-app-header-title {
 /* FORM */
 .o-form-toolbar .mat-toolbar {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-  background-color: #fafafa;
+  background-color: #eceff1;
   border-radius: 2px;
   min-height: initial; }
 
@@ -1169,15 +1171,15 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-size: 24px; }
 
 .mat-h1, .mat-headline, .mat-typography h1 {
-  font: 400 18px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 24px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h2, .mat-title, .mat-typography h2 {
-  font: 500 16px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h3, .mat-subheading-2, .mat-typography h3 {
-  font: 400 14px/21px Poppins, "Helvetica Neue", sans-serif;
+  font: 600 14px/21px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h4, .mat-subheading-1, .mat-typography h4 {
@@ -1235,11 +1237,11 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-card-title {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500; }
 
 .mat-card-header .mat-card-title {
-  font-size: 16px; }
+  font-size: 18px; }
 
 .mat-card-subtitle,
 .mat-card-content {
@@ -1284,7 +1286,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-weight: 400; }
 
 .mat-dialog-title {
-  font: 500 16px/24px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-expansion-panel-header {
   font-family: Poppins, "Helvetica Neue", sans-serif;
@@ -1498,7 +1500,7 @@ input.mat-input-element {
 .mat-toolbar h4,
 .mat-toolbar h5,
 .mat-toolbar h6 {
-  font: 500 16px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0; }
 
 .mat-tooltip {
@@ -1744,7 +1746,7 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-pseudo-checkbox {
   color: rgba(0, 0, 0, 0.54); }
   .mat-pseudo-checkbox::after {
-    color: #fafafa; }
+    color: #eceff1; }
 
 .mat-pseudo-checkbox-disabled {
   color: #b0b0b0; }
@@ -1843,7 +1845,7 @@ textarea.cdk-textarea-autosize-measuring {
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }
 
 .mat-app-background {
-  background-color: #fafafa;
+  background-color: #eceff1;
   color: rgba(0, 0, 0, 0.87); }
 
 .mat-theme-loaded-marker {
@@ -1882,7 +1884,7 @@ textarea.cdk-textarea-autosize-measuring {
   display: none; }
 
 .mat-badge-disabled .mat-badge-content {
-  background: #b9b9b9;
+  background: #afb1b2;
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-badge-content {
@@ -2166,16 +2168,16 @@ textarea.cdk-textarea-autosize-measuring {
   border-color: rgba(0, 0, 0, 0.54); }
 
 .mat-checkbox-checkmark {
-  fill: #fafafa; }
+  fill: #eceff1; }
 
 .mat-checkbox-checkmark-path {
-  stroke: #fafafa !important; }
+  stroke: #eceff1 !important; }
   @media (-ms-high-contrast: black-on-white) {
     .mat-checkbox-checkmark-path {
       stroke: #000 !important; } }
 
 .mat-checkbox-mixedmark {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background, .mat-checkbox-checked.mat-primary .mat-checkbox-background {
   background-color: #1464a5; }
@@ -2719,7 +2721,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-drawer-container {
-  background-color: #fafafa;
+  background-color: #eceff1;
   color: rgba(0, 0, 0, 0.87); }
 
 .mat-drawer {
@@ -3082,7 +3084,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 body,
 html {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 button,
 html,
@@ -3188,7 +3190,7 @@ textarea {
     padding: 6px;
     flex-direction: row;
     align-items: center;
-    background-color: #fafafa;
+    background-color: #eceff1;
     display: flex;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -3552,7 +3554,7 @@ textarea:disabled {
   background: rgba(0, 0, 0, 0.24); }
 
 .o-table .spinner-container {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 .o-table .o-table-menu-button {
   color: rgba(0, 0, 0, 0.54); }
@@ -3638,11 +3640,11 @@ textarea:disabled {
 
 .o-table .o-table-body.horizontal-scroll::-webkit-scrollbar-thumb {
   border: 6px solid;
-  border-color: #fafafa; }
+  border-color: #eceff1; }
 
 .o-table .o-table-body.horizontal-scroll::-webkit-scrollbar-thumb:hover {
   border: 4px solid;
-  border-color: #fafafa; }
+  border-color: #eceff1; }
 
 .o-table-visible-columns-dialog .mat-list-item.dnd-sortable-drag {
   background: #e3ecf4; }
@@ -3782,13 +3784,9 @@ textarea:disabled {
 .o-app-header .o-user-info {
   color: rgba(0, 0, 0, 0.87); }
 
-.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a.active,
 .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a.o-app-sidenav-viewer-sidenav-item-selected,
-.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a:focus,
 .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a:hover,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a.active,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a.o-app-sidenav-viewer-sidenav-item-selected,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a:focus,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a:hover {
   color: #063679;
   background-color: #f3f7fa; }
@@ -3816,8 +3814,13 @@ textarea:disabled {
     color: inherit; }
 
 .o-card-menu-item {
-  background: #fafafa;
+  background: white;
   border: 1px solid rgba(20, 100, 165, 0.17); }
+  .o-card-menu-item .o-card-menu-item-main {
+    background-color: rgba(236, 239, 241, 0.29); }
+  .o-card-menu-item .o-card-menu-item-title {
+    color: #1464a5;
+    font-size: 18px; }
   .o-card-menu-item .mat-button {
     color: #1464a5;
     background: #b9d1e4; }
@@ -3849,10 +3852,10 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .o-form-layout-split-pane .spinner-container,
 .o-form-layout-split-pane .o-split-pane-secondary-content {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 .o-form-layout-tabgroup .spinner-container {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 .o-form-layout-tabgroup .mat-tab-group .mat-tab-label .mat-icon:hover {
   background-color: rgba(0, 0, 0, 0.26);
@@ -3892,7 +3895,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   background: transparent; }
 
 .o-grid .o-grid-container .o-loading-blocker .o-spinner-container {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 [layout-padding-vertical] {
   padding: 4px 0; }
@@ -3937,7 +3940,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 * styles
 */
 .md-drppicker {
-  background-color: #fafafa;
+  background-color: #eceff1;
   /* ranges */ }
   .md-drppicker:after, .md-drppicker:before {
     border-bottom-color: rgba(0, 0, 0, 0.12); }
@@ -3957,7 +3960,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
       font-size: 80%;
       color: #ccc; }
   .md-drppicker td.off, .md-drppicker td.off.end-date, .md-drppicker td.off.in-range, .md-drppicker td.off.start-date {
-    background-color: #fafafa;
+    background-color: #eceff1;
     border-color: transparent;
     color: #999999; }
   .md-drppicker td.in-range {
@@ -4024,7 +4027,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: rgba(20, 100, 165, 0.54); }
 
 .upload-progress-container > div {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
 
 /*
 * Propagate theme to screen styles definition.
@@ -4033,7 +4036,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
 .login-outer-container {
-  background-color: #fafafa; }
+  background-color: #eceff1; }
   .login-outer-container .wrapp-login {
     background-color: white; }
     .login-outer-container .wrapp-login .login-inner-container {
@@ -4042,8 +4045,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
         background-color: white; }
       .login-outer-container .wrapp-login .login-inner-container .session-expired {
         color: #f44336; }
-      .login-outer-container .wrapp-login .login-inner-container .title_text {
-        color: #121212; }
+      .login-outer-container .wrapp-login .login-inner-container .title_text,
+      .login-outer-container .wrapp-login .login-inner-container .login_info {
+        color: rgba(0, 0, 0, 0.87); }
       .login-outer-container .wrapp-login .login-inner-container .link_text {
         color: #1464a5; }
 
@@ -4051,6 +4055,35 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   background-color: #1464a5; }
   .footer-container div span {
     color: white; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.branches-card-branches-amount,
+.employees-card-employees-amount,
+.o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
+.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+  font-size: 24px;
+  font-weight: 600; }
+
+.o-card-menu-item .nvd3 text {
+  font-family: Poppins, "Helvetica Neue", sans-serif; }
+
+.card-title {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 12px 0; }
+  .card-title:first-child {
+    margin-top: 0; }
+
+.branches-card-branches-amount,
+.employees-card-employees-amount {
+  color: #1464a5; }
+
+.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+  fill: #1464a5;
+  font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

@@ -562,7 +562,6 @@ textarea.cdk-textarea-autosize-measuring {
   box-sizing: content-box !important; }
 
 /* Color definitions */
-/* Light theme */
 /* Dark theme */
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
@@ -599,6 +598,9 @@ textarea.cdk-textarea-autosize-measuring {
 *  5) http://godban.com.ua/projects/flexgrid
 *
 */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 [layout-padding-vertical] {
   padding: 4px 0; }
 
@@ -1169,15 +1171,15 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-size: 24px; }
 
 .mat-h1, .mat-headline, .mat-typography h1 {
-  font: 400 18px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 24px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h2, .mat-title, .mat-typography h2 {
-  font: 500 16px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h3, .mat-subheading-2, .mat-typography h3 {
-  font: 400 14px/21px Poppins, "Helvetica Neue", sans-serif;
+  font: 600 14px/21px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h4, .mat-subheading-1, .mat-typography h4 {
@@ -1235,11 +1237,11 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-card-title {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500; }
 
 .mat-card-header .mat-card-title {
-  font-size: 16px; }
+  font-size: 18px; }
 
 .mat-card-subtitle,
 .mat-card-content {
@@ -1284,7 +1286,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-weight: 400; }
 
 .mat-dialog-title {
-  font: 500 16px/24px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-expansion-panel-header {
   font-family: Poppins, "Helvetica Neue", sans-serif;
@@ -1498,7 +1500,7 @@ input.mat-input-element {
 .mat-toolbar h4,
 .mat-toolbar h5,
 .mat-toolbar h6 {
-  font: 500 16px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0; }
 
 .mat-tooltip {
@@ -3786,13 +3788,9 @@ textarea:disabled {
 .o-app-header .o-user-info {
   color: white; }
 
-.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a.active,
 .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a.o-app-sidenav-viewer-sidenav-item-selected,
-.o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a:focus,
 .o-app-sidenav .o-app-sidenav-menu-group:not([disabled=true]) a:hover,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a.active,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a.o-app-sidenav-viewer-sidenav-item-selected,
-.o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a:focus,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a:hover {
   color: #063679;
   background-color: #b9d1e4; }
@@ -3820,8 +3818,13 @@ textarea:disabled {
     color: inherit; }
 
 .o-card-menu-item {
-  background: #303030;
+  background: #424242;
   border: 1px solid rgba(20, 100, 165, 0.17); }
+  .o-card-menu-item .o-card-menu-item-main {
+    background-color: rgba(48, 48, 48, 0.29); }
+  .o-card-menu-item .o-card-menu-item-title {
+    color: #1464a5;
+    font-size: 18px; }
   .o-card-menu-item .mat-button {
     color: #1464a5;
     background: #b9d1e4; }
@@ -4046,8 +4049,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
         background-color: #424242; }
       .login-outer-container .wrapp-login .login-inner-container .session-expired {
         color: #f44336; }
-      .login-outer-container .wrapp-login .login-inner-container .title_text {
-        color: #121212; }
+      .login-outer-container .wrapp-login .login-inner-container .title_text,
+      .login-outer-container .wrapp-login .login-inner-container .login_info {
+        color: white; }
       .login-outer-container .wrapp-login .login-inner-container .link_text {
         color: #1464a5; }
 
@@ -4055,6 +4059,35 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   background-color: #1464a5; }
   .footer-container div span {
     color: white; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.branches-card-branches-amount,
+.employees-card-employees-amount,
+.o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
+.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+  font-size: 24px;
+  font-weight: 600; }
+
+.o-card-menu-item .nvd3 text {
+  font-family: Poppins, "Helvetica Neue", sans-serif; }
+
+.card-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 12px 0; }
+  .card-title:first-child {
+    margin-top: 0; }
+
+.branches-card-branches-amount,
+.employees-card-employees-amount {
+  color: #1464a5; }
+
+.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+  fill: #1464a5;
+  font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

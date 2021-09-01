@@ -10,8 +10,17 @@ $mat-custom-accent: ( 50 : #e3ecf4, 100 : #b9d1e4, 200 : #8ab2d2, 300 : #5b93c0,
 // Define a theme.
 $primary: mat-palette($mat-custom-primary);
 $accent: mat-palette($mat-custom-accent);
+
+$background-color: #eceff1;
+
 /* Light theme */
 $theme: mat-light-theme($primary, $accent);
-/* Dark theme */
-$dark-theme: mat-dark-theme($primary, $accent);
+
+// Insert custom background color
+$background: map-get($theme, background);
+$background: map_merge($background, (background: $background-color));
+
+$theme: map_merge($theme, (background: $background));
+
+
 @import '../css/app.scss';
