@@ -41,4 +41,10 @@
     fill: mat-color($primary);
     font-family: mat-font-family($typography);
   }
+
+  .theme-option-background {
+    .mat-icon.mat-accent {
+      color: mat-color($accent, 900);
+    }
+  }
 }

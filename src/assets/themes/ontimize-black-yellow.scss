@@ -12,6 +12,4 @@ $primary: mat-palette($mat-custom-primary);
 $accent: mat-palette($mat-custom-accent);
 /* Light theme */
 $theme: mat-light-theme($primary, $accent);
-/* Dark theme */
-$dark-theme: mat-dark-theme($primary, $accent);
 @import '../css/app.scss';

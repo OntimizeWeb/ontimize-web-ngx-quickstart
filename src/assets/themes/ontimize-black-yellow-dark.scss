@@ -10,8 +10,7 @@ $mat-custom-accent: ( 50 : #fff9e0, 100 : #fff0b3, 200 : #ffe680, 300 : #ffdb4d,
 // Define a theme.
 $primary: mat-palette($mat-custom-primary);
 $accent: mat-palette($mat-custom-accent);
-/* Light theme */
-//$theme: mat-light-theme($primary, $accent);
+
 /* Dark theme */
 $theme: mat-dark-theme($primary, $accent);
 @import '../css/app.scss';
