@@ -1,14 +1,14 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "8.1.0",
+  "version": "8.0.6",
   "scripts": {
     "ng": "ng",
     "start": "npm run build:themes && ng serve --port 4800",
     "lint": "ng lint",
     "build": "ng build",
-    "production": "npm run build:themes && ng build --base-href /ontimize-web-ngx-quickstart",
-    "production-aot-server": "npm run build:themes && ng build --aot --base-href /ontimizeweb/v8/quickstart/",
-    "production-aot-serverpwa": "npm run build:themes && ng build --prod --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
+    "production": "ng build --base-href /ontimize-web-ngx-quickstart",
+    "production-aot-server": "ng build --aot --base-href /ontimizeweb/v8/quickstart/",
+    "production-aot-serverpwa": "ng build --prod --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa",
     "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
@@ -38,8 +38,7 @@
     "ontimize-web-ngx-theming": "8.1.0",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
-    "zone.js": "~0.9.1",
-    "node-sass": "4.14.1"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.25",

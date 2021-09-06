@@ -28,12 +28,6 @@ export class ThemeService {
       isDefault: true
     },
     {
-      primary: '#242424',
-      accent: '#ffcc00',
-      href: 'ontimize-black-yellow.css',
-      href_dark: 'ontimize-black-yellow-dark.css',
-    },
-    {
       primary: '#607d8b',
       accent: '#7daa4c',
       href: 'qs-gray-green.css',
