@@ -22,16 +22,10 @@ export class ThemeService {
   public availableThemes = [
     {
       primary: '#1464a5',
-      accent: '#1464a5',
+      accent: '#063679',
       href: 'ontimize.css',
       href_dark: 'ontimize-dark.css',
       isDefault: true
-    },
-    {
-      primary: '#464f64',
-      accent: '#ffcc00',
-      href: 'qs-blue-yellow.css',
-      href_dark: 'qs-blue-yellow-dark.css',
     },
     {
       primary: '#607d8b',

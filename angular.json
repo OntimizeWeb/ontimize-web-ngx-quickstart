@@ -50,12 +50,12 @@
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/qs-blue-yellow-dark.scss",
+                "input": "src/assets/themes/ontimize-black-yellow-dark.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/qs-blue-yellow.scss",
+                "input": "src/assets/themes/ontimize-black-yellow.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
