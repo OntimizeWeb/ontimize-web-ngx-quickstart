@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.addControl('username', this.userCtrl);
     this.loginForm.addControl('password', this.pwdCtrl);
 
-    if (this.loginService.isLoggedIn()) {
+    if (this.authService.isLoggedIn()) {
       this.router.navigate(['../'], { relativeTo: this.actRoute });
     } else {
       this.authService.clearSessionData();
@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
   //   }
   //   const appData = this.localStorageService.getStoredData();
   //   const sessionData: SessionInfo = appData[LocalStorageService.SESSION_STORAGE_KEY] || {};
+
   //   if (appData && Util.isDefined(appData['rememberme'])) {
   //     if (Util.parseBoolean(appData['rememberme'], false)) {
   //       this.loginForm.patchValue({ 'username': sessionData.user });
@@ -80,7 +81,7 @@ export class LoginComponent implements OnInit {
 
     if (userName && userName.length > 0 && password && password.length > 0) {
       const self = this;
-      this.loginService.login(userName, password)
+      this.authService.login(userName, password)
         .subscribe(() => {
           self.sessionExpired = false;
           self.router.navigate(['../'], { relativeTo: this.actRoute });
