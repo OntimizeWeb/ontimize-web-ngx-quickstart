@@ -1091,11 +1091,18 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   box-shadow: none;
   font-size: 16px; }
   .o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
+    height: 28px;
     padding: 8px;
     min-height: 72px;
     max-height: 72px; }
-  .o-form .o-form-toolbar .o-form-toolbar-header .o-breadcrumb {
-    height: 28px; }
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
+    border-radius: 0; }
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-icon-button,
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-icon-button {
+      height: 30px;
+      line-height: 30px;
+      width: 30px; }
 
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
@@ -3333,20 +3340,22 @@ textarea {
     background-color: #c5c7c7;
     border-color: transparent; }
 
-.o-form .o-form-toolbar button.mat-stroked-button,
-.ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button {
-  padding: 0 6px;
+.o-form .o-form-toolbar button,
+.ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button {
   line-height: 30px; }
-  .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper .mat-icon,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper .mat-icon {
-    margin-right: 4px;
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    line-height: 20px; }
-  .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper span,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper span {
-    flex: 1; }
+  .o-form .o-form-toolbar button.mat-stroked-button,
+  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button {
+    padding: 0 6px; }
+    .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper .mat-icon,
+    .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper .mat-icon {
+      margin-right: 4px;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px; }
+    .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper span,
+    .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper span {
+      flex: 1; }
 
 /*MAT PAGINATION*/
 .mat-paginator .mat-paginator-range-label {
@@ -4089,6 +4098,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
   fill: #3c4343;
   font-family: Poppins, "Helvetica Neue", sans-serif; }
+
+.theme-option-background .mat-icon.mat-accent {
+  color: #4d7f24; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
