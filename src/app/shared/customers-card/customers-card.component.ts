@@ -34,7 +34,10 @@ export class CustomersCardComponent {
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
-    this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
+
+    theme.primary = theme.primary.replace('#', '');
+    this.chartParameters.color = ['#eeeeee', theme.accent, '#c5c5c5'];
+
     if (theme.isDark) {
       this.chartParameters.callback = () => {
         d3.selectAll('.customers-card-chart .nv-axis text').style('fill', '#cccccc');

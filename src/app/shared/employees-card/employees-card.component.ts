@@ -33,7 +33,7 @@ export class EmployeesCardComponent {
     );
 
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
-    this.chartParameters.height = 95;
+    this.chartParameters.height = 60;
     this.chartParameters.showLegend = false;
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
@@ -41,7 +41,7 @@ export class EmployeesCardComponent {
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
-    this.chartParameters.margin.left = 60;
+    this.chartParameters.margin.left = 70;
     this.chartParameters.yDataType = 'intGrouped';
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;

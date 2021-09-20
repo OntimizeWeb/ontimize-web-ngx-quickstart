@@ -34,7 +34,11 @@ export class AccountsCardComponent {
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
-    this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', theme.primary];
+
+    theme.primary = theme.primary.replace('#', '');
+    let splitColor = theme.primary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
+    this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'];
+
     if (theme.isDark) {
       this.chartParameters.callback = () => {
         d3.selectAll('.accounts-card-chart .nv-pieLabels text').style('fill', '#cccccc');
