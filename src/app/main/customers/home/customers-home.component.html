@@ -5,6 +5,8 @@
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
       row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
 
+      <o-table-button #button attr="button" label="FILL_REPORT" icon="description"></o-table-button>
+
       <o-table-columns-filter columns="STARTDATE;SURNAME">
         <o-table-columns-filter-column attr="SURNAME" sort="desc"> </o-table-columns-filter-column>
         <o-table-columns-filter-column attr="STARTDATE" start-view="month"> </o-table-columns-filter-column>

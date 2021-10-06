@@ -22,6 +22,10 @@ export const SERVICE_CONFIG: Object = {
     'path': '/employees'
   },
 
+  'report': {
+    'path': '/reportstore'
+  },
+
   'test': {
     'path': '/test/dummyPermission'
   }

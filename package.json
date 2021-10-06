@@ -36,9 +36,11 @@
     "ontimize-web-ngx-filemanager": "8.5.1",
     "ontimize-web-ngx-map": "8.0.1",
     "ontimize-web-ngx-theming": "8.1.0",
+    "ontimize-web-ngx-report": "8.0.0",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "ngx-extended-pdf-viewer": "^9.0.0-alpha.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.25",

@@ -2,6 +2,14 @@
   columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT"
   show-header-navigation="yes" layout-direction="column" (onDataLoaded)="onFormDataLoaded($event)">
 
+  <div o-form-toolbar-buttons>
+    <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
+      attr="fillreport">
+      <mat-icon>description</mat-icon>
+      <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+    </button>
+  </div>
+
   <o-column>
     <div fxLayout="row wrap" fxLayoutGap="14px" fxLayoutAlign="space-between">
       <o-column title="BRANCH_INFO" icon="info" fxFlex="55" fxFlex.md="100" class="vertical-margin-10">

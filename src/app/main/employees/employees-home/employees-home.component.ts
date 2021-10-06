@@ -1,7 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Expression, FilterExpressionUtils } from 'ontimize-web-ngx';
+import { Expression, FilterExpressionUtils, OComboComponent, OFilterBuilderComponent, OGridComponent, OTextInputComponent } from 'ontimize-web-ngx';
+import { FillService } from 'ontimize-web-ngx-report';
 
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 
@@ -13,9 +14,27 @@ import { EmployeesDetailComponent } from '../employees-detail/employees-detail.c
 })
 export class EmployeesHomeComponent {
 
+  @ViewChild('name', { static: true })
+  name: OTextInputComponent;
+  @ViewChild('surname', { static: true })
+  surname: OTextInputComponent;
+  @ViewChild('type', { static: true })
+  type: OComboComponent;
+  @ViewChild('email', { static: true })
+  email: OTextInputComponent;
+  @ViewChild('branch', { static: true })
+  branch: OComboComponent;
+  @ViewChild('grid', { static: true })
+  grid: OGridComponent;
+  @ViewChild('filterBuilder', { static: true })
+  filterBuilder: OFilterBuilderComponent;
+
+  public params: object;
+
   constructor(
     protected dialog: MatDialog,
-    protected sanitizer: DomSanitizer
+    protected sanitizer: DomSanitizer,
+    private fillService: FillService
   ) { }
 
   public createFilter(values: Array<{ attr: string, value: any }>): Expression {
@@ -50,6 +69,13 @@ export class EmployeesHomeComponent {
       width: '520px',
       data: data
     });
+  }
+
+  fillReportFilter(e: Event) {
+    let filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
+      'filter': this.filterBuilder.getBasicExpression()
+    }
+    this.fillService.openFillReport("c27490e0-1a69-42ac-9083-bf7548f9f66d", {}, filter);
   }
 
 }
