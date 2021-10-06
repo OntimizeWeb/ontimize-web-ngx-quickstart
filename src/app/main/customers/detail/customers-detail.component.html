@@ -4,13 +4,21 @@
     <mat-tab label="{{ 'DATA' | oTranslate }}">
       <o-form #form attr="customers_form_edit" service="customer" entity="customer" fxLayout="column" show-header="yes"
         header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
-        show-header-navigation="yes">
+        show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
+
+        <div o-form-toolbar-buttons>
+          <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
+            attr="fillreport">
+            <mat-icon>description</mat-icon>
+            <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+          </button>
+        </div>
 
         <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
           <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
             <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
             <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
-              <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
+              <o-nif-input #id attr="ID" width="160px" class="form-field"></o-nif-input>
               <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
               <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
               <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp">
