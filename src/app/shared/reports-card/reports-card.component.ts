@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
-import { ReportService } from 'ontimize-web-ngx-report';
+import { OReportService } from 'ontimize-web-ngx-report';
 import { DocsSiteTheme, ThemeService } from '../theme.service';
 
 declare var d3: any;
@@ -13,7 +13,7 @@ declare var d3: any;
   host: {
     '[class.reports-card]': 'true'
   },
-  providers: [ReportService]
+  providers: [OReportService]
 })
 export class ReportsCardComponent {
 
@@ -26,7 +26,7 @@ export class ReportsCardComponent {
 
   constructor(
     private _themeService: ThemeService,
-    private reportService: ReportService,
+    private reportService: OReportService,
     private cd: ChangeDetectorRef) {
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.showLegend = false;
@@ -48,7 +48,7 @@ export class ReportsCardComponent {
         d3.selectAll('.reports-card-chart .nv-groups text').style('fill', '#cccccc');
       };
     }
-    this.reportService.configureService(this.reportService.getDefaultServiceConfiguration('reports'));
+    this.reportService.configureService(this.reportService.getDefaultServiceConfiguration());
     this.reportService.query({}, [], 'listReports').subscribe(
       res => {
         if (res.data && res.data.length) {

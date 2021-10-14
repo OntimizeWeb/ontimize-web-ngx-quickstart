@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableButtonComponent, OTableComponent } from 'ontimize-web-ngx';
-import { FillService } from 'ontimize-web-ngx-report';
+import { OFillReportService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'customers-home',
@@ -20,5 +20,5 @@ export class CustomersHomeComponent implements AfterViewInit {
     });
   }
 
-  constructor(private fillService: FillService) { }
+  constructor(private fillService: OFillReportService) { }
 }
