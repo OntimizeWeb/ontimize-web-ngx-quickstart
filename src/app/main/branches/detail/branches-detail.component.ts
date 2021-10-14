@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx';
-import { FillService } from 'ontimize-web-ngx-report';
+import { OFillReportService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'branches-detail',
@@ -26,7 +26,7 @@ export class BranchesDetailComponent implements OnInit {
   constructor(
     public snackBar: MatSnackBar,
     private translateService: OTranslateService,
-    private fillService: FillService
+    private fillService: OFillReportService
   ) { }
 
   ngOnInit() { }

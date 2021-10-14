@@ -2,7 +2,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { FilterExpressionUtils, Expression, OFormComponent, OListComponent, OFilterBuilderComponent } from 'ontimize-web-ngx';
-import { FillService } from 'ontimize-web-ngx-report';
+import { OFillReportService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'accounts-home',
@@ -33,7 +33,7 @@ export class AccountsHomeComponent implements OnDestroy {
 
   constructor(changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    private fillService: FillService) {
+    private fillService: OFillReportService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

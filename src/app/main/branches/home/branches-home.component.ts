@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableButtonComponent, OTableComponent } from 'ontimize-web-ngx';
-import { FillService } from 'ontimize-web-ngx-report';
+import { OFillReportService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'branches-home',
@@ -25,7 +25,7 @@ export class BranchesHomeComponent implements AfterViewInit {
     });
   }
 
-  constructor(private fillService: FillService) { }
+  constructor(private fillService: OFillReportService) { }
 
   onDataLoaded(e: object) {
     this.id = this.branchEmployeesTable.getParentKeysValues()['OFFICEID'];
