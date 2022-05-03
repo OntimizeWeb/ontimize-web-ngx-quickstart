@@ -1,4 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OFormComponent, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 
@@ -37,7 +38,8 @@ export class AccountsDetailComponent {
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
-    private d3LocaleService: D3LocaleService
+    private d3LocaleService: D3LocaleService,
+    private router: Router, private activateRoute: ActivatedRoute
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
     this._configureLineBarChart(d3Locale);
@@ -160,6 +162,14 @@ export class AccountsDetailComponent {
       value: 'Automatic Cash',
       color: AccountsDetailComponent.colorCash
     }];
+  }
+
+  goToClient(CUSTOMERID) {
+    this.router.navigate(['customers'], {
+      relativeTo: this.activateRoute, state: {
+        CUSTOMERID: CUSTOMERID
+      }
+    })
   }
 
 }

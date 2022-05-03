@@ -20,6 +20,7 @@ export const routes: Routes = [
   { path: 'new', component: AccountsNewComponent },
   { path: ':ACCOUNTID', component: AccountsDetailComponent },
   { path: ':ACCOUNTID/edit', component: AccountsEditComponent },
+  { path: ':ACCOUNTID/customers', loadChildren: () => import('../customers/customers.module').then(m => m.CustomersModule) },
   { path: ':ACCOUNTID/:MOVEMENTID', component: AccountTransactionsDetailComponent }
 ];
 

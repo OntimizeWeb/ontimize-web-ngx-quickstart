@@ -24,7 +24,7 @@
               <mat-list-item *ngFor="let customer of customerList.dataArray">
                 <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
                 <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
-                <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
+                <span mat-line (click)="goToClient(customer.CUSTOMERID)">{{ customer.NAME }} {{ customer.SURNAME }}</span>
               </mat-list-item>
             </o-list>
           </div>
