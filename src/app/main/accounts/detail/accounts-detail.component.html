@@ -1,5 +1,5 @@
 <o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
-  <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
+  <o-form #oForm attr="account_detail_form" service="Branch" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
     columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R"
     [label-header]="formLabel" show-header-navigation="yes" include-breadcrumb="yes" (onDataLoaded)="onFormDataLoaded($event)" layout-align="start stretch">
     <o-column layout-gap="24px">
@@ -19,7 +19,7 @@
 
           <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
             <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
-            <o-list #customerList service="customer" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
+            <o-list #customerList service="Customer" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
               columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
               <mat-list-item *ngFor="let customer of customerList.dataArray">
                 <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>

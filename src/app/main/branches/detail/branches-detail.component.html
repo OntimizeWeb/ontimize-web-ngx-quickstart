@@ -1,4 +1,4 @@
-<o-form editable-detail="true" show-header="yes" header-actions="R;D" service="branches" entity="branch" keys="OFFICEID" #oForm
+<o-form editable-detail="true" show-header="yes" header-actions="R;D" service="Branch" entity="branch" keys="OFFICEID" #oForm
   columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT"
   show-header-navigation="yes" layout-direction="column" (onDataLoaded)="onFormDataLoaded($event)">
 
@@ -28,7 +28,7 @@
 
     <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div layout-padding>
-        <o-table #accountsTable service="customer" entity="customerAccount" title="ACCOUNTS"
+        <o-table #accountsTable service="Customer" entity="customerAccount" title="ACCOUNTS"
           columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE"
           visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE" sort-columns="STARTDATE"
           keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="10" quick-filter="yes" edit-button-in-row="no" pageable="no"
@@ -49,7 +49,7 @@
       </o-column>
     </mat-tab>
 
-    <o-file-input attr="BRANCH_PLAN" service="branches" entity="plan" accept-file-type="image/*" show-info="yes" (onUploadFile)="onUploadFile($event)"
+    <o-file-input attr="BRANCH_PLAN" service="Branch" entity="plan" accept-file-type="image/*" show-info="yes" (onUploadFile)="onUploadFile($event)"
       [additional-data]="getFileData()" layout-padding></o-file-input>
     -->
 

@@ -5,12 +5,12 @@ export const SERVICE_CONFIG: Object = {
     'path': '/users'
   },
 
-  'customer': {
+  'Customer': {
     'path': '/customers',
     'fileManagerPath': '/filemanager'
   },
 
-  'branches': {
+  'Branch': {
     'path': '/branches'
   },
 
@@ -18,7 +18,7 @@ export const SERVICE_CONFIG: Object = {
     'path': '/movements'
   },
 
-  'employees': {
+  'Employee': {
     'path': '/employees'
   },
 
