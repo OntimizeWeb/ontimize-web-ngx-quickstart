@@ -1,4 +1,4 @@
-<o-form attr="customers_form_insert" service="customers" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;U;D"
+<o-form attr="customers_form_insert" service="customer" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;U;D"
   #oForm after-insert-mode="detail" class="standalone-form-container">
 
   <o-row attr="row1" layout-align="start stretch">
@@ -17,7 +17,7 @@
 
       <div fxLayout="row" fxLayoutAlign="start center">
         <o-list-picker attr="CUSTOMERTYPEID" fxFlex="30" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
-          value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+          value-column="CUSTOMERTYPEID" service="customer" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
           visible-columns="DESCRIPTION" separator=" - ">
         </o-list-picker>
       </div>

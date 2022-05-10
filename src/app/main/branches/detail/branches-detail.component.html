@@ -28,7 +28,7 @@
 
     <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div layout-padding>
-        <o-table #accountsTable service="customers" entity="customerAccount" title="ACCOUNTS"
+        <o-table #accountsTable service="customer" entity="customerAccount" title="ACCOUNTS"
           columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE"
           visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE" sort-columns="STARTDATE"
           keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="10" quick-filter="yes" edit-button-in-row="no" pageable="no"

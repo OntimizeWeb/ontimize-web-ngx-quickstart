@@ -2,7 +2,7 @@
   <mat-tab-group fxFill>
 
     <mat-tab label="{{ 'DATA' | oTranslate }}">
-      <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+      <o-form #form attr="customers_form_edit" service="customer" entity="customer" fxLayout="column" show-header="yes"
         header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
         show-header-navigation="yes">
 
@@ -16,7 +16,7 @@
               <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp">
               </o-date-input>
               <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes"
-                value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
+                value-column="CUSTOMERTYPEID" service="customer" entity="customerType" keys="CUSTOMERTYPEID"
                 columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " width="160px"
                 class="form-field"></o-combo>
             </div>
@@ -43,9 +43,9 @@
     </mat-tab>
 
     <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column"
+      <o-form attr="customers_accounts_form_edit" service="customer" entity="customer" fxLayout="column"
         show-header="no" keys="CUSTOMERID" keys-sql-types="INTEGER">
-        <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount"
+        <o-table #accountsTable attr="customer_accounts" service="customer" entity="customerAccount"
           parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-form-route="accounts" edit-form-route="accounts"
           columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE"
@@ -62,9 +62,9 @@
     </mat-tab>
 
     <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
-      <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+      <o-form attr="customers_documents_form_edit" service="customer" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
         keys-sql-types="INTEGER" columns="ID_DMS_DOC">
-        <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
+        <o-filemanager-table service="customer" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
       </o-form>
     </mat-tab>
 
