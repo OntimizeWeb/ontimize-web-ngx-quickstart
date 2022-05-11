@@ -579,11 +579,6 @@ textarea.cdk-textarea-autosize-measuring {
 *
 */
 /*it's necessary redefined the font size of the checkbox*/
-/*
-  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
-   set line-height to normal as user-agent set in the inputs
-   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
-*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -611,11 +606,6 @@ textarea.cdk-textarea-autosize-measuring {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
-/*
-  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
-   set line-height to normal as user-agent set in the inputs
-   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
-*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -634,12 +624,6 @@ textarea.cdk-textarea-autosize-measuring {
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
-/* Theme for the ripple elements.*/
-/* stylelint-disable material/no-prefixes */
-/* stylelint-enable */
-.report-on-demand-sidenav .mat-expansion-panel {
-  background-color: #303030; }
-
 [layout-padding-vertical] {
   padding: 4px 0; }
 
@@ -894,7 +878,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.05em) scale(0.75);
     width: 133.33333%; }
-  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.04999em) scale(0.75);
     width: 133.33334%; }
   .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
@@ -908,9 +892,6 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     font-size: 75%;
     margin-top: 0.4em;
     top: calc(100% - 0em); }
-
-.o-combo mat-select {
-  line-height: normal; }
 
 .o-checkbox .mat-checkbox {
   font-size: 14px; }
@@ -955,7 +936,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   transform: translateY(-0.5em) scale(0.75) !important;
   width: 133.33333%; }
 
-.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.5em) scale(0.75) !important;
   width: 133.33333%; }
 
@@ -974,9 +955,9 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   transform: translateY(-0.8em) scale(0.75);
   width: 133.33333%; }
 
-.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.79999em) scale(0.75);
-  width: 133.33334%; }
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.8em) scale(0.75);
+  width: 133.33333%; }
 
 .mat-form-field-appearance-standard .mat-form-field-flex {
   padding: 0.25em 0.25em 0 0.25em !important; }
