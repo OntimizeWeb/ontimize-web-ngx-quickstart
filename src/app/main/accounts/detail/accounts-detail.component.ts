@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OFormComponent, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
+import { OFillReportService } from 'ontimize-web-ngx-report';
 
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 
@@ -31,13 +32,17 @@ export class AccountsDetailComponent {
   public balanceChartParams: LinePlusBarFocusChartConfiguration;
   public movementTypesChartParams: PieChartConfiguration;
 
+  public params: object;
+  public id: string;
+
   @ViewChild('oForm', { static: false })
   private oForm: OFormComponent;
 
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
-    private d3LocaleService: D3LocaleService
+    private d3LocaleService: D3LocaleService,
+    private fillService: OFillReportService
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
     this._configureLineBarChart(d3Locale);
@@ -61,6 +66,9 @@ export class AccountsDetailComponent {
         }
       });
     }
+
+    this.id = data.ACCOUNTID;
+    this.params = this.getParameters();
   }
 
   private processLineData(data: any[]): void {
@@ -160,6 +168,17 @@ export class AccountsDetailComponent {
       value: 'Automatic Cash',
       color: AccountsDetailComponent.colorCash
     }];
+  }
+
+  getParameters() {
+    let params = {
+      'id': this.id
+    }
+    return params;
+  }
+
+  fillReport(e: Event){
+    this.fillService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
   }
 
 }

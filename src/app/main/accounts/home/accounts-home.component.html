@@ -37,10 +37,11 @@
     <mat-sidenav-content class="mat-sidenav-content">
       <div fxLayout="column" fxLayoutAlign="start start" class="flex-container" fxLayoutGap="12px">
         <!--BUTTONS-->
-        <div class="buttons">
+        <div class="buttons" fxLayoutGap="12px">
           <o-button (click)="toogleSidenav()" icon="filter_list" type="STROKED" label="FILTER"
             [matTooltip]="(sidenav.opened?'HIDE_FILTERS':'SHOW_FILTERS') | oTranslate"></o-button>
           <o-button (click)="reloadData()" label="REFRESH" type="STROKED" icon="refresh" [matTooltip]="'RELOAD_DATA' | oTranslate"></o-button>
+          <o-button (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate"></o-button>
         </div>
 
         <div class="fill-remaining">

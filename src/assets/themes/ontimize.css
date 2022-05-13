@@ -579,6 +579,11 @@ textarea.cdk-textarea-autosize-measuring {
 *
 */
 /*it's necessary redefined the font size of the checkbox*/
+/*
+  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
+   set line-height to normal as user-agent set in the inputs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -606,6 +611,11 @@ textarea.cdk-textarea-autosize-measuring {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
+/*
+  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
+   set line-height to normal as user-agent set in the inputs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -878,7 +888,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.05em) scale(0.75);
     width: 133.33333%; }
-  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.04999em) scale(0.75);
     width: 133.33334%; }
   .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
@@ -892,6 +902,9 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     font-size: 75%;
     margin-top: 0.4em;
     top: calc(100% - 0em); }
+
+.o-combo mat-select {
+  line-height: normal; }
 
 .o-checkbox .mat-checkbox {
   font-size: 14px; }
@@ -936,7 +949,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   transform: translateY(-0.5em) scale(0.75) !important;
   width: 133.33333%; }
 
-.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.5em) scale(0.75) !important;
   width: 133.33333%; }
 
@@ -955,9 +968,9 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   transform: translateY(-0.8em) scale(0.75);
   width: 133.33333%; }
 
-.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.8em) scale(0.75);
-  width: 133.33333%; }
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.79999em) scale(0.75);
+  width: 133.33334%; }
 
 .mat-form-field-appearance-standard .mat-form-field-flex {
   padding: 0.25em 0.25em 0 0.25em !important; }
@@ -2638,10 +2651,10 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   border-color: rgba(0, 0, 0, 0.38); }
 
 .mat-progress-bar-background {
-  fill: #f3f7fa; }
+  fill: #b9d1e4; }
 
 .mat-progress-bar-buffer {
-  background-color: #f3f7fa; }
+  background-color: #b9d1e4; }
 
 .mat-progress-bar-fill::after {
   background-color: #1464a5; }
@@ -2964,7 +2977,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(243, 247, 250, 0.3); }
+  background-color: rgba(185, 209, 228, 0.3); }
 
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #1464a5; }
@@ -3003,7 +3016,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-tab-group.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(243, 247, 250, 0.3); }
+  background-color: rgba(185, 209, 228, 0.3); }
 
 .mat-tab-group.mat-background-primary .mat-tab-header, .mat-tab-group.mat-background-primary .mat-tab-links, .mat-tab-group.mat-background-primary .mat-tab-header-pagination, .mat-tab-nav-bar.mat-background-primary .mat-tab-header, .mat-tab-nav-bar.mat-background-primary .mat-tab-links, .mat-tab-nav-bar.mat-background-primary .mat-tab-header-pagination {
   background-color: #1464a5; }
@@ -3271,7 +3284,7 @@ textarea {
 .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
 .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
   color: #0b488a;
-  background-color: #f3f7fa;
+  background-color: #b9d1e4;
   border-color: transparent; }
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
@@ -3338,7 +3351,7 @@ textarea {
   .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
     color: #0b488a;
-    background-color: #f3f7fa;
+    background-color: #b9d1e4;
     border-color: transparent; }
 
 .o-form .o-form-toolbar [o-form-toolbar-buttons] > * {
@@ -3348,7 +3361,7 @@ textarea {
 
 .o-button button.mat-stroked-button:not([disabled]).mat-primary {
   color: #0b488a;
-  background-color: #f3f7fa;
+  background-color: #b9d1e4;
   border-color: transparent; }
   .o-button button.mat-stroked-button:not([disabled]).mat-primary:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-primary .mat-button-focus-overlay {
@@ -3362,7 +3375,7 @@ textarea {
   .o-button button.mat-stroked-button:not([disabled]).mat-accent:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-accent .mat-button-focus-overlay {
     color: #0b488a;
-    background-color: #f3f7fa;
+    background-color: #b9d1e4;
     border-color: transparent; }
 
 .o-form .o-form-toolbar button.mat-stroked-button,
@@ -3387,7 +3400,7 @@ textarea {
   margin-right: 16px; }
 
 .mat-paginator button:hover {
-  background-color: #f3f7fa;
+  background-color: #b9d1e4;
   border-radius: 50%; }
 
 .mat-paginator button.mat-icon-button {
@@ -3825,7 +3838,7 @@ textarea:disabled {
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a.o-app-sidenav-viewer-sidenav-item-selected,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a:hover {
   color: #063679;
-  background-color: #f3f7fa; }
+  background-color: #b9d1e4; }
 
 .o-app-sidenav .o-app-sidenav-sidenav {
   background: #1464a5;
@@ -4045,7 +4058,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item.mat-list-option {
     background: rgba(0, 0, 0, 0.04); }
     .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item.mat-list-option[aria-selected="true"] {
-      background-color: #f3f7fa;
+      background-color: #b9d1e4;
       color: rgba(0, 0, 0, 0.87); }
   .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base.cdk-drop-list-dragging {
     border-style: dashed;

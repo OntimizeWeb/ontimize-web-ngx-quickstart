@@ -1,5 +1,6 @@
 import { Injector, ViewChild, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe } from 'ontimize-web-ngx';
+import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe, ONIFInputComponent } from 'ontimize-web-ngx';
+import { OFillReportService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'customers-detail',
@@ -21,13 +22,17 @@ export class CustomersDetailComponent implements OnInit {
   protected yAxis = 'MOVEMENT';
   protected xAxis = 'MOVEMENTTYPES';
 
+  public params: object;
+
   @ViewChild('accountsTable', { static: false }) accountsTable: OTableComponent;
   @ViewChild('oDetailForm', { static: false }) form: OFormComponent;
   @ViewChild('accountListPicker', { static: false }) accountListPicker: OListPickerComponent;
+  @ViewChild('id', { static: false }) id: ONIFInputComponent;
 
   availableAccountsToAdd: Array<any> = [];
 
-  constructor(protected injector: Injector) {
+  constructor(protected injector: Injector,
+    private fillService: OFillReportService) {
     this.service = this.injector.get(OntimizeService);
     this.realPipe = new ORealPipe(this.injector);
   }
@@ -90,5 +95,20 @@ export class CustomersDetailComponent implements OnInit {
     }
   }
 
+  onDataLoaded(e: object) {
+    this.params = this.getParameters();
+  }
+
+  getParameters() {
+    let params = {
+      'id': this.id.getValue()
+    }
+
+    return params;
+  }
+
+  fillReport(e: Event){
+    this.fillService.openFillReport("6e1439f4-9b76-4d2d-ae73-6797682078c9", this.params, {});
+  }
 
 }
