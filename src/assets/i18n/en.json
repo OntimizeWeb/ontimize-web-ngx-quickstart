@@ -143,5 +143,19 @@
   "EMPLOYEETYPE_6384": "Sanitation Department",
   "EMPLOYEETYPE_6385": "Transportation department",
   "EMPLOYEETYPE_6386": "Security",
-  "OFFICE": "Branch office"
+  "OFFICE": "Branch office",
+  "REPORTS": "Reports",
+  "REPORT_DATA": "Report information",
+  "REPORT_ID": "Id.",
+  "REPORT_NAME": "Name",
+  "REPORT_DESCRIPTION": "Description",
+  "REPORT_TYPE": "Report types",
+  "REPORT_FILENAME": "Main report filename",
+  "REPORT_ZIPFOLDER": "Report file (ZIP folder)",
+  "FILL_REPORT": "Generate report",
+  "PARAMETERS": "Report parameters",
+  "GENERATE": "Generate",
+  "REPORTS_CONTENT": "Reports on customers, accounts, branches and employees data",
+  "NO_PARAMETER_VALUE_MESSAGE": "No parameter value specified",
+  "SERVER_ERROR_MESSAGE": "Internal server error"
 }

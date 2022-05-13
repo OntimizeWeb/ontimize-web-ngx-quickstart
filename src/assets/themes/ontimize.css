@@ -608,7 +608,8 @@ textarea.cdk-textarea-autosize-measuring {
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+ U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
 /*
@@ -634,12 +635,6 @@ textarea.cdk-textarea-autosize-measuring {
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
-/* Theme for the ripple elements.*/
-/* stylelint-disable material/no-prefixes */
-/* stylelint-enable */
-.report-on-demand-sidenav .mat-expansion-panel {
-  background-color: #eceff1; }
-
 [layout-padding-vertical] {
   padding: 4px 0; }
 
@@ -2657,10 +2652,10 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   border-color: rgba(0, 0, 0, 0.38); }
 
 .mat-progress-bar-background {
-  fill: #f3f7fa; }
+  fill: #b9d1e4; }
 
 .mat-progress-bar-buffer {
-  background-color: #f3f7fa; }
+  background-color: #b9d1e4; }
 
 .mat-progress-bar-fill::after {
   background-color: #1464a5; }
@@ -2983,7 +2978,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(243, 247, 250, 0.3); }
+  background-color: rgba(185, 209, 228, 0.3); }
 
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #1464a5; }
@@ -3022,7 +3017,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-tab-group.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(243, 247, 250, 0.3); }
+  background-color: rgba(185, 209, 228, 0.3); }
 
 .mat-tab-group.mat-background-primary .mat-tab-header, .mat-tab-group.mat-background-primary .mat-tab-links, .mat-tab-group.mat-background-primary .mat-tab-header-pagination, .mat-tab-nav-bar.mat-background-primary .mat-tab-header, .mat-tab-nav-bar.mat-background-primary .mat-tab-links, .mat-tab-nav-bar.mat-background-primary .mat-tab-header-pagination {
   background-color: #1464a5; }
@@ -3290,7 +3285,7 @@ textarea {
 .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
 .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
   color: #0b488a;
-  background-color: #f3f7fa;
+  background-color: #b9d1e4;
   border-color: transparent; }
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
@@ -3357,7 +3352,7 @@ textarea {
   .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
     color: #0b488a;
-    background-color: #f3f7fa;
+    background-color: #b9d1e4;
     border-color: transparent; }
 
 .o-form .o-form-toolbar [o-form-toolbar-buttons] > * {
@@ -3367,7 +3362,7 @@ textarea {
 
 .o-button button.mat-stroked-button:not([disabled]).mat-primary {
   color: #0b488a;
-  background-color: #f3f7fa;
+  background-color: #b9d1e4;
   border-color: transparent; }
   .o-button button.mat-stroked-button:not([disabled]).mat-primary:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-primary .mat-button-focus-overlay {
@@ -3381,7 +3376,7 @@ textarea {
   .o-button button.mat-stroked-button:not([disabled]).mat-accent:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-accent .mat-button-focus-overlay {
     color: #0b488a;
-    background-color: #f3f7fa;
+    background-color: #b9d1e4;
     border-color: transparent; }
 
 .o-form .o-form-toolbar button.mat-stroked-button,
@@ -3406,7 +3401,7 @@ textarea {
   margin-right: 16px; }
 
 .mat-paginator button:hover {
-  background-color: #f3f7fa;
+  background-color: #b9d1e4;
   border-radius: 50%; }
 
 .mat-paginator button.mat-icon-button {
@@ -3844,7 +3839,7 @@ textarea:disabled {
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a.o-app-sidenav-viewer-sidenav-item-selected,
 .o-app-sidenav .o-app-sidenav-menu-item:not([disabled=true]) a:hover {
   color: #063679;
-  background-color: #f3f7fa; }
+  background-color: #b9d1e4; }
 
 .o-app-sidenav .o-app-sidenav-sidenav {
   background: #1464a5;
@@ -4064,7 +4059,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item.mat-list-option {
     background: rgba(0, 0, 0, 0.04); }
     .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item.mat-list-option[aria-selected="true"] {
-      background-color: #f3f7fa;
+      background-color: #b9d1e4;
       color: rgba(0, 0, 0, 0.87); }
   .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base.cdk-drop-list-dragging {
     border-style: dashed;

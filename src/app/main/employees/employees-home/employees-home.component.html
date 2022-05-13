@@ -2,19 +2,22 @@
 
   <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="outline">
     <o-row layout-gap="18px">
-      <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
-      <o-text-input attr="SURNAME" read-only="no" fxFlex></o-text-input>
-      <o-combo attr="EMPLOYEETYPE" read-only="no" service="Employee" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
-        value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="33"></o-combo>
+      <o-text-input #name attr="NAME" read-only="no" fxFlex="33"></o-text-input>
+      <o-text-input #surname attr="SURNAME" read-only="no" fxFlex></o-text-input>
+      <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType"
+        columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID"
+        visible-columns="EMPLOYEETYPENAME" fxFlex="33"></o-combo>
     </o-row>
     <o-row layout-gap="18px">
-      <o-text-input attr="EMAIL" read-only="no" fxFlex="33"></o-text-input>
-      <o-combo attr="OFFICE" read-only="no" service="Branch" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID" keys="OFFICEID"
-        visible-columns="NAME" fxFlex></o-combo>
+      <o-text-input #email attr="EMAIL" read-only="no" fxFlex="33"></o-text-input>
+      <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME"
+        value-column="OFFICEID" keys="OFFICEID" visible-columns="NAME" fxFlex></o-combo>
       <o-row layout-align="end center" fxFlex="33">
         <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="RAISED" label="Clear" layout-padding>
         </o-button>
         <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="RAISED" label="Filter" layout-padding>
+        </o-button>
+        <o-button (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate">
         </o-button>
       </o-row>
     </o-row>
@@ -35,6 +38,5 @@
       </o-table-column>
     </o-table>
   </div>
-
 
 </o-form>
