@@ -36,7 +36,7 @@
     "ontimize-web-ngx-charts": "8.0.0",
     "ontimize-web-ngx-filemanager": "8.5.4",
     "ontimize-web-ngx-map": "8.0.1",
-    "ontimize-web-ngx-theming": "8.2.2",
+    "ontimize-web-ngx-theming": "8.3.0-SNAPSHOT-0",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
     "zone.js": "~0.9.1",
