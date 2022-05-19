@@ -8,7 +8,7 @@
     "build": "ng build",
     "production": "ng build --base-href /ontimize-web-ngx-quickstart",
     "production-aot-server": "ng build --aot --base-href /ontimizeweb/v8/quickstart/",
-    "production-aot-serverpwa": "ng build --aot --base-href / && npm run build-ngsw",
+    "production-aot-serverpwa": "ng build --prod --aot --base-href / && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa",
     "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
@@ -32,7 +32,7 @@
     "@angular/upgrade": "~8.2.14",
     "hammerjs": "^2.0.8",
     "ontimize-web-ngx": "8.7.0-SNAPSHOT-0",
-    "ontimize-web-ngx-report": "8.0.0-SNAPSHOT-0",
+    "ontimize-web-ngx-report": "C:/work/ontimize web/8.x.x/ontimize-web-ngx-report/dist/ontimize-web-ngx-report/ontimize-web-ngx-report-8.0.0-SNAPSHOT-0.tgz",
     "ontimize-web-ngx-charts": "8.0.0",
     "ontimize-web-ngx-filemanager": "8.5.4",
     "ontimize-web-ngx-map": "8.0.1",
