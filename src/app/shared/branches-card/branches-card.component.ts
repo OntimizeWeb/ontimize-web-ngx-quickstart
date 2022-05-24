@@ -19,7 +19,7 @@ export class BranchesCardComponent {
     private ontimizeService: OntimizeService,
     private cd: ChangeDetectorRef
   ) {
-    this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('branches'));
+    this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('Branch'));
     const self = this;
     this.ontimizeService.query(void 0, ['COUNTRY'], 'branch').subscribe(
       res => {

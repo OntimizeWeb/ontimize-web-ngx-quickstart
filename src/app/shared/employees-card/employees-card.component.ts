@@ -25,7 +25,7 @@ export class EmployeesCardComponent {
     private cd: ChangeDetectorRef,
     private _themeService: ThemeService
   ) {
-    this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('employees'));
+    this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('Employee'));
     this.ontimizeService.query(void 0, ['EMPLOYEEID'], 'employee').subscribe(
       res => this.employeesAmount = (res.data && res.data.length) ? res.data.length : void 0,
       err => console.log(err),
