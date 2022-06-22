@@ -11,7 +11,7 @@
         <!--OFFICEID FILTER-->
         <o-text-input attr="OFFICEID" read-only="no"></o-text-input>
         <!--ACCOUNTTYPEID FILTER-->
-        <o-combo attr="ACCOUNTTYPEID" read-only="no" service="Branch" entity="accountTypeAggregate" columns="ACCOUNTTYPEID;ACCOUNTTYPENAME"
+        <o-combo attr="ACCOUNTTYPEID" read-only="no" service="branches" entity="accountTypeAggregate" columns="ACCOUNTTYPEID;ACCOUNTTYPENAME"
           value-column="ACCOUNTTYPEID" keys="ACCOUNTTYPEID" visible-columns="ACCOUNTTYPENAME" sql-type="INTEGER"></o-combo>
         <!--ANID FILTER-->
         <o-text-input attr="ANID" read-only="no"></o-text-input>
@@ -41,14 +41,15 @@
           <o-button (click)="toogleSidenav()" icon="filter_list" type="STROKED" label="FILTER"
             [matTooltip]="(sidenav.opened?'HIDE_FILTERS':'SHOW_FILTERS') | oTranslate"></o-button>
           <o-button (click)="reloadData()" label="REFRESH" type="STROKED" icon="refresh" [matTooltip]="'RELOAD_DATA' | oTranslate"></o-button>
-          <o-button (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate"></o-button>
+          <o-button (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate">
+          </o-button>
         </div>
 
         <div class="fill-remaining">
           <div fxFill fxLayout="column" fxLayoutAlign="start">
-            <o-table #tableAccount service="Branch" entity="account" keys="ACCOUNTID"
+            <o-table #tableAccount service="branches" entity="account" keys="ACCOUNTID"
               columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-              visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP" fxFlex attr="accounts" title="ACCOUNTS" sort-columns="ANID" query-rows="15"
+              visible-columns="ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP" fxFlex attr="accounts" title="ACCOUNTS" sort-columns="ANID" query-rows="15"
               pageable="no">
 
               <o-table-columns-filter></o-table-columns-filter>
@@ -57,6 +58,11 @@
               <o-table-column attr="OFFICEID" title="OFFICEID" width="14%" class="o-table-column-centered"></o-table-column>
               <o-table-column attr="CDID" title="CDID" width="14%" class="o-table-column-centered"></o-table-column>
               <o-table-column attr="ANID" title="ANID" width="14%" class="o-table-column-centered"></o-table-column>
+              <o-table-column attr="STARTDATE" title="STARTDATE" type="date" width="14%" class="o-table-column-centered" format="LL"></o-table-column>
+              <o-table-column attr="ENDDATE" title="ENDDATE" width="14%" class="o-table-column-centered" format="LL"></o-table-column>
+
+              <o-table-column attr="INTERESRATE" type="percentage"></o-table-column>
+              <o-table-column attr="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"></o-table-column>
             </o-table>
           </div>
         </div>
