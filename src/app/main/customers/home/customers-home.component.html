@@ -1,7 +1,7 @@
 <o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=", " attr="o-form-layout-customer-home"
   title-data-origin="customers_form_edit">
   <div fxFill fxLayout="column" fxLayoutAlign="start">
-    <o-table fxFlex attr="customer" title="CUSTOMERS" service="Customer" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+    <o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
       row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
 
@@ -18,7 +18,7 @@
       <o-table-column attr="NAME" title="NAME" orderable="no"></o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
       <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
-        <o-table-cell-renderer-service service="Customer" entity="customerType"
+        <o-table-cell-renderer-service service="customers" entity="customerType"
           value-column="DESCRIPTION" translate="no"
           columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
         </o-table-cell-renderer-service>

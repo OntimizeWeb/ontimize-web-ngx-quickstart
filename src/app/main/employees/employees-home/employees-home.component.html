@@ -4,13 +4,13 @@
     <o-row layout-gap="18px">
       <o-text-input #name attr="NAME" read-only="no" fxFlex="33"></o-text-input>
       <o-text-input #surname attr="SURNAME" read-only="no" fxFlex></o-text-input>
-      <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="Employee" entity="employeeType"
+      <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType"
         columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID"
         visible-columns="EMPLOYEETYPENAME" fxFlex="33"></o-combo>
     </o-row>
     <o-row layout-gap="18px">
       <o-text-input #email attr="EMAIL" read-only="no" fxFlex="33"></o-text-input>
-      <o-combo #branch attr="OFFICE" read-only="no" service="Branch" entity="branch" columns="OFFICEID;NAME"
+      <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME"
         value-column="OFFICEID" keys="OFFICEID" visible-columns="NAME" fxFlex></o-combo>
       <o-row layout-align="end center" fxFlex="33">
         <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="RAISED" label="Clear" layout-padding>
@@ -27,13 +27,13 @@
   </o-column-collapsible>
 
   <div fxLayout="column" fxFlex="1 1 auto">
-    <o-table #tableEmployees attr="employees" service="Employee" entity="employee"
+    <o-table #tableEmployees attr="employees" service="employees" entity="employee"
       columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
       visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
       sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" pageable="yes">
       <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
       <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
-        <o-table-cell-renderer-service service="Employee" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+        <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
           value-column="EMPLOYEETYPENAME"></o-table-cell-renderer-service>
       </o-table-column>
     </o-table>
