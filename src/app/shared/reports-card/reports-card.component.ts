@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportService } from 'ontimize-web-ngx-report';
 import { DocsSiteTheme, ThemeService } from '../theme.service';
@@ -12,8 +12,7 @@ declare var d3: any;
   encapsulation: ViewEncapsulation.None,
   host: {
     '[class.reports-card]': 'true'
-  },
-  providers: [OReportService]
+  }
 })
 export class ReportsCardComponent {
 
