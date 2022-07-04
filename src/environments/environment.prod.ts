@@ -7,6 +7,6 @@ export const environment = {
     filemanager: '8.5.4',
     map: '8.0.1',
     theming: '8.3.0',
-    report: '8.7.0'
+    report: '8.0.0'
   }
 };
