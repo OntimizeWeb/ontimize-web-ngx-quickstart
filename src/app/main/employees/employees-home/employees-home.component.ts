@@ -2,8 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Expression, FilterExpressionUtils, OComboComponent, OFilterBuilderComponent, OGridComponent, OTextInputComponent } from 'ontimize-web-ngx';
-import { OFillReportService } from 'ontimize-web-ngx-report';
-
+import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 
 @Component({
@@ -34,7 +33,7 @@ export class EmployeesHomeComponent {
   constructor(
     protected dialog: MatDialog,
     protected sanitizer: DomSanitizer,
-    private fillService: OFillReportService
+    private reportStoreService: OReportStoreService
   ) { }
 
   public createFilter(values: Array<{ attr: string, value: any }>): Expression {
@@ -75,7 +74,7 @@ export class EmployeesHomeComponent {
     let filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
       'filter': this.filterBuilder.getBasicExpression()
     }
-    this.fillService.openFillReport("c27490e0-1a69-42ac-9083-bf7548f9f66d", {}, filter);
+    this.reportStoreService.openFillReport("c27490e0-1a69-42ac-9083-bf7548f9f66d", {}, filter);
   }
 
 }
