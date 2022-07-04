@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OFormComponent, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
-import { OFillReportService } from 'ontimize-web-ngx-report';
+import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 
@@ -42,7 +42,7 @@ export class AccountsDetailComponent {
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
     private d3LocaleService: D3LocaleService,
-    private fillService: OFillReportService
+    private reportStoreService: OReportStoreService
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
     this._configureLineBarChart(d3Locale);
@@ -177,8 +177,8 @@ export class AccountsDetailComponent {
     return params;
   }
 
-  fillReport(e: Event){
-    this.fillService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
+  fillReport(e: Event) {
+    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
   }
 
 }

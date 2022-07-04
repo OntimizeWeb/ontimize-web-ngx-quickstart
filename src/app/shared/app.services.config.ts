@@ -5,7 +5,7 @@ export const SERVICE_CONFIG: Object = {
     'path': '/users'
   },
 
-  'Customer': {
+  'customers': {
     'path': '/customers',
     'fileManagerPath': '/filemanager'
   },

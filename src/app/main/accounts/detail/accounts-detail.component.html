@@ -28,7 +28,7 @@
 
           <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
             <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
-            <o-list #customerList service="Customer" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
+            <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
               columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
               <mat-list-item *ngFor="let customer of customerList.dataArray">
                 <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
