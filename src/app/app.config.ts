@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'http://localhost:8080/qsallcomponents-jee',
+  apiEndpoint: environment.apiEndpoint,
 
   bundle: {
     path: 'bundle'

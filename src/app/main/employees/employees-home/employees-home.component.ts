@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Expression, FilterExpressionUtils, OComboComponent, OFilterBuilderComponent, OGridComponent, OTextInputComponent } from 'ontimize-web-ngx';
+import { Expression, FilterExpressionUtils, OFilterBuilderComponent } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 
@@ -13,22 +13,8 @@ import { EmployeesDetailComponent } from '../employees-detail/employees-detail.c
 })
 export class EmployeesHomeComponent {
 
-  @ViewChild('name', { static: true })
-  name: OTextInputComponent;
-  @ViewChild('surname', { static: true })
-  surname: OTextInputComponent;
-  @ViewChild('type', { static: true })
-  type: OComboComponent;
-  @ViewChild('email', { static: true })
-  email: OTextInputComponent;
-  @ViewChild('branch', { static: true })
-  branch: OComboComponent;
-  @ViewChild('grid', { static: true })
-  grid: OGridComponent;
   @ViewChild('filterBuilder', { static: true })
   filterBuilder: OFilterBuilderComponent;
-
-  public params: object;
 
   constructor(
     protected dialog: MatDialog,

@@ -1,5 +1,5 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OFormComponent, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 
@@ -32,11 +32,7 @@ export class AccountsDetailComponent {
   public balanceChartParams: LinePlusBarFocusChartConfiguration;
   public movementTypesChartParams: PieChartConfiguration;
 
-  public params: object;
   public id: string;
-
-  @ViewChild('oForm', { static: false })
-  private oForm: OFormComponent;
 
   constructor(
     private ontimizeService: OntimizeService,
@@ -51,6 +47,7 @@ export class AccountsDetailComponent {
 
   public onFormDataLoaded(data: any): void {
     this.formLabel = data.ACCOUNTTYP;
+    this.id = data.ACCOUNTID;
 
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('movements'));
     if (data.hasOwnProperty('ACCOUNTID') && this.ontimizeService !== null) {
@@ -66,9 +63,6 @@ export class AccountsDetailComponent {
         }
       });
     }
-
-    this.id = data.ACCOUNTID;
-    this.params = this.getParameters();
   }
 
   private processLineData(data: any[]): void {
@@ -171,14 +165,15 @@ export class AccountsDetailComponent {
   }
 
   getParameters() {
-    let params = {
+    const params = {
       'id': this.id
     }
     return params;
   }
 
   fillReport(e: Event) {
-    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
+    const params = this.getParameters();
+    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", params, {});
   }
 
 }
