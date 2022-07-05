@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'environment.apiEndpoint',
+  apiEndpoint: environment.apiEndpoint,
 
   bundle: {
     path: 'bundle'
