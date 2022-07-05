@@ -12,14 +12,12 @@ import { OReportStoreService } from 'ontimize-web-ngx-report';
 })
 export class AccountsHomeComponent implements OnDestroy {
 
-
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
 
   @ViewChild('listAccount', { static: false })
   private listAccount: OListComponent;
-
 
   @ViewChild('formFilter', { static: false })
   private formFilter: OFormComponent;
@@ -81,7 +79,6 @@ export class AccountsHomeComponent implements OnDestroy {
     }
 
     return ce;
-    // this.listAccount.queryData(FilterExpressionUtils.buildBasicExpression(ce), { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
 
   }
 
@@ -121,7 +118,7 @@ export class AccountsHomeComponent implements OnDestroy {
   }
 
   fillReportFilter() {
-    let filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
+    const filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
       'filter': this.filterBuilder.getBasicExpression()
     }
     this.reportStoreService.openFillReport("2abdb71f-6ea7-4d13-b255-b0df406c8f0b", {}, filter);
