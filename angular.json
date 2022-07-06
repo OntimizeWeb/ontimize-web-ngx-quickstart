@@ -74,7 +74,8 @@
                 "lazy": true,
                 "bundleName": "assets/themes"
               }
-            ]
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
