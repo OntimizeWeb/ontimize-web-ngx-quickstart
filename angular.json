@@ -75,7 +75,9 @@
                 "bundleName": "assets/themes"
               }
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/ngx-extended-pdf-viewer/assets/pdf.worker-es5.min.js.map"
+            ]
           },
           "configurations": {
             "production": {
