@@ -147,7 +147,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/ngx-extended-pdf-viewer/assets/pdf.worker-es5.min.js.map"
+            ]
           }
         },
         "lint": {
