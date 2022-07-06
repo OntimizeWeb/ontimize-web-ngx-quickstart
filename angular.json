@@ -74,9 +74,6 @@
                 "lazy": true,
                 "bundleName": "assets/themes"
               }
-            ],
-            "scripts": [
-              "node_modules/ngx-extended-pdf-viewer/assets/pdf.worker-es5.min.js.map"
             ]
           },
           "configurations": {
@@ -148,9 +145,6 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "scripts": [
-              "node_modules/ngx-extended-pdf-viewer/assets/pdf.worker-es5.min.js.map"
             ]
           }
         },
