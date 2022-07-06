@@ -4,6 +4,7 @@ import { AccountsCardComponent } from './accounts-card/accounts-card.component';
 import { BranchesCardComponent } from './branches-card/branches-card.component';
 import { CustomersCardComponent } from './customers-card/customers-card.component';
 import { EmployeesCardComponent } from './employees-card/employees-card.component';
+import { ReportsCardComponent } from './reports-card/reports-card.component';
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
@@ -45,6 +46,15 @@ export const MENU_CONFIG: MenuRootItem[] = [
         icon: 'person',
         image: 'assets/images/ic_empleados.png',
         component: EmployeesCardComponent
+      },
+      {
+        id: 'reports',
+        name: 'REPORTS',
+        tooltip: 'REPORTS_CONTENT',
+        route: '/main/reports',
+        icon: 'description',
+        image: 'assets/images/ic_informes.png',
+        component: ReportsCardComponent
       }
     ]
   },
@@ -62,5 +72,6 @@ export const MENU_COMPONENTS = [
   AccountsCardComponent,
   CustomersCardComponent,
   BranchesCardComponent,
-  EmployeesCardComponent
+  EmployeesCardComponent,
+  ReportsCardComponent
 ];

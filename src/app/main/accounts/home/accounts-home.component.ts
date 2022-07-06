@@ -1,7 +1,8 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSidenav } from '@angular/material';
-import { FilterExpressionUtils, Expression, OFormComponent, OListComponent } from 'ontimize-web-ngx';
+import { FilterExpressionUtils, Expression, OFormComponent, OListComponent, OFilterBuilderComponent } from 'ontimize-web-ngx';
+import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'accounts-home',
@@ -11,7 +12,6 @@ import { FilterExpressionUtils, Expression, OFormComponent, OListComponent } fro
 })
 export class AccountsHomeComponent implements OnDestroy {
 
-
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
@@ -19,15 +19,19 @@ export class AccountsHomeComponent implements OnDestroy {
   @ViewChild('listAccount', { static: false })
   private listAccount: OListComponent;
 
-
   @ViewChild('formFilter', { static: false })
   private formFilter: OFormComponent;
+
+  @ViewChild('filterBuilder', { static: false })
+  private filterBuilder: OFilterBuilderComponent;
 
   @ViewChild('sidenav', { static: false })
   private sidenav: MatSidenav;
 
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    private reportStoreService: OReportStoreService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -75,7 +79,6 @@ export class AccountsHomeComponent implements OnDestroy {
     }
 
     return ce;
-    // this.listAccount.queryData(FilterExpressionUtils.buildBasicExpression(ce), { sqltypes: { STARTDATE: 93, ENDDATE: 93, ACCOUNTTYPEID: 4, BALANCE: 8 } });
 
   }
 
@@ -112,6 +115,13 @@ export class AccountsHomeComponent implements OnDestroy {
 
   trackByIndex(index: number, obj: any): any {
     return index;
+  }
+
+  fillReportFilter() {
+    const filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
+      'filter': this.filterBuilder.getBasicExpression()
+    }
+    this.reportStoreService.openFillReport("2abdb71f-6ea7-4d13-b255-b0df406c8f0b", {}, filter);
   }
 
 }
