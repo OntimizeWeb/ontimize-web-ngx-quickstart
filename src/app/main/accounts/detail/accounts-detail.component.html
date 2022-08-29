@@ -2,6 +2,15 @@
   <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
     columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R"
     [label-header]="formLabel" show-header-navigation="yes" include-breadcrumb="yes" (onDataLoaded)="onFormDataLoaded($event)" layout-align="start stretch">
+
+    <div o-form-toolbar-buttons>
+      <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
+        attr="fillreport">
+        <mat-icon>description</mat-icon>
+        <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+      </button>
+    </div>
+
     <o-column layout-gap="24px">
 
       <o-row layout-gap="26px">

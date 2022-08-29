@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx';
+import { OReportStoreService } from 'ontimize-web-ngx-report';
+
 
 @Component({
   selector: 'branches-detail',
@@ -20,18 +22,16 @@ export class BranchesDetailComponent implements OnInit {
   public latitude;
   public name;
 
+  public params: object;
+
   constructor(
     public snackBar: MatSnackBar,
-    private translateService: OTranslateService
+    private translateService: OTranslateService,
+    private reportStoreService: OReportStoreService
   ) { }
 
   ngOnInit() { }
 
-  getFileData() {
-    return {
-      'OFFICEID': this.officeId.getValue()
-    };
-  }
 
   onUploadFile(e: Event) {
     this.snackBar.open(this.translateService.get('BRANCH_PLAN_UPLOADED'), this.translateService.get('ACCEPT'), {
@@ -45,6 +45,7 @@ export class BranchesDetailComponent implements OnInit {
     if (data.MINLONGITUDE) {
       this.longitide = data.MINLONGITUDE;
     }
+    this.params = this.getParameters();
   }
 
   hasGPSPositition() {
@@ -56,6 +57,18 @@ export class BranchesDetailComponent implements OnInit {
 
   getPositionGPS() {
     return this.latitude + ',' + this.longitide
+  }
+
+  getParameters() {
+    let params = {
+      'id': this.officeId.getValue()
+    }
+
+    return params;
+  }
+
+  fillReport(e: Event) {
+    this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.params, {});
   }
 
 }
