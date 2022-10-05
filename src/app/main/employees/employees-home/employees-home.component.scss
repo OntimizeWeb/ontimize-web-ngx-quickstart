@@ -1,3 +1,65 @@
+.collapsible{
+
+  .o-container.mat-expansion-panel .mat-expansion-panel-header, .o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header{
+    border: 0;
+  }
+
+  mat-panel-title mat-icon{
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+    height: 32px;
+    border-style: solid;
+    border-color: #0000001E;
+    border-width: 1px;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-right: 0;
+  }
+
+  mat-panel-title span{
+    padding-top: 10px;
+    height: 32px;
+    width: 172px;
+    border-style: solid;
+    border-color: #0000001E;
+    border-width: 1px;
+    border-left: 0;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+  }
+
+  mat-expansion-panel-header{
+    border-bottom: 0;
+  }
+
+  mat-expansion-panel{
+    padding: 5px;
+  }
+
+  span.mat-expansion-indicator{
+    display:none;
+  }
+
+  .filter_style{
+    border-style: solid;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: -1px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+}
+
 .employees-filters-form form {
   height: 100%;
 }
