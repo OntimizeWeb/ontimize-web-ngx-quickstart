@@ -39,6 +39,12 @@ export class ThemeService {
       accent: '#7daa4c',
       href: 'qs-gray-green.css',
       href_dark: 'qs-gray-green-dark.css'
+    },
+    {
+      primary: '#4649A6',
+      accent: '#4649A6',
+      href: 'violetblue.css',
+      href_dark: 'violetblue-dark.css'
     }
   ];
   public currentTheme: DocsSiteTheme;
