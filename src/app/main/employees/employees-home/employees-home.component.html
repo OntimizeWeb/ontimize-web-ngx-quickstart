@@ -1,21 +1,20 @@
 <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
 
   <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="legacy" expanded="no" icon="filter_list" class="collapsible">
-    <div class="filter_style" fxFlex fxLayout="column" >
-      <div fxFlex fxLayoutGap="32px">
-        <o-text-input attr="NAME" read-only="no" fxFlex="25%" ></o-text-input>
-        <o-text-input attr="SURNAME" read-only="no" fxFlex="25%"></o-text-input>
+    <div class="filter_style" fxLayout="column">
+      <div fxLayout="row wrap" fxLayoutGap="32px">
+        <o-text-input attr="NAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+        <o-text-input attr="SURNAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
         <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
-          value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="25%"></o-combo>
+          value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="calc(25% - 32px)"></o-combo>
         <o-text-input attr="EMAIL" read-only="no" fxFlex="25%"></o-text-input>
       </div>
-      <div fxFlex fxLayoutGap="32px">
+      <div fxLayout="row" fxLayoutGap="32px">
         <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID" keys="OFFICEID"
-          visible-columns="NAME" fxFlex="25%"></o-combo>
-        <div fxFlex="25%"></div>
-        <div fxFlex="25%"></div>
-        <div fxFlex="25%" class="filter_btn" fxLayoutAlign="flex-end start">
-          <o-button layout-padding (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate">
+          visible-columns="NAME" fxFlex="calc(25% - 32px)"></o-combo>
+        <div fxFlex="75%" class="filter_btn" fxLayoutAlign="flex-end start">
+          <o-button layout-padding (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description"
+            [matTooltip]="'FILL_REPORT' | oTranslate">
           </o-button>
           <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="STROKED" label="Clear" layout-padding>
           </o-button>
@@ -31,14 +30,10 @@
 
 
   <div fxLayout="column" fxFlex="1 1 auto">
-
     <o-grid #grid attr="employees" service="employees" entity="employee"
       columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE;NAME"
       quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID" keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME"
       pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px" detail-mode="none">
-
-
-
       <o-grid-item *ngFor="let item of grid.dataArray">
         <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item mat-elevation-z1">
           <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
