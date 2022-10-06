@@ -2,6 +2,8 @@
 @mixin employees-theme($theme) {
   $accent: map-get($theme, accent);
   $emp-icon-color: #b8b8b8;
+  $foreground: map-get($theme, foreground);
+  $border-color: mat-color($foreground, button);
 
   employees-home {
     .employee-item {
@@ -16,6 +18,12 @@
     .collapsible{
     .filter_style{
       border-color: mat-color($accent);
+    }
+    mat-panel-title mat-icon{
+      border-color: $border-color;
+    }
+    mat-panel-title span{
+      border-color: $border-color;
     }
   }
   }
