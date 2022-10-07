@@ -10,8 +10,9 @@
       .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title {
         border:solid;
         border-width: 1px;
-        border-radius: 5%;
+        border-radius: 2px;
         justify-content: center;
+        height: 32px;
     }
     .mat-expansion-panel-header-description,
       .mat-expansion-panel-header-title{
@@ -19,17 +20,15 @@
     }
   }
 
-  mat-panel-title mat-icon{
+  mat-panel-title {
+    mat-icon{
     padding-left: 15px;
-    padding-top: 4px;
-    padding-right: 6px;
-    height: 32px;
-  }
-
-  mat-panel-title span{
-    padding-top: 5px;
-    height: 26px;
-    width: 140px;
+    padding-top: 2px;
+    }
+    span{
+      padding-top: 4px;
+      padding-right: 15px;
+    }
   }
 
   mat-expansion-panel-header{
