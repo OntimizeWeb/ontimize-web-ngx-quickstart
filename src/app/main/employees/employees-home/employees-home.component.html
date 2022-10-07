@@ -1,7 +1,7 @@
 <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
 
   <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="legacy" expanded="no" icon="filter_list" class="collapsible">
-    <div class="filter_style" fxLayout="column">
+    <div class="filter_style" fxLayout="column" fxLayoutGap="14px">
       <div fxLayout="row wrap" fxLayoutGap="32px">
         <o-text-input attr="NAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
         <o-text-input attr="SURNAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
@@ -12,7 +12,7 @@
       <div fxLayout="row" fxLayoutGap="32px">
         <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID" keys="OFFICEID"
           visible-columns="NAME" fxFlex="calc(25% - 32px)"></o-combo>
-        <div fxFlex="75%" class="filter_btn" fxLayoutAlign="flex-end start">
+        <div fxFlex="75%" fxFill class="filter_btn" fxLayoutAlign="flex-end flex-end">
           <o-button layout-padding (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description"
             [matTooltip]="'FILL_REPORT' | oTranslate">
           </o-button>

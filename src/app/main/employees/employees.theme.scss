@@ -3,7 +3,7 @@
   $accent: map-get($theme, accent);
   $emp-icon-color: #b8b8b8;
   $foreground: map-get($theme, foreground);
-  $border-color: mat-color($foreground, button);
+  $border-color: mat-color($foreground, divider);
 
   employees-home {
     .employee-item {
