@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class MainComponent  {
+  router: Router;
 
-  constructor() { }
+  constructor(router: Router) { }
+
+  openAbout() {
+    this.router.navigate(["/main/about"]);
+  }
 
 }

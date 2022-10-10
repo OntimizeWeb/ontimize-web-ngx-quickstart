@@ -157,5 +157,7 @@
   "GENERATE": "Generate",
   "REPORTS_CONTENT": "Reports on customers, accounts, branches and employees data",
   "NO_PARAMETER_VALUE_MESSAGE": "No parameter value specified",
-  "SERVER_ERROR_MESSAGE": "Internal server error"
+  "SERVER_ERROR_MESSAGE": "Internal server error",
+  "MANAGMENT": "Managment",
+  "DATA_": "Data"
 }
