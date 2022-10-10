@@ -43,8 +43,26 @@ export class ThemeService {
     {
       primary: '#4649A6',
       accent: '#4649A6',
-      href: 'violetblue.css',
-      href_dark: 'violetblue-dark.css'
+      href: 'o-violet-blue.css',
+      href_dark: 'o-violet-blue-dark.css'
+    },
+    {
+      primary: '#071540',
+      accent: '#41bf78',
+      href: 'o-oxford-blue-emerald.css',
+      href_dark: 'o-oxford-blue-emerald-dark.css'
+    },
+    {
+      primary: '#d02a38',
+      accent: '#363636',
+      href: 'o-madder-lake-jet.css',
+      href_dark: 'o-madder-lake-jet-dark.css'
+    },
+    {
+      primary: '#0e2f59',
+      accent: '#006bdb',
+      href: 'o-prussian-celtic-blue.css',
+      href_dark: 'o-prussian-celtic-blue-dark.css'
     }
   ];
   public currentTheme: DocsSiteTheme;
