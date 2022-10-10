@@ -4200,6 +4200,9 @@ employees-home .employee-item .image-container .mat-divider {
 employees-home .employee-item .employee-data span .square {
   background-color: #ffcc00; }
 
+employees-home .collapsible .filter_style {
+  border-color: #ffcc00; }
+
 employees-detail .mat-divider {
   border-top-color: #ffcc00; }
 
