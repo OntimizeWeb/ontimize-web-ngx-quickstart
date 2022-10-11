@@ -4120,6 +4120,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+.container {
+  background-color: #424242; }
+
 .branches-card-branches-amount,
 .employees-card-employees-amount,
 .o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
