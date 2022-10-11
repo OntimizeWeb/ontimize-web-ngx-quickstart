@@ -561,6 +561,8 @@ textarea.cdk-textarea-autosize-measuring {
   padding: 2px 0 !important;
   box-sizing: content-box !important; }
 
+/* Color definitions */
+/* Dark theme */
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */

@@ -21,30 +21,10 @@ export class ThemeService {
 
   public availableThemes = [
     {
-      primary: '#1464a5',
-      accent: '#063679',
-      href: 'ontimize.css',
-      href_dark: 'ontimize-dark.css',
-      isDefault: true
-    },
-    {
-      primary: '#242424',
-      accent: '#ffcc00',
-      href: 'ontimize-black-yellow.css',
-      href_dark: 'ontimize-black-yellow-dark.css',
-      isDefault: true
-    },
-    {
-      primary: '#607d8b',
-      accent: '#7daa4c',
-      href: 'qs-gray-green.css',
-      href_dark: 'qs-gray-green-dark.css'
-    },
-    {
       primary: '#4649A6',
       accent: '#4649A6',
-      href: 'o-violet-blue.css',
-      href_dark: 'o-violet-blue-dark.css'
+      href: 'o-violet-blues.css',
+      href_dark: 'o-violet-blues-dark.css'
     },
     {
       primary: '#071540',
