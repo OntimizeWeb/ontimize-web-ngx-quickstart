@@ -1,0 +1,75 @@
+@import 'node_modules/@angular/material/theming';
+// Include non-theme styles for core.
+@include mat-core();
+
+/* Color definitions */
+$mat-custom-primary: (
+  50 : #e1e3e8,
+  100 : #b5b9c6,
+  200 : #838aa0,
+  300 : #515b79,
+  400 : #2c385d,
+  500 : #071540,
+  600 : #06123a,
+  700 : #050f32,
+  800 : #040c2a,
+  900 : #02061c,
+  A100 : #5a66ff,
+  A200 : #2737ff,
+  A400 : #0012f3,
+  A700 : #0010da,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-custom-accent: (
+  50 : #e8f7ef,
+  100 : #c6ecd7,
+  200 : #a0dfbc,
+  300 : #7ad2a1,
+  400 : #5ec98c,
+  500 : #41bf78,
+  600 : #3bb970,
+  700 : #32b165,
+  800 : #2aa95b,
+  900 : #1c9b48,
+  A100 : #d4ffe1,
+  A200 : #a1ffbe,
+  A400 : #6eff9b,
+  A700 : #54ff8a,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define a theme.
+$primary: mat-palette($mat-custom-primary);
+$accent: mat-palette($mat-custom-accent);
+/* Light theme */
+$theme: mat-light-theme($primary, $accent);
+@import '../css/app.scss';
