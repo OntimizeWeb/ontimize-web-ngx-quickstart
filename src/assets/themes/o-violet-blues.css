@@ -4197,7 +4197,11 @@ employees-home .employee-item .employee-data span .square {
   background-color: #3f5fbf; }
 
 employees-home .collapsible .filter_style {
-  border-color: #7daa4c; }
+  border-color: #3f5fbf; }
+
+employees-home .collapsible .o-container .o-container-title.mat-expansion-panel-header-title,
+employees-home .collapsible .o-container .o-row-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title {
+  border-color: rgba(0, 0, 0, 0.12); }
 
 employees-detail .mat-divider {
   border-top-color: #3f5fbf; }
