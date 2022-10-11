@@ -133,7 +133,7 @@
   "SHOW_FILTERS": "Mostrar filtros",
   "RELOAD_DATA": "Refrescar datos",
   "ACCONT_OWNERS": "Titulares",
-  "FILTERS_EMPLOYEES": "Filters employees",
+  "FILTERS_EMPLOYEES": "Filtrar empleados",
   "EMPLOYEETYPE": "Tipo empleado",
   "EMPLOYEE_BRANCH": "Sucursal: {0}",
   "EMPLOYEETYPE_6380": "Gerente",
@@ -157,5 +157,7 @@
   "GENERATE": "Generar",
   "REPORTS_CONTENT": "Informes sobre clientes, cuentas, sucursales y empleados",
   "NO_PARAMETER_VALUE_MESSAGE": "No se ha especificado el valor de los parámetros",
-  "SERVER_ERROR_MESSAGE": "Error en el servidor interno"
+  "SERVER_ERROR_MESSAGE": "Error en el servidor interno",
+  "MANAGEMENT": "Gestión",
+  "DATA_": "Datos"
 }
