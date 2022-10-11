@@ -21,24 +21,28 @@ export class ThemeService {
 
   public availableThemes = [
     {
-      primary: '#1464a5',
-      accent: '#063679',
-      href: 'ontimize.css',
-      href_dark: 'ontimize-dark.css',
-      isDefault: true
+      primary: '#4649A6',
+      accent: '#4649A6',
+      href: 'o-violet-blues.css',
+      href_dark: 'o-violet-blues-dark.css'
     },
     {
-      primary: '#242424',
-      accent: '#ffcc00',
-      href: 'ontimize-black-yellow.css',
-      href_dark: 'ontimize-black-yellow-dark.css',
-      isDefault: true
+      primary: '#071540',
+      accent: '#41bf78',
+      href: 'o-oxford-blue-emerald.css',
+      href_dark: 'o-oxford-blue-emerald-dark.css'
     },
     {
-      primary: '#607d8b',
-      accent: '#7daa4c',
-      href: 'qs-gray-green.css',
-      href_dark: 'qs-gray-green-dark.css'
+      primary: '#d02a38',
+      accent: '#363636',
+      href: 'o-madder-lake-jet.css',
+      href_dark: 'o-madder-lake-jet-dark.css'
+    },
+    {
+      primary: '#0e2f59',
+      accent: '#006bdb',
+      href: 'o-prussian-celtic-blue.css',
+      href_dark: 'o-prussian-celtic-blue-dark.css'
     }
   ];
   public currentTheme: DocsSiteTheme;
