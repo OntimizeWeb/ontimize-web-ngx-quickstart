@@ -4196,6 +4196,9 @@ employees-home .employee-item .image-container .mat-divider {
 employees-home .employee-item .employee-data span .square {
   background-color: #3f5fbf; }
 
+employees-home .collapsible .filter_style {
+  border-color: #7daa4c; }
+
 employees-detail .mat-divider {
   border-top-color: #3f5fbf; }
 
