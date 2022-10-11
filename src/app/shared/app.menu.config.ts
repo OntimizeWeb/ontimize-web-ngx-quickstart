@@ -50,7 +50,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
     ]
   },
   {
-    id: 'managment', name: 'MANAGMENT', icon: 'info_outline', opened: false,
+    id: 'management', name: 'MANAGEMENT', icon: 'info_outline', opened: false,
     items: [
       {
         id: 'reports',
