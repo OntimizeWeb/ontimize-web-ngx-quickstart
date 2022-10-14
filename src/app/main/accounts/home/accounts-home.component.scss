@@ -22,7 +22,16 @@
     }
 
     .accounts-filters {
-      padding: 33px 33px;
+      padding: 0;
+
+      .filter-border{
+        border-style: solid;
+        border-width: 4px;
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 0;
+        padding: 33px 33px;
+      }
 
       .label-balance {
         font-size: 14px;
@@ -61,7 +70,7 @@
               }
               @media (min-width: 1700px) {
                 .mat-card {
-                  width: 60%;
+                  width: 90%;
                 }
               }
 
@@ -83,7 +92,6 @@
 
                 label {
                   font-weight: 500;
-                  color: #242424;
                 }
 
                 .info-iban {
