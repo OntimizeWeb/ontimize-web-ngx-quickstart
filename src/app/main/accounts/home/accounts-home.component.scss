@@ -1,4 +1,4 @@
-.application-layout-content-wrapper{
+.application-layout-content-wrapper {
   padding: 12px;
 }
 
@@ -23,7 +23,7 @@
     .accounts-filters {
       padding: 0;
 
-      .filter-border{
+      .filter-border {
         border-style: solid;
         border-width: 4px;
         border-top: 0;
@@ -42,17 +42,25 @@
     }
   }
 
+  .mat-drawer-content {
+    overflow: hidden;
+  }
+
   .mat-sidenav-content {
-    padding-left: 36px;
+
+    .buttons {
+      margin-left: 40px;
+
+      button {
+        margin-right: 12px;
+      }
+    }
 
     .flex-container {
-      height: 100%;
-
-      .buttons {
-        button {
-          margin-right: 12px;
-        }
-      }
+      height: 90%;
+      overflow: auto;
+      margin-top: 30px;
+      margin-left: 40px;
 
       .fill-remaining {
         width: 100%;
@@ -61,12 +69,16 @@
           width: 100%;
 
           .o-list-container {
+
             .mat-list {
+              padding: 0;
+
               @media (min-width: 1400px) {
                 .mat-card {
-                  width: 80%;
+                  width: 90%;
                 }
               }
+
               @media (min-width: 1700px) {
                 .mat-card {
                   width: 90%;
@@ -77,8 +89,9 @@
                 &:not([class*=mat-elevation-z]) {
                   box-shadow: none;
                 }
-                padding: 16px 22px;
+
                 margin-bottom: 20px;
+                margin-top: 0;
 
                 label,
                 span {
@@ -94,6 +107,7 @@
                 }
 
                 .info-iban {
+
                   label,
                   span {
                     font-size: 18px;
@@ -114,6 +128,7 @@
                 }
 
                 .balance-account {
+
                   label,
                   span {
                     padding-top: 12px;
