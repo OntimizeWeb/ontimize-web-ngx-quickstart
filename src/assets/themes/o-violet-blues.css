@@ -4147,9 +4147,10 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
-.mat-sidenav-container-account-home .o-slider .mat-slider-thumb-label-text,
-.mat-sidenav-container-account-home label,
-.mat-sidenav-container-account-home span {
+.filter-border {
+  border-color: #3f5fbf; }
+
+.mat-sidenav-container-account-home .list-accounts span {
   color: rgba(0, 0, 0, 0.54); }
 
 .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
