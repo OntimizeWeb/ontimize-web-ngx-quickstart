@@ -2,16 +2,13 @@
   padding: 12px;
 }
 
-.list-accounts .mat-card,
-.mat-sidenav-filters .accounts-filters {
-  border: 1px solid #dddddd;
-}
-
 .mat-sidenav-container-account-home {
   position: absolute;
   height: calc(100% - 16px);
   width: calc(100% - 16px);
   padding: 8px;
+  overflow: auto;
+
 
   .mat-sidenav-filters {
     top: 70px;
@@ -21,16 +18,12 @@
     }
 
     .accounts-filters {
-      padding: 0;
-
-      .filter-border {
-        border-style: solid;
-        border-width: 4px;
-        border-top: 0;
-        border-bottom: 0;
-        border-right: 0;
-        padding: 33px 33px;
-      }
+      border-style: solid;
+      border-width: 4px;
+      border-top: 0;
+      border-bottom: 0;
+      border-right: 0;
+      padding: 24px;
 
       .label-balance {
         font-size: 14px;
@@ -42,12 +35,13 @@
     }
   }
 
+
   .mat-drawer-content {
     overflow: hidden;
   }
 
   .mat-sidenav-content {
-
+    flex-direction: column;
     .buttons {
       margin-left: 40px;
 
@@ -57,7 +51,6 @@
     }
 
     .flex-container {
-      height: 90%;
       overflow: auto;
       margin-top: 30px;
       margin-left: 40px;
