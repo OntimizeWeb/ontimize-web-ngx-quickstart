@@ -6,7 +6,7 @@
 
       <!--FORM FILTERS-->
 
-      <div fxLayout="column" fxLayoutGap="26px" class="accounts-filters">
+      <div fxLayout="column" fxLayoutGap="18px" class="accounts-filters">
 
         <!--ENTITYID FILTER-->
         <o-text-input #entityid attr="ENTITYID" read-only="no"></o-text-input>
@@ -17,10 +17,8 @@
           value-column="ACCOUNTTYPEID" keys="ACCOUNTTYPEID" visible-columns="ACCOUNTTYPENAME" sql-type="INTEGER"></o-combo>
         <!--ANID FILTER-->
         <o-text-input attr="ANID" read-only="no"></o-text-input>
-        <div class="container-date" fxLayout="column" fxLayoutGap="26px">
-          <o-date-input attr="STARTDATE" read-only="no"></o-date-input>
-          <o-date-input attr="ENDDATE" read-only="no"></o-date-input>
-        </div>
+        <o-date-input attr="STARTDATE" read-only="no"></o-date-input>
+        <o-date-input attr="ENDDATE" read-only="no"></o-date-input>
         <!--BALANCE FILTER-->
         <span class=" label-balance">{{ 'FILTER_BALANCE' | oTranslate }}</span>
         <o-slider attr="BALANCE" read-only="no" min="0" max="100000" step="1000" thumb-label="true" [display-with]="formatLabelSlider"></o-slider>
