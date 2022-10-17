@@ -1,77 +1,79 @@
-<o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
-  <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
-    columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R"
-    [label-header]="formLabel" show-header-navigation="yes" include-breadcrumb="yes" (onDataLoaded)="onFormDataLoaded($event)" layout-align="start stretch">
+<div class="container">
+  <o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
+    <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
+      columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R"
+      [label-header]="formLabel" show-header-navigation="yes" include-breadcrumb="yes" (onDataLoaded)="onFormDataLoaded($event)"
+      layout-align="start stretch">
 
-    <div o-form-toolbar-buttons>
-      <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
-        attr="fillreport">
-        <mat-icon>description</mat-icon>
-        <span>{{ 'FILL_REPORT' | oTranslate }}</span>
-      </button>
-    </div>
+      <div o-form-toolbar-buttons>
+        <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)" attr="fillreport">
+          <mat-icon>description</mat-icon>
+          <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+        </button>
+      </div>
 
-    <o-column layout-gap="24px">
+      <o-column layout-gap="24px">
 
-      <o-row layout-gap="26px">
-        <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
-          <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
-            <span class="account-form-label">{{ 'BALANCE' | oTranslate }}</span>
-            <span class="account-form-value balance"
-              [class.red-numbers]="oForm.getDataValue('BALANCE').value < 0">{{ oForm.getDataValue('BALANCE').value | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
-              €</span>
-            <span class="account-form-label">{{ 'AVG_BALANCE' | oTranslate }}</span>
-            <span class="account-form-value">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
-            <span class="account-form-label">{{ 'STARTDATE' | oTranslate }}</span>
-            <span class="account-form-value">{{ oForm.getDataValue('STARTDATE').value | date:'d MMM, y' }}</span>
-          </div>
+        <o-row layout-gap="26px">
+          <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
+            <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
+              <span class="account-form-label">{{ 'BALANCE' | oTranslate }}</span>
+              <span class="account-form-value balance" [class.red-numbers]="oForm.getDataValue('BALANCE').value < 0">{{
+                oForm.getDataValue('BALANCE').value | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
+                €</span>
+              <span class="account-form-label">{{ 'AVG_BALANCE' | oTranslate }}</span>
+              <span class="account-form-value">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+              <span class="account-form-label">{{ 'STARTDATE' | oTranslate }}</span>
+              <span class="account-form-value">{{ oForm.getDataValue('STARTDATE').value | date:'d MMM, y' }}</span>
+            </div>
 
-          <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
-            <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
-            <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
-              columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
-              <mat-list-item *ngFor="let customer of customerList.dataArray">
-                <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
-                <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
-                <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
-              </mat-list-item>
-            </o-list>
-          </div>
+            <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
+              <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
+              <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
+                columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
+                <mat-list-item *ngFor="let customer of customerList.dataArray">
+                  <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
+                  <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
+                  <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
+                </mat-list-item>
+              </o-list>
+            </div>
+          </o-row>
+          <o-column title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
+            <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
+              chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart>
+          </o-column>
         </o-row>
-        <o-column title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
-          <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
-            chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart>
-        </o-column>
-      </o-row>
 
-      <o-row layout-gap="26px">
-        <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
-          <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%" dialog-max-width="90%"
-            dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
-            <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
-              columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
-              class="movement-list">
-              <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" [class.movement-list-item-transfer]="row.MOVEMENTTYPEID===1"
-                [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2" [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3"
-                [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4" class="movement-list-item">
-                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
-                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
-                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
-                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
-                <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
-                <span mat-line class="concept">{{ row.CONCEPT }}</span>
-                <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
-                <span class="amount">{{ row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
-              </mat-list-item>
-            </o-list>
-          </o-form-layout-manager>
-        </o-column>
-        <o-column title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60">
-          <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-            query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart"></o-chart>
-        </o-column>
-      </o-row>
+        <o-row layout-gap="26px">
+          <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
+            <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
+              dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
+              <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
+                columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
+                class="movement-list">
+                <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" [class.movement-list-item-transfer]="row.MOVEMENTTYPEID===1"
+                  [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2" [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3"
+                  [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4" class="movement-list-item">
+                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
+                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
+                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
+                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
+                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
+                  <span mat-line class="concept">{{ row.CONCEPT }}</span>
+                  <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
+                  <span class="amount">{{ row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+                </mat-list-item>
+              </o-list>
+            </o-form-layout-manager>
+          </o-column>
+          <o-column title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60">
+            <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
+              query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart"></o-chart>
+          </o-column>
+        </o-row>
 
-    </o-column>
-  </o-form>
-</o-form-container>
+      </o-column>
+    </o-form>
+  </o-form-container>
+</div>

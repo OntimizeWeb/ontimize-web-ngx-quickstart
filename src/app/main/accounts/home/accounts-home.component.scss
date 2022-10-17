@@ -1,11 +1,16 @@
+.application-layout-content-wrapper{
+  padding: 12px;
+}
+
 .list-accounts .mat-card,
 .mat-sidenav-filters .accounts-filters {
   border: 1px solid #dddddd;
 }
 
 .mat-sidenav-container-account-home {
+  background-color: transparent;
   position: absolute;
-  height: calc(100% - 16px);
+  height: calc(100% - 30px);
   width: calc(100% - 16px);
   padding: 8px;
 
@@ -17,7 +22,16 @@
     }
 
     .accounts-filters {
-      padding: 6px 33px;
+      padding: 0;
+
+      .filter-border{
+        border-style: solid;
+        border-width: 4px;
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 0;
+        padding: 33px 33px;
+      }
 
       .label-balance {
         font-size: 14px;
@@ -56,7 +70,7 @@
               }
               @media (min-width: 1700px) {
                 .mat-card {
-                  width: 60%;
+                  width: 90%;
                 }
               }
 
@@ -78,7 +92,6 @@
 
                 label {
                   font-weight: 500;
-                  color: #242424;
                 }
 
                 .info-iban {
