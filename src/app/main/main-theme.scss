@@ -6,6 +6,10 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
+  .container{
+    background-color: mat-color($background, card);
+  }
+
   .branches-card-branches-amount,
   .employees-card-employees-amount,
   .o-card-menu-item > .nv-x .nv-axis .nvd3-svg,

@@ -5,6 +5,10 @@
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
 
+  .filter-border {
+    border-color: mat-color($accent);
+  }
+
   .mat-sidenav-container-account-home {
 
     .accounts-filters {

@@ -1,4 +1,5 @@
-<o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
+<div class="container">
+  <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
 
   <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="legacy" expanded="no" icon="filter_list" class="collapsible">
     <div class="filter_style" fxLayout="column" fxLayoutGap="14px">
@@ -44,18 +45,19 @@
             <mat-divider fxFlex></mat-divider>
           </div>
 
-          <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
-            <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
-            <span>{{ item.EMPLOYEEEMAIL }}</span>
-            <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.NAME]} }}
-              <div class="square"></div>
-              {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}
-            </span>
-            <span>{{ item.ADDRESS }}</span>
+            <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
+              <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
+              <span>{{ item.EMPLOYEEEMAIL }}</span>
+              <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.NAME]} }}
+                <div class="square"></div>
+                {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}
+              </span>
+              <span>{{ item.ADDRESS }}</span>
+            </div>
           </div>
-        </div>
-      </o-grid-item>
-    </o-grid>
-  </div>
+        </o-grid-item>
+      </o-grid>
+    </div>
 
-</o-form>
+  </o-form>
+</div>
