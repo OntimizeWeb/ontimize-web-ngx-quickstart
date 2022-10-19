@@ -764,7 +764,8 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     box-sizing: border-box;
     /*Toolbar*/ }
     .ontimize-table.o-table .o-table-container .o-table-toolbar {
-      margin: 0 0 4px; }
+      margin: 0 0 4px;
+      padding-top: 8px; }
     .ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
       background: rgba(255, 255, 255, 0.12); }
     .ontimize-table.o-table .o-table-container thead tr th {
