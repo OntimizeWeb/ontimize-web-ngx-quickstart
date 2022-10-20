@@ -1,4 +1,4 @@
-
+@import '~@angular/material/theming';
 .application-layout-content-wrapper {
   padding: 12px;
 
@@ -15,6 +15,7 @@
   .mat-sidenav-filters {
     top: 70px;
     bottom: 8px;
+    @include mat-elevation(4);
     .accounts-filters {
 
       height: 100%;
@@ -76,10 +77,7 @@
               }
 
               .o-list-item.mat-card {
-                &:not([class*=mat-elevation-z]) {
-                  box-shadow: none;
-                }
-
+                @include mat-elevation(4);
                 margin-bottom: 20px;
                 margin-top: 0;
 

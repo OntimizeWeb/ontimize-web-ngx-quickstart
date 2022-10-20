@@ -4119,6 +4119,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+.container {
+  background-color: #424242; }
+
 .branches-card-branches-amount,
 .employees-card-employees-amount,
 .o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
@@ -4151,15 +4154,20 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+.filter-border {
+  border-color: #1464a5; }
+
 .mat-sidenav-container-account-home .accounts-filters {
   border-color: #1464a5; }
 
 .mat-sidenav-container-account-home .list-accounts span {
   color: rgba(255, 255, 255, 0.7); }
 
-.mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
-.mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
-  border-color: #1464a5; }
+.mat-sidenav-container-account-home .list-accounts .mat-card {
+  background-color: #616161; }
+  .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
+  .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
+    border-color: #1464a5; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
