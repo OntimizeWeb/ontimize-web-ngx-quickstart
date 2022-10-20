@@ -4,6 +4,7 @@ import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration 
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
+import { ThemeService } from '../../../shared/theme.service';
 
 declare var d3: any;
 
@@ -18,11 +19,11 @@ declare var d3: any;
 })
 export class AccountsDetailComponent {
 
-  private static colorSalary: string = '#92b558';
-  private static colorDebit: string = '#951630';
-  private static colorTransfer: string = '#f2552c';
-  private static colorCash: string = '#424476';
-  private static colorBalance: string = '#2196f3';
+  private static colorSalary: string;
+  private static colorDebit: string = '#c5c5c5';
+  private static colorTransfer: string = '#cccccc';
+  private static colorCash: string = '#eeeeee';
+  private static colorBalance: string = '#000000';
 
   public formLabel: string;
   public avgBalance: number;
@@ -38,9 +39,15 @@ export class AccountsDetailComponent {
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
     private d3LocaleService: D3LocaleService,
-    private reportStoreService: OReportStoreService
+    private reportStoreService: OReportStoreService,
+    private themeService: ThemeService
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+    const theme = themeService.getStoredTheme();
+    console.log(theme.primary);
+    theme.primary = theme.primary + "4D";
+    console.log(theme.primary);
+    AccountsDetailComponent.colorSalary = theme.primary;
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
   }
@@ -161,6 +168,10 @@ export class AccountsDetailComponent {
     {
       value: 'Automatic Cash',
       color: AccountsDetailComponent.colorCash
+    },
+    {
+      value: 'Banking fees',
+      color: AccountsDetailComponent.colorBalance
     }];
   }
 
