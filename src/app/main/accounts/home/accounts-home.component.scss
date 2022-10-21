@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+
 .application-layout-content-wrapper {
   padding: 12px;
 
@@ -13,9 +14,10 @@
 
 
   .mat-sidenav-filters {
-    top: 70px;
+    top: 74px;
     bottom: 8px;
-    @include mat-elevation(3);
+    box-shadow: 0 3px 6px #00000029;
+
     .accounts-filters {
 
       height: 100%;
@@ -25,6 +27,7 @@
       border-bottom: 0;
       border-right: 0;
       padding: 24px;
+
       overflow: auto;
 
       .label-balance {
@@ -40,8 +43,9 @@
 
   .mat-sidenav-content {
     flex-direction: column;
+
     .buttons {
-      margin-left: 40px;
+      margin-left: 44px;
 
       button {
         margin-right: 12px;
@@ -49,7 +53,7 @@
     }
 
     .flex-container {
-      overflow: auto;
+
       margin-top: 30px;
       margin-left: 40px;
 
@@ -57,12 +61,20 @@
         width: 100%;
 
         .list-accounts {
+
           width: 100%;
 
           .o-list-container {
 
+            .o-list-content {
+              height: 50%;
+            }
+
             .mat-list {
+              overflow: auto;
               padding: 0;
+              padding-left: 4px;
+              padding-top: 4px;
 
               @media (min-width: 1400px) {
                 .mat-card {
@@ -77,7 +89,7 @@
               }
 
               .o-list-item.mat-card {
-                @include mat-elevation(3);
+                box-shadow: 0 3px 6px #00000029;
                 margin-bottom: 20px;
                 margin-top: 0;
 
