@@ -22,7 +22,7 @@ export const CONFIG: Config = {
   locale: 'en',
 
   // The service type used (Ontimize REST standart, Ontimize REST JEE or custom implementation) in the whole application.
-  serviceType: 'OntimizeEE',
+  //serviceType: 'OntimizeEE',
 
   // Configuration parameters of application services.
   servicesConfiguration: SERVICE_CONFIG,
@@ -36,5 +36,4 @@ export const CONFIG: Config = {
   //   service: 'test'
   // },
 
-  // permissionsServiceType: 'OntimizeEEPermissions'
 };
