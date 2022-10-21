@@ -1,4 +1,5 @@
 @import 'node_modules/@angular/material/theming';
+
 @mixin accounts-detail-theme($theme) {
   $color-salary: change-color(mat-color($primary), $alpha: 0.3);
   $color-debit: #c5c5c5;
@@ -9,6 +10,14 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $is-dark: map-get($theme, is-dark);
+
+  o-chart.balance-chart {
+    .nvd3 text {
+      @if $is-dark {
+        fill: #e0e0e0 !important;
+      }
+    }
+  }
 
   .account-form-label,
   .customers .customers-list-title {
@@ -48,9 +57,4 @@
     background: mat-color($background, card);
   }
 
-  o-chart.balance-chart .nv-axis text{
-    @if $is-dark == true{
-      color: #aaaaaa;
-    }
-  }
 }

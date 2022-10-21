@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
-import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
+import { ChartSeries, LinePlusBarFocusChartConfiguration, OChartComponent, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
@@ -35,6 +35,8 @@ export class AccountsDetailComponent {
 
   public id: string;
 
+  private theme;
+
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
@@ -43,11 +45,9 @@ export class AccountsDetailComponent {
     private themeService: ThemeService
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
-    const theme = themeService.getStoredTheme();
-    console.log(theme.primary);
-    theme.primary = theme.primary + "4D";
-    console.log(theme.primary);
-    AccountsDetailComponent.colorSalary = theme.primary;
+    this.theme = themeService.getStoredTheme();
+    this.theme.primary = this.theme.primary + "4D";
+    AccountsDetailComponent.colorSalary = this.theme.primary;
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
   }
@@ -140,6 +140,13 @@ export class AccountsDetailComponent {
     this.balanceChartParams.legend.margin.right = 0;
     this.balanceChartParams.legend.margin.bottom = 2;
     this.balanceChartParams.legend.margin.left = 0;
+    if (this.theme.isDark) {
+      this.balanceChartParams.callback = () => {
+        d3.selectAll('.balance-chart .nv-pieLabels text').style('fill', '#cccccc');
+        d3.selectAll('.balance-chart .nv-legend-text').style('fill', '#cccccc');
+      };
+
+    }
   }
 
   private _configurePieChart(locale: any): void {
