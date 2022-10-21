@@ -43,7 +43,7 @@
 
   .mat-sidenav-content {
     flex-direction: column;
-
+    max-height: 100%;
     .buttons {
       margin-left: 44px;
 
@@ -53,21 +53,22 @@
     }
 
     .flex-container {
-
+      max-height: 100%;
       margin-top: 30px;
       margin-left: 40px;
 
       .fill-remaining {
         width: 100%;
-
+        max-height: 100%;
         .list-accounts {
-
+          max-height: 100%;
           width: 100%;
 
           .o-list-container {
-
+            max-height: 100%;
             .o-list-content {
-              height: 50%;
+              padding-bottom: 48px;
+              max-height: 100%;
             }
 
             .mat-list {
