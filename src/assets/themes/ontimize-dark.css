@@ -4152,8 +4152,8 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
-o-chart.balance-chart .nv-label text {
-  fill: #e0e0e0 !important; }
+o-chart .balance-chart text {
+  color: #e0e0e0 !important; }
 
 .account-form-label,
 .customers .customers-list-title {
@@ -4163,16 +4163,16 @@ o-chart.balance-chart .nv-label text {
   color: #f44336; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
-  border-color: #cccccc; }
+  border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
-  border-color: #eeeeee; }
-
-.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
   border-color: rgba(20, 100, 165, 0.3); }
 
+.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
+  border-color: #eeeeee; }
+
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
-  border-color: #c5c5c5; }
+  border-color: rgba(20, 100, 165, 0.6); }
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
@@ -4183,11 +4183,6 @@ o-chart.balance-chart .nv-label text {
 .movement-list-container {
   background: #424242; }
 
-/*o-chart.balance-chart {
-    @if $is-dark == true{
-      color: #aaaaaa;
-    }
-  }*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */

@@ -4156,16 +4156,16 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
-  border-color: #cccccc; }
+  border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
-  border-color: #eeeeee; }
-
-.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
   border-color: rgba(14, 47, 89, 0.3); }
 
+.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
+  border-color: #eeeeee; }
+
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
-  border-color: #c5c5c5; }
+  border-color: rgba(14, 47, 89, 0.6); }
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
@@ -4176,11 +4176,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .movement-list-container {
   background: white; }
 
-/*o-chart.balance-chart {
-    @if $is-dark == true{
-      color: #aaaaaa;
-    }
-  }*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */

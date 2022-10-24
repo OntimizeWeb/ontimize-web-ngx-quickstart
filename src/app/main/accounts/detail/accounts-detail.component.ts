@@ -19,11 +19,11 @@ declare var d3: any;
 })
 export class AccountsDetailComponent {
 
-  private static colorSalary: string;
-  private static colorDebit: string = '#c5c5c5';
-  private static colorTransfer: string = '#cccccc';
-  private static colorCash: string = '#eeeeee';
-  private static colorBalance: string = '#000000';
+  private static colorSalary: string = '#eeeeee';
+  private static colorDebit: string;
+  private static colorTransfer: string = '#c5c5c5';
+  private static colorCash: string;
+  private static colorBalance: string;
 
   public formLabel: string;
   public avgBalance: number;
@@ -46,8 +46,11 @@ export class AccountsDetailComponent {
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
     this.theme = themeService.getStoredTheme();
-    this.theme.primary = this.theme.primary + "4D";
-    AccountsDetailComponent.colorSalary = this.theme.primary;
+    //alpha 30
+    AccountsDetailComponent.colorCash = this.theme.primary + "4D";
+    AccountsDetailComponent.colorBalance = this.theme.accent;
+    //alpha 60
+    AccountsDetailComponent.colorDebit = this.theme.primary + "99";
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
   }
@@ -140,13 +143,6 @@ export class AccountsDetailComponent {
     this.balanceChartParams.legend.margin.right = 0;
     this.balanceChartParams.legend.margin.bottom = 2;
     this.balanceChartParams.legend.margin.left = 0;
-    if (this.theme.isDark) {
-      this.balanceChartParams.callback = () => {
-        d3.selectAll('.balance-chart .nv-pieLabels text').style('fill', '#cccccc');
-        d3.selectAll('.balance-chart .nv-legend-text').style('fill', '#cccccc');
-      };
-
-    }
   }
 
   private _configurePieChart(locale: any): void {
