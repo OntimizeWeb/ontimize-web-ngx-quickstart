@@ -11,10 +11,11 @@
   $foreground: map-get($theme, foreground);
   $is-dark: map-get($theme, is-dark);
 
-  o-chart .balance-chart{
+  .balance-chart{
     text {
       @if $is-dark {
-        color: #e0e0e0 !important;
+        color: #cccccc !important;
+        fill: #cccccc !important;
       }
     }
   }
