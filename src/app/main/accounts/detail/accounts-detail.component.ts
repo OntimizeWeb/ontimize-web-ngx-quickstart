@@ -4,6 +4,7 @@ import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration 
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
+import { DocsSiteTheme, ThemeService } from '../../../shared/theme.service';
 
 declare var d3: any;
 
@@ -34,15 +35,25 @@ export class AccountsDetailComponent {
 
   public id: string;
 
+  public theme: DocsSiteTheme;
+
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
     private d3LocaleService: D3LocaleService,
-    private reportStoreService: OReportStoreService
+    private reportStoreService: OReportStoreService,
+    private _themeService: ThemeService
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+    this.theme = this._themeService.getStoredTheme();
+    AccountsDetailComponent.colorBalance = this.theme.accent;
+    AccountsDetailComponent.colorCash = this.theme.primary;
+
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
+
+
+
   }
 
   public onFormDataLoaded(data: any): void {
