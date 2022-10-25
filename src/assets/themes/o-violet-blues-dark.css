@@ -608,8 +608,7 @@ textarea.cdk-textarea-autosize-measuring {
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
- U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
 /*
@@ -3282,8 +3281,8 @@ textarea {
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
-  color: #2943a9;
-  background-color: #c5cfec;
+  color: #8889c2;
+  background-color: #e3e4f2;
   border-color: transparent; }
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
@@ -3306,7 +3305,7 @@ textarea {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
-    color: #9fafdf;
+    color: #a3a4d3;
     background-color: #ffffff;
     border-color: rgba(255, 255, 255, 0.12); }
 
@@ -3321,7 +3320,7 @@ textarea {
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
-  color: #9fafdf;
+  color: #a3a4d3;
   background-color: #ffffff; }
   .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
@@ -3349,8 +3348,8 @@ textarea {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
-    color: #2943a9;
-    background-color: #c5cfec;
+    color: #8889c2;
+    background-color: #e3e4f2;
     border-color: transparent; }
 
 .o-form .o-form-toolbar [o-form-toolbar-buttons] > * {
@@ -4146,7 +4145,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .mat-sidenav-container-account-home .accounts-filters {
   border-color: #a3a4d3; }
 
-
 .mat-sidenav-container-account-home .list-accounts span {
   color: rgba(255, 255, 255, 0.7); }
 
@@ -4155,7 +4153,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
     border-color: #a3a4d3; }
-
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
@@ -4175,13 +4172,13 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
-  border-color: rgba(159, 175, 223, 0.3); }
+  border-color: rgba(163, 164, 211, 0.3); }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
   border-color: #eeeeee; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
-  border-color: rgba(159, 175, 223, 0.6); }
+  border-color: rgba(163, 164, 211, 0.6); }
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
