@@ -4,12 +4,17 @@
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
   $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
 
   .filter-border {
     border-color: mat-color($accent);
   }
 
   .mat-sidenav-container-account-home {
+
+    .accounts-filters {
+      border-color: mat-color($accent);
+    }
 
     .list-accounts {
 
@@ -21,11 +26,15 @@
         color: mat-color($foreground, primary-text);
       }
 
-      .mat-card .info-account.border-bottom,
-      .mat-card .info-account.border-right {
-        border-color: mat-color($accent);
+      .mat-card {
+        @if $is-dark == true {
+          background-color: mat-color($mat-grey, 700);
+        }
+        .info-account.border-bottom,
+        .info-account.border-right {
+          border-color: mat-color($accent);
+        }
       }
-
     }
   }
 }

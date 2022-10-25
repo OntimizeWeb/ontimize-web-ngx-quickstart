@@ -53,6 +53,9 @@ export class AccountsDetailComponent {
     AccountsDetailComponent.colorDebit = this.theme.primary + "99";
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
+
+
+
   }
 
   public onFormDataLoaded(data: any): void {

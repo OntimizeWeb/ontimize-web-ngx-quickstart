@@ -1,10 +1,8 @@
-.application-layout-content-wrapper{
-  padding: 12px;
-}
+@import '~@angular/material/theming';
 
-.list-accounts .mat-card,
-.mat-sidenav-filters .accounts-filters {
-  border: 1px solid #dddddd;
+.application-layout-content-wrapper {
+  padding: 12px;
+
 }
 
 .mat-sidenav-container-account-home {
@@ -14,72 +12,87 @@
   width: calc(100% - 16px);
   padding: 8px;
 
-  .mat-sidenav-filters {
-    top: 70px;
 
-    &.mat-drawer {
-      bottom: auto;
-    }
+  .mat-sidenav-filters {
+    top: 74px;
+    bottom: 8px;
+    box-shadow: 0 3px 6px #00000029;
 
     .accounts-filters {
-      padding: 0;
 
-      .filter-border{
-        border-style: solid;
-        border-width: 4px;
-        border-top: 0;
-        border-bottom: 0;
-        border-right: 0;
-        padding: 33px 33px;
-      }
+      height: 100%;
+      border-style: solid;
+      border-width: 4px;
+      border-top: 0;
+      border-bottom: 0;
+      border-right: 0;
+      padding: 24px;
+
+      overflow: auto;
 
       .label-balance {
         font-size: 14px;
       }
-
-      .container-date {
-        padding: 20px 0;
-      }
     }
   }
 
+
+  .mat-drawer-content {
+    overflow: hidden;
+  }
+
   .mat-sidenav-content {
-    padding-left: 36px;
+    flex-direction: column;
+    max-height: 100%;
+    .buttons {
+      margin-left: 44px;
+
+      button {
+        margin-right: 12px;
+      }
+    }
 
     .flex-container {
-      height: 100%;
-
-      .buttons {
-        button {
-          margin-right: 12px;
-        }
-      }
+      max-height: 100%;
+      margin-top: 30px;
+      margin-left: 40px;
 
       .fill-remaining {
         width: 100%;
-
+        max-height: 100%;
         .list-accounts {
+          max-height: 100%;
           width: 100%;
 
           .o-list-container {
+            max-height: 100%;
+            .o-list-content {
+              padding-bottom: 48px;
+              max-height: 100%;
+            }
+
             .mat-list {
+              overflow: auto;
+              padding: 0;
+              padding-left: 4px;
+              padding-top: 4px;
+
               @media (min-width: 1400px) {
                 .mat-card {
-                  width: 80%;
+                  width: 75%;
                 }
               }
+
               @media (min-width: 1700px) {
                 .mat-card {
-                  width: 90%;
+                  width: 75%;
                 }
               }
 
               .o-list-item.mat-card {
-                &:not([class*=mat-elevation-z]) {
-                  box-shadow: none;
-                }
-                padding: 16px 22px;
+                box-shadow: 0 3px 6px #00000029;
                 margin-bottom: 20px;
+                margin-top: 0;
 
                 label,
                 span {
@@ -95,6 +108,7 @@
                 }
 
                 .info-iban {
+
                   label,
                   span {
                     font-size: 18px;
@@ -115,6 +129,7 @@
                 }
 
                 .balance-account {
+
                   label,
                   span {
                     padding-top: 12px;
