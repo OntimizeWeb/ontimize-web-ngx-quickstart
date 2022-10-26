@@ -1,49 +1,44 @@
-.o-column-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-header,
-  .o-row-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-header{
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
   border: 0;
 }
 
-.collapsible{
-
-  .o-container{
-    .o-container-title.mat-expansion-panel-header-title,
-      .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title {
-        border:solid;
-        border-width: 1px;
-        border-radius: 2px;
-        justify-content: center;
-        height: 32px;
-    }
-    .mat-expansion-panel-header-description,
-      .mat-expansion-panel-header-title{
-        flex-grow: 0;
-    }
-  }
-
-  mat-panel-title {
-    mat-icon{
-    padding-left: 15px;
-    padding-top: 2px;
-    }
-    span{
-      padding-top: 4px;
-      padding-right: 15px;
-    }
-  }
-
-  mat-expansion-panel-header{
-    border-bottom: 0;
-  }
-
-  mat-expansion-panel{
+.collapsible {
+  .o-container {
     padding: 5px;
+
+    .o-container-title.mat-expansion-panel-header-title,
+    .o-row-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title {
+      border: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      justify-content: center;
+      height: 32px;
+    }
+
+    .mat-expansion-panel-header-description,
+    .mat-expansion-panel-header-title {
+      flex-grow: 0;
+    }
+
+    mat-panel-title {
+      mat-icon {
+        padding-left: 15px;
+        padding-top: 2px;
+      }
+
+      span {
+        padding-top: 4px;
+        padding-right: 15px;
+      }
+    }
+
+    span.mat-expansion-indicator {
+      display: none;
+    }
   }
 
-  span.mat-expansion-indicator{
-    display:none;
-  }
-
-  .filter_style{
+  .filter_style {
     border-style: solid;
     border-top: 0;
     border-bottom: 0;
@@ -117,5 +112,14 @@
         width: 10px;
       }
     }
+  }
+}
+
+.o-grid {
+  .o-grid-toolbar {
+    .o-button {
+      margin-right: 12px;
+    }
+
   }
 }
