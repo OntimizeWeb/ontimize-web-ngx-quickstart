@@ -4142,12 +4142,17 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .filter-border {
   border-color: #80b5ed; }
 
+.mat-sidenav-container-account-home .accounts-filters {
+  border-color: #80b5ed; }
+
 .mat-sidenav-container-account-home .list-accounts span {
   color: rgba(255, 255, 255, 0.7); }
 
-.mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
-.mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
-  border-color: #80b5ed; }
+.mat-sidenav-container-account-home .list-accounts .mat-card {
+  background-color: #616161; }
+  .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
+  .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
+    border-color: #80b5ed; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

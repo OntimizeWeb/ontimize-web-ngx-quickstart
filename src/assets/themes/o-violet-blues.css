@@ -4138,6 +4138,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .filter-border {
   border-color: #3f5fbf; }
 
+.mat-sidenav-container-account-home .accounts-filters {
+  border-color: #3f5fbf; }
+
 .mat-sidenav-container-account-home .list-accounts span {
   color: rgba(0, 0, 0, 0.54); }
 
