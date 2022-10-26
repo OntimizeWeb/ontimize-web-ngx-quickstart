@@ -14,9 +14,7 @@
         <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID" keys="OFFICEID"
           visible-columns="NAME" fxFlex="calc(25% - 32px)"></o-combo>
         <div fxFlex="75%" fxFill class="filter_btn" fxLayoutAlign="flex-end flex-end">
-          <o-button layout-padding (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description"
-            [matTooltip]="'FILL_REPORT' | oTranslate">
-          </o-button>
+
           <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="STROKED" label="Clear" layout-padding>
           </o-button>
           <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="STROKED" label="Filter" layout-padding color="accent">
@@ -35,6 +33,8 @@
       columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE;NAME"
       quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID" keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME"
       pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px" detail-mode="none">
+      <o-button o-grid-toolbar position="end" (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate">
+      </o-button>
       <o-grid-item *ngFor="let item of grid.dataArray">
         <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item mat-elevation-z1">
           <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">

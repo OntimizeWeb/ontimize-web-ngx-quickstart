@@ -763,21 +763,9 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     border-radius: 2px;
     box-sizing: border-box;
     /*Toolbar*/ }
-    .ontimize-table.o-table .o-table-container .toolbar {
+    .ontimize-table.o-table .o-table-container .o-table-toolbar {
       margin: 0 0 4px;
       padding-top: 8px; }
-      .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button .mat-button {
-        line-height: inherit;
-        height: 32px;
-        border: 1px solid #8797ac;
-        border-radius: 2px;
-        margin: 0 8px; }
-        .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button .mat-button.disabled {
-          border: 1px solid rgba(255, 255, 255, 0.12); }
-        .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
-          border: 1px solid #8797ac;
-          border-radius: 2px;
-          margin: 0 8px; }
     .ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
       background: rgba(255, 255, 255, 0.12); }
     .ontimize-table.o-table .o-table-container thead tr th {
@@ -818,15 +806,15 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     width: 16px;
     height: 16px; }
 
-.o-table.o-table .o-table-container .toolbar .buttons .o-table-button .mat-button {
+.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button {
   height: 30px;
   border: none;
   padding: 0 6px;
   border-radius: 0; }
-  .o-table.o-table .o-table-container .toolbar .buttons .o-table-button .mat-button.disabled {
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button.disabled {
     border: none;
     border-radius: 0; }
-  .o-table.o-table .o-table-container .toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
     border: none;
     border-radius: 0; }
 
@@ -3266,22 +3254,22 @@ textarea {
 .mat-dialog-actions button,
 .o-form .o-form-toolbar .o-table-button,
 .o-form .o-form-toolbar button,
-.ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button,
-.ontimize-table.o-table .o-table-container .toolbar .buttons button {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button {
   margin: 0 8px; }
   .mat-dialog-actions .o-table-button:first-child,
   .mat-dialog-actions button:first-child,
   .o-form .o-form-toolbar .o-table-button:first-child,
   .o-form .o-form-toolbar button:first-child,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button:first-child,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:first-child {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button:first-child,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:first-child {
     margin-left: 0; }
   .mat-dialog-actions .o-table-button:last-child,
   .mat-dialog-actions button:last-child,
   .o-form .o-form-toolbar .o-table-button:last-child,
   .o-form .o-form-toolbar button:last-child,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button:last-child,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:last-child {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button:last-child,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:last-child {
     margin-right: 0; }
 
 .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
@@ -3289,10 +3277,10 @@ textarea {
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.mat-primary,
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
   color: #6a7a92;
   background-color: #dbe0e6;
   border-color: transparent; }
@@ -3309,14 +3297,14 @@ textarea {
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.mat-primary:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
     color: #8797ac;
     background-color: #ffffff;
     border-color: rgba(255, 255, 255, 0.12); }
@@ -3327,11 +3315,11 @@ textarea {
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base,
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
-.ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
   color: #8797ac;
   background-color: #ffffff; }
   .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
@@ -3350,16 +3338,16 @@ textarea {
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.mat-accent:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
     color: #6a7a92;
     background-color: #dbe0e6;
     border-color: transparent; }
@@ -3389,17 +3377,17 @@ textarea {
     border-color: transparent; }
 
 .o-form .o-form-toolbar button.mat-stroked-button,
-.ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button {
   padding: 0 6px; }
   .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper .mat-icon,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper .mat-icon {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper .mat-icon {
     margin-right: 4px;
     font-size: 20px;
     width: 20px;
     height: 20px;
     line-height: 20px; }
   .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper span,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper span {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper span {
     flex: 1; }
 
 /*MAT PAGINATION*/
@@ -3807,9 +3795,6 @@ textarea:disabled {
 
 .o-table-visible-columns-dialog .mat-list.large .mat-list-item {
   height: 40px; }
-
-.o-list-container .mat-toolbar {
-  background: transparent; }
 
 .o-list-container .primary-text {
   color: white; }

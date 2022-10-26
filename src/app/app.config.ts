@@ -5,7 +5,8 @@ import { environment } from '../environments/environment';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: environment.apiEndpoint,
+  // apiEndpoint: environment.apiEndpoint,
+  apiEndpoint: 'http://45.84.208.122:9092/qsallcomponents-jee/services/rest',
 
   bundle: {
     path: 'bundle'
@@ -22,19 +23,21 @@ export const CONFIG: Config = {
   locale: 'en',
 
   // The service type used (Ontimize REST standart, Ontimize REST JEE or custom implementation) in the whole application.
-  serviceType: 'OntimizeEE',
+  //serviceType: 'OntimizeEE',
 
   // Configuration parameters of application services.
   servicesConfiguration: SERVICE_CONFIG,
 
   appMenuConfiguration: MENU_CONFIG,
 
-  applicationLocales: ['es', 'en']
+  applicationLocales: ['es', 'en'],
+  exportConfiguration: {
+    path: '/export'
+  }
   // ,
 
   // permissionsConfiguration: {
   //   service: 'test'
   // },
 
-  // permissionsServiceType: 'OntimizeEEPermissions'
 };
