@@ -82,12 +82,14 @@
             <div fxFlex="40" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
               <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>
               <div>
-                <span>{{'MOVEMENT_TYPE' | oTranslate}}: </span>
-                <span class="last-movement" *ngIf="mov_type === 1">{{ 'Transfer' | oTranslate}}</span>
-                <span class="last-movement" *ngIf="mov_type === 2">{{ 'Automatic Cash' | oTranslate}}</span>
-                <span class="last-movement" *ngIf="mov_type === 3">{{ 'Salary' | oTranslate}}</span>
-                <span class="last-movement" *ngIf="mov_type === 4">{{ 'Direct debit' | oTranslate}}</span>
-                <span class="last-movement" *ngIf="mov_type === 5">{{ 'Banking fees' | oTranslate}}</span>
+                <b>
+                  <span>{{'MOVEMENT_TYPE' | oTranslate}}: </span>
+                  <span class="last-movement" *ngIf="mov_type === 1">{{ 'Transfer' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 2">{{ 'Automatic Cash' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 3">{{ 'Salary' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 4">{{ 'Direct debit' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 5">{{ 'Banking fees' | oTranslate}}</span>
+                </b>
               </div>
             </div>
           </o-row>
