@@ -159,5 +159,6 @@
   "NO_PARAMETER_VALUE_MESSAGE": "No se ha especificado el valor de los parámetros",
   "SERVER_ERROR_MESSAGE": "Error en el servidor interno",
   "MANAGEMENT": "Gestión",
-  "DATA_": "Datos"
+  "DATA_": "Datos",
+  "LAST_MOVEMENT": "Último movimiento"
 }

@@ -23,7 +23,8 @@
                 €</span>
               <div class="balance-border"></div>
               <span class="account-form-label avg-balance">{{ 'AVG_BALANCE' | oTranslate }}</span>
-              <span class="account-form-value avg-balance">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+              <span class="account-form-value avg-balance">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
+                €</span>
               <span class="account-form-label">{{ 'STARTDATE' | oTranslate }}</span>
               <span class="account-form-value">{{ oForm.getDataValue('STARTDATE').value | date:'d MMM, y' }}</span>
             </div>
@@ -42,10 +43,20 @@
               </o-list>
             </div>
           </o-row>
-          <o-column title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
+          <o-row title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
+            <div class="last-movement-div" fxLayout="column" fxFlex="20">
+              <o-list #list1 attr="movementsList1" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
+                columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="no" controls="no">
+                <span *ngFor="let row of list1.dataArray ; last as isLast">
+                  <span class="last-movement" *ngIf="isLast">{{row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 }
+                    }} €</span>
+                </span>
+              </o-list>
+              <span>{{ 'LAST_MOVEMENT' | oTranslate}}</span>
+            </div>
             <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
-              chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart>
-          </o-column>
+              chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart" fxFlex="80"></o-chart>
+          </o-row>
         </o-row>
 
         <o-row layout-gap="26px">

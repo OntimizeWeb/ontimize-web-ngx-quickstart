@@ -4188,6 +4188,9 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .customers-border {
   border-color: rgba(0, 0, 0, 0.12); }
 
+.last-movement-div .last-movement {
+  color: #0e2f59; }
+
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */

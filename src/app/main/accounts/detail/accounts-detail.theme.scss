@@ -70,7 +70,14 @@
     }
   }
 
-  .customers-border{
+  .customers-border {
     border-color: change-color(mat-color($foreground, secondary-text), $alpha: 0.12);
   }
+
+  .last-movement-div {
+    .last-movement {
+      color: mat-color($primary);
+    }
+  }
+
 }

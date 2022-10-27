@@ -132,8 +132,8 @@ export class AccountsDetailComponent {
     this.balanceChartParams = new LinePlusBarFocusChartConfiguration();
     this.balanceChartParams.margin.top = 20;
     this.balanceChartParams.margin.right = 80;
-    this.balanceChartParams.margin.bottom = 20;
-    this.balanceChartParams.margin.left = 200;
+    this.balanceChartParams.margin.bottom = 40;
+    this.balanceChartParams.margin.left = 120;
     this.balanceChartParams.focusEnable = false;
     this.balanceChartParams.color = [AccountsDetailComponent.colorBalance];
     this.balanceChartParams.yDataType = locale.numberFormat('$,f');
@@ -142,9 +142,10 @@ export class AccountsDetailComponent {
     this.balanceChartParams.x1Axis.tickPadding = 10;
     this.balanceChartParams.y1Axis.tickPadding = 10;
     this.balanceChartParams.legend.margin.top = 2;
-    this.balanceChartParams.legend.margin.right = 420;
+    this.balanceChartParams.legend.margin.right = 9;
     this.balanceChartParams.legend.margin.bottom = 2;
     this.balanceChartParams.legend.margin.left = 0;
+    this.balanceChartParams.legend.width = "400px";
 
   }
 
@@ -158,7 +159,7 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.legend.vers = 'furious';
     this.movementTypesChartParams.legend.width = '150';
     this.movementTypesChartParams.legend.margin.top = 2;
-    this.movementTypesChartParams.legend.margin.right = 420;
+    this.movementTypesChartParams.legend.margin.right = 450;
     this.movementTypesChartParams.labelType = 'value';
     this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{
