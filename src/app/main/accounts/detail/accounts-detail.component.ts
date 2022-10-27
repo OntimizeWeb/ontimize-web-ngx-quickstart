@@ -2,7 +2,6 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, OChartComponent, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
-
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 import { ThemeService } from '../../../shared/theme.service';
 
@@ -134,7 +133,7 @@ export class AccountsDetailComponent {
     this.balanceChartParams.margin.top = 20;
     this.balanceChartParams.margin.right = 80;
     this.balanceChartParams.margin.bottom = 20;
-    this.balanceChartParams.margin.left = 80;
+    this.balanceChartParams.margin.left = 200;
     this.balanceChartParams.focusEnable = false;
     this.balanceChartParams.color = [AccountsDetailComponent.colorBalance];
     this.balanceChartParams.yDataType = locale.numberFormat('$,f');
@@ -143,9 +142,10 @@ export class AccountsDetailComponent {
     this.balanceChartParams.x1Axis.tickPadding = 10;
     this.balanceChartParams.y1Axis.tickPadding = 10;
     this.balanceChartParams.legend.margin.top = 2;
-    this.balanceChartParams.legend.margin.right = 0;
+    this.balanceChartParams.legend.margin.right = 420;
     this.balanceChartParams.legend.margin.bottom = 2;
     this.balanceChartParams.legend.margin.left = 0;
+
   }
 
   private _configurePieChart(locale: any): void {
@@ -153,10 +153,12 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.top = 0;
     this.movementTypesChartParams.margin.right = 0;
     this.movementTypesChartParams.margin.bottom = 0;
-    this.movementTypesChartParams.margin.left = 0;
-    this.movementTypesChartParams.legendPosition = 'bottom';
+    this.movementTypesChartParams.margin.left = 300;
+    this.movementTypesChartParams.legendPosition = 'right';
     this.movementTypesChartParams.legend.vers = 'furious';
     this.movementTypesChartParams.legend.width = '150';
+    this.movementTypesChartParams.legend.margin.top = 2;
+    this.movementTypesChartParams.legend.margin.right = 420;
     this.movementTypesChartParams.labelType = 'value';
     this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{

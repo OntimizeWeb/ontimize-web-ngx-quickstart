@@ -17,12 +17,13 @@
         <o-row layout-gap="26px">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
             <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
-              <span class="account-form-label">{{ 'BALANCE' | oTranslate }}</span>
+              <span class="account-form-label balance">{{ 'BALANCE' | oTranslate }}</span>
               <span class="account-form-value balance" [class.red-numbers]="oForm.getDataValue('BALANCE').value < 0">{{
                 oForm.getDataValue('BALANCE').value | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
                 €</span>
-              <span class="account-form-label">{{ 'AVG_BALANCE' | oTranslate }}</span>
-              <span class="account-form-value">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+              <div class="balance-border"></div>
+              <span class="account-form-label avg-balance">{{ 'AVG_BALANCE' | oTranslate }}</span>
+              <span class="account-form-value avg-balance">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
               <span class="account-form-label">{{ 'STARTDATE' | oTranslate }}</span>
               <span class="account-form-value">{{ oForm.getDataValue('STARTDATE').value | date:'d MMM, y' }}</span>
             </div>
@@ -31,11 +32,13 @@
               <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
               <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
                 columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
-                <mat-list-item *ngFor="let customer of customerList.dataArray">
-                  <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
-                  <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
-                  <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
-                </mat-list-item>
+                <div class="customers-border">
+                  <mat-list-item *ngFor="let customer of customerList.dataArray">
+                    <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
+                    <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
+                    <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
+                  </mat-list-item>
+                </div>
               </o-list>
             </div>
           </o-row>

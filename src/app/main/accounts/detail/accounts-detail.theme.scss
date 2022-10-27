@@ -1,7 +1,7 @@
 @import 'node_modules/@angular/material/theming';
 
 @mixin accounts-detail-theme($theme) {
-  $color-salary: #eeeeee ;
+  $color-salary: #eeeeee;
   $color-debit: change-color(mat-color($primary), $alpha: 0.6);
   $color-transfer: #c5c5c5;
   $color-cash: change-color(mat-color($primary), $alpha: 0.3);
@@ -11,7 +11,7 @@
   $foreground: map-get($theme, foreground);
   $is-dark: map-get($theme, is-dark);
 
-  .balance-chart{
+  .balance-chart {
     text {
       @if $is-dark {
         color: #cccccc !important;
@@ -58,4 +58,19 @@
     background: mat-color($background, card);
   }
 
+  .account-form-value {
+    &.balance {
+      color: mat-color($primary);
+    }
+  }
+
+  .data-container {
+    .balance-border {
+      border-color: mat-color($primary);
+    }
+  }
+
+  .customers-border{
+    border-color: change-color(mat-color($foreground, secondary-text), $alpha: 0.12);
+  }
 }
