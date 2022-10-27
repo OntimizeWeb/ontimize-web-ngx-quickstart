@@ -132,7 +132,7 @@
   }
 
   o-chart.movements-chart {
-    margin: auto 0;
+    margin: 0;
 
     .nv-pie path {
       fill-opacity: .9;
@@ -143,7 +143,7 @@
     }
 
     .nv-label text {
-      fill: #e0e0e0 !important;
+      fill: #9b9b9b !important;
     }
   }
 }

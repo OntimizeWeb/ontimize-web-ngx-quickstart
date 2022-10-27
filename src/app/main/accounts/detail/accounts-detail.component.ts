@@ -1,3 +1,4 @@
+import { findLast } from '@angular/compiler/src/directive_resolver';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, OChartComponent, PieChartConfiguration } from 'ontimize-web-ngx-charts';
@@ -36,6 +37,10 @@ export class AccountsDetailComponent {
 
   private theme;
 
+  private mov_date: Date;
+  private mov_type: number;
+  private last_mov;
+
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
@@ -52,9 +57,22 @@ export class AccountsDetailComponent {
     AccountsDetailComponent.colorDebit = this.theme.primary + "99";
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
+  }
 
-
-
+  private getLastMovement() {
+    const filter = {
+      ACCOUNTID: this.id
+    };
+    const columns = ['DATE_', 'MOVEMENTTYPEID', 'MOVEMENT'];
+    this.ontimizeService.query(filter, columns, 'movement', { ACCOUNTID: 4 }).subscribe(resp => {
+      if (resp.code === 0) {
+        this.mov_date = resp.data[resp.data.length-1].DATE_;
+        this.mov_type = resp.data[resp.data.length - 1].MOVEMENTTYPEID;
+        this.last_mov = resp.data[resp.data.length - 1].MOVEMENT;
+      } else {
+        console.error(resp);
+      }
+    });
   }
 
   public onFormDataLoaded(data: any): void {
@@ -75,6 +93,7 @@ export class AccountsDetailComponent {
         }
       });
     }
+    this.getLastMovement();
   }
 
   private processLineData(data: any[]): void {
@@ -154,12 +173,12 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.top = 0;
     this.movementTypesChartParams.margin.right = 0;
     this.movementTypesChartParams.margin.bottom = 0;
-    this.movementTypesChartParams.margin.left = 300;
+    this.movementTypesChartParams.margin.left = 200;
     this.movementTypesChartParams.legendPosition = 'right';
     this.movementTypesChartParams.legend.vers = 'furious';
     this.movementTypesChartParams.legend.width = '150';
     this.movementTypesChartParams.legend.margin.top = 2;
-    this.movementTypesChartParams.legend.margin.right = 450;
+    this.movementTypesChartParams.legend.margin.right = 250;
     this.movementTypesChartParams.labelType = 'value';
     this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{

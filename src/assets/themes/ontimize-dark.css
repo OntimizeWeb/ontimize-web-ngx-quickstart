@@ -4149,7 +4149,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: rgba(255, 255, 255, 0.7); }
 
 .mat-sidenav-container-account-home .list-accounts .mat-card {
-  background-color: #616161; }
+  background-color: rgba(97, 97, 97, 0.2); }
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
     border-color: #1464a5; }
@@ -4187,7 +4187,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .balance-chart-container,
 .movement-chart-container,
 .movement-list-container {
-  background: #424242; }
+  background: rgba(97, 97, 97, 0.2); }
 
 .account-form-value.balance {
   color: #1464a5; }

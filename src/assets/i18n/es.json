@@ -160,5 +160,6 @@
   "SERVER_ERROR_MESSAGE": "Error en el servidor interno",
   "MANAGEMENT": "Gestión",
   "DATA_": "Datos",
-  "LAST_MOVEMENT": "Último movimiento"
+  "LAST_MOVEMENT": "Último movimiento",
+  "MOVEMENT_TYPE": "Tipo de movimiento"
 }

@@ -55,7 +55,9 @@
   .balance-chart-container,
   .movement-chart-container,
   .movement-list-container {
-    background: mat-color($background, card);
+    @if $is-dark{
+      background: change-color(mat-color($background, unselected-chip), $alpha: 0.2);
+    }
   }
 
   .account-form-value {

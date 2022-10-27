@@ -89,7 +89,7 @@
   "EXAMPLE_LOGIN_INFO": "Use this user and password for login",
   "TIME": "Time",
   "AMOUNT": "Amount (€)",
-  "Salary": "Salario",
+  "Salary": "Salary",
   "Transfer": "Transfer",
   "Banking fees": "Banking fees",
   "Direct debit": "Direct debit",
@@ -160,5 +160,6 @@
   "SERVER_ERROR_MESSAGE": "Internal server error",
   "MANAGEMENT": "Management",
   "DATA_": "Data",
-  "LAST_MOVEMENT": "Last movement"
+  "LAST_MOVEMENT": "Last movement",
+  "MOVEMENT_TYPE": "Movement type"
 }
