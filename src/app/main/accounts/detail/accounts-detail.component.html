@@ -12,7 +12,7 @@
         </button>
       </div>
 
-      <o-column layout-gap="24px">
+      <o-column layout-gap="24px" class="o-column-height">
 
         <o-row layout-gap="26px">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
@@ -54,7 +54,7 @@
           </o-row>
         </o-row>
 
-        <o-row layout-gap="26px">
+        <o-row layout-gap="26px" class="o-row-height">
           <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
             <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
               dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
@@ -76,7 +76,7 @@
               </o-list>
             </o-form-layout-manager>
           </o-column>
-          <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60">
+          <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60" fxLayoutAlign="center center">
             <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
               query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="80"></o-chart>
             <div fxFlex="40" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">

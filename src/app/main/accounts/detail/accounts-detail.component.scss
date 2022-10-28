@@ -2,9 +2,21 @@
   display: block;
   height: 100%;
 
+  .o-row-height {
+    max-height: 50%;
+  }
+
+  .o-column-height {
+    max-height: 100%;
+  }
+
   .o-form-container-content,
   form {
     height: 100%;
+  }
+
+  .o-row .o-container-scroll {
+    padding-bottom: 5px;
   }
 
   .account-info-container,
@@ -12,13 +24,26 @@
   .movement-chart-container,
   .movement-list-container {
     border-radius: 5px;
+    border-style: hidden;
     margin: 2px;
+    padding-top: 24px;
+    box-shadow: 0 3px 6px #00000029;
+
+    .o-container-title {
+      border-width: 2px;
+
+      span {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
   }
 
   .last-movement-div {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 30px;
+
     .last-movement {
       font-size: 200%;
     }
@@ -95,9 +120,10 @@
 
         .mat-list-icon {
           border-radius: 0;
-          height: 46px;
-          padding: 0;
-          width: 46px;
+          height: 32px;
+          padding: 4px;
+          width: 32px;
+          background-color: #F2F2F2;
         }
 
         .mat-list-item-content {
@@ -133,6 +159,14 @@
 
   o-chart.movements-chart {
     margin: 0;
+
+    .nv-legendWrap {
+      transform: translate(10px, 10px);
+    }
+
+    .nv-pieWrap {
+      transform: translate(150px, 15px);
+    }
 
     .nv-pie path {
       fill-opacity: .9;

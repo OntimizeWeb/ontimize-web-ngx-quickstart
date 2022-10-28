@@ -57,6 +57,7 @@ export class AccountsDetailComponent {
     AccountsDetailComponent.colorDebit = this.theme.primary + "99";
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
+    d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
   }
 
   private getLastMovement() {
@@ -160,12 +161,10 @@ export class AccountsDetailComponent {
     this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
     this.balanceChartParams.x1Axis.tickPadding = 10;
     this.balanceChartParams.y1Axis.tickPadding = 10;
-    this.balanceChartParams.legend.margin.top = 2;
-    this.balanceChartParams.legend.margin.right = 9;
-    this.balanceChartParams.legend.margin.bottom = 2;
+    this.balanceChartParams.legend.margin.top = 0;
+    this.balanceChartParams.legend.margin.right = 0;
+    this.balanceChartParams.legend.margin.bottom = 0;
     this.balanceChartParams.legend.margin.left = 0;
-    this.balanceChartParams.legend.width = "400px";
-
   }
 
   private _configurePieChart(locale: any): void {
@@ -173,12 +172,13 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.top = 0;
     this.movementTypesChartParams.margin.right = 0;
     this.movementTypesChartParams.margin.bottom = 0;
-    this.movementTypesChartParams.margin.left = 200;
+    this.movementTypesChartParams.margin.left = 0;
+    this.movementTypesChartParams.height = 320;
     this.movementTypesChartParams.legendPosition = 'right';
     this.movementTypesChartParams.legend.vers = 'furious';
     this.movementTypesChartParams.legend.width = '150';
     this.movementTypesChartParams.legend.margin.top = 2;
-    this.movementTypesChartParams.legend.margin.right = 250;
+    this.movementTypesChartParams.legend.margin.right = 10;
     this.movementTypesChartParams.labelType = 'value';
     this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{
@@ -200,7 +200,7 @@ export class AccountsDetailComponent {
     {
       value: 'Banking fees',
       color: AccountsDetailComponent.colorBalance
-    }];
+      }];
   }
 
   getParameters() {
