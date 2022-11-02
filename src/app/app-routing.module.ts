@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
@@ -24,6 +25,8 @@ const opt = {
 @NgModule({
   imports: [RouterModule.forRoot(routes, opt)],
   exports: [RouterModule],
-  providers: []
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
+  ]
 })
 export class AppRoutingModule { }

@@ -9,7 +9,7 @@ import { ReportsCardComponent } from './reports-card/reports-card.component';
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
   {
-    id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
+    id: 'data', name: 'DATA_', icon: 'remove_red_eye', opened: true,
     items: [
       {
         id: 'customers',
@@ -46,7 +46,12 @@ export const MENU_CONFIG: MenuRootItem[] = [
         icon: 'person',
         image: 'assets/images/ic_empleados.png',
         component: EmployeesCardComponent
-      },
+      }
+    ]
+  },
+  {
+    id: 'management', name: 'MANAGEMENT', icon: 'info_outline', opened: false,
+    items: [
       {
         id: 'reports',
         name: 'REPORTS',
@@ -56,13 +61,6 @@ export const MENU_CONFIG: MenuRootItem[] = [
         image: 'assets/images/ic_informes.png',
         component: ReportsCardComponent
       }
-    ]
-  },
-  {
-    id: 'general', name: 'GENERAL', icon: 'info_outline', opened: false,
-    items: [
-      { id: 'settings', name: 'SETTINGS', route: '/main/settings', icon: 'settings' },
-      { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' }
     ]
   },
   { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }

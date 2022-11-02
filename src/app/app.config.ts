@@ -21,13 +21,13 @@ export const CONFIG: Config = {
   //  Language of the application.
   locale: 'en',
 
-
   // Configuration parameters of application services.
   servicesConfiguration: SERVICE_CONFIG,
 
   appMenuConfiguration: MENU_CONFIG,
 
   applicationLocales: ['es', 'en'],
+
   exportConfiguration: {
     path: '/export'
   }
