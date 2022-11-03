@@ -14,7 +14,7 @@
 
       <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0" class="max-height">
 
-        <div fxLayout="row" fxLayoutGap="26px">
+        <div fxLayout="row" fxLayoutGap="0">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
             <div fxLayout="column" class="data-container" layout-padding fxFlex="50">
               <span class="account-form-label balance">{{ 'BALANCE' | oTranslate }}</span>
@@ -54,7 +54,7 @@
           </o-row>
         </div>
 
-        <div fxLayout="row" fxLayoutGap="26px">
+        <div fxLayout="row" fxLayoutGap="0">
           <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
             <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
               dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
