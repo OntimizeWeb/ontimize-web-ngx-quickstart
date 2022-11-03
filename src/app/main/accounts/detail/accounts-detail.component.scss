@@ -123,8 +123,9 @@
           padding: 6px;
           background-color: #F2F2F299;
           font-size: 0;
-          text-align: center;
-          vertical-align: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           img{
             width: 20px;
