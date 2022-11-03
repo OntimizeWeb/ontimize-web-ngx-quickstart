@@ -16,7 +16,7 @@
 
         <div fxLayout="row" fxLayoutGap="26px">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
-            <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
+            <div fxLayout="column" class="data-container" layout-padding fxFlex="50">
               <span class="account-form-label balance">{{ 'BALANCE' | oTranslate }}</span>
               <span class="account-form-value balance" [class.red-numbers]="oForm.getDataValue('BALANCE').value < 0">{{
                 oForm.getDataValue('BALANCE').value | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
@@ -44,7 +44,7 @@
             </div>
           </o-row>
           <o-row title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
-            <div class="last-movement-div" fxLayout="column" fxFlex="20">
+            <div class="last-movement-div" fxLayout="column" fxFlex="20" >
               <span class="last-movement">{{last_mov | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 }
                 }} €</span>
               <span>{{ 'LAST_MOVEMENT' | oTranslate}}</span>
