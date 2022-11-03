@@ -2,9 +2,10 @@
   display: block;
   height: 100%;
 
-  .max-height{
+  .max-height {
     max-height: 100%;
   }
+
   .o-form-container-content,
   form {
     height: 100%;
@@ -37,10 +38,11 @@
   .last-movement-div {
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 30px;
+    margin-left: 10px;
+    white-space: nowrap;
 
     .last-movement {
-      font-size: 200%;
+      font-size: 190%;
     }
   }
 
@@ -57,7 +59,8 @@
     text-align: left;
 
     &.balance {
-      font-size: 200%;
+      font-size: 190%;
+
     }
 
   }
