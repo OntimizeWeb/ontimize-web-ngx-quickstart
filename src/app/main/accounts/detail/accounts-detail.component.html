@@ -14,7 +14,7 @@
 
       <o-column layout-gap="24px">
 
-        <o-row layout-gap="26px">
+        <div fxLayout="row" fxLayoutGap="26px">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
             <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
               <span class="account-form-label balance">{{ 'BALANCE' | oTranslate }}</span>
@@ -52,7 +52,7 @@
             <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
               chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart" fxFlex="80"></o-chart>
           </o-row>
-        </o-row>
+        </div>
 
         <o-row layout-gap="26px">
           <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
@@ -78,8 +78,8 @@
           </o-column>
           <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60" fxLayoutAlign="center center">
             <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-              query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="80"></o-chart>
-            <div fxFlex="40" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
+              query-on-init="no"  [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
+            <div fxFlex="35" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
               <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>
               <div>
                 <b>
@@ -93,9 +93,9 @@
               </div>
             </div>
           </o-row>
-        </o-row>
+        </div>
 
-      </o-column>
+      </div>
     </o-form>
   </o-form-container>
 </div>
