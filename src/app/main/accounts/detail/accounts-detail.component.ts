@@ -176,7 +176,6 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.height = 320;
     this.movementTypesChartParams.legendPosition = 'right';
     this.movementTypesChartParams.legend.vers = 'furious';
-    this.movementTypesChartParams.legend.width = '150';
     this.movementTypesChartParams.legend.margin.top = 2;
     this.movementTypesChartParams.legend.margin.right = 10;
     this.movementTypesChartParams.labelType = 'value';

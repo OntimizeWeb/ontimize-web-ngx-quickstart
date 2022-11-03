@@ -2,6 +2,9 @@
   display: block;
   height: 100%;
 
+  .max-height{
+    max-height: 100%;
+  }
   .o-form-container-content,
   form {
     height: 100%;
@@ -111,11 +114,11 @@
         width: auto;
 
         .mat-list-icon {
-          border-radius: 0;
-          height: 32px;
-          padding: 4px;
-          width: 32px;
-          background-color: #F2F2F2;
+          border-radius: 3px;
+          height: 30px;
+          padding: 6px;
+          width: 30px;
+          background-color: #F2F2F299;
         }
 
         .mat-list-item-content {
@@ -153,11 +156,11 @@
     margin: 0;
 
     .nv-legendWrap {
-      transform: translate(10px, 10px);
+      transform: translate(0, 5px);
     }
 
     .nv-pieWrap {
-      transform: translate(150px, 15px);
+      transform: translate(150px, 20px);
     }
 
     .nv-pie path {
