@@ -21,7 +21,7 @@
   .movement-list-container {
     border-radius: 5px;
     border-style: hidden;
-    margin: 2px;
+    margin: 10px 30px 20px 30px;
     padding-top: 24px;
     box-shadow: 0 3px 6px #00000029;
 
@@ -90,6 +90,7 @@
       border-style: solid;
       border-width: 0 0 0 3px;
       height: 90%;
+      margin-left: 10px;
 
       .mat-list-item-content {
         padding-left: 3px;
@@ -113,20 +114,25 @@
       .movement-list-item.mat-list-item {
         border-style: solid;
         border-width: 0 0 0 5px;
+        border-radius: 3px;
         margin: 8px;
         width: auto;
 
         .mat-list-icon {
           border-radius: 3px;
-          height: 30px;
           padding: 6px;
-          width: 30px;
           background-color: #F2F2F299;
+          font-size: 0;
+          text-align: center;
+          vertical-align: auto;
+
+          img{
+            width: 20px;
+            height: 20px;
+          }
         }
 
         .mat-list-item-content {
-          border-style: solid;
-          border-width: 0 0 1px 0;
           padding: 0 13px 0 19px;
 
           .mat-list-text {

@@ -12,7 +12,7 @@
         </button>
       </div>
 
-      <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="26px" class="max-height">
+      <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0" class="max-height">
 
         <div fxLayout="row" fxLayoutGap="26px">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
@@ -44,7 +44,7 @@
             </div>
           </o-row>
           <o-row title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
-            <div class="last-movement-div" fxLayout="column" fxFlex="20" >
+            <div class="last-movement-div" fxLayout="column" fxFlex="20">
               <span class="last-movement">{{last_mov | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 }
                 }} €</span>
               <span>{{ 'LAST_MOVEMENT' | oTranslate}}</span>
@@ -54,7 +54,7 @@
           </o-row>
         </div>
 
-        <div fxLayout="row" fxLayoutGap="26px" fxFlex="50">
+        <div fxLayout="row" fxLayoutGap="26px">
           <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
             <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
               dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
@@ -64,21 +64,25 @@
                 <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" [class.movement-list-item-transfer]="row.MOVEMENTTYPEID===1"
                   [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2" [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3"
                   [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4" class="movement-list-item">
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
+                  <div mat-list-icon>
+                    <img *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
+                    <img *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
+                    <img *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
+                    <img *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
+                    <img *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
+                  </div>
                   <span mat-line class="concept">{{ row.CONCEPT }}</span>
                   <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
                   <span class="amount">{{ row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+                <mat-divider></mat-divider>
                 </mat-list-item>
+
               </o-list>
             </o-form-layout-manager>
           </o-column>
           <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60" fxLayoutAlign="center center">
             <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-              query-on-init="no"  [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
+              query-on-init="no" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
             <div fxFlex="35" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
               <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>
               <div>
