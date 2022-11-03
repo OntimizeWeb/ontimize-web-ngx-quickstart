@@ -3281,8 +3281,8 @@ textarea {
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
-  color: #0b488a;
-  background-color: #b9d1e4;
+  color: #6d99c1;
+  background-color: #dce8f2;
   border-color: transparent; }
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
@@ -3305,7 +3305,7 @@ textarea {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
-    color: #1464a5;
+    color: #8ab2d2;
     background-color: #ffffff;
     border-color: rgba(255, 255, 255, 0.12); }
 
@@ -3320,7 +3320,7 @@ textarea {
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
-  color: #1464a5;
+  color: #8ab2d2;
   background-color: #ffffff; }
   .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
@@ -3348,8 +3348,8 @@ textarea {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
-    color: #0b488a;
-    background-color: #b9d1e4;
+    color: #6d99c1;
+    background-color: #dce8f2;
     border-color: transparent; }
 
 .o-form .o-form-toolbar [o-form-toolbar-buttons] > * {
@@ -4172,13 +4172,13 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
-  border-color: rgba(20, 100, 165, 0.3); }
+  border-color: rgba(138, 178, 210, 0.3); }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
   border-color: #eeeeee; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
-  border-color: rgba(20, 100, 165, 0.6); }
+  border-color: rgba(138, 178, 210, 0.6); }
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
@@ -4190,16 +4190,16 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   background: rgba(97, 97, 97, 0.2); }
 
 .account-form-value.balance {
-  color: #1464a5; }
+  color: #8ab2d2; }
 
 .data-container .balance-border {
-  border-color: #1464a5; }
+  border-color: #8ab2d2; }
 
 .customers-border {
   border-color: rgba(255, 255, 255, 0.12); }
 
 .last-movement-div .last-movement {
-  color: #1464a5; }
+  color: #8ab2d2; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
