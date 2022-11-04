@@ -36,9 +36,9 @@ export class AccountsDetailComponent {
 
   private theme;
 
-  private mov_date: Date;
-  private mov_type: number;
-  private last_mov;
+  public mov_date: Date;
+  public mov_type: number;
+  public last_mov: number;
 
   constructor(
     private ontimizeService: OntimizeService,
@@ -66,7 +66,7 @@ export class AccountsDetailComponent {
     const columns = ['DATE_', 'MOVEMENTTYPEID', 'MOVEMENT'];
     this.ontimizeService.query(filter, columns, 'movement', { ACCOUNTID: 4 }).subscribe(resp => {
       if (resp.code === 0) {
-        this.mov_date = resp.data[resp.data.length-1].DATE_;
+        this.mov_date = resp.data[resp.data.length - 1].DATE_;
         this.mov_type = resp.data[resp.data.length - 1].MOVEMENTTYPEID;
         this.last_mov = resp.data[resp.data.length - 1].MOVEMENT;
       } else {
@@ -198,7 +198,7 @@ export class AccountsDetailComponent {
     {
       value: 'Banking fees',
       color: AccountsDetailComponent.colorBalance
-      }];
+    }];
   }
 
   getParameters() {
