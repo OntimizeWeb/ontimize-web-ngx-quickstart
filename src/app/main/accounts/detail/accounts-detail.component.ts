@@ -1,7 +1,6 @@
-import { findLast } from '@angular/compiler/src/directive_resolver';
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
-import { ChartSeries, LinePlusBarFocusChartConfiguration, OChartComponent, PieChartConfiguration } from 'ontimize-web-ngx-charts';
+import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 import { ThemeService } from '../../../shared/theme.service';
