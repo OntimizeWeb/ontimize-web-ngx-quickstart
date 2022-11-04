@@ -28,7 +28,7 @@
 
       .mat-card {
         @if $is-dark == true {
-          background-color: mat-color($mat-grey, 700);
+          background-color: change-color(mat-color($mat-grey, 700), $alpha: 0.2);
         }
         .info-account.border-bottom,
         .info-account.border-right {

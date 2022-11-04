@@ -4159,25 +4159,31 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
-  border-color: #f2552c; }
+  border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
-  border-color: #424476; }
+  border-color: rgba(63, 95, 191, 0.3); }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
-  border-color: #92b558; }
+  border-color: #eeeeee; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
-  border-color: #951630; }
+  border-color: rgba(63, 95, 191, 0.6); }
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
 
-.account-info-container,
-.balance-chart-container,
-.movement-chart-container,
-.movement-list-container {
-  background: white; }
+.account-form-value.balance {
+  color: #3f5fbf; }
+
+.data-container .balance-border {
+  border-color: #3f5fbf; }
+
+.customers-border {
+  border-color: rgba(0, 0, 0, 0.12); }
+
+.last-movement-div .last-movement {
+  color: #3f5fbf; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

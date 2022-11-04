@@ -4149,7 +4149,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: rgba(255, 255, 255, 0.7); }
 
 .mat-sidenav-container-account-home .list-accounts .mat-card {
-  background-color: #616161; }
+  background-color: rgba(97, 97, 97, 0.2); }
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
     border-color: #8ab2d2; }
@@ -4157,6 +4157,10 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+.balance-chart text {
+  color: #cccccc !important;
+  fill: #cccccc !important; }
+
 .account-form-label,
 .customers .customers-list-title {
   color: rgba(255, 255, 255, 0.7); }
@@ -4165,16 +4169,16 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
-  border-color: #f2552c; }
+  border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
-  border-color: #424476; }
+  border-color: rgba(138, 178, 210, 0.3); }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
-  border-color: #92b558; }
+  border-color: #eeeeee; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
-  border-color: #951630; }
+  border-color: rgba(138, 178, 210, 0.6); }
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
@@ -4183,7 +4187,19 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .balance-chart-container,
 .movement-chart-container,
 .movement-list-container {
-  background: #424242; }
+  background: rgba(97, 97, 97, 0.2); }
+
+.account-form-value.balance {
+  color: #8ab2d2; }
+
+.data-container .balance-border {
+  border-color: #8ab2d2; }
+
+.customers-border {
+  border-color: rgba(255, 255, 255, 0.12); }
+
+.last-movement-div .last-movement {
+  color: #8ab2d2; }
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */

@@ -2,9 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
-
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
-import { DocsSiteTheme, ThemeService } from '../../../shared/theme.service';
+import { ThemeService } from '../../../shared/theme.service';
 
 declare var d3: any;
 
@@ -19,11 +18,11 @@ declare var d3: any;
 })
 export class AccountsDetailComponent {
 
-  private static colorSalary: string = '#92b558';
-  private static colorDebit: string = '#951630';
-  private static colorTransfer: string = '#f2552c';
-  private static colorCash: string = '#424476';
-  private static colorBalance: string = '#2196f3';
+  private static colorSalary: string = '#eeeeee';
+  private static colorDebit: string;
+  private static colorTransfer: string = '#c5c5c5';
+  private static colorCash: string;
+  private static colorBalance: string;
 
   public formLabel: string;
   public avgBalance: number;
@@ -35,25 +34,45 @@ export class AccountsDetailComponent {
 
   public id: string;
 
-  public theme: DocsSiteTheme;
+  private theme;
+
+  private mov_date: Date;
+  private mov_type: number;
+  private last_mov;
 
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
     private d3LocaleService: D3LocaleService,
     private reportStoreService: OReportStoreService,
-    private _themeService: ThemeService
+    private themeService: ThemeService
   ) {
     const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
-    this.theme = this._themeService.getStoredTheme();
+    this.theme = themeService.getStoredTheme();
+    //alpha 30
+    AccountsDetailComponent.colorCash = this.theme.primary + "4D";
     AccountsDetailComponent.colorBalance = this.theme.accent;
-    AccountsDetailComponent.colorCash = this.theme.primary;
-
+    //alpha 60
+    AccountsDetailComponent.colorDebit = this.theme.primary + "99";
     this._configureLineBarChart(d3Locale);
     this._configurePieChart(d3Locale);
+    d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
+  }
 
-
-
+  private getLastMovement() {
+    const filter = {
+      ACCOUNTID: this.id
+    };
+    const columns = ['DATE_', 'MOVEMENTTYPEID', 'MOVEMENT'];
+    this.ontimizeService.query(filter, columns, 'movement', { ACCOUNTID: 4 }).subscribe(resp => {
+      if (resp.code === 0) {
+        this.mov_date = resp.data[resp.data.length-1].DATE_;
+        this.mov_type = resp.data[resp.data.length - 1].MOVEMENTTYPEID;
+        this.last_mov = resp.data[resp.data.length - 1].MOVEMENT;
+      } else {
+        console.error(resp);
+      }
+    });
   }
 
   public onFormDataLoaded(data: any): void {
@@ -74,6 +93,7 @@ export class AccountsDetailComponent {
         }
       });
     }
+    this.getLastMovement();
   }
 
   private processLineData(data: any[]): void {
@@ -131,8 +151,8 @@ export class AccountsDetailComponent {
     this.balanceChartParams = new LinePlusBarFocusChartConfiguration();
     this.balanceChartParams.margin.top = 20;
     this.balanceChartParams.margin.right = 80;
-    this.balanceChartParams.margin.bottom = 20;
-    this.balanceChartParams.margin.left = 80;
+    this.balanceChartParams.margin.bottom = 40;
+    this.balanceChartParams.margin.left = 120;
     this.balanceChartParams.focusEnable = false;
     this.balanceChartParams.color = [AccountsDetailComponent.colorBalance];
     this.balanceChartParams.yDataType = locale.numberFormat('$,f');
@@ -140,9 +160,9 @@ export class AccountsDetailComponent {
     this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
     this.balanceChartParams.x1Axis.tickPadding = 10;
     this.balanceChartParams.y1Axis.tickPadding = 10;
-    this.balanceChartParams.legend.margin.top = 2;
+    this.balanceChartParams.legend.margin.top = 0;
     this.balanceChartParams.legend.margin.right = 0;
-    this.balanceChartParams.legend.margin.bottom = 2;
+    this.balanceChartParams.legend.margin.bottom = 0;
     this.balanceChartParams.legend.margin.left = 0;
   }
 
@@ -152,9 +172,11 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.right = 0;
     this.movementTypesChartParams.margin.bottom = 0;
     this.movementTypesChartParams.margin.left = 0;
-    this.movementTypesChartParams.legendPosition = 'bottom';
+    this.movementTypesChartParams.height = 320;
+    this.movementTypesChartParams.legendPosition = 'right';
     this.movementTypesChartParams.legend.vers = 'furious';
-    this.movementTypesChartParams.legend.width = '150';
+    this.movementTypesChartParams.legend.margin.top = 2;
+    this.movementTypesChartParams.legend.margin.right = 10;
     this.movementTypesChartParams.labelType = 'value';
     this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{
@@ -172,7 +194,11 @@ export class AccountsDetailComponent {
     {
       value: 'Automatic Cash',
       color: AccountsDetailComponent.colorCash
-    }];
+    },
+    {
+      value: 'Banking fees',
+      color: AccountsDetailComponent.colorBalance
+      }];
   }
 
   getParameters() {
