@@ -4169,6 +4169,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
+
   border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
@@ -4179,6 +4180,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
   border-color: rgba(163, 164, 211, 0.6); }
+
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
@@ -4200,6 +4202,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .last-movement-div .last-movement {
   color: #a3a4d3; }
+
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
@@ -4229,6 +4232,7 @@ employees-detail .employee-type {
 /* stylelint-enable */
 app-about .mat-divider {
   border-top-color: #a3a4d3; }
+
 
 /*
 * Other app styles
