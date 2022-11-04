@@ -24,7 +24,8 @@ export class ThemeService {
       primary: '#1464a5',
       accent: '#1464a5',
       href: 'ontimize.css',
-      href_dark: 'ontimize-dark.css'
+      href_dark: 'ontimize-dark.css',
+      isDefault: true
     },
     {
       primary: '#4649A6',

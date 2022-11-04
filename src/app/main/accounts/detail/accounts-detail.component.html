@@ -12,17 +12,19 @@
         </button>
       </div>
 
-      <o-column layout-gap="24px">
+      <div fxLayout="column" fxLayoutAlign="start stretch" class="max-height">
 
-        <o-row layout-gap="26px">
+        <div fxLayout="row">
           <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
-            <div fxLayout="column" class="data-container" layout-padding fxFlex="40">
-              <span class="account-form-label">{{ 'BALANCE' | oTranslate }}</span>
+            <div fxLayout="column" class="data-container" layout-padding fxFlex="50">
+              <span class="account-form-label balance">{{ 'BALANCE' | oTranslate }}</span>
               <span class="account-form-value balance" [class.red-numbers]="oForm.getDataValue('BALANCE').value < 0">{{
                 oForm.getDataValue('BALANCE').value | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
                 €</span>
-              <span class="account-form-label">{{ 'AVG_BALANCE' | oTranslate }}</span>
-              <span class="account-form-value">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+              <div class="balance-border"></div>
+              <span class="account-form-label avg-balance">{{ 'AVG_BALANCE' | oTranslate }}</span>
+              <span class="account-form-value avg-balance">{{ avgBalance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
+                €</span>
               <span class="account-form-label">{{ 'STARTDATE' | oTranslate }}</span>
               <span class="account-form-value">{{ oForm.getDataValue('STARTDATE').value | date:'d MMM, y' }}</span>
             </div>
@@ -31,21 +33,28 @@
               <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
               <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
                 columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
-                <mat-list-item *ngFor="let customer of customerList.dataArray">
-                  <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
-                  <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
-                  <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
-                </mat-list-item>
+                <div class="customers-border">
+                  <mat-list-item *ngFor="let customer of customerList.dataArray">
+                    <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
+                    <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
+                    <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
+                  </mat-list-item>
+                </div>
               </o-list>
             </div>
           </o-row>
-          <o-column title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
+          <o-row title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
+            <div class="last-movement-div" fxLayout="column" fxFlex="20">
+              <span class="last-movement">{{last_mov | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 }
+                }} €</span>
+              <span>{{ 'LAST_MOVEMENT' | oTranslate}}</span>
+            </div>
             <o-chart type="linePlusBarChart" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
-              chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart"></o-chart>
-          </o-column>
-        </o-row>
+              chart-height="250" [data]="lineData" [chart-parameters]="balanceChartParams" class="balance-chart" fxFlex="80"></o-chart>
+          </o-row>
+        </div>
 
-        <o-row layout-gap="26px">
+        <div fxLayout="row">
           <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
             <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
               dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
@@ -55,25 +64,42 @@
                 <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" [class.movement-list-item-transfer]="row.MOVEMENTTYPEID===1"
                   [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2" [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3"
                   [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4" class="movement-list-item">
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
-                  <img mat-list-icon *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
+                  <div mat-list-icon>
+                    <img *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" alt="{{ 'Transfer' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" alt="{{ 'Automatic Cash' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" alt="{{ 'Salary' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" alt="{{ 'Direct debit' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" alt="{{ 'Banking fees' | oTranslate }}"/>
+                  </div>
                   <span mat-line class="concept">{{ row.CONCEPT }}</span>
                   <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
                   <span class="amount">{{ row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
+                <mat-divider></mat-divider>
                 </mat-list-item>
+
               </o-list>
             </o-form-layout-manager>
           </o-column>
-          <o-column title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60">
+          <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60" fxLayoutAlign="center center">
             <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-              query-on-init="no" chart-height="380" [chart-parameters]="movementTypesChartParams" class="movements-chart"></o-chart>
-          </o-column>
-        </o-row>
+              query-on-init="no" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
+            <div fxFlex="35" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
+              <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>
+              <div>
+                <strong>
+                  <span>{{'MOVEMENT_TYPE' | oTranslate}}: </span>
+                  <span class="last-movement" *ngIf="mov_type === 1">{{ 'Transfer' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 2">{{ 'Automatic Cash' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 3">{{ 'Salary' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 4">{{ 'Direct debit' | oTranslate}}</span>
+                  <span class="last-movement" *ngIf="mov_type === 5">{{ 'Banking fees' | oTranslate}}</span>
+                </strong>
+              </div>
+            </div>
+          </o-row>
+        </div>
 
-      </o-column>
+      </div>
     </o-form>
   </o-form-container>
 </div>
