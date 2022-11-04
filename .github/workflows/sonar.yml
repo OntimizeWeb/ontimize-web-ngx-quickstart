@@ -36,7 +36,7 @@ jobs:
 
       - name: coverage .lcov workaround
         run: |
-          sed -i 's+/home/runner/work/ontimize-web-ngx-report/ontimize-web-ngx-report+/github/workspace+g' coverage/ontimize-web-ngx-report/lcov.info
+          sed -i 's+/home/runner/work/ontimize-web-ngx-quickstart/ontimize-web-ngx-quickstart+/github/workspace+g' coverage/ontimize-web-ngx-quickstart/lcov.info
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
