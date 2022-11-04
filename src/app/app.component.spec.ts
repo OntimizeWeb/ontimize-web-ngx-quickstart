@@ -1,31 +1,46 @@
-import { TestBed, async } from '@angular/core/testing';
+import { AppModule } from './app.module';
+import { Injector } from '@angular/core';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppConfig, AppConfigFactory, APP_CONFIG, OntimizeWebModule, ONTIMIZE_PROVIDERS, OPermissionsModule } from 'ontimize-web-ngx';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+      imports: [
+        RouterTestingModule,
+        OntimizeWebModule,
+        OPermissionsModule,
+        NoopAnimationsModule,
+        AppModule
       ],
+      providers: [
+        {
+          provide: APP_CONFIG, useValue: {
+            uuid: 'com.ontimize.web.test',
+            title: 'Ontimize Web Testing',
+            locale: 'en'
+          }
+        },
+        { provide: AppConfig, useFactory: AppConfigFactory, deps: [Injector] },
+        ...ONTIMIZE_PROVIDERS
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'ontimize-web-ngx-quickstart'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ontimize-web-ngx-quickstart');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ontimize-web-ngx-quickstart app is running!');
   });
+
+  it('should create the app', () => {
+    expect(component).toBeTruthy();
+  });
+
 });
