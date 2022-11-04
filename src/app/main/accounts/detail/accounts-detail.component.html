@@ -65,11 +65,11 @@
                   [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2" [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3"
                   [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4" class="movement-list-item">
                   <div mat-list-icon>
-                    <img *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" />
-                    <img *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" />
-                    <img *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" />
-                    <img *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" />
-                    <img *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" />
+                    <img *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" alt="{{ 'Transfer' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" alt="{{ 'Automatic Cash' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 3" src="./assets/images/movementTypes/salary.svg" alt="{{ 'Salary' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 4" src="./assets/images/movementTypes/directDebit.svg" alt="{{ 'Direct debit' | oTranslate }}"/>
+                    <img *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" alt="{{ 'Banking fees' | oTranslate }}"/>
                   </div>
                   <span mat-line class="concept">{{ row.CONCEPT }}</span>
                   <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
@@ -86,14 +86,14 @@
             <div fxFlex="35" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
               <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>
               <div>
-                <b>
+                <strong>
                   <span>{{'MOVEMENT_TYPE' | oTranslate}}: </span>
                   <span class="last-movement" *ngIf="mov_type === 1">{{ 'Transfer' | oTranslate}}</span>
                   <span class="last-movement" *ngIf="mov_type === 2">{{ 'Automatic Cash' | oTranslate}}</span>
                   <span class="last-movement" *ngIf="mov_type === 3">{{ 'Salary' | oTranslate}}</span>
                   <span class="last-movement" *ngIf="mov_type === 4">{{ 'Direct debit' | oTranslate}}</span>
                   <span class="last-movement" *ngIf="mov_type === 5">{{ 'Banking fees' | oTranslate}}</span>
-                </b>
+                </strong>
               </div>
             </div>
           </o-row>
