@@ -4105,8 +4105,8 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .branches-card-branches-amount,
 .employees-card-employees-amount,
-.o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
-.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+.o-card-menu-item .nvd3.nv-multibarHorizontal .nv-groups text,
+.o-card-menu-item .nv-x .nv-axis .nvd3-svg {
   font-size: 24px;
   font-weight: 600; }
 
@@ -4125,7 +4125,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .employees-card-employees-amount {
   color: #3f5fbf; }
 
-.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+.o-card-menu-item div .nvd3.nv-multibarHorizontal .nv-groups text {
   fill: #3f5fbf;
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 

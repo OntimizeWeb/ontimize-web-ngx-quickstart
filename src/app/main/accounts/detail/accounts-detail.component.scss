@@ -22,7 +22,7 @@
 
   .account-info-container,
   .movement-list-container {
-    margin: 10px 30px 20px 30px;
+    margin: 10px 30px 20px;
   }
 
   .account-info-container,
@@ -167,7 +167,7 @@
     }
   }
 
-  o-chart.balance-chart>div>nvd3>svg line {
+  o-chart.balance-chart .nvd3 .nv-axis line {
     display: none;
   }
 
