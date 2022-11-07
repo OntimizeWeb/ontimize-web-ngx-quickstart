@@ -4,11 +4,7 @@
   margin: auto;
   overflow: hidden;
 
-
-
-  .employees-card-chart > div > nvd3 {
-    > svg line {
-      display: none;
-    }
+  .employees-card-chart .nvd3 .nv-axis line {
+    display: none;
   }
 }

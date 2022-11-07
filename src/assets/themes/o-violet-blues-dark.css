@@ -4109,8 +4109,8 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .branches-card-branches-amount,
 .employees-card-employees-amount,
-.o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
-.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+.o-card-menu-item .nvd3.nv-multibarHorizontal .nv-groups text,
+.o-card-menu-item .nv-x .nv-axis .nvd3-svg {
   font-size: 24px;
   font-weight: 600; }
 
@@ -4129,7 +4129,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .employees-card-employees-amount {
   color: #a3a4d3; }
 
-.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+.o-card-menu-item div .nvd3.nv-multibarHorizontal .nv-groups text {
   fill: #a3a4d3;
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
@@ -4169,7 +4169,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
-
   border-color: #c5c5c5; }
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
@@ -4180,7 +4179,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
   border-color: rgba(163, 164, 211, 0.6); }
-
 
 .movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
   border-color: #bcbcbe; }
@@ -4202,7 +4200,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .last-movement-div .last-movement {
   color: #a3a4d3; }
-
 
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
@@ -4232,7 +4229,6 @@ employees-detail .employee-type {
 /* stylelint-enable */
 app-about .mat-divider {
   border-top-color: #a3a4d3; }
-
 
 /*
 * Other app styles
