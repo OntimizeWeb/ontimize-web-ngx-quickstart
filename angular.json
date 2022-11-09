@@ -45,32 +45,42 @@
               "node_modules/ontimize-web-ngx-charts/styles.scss",
               "src/styles.scss",
               {
-                "input": "src/assets/themes/ontimize.scss",
+                "input": "src/assets/themes/o-violet-blues.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/ontimize-dark.scss",
+                "input": "src/assets/themes/o-violet-blues-dark.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/ontimize-black-yellow-dark.scss",
+                "input": "src/assets/themes/o-oxford-blue-emerald.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/ontimize-black-yellow.scss",
+                "input": "src/assets/themes/o-oxford-blue-emerald-dark.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/qs-gray-green-dark.scss",
+                "input": "src/assets/themes/o-madder-lake-jet.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               },
               {
-                "input": "src/assets/themes/qs-gray-green.scss",
+                "input": "src/assets/themes/o-madder-lake-jet-dark.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/o-prussian-celtic-blue.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/o-prussian-celtic-blue-dark.scss",
                 "lazy": true,
                 "bundleName": "assets/themes"
               }
@@ -145,7 +155,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

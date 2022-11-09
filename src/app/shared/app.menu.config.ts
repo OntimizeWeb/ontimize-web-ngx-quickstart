@@ -4,12 +4,11 @@ import { AccountsCardComponent } from './accounts-card/accounts-card.component';
 import { BranchesCardComponent } from './branches-card/branches-card.component';
 import { CustomersCardComponent } from './customers-card/customers-card.component';
 import { EmployeesCardComponent } from './employees-card/employees-card.component';
-import { ReportsCardComponent } from './reports-card/reports-card.component';
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
   {
-    id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
+    id: 'data', name: 'DATA_', icon: 'remove_red_eye', opened: true,
     items: [
       {
         id: 'customers',
@@ -46,23 +45,19 @@ export const MENU_CONFIG: MenuRootItem[] = [
         icon: 'person',
         image: 'assets/images/ic_empleados.png',
         component: EmployeesCardComponent
-      },
+      }
+    ]
+  },
+  {
+    id: 'management', name: 'MANAGEMENT', icon: 'info_outline', opened: false,
+    items: [
       {
         id: 'reports',
         name: 'REPORTS',
         tooltip: 'REPORTS_CONTENT',
         route: '/main/reports',
-        icon: 'description',
-        image: 'assets/images/ic_informes.png',
-        component: ReportsCardComponent
+        icon: 'description'
       }
-    ]
-  },
-  {
-    id: 'general', name: 'GENERAL', icon: 'info_outline', opened: false,
-    items: [
-      { id: 'settings', name: 'SETTINGS', route: '/main/settings', icon: 'settings' },
-      { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' }
     ]
   },
   { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
@@ -72,6 +67,5 @@ export const MENU_COMPONENTS = [
   AccountsCardComponent,
   CustomersCardComponent,
   BranchesCardComponent,
-  EmployeesCardComponent,
-  ReportsCardComponent
+  EmployeesCardComponent
 ];

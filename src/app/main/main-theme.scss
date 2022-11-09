@@ -6,10 +6,14 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
+  .container {
+    background-color: mat-color($background, card);
+  }
+
   .branches-card-branches-amount,
   .employees-card-employees-amount,
-  .o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
-  .o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+  .o-card-menu-item .nvd3.nv-multibarHorizontal .nv-groups text,
+  .o-card-menu-item .nv-x .nv-axis .nvd3-svg {
     font-size: mat-font-size($typography, headline);
     font-weight: 600;
   }
@@ -37,7 +41,7 @@
 
   }
 
-  .o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+  .o-card-menu-item div .nvd3.nv-multibarHorizontal .nv-groups text {
     fill: mat-color($primary);
     font-family: mat-font-family($typography);
   }
