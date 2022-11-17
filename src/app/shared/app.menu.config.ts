@@ -14,11 +14,20 @@ export const MENU_CONFIG: MenuRootItem[] = [
       {
         id: 'customers',
         name: 'CUSTOMERS',
-        tooltip: 'CUSTOMERS_CONTENT',
-        route: '/main/customers',
+        //tooltip: 'CUSTOMERS_CONTENT',
+        //route: '/main/customers',
         icon: 'people',
-        image: 'assets/images/ic_clientes.png',
-        component: CustomersCardComponent
+        //image: 'assets/images/ic_clientes.png',
+        //component: CustomersCardComponent,
+        opened: true,
+        items: [
+          {
+            id: 'customers-item',
+            name: 'CUSTOMERS',
+            icon: 'people',
+            route: '/main/customers'
+          }
+        ]
       },
       {
         id: 'accounts',
