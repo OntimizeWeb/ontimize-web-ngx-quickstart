@@ -26,10 +26,11 @@ o-form-toolbar .mat-toolbar {
   border-radius: 2px;
 }
 
-.o-app-sidenav-menu-group-level-2 a span {
+o-app-sidenav-menu-group o-app-sidenav-menu-item a span,
+o-app-sidenav-menu-group o-app-sidenav-menu-group a span {
   font-size: 13px;
 }
 
-.o-app-sidenav-menu-item .o-app-sidenav-menu-item a span {
+o-app-sidenav-menu-group o-app-sidenav-menu-group o-app-sidenav-menu-item a span {
   font-size: 12px;
 }
