@@ -9,7 +9,7 @@
     "production": "ng build --base-href /ontimize-web-ngx-quickstart",
     "production-aot-server": "ng build --aot --base-href /ontimizeweb/v8/quickstart/",
     "production-aot-serverpwa": "ng build --aot --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
-    "development-aot-serverpwa": "ng build --aot --base-href / && npm run build-ngsw",
+    "development-aot-serverpwa": "ng build --prod --base-href / && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa",
     "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
