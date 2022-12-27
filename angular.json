@@ -34,7 +34,16 @@
               },
               {
                 "glob": "**/*",
+<<<<<<< HEAD
                 "input": "node_modules/ngx-extended-pdf-viewer/assets",
+=======
+                "input": "node_modules/ontimize-web-ngx-charts/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ontimize-web-ngx-report/assets",
+>>>>>>> 59f1336 (Updated angular.json (#145))
                 "output": "/assets"
               },
               "src/manifest.webmanifest"
