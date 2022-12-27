@@ -24,7 +24,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "node_modules/leaflet/dist/images",
+                "input": "node_modules/ontimize-web-ngx-map/images",
                 "output": "/assets"
               },
               {
