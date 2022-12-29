@@ -3413,6 +3413,18 @@ textarea {
 .o-mat-menu.mat-menu-panel {
   min-height: auto; }
 
+/* CHART FONT */
+o-chart .nvd3 text {
+  font: 400 11px Poppins, "Helvetica Neue", sans-serif;
+  fill: white; }
+
+o-chart .nvd3 .nv-discretebar .nv-groups text,
+o-chart .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: white; }
+
+o-chart .nvd3 .nv-axis path {
+  stroke: white; }
+
 .toolbar-breadcrumb {
   background-color: #212121; }
   .toolbar-breadcrumb a {
@@ -3609,6 +3621,9 @@ textarea:disabled {
 
 .o-table .o-table-menu-button {
   color: rgba(255, 255, 255, 0.7); }
+
+.o-table .mat-table .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+  border-color: rgba(255, 255, 255, 0.18); }
 
 .o-table .mat-table .mat-header-row .mat-header-cell {
   color: white; }
@@ -3906,7 +3921,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   border-radius: 50%; }
 
 .o-form-layout-tabgroup .mat-tab-group .mat-tab-label.mat-tab-label-active .mat-icon:hover {
-  background-color: rgba(20, 100, 165, 0.4); }
+  background-color: rgba(138, 178, 210, 0.4); }
 
 /*background-color: mat-color($mat-primary);*/
 .o-bar-menu {
@@ -4070,6 +4085,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* stylelint-enable */
 .o-filemanager-table .filemanager-breadcrumb .breadcrumb-root {
   color: rgba(138, 178, 210, 0.54); }
+
 .upload-progress-container > div {
   background-color: #303030; }
 
@@ -4126,7 +4142,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .branches-card-branches-amount,
 .employees-card-employees-amount {
-
   color: #8ab2d2; }
 
 .o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
@@ -4149,7 +4164,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: rgba(255, 255, 255, 0.7); }
 
 .mat-sidenav-container-account-home .list-accounts .mat-card {
-
   background-color: rgba(97, 97, 97, 0.2); }
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
   .mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
@@ -4202,12 +4216,10 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .last-movement-div .last-movement {
   color: #8ab2d2; }
 
-
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
 employees-home .employee-item .image-container .mat-divider {
-
   border-top-color: #8ab2d2; }
 
 employees-home .employee-item .employee-data span .square {
@@ -4232,7 +4244,7 @@ employees-detail .employee-type {
 /* stylelint-enable */
 app-about .mat-divider {
   border-top-color: #8ab2d2; }
+
 /*
 * Other app styles
-
 */

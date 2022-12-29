@@ -3413,6 +3413,18 @@ textarea {
 .o-mat-menu.mat-menu-panel {
   min-height: auto; }
 
+/* CHART FONT */
+o-chart .nvd3 text {
+  font: 400 11px Poppins, "Helvetica Neue", sans-serif;
+  fill: white; }
+
+o-chart .nvd3 .nv-discretebar .nv-groups text,
+o-chart .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: white; }
+
+o-chart .nvd3 .nv-axis path {
+  stroke: white; }
+
 .toolbar-breadcrumb {
   background-color: #212121; }
   .toolbar-breadcrumb a {
@@ -3609,6 +3621,9 @@ textarea:disabled {
 
 .o-table .o-table-menu-button {
   color: rgba(255, 255, 255, 0.7); }
+
+.o-table .mat-table .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+  border-color: rgba(255, 255, 255, 0.18); }
 
 .o-table .mat-table .mat-header-row .mat-header-cell {
   color: white; }
