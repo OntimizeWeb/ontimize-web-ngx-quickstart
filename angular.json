@@ -24,7 +24,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "node_modules/leaflet/dist/images",
+                "input": "node_modules/ontimize-web-ngx-map/images",
                 "output": "/assets"
               },
               {
@@ -34,7 +34,12 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/ngx-extended-pdf-viewer/assets",
+                "input": "node_modules/ontimize-web-ngx-charts/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ontimize-web-ngx-report/assets",
                 "output": "/assets"
               },
               "src/manifest.webmanifest"
