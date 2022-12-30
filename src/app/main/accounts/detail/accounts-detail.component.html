@@ -81,7 +81,7 @@
               <o-table fxFlex service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID" detail-form-route="transactions"
                 insert-form-route="transactions/new" edit-form-route="transactions" columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
                 visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS" sort-columns="DATE_" query-on-init="false" query-rows="5"
-                quick-filter="yes" (change)="onTableDataChange($event)" pageable="no">
+                quick-filter="yes" pageable="no">
 
                 <o-table-columns-filter></o-table-columns-filter>
 
