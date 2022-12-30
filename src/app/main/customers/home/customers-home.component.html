@@ -3,7 +3,7 @@
   <div fxFill fxLayout="column" fxLayoutAlign="start">
     <o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
-      row-height="medium" select-all-checkbox="true" pageable="no" virtual-scroll="no">
+      row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
 
       <o-table-button #button attr="button" label="FILL_REPORT" icon="description"></o-table-button>
 
