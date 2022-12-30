@@ -7,11 +7,11 @@ export const environment = {
   apiEndpoint: 'https://try.imatia.com/ontimizeweb/services/qsallcomponents-jee/services/rest',
   production: false,
   versions: {
-    core: '8.8.0',
-    charts: '8.0.1',
+    core: '8.9.0',
+    charts: '8.1.0',
     filemanager: '8.5.5',
     map: '8.0.1',
     theming: '8.4.0',
-    report: '8.0.2'
+    report: '8.1.0'
   }
 };
