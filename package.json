@@ -62,7 +62,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "socket.io": ">=2.4.0",
     "karma-sonarqube-unit-reporter": "0.0.23",
     "ng-packagr": "^5.4.0",
