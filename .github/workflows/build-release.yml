@@ -4,13 +4,13 @@ name: Build Release
 on:
   pull_request:
     types: [closed]
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
     inputs:
       BASELINE:
         description: 'Release branch'
         required: true
-        default: 'main'
+        default: 'master'
 
 env:
   NPM_REGISTRY: https://registry.npmjs.org/
