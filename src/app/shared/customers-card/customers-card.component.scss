@@ -3,10 +3,8 @@
   margin: auto;
   overflow: hidden;
 
-  .customers-card-chart > div > nvd3 {
-    > svg line {
-      display: none;
-    }
+  .customers-card-chart .nvd3 .nv-axis line  {
+    display: none;
 
     .nvd3.nv-multibarHorizontal .nv-groups text {
       font-size: 24px;
