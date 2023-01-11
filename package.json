@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "8.2.0",
+  "version": "8.2.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4800",
@@ -35,7 +35,7 @@
     "@angular/upgrade": "~8.2.14",
     "hammerjs": "^2.0.8",
     "ontimize-web-ngx": "8.9.0",
-    "ontimize-web-ngx-charts": "8.1.0",
+    "ontimize-web-ngx-charts": "8.1.1",
     "ontimize-web-ngx-filemanager": "8.5.5",
     "ontimize-web-ngx-map": "8.0.1",
     "ontimize-web-ngx-report": "8.1.0",
