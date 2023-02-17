@@ -9,7 +9,7 @@
 
   <o-column title="THEME" layout-align="center stretch" class="setting-column" layout-padding>
     <mat-radio-group [value]="currentTheme" (change)="changeTheme($event)" class="theme-radio-group">
-      <mat-radio-button *ngFor="let theme of availableThemes" [value]="theme" disableRipple="true">
+      <mat-radio-button *ngFor="let theme of availableThemes" [value]="theme" disableRipple="true" [matTooltip]="theme.description">
         <div class="theme-option">
           <div fxLayoutAlign="center center" class="theme-option-background" [style.background]="theme.primary">
             <mat-icon color="accent" class="docs-theme-chosen-icon" *ngIf="currentTheme === theme">check_circle</mat-icon>
