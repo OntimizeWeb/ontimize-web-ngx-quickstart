@@ -25,31 +25,43 @@ export class ThemeService {
       accent: '#1464a5',
       href: 'ontimize.css',
       href_dark: 'ontimize-dark.css',
+      description: 'Ontimize',
+      isDefault: true
+    }, {
+      primary: '#1464a5',
+      accent: '#1464a5',
+      href: 'ontimize-implatform.css',
+      href_dark: 'ontimize-implatform-dark.css',
+      description: 'Ontimize with fashion styles',
       isDefault: true
     },
     {
       primary: '#4649A6',
       accent: '#4649A6',
       href: 'o-violet-blues.css',
-      href_dark: 'o-violet-blues-dark.css'
+      href_dark: 'o-violet-blues-dark.css',
+      description: 'Violet blue'
     },
     {
       primary: '#071540',
       accent: '#41bf78',
       href: 'o-oxford-blue-emerald.css',
-      href_dark: 'o-oxford-blue-emerald-dark.css'
+      href_dark: 'o-oxford-blue-emerald-dark.css',
+      description: 'Oxford blue emerald'
     },
     {
       primary: '#d02a38',
       accent: '#363636',
       href: 'o-madder-lake-jet.css',
-      href_dark: 'o-madder-lake-jet-dark.css'
+      href_dark: 'o-madder-lake-jet-dark.css',
+      description: 'Madder lake jet'
     },
     {
       primary: '#0e2f59',
       accent: '#006bdb',
       href: 'o-prussian-celtic-blue.css',
-      href_dark: 'o-prussian-celtic-blue-dark.css'
+      href_dark: 'o-prussian-celtic-blue-dark.css',
+      description: 'Prussian celtic blue'
     }
   ];
   public currentTheme: DocsSiteTheme;
