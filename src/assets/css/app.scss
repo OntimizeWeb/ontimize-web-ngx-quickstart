@@ -12,6 +12,13 @@
 */
 @import 'node_modules/ontimize-web-ngx/theme.scss';
 @include o-material-theme($theme, $lite-typography);
+
+//set the style variable to null so that it does not give an error that the variable does not exist
+$style: null !default;
+@if ($style=='implatform') {
+  @include implatform-fashion-theme-styles($theme, $lite-typography);
+}
+
 @import 'node_modules/ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
 @include o-filemanager-table-theme($theme);
 /*
@@ -35,4 +42,3 @@
 /*
 * Other app styles
 */
-
