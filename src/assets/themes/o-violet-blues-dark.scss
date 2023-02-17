@@ -1,10 +1,7 @@
-@import 'node_modules/@angular/material/theming';
-// Include non-theme styles for core.
-@include mat-core();
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 
 /* Color definitions */
-$mat-custom-primary: (
-  50 : #f4f4fa,
+$mat-custom-primary: (50 : #f4f4fa,
   100 : #e3e4f2,
   200 : #d1d2e9,
   300 : #bfbfe0,
@@ -32,8 +29,7 @@ $mat-custom-primary: (
     A200 : #000000,
     A400 : #000000,
     A700 : #000000,
-  )
-);
+  ));
 
 $mat-custom-accent: $mat-custom-primary;
 // Define a theme.
@@ -41,5 +37,5 @@ $primary: mat-palette($mat-custom-primary);
 $accent: mat-palette($mat-custom-accent);
 
 /* Dark theme */
-$theme: mat-dark-theme($primary, $accent);
+$theme: o-mat-dark-theme($primary, $accent);
 @import '../css/app.scss';

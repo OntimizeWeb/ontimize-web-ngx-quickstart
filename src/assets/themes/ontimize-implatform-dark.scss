@@ -1,8 +1,5 @@
 @import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
 
-// Include non-theme styles for core.
-@include mat-core();
-
 /* Color definitions */
 $mat-custom-primary: (50 : #e3ecf4,
   100 : #b9d1e4,

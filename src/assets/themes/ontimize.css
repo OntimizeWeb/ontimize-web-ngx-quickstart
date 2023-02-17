@@ -608,7 +608,7 @@ textarea.cdk-textarea-autosize-measuring {
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
 /*
@@ -637,8 +637,15 @@ textarea.cdk-textarea-autosize-measuring {
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*Application background-color*/
 .report-on-demand-sidenav .mat-expansion-panel {
   background-color: #eceff1; }
+
+.title-sidenav-content {
+  background-color: #ffffff; }
 
 [layout-padding-vertical] {
   padding: 4px 0; }
@@ -793,6 +800,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 .mat-menu-panel.o-search-input-menu .mat-checkbox {
   padding: 2px 0; }
 
+/*background levels */
 .o-table-quickfilter-menu .mat-checkbox {
   font-size: 14px; }
   .o-table-quickfilter-menu .mat-checkbox .mat-checkbox-inner-container {
@@ -3139,15 +3147,15 @@ textarea {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   background-color: transparent;
   opacity: 1.0; }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   border-radius: 0;
-  background-color: transparent; }
+  background-color: #c7c7c7; }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
@@ -3433,8 +3441,7 @@ o-data-toolbar.o-table-toolbar .buttons button {
   .o-button button.mat-stroked-button:not([disabled]).mat-accent:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-accent .mat-button-focus-overlay {
     color: #0b488a;
-    background-color: #b9d1e4;
-    border-color: transparent; }
+    background-color: #b9d1e4; }
 
 .o-form .o-form-toolbar button.mat-stroked-button,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button {
