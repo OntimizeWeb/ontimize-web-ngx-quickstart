@@ -32,8 +32,7 @@ export class ThemeService {
       accent: '#1464a5',
       href: 'ontimize-implatform.css',
       href_dark: 'ontimize-implatform-dark.css',
-      description: 'Ontimize with fashion styles',
-      isDefault: true
+      description: 'Ontimize with fashion styles'
     },
     {
       primary: '#4649A6',
