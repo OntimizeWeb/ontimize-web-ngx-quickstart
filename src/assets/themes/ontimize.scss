@@ -40,7 +40,7 @@ $accent: mat-palette($mat-custom-accent);
 $background-color: #eceff1;
 
 /* Light theme */
-$theme: mat-light-theme($primary, $accent);
+$theme: o-mat-light-theme($primary, $accent);
 
 // Insert custom background color
 $background: map-get($theme, background);
