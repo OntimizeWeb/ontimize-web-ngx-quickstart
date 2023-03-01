@@ -135,6 +135,28 @@
 [layout-margin-bottom] {
   margin-bottom: 4px; }
 
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+  color: #303030;
+  background-color: #b7c1cd;
+  border-color: transparent; }
+  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
+  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
+    color: #0e2f59;
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.12); }
+
+.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
+  color: #006bdb;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12); }
+  .mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
+  .mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
+    color: #303030;
+    background-color: #b3d3f4;
+    border-color: transparent; }
+
 /* CONTAINER */
 .rounded-panel,
 .standalone-chart-container,
