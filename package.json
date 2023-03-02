@@ -3,7 +3,7 @@
   "version": "8.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build:themes && ng serve --port 4800",
+    "start": "ng serve --port 4800",
     "lint": "ng lint",
     "build": "ng build",
     "production": "ng build --base-href /ontimize-web-ngx-quickstart",
