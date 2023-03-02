@@ -65,7 +65,8 @@
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+ U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
 /* Theme for the ripple elements.*/
@@ -3649,8 +3650,8 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .branches-card-branches-amount,
 .employees-card-employees-amount,
-.o-card-menu-item > .nv-x .nv-axis .nvd3-svg,
-.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+.o-card-menu-item .nvd3.nv-multibarHorizontal .nv-groups text,
+.o-card-menu-item .nv-x .nv-axis .nvd3-svg {
   font-size: 24px;
   font-weight: 600; }
 
@@ -3669,7 +3670,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .employees-card-employees-amount {
   color: #838aa0; }
 
-.o-card-menu-item div > nvd3 .nvd3.nv-multibarHorizontal .nv-groups text {
+.o-card-menu-item div .nvd3.nv-multibarHorizontal .nv-groups text {
   fill: #838aa0;
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 

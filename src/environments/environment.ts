@@ -4,7 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  apiEndpoint: 'http://45.84.208.122:9092/qsallcomponents-jee/services/rest',
+  apiEndpoint: 'https://try.imatia.com/ontimizeweb/services/qsallcomponents-jee/services/rest',
   production: false,
   versions: {
     core: '8.11.0',
