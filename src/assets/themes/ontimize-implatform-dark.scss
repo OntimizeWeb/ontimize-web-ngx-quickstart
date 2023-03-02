@@ -1,4 +1,5 @@
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
+
 /* Color definitions */
 $mat-custom-primary: (50 : #f1f6fa,
   100 : #dce8f2,
@@ -34,6 +35,10 @@ $mat-custom-primary: (50 : #f1f6fa,
 $primary: mat-palette($mat-custom-primary);
 $accent: $primary;
 
-/* Dark theme */
-$theme: o-mat-dark-theme($primary, $accent);
+
+/* Light theme */
+$theme: fashion-mat-dark-theme($primary, $accent);
+
+/* variable used to apply implatform styling in app.scss */
+$style:'implatform';
 @import '../css/app.scss';

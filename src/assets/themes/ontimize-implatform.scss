@@ -1,4 +1,4 @@
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
 
 /* Color definitions */
 $mat-custom-primary: (50 : #e3ecf4,
@@ -37,14 +37,10 @@ $mat-custom-accent: (50 : #e3ecf4,
 $primary: mat-palette($mat-custom-primary);
 $accent: mat-palette($mat-custom-accent);
 
-$background-color: #eceff1;
-
 /* Light theme */
-$theme: o-mat-light-theme($primary, $accent);
+$theme: fashion-mat-light-theme($primary, $accent);
 
-// Insert custom background color
-$background: map-get($theme, background);
-$background: map_merge($background, (background: $background-color));
+/* variable used to apply implatform styling in app.scss */
+$style:'implatform';
 
-$theme: map_merge($theme, (background: $background));
 @import '../css/app.scss';
