@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import {
   APP_CONFIG,
@@ -24,7 +25,8 @@ export const customProviders: any = [
   StyleManager,
   ThemeService,
   { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } },
-  { provide: O_INPUTS_OPTIONS, useValue: { iconColor: 'accent' } }
+  { provide: O_INPUTS_OPTIONS, useValue: { iconColor: 'accent' } },
+  { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
 ];
 
 

@@ -1,566 +1,28 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
-.mat-badge-content {
-  font-weight: 600;
-  font-size: 12px;
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-badge-small .mat-badge-content {
-  font-size: 9px; }
-
-.mat-badge-large .mat-badge-content {
-  font-size: 24px; }
-
-.mat-h1, .mat-headline, .mat-typography h1 {
-  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 16px; }
-
-.mat-h2, .mat-title, .mat-typography h2 {
-  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 16px; }
-
-.mat-h3, .mat-subheading-2, .mat-typography h3 {
-  font: 400 16px/28px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 16px; }
-
-.mat-h4, .mat-subheading-1, .mat-typography h4 {
-  font: 400 15px/24px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 16px; }
-
-.mat-h5, .mat-typography h5 {
-  font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 12px; }
-
-.mat-h6, .mat-typography h6 {
-  font: 400 calc(14px * 0.67)/20px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 12px; }
-
-.mat-body-strong, .mat-body-2 {
-  font: 500 14px/24px Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-body, .mat-body-1, .mat-typography {
-  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif; }
-  .mat-body p, .mat-body-1 p, .mat-typography p {
-    margin: 0 0 12px; }
-
-.mat-small, .mat-caption {
-  font: 400 12px/20px Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-display-4, .mat-typography .mat-display-4 {
-  font: 300 112px/112px Roboto, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.05em;
-  margin: 0 0 56px; }
-
-.mat-display-3, .mat-typography .mat-display-3 {
-  font: 400 56px/56px Roboto, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.02em;
-  margin: 0 0 64px; }
-
-.mat-display-2, .mat-typography .mat-display-2 {
-  font: 400 45px/48px Roboto, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.005em;
-  margin: 0 0 64px; }
-
-.mat-display-1, .mat-typography .mat-display-1 {
-  font: 400 34px/40px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 0 64px; }
-
-.mat-bottom-sheet-container {
-  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button,
-.mat-flat-button, .mat-fab, .mat-mini-fab {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 500; }
-
-.mat-button-toggle {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-card {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-card-title {
-  font-size: 24px;
-  font-weight: 500; }
-
-.mat-card-header .mat-card-title {
-  font-size: 20px; }
-
-.mat-card-subtitle,
-.mat-card-content {
-  font-size: 14px; }
-
-.mat-checkbox {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-checkbox-layout .mat-checkbox-label {
-  line-height: 24px; }
-
-.mat-chip {
-  font-size: 14px;
-  font-weight: 500; }
-  .mat-chip .mat-chip-trailing-icon.mat-icon,
-  .mat-chip .mat-chip-remove.mat-icon {
-    font-size: 18px; }
-
-.mat-table {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-header-cell {
-  font-size: 12px;
-  font-weight: 500; }
-
-.mat-cell, .mat-footer-cell {
-  font-size: 14px; }
-
-.mat-calendar {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-calendar-body {
-  font-size: 13px; }
-
-.mat-calendar-body-label,
-.mat-calendar-period-button {
-  font-size: 14px;
-  font-weight: 500; }
-
-.mat-calendar-table-header th {
-  font-size: 11px;
-  font-weight: 400; }
-
-.mat-dialog-title {
-  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-expansion-panel-header {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 15px;
-  font-weight: 400; }
-
-.mat-expansion-panel-content {
-  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-form-field {
-  font-size: inherit;
-  font-weight: 400;
-  line-height: 1.125;
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-form-field-wrapper {
-  padding-bottom: 1.34375em; }
-
-.mat-form-field-prefix .mat-icon,
-.mat-form-field-suffix .mat-icon {
-  font-size: 150%;
-  line-height: 1.125; }
-
-.mat-form-field-prefix .mat-icon-button,
-.mat-form-field-suffix .mat-icon-button {
-  height: 1.5em;
-  width: 1.5em; }
-  .mat-form-field-prefix .mat-icon-button .mat-icon,
-  .mat-form-field-suffix .mat-icon-button .mat-icon {
-    height: 1.125em;
-    line-height: 1.125; }
-
-.mat-form-field-infix {
-  padding: 0.5em 0;
-  border-top: 0.84375em solid transparent; }
-
-.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
-.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.34375em) scale(0.75);
-  width: 133.33333%; }
-
-.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-.mat-form-field-label {
-  transform: translateY(-1.34374em) scale(0.75);
-  width: 133.33334%; }
-
-.mat-form-field-label-wrapper {
-  top: -0.84375em;
-  padding-top: 0.84375em; }
-
-.mat-form-field-label {
-  top: 1.34375em; }
-
-.mat-form-field-underline {
-  bottom: 1.34375em; }
-
-.mat-form-field-subscript-wrapper {
-  font-size: 75%;
-  margin-top: 0.66667em;
-  top: calc(100% - 1.79167em); }
-
-.mat-form-field-appearance-legacy .mat-form-field-wrapper {
-  padding-bottom: 1.25em; }
-
-.mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding: 0.4375em 0; }
-
-.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
-.mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
-  -ms-transform: translateY(-1.28125em) scale(0.75);
-  width: 133.33333%; }
-
-.mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
-.mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00101px);
-  -ms-transform: translateY(-1.28124em) scale(0.75);
-  width: 133.33334%; }
-
-.mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-.mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00102px);
-  -ms-transform: translateY(-1.28123em) scale(0.75);
-  width: 133.33335%; }
-
-.mat-form-field-appearance-legacy .mat-form-field-label {
-  top: 1.28125em; }
-
-.mat-form-field-appearance-legacy .mat-form-field-underline {
-  bottom: 1.25em; }
-
-.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
-  margin-top: 0.54167em;
-  top: calc(100% - 1.66667em); }
-
-@media print {
-  .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
-  .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-    transform: translateY(-1.28122em) scale(0.75); }
-  .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
-.mat-form-field-label {
-    transform: translateY(-1.28121em) scale(0.75); }
-  .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-.mat-form-field-label {
-    transform: translateY(-1.2812em) scale(0.75); } }
-
-.mat-form-field-appearance-fill .mat-form-field-infix {
-  padding: 0.25em 0 0.75em 0; }
-
-.mat-form-field-appearance-fill .mat-form-field-label {
-  top: 1.09375em;
-  margin-top: -0.5em; }
-
-.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
-.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.59375em) scale(0.75);
-  width: 133.33333%; }
-
-.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-.mat-form-field-label {
-  transform: translateY(-0.59374em) scale(0.75);
-  width: 133.33334%; }
-
-.mat-form-field-appearance-outline .mat-form-field-infix {
-  padding: 1em 0 1em 0; }
-
-.mat-form-field-appearance-outline .mat-form-field-label {
-  top: 1.84375em;
-  margin-top: -0.25em; }
-
-.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
-.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.59375em) scale(0.75);
-  width: 133.33333%; }
-
-.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-.mat-form-field-label {
-  transform: translateY(-1.59374em) scale(0.75);
-  width: 133.33334%; }
-
-.mat-grid-tile-header,
-.mat-grid-tile-footer {
-  font-size: 14px; }
-  .mat-grid-tile-header .mat-line,
-  .mat-grid-tile-footer .mat-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    box-sizing: border-box; }
-    .mat-grid-tile-header .mat-line:nth-child(n+2),
-    .mat-grid-tile-footer .mat-line:nth-child(n+2) {
-      font-size: 12px; }
-
-input.mat-input-element {
-  margin-top: -0.0625em; }
-
-.mat-menu-item {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 400; }
-
-.mat-paginator,
-.mat-paginator-page-size .mat-select-trigger {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 12px; }
-
-.mat-radio-button {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-select {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-select-trigger {
-  height: 1.125em; }
-
-.mat-slide-toggle-content {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-slider-thumb-label-text {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 12px;
-  font-weight: 500; }
-
-.mat-stepper-vertical, .mat-stepper-horizontal {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-step-label {
-  font-size: 14px;
-  font-weight: 400; }
-
-.mat-step-sub-label-error {
-  font-weight: normal; }
-
-.mat-step-label-error {
-  font-size: 14px; }
-
-.mat-step-label-selected {
-  font-size: 14px;
-  font-weight: 500; }
-
-.mat-tab-group {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-tab-label, .mat-tab-link {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 500; }
-
-.mat-toolbar,
-.mat-toolbar h1,
-.mat-toolbar h2,
-.mat-toolbar h3,
-.mat-toolbar h4,
-.mat-toolbar h5,
-.mat-toolbar h6 {
-  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
-  margin: 0; }
-
-.mat-tooltip {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px; }
-
-.mat-tooltip-handset {
-  font-size: 14px;
-  padding-top: 8px;
-  padding-bottom: 8px; }
-
-.mat-list-item {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-list-option {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-list-base .mat-list-item {
-  font-size: 16px; }
-  .mat-list-base .mat-list-item .mat-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    box-sizing: border-box; }
-    .mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 14px; }
-
-.mat-list-base .mat-list-option {
-  font-size: 16px; }
-  .mat-list-base .mat-list-option .mat-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    box-sizing: border-box; }
-    .mat-list-base .mat-list-option .mat-line:nth-child(n+2) {
-      font-size: 14px; }
-
-.mat-list-base .mat-subheader {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 500; }
-
-.mat-list-base[dense] .mat-list-item {
-  font-size: 12px; }
-  .mat-list-base[dense] .mat-list-item .mat-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    box-sizing: border-box; }
-    .mat-list-base[dense] .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 12px; }
-
-.mat-list-base[dense] .mat-list-option {
-  font-size: 12px; }
-  .mat-list-base[dense] .mat-list-option .mat-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    box-sizing: border-box; }
-    .mat-list-base[dense] .mat-list-option .mat-line:nth-child(n+2) {
-      font-size: 12px; }
-
-.mat-list-base[dense] .mat-subheader {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 12px;
-  font-weight: 500; }
-
-.mat-option {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px; }
-
-.mat-optgroup-label {
-  font: 500 14px/24px Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-simple-snackbar {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px; }
-
-.mat-simple-snackbar-action {
-  line-height: 1;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500; }
-
-.mat-tree {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-tree-node,
-.mat-nested-tree-node {
-  font-weight: 400;
-  font-size: 14px; }
-
-.mat-ripple {
-  overflow: hidden;
-  position: relative; }
-
-.mat-ripple.mat-ripple-unbounded {
-  overflow: visible; }
-
-.mat-ripple-element {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  transition: opacity, transform 0ms cubic-bezier(0, 0, 0.2, 1);
-  transform: scale(0); }
-  @media (-ms-high-contrast: active) {
-    .mat-ripple-element {
-      display: none; } }
-
-.cdk-visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  outline: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none; }
-
-.cdk-overlay-container, .cdk-global-overlay-wrapper {
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%; }
-
-.cdk-overlay-container {
-  position: fixed;
-  z-index: 1000; }
-  .cdk-overlay-container:empty {
-    display: none; }
-
-.cdk-global-overlay-wrapper {
-  display: flex;
-  position: absolute;
-  z-index: 1000; }
-
-.cdk-overlay-pane {
-  position: absolute;
-  pointer-events: auto;
-  box-sizing: border-box;
-  z-index: 1000;
-  display: flex;
-  max-width: 100%;
-  max-height: 100%; }
-
-.cdk-overlay-backdrop {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  pointer-events: auto;
-  -webkit-tap-highlight-color: transparent;
-  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-  opacity: 0; }
-  .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-    opacity: 1; }
-    @media screen and (-ms-high-contrast: active) {
-      .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-        opacity: 0.6; } }
-
-.cdk-overlay-dark-backdrop {
-  background: rgba(0, 0, 0, 0.32); }
-
-.cdk-overlay-transparent-backdrop, .cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
-  opacity: 0; }
-
-.cdk-overlay-connected-position-bounding-box {
-  position: absolute;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  min-width: 1px;
-  min-height: 1px; }
-
-.cdk-global-scrollblock {
-  position: fixed;
-  width: 100%;
-  overflow-y: scroll; }
-
-@keyframes cdk-text-field-autofill-start {
-  /*!*/ }
-
-@keyframes cdk-text-field-autofill-end {
-  /*!*/ }
-
-.cdk-text-field-autofill-monitored:-webkit-autofill {
-  animation-name: cdk-text-field-autofill-start; }
-
-.cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
-  animation-name: cdk-text-field-autofill-end; }
-
-textarea.cdk-textarea-autosize {
-  resize: none; }
-
-textarea.cdk-textarea-autosize-measuring {
-  height: auto !important;
-  overflow: hidden !important;
-  padding: 2px 0 !important;
-  box-sizing: content-box !important; }
-
+/*
+*
+*  Responsive attributes
+*
+*  References:
+*  1) https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties#flex
+*  2) https://css-tricks.com/almanac/properties/f/flex/
+*  3) https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*  4) https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
+*  5) http://godban.com.ua/projects/flexgrid
+*
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*Application background-color*/
 /* Color definitions */
 /* Light theme */
 /* Theme for the ripple elements.*/
@@ -579,11 +41,6 @@ textarea.cdk-textarea-autosize-measuring {
 *
 */
 /*it's necessary redefined the font size of the checkbox*/
-/*
-  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
-   set line-height to normal as user-agent set in the inputs
-   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
-*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -608,14 +65,9 @@ textarea.cdk-textarea-autosize-measuring {
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
-/*
-  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
-   set line-height to normal as user-agent set in the inputs
-   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
-*/
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -682,6 +134,28 @@ textarea.cdk-textarea-autosize-measuring {
 
 [layout-margin-bottom] {
   margin-bottom: 4px; }
+
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+  color: #303030;
+  background-color: #b9d1e4;
+  border-color: transparent; }
+  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
+  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
+    color: #1464a5;
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.12); }
+
+.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
+  color: #1464a5;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12); }
+  .mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
+  .mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
+    color: #303030;
+    background-color: #b9d1e4;
+    border-color: transparent; }
 
 /* CONTAINER */
 .rounded-panel,
@@ -801,6 +275,31 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   padding: 2px 0; }
 
 /*background levels */
+.bg-level-0,
+o-column.o-column.bg-level-0,
+o-row.o-row.bg-level-0 {
+  background-color: #eaeaea; }
+
+.bg-level-04,
+o-column.o-column.bg-level-04,
+o-row.o-row.bg-level-04 {
+  background-color: #f2f2f2; }
+
+.bg-level-06,
+o-column.o-column.bg-level-06,
+o-row.o-row.bg-level-06 {
+  background-color: #f6f6f6; }
+
+.bg-level-08,
+o-column.o-column.bg-level-08,
+o-row.o-row.bg-level-08 {
+  background-color: #fafafa; }
+
+.bg-level-1,
+o-column.o-column.bg-level-1,
+o-row.o-row.bg-level-1 {
+  background-color: white; }
+
 .o-table-quickfilter-menu .mat-checkbox {
   font-size: 14px; }
   .o-table-quickfilter-menu .mat-checkbox .mat-checkbox-inner-container {
@@ -874,42 +373,36 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon,
   .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon {
     font-size: 140%;
-    height: 1em; }
+    height: 1.125em; }
   .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button,
   .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button {
     height: 1.4em;
     width: 1.4em; }
     .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button .mat-icon,
     .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button .mat-icon {
-      height: 1em;
-      line-height: 1; }
+      height: 1.125em;
+      line-height: 1.125; }
   .mat-form-field.mat-form-field .mat-form-field-infix {
     padding: 0.3em 0;
-    border-top: 0.75em solid transparent; }
+    border-top: 0.84375em solid transparent; }
   .mat-form-field.mat-form-field .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-    transform: translateY(-1.05em) scale(0.75);
+    transform: translateY(-1.14375em) scale(0.75);
     width: 133.33333%; }
   .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-    transform: translateY(-1.04999em) scale(0.75);
+    transform: translateY(-1.14374em) scale(0.75);
     width: 133.33334%; }
   .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
-    top: -0.75em;
-    padding-top: 0.75em; }
+    top: -0.84375em;
+    padding-top: 0.84375em; }
   .mat-form-field.mat-form-field .mat-form-field-label {
-    top: 1.05em; }
+    top: 1.14375em; }
   .mat-form-field.mat-form-field .mat-form-field-underline {
     bottom: 0em; }
   .mat-form-field.mat-form-field .mat-form-field-subscript-wrapper {
     font-size: 75%;
     margin-top: 0.4em;
     top: calc(100% - 0em); }
-
-.o-combo mat-select {
-  line-height: normal; }
-
-.o-phone-input mat-select {
-  line-height: normal; }
 
 .o-checkbox .mat-checkbox {
   font-size: 14px; }
@@ -927,16 +420,16 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   padding-bottom: 0.105em; }
 
 .mat-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding: 0.35em 0; }
+  padding: 0.2875em 0; }
 
 .mat-form-field.mat-form-field-appearance-legacy .mat-form-field-label {
-  top: 1.25em; }
+  top: 1.3em; }
 
 .mat-form-field.mat-form-field-appearance-legacy .mat-form-field-underline {
   bottom: 0.105em; }
 
 .mat-form-field.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
-  margin-top: 0.4em;
+  margin-top: 0.275em;
   top: calc(100% - 0.14em); }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
@@ -946,16 +439,16 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   padding: 0.25em 0 0.3em !important; }
 
 .mat-form-field-appearance-fill .mat-form-field-label {
-  top: 1em !important;
+  top: 1.09375em !important;
   margin-top: -0.5em !important; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.5em) scale(0.75) !important;
+  transform: translateY(-0.59375em) scale(0.75) !important;
   width: 133.33333%; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.5em) scale(0.75) !important;
+  transform: translateY(-0.59375em) scale(0.75) !important;
   width: 133.33333%; }
 
 .mat-form-field.mat-form-field-appearance-outline .mat-form-field-wrapper {
@@ -965,16 +458,16 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   padding: 0.3em 0; }
 
 .mat-form-field.mat-form-field-appearance-outline .mat-form-field-label {
-  top: 1.05em;
+  top: 1.14375em;
   margin-top: -0.25em; }
 
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.8em) scale(0.75);
+  transform: translateY(-0.89375em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.79999em) scale(0.75);
+  transform: translateY(-0.89374em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-standard .mat-form-field-flex {
@@ -1349,15 +842,15 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-form-field {
-  font: 400 14px/1 Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 14px/1.125 Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-form-field-wrapper {
-  padding-bottom: 1.25em; }
+  padding-bottom: 1.34375em; }
 
 .mat-form-field-prefix .mat-icon,
 .mat-form-field-suffix .mat-icon {
   font-size: 150%;
-  line-height: 1; }
+  line-height: 1.125; }
 
 .mat-form-field-prefix .mat-icon-button,
 .mat-form-field-suffix .mat-icon-button {
@@ -1365,115 +858,115 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   width: 1.5em; }
   .mat-form-field-prefix .mat-icon-button .mat-icon,
   .mat-form-field-suffix .mat-icon-button .mat-icon {
-    height: 1em;
-    line-height: 1; }
+    height: 1.125em;
+    line-height: 1.125; }
 
 .mat-form-field-infix {
   padding: 0.5em 0;
-  border-top: 0.75em solid transparent; }
+  border-top: 0.84375em solid transparent; }
 
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.25em) scale(0.75);
+  transform: translateY(-1.34375em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.24999em) scale(0.75);
+  transform: translateY(-1.34374em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-label-wrapper {
-  top: -0.75em;
-  padding-top: 0.75em; }
+  top: -0.84375em;
+  padding-top: 0.84375em; }
 
 .mat-form-field-label {
-  top: 1.25em; }
+  top: 1.34375em; }
 
 .mat-form-field-underline {
-  bottom: 1.25em; }
+  bottom: 1.34375em; }
 
 .mat-form-field-subscript-wrapper {
   font-size: 75%;
   margin-top: 0.66667em;
-  top: calc(100% - 1.66667em); }
+  top: calc(100% - 1.79167em); }
 
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding: 0.5em 0; }
+  padding: 0.4375em 0; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.001px);
-  -ms-transform: translateY(-1.25em) scale(0.75);
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+  -ms-transform: translateY(-1.28125em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.00101px);
-  -ms-transform: translateY(-1.24999em) scale(0.75);
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00101px);
+  -ms-transform: translateY(-1.28124em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.00102px);
-  -ms-transform: translateY(-1.24998em) scale(0.75);
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00102px);
+  -ms-transform: translateY(-1.28123em) scale(0.75);
   width: 133.33335%; }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  top: 1.25em; }
+  top: 1.28125em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   bottom: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
-  margin-top: 0.66667em;
+  margin-top: 0.54167em;
   top: calc(100% - 1.66667em); }
 
 @media print {
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-    transform: translateY(-1.24997em) scale(0.75); }
+    transform: translateY(-1.28122em) scale(0.75); }
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
-    transform: translateY(-1.24996em) scale(0.75); }
+    transform: translateY(-1.28121em) scale(0.75); }
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-    transform: translateY(-1.24995em) scale(0.75); } }
+    transform: translateY(-1.2812em) scale(0.75); } }
 
 .mat-form-field-appearance-fill .mat-form-field-infix {
   padding: 0.25em 0 0.75em 0; }
 
 .mat-form-field-appearance-fill .mat-form-field-label {
-  top: 1em;
+  top: 1.09375em;
   margin-top: -0.5em; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.5em) scale(0.75);
+  transform: translateY(-0.59375em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-0.49999em) scale(0.75);
+  transform: translateY(-0.59374em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 1em 0 1em 0; }
 
 .mat-form-field-appearance-outline .mat-form-field-label {
-  top: 1.75em;
+  top: 1.84375em;
   margin-top: -0.25em; }
 
 .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.5em) scale(0.75);
+  transform: translateY(-1.59375em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.49999em) scale(0.75);
+  transform: translateY(-1.59374em) scale(0.75);
   width: 133.33334%; }
 
 .mat-grid-tile-header,
@@ -1491,7 +984,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
       font-size: 11px; }
 
 input.mat-input-element {
-  margin-top: 0em; }
+  margin-top: -0.0625em; }
 
 .mat-menu-item {
   font-family: Poppins, "Helvetica Neue", sans-serif;
@@ -1510,7 +1003,7 @@ input.mat-input-element {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-select-trigger {
-  height: 1em; }
+  height: 1.125em; }
 
 .mat-slide-toggle-content {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
@@ -3217,19 +2710,31 @@ textarea {
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-content {
   font-size: 12px; }
   .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
+  .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense],
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
-  .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] {
+  .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-list[dense],
+  .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
+  .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] {
     outline: none; }
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > *,
+    .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .empty-filter-list,
+    .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-list-item-content > *,
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > *,
+    .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .empty-filter-list,
+    .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-list-item-content > *,
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
-    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > * {
+    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > *,
+    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .empty-filter-list,
+    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-list-item-content > * {
       font-size: 12px; }
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
+    .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
-    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2) {
+    .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-line:nth-child(n+2),
+    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
+    .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-line:nth-child(n+2) {
       font-size: 11px; }
 
 /*global styles about drag/drop in dialogs table*/
@@ -3286,136 +2791,71 @@ o-data-toolbar.o-table-toolbar .buttons button {
     margin-right: 0; }
 
 /*BUTTONS HOVER*/
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary,
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary,
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-primary,
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-primary,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary {
   color: #0b488a;
   background-color: #b9d1e4;
   border-color: transparent; }
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary:hover,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary:hover,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary:hover,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-primary:hover,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-primary:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
     color: #1464a5;
     background-color: #ffffff;
     border-color: rgba(0, 0, 0, 0.12); }
 
-.mat-dialog-actions button:not([disabled]).mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.mat-dialog-actions button:not([disabled]).mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent,
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-default,
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base,
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent,
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-default,
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-default,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent {
   color: #1464a5;
   background-color: #ffffff; }
   .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base:hover,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-default:hover,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base:hover,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-default:hover,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-default:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay {
     color: #0b488a;
     background-color: #b9d1e4;
     border-color: transparent; }
