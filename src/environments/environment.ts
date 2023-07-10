@@ -11,7 +11,7 @@ export const environment = {
     charts: '8.2.0',
     filemanager: '8.5.6',
     map: '8.0.1',
-    theming: '8.5.0',
+    theming: '8.5.2',
     report: '8.1.1'
   }
 };
