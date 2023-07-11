@@ -379,8 +379,6 @@ o-row.o-row.bg-level-1 {
   .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
     top: -0.84375em;
     padding-top: 0.84375em; }
-  .mat-form-field.mat-form-field .mat-form-field-label {
-    top: 1.14375em; }
   .mat-form-field.mat-form-field .mat-form-field-underline {
     bottom: 0em; }
   .mat-form-field.mat-form-field .mat-form-field-subscript-wrapper {
@@ -2780,8 +2778,8 @@ o-data-toolbar.o-table-toolbar .buttons button {
 
 /*BUTTONS HOVER*/
 .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
+.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-primary,
+.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.o-button-primary,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary,
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary,
@@ -2794,10 +2792,10 @@ o-data-toolbar.o-table-toolbar .buttons button {
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-primary:hover,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.o-button-primary:hover,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.o-button-primary .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary:hover,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary:hover,
@@ -2815,8 +2813,8 @@ o-data-toolbar.o-table-toolbar .buttons button {
     border-color: rgba(255, 255, 255, 0.12); }
 
 .mat-dialog-actions button:not([disabled]).mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent,
+.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base,
+.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-accent,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent,
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base,
@@ -2828,10 +2826,10 @@ o-data-toolbar.o-table-toolbar .buttons button {
   .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base:hover,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-accent:hover,
+  .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base:hover,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent:hover,
