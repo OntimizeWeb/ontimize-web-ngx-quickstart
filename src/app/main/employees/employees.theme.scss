@@ -1,0 +1,44 @@
+@import 'node_modules/@angular/material/theming';
+
+@mixin employees-theme($theme) {
+  $accent: map-get($theme, accent);
+  $emp-icon-color: #b8b8b8;
+  $foreground: map-get($theme, foreground);
+  $border-color: mat-color($foreground, divider);
+
+  employees-home {
+    .employee-item {
+      .image-container .mat-divider {
+        border-top-color: mat-color($accent);
+      }
+
+      .employee-data span .square {
+        background-color: mat-color($accent);
+      }
+    }
+
+    .collapsible {
+      .filter_style {
+        border-color: mat-color($accent);
+      }
+    .o-container .o-container-title.mat-expansion-panel-header-title,
+      .o-container .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title{
+        border-color: $border-color;
+      }
+    }
+  }
+
+  employees-detail {
+    .mat-divider {
+      border-top-color: mat-color($accent);
+    }
+
+    .employee-data span .mat-icon,
+    .employee-type {
+      color: $emp-icon-color;
+    }
+  }
+
+
+
+}

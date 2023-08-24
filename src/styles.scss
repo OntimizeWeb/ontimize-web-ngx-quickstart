@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/@angular/material/theming";
+
+
+
+/* Application styles */
+o-breadcrumb.o-breadcrumb {
+  padding-bottom: 0;
+
+  .mat-toolbar {
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.ontimize-table.o-table .expandable-container,
+.rounded-panel,
+.standalone-chart-container,
+.standalone-form-container .o-form-content-wrapper,
+o-form-toolbar .mat-toolbar {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label {
+  border-radius: 2px;
+}

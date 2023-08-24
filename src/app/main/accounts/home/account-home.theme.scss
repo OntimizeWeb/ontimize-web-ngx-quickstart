@@ -1,0 +1,40 @@
+@import 'node_modules/@angular/material/theming';
+
+@mixin account-home-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+
+  .filter-border {
+    border-color: mat-color($accent);
+  }
+
+  .mat-sidenav-container-account-home {
+
+    .accounts-filters {
+      border-color: mat-color($accent);
+    }
+
+    .list-accounts {
+
+      span {
+        color: mat-color($foreground, secondary-text);
+      }
+
+      label {
+        color: mat-color($foreground, primary-text);
+      }
+
+      .mat-card {
+        @if $is-dark == true {
+          background-color: change-color(mat-color($mat-grey, 700), $alpha: 0.2);
+        }
+        .info-account.border-bottom,
+        .info-account.border-right {
+          border-color: mat-color($accent);
+        }
+      }
+    }
+  }
+}

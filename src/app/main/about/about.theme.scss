@@ -1,0 +1,11 @@
+@import 'node_modules/@angular/material/theming';
+@mixin about-theme($theme) {
+  $accent: map-get($theme, accent);
+  $emp-icon-color: #b8b8b8;
+
+  app-about {
+    .mat-divider {
+      border-top-color: mat-color($accent);
+    }
+  }
+}

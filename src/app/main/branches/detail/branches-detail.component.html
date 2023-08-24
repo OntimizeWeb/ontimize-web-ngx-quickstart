@@ -1,0 +1,55 @@
+<o-form editable-detail="true" show-header="yes" header-actions="R;D" service="branches" entity="branch" keys="OFFICEID" #oForm
+  columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT"
+  show-header-navigation="yes" layout-direction="column" (onDataLoaded)="onFormDataLoaded($event)">
+
+  <div o-form-toolbar-buttons>
+    <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
+      attr="fillreport">
+      <mat-icon>description</mat-icon>
+      <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+    </button>
+  </div>
+
+  <o-column>
+    <div fxLayout="row wrap" fxLayoutGap="14px" fxLayoutAlign="space-between">
+      <o-column title="BRANCH_INFO" icon="info" fxFlex="55" fxFlex.md="100" class="vertical-margin-10">
+        <div fxLayout="row wrap" fxLayoutGap="14px">
+          <o-text-input #officeId attr="OFFICEID" fxFlex="20" class="form-field"></o-text-input>
+          <o-text-input attr="NAME" fxFlex class="form-field"></o-text-input>
+        </div>
+        <o-text-input attr="ADDRESS" class="form-field"></o-text-input>
+        <div fxLayout="row wrap" fxLayoutGap="14px">
+          <o-text-input attr="PHONE" fxFlex="35" class="form-field"></o-text-input>
+          <o-date-input attr="STARTDATE" label="OPENING_DATE" fxFlex="35" class="form-field"></o-date-input>
+        </div>
+
+      </o-column>
+      <div fxFlex="40" fxFlex.md="100" *ngIf="hasGPSPositition()">
+        <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
+          layer-panel-visible="no" base-layer-ids="CartoDB.Positron;Esri;OpenStreetMap.HOT;OpenStreetMap.BlackAndWhite">
+          <o-map-layer layer-type="marker" layer-id="office_marker" [layer-center]="getPositionGPS()" [layer-menu-label]="name"></o-map-layer>
+        </o-map>
+      </div>
+    </div>
+  </o-column>
+  <mat-tab-group class="vertical-padding-8">
+
+    <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+      <div layout-padding>
+        <o-table #accountsTable service="customers" entity="customerAccount" title="ACCOUNTS"
+          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE"
+          visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE" sort-columns="STARTDATE"
+          keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="10" quick-filter="yes" edit-button-in-row="no" pageable="no"
+          delete-button="no" insert-button="no" fixed-header="true">
+
+          <o-table-column attr="STARTDATE" title="OPENING_DATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+            decimal-separator=",">
+          </o-table-column>
+        </o-table>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</o-form>

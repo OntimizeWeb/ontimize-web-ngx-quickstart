@@ -1,0 +1,42 @@
+.horizontal-container .o-container-content-item {
+  > .rounded-panel:first-child {
+    margin-right: 4px;
+  }
+
+  > .rounded-panel:last-child {
+    margin-left: 4px;
+  }
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+.margin-right-24 {
+  margin-right: 24px;
+}
+
+.line-chart .nv-x.nv-axis .nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMin-x text {
+  transform: translate(0px, 0px) rotate(-90deg);
+}
+
+.line-chart .nv-x.nv-axis .nvd3 text {
+  transform-origin: left;
+  transform: translate(-10px, 0px) rotate(-90deg);
+}
+
+
+.movement-types-cell-renderer {
+  font-weight: 700;
+}
+
+.o-container-title-item.container-title {
+  padding-bottom: 2px;
+  padding-left: 0;
+}
+
+employees-home {
+  display: flex;
+  height: 100%;
+}

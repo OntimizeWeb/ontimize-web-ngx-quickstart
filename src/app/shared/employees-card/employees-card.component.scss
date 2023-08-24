@@ -1,0 +1,10 @@
+.employees-card {
+  display: block !important;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+
+  .employees-card-chart .nvd3 .nv-axis line {
+    display: none;
+  }
+}

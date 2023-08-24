@@ -1,0 +1,85 @@
+@import 'node_modules/@angular/material/theming';
+
+@mixin accounts-detail-theme($theme) {
+  $color-salary: #eeeeee;
+  $color-debit: change-color(mat-color($primary), $alpha: 0.6);
+  $color-transfer: #c5c5c5;
+  $color-cash: change-color(mat-color($primary), $alpha: 0.3);
+  $color-red-numbers: #f44336;
+  $color-gray: #bcbcbe;
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+
+  .balance-chart {
+    text {
+      @if $is-dark {
+        color: #cccccc !important;
+        fill: #cccccc !important;
+      }
+    }
+  }
+
+  .account-form-label,
+  .customers .customers-list-title {
+    color: mat-color($foreground, secondary-text);
+  }
+
+  .account-form-value.balance.red-numbers {
+    color: $color-red-numbers;
+  }
+
+  .movement-list.o-list .movement-list-item.mat-list-item {
+    &.movement-list-item-transfer {
+      border-color: $color-transfer;
+    }
+
+    &.movement-list-item-cash {
+      border-color: $color-cash;
+    }
+
+    &.movement-list-item-salary {
+      border-color: $color-salary;
+    }
+
+    &.movement-list-item-debit {
+      border-color: $color-debit;
+    }
+
+    .mat-list-item-content {
+      border-color: $color-gray;
+    }
+  }
+
+  .account-info-container,
+  .balance-chart-container,
+  .movement-chart-container,
+  .movement-list-container {
+    @if $is-dark{
+      background: change-color(mat-color($background, unselected-chip), $alpha: 0.2);
+    }
+  }
+
+  .account-form-value {
+    &.balance {
+      color: mat-color($primary);
+    }
+  }
+
+  .data-container {
+    .balance-border {
+      border-color: mat-color($primary);
+    }
+  }
+
+  .customers-border {
+    border-color: change-color(mat-color($foreground, secondary-text), $alpha: 0.12);
+  }
+
+  .last-movement-div {
+    .last-movement {
+      color: mat-color($primary);
+    }
+  }
+
+}

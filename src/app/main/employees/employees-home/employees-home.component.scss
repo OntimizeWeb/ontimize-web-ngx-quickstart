@@ -1,0 +1,125 @@
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+  border: 0;
+}
+
+.collapsible {
+  .o-container {
+    padding: 5px;
+
+    .o-container-title.mat-expansion-panel-header-title,
+    .o-row-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title {
+      border: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      justify-content: center;
+      height: 32px;
+    }
+
+    .mat-expansion-panel-header-description,
+    .mat-expansion-panel-header-title {
+      flex-grow: 0;
+    }
+
+    mat-panel-title {
+      mat-icon {
+        padding-left: 15px;
+        padding-top: 2px;
+      }
+
+      span {
+        padding-top: 4px;
+        padding-right: 15px;
+      }
+    }
+
+    span.mat-expansion-indicator {
+      display: none;
+    }
+  }
+
+  .filter_style {
+    border-style: solid;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-width: 4px;
+    padding-left: 20px;
+    padding-bottom: 3px;
+    margin-left: 30px;
+    margin-top: 5px;
+  }
+}
+
+.employees-filters-form form {
+  height: 100%;
+}
+
+.employee-item {
+  cursor: pointer;
+  height: 90%;
+  width: 90%;
+  z-index: 3;
+
+  .image-container {
+    height: 35%;
+    width: 100%;
+
+    .mat-divider {
+      margin: 0 12px 30px;
+    }
+
+    .image {
+      align-items: center;
+      border-radius: 50%;
+      display: flex;
+      height: 100px;
+      justify-content: center;
+      max-height: 100px;
+      max-width: 100px;
+      overflow: hidden;
+      width: 100px;
+
+      img {
+        height: auto;
+        max-height: 100px;
+        max-width: 100px;
+        width: auto;
+      }
+    }
+  }
+
+  .employee-data {
+    height: 35%;
+    width: 100%;
+
+    span {
+      font-size: 14px;
+      max-width: 90%;
+      overflow: hidden;
+      padding: 4px 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.employee-name {
+        font-size: 18px;
+      }
+
+      .square {
+        display: inline-block;
+        height: 10px;
+        margin: 0 6px;
+        width: 10px;
+      }
+    }
+  }
+}
+
+.o-grid {
+  .o-grid-toolbar {
+    .o-button {
+      margin-right: 12px;
+    }
+
+  }
+}

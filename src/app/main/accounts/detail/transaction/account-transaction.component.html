@@ -1,0 +1,19 @@
+<o-form show-header="yes" service="movements" entity="movement" keys="MOVEMENTID" keys-sql-types="INTEGER"
+  columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;CONCEPT;MOVEMENT;DATE_;MOVEMENTTYPEID;COMMENTS" editable-detail="no" show-header="no">
+
+  <o-row attr="row1" title="ACCOUNT_NUMBER" layout-gap="12px">
+    <o-text-input attr="ENTITYID" width="25%"></o-text-input>
+    <o-text-input attr="OFFICEID" width="25%"></o-text-input>
+    <o-text-input attr="CDID" width="25%"></o-text-input>
+    <o-text-input attr="ANID" width="25%"></o-text-input>
+  </o-row>
+  <o-row attr="row2" title="MOVEMENT_DATA" layout-gap="12px">
+    <o-text-input attr="CONCEPT" width="25%"></o-text-input>
+    <o-currency-input attr="MOVEMENT" width="25%"></o-currency-input>
+    <o-combo attr="MOVEMENTTYPEID" query-on-init="no" query-on-bind="yes" value-column="MOVEMENTTYPEID" service="movements" entity="movementType"
+      keys="MOVEMENTTYPEID" columns="MOVEMENTTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" width="25%"></o-combo>
+    <o-date-input attr="DATE_" width="25%"></o-date-input>
+  </o-row>
+  <o-textarea-input attr="COMMENTS" rows="4" fxFlex></o-textarea-input>
+
+</o-form>

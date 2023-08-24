@@ -1,0 +1,197 @@
+.accounts-detail {
+  display: block;
+  height: 100%;
+
+  .max-height {
+    max-height: 100%;
+  }
+
+  .o-form-container-content,
+  form {
+    height: 100%;
+  }
+
+  .o-row .o-container-scroll {
+    padding-bottom: 5px;
+  }
+
+  .balance-chart-container,
+  .movement-chart-container {
+    margin: 10px 30px 20px 0;
+  }
+
+  .account-info-container,
+  .movement-list-container {
+    margin: 10px 30px 20px 30px;
+  }
+
+  .account-info-container,
+  .balance-chart-container,
+  .movement-chart-container,
+  .movement-list-container {
+    border-radius: 5px;
+    border-style: hidden;
+    padding-top: 24px;
+    box-shadow: 0 3px 6px #00000029;
+
+    .o-container-title {
+      border-width: 2px;
+
+      span {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .last-movement-div {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    white-space: nowrap;
+
+    .last-movement {
+      font-size: 190%;
+    }
+  }
+
+  .account-form-label {
+    font-size: 80%;
+
+    &.balance {
+      font-size: 150%;
+    }
+  }
+
+  .account-form-value {
+    padding-bottom: 4px;
+    text-align: left;
+
+    &.balance {
+      font-size: 190%;
+
+    }
+
+  }
+
+  .avg-balance {
+    font-size: 100%;
+  }
+
+  .data-container {
+    height: 75%;
+    margin-bottom: auto;
+    margin-top: auto;
+
+    .balance-border {
+      border-style: solid;
+      border-width: 6px;
+      border-bottom: 0;
+      border-left: 0;
+      border-right: 0;
+      width: 48px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .customers {
+    .customers-border {
+      border-style: solid;
+      border-width: 0 0 0 3px;
+      height: 90%;
+      margin-left: 10px;
+
+      .mat-list-item-content {
+        padding-left: 3px;
+      }
+    }
+
+    .customers-list-title {
+      font-size: 80%;
+      font-weight: normal;
+    }
+
+    .mat-list .mat-list-item {
+      height: 32px;
+    }
+  }
+
+  .o-form-layout-manager {
+    max-height: 400px;
+
+    .movement-list.o-list {
+      .movement-list-item.mat-list-item {
+        border-style: solid;
+        border-width: 0 0 0 5px;
+        border-radius: 3px;
+        margin: 8px;
+        width: auto;
+
+        .mat-list-icon {
+          border-radius: 3px;
+          padding: 6px;
+          background-color: #F2F2F299;
+          font-size: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .mat-list-item-content {
+          padding: 0 13px 0 19px;
+
+          .mat-list-text {
+            padding-left: 28px;
+
+            .concept {
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .date {
+              opacity: .5;
+            }
+          }
+
+          .amount {
+            font-size: 24px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  o-chart.balance-chart>div>nvd3>svg line {
+    display: none;
+  }
+
+  o-chart.movements-chart {
+    margin: 0;
+
+    .nv-legendWrap {
+      transform: translate(0, 5px);
+    }
+
+    .nv-pieWrap {
+      transform: translate(150px, 20px);
+    }
+
+    .nv-pie path {
+      fill-opacity: .9;
+    }
+
+    .nv-pie .hover path {
+      fill-opacity: 1;
+    }
+
+    .nv-label text {
+      fill: #9b9b9b !important;
+    }
+  }
+}

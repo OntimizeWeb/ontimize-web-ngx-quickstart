@@ -1,0 +1,26 @@
+.branches-card {
+  height: 100%;
+  overflow: hidden;
+
+  .branches-card-item {
+    margin: auto;
+    width: 90%;
+
+    .branches-card-image {
+      height: 80px;
+    }
+
+    .branches-card-item-info {
+      padding-left: 16px;
+
+      .branches-card-branches-amount {
+        padding-top: 2px;
+      }
+    }
+  }
+
+  .mat-divider {
+    margin: auto;
+    width: 80%;
+  }
+}

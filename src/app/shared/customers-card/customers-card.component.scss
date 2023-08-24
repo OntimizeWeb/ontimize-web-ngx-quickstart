@@ -1,0 +1,13 @@
+.customers-card {
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+
+  .customers-card-chart .nvd3 .nv-axis line  {
+    display: none;
+
+    .nvd3.nv-multibarHorizontal .nv-groups text {
+      font-size: 24px;
+    }
+  }
+}

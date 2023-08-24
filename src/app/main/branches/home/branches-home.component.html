@@ -1,0 +1,35 @@
+<div class="container">
+  <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home">
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+      <o-table #table attr="branches" service="branches" entity="branch" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
+        visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="10" pageable="no" row-height="medium">
+        <o-table-button #button attr="button" label="FILL_REPORT" icon="description" (onClick)="openBranchReportStore()"></o-table-button>
+        <o-table-column attr="OFFICEID" title="OFFICEID" width="15%" class="o-table-column-centered"></o-table-column>
+        <o-table-column attr="STARTDATE" title="OPENING_DATE" width="22%" type="date" format="LL"></o-table-column>
+        <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
+          <ng-template let-row>
+            <o-expandable-container [targets]="[branchEmployeesTable]" [data]="row">
+              <o-table #branchEmployeesTable service="employees" entity="employee" parent-keys="OFFICEID" keys="EMPLOYEEID"
+                columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;EMPLOYEEPHOTO"
+                visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;EMPLOYEETYPEID"
+                query-on-init="no" query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none">
+                <o-table-button #detailButton attr="button" label="FILL_REPORT" icon="description" (onClick)="openBranchDetailReportStore(row)">
+                </o-table-button>
+                <o-table-column async-load="true" width="48px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" image-type="base64"
+                  empty-image="assets/images/no-image.png" avatar="yes">
+                </o-table-column>
+                <o-table-column attr="EMPLOYEESTARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+                <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
+                  <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+                    value-column="EMPLOYEETYPENAME">
+                  </o-table-cell-renderer-service>
+                </o-table-column>
+              </o-table>
+            </o-expandable-container>
+          </ng-template>
+        </o-table-row-expandable>
+        <o-table-context-menu></o-table-context-menu>
+      </o-table>
+    </div>
+  </o-form-layout-manager>
+</div>

@@ -1,0 +1,30 @@
+<o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=", " attr="o-form-layout-customer-home"
+  title-data-origin="customers_form_edit">
+  <div fxFill fxLayout="column" fxLayoutAlign="start">
+    <o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
+      row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
+
+      <o-table-button #button attr="button" label="FILL_REPORT" icon="description"></o-table-button>
+
+      <o-table-columns-filter columns="STARTDATE;SURNAME">
+        <o-table-columns-filter-column attr="SURNAME" sort="desc"> </o-table-columns-filter-column>
+        <o-table-columns-filter-column attr="STARTDATE" start-view="month"> </o-table-columns-filter-column>
+      </o-table-columns-filter>
+
+      <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image"
+        image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+      </o-table-column>
+      <o-table-column attr="NAME" title="NAME" orderable="no"></o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
+        <o-table-cell-renderer-service service="customers" entity="customerType"
+          value-column="DESCRIPTION" translate="no"
+          columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+        </o-table-cell-renderer-service>
+      </o-table-column>
+      <o-table-context-menu></o-table-context-menu>
+      <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+    </o-table>
+  </div>
+</o-form-layout-manager>
