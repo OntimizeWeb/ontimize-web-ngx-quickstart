@@ -18,7 +18,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -49,44 +49,36 @@
               "node_modules/ontimize-web-ngx-map/styles.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
               "src/styles.scss",
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-violet-blues.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-violet-blues-dark.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-oxford-blue-emerald.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-oxford-blue-emerald-dark.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-madder-lake-jet.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-madder-lake-jet-dark.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-prussian-celtic-blue.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               },
-              {
+              {"inject":false,
                 "input": "src/assets/themes/o-prussian-celtic-blue-dark.scss",
-                "lazy": true,
                 "bundleName": "assets/themes"
               }
             ],
@@ -106,7 +98,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
