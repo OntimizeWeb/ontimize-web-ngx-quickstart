@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatRadioChange } from '@angular/material/radio';
-import { MatSlideToggle, MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { MatLegacyRadioChange as MatRadioChange } from '@angular/material/legacy-radio';
+import { MatLegacySlideToggle as MatSlideToggle, MatLegacySlideToggleChange as MatSlideToggleChange } from '@angular/material/legacy-slide-toggle';
 import { AppConfig, OTranslateService, Util } from 'ontimize-web-ngx';
 
 import { DocsSiteTheme, ThemeService } from '../../shared/theme.service';

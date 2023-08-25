@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MAT_LEGACY_FORM_FIELD_DEFAULT_OPTIONS as MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/legacy-form-field';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import {
   APP_CONFIG,
@@ -18,6 +18,9 @@ import { CONFIG } from './app.config';
 import { D3LocaleService } from './shared/d3-locale/d3Locale.service';
 import { StyleManager } from './shared/style-manager/style-manager';
 import { ThemeService } from './shared/theme.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OMapModule } from 'ontimize-web-ngx-map';
 
 // Defining custom providers (if needed)...
 export const customProviders: any = [
@@ -33,7 +36,9 @@ export const customProviders: any = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    ONTIMIZE_MODULES,
+    BrowserModule,
+    BrowserAnimationsModule,
+    OntimizeWebModule.forRoot(CONFIG),
     OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,

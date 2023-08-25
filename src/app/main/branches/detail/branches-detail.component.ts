@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 

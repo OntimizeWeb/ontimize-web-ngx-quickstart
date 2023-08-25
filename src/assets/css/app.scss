@@ -1,6 +1,6 @@
 // __<<ngThemingMigrationEscapedComment0>>__
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
-// @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+// @use 'ontimize-web-ngx/theming/ontimize-theme.scss';
 // @include ontimize-theme-styles($theme);
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
 @include ontimize-theme-styles-lite($theme);

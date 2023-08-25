@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Expression, FilterExpressionUtils, OFilterBuilderComponent } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
