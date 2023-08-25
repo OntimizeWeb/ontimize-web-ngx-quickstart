@@ -34,7 +34,7 @@
     "@angular/upgrade": "~9.1.13",
     "@schematics/angular": "^9.1.15",
     "rxjs": "~6.6.7",
-    "tslib": "^1.10.0",
+    "tslib": "^2.6.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
