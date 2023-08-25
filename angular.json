@@ -49,35 +49,43 @@
               "node_modules/ontimize-web-ngx-map/styles.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
               "src/styles.scss",
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-violet-blues.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-violet-blues-dark.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-oxford-blue-emerald.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-oxford-blue-emerald-dark.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-madder-lake-jet.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-madder-lake-jet-dark.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-prussian-celtic-blue.scss",
                 "bundleName": "assets/themes"
               },
-              {"inject":false,
+              {
+                "inject": true,
                 "input": "src/assets/themes/o-prussian-celtic-blue-dark.scss",
                 "bundleName": "assets/themes"
               }
@@ -96,7 +104,6 @@
               "outputHashing": "all",
               "serviceWorker": true,
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
 export const routes: Routes = [
@@ -16,9 +16,11 @@ export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
-const opt = {
+const opt: ExtraOptions = {
   enableTracing: false
   // true if you want to print navigation routes
+  ,
+  relativeLinkResolution: 'legacy'
 };
 
 @NgModule({
