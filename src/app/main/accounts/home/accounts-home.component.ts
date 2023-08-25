@@ -16,16 +16,16 @@ export class AccountsHomeComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  @ViewChild('listAccount', { static: false })
+  @ViewChild('listAccount')
   private listAccount: OListComponent;
 
-  @ViewChild('formFilter', { static: false })
+  @ViewChild('formFilter')
   private formFilter: OFormComponent;
 
-  @ViewChild('filterBuilder', { static: false })
+  @ViewChild('filterBuilder')
   private filterBuilder: OFilterBuilderComponent;
 
-  @ViewChild('sidenav', { static: false })
+  @ViewChild('sidenav')
   private sidenav: MatSidenav;
 
 
