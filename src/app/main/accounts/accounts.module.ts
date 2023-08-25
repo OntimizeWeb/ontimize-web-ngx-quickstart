@@ -8,15 +8,14 @@ import { ACCOUNTS_MODULE_DECLARATIONS, AccountsRoutingModule } from './accounts-
 import { AccountTransactionsDetailComponent } from './detail/transaction/account-transaction.component';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    OntimizeWebModule,
-    OChartModule,
-    AccountsRoutingModule,
-    OReportModule
-  ],
-  declarations: ACCOUNTS_MODULE_DECLARATIONS,
-  entryComponents: [AccountTransactionsDetailComponent],
-  exports: ACCOUNTS_MODULE_DECLARATIONS
+    imports: [
+        SharedModule,
+        OntimizeWebModule,
+        OChartModule,
+        AccountsRoutingModule,
+        OReportModule
+    ],
+    declarations: ACCOUNTS_MODULE_DECLARATIONS,
+    exports: ACCOUNTS_MODULE_DECLARATIONS
 })
 export class AccountsModule { }

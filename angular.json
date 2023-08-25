@@ -132,12 +132,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ontimize-web-ngx-quickstart:build",
-            "sourceMap": {
-              "scripts": true,
-              "styles": false,
-              "vendor": true
-            }
+            "browserTarget": "ontimize-web-ngx-quickstart:build"
           },
           "configurations": {
             "production": {
@@ -167,19 +162,6 @@
               "src/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
