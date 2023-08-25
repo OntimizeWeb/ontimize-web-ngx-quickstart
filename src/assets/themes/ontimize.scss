@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 
 /* Color definitions */
@@ -34,8 +35,8 @@ $mat-custom-accent: (50 : #e3ecf4,
   contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff));
 
 // Define a theme.
-$primary: mat-palette($mat-custom-primary);
-$accent: mat-palette($mat-custom-accent);
+$primary: mat.define-palette($mat-custom-primary);
+$accent: mat.define-palette($mat-custom-accent);
 
 $background-color: #eceff1;
 

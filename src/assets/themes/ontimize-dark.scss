@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 /* Color definitions */
 $mat-custom-primary: (50 : #f1f6fa,
@@ -31,7 +32,7 @@ $mat-custom-primary: (50 : #f1f6fa,
   ));
 
 // Define a theme.
-$primary: mat-palette($mat-custom-primary);
+$primary: mat.define-palette($mat-custom-primary);
 $accent: $primary;
 
 /* Dark theme */
