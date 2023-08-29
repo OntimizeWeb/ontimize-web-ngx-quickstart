@@ -35,7 +35,7 @@
     "nvd3": "^1.8.6",
     "ontimize-web-ngx": "file:ontimize-web-ngx-15.0.0-SNAPSHOT-1.tgz",
     "ontimize-web-ngx-charts": "file:ontimize-web-ngx-charts-15.0.0.tgz",
-    "ontimize-web-ngx-filemanager": "file:ontimize-web-ngx-filemanager-15.0.0.tgz",
+    "ontimize-web-ngx-filemanager": "file:ontimize-web-ngx-filemanager-15.0.0-SNAPSHOT-0.tgz",
     "ontimize-web-ngx-map": "file:ontimize-web-ngx-map-15.0.0.tgz",
     "ontimize-web-ngx-report": "file:ontimize-web-ngx-report-15.0.0.tgz",
     "rxjs": "~7.8.0",
