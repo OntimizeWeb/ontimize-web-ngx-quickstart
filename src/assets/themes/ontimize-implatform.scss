@@ -1,6 +1,5 @@
-@use '@angular/material' as mat;
-@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
-
+@use '@angular/material'as mat;
+@use 'ontimize-web-ngx/theming/themes/implatform-fashion-default-theme.scss'as implatform-fashion-theme;
 /* Color definitions */
 $mat-custom-primary: (50 : #e3ecf4,
   100 : #b9d1e4,
@@ -39,7 +38,7 @@ $primary: mat.define-palette($mat-custom-primary);
 $accent: mat.define-palette($mat-custom-accent);
 
 /* Light theme */
-$theme: fashion-mat-light-theme($primary, $accent);
+$theme: implatform-fashion-theme.fashion-mat-light-theme($primary, $accent);
 
 /* variable used to apply implatform styling in app.scss */
 $style:'implatform';

@@ -1,11 +1,11 @@
-@use '@angular/material' as mat;
-@import 'node_modules/@angular/material/theming';
+@use '@angular/material'as mat;
+@use 'sass:map';
 
 @mixin account-home-theme($theme) {
-  $accent: map-get($theme, accent);
-  $primary: map-get($theme, primary);
-  $foreground: map-get($theme, foreground);
-  $is-dark: map-get($theme, is-dark);
+  $accent: map.get($theme, color, accent);
+  $primary: map.get($theme, color, primary);
+  $foreground: map.get($theme, color, foreground);
+  $is-dark: map.get($theme, color, is-dark);
 
   .filter-border {
     border-color: mat.get-color-from-palette($accent);
@@ -28,9 +28,10 @@
       }
 
       .mat-card {
-        @if $is-dark == true {
+        @if $is-dark==true {
           background-color: change-color(mat.get-color-from-palette(mat.$grey-palette, 700), $alpha: 0.2);
         }
+
         .info-account.border-bottom,
         .info-account.border-right {
           border-color: mat.get-color-from-palette($accent);

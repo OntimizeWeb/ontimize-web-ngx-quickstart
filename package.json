@@ -14,7 +14,7 @@
     "development-aot-serverpwa": "ng build --configuration production --base-href / && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa",
-    "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
+    "build:themes": "npx sass --no-source-map --load-path=node_modules/  ./src/assets/themes:./src/assets/themes"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +33,7 @@
     "@angular/router": "^15.2.9",
     "@angular/upgrade": "^15.2.9",
     "nvd3": "^1.8.6",
-    "ontimize-web-ngx": "file:ontimize-web-ngx-15.0.0.tgz",
+    "ontimize-web-ngx": "file:ontimize-web-ngx-15.0.0-SNAPSHOT-1.tgz",
     "ontimize-web-ngx-charts": "file:ontimize-web-ngx-charts-15.0.0.tgz",
     "ontimize-web-ngx-filemanager": "file:ontimize-web-ngx-filemanager-15.0.0.tgz",
     "ontimize-web-ngx-map": "file:ontimize-web-ngx-map-15.0.0.tgz",
@@ -64,7 +64,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "karma-sonarqube-unit-reporter": "0.0.23",
-    "node-sass": "^4.14.1",
     "socket.io": ">=2.4.0",
     "ng-packagr": "^15.2.2",
     "protractor": "~7.0.0",

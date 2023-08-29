@@ -1,10 +1,10 @@
-@use '@angular/material' as mat;
-@import 'node_modules/@angular/material/theming';
+@use '@angular/material'as mat;
+@use 'sass:map';
 
 @mixin employees-theme($theme) {
-  $accent: map-get($theme, accent);
+  $accent: map.get($theme,color, accent);
   $emp-icon-color: #b8b8b8;
-  $foreground: map-get($theme, foreground);
+  $foreground: map.get($theme, color, foreground);
   $border-color: mat.get-color-from-palette($foreground, divider);
 
   employees-home {
@@ -22,8 +22,9 @@
       .filter_style {
         border-color: mat.get-color-from-palette($accent);
       }
-    .o-container .o-container-title.mat-expansion-panel-header-title,
-      .o-container .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title{
+
+      .o-container .o-container-title.mat-expansion-panel-header-title,
+      .o-container .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title {
         border-color: $border-color;
       }
     }
