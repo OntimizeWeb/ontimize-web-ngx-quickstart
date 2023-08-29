@@ -30,7 +30,7 @@ $style: null !default;
 @include login-theme($theme);
 
 @import '../../app/main/main-theme.scss';
-@include main-theme($theme);
+@include main-theme($theme, ontimize-theme-lite.$typography);
 
 @import '../../app/main/accounts/home/account-home.theme.scss';
 @include account-home-theme($theme);

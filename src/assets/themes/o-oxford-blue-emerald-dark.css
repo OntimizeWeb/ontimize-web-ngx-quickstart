@@ -6552,18 +6552,18 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .employees-card-employees-amount,
 .o-card-menu-item .nvd3.nv-multibarHorizontal .nv-groups text,
 .o-card-menu-item .nv-x .nv-axis .nvd3-svg {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
 }
 
 .o-card-menu-item .nvd3 text {
-  font-family: Roboto, sans-serif;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
 }
 
 .card-title {
   color: white;
-  font-size: 60px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 600;
   margin: 12px 0;
 }
 .card-title:first-child {
@@ -6577,7 +6577,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .o-card-menu-item div .nvd3.nv-multibarHorizontal .nv-groups text {
   fill: #838aa0;
-  font-family: Roboto, sans-serif;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
 }
 
 .theme-option-background .mat-icon.mat-accent {
