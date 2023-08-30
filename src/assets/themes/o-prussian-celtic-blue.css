@@ -1095,6 +1095,24 @@ mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
   padding: 4px;
 }
 
+.mat-mdc-radio-button .mdc-radio {
+  padding: calc((36px - 20px) / 2);
+  margin: 0;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
+  top: calc(-1 * (36px - 20px) / 2);
+  left: calc(-1 * (36px - 20px) / 2);
+  width: 36px;
+  height: 36px;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
+  top: calc((36px - 36px) / 2);
+  right: calc((36px - 36px) / 2);
+  left: calc((36px - 36px) / 2);
+  width: 36px;
+  height: 36px;
+}
+
 .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
   color: #303030;
   background-color: #b7c1cd;
@@ -1160,29 +1178,17 @@ o-app-header .o-app-header-title {
 }
 
 /* TABS */
-.mat-mdc-tab-group .mdc-tab__text-label,
+.mat-mdc-tab-group .mdc-tab,
 .mat-mdc-tab-group .mat-mdc-tab-link {
   opacity: 0.75;
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
 }
-.mat-mdc-tab-group .mdc-tab__text-label.mat-tab-label-active,
-.mat-mdc-tab-group .mat-mdc-tab-link.mat-tab-label-active {
+.mat-mdc-tab-group .mdc-tab.mdc-tab--active,
+.mat-mdc-tab-group .mat-mdc-tab-link.mdc-tab--active {
   opacity: 0.95;
-}
-.mat-mdc-tab-group.o-tab-ontimize {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header {
-  border: none;
 }
 .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
   background: #D7DDE0;
   padding: 0;
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
 }
 .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label {
   text-overflow: clip;
@@ -1195,30 +1201,25 @@ o-app-header .o-app-header-title {
   position: absolute;
   right: 0;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mat-tab-label-active):not(:last-child) {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mdc-tab--active):not(:last-child) + .mdc-tab:not(.mdc-tab--active) .mdc-tab__content .mdc-tab__text-label {
   border-left: 1px solid rgba(0, 0, 0, 0.12);
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mat-tab-label-content {
-  padding: 0 8px;
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content {
   width: 100%;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mat-tab-label-active {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content .mdc-tab__text-label {
+  padding: 0 8px;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active {
   background: white;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mat-tab-label-active span.tab-label span.gradient-layer {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active span.tab-label span.gradient-layer {
   background: linear-gradient(to right, transparent, white 100%);
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header mat-ink-bar {
-  display: none;
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mdc-tab-indicator__content--underline {
+  border: none;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-body-wrapper {
   background: white;
   border-radius: 2px;
   border-top: none;
@@ -1413,6 +1414,24 @@ mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
   padding: 4px;
 }
 
+.mat-mdc-radio-button .mdc-radio {
+  padding: calc((36px - 20px) / 2);
+  margin: 0;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
+  top: calc(-1 * (36px - 20px) / 2);
+  left: calc(-1 * (36px - 20px) / 2);
+  width: 36px;
+  height: 36px;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
+  top: calc((36px - 36px) / 2);
+  right: calc((36px - 36px) / 2);
+  left: calc((36px - 36px) / 2);
+  width: 36px;
+  height: 36px;
+}
+
 .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
   color: #303030;
   background-color: #b7c1cd;
@@ -1478,29 +1497,17 @@ o-app-header .o-app-header-title {
 }
 
 /* TABS */
-.mat-mdc-tab-group .mdc-tab__text-label,
+.mat-mdc-tab-group .mdc-tab,
 .mat-mdc-tab-group .mat-mdc-tab-link {
   opacity: 0.75;
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
 }
-.mat-mdc-tab-group .mdc-tab__text-label.mat-tab-label-active,
-.mat-mdc-tab-group .mat-mdc-tab-link.mat-tab-label-active {
+.mat-mdc-tab-group .mdc-tab.mdc-tab--active,
+.mat-mdc-tab-group .mat-mdc-tab-link.mdc-tab--active {
   opacity: 0.95;
-}
-.mat-mdc-tab-group.o-tab-ontimize {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header {
-  border: none;
 }
 .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
   background: #D7DDE0;
   padding: 0;
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
 }
 .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label {
   text-overflow: clip;
@@ -1513,30 +1520,25 @@ o-app-header .o-app-header-title {
   position: absolute;
   right: 0;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mat-tab-label-active):not(:last-child) {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mdc-tab--active):not(:last-child) + .mdc-tab:not(.mdc-tab--active) .mdc-tab__content .mdc-tab__text-label {
   border-left: 1px solid rgba(0, 0, 0, 0.12);
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mat-tab-label-content {
-  padding: 0 8px;
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content {
   width: 100%;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mat-tab-label-active {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content .mdc-tab__text-label {
+  padding: 0 8px;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active {
   background: white;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mat-tab-label-active span.tab-label span.gradient-layer {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active span.tab-label span.gradient-layer {
   background: linear-gradient(to right, transparent, white 100%);
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header mat-ink-bar {
-  display: none;
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mdc-tab-indicator__content--underline {
+  border: none;
 }
-.mat-mdc-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-body-wrapper {
   background: white;
   border-radius: 2px;
   border-top: none;
@@ -1769,10 +1771,7 @@ o-row.o-row.bg-level-1 {
 }
 
 /* MD-TAB-GROUP */
-.mat-mdc-tab-group.mat-tab-group {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-}
-.mat-mdc-tab-group.mat-tab-group > .mat-mdc-tab-header .mat-tab-label {
+mat-tab-group.mat-mdc-tab-group > .mat-mdc-tab-header .mat-mdc-tab {
   height: 32px;
 }
 
@@ -5716,32 +5715,30 @@ o-chart .nvd3 .nv-axis path {
 .o-row-collapsible > .o-container > .mat-expansion-panel-header {
   border-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
 }
-.o-column > .o-container > .o-container-header .mat-tab-label,
+.o-column > .o-container > .o-container-header .mdc-tab__text-label,
 .o-column > .o-container > .o-container-header .mat-mdc-tab-link,
-.o-column > .o-container > .o-container-title .mat-tab-label,
+.o-column > .o-container > .o-container-title .mdc-tab__text-label,
 .o-column > .o-container > .o-container-title .mat-mdc-tab-link,
-.o-column > .o-container > .mat-expansion-panel-header .mat-tab-label,
+.o-column > .o-container > .mat-expansion-panel-header .mdc-tab__text-label,
 .o-column > .o-container > .mat-expansion-panel-header .mat-mdc-tab-link,
-.o-column-collapsible > .o-container > .o-container-header .mat-tab-label,
+.o-column-collapsible > .o-container > .o-container-header .mdc-tab__text-label,
 .o-column-collapsible > .o-container > .o-container-header .mat-mdc-tab-link,
-.o-column-collapsible > .o-container > .o-container-title .mat-tab-label,
+.o-column-collapsible > .o-container > .o-container-title .mdc-tab__text-label,
 .o-column-collapsible > .o-container > .o-container-title .mat-mdc-tab-link,
-.o-column-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-label,
+.o-column-collapsible > .o-container > .mat-expansion-panel-header .mdc-tab__text-label,
 .o-column-collapsible > .o-container > .mat-expansion-panel-header .mat-mdc-tab-link,
-.o-row > .o-container > .o-container-header .mat-tab-label,
+.o-row > .o-container > .o-container-header .mdc-tab__text-label,
 .o-row > .o-container > .o-container-header .mat-mdc-tab-link,
-.o-row > .o-container > .o-container-title .mat-tab-label,
+.o-row > .o-container > .o-container-title .mdc-tab__text-label,
 .o-row > .o-container > .o-container-title .mat-mdc-tab-link,
-.o-row > .o-container > .mat-expansion-panel-header .mat-tab-label,
+.o-row > .o-container > .mat-expansion-panel-header .mdc-tab__text-label,
 .o-row > .o-container > .mat-expansion-panel-header .mat-mdc-tab-link,
-.o-row-collapsible > .o-container > .o-container-header .mat-tab-label,
+.o-row-collapsible > .o-container > .o-container-header .mdc-tab__text-label,
 .o-row-collapsible > .o-container > .o-container-header .mat-mdc-tab-link,
-.o-row-collapsible > .o-container > .o-container-title .mat-tab-label,
+.o-row-collapsible > .o-container > .o-container-title .mdc-tab__text-label,
 .o-row-collapsible > .o-container > .o-container-title .mat-mdc-tab-link,
-.o-row-collapsible > .o-container > .mat-expansion-panel-header .mat-tab-label,
+.o-row-collapsible > .o-container > .mat-expansion-panel-header .mdc-tab__text-label,
 .o-row-collapsible > .o-container > .mat-expansion-panel-header .mat-mdc-tab-link {
   color: rgba(0, 0, 0, 0.87);
 }
@@ -6254,21 +6251,11 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .o-form-layout-tabgroup .spinner-container {
   background-color: #eceff1;
 }
-.o-form-layout-tabgroup .mat-mdc-tab-group {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-}
-.o-form-layout-tabgroup .mat-mdc-tab-group .mat-tab-label {
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-}
-.o-form-layout-tabgroup .mat-mdc-tab-group .mat-tab-label .mat-icon:hover {
+.o-form-layout-tabgroup .mat-mdc-tab-group .mdc-tab .mat-icon:hover {
   background-color: rgba(0, 0, 0, 0.26);
   border-radius: 50%;
 }
-.o-form-layout-tabgroup .mat-mdc-tab-group .mat-tab-label.mat-tab-label-active .mat-icon:hover {
+.o-form-layout-tabgroup .mat-mdc-tab-group .mdc-tab.mdc-tab--active .mat-icon:hover {
   background-color: rgba(14, 47, 89, 0.4);
 }
 
