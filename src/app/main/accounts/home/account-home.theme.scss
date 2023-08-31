@@ -27,7 +27,7 @@
         color: mat.get-color-from-palette($foreground, primary-text);
       }
 
-      .mat-card {
+      .mat-mdc-card {
         @if $is-dark==true {
           background-color: change-color(mat.get-color-from-palette(mat.$grey-palette, 700), $alpha: 0.2);
         }

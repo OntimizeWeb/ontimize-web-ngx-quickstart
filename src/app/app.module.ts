@@ -1,15 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MAT_LEGACY_FORM_FIELD_DEFAULT_OPTIONS as MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/legacy-form-field';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import {
-  APP_CONFIG,
-  O_INPUTS_OPTIONS,
-  O_MAT_ERROR_OPTIONS,
-  ONTIMIZE_MODULES,
-  ONTIMIZE_PROVIDERS,
-  OntimizeWebModule,
-} from 'ontimize-web-ngx';
+import { APP_CONFIG, O_INPUTS_OPTIONS, O_MAT_ERROR_OPTIONS, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,9 +13,6 @@ import { CONFIG } from './app.config';
 import { D3LocaleService } from './shared/d3-locale/d3Locale.service';
 import { StyleManager } from './shared/style-manager/style-manager';
 import { ThemeService } from './shared/theme.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OMapModule } from 'ontimize-web-ngx-map';
 
 // Defining custom providers (if needed)...
 export const customProviders: any = [

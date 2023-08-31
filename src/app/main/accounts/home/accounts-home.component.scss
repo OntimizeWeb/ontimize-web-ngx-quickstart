@@ -71,25 +71,25 @@
               max-height: 100%;
             }
 
-            .mat-list {
+            .mat-mdc-list {
               overflow: auto;
               padding: 0;
               padding-left: 4px;
               padding-top: 4px;
 
               @media (min-width: 1400px) {
-                .mat-card {
+                .mat-mdc-card {
                   width: 75%;
                 }
               }
 
               @media (min-width: 1700px) {
-                .mat-card {
+                .mat-mdc-card {
                   width: 75%;
                 }
               }
 
-              .o-list-item.mat-card {
+              .o-list-item.mat-mdc-card {
                 box-shadow: 0 3px 6px #00000029;
                 margin-bottom: 20px;
                 margin-top: 0;
