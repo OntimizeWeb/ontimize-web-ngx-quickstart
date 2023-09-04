@@ -19,7 +19,7 @@ export class EmployeesCardComponent {
 
   public employeesAmount: number;
   public chartParameters: MultiBarHorizontalChartConfiguration;
-
+  scheme;
   constructor(
     private ontimizeService: OntimizeService,
     private cd: ChangeDetectorRef,
@@ -33,7 +33,7 @@ export class EmployeesCardComponent {
     );
 
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
-    this.chartParameters.height = 60;
+    this.chartParameters.height = 100;
     this.chartParameters.showLegend = false;
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
@@ -46,7 +46,9 @@ export class EmployeesCardComponent {
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
-    this.chartParameters.color = [theme.accent, '#c5c5c5', theme.primary];
+    this.scheme = {
+      domain: [theme.accent, '#c5c5c5', theme.primary]
+    };
     if (theme.isDark) {
       this.chartParameters.callback = () => {
         d3.selectAll('.employees-card-chart .nv-axis text').style('fill', '#cccccc');

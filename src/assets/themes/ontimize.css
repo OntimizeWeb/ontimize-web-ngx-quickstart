@@ -408,10 +408,10 @@
 }
 
 .mat-mdc-tooltip {
-  --mdc-plain-tooltip-supporting-text-font:Roboto, sans-serif;
-  --mdc-plain-tooltip-supporting-text-size:12px;
-  --mdc-plain-tooltip-supporting-text-weight:400;
-  --mdc-plain-tooltip-supporting-text-tracking:0.0333333333em;
+  --mdc-plain-tooltip-supporting-text-font: Roboto, sans-serif;
+  --mdc-plain-tooltip-supporting-text-size: 12px;
+  --mdc-plain-tooltip-supporting-text-weight: 400;
+  --mdc-plain-tooltip-supporting-text-tracking: 0.0333333333em;
 }
 
 .mdc-text-field__input {
@@ -551,16 +551,16 @@
 }
 
 .mat-mdc-dialog-container {
-  --mdc-dialog-subhead-font:Roboto, sans-serif;
-  --mdc-dialog-subhead-line-height:32px;
-  --mdc-dialog-subhead-size:20px;
-  --mdc-dialog-subhead-weight:500;
-  --mdc-dialog-subhead-tracking:0.0125em;
-  --mdc-dialog-supporting-text-font:Roboto, sans-serif;
-  --mdc-dialog-supporting-text-line-height:24px;
-  --mdc-dialog-supporting-text-size:16px;
-  --mdc-dialog-supporting-text-weight:400;
-  --mdc-dialog-supporting-text-tracking:0.03125em;
+  --mdc-dialog-subhead-font: Roboto, sans-serif;
+  --mdc-dialog-subhead-line-height: 32px;
+  --mdc-dialog-subhead-size: 20px;
+  --mdc-dialog-subhead-weight: 500;
+  --mdc-dialog-subhead-tracking: 0.0125em;
+  --mdc-dialog-supporting-text-font: Roboto, sans-serif;
+  --mdc-dialog-supporting-text-line-height: 24px;
+  --mdc-dialog-supporting-text-size: 16px;
+  --mdc-dialog-supporting-text-weight: 400;
+  --mdc-dialog-supporting-text-tracking: 0.03125em;
 }
 
 .mat-mdc-standard-chip {
@@ -600,11 +600,11 @@
 }
 
 .mat-mdc-slider {
-  --mdc-slider-label-label-text-font:Roboto, sans-serif;
-  --mdc-slider-label-label-text-size:14px;
-  --mdc-slider-label-label-text-line-height:22px;
-  --mdc-slider-label-label-text-tracking:0.0071428571em;
-  --mdc-slider-label-label-text-weight:500;
+  --mdc-slider-label-label-text-font: Roboto, sans-serif;
+  --mdc-slider-label-label-text-size: 14px;
+  --mdc-slider-label-label-text-line-height: 22px;
+  --mdc-slider-label-label-text-tracking: 0.0071428571em;
+  --mdc-slider-label-label-text-weight: 500;
 }
 
 .mat-mdc-menu-content {
@@ -635,21 +635,21 @@
 }
 
 .mat-mdc-list-base {
-  --mdc-list-list-item-label-text-font:Roboto, sans-serif;
-  --mdc-list-list-item-label-text-line-height:24px;
-  --mdc-list-list-item-label-text-size:16px;
-  --mdc-list-list-item-label-text-tracking:0.03125em;
-  --mdc-list-list-item-label-text-weight:400;
-  --mdc-list-list-item-supporting-text-font:Roboto, sans-serif;
-  --mdc-list-list-item-supporting-text-line-height:20px;
-  --mdc-list-list-item-supporting-text-size:14px;
-  --mdc-list-list-item-supporting-text-tracking:0.0178571429em;
-  --mdc-list-list-item-supporting-text-weight:400;
-  --mdc-list-list-item-trailing-supporting-text-font:Roboto, sans-serif;
-  --mdc-list-list-item-trailing-supporting-text-line-height:20px;
-  --mdc-list-list-item-trailing-supporting-text-size:12px;
-  --mdc-list-list-item-trailing-supporting-text-tracking:0.0333333333em;
-  --mdc-list-list-item-trailing-supporting-text-weight:400;
+  --mdc-list-list-item-label-text-font: Roboto, sans-serif;
+  --mdc-list-list-item-label-text-line-height: 24px;
+  --mdc-list-list-item-label-text-size: 16px;
+  --mdc-list-list-item-label-text-tracking: 0.03125em;
+  --mdc-list-list-item-label-text-weight: 400;
+  --mdc-list-list-item-supporting-text-font: Roboto, sans-serif;
+  --mdc-list-list-item-supporting-text-line-height: 20px;
+  --mdc-list-list-item-supporting-text-size: 14px;
+  --mdc-list-list-item-supporting-text-tracking: 0.0178571429em;
+  --mdc-list-list-item-supporting-text-weight: 400;
+  --mdc-list-list-item-trailing-supporting-text-font: Roboto, sans-serif;
+  --mdc-list-list-item-trailing-supporting-text-line-height: 20px;
+  --mdc-list-list-item-trailing-supporting-text-size: 12px;
+  --mdc-list-list-item-trailing-supporting-text-tracking: 0.0333333333em;
+  --mdc-list-list-item-trailing-supporting-text-weight: 400;
 }
 
 .mdc-list-group__subheader {
@@ -730,10 +730,10 @@
 }
 
 .mat-mdc-snack-bar-container {
-  --mdc-snackbar-supporting-text-font:Roboto, sans-serif;
-  --mdc-snackbar-supporting-text-line-height:20px;
-  --mdc-snackbar-supporting-text-size:14px;
-  --mdc-snackbar-supporting-text-weight:400;
+  --mdc-snackbar-supporting-text-font: Roboto, sans-serif;
+  --mdc-snackbar-supporting-text-line-height: 20px;
+  --mdc-snackbar-supporting-text-size: 14px;
+  --mdc-snackbar-supporting-text-weight: 400;
 }
 
 .mdc-data-table__content {
@@ -2507,49 +2507,31 @@ mat-tab-group.mat-mdc-tab-group > .mat-mdc-tab-header .mat-mdc-tab {
   .mdc-text-field--disabled .mdc-text-field__input:-ms-input-placeholder {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-floating-label {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled + .mdc-text-field-helper-line .mdc-text-field-helper-text {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-text-field-character-counter,
   .mdc-text-field--disabled + .mdc-text-field-helper-line .mdc-text-field-character-counter {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-text-field__icon--leading {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-text-field__icon--trailing {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-text-field__affix--prefix {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-text-field__affix--suffix {
     color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-line-ripple::before {
     border-bottom-color: GrayText;
   }
-}
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .mdc-text-field--disabled .mdc-notched-outline__leading,
   .mdc-text-field--disabled .mdc-notched-outline__notch,
   .mdc-text-field--disabled .mdc-notched-outline__trailing {
@@ -6594,8 +6576,8 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .mat-sidenav-container-account-home .list-accounts span {
   color: rgba(0, 0, 0, 0.54);
 }
-.mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-bottom,
-.mat-sidenav-container-account-home .list-accounts .mat-card .info-account.border-right {
+.mat-sidenav-container-account-home .list-accounts .mat-mdc-card .info-account.border-bottom,
+.mat-sidenav-container-account-home .list-accounts .mat-mdc-card .info-account.border-right {
   border-color: #1464a5;
 }
 
@@ -6608,19 +6590,22 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336;
 }
 
-.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-transfer {
+.movement-list.o-list .movement-list-item.mat-mdc-list-item {
+  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
+}
+.movement-list.o-list .movement-list-item.mat-mdc-list-item.movement-list-item-transfer {
   border-color: #c5c5c5;
 }
-.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-cash {
+.movement-list.o-list .movement-list-item.mat-mdc-list-item.movement-list-item-cash {
   border-color: rgba(20, 100, 165, 0.3);
 }
-.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-salary {
+.movement-list.o-list .movement-list-item.mat-mdc-list-item.movement-list-item-salary {
   border-color: #eeeeee;
 }
-.movement-list.o-list .movement-list-item.mat-list-item.movement-list-item-debit {
+.movement-list.o-list .movement-list-item.mat-mdc-list-item.movement-list-item-debit {
   border-color: rgba(20, 100, 165, 0.6);
 }
-.movement-list.o-list .movement-list-item.mat-list-item .mat-list-item-content {
+.movement-list.o-list .movement-list-item.mat-mdc-list-item .mat-list-item-content {
   border-color: #bcbcbe;
 }
 

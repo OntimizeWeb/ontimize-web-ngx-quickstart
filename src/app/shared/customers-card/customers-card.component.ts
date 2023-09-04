@@ -17,15 +17,17 @@ declare var d3: any;
 export class CustomersCardComponent {
 
   public chartParameters: MultiBarHorizontalChartConfiguration;
-
+  scheme;
   constructor(
     private _themeService: ThemeService
   ) {
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.showLegend = false;
+    this.chartParameters.height = 200;
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
     this.chartParameters.x1Axis.showMaxMin = false;
+    this.chartParameters.showXAxis = false;
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
@@ -36,7 +38,7 @@ export class CustomersCardComponent {
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
 
     theme.primary = theme.primary.replace('#', '');
-    this.chartParameters.color = ['#eeeeee', theme.accent, '#c5c5c5'];
+    this.scheme = { domain: ['#eeeeee', theme.accent, '#c5c5c5'] };
 
     if (theme.isDark) {
       this.chartParameters.callback = () => {

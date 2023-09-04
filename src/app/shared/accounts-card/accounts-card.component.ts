@@ -17,14 +17,14 @@ declare var d3: any;
 export class AccountsCardComponent {
 
   public chartParameters: DonutChartConfiguration;
-
+  scheme;
   constructor(
     private _themeService: ThemeService
   ) {
     this.chartParameters = new DonutChartConfiguration();
-    this.chartParameters.legendPosition = 'right';
+    this.chartParameters.width = 300;
+    this.chartParameters.height = 200;
     this.chartParameters.legend.margin.top = 16;
-    this.chartParameters.height = 150;
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
@@ -37,7 +37,7 @@ export class AccountsCardComponent {
 
     theme.primary = theme.primary.replace('#', '');
     let splitColor = theme.primary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
-    this.chartParameters.color = [theme.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'];
+    this.scheme = { domain: [theme.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'] };
 
     if (theme.isDark) {
       this.chartParameters.callback = () => {
