@@ -5,7 +5,7 @@ import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 import { ThemeService } from '../../../shared/theme.service';
 
-declare var d3: any;
+
 
 @Component({
   selector: 'accounts-detail',
@@ -47,16 +47,15 @@ export class AccountsDetailComponent {
     private reportStoreService: OReportStoreService,
     private themeService: ThemeService
   ) {
-    const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+
     this.theme = themeService.getStoredTheme();
     //alpha 30
     AccountsDetailComponent.colorCash = this.theme.primary + "4D";
     AccountsDetailComponent.colorBalance = this.theme.accent;
     //alpha 60
     AccountsDetailComponent.colorDebit = this.theme.primary + "99";
-    this._configureLineBarChart(d3Locale);
-    this._configurePieChart(d3Locale);
-    d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
+
+
   }
 
   private getLastMovement() {
@@ -173,6 +172,7 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.bottom = 0;
     this.movementTypesChartParams.margin.left = 0;
     this.movementTypesChartParams.height = 320;
+    this.movementTypesChartParams.showLeyend = false;
     this.movementTypesChartParams.legendPosition = 'right';
     this.movementTypesChartParams.legend.vers = 'furious';
     this.movementTypesChartParams.legend.margin.top = 2;

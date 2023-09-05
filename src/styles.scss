@@ -22,7 +22,6 @@ o-form-toolbar .mat-toolbar {
   box-shadow: none;
 }
 
-/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
   border-radius: 2px;
 }

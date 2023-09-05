@@ -6,8 +6,9 @@
     margin: auto;
 
     .setting-column {
-      &.o-column > .o-container .o-container-scroll,
-      &.o-row > .o-container .o-container-scroll {
+
+      &.o-column>.o-container .o-container-scroll,
+      &.o-row>.o-container .o-container-scroll {
         overflow: hidden;
       }
 
@@ -26,12 +27,11 @@
       }
 
       .theme-radio-group {
-        /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
-        .mat-radio-container {
+        .mdc-radio {
           display: none !important;
         }
-        /* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
-        .mat-radio-label-content {
+
+        .mdc-label {
           padding: 0;
         }
       }

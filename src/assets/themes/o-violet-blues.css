@@ -6590,9 +6590,6 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   color: #f44336;
 }
 
-.movement-list.o-list .movement-list-item.mat-mdc-list-item {
-  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-}
 .movement-list.o-list .movement-list-item.mat-mdc-list-item.movement-list-item-transfer {
   border-color: #c5c5c5;
 }
@@ -6605,7 +6602,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .movement-list.o-list .movement-list-item.mat-mdc-list-item.movement-list-item-debit {
   border-color: rgba(63, 95, 191, 0.6);
 }
-.movement-list.o-list .movement-list-item.mat-mdc-list-item .mat-list-item-content {
+.movement-list.o-list .movement-list-item.mat-mdc-list-item .mdc-list-item__content {
   border-color: #bcbcbe;
 }
 
