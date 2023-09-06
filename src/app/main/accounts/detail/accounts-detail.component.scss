@@ -23,12 +23,14 @@
   .account-info-container,
   .movement-list-container {
     margin: 10px 30px 20px 30px;
+
   }
 
   .account-info-container,
   .balance-chart-container,
   .movement-chart-container,
   .movement-list-container {
+    height: 95%;
     border-radius: 5px;
     border-style: hidden;
     padding-top: 24px;
@@ -154,6 +156,10 @@
 
           .mat-line {
             padding-left: 28px;
+          }
+
+          .concept-date {
+            width: 100%;
           }
 
           .amount {

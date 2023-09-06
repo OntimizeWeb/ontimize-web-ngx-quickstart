@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
+import { AppConfig, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
-import { ThemeService } from '../../../shared/theme.service';
+import { DocsSiteTheme, ThemeService } from '../../../shared/theme.service';
 
 
 
@@ -17,7 +17,7 @@ import { ThemeService } from '../../../shared/theme.service';
   }
 })
 export class AccountsDetailComponent {
-
+  scheme;
   private static colorSalary: string = '#eeeeee';
   private static colorDebit: string;
   private static colorTransfer: string = '#c5c5c5';
@@ -45,7 +45,8 @@ export class AccountsDetailComponent {
     private translateService: OTranslateService,
     private d3LocaleService: D3LocaleService,
     private reportStoreService: OReportStoreService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private _appConfig: AppConfig,
   ) {
 
     this.theme = themeService.getStoredTheme();
@@ -55,6 +56,11 @@ export class AccountsDetailComponent {
     //alpha 60
     AccountsDetailComponent.colorDebit = this.theme.primary + "99";
 
+
+    this.theme.primary = this.theme.primary.replace('#', '');
+    let splitColor = this.theme.primary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
+    this.scheme = { domain: [this.theme.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'] };
+    this._configurePieChart();
 
   }
 
@@ -96,6 +102,7 @@ export class AccountsDetailComponent {
   }
 
   private processLineData(data: any[]): void {
+    console.log(data);
     if (data && data.length) {
       const balanceSerie: ChartSeries = {
         key: this.translateService.get('BALANCE'),
@@ -165,7 +172,7 @@ export class AccountsDetailComponent {
     this.balanceChartParams.legend.margin.left = 0;
   }
 
-  private _configurePieChart(locale: any): void {
+  private _configurePieChart(): void {
     this.movementTypesChartParams = new PieChartConfiguration();
     this.movementTypesChartParams.margin.top = 0;
     this.movementTypesChartParams.margin.right = 0;
@@ -173,12 +180,7 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.left = 0;
     this.movementTypesChartParams.height = 320;
     this.movementTypesChartParams.showLeyend = false;
-    this.movementTypesChartParams.legendPosition = 'right';
-    this.movementTypesChartParams.legend.vers = 'furious';
-    this.movementTypesChartParams.legend.margin.top = 2;
-    this.movementTypesChartParams.legend.margin.right = 10;
     this.movementTypesChartParams.labelType = 'value';
-    this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{
       value: 'Salary',
       color: AccountsDetailComponent.colorSalary
@@ -199,6 +201,7 @@ export class AccountsDetailComponent {
       value: 'Banking fees',
       color: AccountsDetailComponent.colorBalance
     }];
+
   }
 
   getParameters() {
