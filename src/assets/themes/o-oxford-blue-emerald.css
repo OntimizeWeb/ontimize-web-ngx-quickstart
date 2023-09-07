@@ -1314,6 +1314,7 @@ o-row.o-row.bg-level-1 {
   background-color: white;
 }
 
+/* INCLUDE ONTIMIZE LITE */
 .report-on-demand-sidenav .mat-expansion-panel {
   background-color: #eceff1;
 }
@@ -1958,78 +1959,35 @@ mat-tab-group.mat-mdc-tab-group > .mat-mdc-tab-header .mat-mdc-tab {
   width: 30px;
 }
 
-.o-table mat-checkbox.mat-mdc-checkbox,
-.o-table .mat-mdc-checkbox .mdc-checkbox,
-.o-checkbox mat-checkbox.mat-mdc-checkbox,
-.o-checkbox .mat-mdc-checkbox .mdc-checkbox,
-.o-dialog-class.o-table-dialog mat-checkbox.mat-mdc-checkbox,
-.o-dialog-class.o-table-dialog .mat-mdc-checkbox .mdc-checkbox,
-.mat-mdc-menu-panel.o-table-menu mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-menu-panel.o-table-menu .mat-mdc-checkbox .mdc-checkbox,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox,
-.report-on-demand-sidenav mat-checkbox.mat-mdc-checkbox,
-.report-on-demand-sidenav .mat-mdc-checkbox .mdc-checkbox {
-  padding: calc((var(--mdc-checkbox-ripple-size, 17px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  margin: calc((var(--mdc-checkbox-touch-target-size, 15px) - var(--mdc-checkbox-icon-size)) / 2);
+.mat-mdc-paginator .mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
-.o-table mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.o-table .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
-.o-checkbox mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.o-checkbox .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
-.o-dialog-class.o-table-dialog mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.o-dialog-class.o-table-dialog .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-menu-panel.o-table-menu mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-menu-panel.o-table-menu .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
-.report-on-demand-sidenav mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.report-on-demand-sidenav .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
-  top: calc((var(--mdc-checkbox-ripple-size, 17px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  left: calc((var(--mdc-checkbox-ripple-size, 17px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
+
+mat-checkbox.mat-mdc-checkbox,
+.mat-mdc-checkbox .mdc-checkbox {
+  padding: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
+  margin: calc((var(--mdc-checkbox-touch-target-size, 19px) - var(--mdc-checkbox-icon-size)) / 2);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
+  top: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
+  left: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
   height: var(--mdc-checkbox-icon-size, 15px);
   width: var(--mdc-checkbox-icon-size, 15px);
 }
-.o-table mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.o-table .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
-.o-checkbox mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.o-checkbox .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
-.o-dialog-class.o-table-dialog mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.o-dialog-class.o-table-dialog .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-menu-panel.o-table-menu mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-menu-panel.o-table-menu .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
-.report-on-demand-sidenav mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.report-on-demand-sidenav .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
-  top: calc((20px - var(--mdc-checkbox-touch-target-size, 15px)) / 2);
-  right: calc((20px - var(--mdc-checkbox-touch-target-size, 15px)) / 2);
-  left: calc((20px - var(--mdc-checkbox-touch-target-size, 15px)) / 2);
-  width: var(--mdc-checkbox-touch-target-size, 15px);
-  height: var(--mdc-checkbox-touch-target-size, 15px);
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
+  top: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
+  right: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
+  left: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
+  width: var(--mdc-checkbox-touch-target-size, 19px);
+  height: var(--mdc-checkbox-touch-target-size, 19px);
 }
-.o-table mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.o-table .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
-.o-checkbox mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.o-checkbox .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
-.o-dialog-class.o-table-dialog mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.o-dialog-class.o-table-dialog .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-menu-panel.o-table-menu mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-menu-panel.o-table-menu .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-menu-panel.o-table-quickfilter-menu mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
-.report-on-demand-sidenav mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.report-on-demand-sidenav .mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
-  height: var(--mdc-checkbox-touch-target-size, 15px);
-  width: var(--mdc-checkbox-touch-target-size, 15px);
+mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
+.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
+  height: var(--mdc-checkbox-touch-target-size, 19px);
+  width: var(--mdc-checkbox-touch-target-size, 19px);
 }
 
 .mat-ripple-element {
@@ -5911,11 +5869,7 @@ textarea:disabled {
 .o-table .o-table-menu-button {
   color: rgba(0, 0, 0, 0.54);
 }
-.o-table .mat-mdc-table {
-  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
-}
-.o-table .mat-mdc-table .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+.o-table .mat-mdc-table .mat-mdc-checkbox-disabled:not(.mat-mdc-checkbox-checked) .mdc-checkbox__background {
   border-color: rgba(0, 0, 0, 0.18);
 }
 .o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
