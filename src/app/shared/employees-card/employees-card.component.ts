@@ -34,6 +34,7 @@ export class EmployeesCardComponent {
 
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.height = 100;
+    this.chartParameters.width = 280;
     this.chartParameters.showLegend = false;
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
@@ -44,6 +45,7 @@ export class EmployeesCardComponent {
     this.chartParameters.margin.left = 70;
     this.chartParameters.yDataType = 'intGrouped';
     this.chartParameters.valueType = 'intGrouped';
+    this.chartParameters.showXAxis = false;
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
     this.scheme = {

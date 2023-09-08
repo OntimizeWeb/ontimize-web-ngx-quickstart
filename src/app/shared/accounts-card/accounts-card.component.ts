@@ -22,9 +22,9 @@ export class AccountsCardComponent {
     private _themeService: ThemeService
   ) {
     this.chartParameters = new DonutChartConfiguration();
-    this.chartParameters.width = 300;
+    this.chartParameters.width = 280;
     this.chartParameters.height = 200;
-    this.chartParameters.legend.margin.top = 16;
+    this.chartParameters.showLeyend = false;
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;

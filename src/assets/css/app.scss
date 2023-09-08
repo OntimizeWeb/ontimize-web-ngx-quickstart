@@ -1,3 +1,4 @@
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss' as theme;
 @use 'ontimize-web-ngx/theming/ontimize-theme.scss';
 @use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
 @use 'ontimize-web-ngx/theming/implatform-fashion-theme.scss';
@@ -5,10 +6,8 @@
 @use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
 
 //Include ontimize theme styles
-@include ontimize-theme.ontimize-theme-styles($theme);
 
-//Include ontimize-lite theme
-@include ontimize-theme-lite.ontimize-theme-styles-lite($theme);
+@include ontimize-theme.ontimize-theme-styles(theme.$theme);
 
 // After define theme, it is necessary to transfer color to Ontimize Web framework
 @include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);

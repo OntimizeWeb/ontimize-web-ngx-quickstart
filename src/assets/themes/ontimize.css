@@ -96,6 +96,897 @@
 *
 */
 /*Application background-color*/
+.mat-badge-content {
+  font-weight: 600;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+}
+
+.mat-badge-small .mat-badge-content {
+  font-size: 9px;
+}
+
+.mat-badge-large .mat-badge-content {
+  font-size: 24px;
+}
+
+.mat-h1,
+.mat-headline-5,
+.mat-typography .mat-h1,
+.mat-typography .mat-headline-5,
+.mat-typography h1 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+}
+
+.mat-h2,
+.mat-headline-6,
+.mat-typography .mat-h2,
+.mat-typography .mat-headline-6,
+.mat-typography h2 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0125em;
+  margin: 0 0 16px;
+}
+
+.mat-h3,
+.mat-subtitle-1,
+.mat-typography .mat-h3,
+.mat-typography .mat-subtitle-1,
+.mat-typography h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.009375em;
+  margin: 0 0 16px;
+}
+
+.mat-h4,
+.mat-body-1,
+.mat-typography .mat-h4,
+.mat-typography .mat-body-1,
+.mat-typography h4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03125em;
+  margin: 0 0 16px;
+}
+
+.mat-h5,
+.mat-typography .mat-h5,
+.mat-typography h5 {
+  font: 400 calc(14px * 0.83) / 20px Roboto, sans-serif;
+  margin: 0 0 12px;
+}
+
+.mat-h6,
+.mat-typography .mat-h6,
+.mat-typography h6 {
+  font: 400 calc(14px * 0.67) / 20px Roboto, sans-serif;
+  margin: 0 0 12px;
+}
+
+.mat-body-strong,
+.mat-subtitle-2,
+.mat-typography .mat-body-strong,
+.mat-typography .mat-subtitle-2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0071428571em;
+}
+
+.mat-body,
+.mat-body-2,
+.mat-typography .mat-body,
+.mat-typography .mat-body-2,
+.mat-typography {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0178571429em;
+}
+
+.mat-body p,
+.mat-body-2 p,
+.mat-typography .mat-body p,
+.mat-typography .mat-body-2 p,
+.mat-typography p {
+  margin: 0 0 12px;
+}
+
+.mat-small,
+.mat-caption,
+.mat-typography .mat-small,
+.mat-typography .mat-caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0333333333em;
+}
+
+.mat-headline-1,
+.mat-typography .mat-headline-1 {
+  font-size: 96px;
+  font-weight: 300;
+  line-height: 96px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: -0.015625em;
+  margin: 0 0 56px;
+}
+
+.mat-headline-2,
+.mat-typography .mat-headline-2 {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 60px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: -0.0083333333em;
+  margin: 0 0 64px;
+}
+
+.mat-headline-3,
+.mat-typography .mat-headline-3 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 50px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 64px;
+}
+
+.mat-headline-4,
+.mat-typography .mat-headline-4 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 40px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0073529412em;
+  margin: 0 0 64px;
+}
+
+.mat-bottom-sheet-container {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0178571429em;
+}
+
+.mat-button-toggle {
+  font-family: Roboto, sans-serif;
+}
+
+.mat-calendar {
+  font-family: Roboto, sans-serif;
+}
+
+.mat-calendar-body {
+  font-size: 13px;
+}
+
+.mat-calendar-body-label,
+.mat-calendar-period-button {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mat-calendar-table-header th {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.mat-expansion-panel-header {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mat-expansion-panel-content {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0178571429em;
+}
+
+.mat-grid-tile-header,
+.mat-grid-tile-footer {
+  font-size: 14px;
+}
+
+.mat-grid-tile-header .mat-line,
+.mat-grid-tile-footer .mat-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  box-sizing: border-box;
+}
+
+.mat-grid-tile-header .mat-line:nth-child(n+2),
+.mat-grid-tile-footer .mat-line:nth-child(n+2) {
+  font-size: 12px;
+}
+
+.mat-stepper-vertical, .mat-stepper-horizontal {
+  font-family: Roboto, sans-serif;
+}
+
+.mat-step-label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.mat-step-sub-label-error {
+  font-weight: normal;
+}
+
+.mat-step-label-error {
+  font-size: 16px;
+}
+
+.mat-step-label-selected {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.mat-toolbar,
+.mat-toolbar h1,
+.mat-toolbar h2,
+.mat-toolbar h3,
+.mat-toolbar h4,
+.mat-toolbar h5,
+.mat-toolbar h6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.0125em;
+  margin: 0;
+}
+
+.mat-tree {
+  font-family: Roboto, sans-serif;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.mat-mdc-option {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body1-font-size, 16px);
+  line-height: var(--mdc-typography-body1-line-height, 24px);
+  font-weight: var(--mdc-typography-body1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+}
+
+.mat-mdc-card-title {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-headline6-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-headline6-font-size, 20px);
+  line-height: var(--mdc-typography-headline6-line-height, 32px);
+  font-weight: var(--mdc-typography-headline6-font-weight, 500);
+  letter-spacing: var(--mdc-typography-headline6-letter-spacing, 0.0125em);
+  text-decoration: var(--mdc-typography-headline6-text-decoration, inherit);
+  text-transform: var(--mdc-typography-headline6-text-transform, none);
+}
+
+.mat-mdc-card-subtitle {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle2-font-size, 14px);
+  line-height: var(--mdc-typography-subtitle2-line-height, 22px);
+  font-weight: var(--mdc-typography-subtitle2-font-weight, 500);
+  letter-spacing: var(--mdc-typography-subtitle2-letter-spacing, 0.0071428571em);
+  text-decoration: var(--mdc-typography-subtitle2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle2-text-transform, none);
+}
+
+.mat-mdc-tooltip {
+  --mdc-plain-tooltip-supporting-text-font: Roboto, sans-serif;
+  --mdc-plain-tooltip-supporting-text-size: 12px;
+  --mdc-plain-tooltip-supporting-text-weight: 400;
+  --mdc-plain-tooltip-supporting-text-tracking: 0.0333333333em;
+}
+
+.mdc-text-field__input {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle1-font-size, 16px);
+  font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+  text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle1-text-transform, none);
+}
+
+.mdc-text-field__affix {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle1-font-size, 16px);
+  font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+  text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle1-text-transform, none);
+}
+
+[dir=rtl] .mdc-text-field--outlined.mdc-text-field--with-leading-icon, .mdc-text-field--outlined.mdc-text-field--with-leading-icon[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /*rtl:end:ignore*/
+}
+
+[dir=rtl] .mdc-text-field--outlined.mdc-text-field--with-trailing-icon, .mdc-text-field--outlined.mdc-text-field--with-trailing-icon[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /*rtl:end:ignore*/
+}
+
+.mdc-text-field--textarea .mdc-text-field__input {
+  line-height: 1.5rem;
+}
+
+[dir=rtl] .mdc-text-field--with-leading-icon.mdc-text-field--outlined, .mdc-text-field--with-leading-icon.mdc-text-field--outlined[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /*rtl:end:ignore*/
+}
+
+[dir=rtl] .mdc-text-field--end-aligned .mdc-text-field__input, .mdc-text-field--end-aligned .mdc-text-field__input[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /*rtl:end:ignore*/
+}
+
+.mdc-floating-label {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle1-font-size, 16px);
+  font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+  text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle1-text-transform, none);
+}
+
+[dir=rtl] .mdc-floating-label--required:not(.mdc-floating-label--hide-required-marker), .mdc-floating-label--required:not(.mdc-floating-label--hide-required-marker)[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /*rtl:end:ignore*/
+}
+
+.mat-mdc-form-field-subscript-wrapper,
+.mat-mdc-form-field-bottom-align::before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-caption-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-caption-font-size, 12px);
+  line-height: var(--mdc-typography-caption-line-height, 20px);
+  font-weight: var(--mdc-typography-caption-font-weight, 400);
+  letter-spacing: var(--mdc-typography-caption-letter-spacing, 0.0333333333em);
+  text-decoration: var(--mdc-typography-caption-text-decoration, inherit);
+  text-transform: var(--mdc-typography-caption-text-transform, none);
+}
+
+.mat-mdc-form-field,
+.mat-mdc-floating-label {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body1-font-size, 16px);
+  line-height: var(--mdc-typography-body1-line-height, 24px);
+  font-weight: var(--mdc-typography-body1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+  text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body1-text-transform, none);
+}
+
+.mat-mdc-form-field .mdc-text-field--outlined .mdc-floating-label--float-above {
+  font-size: calc(16px * var(--mat-mdc-form-field-floating-label-scale, 0.75));
+}
+
+.mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+  font-size: 16px;
+}
+
+.mat-mdc-select-panel {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle1-font-size, 16px);
+  line-height: var(--mdc-typography-subtitle1-line-height, 28px);
+  font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+  text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle1-text-transform, none);
+  /* @alternate */
+  line-height: 24px;
+}
+
+.mat-mdc-select {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body1-font-size, 16px);
+  line-height: var(--mdc-typography-body1-line-height, 24px);
+  font-weight: var(--mdc-typography-body1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+  text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body1-text-transform, none);
+}
+
+.mat-mdc-autocomplete-panel {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle1-font-size, 16px);
+  line-height: var(--mdc-typography-subtitle1-line-height, 28px);
+  font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+  text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle1-text-transform, none);
+  /* @alternate */
+  line-height: 24px;
+}
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-subhead-font: Roboto, sans-serif;
+  --mdc-dialog-subhead-line-height: 32px;
+  --mdc-dialog-subhead-size: 20px;
+  --mdc-dialog-subhead-weight: 500;
+  --mdc-dialog-subhead-tracking: 0.0125em;
+  --mdc-dialog-supporting-text-font: Roboto, sans-serif;
+  --mdc-dialog-supporting-text-line-height: 24px;
+  --mdc-dialog-supporting-text-size: 16px;
+  --mdc-dialog-supporting-text-weight: 400;
+  --mdc-dialog-supporting-text-tracking: 0.03125em;
+}
+
+.mat-mdc-standard-chip {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body2-font-size, 14px);
+  line-height: var(--mdc-typography-body2-line-height, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+  text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body2-text-transform, none);
+}
+
+.mdc-form-field {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body2-font-size, 14px);
+  line-height: var(--mdc-typography-body2-line-height, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+  text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body2-text-transform, none);
+}
+
+.mdc-form-field {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body2-font-size, 14px);
+  line-height: var(--mdc-typography-body2-line-height, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+  text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body2-text-transform, none);
+}
+
+.mat-mdc-slider {
+  --mdc-slider-label-label-text-font: Roboto, sans-serif;
+  --mdc-slider-label-label-text-size: 14px;
+  --mdc-slider-label-label-text-line-height: 22px;
+  --mdc-slider-label-label-text-tracking: 0.0071428571em;
+  --mdc-slider-label-label-text-weight: 500;
+}
+
+.mat-mdc-menu-content {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle1-font-size, 16px);
+  line-height: var(--mdc-typography-subtitle1-line-height, 28px);
+  font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-subtitle1-letter-spacing, 0.009375em);
+  text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle1-text-transform, none);
+  /* @alternate */
+  line-height: 24px;
+}
+
+.mat-mdc-menu-content,
+.mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body1-font-size, 16px);
+  line-height: var(--mdc-typography-body1-line-height, 24px);
+  font-weight: var(--mdc-typography-body1-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+  text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body1-text-transform, none);
+}
+
+.mat-mdc-list-base {
+  --mdc-list-list-item-label-text-font: Roboto, sans-serif;
+  --mdc-list-list-item-label-text-line-height: 24px;
+  --mdc-list-list-item-label-text-size: 16px;
+  --mdc-list-list-item-label-text-tracking: 0.03125em;
+  --mdc-list-list-item-label-text-weight: 400;
+  --mdc-list-list-item-supporting-text-font: Roboto, sans-serif;
+  --mdc-list-list-item-supporting-text-line-height: 20px;
+  --mdc-list-list-item-supporting-text-size: 14px;
+  --mdc-list-list-item-supporting-text-tracking: 0.0178571429em;
+  --mdc-list-list-item-supporting-text-weight: 400;
+  --mdc-list-list-item-trailing-supporting-text-font: Roboto, sans-serif;
+  --mdc-list-list-item-trailing-supporting-text-line-height: 20px;
+  --mdc-list-list-item-trailing-supporting-text-size: 12px;
+  --mdc-list-list-item-trailing-supporting-text-tracking: 0.0333333333em;
+  --mdc-list-list-item-trailing-supporting-text-weight: 400;
+}
+
+.mdc-list-group__subheader {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.009375em;
+}
+
+.mat-mdc-paginator {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-caption-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-caption-font-size, 12px);
+  line-height: var(--mdc-typography-caption-line-height, 20px);
+  font-weight: var(--mdc-typography-caption-font-weight, 400);
+  letter-spacing: var(--mdc-typography-caption-letter-spacing, 0.0333333333em);
+  text-decoration: var(--mdc-typography-caption-text-decoration, inherit);
+  text-transform: var(--mdc-typography-caption-text-transform, none);
+}
+
+.mat-mdc-paginator .mat-mdc-select-value {
+  font-size: 12px;
+}
+
+.mdc-tab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-button-font-size, 14px);
+  line-height: var(--mdc-typography-button-line-height, 36px);
+  font-weight: var(--mdc-typography-button-font-weight, 500);
+  letter-spacing: var(--mdc-typography-button-letter-spacing, 0.0892857143em);
+  text-decoration: var(--mdc-typography-button-text-decoration, none);
+  text-transform: var(--mdc-typography-button-text-transform, none);
+}
+
+@media all and (-ms-high-contrast: none) {
+  .mdc-checkbox .mdc-checkbox__focus-ring {
+    display: none;
+  }
+}
+.mdc-form-field {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body2-font-size, 14px);
+  line-height: var(--mdc-typography-body2-line-height, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+  text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body2-text-transform, none);
+}
+
+.mdc-button {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-button-font-size, 14px);
+  line-height: var(--mdc-typography-button-line-height, 36px);
+  font-weight: var(--mdc-typography-button-font-weight, 500);
+  letter-spacing: var(--mdc-typography-button-letter-spacing, 0.0892857143em);
+  text-decoration: var(--mdc-typography-button-text-decoration, none);
+  text-transform: var(--mdc-typography-button-text-transform, none);
+}
+
+.mdc-fab--extended {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-button-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-button-font-size, 14px);
+  line-height: var(--mdc-typography-button-line-height, 36px);
+  font-weight: var(--mdc-typography-button-font-weight, 500);
+  letter-spacing: var(--mdc-typography-button-letter-spacing, 0.0892857143em);
+  text-decoration: var(--mdc-typography-button-text-decoration, none);
+  text-transform: var(--mdc-typography-button-text-transform, none);
+}
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-supporting-text-font: Roboto, sans-serif;
+  --mdc-snackbar-supporting-text-line-height: 20px;
+  --mdc-snackbar-supporting-text-size: 14px;
+  --mdc-snackbar-supporting-text-weight: 400;
+}
+
+.mdc-data-table__content {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body2-font-size, 14px);
+  line-height: var(--mdc-typography-body2-line-height, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+  text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body2-text-transform, none);
+}
+
+.mdc-data-table__cell {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-body2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-body2-font-size, 14px);
+  line-height: var(--mdc-typography-body2-line-height, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 400);
+  letter-spacing: var(--mdc-typography-body2-letter-spacing, 0.0178571429em);
+  text-decoration: var(--mdc-typography-body2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-body2-text-transform, none);
+}
+
+.mdc-data-table__header-cell {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-subtitle2-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-subtitle2-font-size, 14px);
+  line-height: var(--mdc-typography-subtitle2-line-height, 22px);
+  font-weight: var(--mdc-typography-subtitle2-font-weight, 500);
+  letter-spacing: var(--mdc-typography-subtitle2-letter-spacing, 0.0071428571em);
+  text-decoration: var(--mdc-typography-subtitle2-text-decoration, inherit);
+  text-transform: var(--mdc-typography-subtitle2-text-transform, none);
+}
+
+[dir=rtl] .mdc-data-table__pagination-button .mdc-button__icon, .mdc-data-table__pagination-button .mdc-button__icon[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /*rtl:end:ignore*/
+}
+
+.mat-ripple {
+  overflow: hidden;
+  position: relative;
+}
+
+.mat-ripple:not(:empty) {
+  transform: translateZ(0);
+}
+
+.mat-ripple.mat-ripple-unbounded {
+  overflow: visible;
+}
+
+.mat-ripple-element {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity, transform 0ms cubic-bezier(0, 0, 0.2, 1);
+  transform: scale3d(0, 0, 0);
+}
+
+.cdk-high-contrast-active .mat-ripple-element {
+  display: none;
+}
+
+.cdk-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  left: 0;
+}
+
+[dir=rtl] .cdk-visually-hidden {
+  left: auto;
+  right: 0;
+}
+
+.cdk-overlay-container, .cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+}
+
+.cdk-overlay-container:empty {
+  display: none;
+}
+
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cdk-overlay-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+
+.cdk-high-contrast-active .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0.6;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.cdk-overlay-transparent-backdrop {
+  transition: visibility 1ms linear, opacity 1ms linear;
+  visibility: hidden;
+  opacity: 1;
+}
+
+.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+  visibility: visible;
+}
+
+.cdk-overlay-backdrop-noop-animation {
+  transition: none;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.cdk-global-scrollblock {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+textarea.cdk-textarea-autosize {
+  resize: none;
+}
+
+textarea.cdk-textarea-autosize-measuring {
+  padding: 2px 0 !important;
+  box-sizing: content-box !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+textarea.cdk-textarea-autosize-measuring-firefox {
+  padding: 2px 0 !important;
+  box-sizing: content-box !important;
+  height: 0 !important;
+}
+
+@keyframes cdk-text-field-autofill-start { /*!*/ }
+@keyframes cdk-text-field-autofill-end { /*!*/ }
+.cdk-text-field-autofill-monitored:-webkit-autofill {
+  animation: cdk-text-field-autofill-start 0s 1ms;
+}
+
+.cdk-text-field-autofill-monitored:not(:-webkit-autofill) {
+  animation: cdk-text-field-autofill-end 0s 1ms;
+}
+
+.mat-focus-indicator {
+  position: relative;
+}
+
+.mat-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-focus-indicator-display, none);
+  border: var(--mat-focus-indicator-border-width, 3px) var(--mat-focus-indicator-border-style, solid) var(--mat-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-focus-indicator-border-radius, 4px);
+}
+
+.mat-focus-indicator:focus::before {
+  content: "";
+}
+
+.cdk-high-contrast-active {
+  --mat-focus-indicator-display: block;
+}
+
+.mat-mdc-focus-indicator {
+  position: relative;
+}
+
+.mat-mdc-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-mdc-focus-indicator-display, none);
+  border: var(--mat-mdc-focus-indicator-border-width, 3px) var(--mat-mdc-focus-indicator-border-style, solid) var(--mat-mdc-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-mdc-focus-indicator-border-radius, 4px);
+}
+
+.mat-mdc-focus-indicator:focus::before {
+  content: "";
+}
+
+.cdk-high-contrast-active {
+  --mat-mdc-focus-indicator-display: block;
+}
+
+/* Color definitions */
+/* Light theme */
+/* Dark theme */
 /* Line-height must be unit-less fraction of the font-size
    but it doesnot work on input because the line-height of the user agent remains
    https://bugzilla.mozilla.org/show_bug.cgi?id=349259
@@ -1312,682 +2203,6 @@ o-row.o-row.bg-level-08 {
 o-column.o-column.bg-level-1,
 o-row.o-row.bg-level-1 {
   background-color: white;
-}
-
-/* INCLUDE ONTIMIZE LITE */
-.report-on-demand-sidenav .mat-expansion-panel {
-  background-color: #eceff1;
-}
-
-.title-sidenav-content {
-  background-color: #ffffff;
-}
-
-[layout-padding-vertical] {
-  padding: 4px 0;
-}
-
-[layout-margin-vertical] {
-  margin: 4px 0;
-}
-
-[layout-padding-horizontal] {
-  padding: 0 14px;
-}
-
-[layout-margin-horizontal] {
-  margin: 0 14px;
-}
-
-[layout-padding-left] {
-  padding-left: 14px;
-}
-
-[layout-margin-left] {
-  margin-left: 14px;
-}
-
-[layout-padding-right] {
-  padding-right: 14px;
-}
-
-[layout-margin-right] {
-  margin-right: 14px;
-}
-
-[layout-padding-top] {
-  padding-top: 4px;
-}
-
-[layout-margin-top] {
-  margin-top: 4px;
-}
-
-[layout-padding-bottom] {
-  padding-bottom: 4px;
-}
-
-[layout-margin-bottom] {
-  margin-bottom: 4px;
-}
-
-mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-checkbox .mdc-checkbox {
-  padding: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
-  margin: calc((var(--mdc-checkbox-touch-target-size, 16px) - var(--mdc-checkbox-icon-size)) / 2);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
-  top: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
-  left: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
-  height: var(--mdc-checkbox-icon-size, 16px);
-  width: var(--mdc-checkbox-icon-size, 16px);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
-  top: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
-  right: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
-  left: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
-  width: var(--mdc-checkbox-touch-target-size, 16px);
-  height: var(--mdc-checkbox-touch-target-size, 16px);
-}
-mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
-  height: var(--mdc-checkbox-touch-target-size, 16px);
-  width: var(--mdc-checkbox-touch-target-size, 16px);
-}
-
-.mdc-list[dense] .mat-mdc-list-base {
-  --mdc-list-list-item-one-line-container-height: 44px;
-  --mdc-list-list-item-two-line-container-height: 60px;
-  --mdc-list-list-item-three-line-container-height: 84px;
-}
-.mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-one-line, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-one-line, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-one-line {
-  height: 52px;
-}
-.mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines {
-  height: 68px;
-}
-.mdc-list[dense] [mat-list-icon] {
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  padding: 4px;
-}
-
-.mat-mdc-radio-button .mdc-radio {
-  padding: calc((36px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (36px - 20px) / 2);
-  left: calc(-1 * (36px - 20px) / 2);
-  width: 36px;
-  height: 36px;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((36px - 36px) / 2);
-  right: calc((36px - 36px) / 2);
-  left: calc((36px - 36px) / 2);
-  width: 36px;
-  height: 36px;
-}
-
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
-  color: #303030;
-  background-color: #b9d1e4;
-  border-color: transparent;
-}
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
-  color: #1464a5;
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.12);
-}
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
-  color: #1464a5;
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.12);
-}
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
-  color: #303030;
-  background-color: #b9d1e4;
-  border-color: transparent;
-}
-
-/* CONTAINER */
-.rounded-panel,
-.standalone-chart-container,
-.standalone-form-container .o-form-content-wrapper {
-  background: white;
-  border-radius: 2px;
-}
-
-.standalone-chart-container {
-  margin-top: 48px;
-}
-
-.standalone-form-container .inner-form {
-  padding: 16px;
-}
-
-/* APP SIDENAV */
-.o-app-sidenav {
-  font-weight: 400;
-  color: #aaaaaa;
-}
-
-/* USER INFO */
-o-app-header .o-app-header-title {
-  font-weight: 700;
-}
-
-.o-app-header {
-  background-color: white;
-}
-
-/* FORM */
-.o-form-toolbar .mat-toolbar {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-  background-color: #eceff1;
-  border-radius: 2px;
-  min-height: initial;
-}
-
-/* TABS */
-.mat-mdc-tab-group .mdc-tab,
-.mat-mdc-tab-group .mat-mdc-tab-link {
-  opacity: 0.75;
-}
-.mat-mdc-tab-group .mdc-tab.mdc-tab--active,
-.mat-mdc-tab-group .mat-mdc-tab-link.mdc-tab--active {
-  opacity: 0.95;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
-  background: #D7DDE0;
-  padding: 0;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label {
-  text-overflow: clip;
-  position: relative;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label span.gradient-layer {
-  width: 12px;
-  background: linear-gradient(to right, transparent, #D7DDE0 100%);
-  height: 100%;
-  position: absolute;
-  right: 0;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mdc-tab--active):not(:last-child) + .mdc-tab:not(.mdc-tab--active) .mdc-tab__content .mdc-tab__text-label {
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content {
-  width: 100%;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content .mdc-tab__text-label {
-  padding: 0 8px;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active {
-  background: white;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active span.tab-label span.gradient-layer {
-  background: linear-gradient(to right, transparent, white 100%);
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mdc-tab-indicator__content--underline {
-  border: none;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-body-wrapper {
-  background: white;
-  border-radius: 2px;
-  border-top: none;
-  border-top-left-radius: initial;
-}
-.mat-mdc-tab-group.mat-mdc-tab-group .mat-mdc-tab-body-wrapper {
-  padding: 8px;
-}
-
-/* BUTTON */
-button.mat-mdc-button, button.mat-mdc-unelevated-button, button.mat-mdc-icon-button, button.mat-mdc-raised-button, button.mat-mdc-outlined-button {
-  border-radius: 2px;
-}
-
-/* TABLE */
-.ontimize-table.o-table {
-  font-weight: 400;
-}
-.ontimize-table.o-table .o-table-container {
-  border: none;
-  border-radius: 2px;
-  box-sizing: border-box;
-  /*Toolbar*/
-  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
-}
-.ontimize-table.o-table .o-table-container .o-table-toolbar {
-  margin: 0 0 4px;
-  padding-top: 8px;
-}
-.ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
-  background: rgba(0, 0, 0, 0.12);
-}
-.ontimize-table.o-table .o-table-container thead tr th {
-  font-weight: 700;
-}
-.ontimize-table.o-table .o-table-container tbody tr.even,
-.ontimize-table.o-table .o-table-container thead tr {
-  background-color: inherit;
-}
-.ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
-.ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-  background-color: #1464a5;
-}
-.ontimize-table.o-table .o-table-container .mat-mdc-header-cell {
-  font-weight: 700;
-}
-.ontimize-table.o-table .mat-mdc-paginator {
-  background: inherit;
-}
-.ontimize-table.o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
-  font-weight: 700;
-}
-
-.ontimize-table.o-table.o-table-fixed .o-scrollable-container {
-  height: 100%;
-  overflow-y: auto;
-}
-
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox,
-.mat-mdc-menu-panel.o-search-input-menu .mat-mdc-checkbox {
-  padding: 2px 0;
-}
-
-/*background levels */
-.bg-level-0,
-o-column.o-column.bg-level-0,
-o-row.o-row.bg-level-0 {
-  background-color: #eaeaea;
-}
-
-.bg-level-04,
-o-column.o-column.bg-level-04,
-o-row.o-row.bg-level-04 {
-  background-color: #f2f2f2;
-}
-
-.bg-level-06,
-o-column.o-column.bg-level-06,
-o-row.o-row.bg-level-06 {
-  background-color: #f6f6f6;
-}
-
-.bg-level-08,
-o-column.o-column.bg-level-08,
-o-row.o-row.bg-level-08 {
-  background-color: #fafafa;
-}
-
-.bg-level-1,
-o-column.o-column.bg-level-1,
-o-row.o-row.bg-level-1 {
-  background-color: white;
-}
-
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell {
-  font-weight: 600;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell .column-filter-icon {
-  margin-right: 4px;
-  width: 16px;
-  height: 16px;
-}
-
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button {
-  height: 30px;
-  border: none;
-  padding: 0 6px;
-  border-radius: 0;
-}
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button.disabled {
-  border: none;
-  border-radius: 0;
-}
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button:not(.disabled):hover {
-  border: none;
-  border-radius: 0;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-form-field {
-  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-form-field .mat-form-field-infix {
-  border-top: 0;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:not(.o-column-image):first-of-type {
-  padding-left: 12px;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:last-of-type {
-  padding-right: 12px;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-cell.mat-column-select,
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell.mat-column-select {
-  padding: 0 0 0 12px;
-}
-
-.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button {
-  width: 68px;
-  height: 68px;
-  min-width: 68px;
-  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
-}
-.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-button-wrapper > div {
-  line-height: 1;
-}
-.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-icon {
-  padding: 0 6px 6px;
-  width: 38px;
-  height: 38px;
-  font-size: 38px;
-}
-
-.mat-mdc-form-field .mat-mdc-form-field-infix {
-  min-height: 40px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
-  top: 20px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
-  --mat-mdc-form-field-label-transform: translateY(
-          -26.75px)
-          scale(var(--mat-mdc-form-field-floating-label-scale, 0.75));
-  transform: var(--mat-mdc-form-field-label-transform);
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.mat-mdc-form-field .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-floating-label {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio {
-  padding: calc((28px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (28px - 20px) / 2);
-  left: calc(-1 * (28px - 20px) / 2);
-  width: 28px;
-  height: 28px;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((28px - 28px) / 2);
-  right: calc((28px - 28px) / 2);
-  left: calc((28px - 28px) / 2);
-  width: 28px;
-  height: 28px;
-}
-.mat-mdc-form-field .mat-mdc-radio-touch-target {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-form-field-subscript-wrapper {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix {
-  min-height: auto;
-  padding-bottom: 4px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mat-mdc-floating-label {
-  display: block;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mat-mdc-select-arrow-wrapper {
-  height: auto;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
-  min-height: auto;
-  padding-top: 14px;
-}
-
-.o-column > .o-container > .o-container-title,
-.o-row > .o-container > .o-container-title {
-  line-height: 30px;
-  height: 30px;
-}
-
-.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
-.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
-  padding-left: 4px;
-}
-
-.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
-.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
-  padding: 10px 6px 6px;
-}
-
-.o-column > .o-container .o-container-scroll.o-container-gap,
-.o-row > .o-container .o-container-scroll.o-container-gap {
-  padding: 10px 6px 6px;
-}
-
-.o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
-.o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
-  padding: 12px;
-}
-
-.o-column-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
-.o-row-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
-  padding: 12px;
-}
-
-/* O-APP-LAYOUT */
-.o-app-sidenav.o-app-sidenav .o-app-header .sidenav-toggle {
-  padding: 8px;
-}
-
-/* MD-TAB-GROUP */
-mat-tab-group.mat-mdc-tab-group > .mat-mdc-tab-header .mat-mdc-tab {
-  height: 32px;
-}
-
-/* MAT-PAGINATOR */
-.mat-mdc-paginator-container {
-  min-height: 0;
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size {
-  align-items: center;
-  /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version. */
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select {
-  margin: 6px 0;
-  /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
-  transform: initial;
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-form-field-infix {
-  border-top: 0;
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-range-actions {
-  min-height: 0;
-}
-
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.after, .mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.right {
-  margin-left: 5px;
-}
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.before, .mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.left {
-  margin-right: 5px;
-}
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.above {
-  margin-bottom: -15px;
-}
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.below {
-  margin-top: 5px;
-}
-
-.o-filter-by-column-dialog .select-all-checkbox {
-  margin-top: 10px;
-}
-
-@media (max-width: 599px) {
-  .o-list-picker-dialog.o-list-picker-dialog .mat-mdc-dialog-content.o-list-picker-has-filter {
-    max-height: calc(100% - 105px);
-    min-height: calc(100% - 105px);
-  }
-}
-[layout-padding] > [flex-lt-md],
-[layout-padding] > [flex-sm] {
-  padding: 2px;
-}
-
-[layout-padding],
-[layout-padding] > [flex-gt-sm],
-[layout-padding] > [flex-lt-lg],
-[layout-padding] > [flex-md],
-[layout-padding] > [flex] {
-  padding: 4px;
-}
-
-[layout-padding] > [flex-gt-md],
-[layout-padding] > [flex-lg] {
-  padding: 8px;
-}
-
-[layout-margin] > [flex-lt-md],
-[layout-margin] > [flex-sm] {
-  margin: 2px;
-}
-
-[layout-margin],
-[layout-margin] > [flex-gt-sm],
-[layout-margin] > [flex-lt-lg],
-[layout-margin] > [flex-md],
-[layout-margin] > [flex] {
-  margin: 4px;
-}
-
-[layout-margin] > [flex-gt-md],
-[layout-margin] > [flex-lg] {
-  margin: 8px;
-}
-
-[layout-wrap] {
-  flex-wrap: wrap;
-}
-
-[layout-nowrap] {
-  flex-wrap: nowrap;
-}
-
-[layout-padding-vertical] {
-  padding: 4px 0;
-}
-
-[layout-margin-vertical] {
-  margin: 4px 0;
-}
-
-[layout-padding-horizontal] {
-  padding: 0 14px;
-}
-
-[layout-margin-horizontal] {
-  margin: 0 14px;
-}
-
-[layout-padding-left] {
-  padding-left: 14px;
-}
-
-[layout-margin-left] {
-  margin-left: 14px;
-}
-
-[layout-padding-right] {
-  padding-right: 14px;
-}
-
-[layout-margin-right] {
-  margin-right: 14px;
-}
-
-[layout-padding-top] {
-  padding-top: 4px;
-}
-
-[layout-margin-top] {
-  margin-top: 4px;
-}
-
-[layout-padding-bottom] {
-  padding-bottom: 4px;
-}
-
-[layout-margin-bottom] {
-  margin-bottom: 4px;
-}
-
-.o-form .o-form-toolbar .o-form-toolbar-header {
-  min-height: 36px;
-  max-height: 36px;
-  padding: 0 4px;
-  box-shadow: none;
-  font-size: 16px;
-}
-.o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
-  height: 28px;
-  padding: 8px;
-  min-height: 72px;
-  max-height: 72px;
-}
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
-  border-radius: 0;
-}
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-mdc-icon-button,
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-mdc-icon-button {
-  height: 30px;
-  line-height: 30px;
-  width: 30px;
-}
-
-.mat-mdc-paginator .mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-}
-
-mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-checkbox .mdc-checkbox {
-  padding: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  margin: calc((var(--mdc-checkbox-touch-target-size, 19px) - var(--mdc-checkbox-icon-size)) / 2);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
-  top: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  left: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  height: var(--mdc-checkbox-icon-size, 15px);
-  width: var(--mdc-checkbox-icon-size, 15px);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
-  top: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
-  right: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
-  left: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
-  width: var(--mdc-checkbox-touch-target-size, 19px);
-  height: var(--mdc-checkbox-touch-target-size, 19px);
-}
-mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
-  height: var(--mdc-checkbox-touch-target-size, 19px);
-  width: var(--mdc-checkbox-touch-target-size, 19px);
 }
 
 .mat-ripple-element {
