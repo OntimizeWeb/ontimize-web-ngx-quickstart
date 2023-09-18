@@ -106,7 +106,6 @@
           },
           "configurations": {
             "production": {
-              "aot": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -187,6 +186,14 @@
       }
     }
   },
+    "cli": {
+      "schematicCollections": [
+        "@angular-eslint/schematics"
+      ],
+      "cache": {
+        "enabled": false
+      }
+    },
   "schematics": {
     "@angular-eslint/schematics:application": {
       "setParserOptionsProject": true
