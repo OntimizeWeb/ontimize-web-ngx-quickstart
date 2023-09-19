@@ -46,6 +46,7 @@ export class EmployeesCardComponent {
     this.chartParameters.yDataType = 'intGrouped';
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showXAxis = false;
+    this.chartParameters.showYAxis = true;
     this.chartParameters.showTooltip = false;
     const theme: DocsSiteTheme = this._themeService.getStoredTheme();
     this.scheme = {

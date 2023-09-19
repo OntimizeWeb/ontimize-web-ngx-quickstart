@@ -28,7 +28,7 @@ export class CustomersCardComponent {
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
     this.chartParameters.x1Axis.showMaxMin = false;
-    this.chartParameters.showXAxis = false;
+    this.chartParameters.showYAxis = true;
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
