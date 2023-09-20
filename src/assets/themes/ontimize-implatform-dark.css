@@ -7013,6 +7013,18 @@ o-row.o-row.bg-level-1 {
 .mat-mdc-form-field .mat-mdc-radio-touch-target {
   display: none;
 }
+.mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .icon-btn svg, .mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .mat-icon-button svg,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-suffix .mat-mdc-icon-button svg,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-prefix .mat-mdc-icon-button svg {
+  height: 100%;
+  width: 100%;
+}
+.mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .icon-btn .mat-mdc-button-touch-target, .mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .mat-icon-button .mat-mdc-button-touch-target,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-suffix .mat-mdc-icon-button .mat-mdc-button-touch-target,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-prefix .mat-mdc-icon-button .mat-mdc-button-touch-target {
+  width: 20px;
+  height: 20px;
+}
 .mat-mdc-form-field .mat-mdc-form-field-subscript-wrapper {
   display: none;
 }
