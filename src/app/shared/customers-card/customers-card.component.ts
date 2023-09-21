@@ -24,7 +24,7 @@ export class CustomersCardComponent {
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.showLegend = false;
     this.chartParameters.height = 150;
-    this.chartParameters.width = 280;
+    this.chartParameters.width = 250;
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
     this.chartParameters.x1Axis.showMaxMin = false;

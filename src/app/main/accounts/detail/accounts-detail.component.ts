@@ -160,7 +160,6 @@ export class AccountsDetailComponent {
     this.balanceChartParams.margin.bottom = 40;
     this.balanceChartParams.margin.left = 120;
     this.balanceChartParams.focusEnable = false;
-    this.balanceChartParams.color = [AccountsDetailComponent.colorBalance];
     this.balanceChartParams.yDataType = locale.numberFormat('$,f');
     this.balanceChartParams.y1Axis.showMaxMin = false;
     this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
