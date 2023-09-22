@@ -52,7 +52,7 @@ jobs:
       - name: deploy pm2
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /home/systems/ftp-demos && ls -l -a && ./deploy-project quickstart15-snapshot
+          command: cd /home/systems/ftp-demos && ls -l -a && echo ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }} | sudo -S ./deploy-project quickstart15-snapshot
           host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
           username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
           password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
