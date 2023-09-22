@@ -34,7 +34,7 @@ export class EmployeesCardComponent {
 
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.height = 100;
-    this.chartParameters.width = 280;
+    this.chartParameters.width = 260;
     this.chartParameters.showLegend = false;
     this.chartParameters.showControls = false;
     this.chartParameters.y1Axis.showMaxMin = false;
