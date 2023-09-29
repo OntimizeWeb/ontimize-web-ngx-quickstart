@@ -1915,33 +1915,19 @@ mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
   padding: 4px;
 }
 
-.mat-mdc-radio-button .mdc-radio {
-  padding: calc((36px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (36px - 20px) / 2);
-  left: calc(-1 * (36px - 20px) / 2);
-  width: 36px;
-  height: 36px;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((36px - 36px) / 2);
-  right: calc((36px - 36px) / 2);
-  left: calc((36px - 36px) / 2);
-  width: 36px;
-  height: 36px;
+:root {
+  --mdc-radio-state-layer-size: 20px ;
 }
 
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-buttonmat-mdc-button-base, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary {
   color: #303030;
   background-color: #8ab2d2;
   border-color: transparent;
 }
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-buttonmat-mdc-button-base:hover,
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-buttonmat-mdc-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-button-focus-overlay {
   color: #8ab2d2;
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.12);
@@ -5684,27 +5670,27 @@ o-data-toolbar.o-grid-toolbar button.o-grid-button:last-child, o-data-toolbar.o-
   background-color: rgba(138, 178, 210, 0.04);
   border-color: rgba(255, 255, 255, 0.12);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-accent,
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent,
 .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-mdc-button-base,
-.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-accent,
+.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-mdc-button-base.mat-accent,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-mdc-button-base,
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-mdc-button-base.mat-accent,
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-mdc-button-base,
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-mdc-button-base.mat-accent,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-mdc-button-base,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-mdc-button-base.mat-accent {
   color: #8ab2d2;
   background-color: transparent;
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base:hover, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base:hover, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
 .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-mdc-button-base:hover,
-.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-accent:hover,
+.o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-mdc-button-base.mat-accent:hover,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-mdc-button-base:hover,
-.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent:hover,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
 .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-mdc-button-base:hover,
-.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent:hover,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-mdc-button-base:hover,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent:hover {
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-mdc-button-base.mat-accent:hover {
   color: #6d99c1;
   background-color: #dce8f2;
   border-color: transparent;
@@ -6696,33 +6682,19 @@ mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
   padding: 4px;
 }
 
-.mat-mdc-radio-button .mdc-radio {
-  padding: calc((36px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (36px - 20px) / 2);
-  left: calc(-1 * (36px - 20px) / 2);
-  width: 36px;
-  height: 36px;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((36px - 36px) / 2);
-  right: calc((36px - 36px) / 2);
-  left: calc((36px - 36px) / 2);
-  width: 36px;
-  height: 36px;
+:root {
+  --mdc-radio-state-layer-size: 20px ;
 }
 
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-buttonmat-mdc-button-base, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary {
   color: #303030;
   background-color: #8ab2d2;
   border-color: transparent;
 }
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-buttonmat-mdc-button-base:hover,
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-buttonmat-mdc-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-button-focus-overlay {
   color: #8ab2d2;
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.12);
@@ -6996,26 +6968,6 @@ o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell.mat-colum
   padding-bottom: 8px;
 }
 .mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-floating-label {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio {
-  padding: calc((28px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (28px - 20px) / 2);
-  left: calc(-1 * (28px - 20px) / 2);
-  width: 28px;
-  height: 28px;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((28px - 28px) / 2);
-  right: calc((28px - 28px) / 2);
-  left: calc((28px - 28px) / 2);
-  width: 28px;
-  height: 28px;
-}
-.mat-mdc-form-field .mat-mdc-radio-touch-target {
   display: none;
 }
 .mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .icon-btn svg, .mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .mat-icon-button svg,
@@ -7627,133 +7579,133 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
   margin-right: 32px;
 }
 
-.mat-mdc-dialog-actions button:not([disabled]).mat-button-base,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base {
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base {
   border-color: rgba(255, 255, 255, 0.32);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-primary,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.o-button-primary,
 .o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-primary,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.o-button-primary,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-primary,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-primary,
 .o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-primary,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-primary,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-primary,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.o-button-primary,
 button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-primary,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.o-button-primary {
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.o-button-primary {
   color: #8ab2d2;
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.32);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon,
 .o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon,
 .o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon,
 .o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon,
 button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.o-button-primary .mat-icon {
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.o-button-primary .mat-icon {
   color: #8ab2d2;
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary:hover, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary:hover, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
 .o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary:hover,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
 .o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary:hover,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary:hover,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
 .o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary:hover,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary:hover,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.o-button-primary:hover,
 button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.o-button-primary:hover {
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.o-button-primary:hover {
   background-color: rgba(138, 178, 210, 0.04);
   border-color: rgba(255, 255, 255, 0.32);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-accent, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.o-button-default,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-accent,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.o-button-default {
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-default,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-accent,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.o-button-default,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-accent,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.o-button-default,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-accent,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-default,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-accent,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-default,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-accent,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.o-button-default,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-accent,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.o-button-default {
   color: rgba(255, 255, 255, 0.87);
   border-color: rgba(255, 255, 255, 0.32);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-icon, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-icon,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent .mat-icon,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-icon,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-icon,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-icon,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-accent .mat-icon,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.o-button-default .mat-icon {
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.o-button-default .mat-icon {
   color: #8ab2d2;
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover, .mat-mdc-dialog-actions button:not([disabled]).mat-button-base.o-button-default:hover,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent:hover,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default:hover,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent:hover,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default:hover,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent:hover,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default:hover,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent:hover,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default:hover,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent:hover,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-accent:hover,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.o-button-default:hover {
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent:hover, .mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.o-button-default:hover,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.o-button-default:hover,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.o-button-default:hover,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-default:hover,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.o-button-default:hover,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.o-button-default:hover,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.o-button-default:hover {
   color: #8ab2d2;
   background-color: rgba(138, 178, 210, 0.04);
   border-color: rgba(255, 255, 255, 0.32);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-warn,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-warn {
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-warn,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-warn,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-warn,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-warn,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-warn,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-warn,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-warn {
   color: #f44336;
   border-color: rgba(255, 255, 255, 0.32);
 }
-.mat-mdc-dialog-actions button:not([disabled]).mat-button-base.mat-warn:hover,
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn:hover,
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn:hover,
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn:hover,
-button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-warn:hover {
+.mat-mdc-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
+.o-form .o-form-toolbar button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
+.o-grid .o-grid-footer button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
+.o-list .o-list-toolbar > button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
+button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-warn:hover {
   background-color: rgba(244, 67, 54, 0.04);
   border-color: rgba(255, 255, 255, 0.32);
 }
 
-.o-button button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent {
+.o-button button.mat-stroked-button:not([disabled]) mat-mdc-button-base.mat-accent {
   color: #8ab2d2;
 }
 
@@ -7855,14 +7807,6 @@ o-row.o-row.bg-level-1 {
 .o-form-content-wrapper[layout-padding],
 .o-form-toolbar[layout-padding] {
   padding: 0;
-}
-
-.o-filemanager-table .filemanager-breadcrumb .breadcrumb-root {
-  color: mat-color(, 0.54);
-}
-
-.upload-progress-container > div {
-  background-color: mat-color(, background);
 }
 
 /*
