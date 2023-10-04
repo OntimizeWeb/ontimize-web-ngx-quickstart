@@ -1,5 +1,5 @@
 @use '@angular/material'as mat;
-@use 'ontimize-web-ngx/theming/ontimize-theme.scss'as ontimize-theme;
+@use 'ontimize-web-ngx/theming/ontimize-style-v8.scss'as ontimize-style;
 /* Color definitions */
 $mat-custom-primary: (50 : #f1f6fa,
   100 : #dce8f2,
@@ -36,5 +36,5 @@ $primary: mat.define-palette($mat-custom-primary);
 $accent: $primary;
 
 /* Dark theme */
-$theme: ontimize-theme.o-mat-dark-theme($primary, $accent);
+$theme: ontimize-style.o-mat-dark-theme($primary, $accent);
 @import '../css/app.scss';

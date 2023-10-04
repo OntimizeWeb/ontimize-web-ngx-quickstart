@@ -1,12 +1,13 @@
 @use '@angular/material'as mat;
 @use 'sass:map';
 
-@mixin main-theme($theme, $typography) {
+@mixin main-theme($theme) {
   $primary: map.get($theme, color, primary);
   $accent: map-get($theme, color, accent);
   $warn: map-get($theme, color, warn);
   $background: map-get($theme, color, background);
   $foreground: map-get($theme, color, foreground);
+  $typography: map-get($theme, typography);
 
   .container {
     background-color: mat.get-color-from-palette($background, card);

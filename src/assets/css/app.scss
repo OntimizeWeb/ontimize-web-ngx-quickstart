@@ -1,24 +1,15 @@
-@use 'ontimize-web-ngx/theming/ontimize-theme.scss';
-@use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
-@use 'ontimize-web-ngx/theming/implatform-fashion-theme.scss';
-@use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
-// @use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
-
-//Include ontimize theme styles
-
-@include ontimize-theme.ontimize-theme-styles($theme);
-
-// After define theme, it is necessary to transfer color to Ontimize Web framework
-@include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);
-
-//Include ontimize-lite theme
-@include ontimize-theme-lite.ontimize-theme-styles-lite($theme);
+@use 'ontimize-web-ngx/theming/ontimize-style-v8.scss';
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
 
 $style: null !default;
 
+//Include styles
 @if($style=='implatform') {
-  //Include implatform-fashion style
-  @include implatform-fashion-theme.implatform-fashion-theme-styles($theme, ontimize-theme-lite.$typography);
+  @include ontimize-style.ontimize-theme-styles($theme);
+}
+
+@else {
+  @include ontimize-style-v8.ontimize-theme-styles($theme);
 }
 
 
@@ -30,7 +21,7 @@ $style: null !default;
 @include login-theme($theme);
 
 @import '../../app/main/main-theme.scss';
-@include main-theme($theme, ontimize-theme-lite.$typography);
+@include main-theme($theme);
 
 @import '../../app/main/accounts/home/account-home.theme.scss';
 @include account-home-theme($theme);

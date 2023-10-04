@@ -62,39 +62,7 @@
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-map/styles.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
-              "src/styles.scss",
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-violet-blues.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-violet-blues-dark.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-oxford-blue-emerald.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-oxford-blue-emerald-dark.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-madder-lake-jet.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-madder-lake-jet-dark.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-prussian-celtic-blue.scss"
-              },
-              {
-                "inject": true,
-                "input": "src/assets/themes/o-prussian-celtic-blue-dark.scss"
-              }
+              "src/styles.scss"
             ],
             "scripts": [],
             "vendorChunk": true,
