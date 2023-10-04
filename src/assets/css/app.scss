@@ -2,7 +2,7 @@
 @use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
 @use 'ontimize-web-ngx/theming/implatform-fashion-theme.scss';
 @use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
-// @use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
+@use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
 
 //Include ontimize theme styles
 
@@ -22,7 +22,7 @@ $style: null !default;
 }
 
 
-// @include filemanager.o-filemanager-table-theme($theme);
+@include filemanager.o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
 */

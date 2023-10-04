@@ -6408,6 +6408,14 @@ mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
   width: var(--mdc-checkbox-touch-target-size, 19px);
 }
 
+.o-filemanager-table .filemanager-breadcrumb .breadcrumb-root {
+  color: mat-color(, 0.54);
+}
+
+.upload-progress-container > div {
+  background-color: mat-color(, background);
+}
+
 /*
 * Propagate theme to screen styles definition.
 */

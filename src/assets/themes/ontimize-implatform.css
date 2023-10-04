@@ -7802,6 +7802,14 @@ o-row.o-row.bg-level-1 {
   padding: 0;
 }
 
+.o-filemanager-table .filemanager-breadcrumb .breadcrumb-root {
+  color: mat-color(, 0.54);
+}
+
+.upload-progress-container > div {
+  background-color: mat-color(, background);
+}
+
 /*
 * Propagate theme to screen styles definition.
 */
