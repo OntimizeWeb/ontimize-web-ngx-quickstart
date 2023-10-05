@@ -1,36 +1,29 @@
-@use 'ontimize-web-ngx/theming/ontimize-style-v8.scss';
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
 
-$style: null !default;
-
-//Include styles
-@if($style=='implatform') {
-  @include ontimize-style.ontimize-theme-styles($theme);
+.o-dark {
+  @include ontimize-style.ontimize-theme-styles(theme.$dark-theme);
 }
-
-@else {
-  @include ontimize-style-v8.ontimize-theme-styles($theme);
-}
-
 
 // @include filemanager.o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
 */
 @import '../../app/login/login.theme.scss';
-@include login-theme($theme);
+@include login-theme(theme.$theme);
 
 @import '../../app/main/main-theme.scss';
-@include main-theme($theme);
+@include main-theme(theme.$theme);
 
 @import '../../app/main/accounts/home/account-home.theme.scss';
-@include account-home-theme($theme);
+@include account-home-theme(theme.$theme);
 @import '../../app/main/accounts/detail/accounts-detail.theme.scss';
-@include accounts-detail-theme($theme);
+@include accounts-detail-theme(theme.$theme);
 @import '../../app/main/employees/employees.theme.scss';
-@include employees-theme($theme);
+@include employees-theme(theme.$theme);
 @import '../../app//main/about/about.theme.scss';
-@include about-theme($theme);
+@include about-theme(theme.$theme);
 
 /*
 * Other app styles
