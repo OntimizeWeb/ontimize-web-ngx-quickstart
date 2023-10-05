@@ -3,7 +3,7 @@
   "version": "15.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build:themes && ng serve --port 4800",
+    "start": "ng serve --port 4800",
     "test": "ng test --code-coverage",
     "test-ci": "ng test --no-watch --code-coverage --browsers ChromeHeadless",
     "lint": "ng lint",
@@ -13,8 +13,7 @@
     "production-aot-serverpwa": "ng build --configuration production --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
     "development-aot-serverpwa": "ng build --configuration production --base-href / && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
-    "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa",
-    "build:themes": "npx sass --no-source-map --load-path=node_modules/  ./src/assets/themes:./src/assets/themes"
+    "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa"
   },
   "private": true,
   "dependencies": {
