@@ -4,8 +4,6 @@ import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { Constants } from '../constant';
 
-declare var d3: any;
-
 @Component({
   selector: 'employees-card',
   templateUrl: './employees-card.component.html',

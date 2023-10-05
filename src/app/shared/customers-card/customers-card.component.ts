@@ -2,8 +2,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { Constants } from '../constant';
-
-
 @Component({
   selector: 'customers-card',
   templateUrl: './customers-card.component.html',
@@ -13,6 +11,7 @@ import { Constants } from '../constant';
     '[class.customers-card]': 'true'
   }
 })
+
 export class CustomersCardComponent {
 
   public chartParameters: MultiBarHorizontalChartConfiguration;
