@@ -1,11 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { AppConfig, OntimizeService, OTranslateService } from 'ontimize-web-ngx';
+import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
-import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
-import { DocsSiteTheme, ThemeService } from '../../../shared/theme.service';
-
-
+import { Constants } from '../../../shared/constant';
 
 @Component({
   selector: 'accounts-detail',
@@ -34,8 +31,6 @@ export class AccountsDetailComponent {
 
   public id: string;
 
-  private theme;
-
   public mov_date: Date;
   public mov_type: number;
   public last_mov: number;
@@ -43,23 +38,19 @@ export class AccountsDetailComponent {
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
-    private d3LocaleService: D3LocaleService,
-    private reportStoreService: OReportStoreService,
-    private themeService: ThemeService,
-    private _appConfig: AppConfig,
+    private reportStoreService: OReportStoreService
   ) {
 
-    this.theme = themeService.getStoredTheme();
     //alpha 30
-    AccountsDetailComponent.colorCash = this.theme.primary + "4D";
-    AccountsDetailComponent.colorBalance = this.theme.accent;
+    AccountsDetailComponent.colorCash = Constants.THEME.primary + "4D";
+    AccountsDetailComponent.colorBalance = Constants.THEME.accent;
     //alpha 60
-    AccountsDetailComponent.colorDebit = this.theme.primary + "99";
+    AccountsDetailComponent.colorDebit = Constants.THEME.primary + "99";
 
 
-    this.theme.primary = this.theme.primary.replace('#', '');
-    let splitColor = this.theme.primary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
-    this.scheme = { domain: [this.theme.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'] };
+    let themePrimary = Constants.THEME.primary.replace('#', '');
+    let splitColor = themePrimary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
+    this.scheme = { domain: [Constants.THEME.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'] };
     this._configurePieChart();
 
   }

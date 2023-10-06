@@ -2,9 +2,7 @@ import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { OntimizeService } from 'ontimize-web-ngx';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
-import { DocsSiteTheme, ThemeService } from '../theme.service';
-
-declare var d3: any;
+import { Constants } from '../constant';
 
 @Component({
   selector: 'employees-card',
@@ -22,8 +20,7 @@ export class EmployeesCardComponent {
   scheme;
   constructor(
     private ontimizeService: OntimizeService,
-    private cd: ChangeDetectorRef,
-    private _themeService: ThemeService
+    private cd: ChangeDetectorRef
   ) {
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('employees'));
     this.ontimizeService.query(void 0, ['EMPLOYEEID'], 'employee').subscribe(
@@ -48,16 +45,9 @@ export class EmployeesCardComponent {
     this.chartParameters.showXAxis = false;
     this.chartParameters.showYAxis = true;
     this.chartParameters.showTooltip = false;
-    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
     this.scheme = {
-      domain: [theme.accent, '#c5c5c5', theme.primary]
+      domain: [Constants.THEME.accent, '#c5c5c5', Constants.THEME.primary]
     };
-    if (theme.isDark) {
-      this.chartParameters.callback = () => {
-        d3.selectAll('.employees-card-chart .nv-axis text').style('fill', '#cccccc');
-        d3.selectAll('.employees-card-chart .nv-groups text').style('fill', '#cccccc');
-      };
-    }
   }
 
 }

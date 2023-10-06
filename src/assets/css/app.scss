@@ -1,45 +1,32 @@
-@use 'ontimize-web-ngx/theming/ontimize-theme.scss';
-@use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
-@use 'ontimize-web-ngx/theming/implatform-fashion-theme.scss';
-@use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
 @use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
 
-//Include ontimize theme styles
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
+@import '../../app/main/main-theme.scss';
 
-@include ontimize-theme.ontimize-theme-styles($theme);
-
-// After define theme, it is necessary to transfer color to Ontimize Web framework
-@include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);
-
-//Include ontimize-lite theme
-@include ontimize-theme-lite.ontimize-theme-styles-lite($theme);
-
-$style: null !default;
-
-@if($style=='implatform') {
-  //Include implatform-fashion style
-  @include implatform-fashion-theme.implatform-fashion-theme-styles($theme, ontimize-theme-lite.$typography);
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+  @include main-theme(theme.$dark-theme);
 }
 
+@include filemanager.o-filemanager-table-theme(theme.$theme);
+@include main-theme(theme.$theme);
 
-@include filemanager.o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
 */
 @import '../../app/login/login.theme.scss';
-@include login-theme($theme);
-
-@import '../../app/main/main-theme.scss';
-@include main-theme($theme, ontimize-theme-lite.$typography);
+@include login-theme(theme.$theme);
 
 @import '../../app/main/accounts/home/account-home.theme.scss';
-@include account-home-theme($theme);
+@include account-home-theme(theme.$theme);
 @import '../../app/main/accounts/detail/accounts-detail.theme.scss';
-@include accounts-detail-theme($theme);
+@include accounts-detail-theme(theme.$theme);
 @import '../../app/main/employees/employees.theme.scss';
-@include employees-theme($theme);
+@include employees-theme(theme.$theme);
 @import '../../app//main/about/about.theme.scss';
-@include about-theme($theme);
+@include about-theme(theme.$theme);
 
 /*
 * Other app styles

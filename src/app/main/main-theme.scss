@@ -1,12 +1,13 @@
 @use '@angular/material'as mat;
 @use 'sass:map';
 
-@mixin main-theme($theme, $typography) {
+@mixin main-theme($theme) {
   $primary: map.get($theme, color, primary);
   $accent: map-get($theme, color, accent);
   $warn: map-get($theme, color, warn);
   $background: map-get($theme, color, background);
   $foreground: map-get($theme, color, foreground);
+  $typography: map-get($theme, typography);
 
   .container {
     background-color: mat.get-color-from-palette($background, card);
@@ -14,14 +15,13 @@
 
   .branches-card-branches-amount,
   .employees-card-employees-amount,
-  .o-card-menu-item .nvd3.nv-multibarHorizontal .nv-groups text,
-  .o-card-menu-item .nv-x .nv-axis .nvd3-svg {
-    font-size: mat.font-size($typography, headline-6);
+  .o-card-menu-item [ngx-charts-bar-label] text.textDataLabel {
+    font-size: mat.font-size($typography, headline-5);
     font-weight: 600;
   }
 
   .o-card-menu-item {
-    .nvd3 text {
+    .textDataLabel {
       font-family: mat.font-family($typography);
     }
   }
@@ -43,7 +43,7 @@
 
   }
 
-  .o-card-menu-item div .nvd3.nv-multibarHorizontal .nv-groups text {
+  .o-card-menu-item div ngx-charts-bar-horizontal .textDataLabel {
     fill: mat.get-color-from-palette($primary);
     font-family: mat.font-family($typography);
   }

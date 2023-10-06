@@ -1,10 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
-import { DocsSiteTheme, ThemeService } from '../theme.service';
-
-declare var d3: any;
-
+import { Constants } from '../constant';
 @Component({
   selector: 'customers-card',
   templateUrl: './customers-card.component.html',
@@ -14,13 +11,12 @@ declare var d3: any;
     '[class.customers-card]': 'true'
   }
 })
+
 export class CustomersCardComponent {
 
   public chartParameters: MultiBarHorizontalChartConfiguration;
   scheme;
-  constructor(
-    private _themeService: ThemeService
-  ) {
+  constructor(  ) {
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.showLegend = false;
     this.chartParameters.height = 150;
@@ -37,17 +33,7 @@ export class CustomersCardComponent {
     this.chartParameters.yDataType = 'intGrouped';
     this.chartParameters.valueType = 'intGrouped';
     this.chartParameters.showTooltip = false;
-    const theme: DocsSiteTheme = this._themeService.getStoredTheme();
-
-    theme.primary = theme.primary.replace('#', '');
-    this.scheme = { domain: ['#eeeeee', theme.accent, '#c5c5c5'] };
-
-    if (theme.isDark) {
-      this.chartParameters.callback = () => {
-        d3.selectAll('.customers-card-chart .nv-axis text').style('fill', '#cccccc');
-        d3.selectAll('.customers-card-chart .nv-groups text').style('fill', '#cccccc');
-      };
-    }
+    this.scheme = { domain: ['#eeeeee', Constants.THEME.accent, '#c5c5c5'] };
   }
 
 }

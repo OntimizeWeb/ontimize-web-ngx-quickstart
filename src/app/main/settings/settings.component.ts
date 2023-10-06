@@ -3,7 +3,6 @@ import { MatRadioChange } from '@angular/material/radio';
 import { MatSlideToggle, MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { AppConfig, AppearanceService, OTranslateService, Util } from 'ontimize-web-ngx';
 
-import { DocsSiteTheme, ThemeService } from '../../shared/theme.service';
 
 @Component({
   selector: 'app-settings',
@@ -18,8 +17,6 @@ export class SettingsComponent {
 
   public availableLangs: string[] = [];
   public currentLang: string;
-  public availableThemes: DocsSiteTheme[];
-  public currentTheme: DocsSiteTheme;
   public darkDefaultMode = false;
 
   @ViewChild('toggleDark')
@@ -27,17 +24,12 @@ export class SettingsComponent {
 
   constructor(
     private _appConfig: AppConfig,
-    private _themeService: ThemeService,
     private _translateService: OTranslateService,
     private appearanceService: AppearanceService
   ) {
-    this.availableThemes = this._themeService.availableThemes;
-    this.currentTheme = this._themeService.currentTheme;
-    this.darkDefaultMode = Util.isDefined(this.currentTheme) ? this.currentTheme.isDark : false;
+    this.darkDefaultMode = this.appearanceService.isDarkMode();
     this.availableLangs = this._appConfig.getConfiguration().applicationLocales;
     this.currentLang = this._translateService.getCurrentLang();
-
-    this._themeService.onThemeUpdate.subscribe(theme => this.currentTheme = theme);
   }
 
   changeLang(e: MatRadioChange): void {
@@ -46,16 +38,9 @@ export class SettingsComponent {
     }
   }
 
-  changeTheme(e: MatRadioChange): void {
-    e.value.isDark = this.toggleDark.checked;
-    this._themeService.installTheme(e.value);
-  }
 
   changeDarkMode(e: MatSlideToggleChange): void {
-    const currentTheme = this._themeService.getStoredTheme();
-    currentTheme.isDark = e.checked;
-    this.appearanceService.setDarkMode(currentTheme.isDark);
-    this._themeService.installTheme(currentTheme);
+    this.appearanceService.setDarkMode(e.checked);
   }
 
 }
