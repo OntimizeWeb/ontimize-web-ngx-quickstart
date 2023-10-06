@@ -4,7 +4,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { APP_CONFIG, O_INPUTS_OPTIONS, O_MAT_ERROR_OPTIONS, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { APP_CONFIG, AppearanceService, O_INPUTS_OPTIONS, O_MAT_ERROR_OPTIONS, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,7 @@ export const customProviders: any = [
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
+    AppearanceService,
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
   ],

@@ -1,14 +1,16 @@
 @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
+
 @import '../../app/main/main-theme.scss';
-@include main-theme(theme.$theme);
+
 
 .o-dark {
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
   @include main-theme(theme.$dark-theme);
 }
 
+@include main-theme(theme.$theme);
 // @include filemanager.o-filemanager-table-theme($theme);
 /*
 * Propagate theme to screen styles definition.
