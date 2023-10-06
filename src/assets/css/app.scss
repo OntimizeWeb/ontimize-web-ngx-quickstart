@@ -1,24 +1,23 @@
 @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
+@use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
+
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
-
 @import '../../app/main/main-theme.scss';
-
 
 .o-dark {
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
   @include main-theme(theme.$dark-theme);
 }
 
+@include filemanager.o-filemanager-table-theme(theme.$theme);
 @include main-theme(theme.$theme);
-// @include filemanager.o-filemanager-table-theme($theme);
+
 /*
 * Propagate theme to screen styles definition.
 */
 @import '../../app/login/login.theme.scss';
 @include login-theme(theme.$theme);
-
-
 
 @import '../../app/main/accounts/home/account-home.theme.scss';
 @include account-home-theme(theme.$theme);

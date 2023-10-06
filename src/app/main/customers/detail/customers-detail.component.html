@@ -2,13 +2,12 @@
   <mat-tab-group fxFill>
 
     <mat-tab label="{{ 'DATA' | oTranslate }}">
-      <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
-        header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
-        show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
+      <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D"
+        #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC" show-header-navigation="yes"
+        (onDataLoaded)="onDataLoaded($event)">
 
         <div o-form-toolbar-buttons>
-          <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
-            attr="fillreport">
+          <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)" attr="fillreport">
             <mat-icon>description</mat-icon>
             <span>{{ 'FILL_REPORT' | oTranslate }}</span>
           </button>
@@ -23,10 +22,9 @@
               <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
               <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp">
               </o-date-input>
-              <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes"
-                value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
-                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " width="160px"
-                class="form-field"></o-combo>
+              <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes" value-column="CUSTOMERTYPEID" service="customers"
+                entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - "
+                width="160px" class="form-field"></o-combo>
             </div>
           </div>
         </o-row>
@@ -51,18 +49,17 @@
     </mat-tab>
 
     <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column"
-        show-header="no" keys="CUSTOMERID" keys-sql-types="INTEGER">
-        <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount"
-          parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-form-route="accounts" edit-form-route="accounts"
+      <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+        keys-sql-types="INTEGER">
+        <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+          detail-form-route="accounts" edit-form-route="accounts"
           columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
-          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE"
-          query-on-init="false" query-rows="6" quick-filter="yes" pageable="no" insert-button="no" row-height="medium"
-          class="vertical-padding-8">
+          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6"
+          quick-filter="yes" pageable="no" insert-button="no" row-height="medium" class="vertical-padding-8">
           <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
           <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€"
-            currency-symbol-position="right" thousand-separator="." decimal-separator=",">
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+            decimal-separator=",">
           </o-table-column>
           <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
         </o-table>
@@ -72,7 +69,7 @@
     <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
       <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
         keys-sql-types="INTEGER" columns="ID_DMS_DOC">
-        <!-- <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table> -->
+        <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
       </o-form>
     </mat-tab>
 
