@@ -115,6 +115,10 @@
 
     .mat-mdc-list .mat-mdc-list-item {
       height: 32px;
+
+      .mat-icon {
+        vertical-align: middle;
+      }
     }
   }
 
@@ -139,27 +143,27 @@
         border-style: solid;
         border-width: 0 0 0 5px;
         border-radius: 3px;
+        border-bottom-width: 1px;
         margin: 8px;
         width: auto;
+        padding: 0;
+        height: 72px;
 
         .mdc-list-item__content {
           padding: 0 13px 0 19px;
 
-          .mat-line.concept {
+          .concept {
             font-size: 18px;
             font-weight: bold;
           }
 
-          .mat-line.date {
+          .date {
             opacity: .5;
-          }
-
-          .mat-line {
-            padding-left: 28px;
           }
 
           .concept-date {
             width: 100%;
+            padding-left: 28px;
           }
 
           .amount {
@@ -171,31 +175,5 @@
     }
   }
 
-  o-chart.balance-chart>div>nvd3>svg line {
-    display: none;
-  }
 
-  o-chart.movements-chart {
-    margin: 0;
-
-    .nv-legendWrap {
-      transform: translate(0, 5px);
-    }
-
-    .nv-pieWrap {
-      transform: translate(150px, 20px);
-    }
-
-    .nv-pie path {
-      fill-opacity: .9;
-    }
-
-    .nv-pie .hover path {
-      fill-opacity: 1;
-    }
-
-    .nv-label text {
-      fill: #9b9b9b !important;
-    }
-  }
 }
