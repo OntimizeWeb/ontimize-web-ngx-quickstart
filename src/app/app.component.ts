@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppearanceService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'o-app',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private appearanceService: AppearanceService) {
 
+  }
 
 }
