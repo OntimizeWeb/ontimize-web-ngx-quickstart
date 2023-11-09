@@ -32,6 +32,7 @@
   }
 
   .movement-list.o-list .movement-list-item.mat-mdc-list-item {
+    border-botton-color: mat.get-color-from-palette($background, divider);
     &.movement-list-item-transfer {
       border-color: $color-transfer;
     }

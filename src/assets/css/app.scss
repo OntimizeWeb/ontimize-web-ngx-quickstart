@@ -11,15 +11,19 @@
 @import '../../app/main/employees/employees.theme.scss';
 @import '../../app//main/about/about.theme.scss';
 
+@mixin app-themes($theme) {
+  @include main-theme($theme);
+  @include login-theme($theme);
+  @include account-home-theme($theme);
+  @include accounts-detail-theme($theme);
+  @include employees-theme($theme);
+  @include about-theme($theme);
+}
+
 .o-dark {
   @include filemanager.o-filemanager-table-theme(theme.$dark-theme);
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
-  @include login-theme(theme.$dark-theme);
-  @include main-theme(theme.$dark-theme);
-  @include account-home-theme(theme.$dark-theme);
-  @include accounts-detail-theme(theme.$dark-theme);
-  @include employees-theme(theme.$dark-theme);
-  @include about-theme(theme.$dark-theme);
+  @include app-themes(theme.$dark-theme);
 }
 
 @include filemanager.o-filemanager-table-theme(theme.$theme);
@@ -27,12 +31,8 @@
 /*
 * Propagate theme to screen styles definition.
 */
-@include main-theme(theme.$theme);
-@include login-theme(theme.$theme);
-@include account-home-theme(theme.$theme);
-@include accounts-detail-theme(theme.$theme);
-@include employees-theme(theme.$theme);
-@include about-theme(theme.$theme);
+@include app-themes(theme.$theme);
+
 
 /*
 * Other app styles
