@@ -1,0 +1,120 @@
+---
+name: Prepare Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      RELEASE_TYPE:
+        description: 'Release type'
+        required: true
+        default: 'minor'
+        type: choice
+        options:
+          - "minor"
+          - "hotfix"
+
+env:
+  NPM_REGISTRY: https://registry.npmjs.org/
+  CI_EMAIL: ontimize-web@imatia.com
+  CI_USERNAME: ontimize-web
+  MAIN_BRANCH: main.15.x
+  DEVELOP_BRANCH: 15.x.x
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Get input parameters
+        id: parameters
+        run: |
+          if [ "${{ github.event.inputs.RELEASE_TYPE }}" = "hotfix" ]; then
+            BASELINE_BRANCH=${{ env.MAIN_BRANCH }}
+            isHotfix=1
+            isMinor=0
+            isRC=0
+            isBeta=0
+          else
+            BASELINE_BRANCH=${{ env.DEVELOP_BRANCH }}
+            isHotfix=0
+            isMinor=1
+            isRC=0
+            isBeta=0
+          fi
+          echo "BASELINE_BRANCH=$BASELINE_BRANCH" >> $GITHUB_ENV
+          echo "isHotfix=$isHotfix" >> $GITHUB_OUTPUT
+          echo "isMinor=$isMinor" >> $GITHUB_OUTPUT
+
+      - name: Checkout merge commit
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ env.BASELINE_BRANCH }}
+          fetch-depth: 0
+
+      - name: Node 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.10.0
+          registry-url: ${{ env.NPM_REGISTRY }}
+
+      - name: obtain package.json version
+        id: project
+        run: |
+          echo "version=$(node -pe "require('./package.json')['version']")" >> $GITHUB_OUTPUT
+
+      - name: Prepare git information
+        run: |
+          git config user.name "$CI_USERNAME"
+          git config user.email "$CI_EMAIL"
+
+      ## MINOR
+      - name: bumping minor version in package.json
+        if: ${{ steps.parameters.outputs.isMinor == true }}
+        run: |
+          version=$(echo "${{ steps.project.outputs.version }}" | sed 's/-SNAPSHOT-[0-9]//')
+          npm version $version --no-git-tag-version
+          echo "RELEASE_VERSION=$(node -pe "require('./package.json')['version']")" >> $GITHUB_ENV
+
+      ## HOTFIX
+      - name: bumping hotfix version in package.json
+        if: ${{ steps.parameters.outputs.isHotfix == true }}
+        run: |
+          npm version patch --no-git-tag-version
+          echo "RELEASE_VERSION=$(node -pe "require('./package.json')['version']")" >> $GITHUB_ENV
+
+      - name: Create release branch
+        if: ${{ steps.parameters.outputs.isMinor == true }} || ${{ steps.parameters.outputs.isRC == true }} || ${{ steps.parameters.outputs.isBeta == true }}
+        run: |
+          version=${{ env.RELEASE_VERSION }}
+          git checkout -b release/$version
+
+          git add .
+          git commit -m "Prepare release $version"
+          git push origin release/$version
+
+      - name: Create hotfix branch
+        if: ${{ steps.parameters.outputs.isHotfix == true }}
+        run: |
+          version=${{ env.RELEASE_VERSION }}
+          git checkout -b hotfix/$version
+
+          git add .
+          git commit -m "Prepare hotfix $version"
+          git push origin hotfix/$version
+
+      - name: Create Release pull request
+        if: ${{ steps.parameters.outputs.isHotfix == false }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
+        run: |
+          version=${{ env.RELEASE_VERSION }}
+          gh pr create -B ${{ env.MAIN_BRANCH }} -H release/$version --title "Release $version" --body "" --draft --label "release"
+
+      - name: Create Hotfix pull request
+        if: ${{ steps.parameters.outputs.isHotfix == true }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
+        run: |
+          version=${{ env.RELEASE_VERSION }}
+          gh pr create -B ${{ env.MAIN_BRANCH }} -H hotfix/$version --title "Hotfix $version" --body "" --draft --label "release"
+
