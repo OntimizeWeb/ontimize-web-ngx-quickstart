@@ -13,6 +13,5 @@ export class AboutComponent {
   public vCharts: string = environment.versions.charts;
   public vFilemanager: string = environment.versions.filemanager;
   public vMap: string = environment.versions.map;
-  public vTheming: string = environment.versions.theming;
   public vReport: string = environment.versions.report;
 }

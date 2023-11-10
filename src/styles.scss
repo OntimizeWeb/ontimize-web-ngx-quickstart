@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "node_modules/@angular/material/theming";
-
-
 
 /* Application styles */
 o-breadcrumb.o-breadcrumb {
@@ -22,6 +19,42 @@ o-form-toolbar .mat-toolbar {
   box-shadow: none;
 }
 
-.mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label {
+.mat-mdc-tab-group.o-tab-ontimize>.mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
   border-radius: 2px;
 }
+
+// .o-dialog-class {
+//   .mat-mdc-selection-list[dense] .mat-mdc-list-item {
+//     .mdc-list-item__start {
+//       align-self: center;
+//     }
+
+//     .mdc-list-item__content {
+//       .mdc-list-item__primary-text {
+//         margin-bottom: 0px;
+//         padding: 0 8px;
+//       }
+
+//       .mdc-list-item__primary-text,
+//       .mdc-list-item__secondary-text {
+
+//         &::before,
+//         &::after {
+//           height: auto;
+//           vertical-align: 0;
+//         }
+
+//         .mat-mdc-list-item-title {
+//           &::before,
+//           &::after {
+//             height: auto;
+//           }
+
+//           ::after {
+//             vertical-align: 0;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

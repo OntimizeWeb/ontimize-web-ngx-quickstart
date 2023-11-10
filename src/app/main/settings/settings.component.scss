@@ -6,12 +6,13 @@
     margin: auto;
 
     .setting-column {
-      &.o-column > .o-container .o-container-scroll,
-      &.o-row > .o-container .o-container-scroll {
+
+      &.o-column>.o-container .o-container-scroll,
+      &.o-row>.o-container .o-container-scroll {
         overflow: hidden;
       }
 
-      .mat-radio-group .mat-radio-button {
+      .mat-mdc-radio-group .mat-mdc-radio-button {
         padding: 4px 14px;
 
         .theme-option {
@@ -26,16 +27,16 @@
       }
 
       .theme-radio-group {
-        .mat-radio-container {
+        .mdc-radio {
           display: none !important;
         }
 
-        .mat-radio-label-content {
+        .mdc-label {
           padding: 0;
         }
       }
 
-      .mat-slide-toggle {
+      .mat-mdc-slide-toggle {
         padding-left: 14px;
       }
     }

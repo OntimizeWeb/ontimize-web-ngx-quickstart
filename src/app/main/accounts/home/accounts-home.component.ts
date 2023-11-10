@@ -1,6 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import { FilterExpressionUtils, Expression, OFormComponent, OListComponent, OFilterBuilderComponent } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 
@@ -16,16 +16,16 @@ export class AccountsHomeComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  @ViewChild('listAccount', { static: false })
+  @ViewChild('listAccount')
   private listAccount: OListComponent;
 
-  @ViewChild('formFilter', { static: false })
+  @ViewChild('formFilter')
   private formFilter: OFormComponent;
 
-  @ViewChild('filterBuilder', { static: false })
+  @ViewChild('filterBuilder')
   private filterBuilder: OFilterBuilderComponent;
 
-  @ViewChild('sidenav', { static: false })
+  @ViewChild('sidenav')
   private sidenav: MatSidenav;
 
 
