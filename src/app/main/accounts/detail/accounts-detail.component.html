@@ -35,9 +35,9 @@
                 columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
                 <div class="customers-border">
                   <mat-list-item *ngFor="let customer of customerList.dataArray">
-                    <mat-icon mat-list-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
-                    <mat-icon mat-list-icon *ngIf="!customer.ISOWNER">person</mat-icon>
-                    <span mat-line>{{ customer.NAME }} {{ customer.SURNAME }}</span>
+                    <mat-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
+                    <mat-icon *ngIf="!customer.ISOWNER">person</mat-icon>
+                    <span>{{ customer.NAME }} {{ customer.SURNAME }}</span>
                   </mat-list-item>
                 </div>
               </o-list>
@@ -75,11 +75,10 @@
                       <img *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" alt="{{ 'Banking fees' | oTranslate }}" />
                     </div>
                     <div class="concept-date" fxLayout="column" fxLayoutGap="8px">
-                      <span mat-line class="concept">{{ row.CONCEPT }}</span>
-                      <span mat-line class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
+                      <span class="concept">{{ row.CONCEPT }}</span>
+                      <span class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
                     </div>
                     <span class="amount">{{ row.MOVEMENT | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }} €</span>
-
                   </div>
                 </mat-list-item>
               </o-list>

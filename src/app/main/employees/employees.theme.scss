@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 @mixin employees-theme($theme) {
-  $accent: map.get($theme,color, accent);
+  $accent: map.get($theme, color, accent);
   $emp-icon-color: #b8b8b8;
   $foreground: map.get($theme, color, foreground);
   $border-color: mat.get-color-from-palette($foreground, divider);
@@ -18,7 +18,7 @@
       }
     }
 
-    .collapsible {
+    .o-column-collapsible.collapsible {
       .filter_style {
         border-color: mat.get-color-from-palette($accent);
       }

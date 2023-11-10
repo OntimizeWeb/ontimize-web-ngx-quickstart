@@ -1,14 +1,14 @@
-.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
-.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+.o-column-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-header {
   border: 0;
 }
 
-.collapsible {
+.o-column-collapsible.collapsible {
   .o-container {
     padding: 5px;
 
     .o-container-title.mat-expansion-panel-header-title,
-    .o-row-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title {
+    .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title {
       border: solid;
       border-width: 1px;
       border-radius: 2px;
@@ -16,9 +16,9 @@
       height: 32px;
     }
 
-    .mat-expansion-panel-header-description,
+
     .mat-expansion-panel-header-title {
-      flex-grow: 0;
+      max-width: 190px
     }
 
     mat-panel-title {

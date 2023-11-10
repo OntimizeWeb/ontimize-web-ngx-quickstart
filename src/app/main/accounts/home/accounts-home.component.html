@@ -51,7 +51,7 @@
               controls="no" fxFlex.gt-lg="list-accounts-60" pageable="yes">
 
 
-              <mat-card appearance="outlined" *ngFor="let account of listAccount.dataArray; trackBy:trackByIndex" o-list-item>
+              <mat-card *ngFor="let account of listAccount.dataArray; trackBy:trackByIndex" o-list-item>
                 <div fxLayout="row wrap" fxLayoutAlign="center center">
                   <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex="60" fxFlex.lt-lg="100" class="info-account"
                     ngClass.lt-lg="border-bottom" ngClass="border-right">

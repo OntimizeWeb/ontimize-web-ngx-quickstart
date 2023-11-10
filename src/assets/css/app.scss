@@ -2,31 +2,37 @@
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
 @use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
 
+
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
+@import '../../app/login/login.theme.scss';
 @import '../../app/main/main-theme.scss';
+@import '../../app/main/accounts/home/account-home.theme.scss';
+@import '../../app/main/accounts/detail/accounts-detail.theme.scss';
+@import '../../app/main/employees/employees.theme.scss';
+@import '../../app//main/about/about.theme.scss';
+
+@mixin app-themes($theme) {
+  @include main-theme($theme);
+  @include login-theme($theme);
+  @include account-home-theme($theme);
+  @include accounts-detail-theme($theme);
+  @include employees-theme($theme);
+  @include about-theme($theme);
+}
 
 .o-dark {
+  @include filemanager.o-filemanager-table-theme(theme.$dark-theme);
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
-  @include main-theme(theme.$dark-theme);
+  @include app-themes(theme.$dark-theme);
 }
 
 @include filemanager.o-filemanager-table-theme(theme.$theme);
-@include main-theme(theme.$theme);
 
 /*
 * Propagate theme to screen styles definition.
 */
-@import '../../app/login/login.theme.scss';
-@include login-theme(theme.$theme);
+@include app-themes(theme.$theme);
 
-@import '../../app/main/accounts/home/account-home.theme.scss';
-@include account-home-theme(theme.$theme);
-@import '../../app/main/accounts/detail/accounts-detail.theme.scss';
-@include accounts-detail-theme(theme.$theme);
-@import '../../app/main/employees/employees.theme.scss';
-@include employees-theme(theme.$theme);
-@import '../../app//main/about/about.theme.scss';
-@include about-theme(theme.$theme);
 
 /*
 * Other app styles
