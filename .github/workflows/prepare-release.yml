@@ -32,14 +32,10 @@ jobs:
             BASELINE_BRANCH=${{ env.MAIN_BRANCH }}
             isHotfix=1
             isMinor=0
-            isRC=0
-            isBeta=0
           else
             BASELINE_BRANCH=${{ env.DEVELOP_BRANCH }}
             isHotfix=0
             isMinor=1
-            isRC=0
-            isBeta=0
           fi
           echo "BASELINE_BRANCH=$BASELINE_BRANCH" >> $GITHUB_ENV
           echo "isHotfix=$isHotfix" >> $GITHUB_OUTPUT
