@@ -24,10 +24,10 @@ export class CustomersDetailComponent implements OnInit {
 
   public params: object;
 
-  @ViewChild('accountsTable', { static: false }) accountsTable: OTableComponent;
-  @ViewChild('oDetailForm', { static: false }) form: OFormComponent;
-  @ViewChild('accountListPicker', { static: false }) accountListPicker: OListPickerComponent;
-  @ViewChild('id', { static: false }) id: ONIFInputComponent;
+  @ViewChild('accountsTable') accountsTable: OTableComponent;
+  @ViewChild('oDetailForm') form: OFormComponent;
+  @ViewChild('accountListPicker') accountListPicker: OListPickerComponent;
+  @ViewChild('id') id: ONIFInputComponent;
 
   availableAccountsToAdd: Array<any> = [];
 

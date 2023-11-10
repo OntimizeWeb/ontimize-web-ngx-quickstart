@@ -23,12 +23,14 @@
   .account-info-container,
   .movement-list-container {
     margin: 10px 30px 20px 30px;
+
   }
 
   .account-info-container,
   .balance-chart-container,
   .movement-chart-container,
   .movement-list-container {
+    height: 95%;
     border-radius: 5px;
     border-style: hidden;
     padding-top: 24px;
@@ -101,7 +103,7 @@
       height: 90%;
       margin-left: 10px;
 
-      .mat-list-item-content {
+      .mdc-list-item__content {
         padding-left: 3px;
       }
     }
@@ -111,51 +113,57 @@
       font-weight: normal;
     }
 
-    .mat-list .mat-list-item {
+    .mat-mdc-list .mat-mdc-list-item {
       height: 32px;
+
+      .mat-icon {
+        vertical-align: middle;
+      }
     }
   }
 
   .o-form-layout-manager {
     max-height: 400px;
 
+    img {
+      border-radius: 3px;
+      padding: 6px;
+      background-color: #F2F2F299;
+      font-size: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+
+    }
+
     .movement-list.o-list {
-      .movement-list-item.mat-list-item {
+      .movement-list-item.mat-mdc-list-item {
         border-style: solid;
         border-width: 0 0 0 5px;
         border-radius: 3px;
+        border-bottom-width: 1px;
         margin: 8px;
         width: auto;
+        padding: 0;
+        height: 72px;
 
-        .mat-list-icon {
-          border-radius: 3px;
-          padding: 6px;
-          background-color: #F2F2F299;
-          font-size: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            width: 20px;
-            height: 20px;
-          }
-        }
-
-        .mat-list-item-content {
+        .mdc-list-item__content {
           padding: 0 13px 0 19px;
 
-          .mat-list-text {
+          .concept {
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          .date {
+            opacity: .5;
+          }
+
+          .concept-date {
+            width: 100%;
             padding-left: 28px;
-
-            .concept {
-              font-size: 18px;
-              font-weight: bold;
-            }
-
-            .date {
-              opacity: .5;
-            }
           }
 
           .amount {
@@ -167,31 +175,5 @@
     }
   }
 
-  o-chart.balance-chart>div>nvd3>svg line {
-    display: none;
-  }
 
-  o-chart.movements-chart {
-    margin: 0;
-
-    .nv-legendWrap {
-      transform: translate(0, 5px);
-    }
-
-    .nv-pieWrap {
-      transform: translate(150px, 20px);
-    }
-
-    .nv-pie path {
-      fill-opacity: .9;
-    }
-
-    .nv-pie .hover path {
-      fill-opacity: 1;
-    }
-
-    .nv-label text {
-      fill: #9b9b9b !important;
-    }
-  }
 }

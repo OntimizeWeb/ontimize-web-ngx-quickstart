@@ -13,12 +13,26 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "dom-to-image",
+              "moment",
+              "google-libphonenumber",
+              "leaflet",
+              "leaflet.markercluster",
+              "leaflet-providers",
+              "proj4leaflet",
+              "leaflet-contextmenu"
+            ],
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            },
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -48,49 +62,18 @@
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-map/styles.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
-              "src/styles.scss",
-              {
-                "input": "src/assets/themes/o-violet-blues.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-violet-blues-dark.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-oxford-blue-emerald.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-oxford-blue-emerald-dark.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-madder-lake-jet.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-madder-lake-jet-dark.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-prussian-celtic-blue.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              },
-              {
-                "input": "src/assets/themes/o-prussian-celtic-blue-dark.scss",
-                "lazy": true,
-                "bundleName": "assets/themes"
-              }
+              "src/assets/css/app.scss",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": {
+              "vendor": true
+            },
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -104,9 +87,7 @@
               "outputHashing": "all",
               "serviceWorker": true,
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -123,17 +104,13 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ontimize-web-ngx-quickstart:build",
-            "sourceMap": {
-              "scripts": true,
-              "styles": false,
-              "vendor": true
-            }
+            "browserTarget": "ontimize-web-ngx-quickstart:build"
           },
           "configurations": {
             "production": {
@@ -165,19 +142,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -193,5 +157,20 @@
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-quickstart"
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ],
+    "cache": {
+      "enabled": false
+    }
+  },
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  }
 }

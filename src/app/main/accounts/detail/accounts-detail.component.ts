@@ -2,10 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
-import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
-import { ThemeService } from '../../../shared/theme.service';
-
-declare var d3: any;
+import { Constants } from '../../../shared/constant';
 
 @Component({
   selector: 'accounts-detail',
@@ -17,7 +14,7 @@ declare var d3: any;
   }
 })
 export class AccountsDetailComponent {
-
+  scheme;
   private static colorSalary: string = '#eeeeee';
   private static colorDebit: string;
   private static colorTransfer: string = '#c5c5c5';
@@ -34,8 +31,6 @@ export class AccountsDetailComponent {
 
   public id: string;
 
-  private theme;
-
   public mov_date: Date;
   public mov_type: number;
   public last_mov: number;
@@ -43,20 +38,21 @@ export class AccountsDetailComponent {
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
-    private d3LocaleService: D3LocaleService,
-    private reportStoreService: OReportStoreService,
-    private themeService: ThemeService
+    private reportStoreService: OReportStoreService
   ) {
-    const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
-    this.theme = themeService.getStoredTheme();
+
     //alpha 30
-    AccountsDetailComponent.colorCash = this.theme.primary + "4D";
-    AccountsDetailComponent.colorBalance = this.theme.accent;
+    AccountsDetailComponent.colorCash = Constants.THEME.primary + "4D";
+    AccountsDetailComponent.colorBalance = Constants.THEME.accent;
     //alpha 60
-    AccountsDetailComponent.colorDebit = this.theme.primary + "99";
-    this._configureLineBarChart(d3Locale);
-    this._configurePieChart(d3Locale);
-    d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
+    AccountsDetailComponent.colorDebit = Constants.THEME.primary + "99";
+
+
+    let themePrimary = Constants.THEME.primary.replace('#', '');
+    let splitColor = themePrimary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
+    this.scheme = { domain: [Constants.THEME.accent, '#eeeeee', '#c5c5c5', 'rgba(' + splitColor[0] + ', ' + splitColor[1] + ', ' + splitColor[2] + ', 0.3)'] };
+    this._configurePieChart();
+
   }
 
   private getLastMovement() {
@@ -97,6 +93,7 @@ export class AccountsDetailComponent {
   }
 
   private processLineData(data: any[]): void {
+    console.log(data);
     if (data && data.length) {
       const balanceSerie: ChartSeries = {
         key: this.translateService.get('BALANCE'),
@@ -154,7 +151,6 @@ export class AccountsDetailComponent {
     this.balanceChartParams.margin.bottom = 40;
     this.balanceChartParams.margin.left = 120;
     this.balanceChartParams.focusEnable = false;
-    this.balanceChartParams.color = [AccountsDetailComponent.colorBalance];
     this.balanceChartParams.yDataType = locale.numberFormat('$,f');
     this.balanceChartParams.y1Axis.showMaxMin = false;
     this.balanceChartParams.xDataType = d => locale.timeFormat('%d %b %Y')(new Date(d));
@@ -166,19 +162,15 @@ export class AccountsDetailComponent {
     this.balanceChartParams.legend.margin.left = 0;
   }
 
-  private _configurePieChart(locale: any): void {
+  private _configurePieChart(): void {
     this.movementTypesChartParams = new PieChartConfiguration();
     this.movementTypesChartParams.margin.top = 0;
     this.movementTypesChartParams.margin.right = 0;
     this.movementTypesChartParams.margin.bottom = 0;
     this.movementTypesChartParams.margin.left = 0;
     this.movementTypesChartParams.height = 320;
-    this.movementTypesChartParams.legendPosition = 'right';
-    this.movementTypesChartParams.legend.vers = 'furious';
-    this.movementTypesChartParams.legend.margin.top = 2;
-    this.movementTypesChartParams.legend.margin.right = 10;
+    this.movementTypesChartParams.showLeyend = false;
     this.movementTypesChartParams.labelType = 'value';
-    this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
     this.movementTypesChartParams.colorData = [{
       value: 'Salary',
       color: AccountsDetailComponent.colorSalary
@@ -199,6 +191,7 @@ export class AccountsDetailComponent {
       value: 'Banking fees',
       color: AccountsDetailComponent.colorBalance
     }];
+
   }
 
   getParameters() {
