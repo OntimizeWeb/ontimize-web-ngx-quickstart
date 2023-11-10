@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "15.0.0-SNAPSHOT-0",
+  "version": "15.1.0-SNAPSHOT-0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4800",
@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "build": "ng build",
     "production": "ng build --base-href /ontimize-web-ngx-quickstart",
-    "production-aot-server": "ng build --configuration production --base-href /ontimizeweb/v8/quickstart/",
-    "production-aot-serverpwa": "ng build --configuration production --base-href /ontimizeweb/v8/quickstart/ && npm run build-ngsw",
+    "production-aot-server": "ng build --configuration production --base-href /ontimizeweb/v15/quickstart/",
+    "production-aot-serverpwa": "ng build --configuration production --base-href /ontimizeweb/v15/quickstart/ && npm run build-ngsw",
     "development-aot-serverpwa": "ng build --configuration production --base-href / && npm run build-ngsw",
     "build-ngsw": "npm run build-ngsw-config",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json ontimize-web-ngx-quickstart-pwa"
@@ -33,7 +33,7 @@
     "@angular/upgrade": "^15.2.9",
     "ontimize-web-ngx": "15.0.0-beta.3",
     "ontimize-web-ngx-charts": "15.0.0-beta.0",
-    "ontimize-web-ngx-filemanager":"15.0.0-beta.0",
+    "ontimize-web-ngx-filemanager": "15.0.0-beta.0",
     "ontimize-web-ngx-map": "15.0.0-beta.0",
     "ontimize-web-ngx-report": "15.0.0-beta.1",
     "rxjs": "~7.8.0",
