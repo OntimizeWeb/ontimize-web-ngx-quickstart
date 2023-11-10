@@ -1,7 +1,7 @@
 name: Deploy Snapshot
 on:
   push:
-    branches: [migration/15.x.x]
+    branches: [15.x.x]
 
 jobs:
   build:
