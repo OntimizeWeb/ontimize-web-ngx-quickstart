@@ -79,7 +79,7 @@ jobs:
           echo "RELEASE_VERSION=$(node -pe "require('./package.json')['version']")" >> $GITHUB_ENV
 
       - name: Create release branch
-        if: ${{ steps.parameters.outputs.isMinor == true }} || ${{ steps.parameters.outputs.isRC == true }} || ${{ steps.parameters.outputs.isBeta == true }}
+        if: ${{ steps.parameters.outputs.isMinor == true }}
         run: |
           version=${{ env.RELEASE_VERSION }}
           git checkout -b release/$version
