@@ -70,6 +70,7 @@ jobs:
         with:
           command: cd /home/systems/ftp-demos && ls -l -a && ./backup-project quickstart15
           host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
           username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
           password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
         env:
@@ -79,6 +80,7 @@ jobs:
         uses: wangyucode/sftp-upload-action@v2.0.2
         with:
           host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
           username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
           password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
           localDir: dist/ftp/
@@ -89,6 +91,7 @@ jobs:
         with:
           command: cd /home/systems/ftp-demos && ls -l -a && echo ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }} | sudo -S ./deploy-project quickstart15
           host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
           username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
           password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
         env:
