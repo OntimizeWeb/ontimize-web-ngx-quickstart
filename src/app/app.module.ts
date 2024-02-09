@@ -18,6 +18,7 @@ import { CONFIG } from './app.config';
 import { D3LocaleService } from './shared/d3-locale/d3Locale.service';
 import { StyleManager } from './shared/style-manager/style-manager';
 import { ThemeService } from './shared/theme.service';
+import { ReportsModule } from './main/reports/reports.module';
 
 // Defining custom providers (if needed)...
 export const customProviders: any = [
@@ -35,6 +36,7 @@ export const customProviders: any = [
   imports: [
     ONTIMIZE_MODULES,
     OntimizeWebModule,
+    ReportsModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
