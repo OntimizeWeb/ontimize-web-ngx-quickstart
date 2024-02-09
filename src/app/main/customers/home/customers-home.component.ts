@@ -16,7 +16,7 @@ export class CustomersHomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.button.onClick.subscribe(event => {
-      this.reportStoreService.openFillReport("94fa9d2a-e9cc-458a-a680-9bc576e14a38", {}, {});
+      this.reportStoreService.openFillReport("94fa9d2a-e9cc-458a-a680-9bc576e14a38");
     });
   }
 

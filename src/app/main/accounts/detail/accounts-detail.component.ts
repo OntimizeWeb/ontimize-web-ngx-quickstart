@@ -201,16 +201,8 @@ export class AccountsDetailComponent {
     }];
   }
 
-  getParameters() {
-    const params = {
-      'id': this.id
-    }
-    return params;
-  }
-
   fillReport(e: Event) {
-    const params = this.getParameters();
-    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", params, {});
+    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f");
   }
 
 }
