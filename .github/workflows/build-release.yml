@@ -34,6 +34,14 @@ jobs:
           ref: ${{ env.BASELINE_BRANCH }}
           fetch-depth: 0
 
+      - name: 'Cache node modules'
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Node 12.x
         uses: actions/setup-node@v3
         with:
@@ -43,7 +51,7 @@ jobs:
       - name: obtain package.json version
         id: project
         run: |
-          echo ::set-output name=version::$(node -pe "require('./package.json')['version']")
+          echo "version=$(node -pe "require('./package.json')['version']")" >> $GITHUB_OUTPUT
 
       - name: abort if SNAPSHOT
         if: "contains(steps.project.outputs.version, 'SNAPSHOT')"
@@ -51,9 +59,48 @@ jobs:
           echo "Version ${{ steps.project.outputs.version }} is not a properly named for RELEASE"
           exit 1
 
+      - name: npm install and npm run build
+        run: |
+          npm i
+          npm run production-aot-serverpwa
+          mkdir -p dist/ftp && tar -cvf dist/ftp/dist.tar dist/*
+
+      - name: backup previous deploy
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /home/systems/ftp-demos && ls -l -a && ./backup-project quickstart8
+          host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
+          username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
+          password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
+        env:
+          CI: true
+
+      - name: 📂 Sync files
+        uses: wangyucode/sftp-upload-action@v2.0.2
+        with:
+          host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
+          username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
+          password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
+          localDir: dist/ftp/
+          remoteDir: /home/systems/ftp-demos/quickstart8/
+
+      - name: deploy pm2
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /home/systems/ftp-demos && ls -l -a && echo ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }} | sudo -S ./deploy-project quickstart8
+          host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
+          username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
+          password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
+        env:
+          CI: true
+
       - name: GitHub Release / Create release
         uses:  ncipollo/release-action@2792aea87063cfd0d27953ac38e3ab45afacc154
         with:
+          commit: ${{ env.BASELINE_BRANCH }}
           tag: ${{ steps.project.outputs.version }}
           name: ${{ steps.project.outputs.version }}
           token: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
@@ -65,11 +112,15 @@ jobs:
           git config user.name "$CI_USERNAME"
           git config user.email "$CI_EMAIL"
 
+      - name: bumping version in package.json
+        run: |
+          npm version $(npm version minor --no-git-tag-version)-SNAPSHOT-0 --no-git-tag-version
+
       - name: Create sync branch
         run: |
           version=${{ steps.project.outputs.version }}
           git checkout -b sync/release-$version-to-develop
-          npm version $(npm version minor --no-git-tag-version)-SNAPSHOT-0 --no-git-tag-version
+
           git add .
           git commit --allow-empty -m "Prepare next development iteration"
           git push origin sync/release-$version-to-develop
@@ -79,4 +130,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
         run: |
           version=${{ steps.project.outputs.version }}
-          gh pr create -B ${{ env.DEVELOP_BRANCH }} -H sync/release-$version-to-develop --title "Sync release $version to develop" --body "Automated pull request for synchronizing released version into develop branch"
+
+          MESSAGE="
+          Automated pull request for synchronizing released version ($version) into develop branch
+
+          ### 💡 Merge Strategy: Create a merge commit
+          "
+          gh pr create -B ${{ env.DEVELOP_BRANCH }} -H sync/release-$version-to-develop --title "Sync release $version to develop" --body "$(echo -e "$MESSAGE")"
+
