@@ -5,11 +5,13 @@ import { OChartModule } from 'ontimize-web-ngx-charts';
 
 import { MENU_COMPONENTS } from './app.menu.config';
 import { MovementTypesCellRendererComponent } from './movement-types-renderer/movement-types-cell-renderer';
+import { OReportModule } from 'ontimize-web-ngx-report';
 
 @NgModule({
   imports: [
     OntimizeWebModule,
-    OChartModule
+    OChartModule,
+    OReportModule
   ],
   declarations: [
     MovementTypesCellRendererComponent,
