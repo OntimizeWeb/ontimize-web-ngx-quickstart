@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
+import { OReportStoreParamValue } from 'ontimize-web-ngx-report/lib/types/report-store-param.type';
 
 @Component({
   selector: 'branches-home',
@@ -11,14 +12,15 @@ export class BranchesHomeComponent {
   constructor(private reportStoreService: OReportStoreService) { }
 
   openBranchReportStore() {
-    this.reportStoreService.openFillReport("96c0aa72-2582-4aa4-a93a-afe34acb77c6", {}, {});
+    this.reportStoreService.openFillReport("96c0aa72-2582-4aa4-a93a-afe34acb77c6");
   }
 
   openBranchDetailReportStore(data: any) {
-    const params = {
-      'id': data.OFFICEID
-    };
-    this.reportStoreService.openFillReport("1685066d-97ee-4b1e-a18a-278dabc5c7a0", params, {});
+    const params: Array<OReportStoreParamValue> = [{
+      'name': 'id',
+      'value': data.OFFICEID
+    }];
+    this.reportStoreService.openFillReport("1685066d-97ee-4b1e-a18a-278dabc5c7a0", params);
   }
 
 

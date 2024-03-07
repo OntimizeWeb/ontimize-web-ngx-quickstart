@@ -118,10 +118,10 @@ export class AccountsHomeComponent implements OnDestroy {
   }
 
   fillReportFilter() {
-    const filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
-      'filter': this.filterBuilder.getBasicExpression()
+    const filter = {
+      filter: this.filterBuilder.getBasicExpression() === undefined ? {} : this.filterBuilder.getBasicExpression()
     }
-    this.reportStoreService.openFillReport("2abdb71f-6ea7-4d13-b255-b0df406c8f0b", {}, filter);
+    this.reportStoreService.openFillReport("2abdb71f-6ea7-4d13-b255-b0df406c8f0b", [], filter);
   }
 
 }
