@@ -6,7 +6,7 @@ image:
   pullPolicy: IfNotPresent
   ## provided as basic setup. replace as needed
   repository: ghcr.io/ontimizeweb/ontimize-web-ngx-quickstart
-  version: 15.2.0
+  version: 15.x.x
 imagePullSecrets:
   - name: github-ecr-cred
 nameOverride: ""
