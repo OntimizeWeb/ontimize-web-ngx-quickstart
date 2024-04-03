@@ -1,5 +1,6 @@
 name: Deploy Snapshot
 on:
+  workflow_dispatch:
   push:
     branches: [15.x.x]
 
