@@ -17,6 +17,7 @@ env:
   CI_EMAIL: ontimize-web@imatia.com
   CI_USERNAME: ontimize-web
   DEVELOP_BRANCH: 15.x.x
+  REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
   build:
@@ -116,10 +117,10 @@ jobs:
         run: |
           npm version $(npm version minor --no-git-tag-version)-SNAPSHOT-0 --no-git-tag-version
 
-      - name: bumping version in internal package.json
-        working-directory: .
+      - name: Update Chart values.yml
         run: |
-          npm version $(npm version minor --no-git-tag-version)-SNAPSHOT-0 --no-git-tag-version
+          version=$(cat ./charts/$REPO_NAME/values.yaml | grep version: | awk '{print $2}')
+          sed -i "s#$version#${{ env.DEVELOP_BRANCH }}#" ./charts/$REPO_NAME/values.yaml
 
       - name: Create sync branch
         run: |
