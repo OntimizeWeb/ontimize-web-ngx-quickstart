@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
+import { OReportStoreParamValue } from 'ontimize-web-ngx-report/lib/types/report-store-param.type';
 
 
 @Component({
@@ -59,16 +60,18 @@ export class BranchesDetailComponent implements OnInit {
     return this.latitude + ',' + this.longitide
   }
 
-  getParameters() {
-    let params = {
-      'id': this.officeId.getValue()
-    }
-
+  getParameters(): Array<OReportStoreParamValue> {
+    const params: Array<OReportStoreParamValue> = [
+      {
+        'name': 'id',
+        'value': this.officeId.getValue()
+      }
+    ];
     return params;
   }
 
   fillReport(e: Event) {
-    this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.params, {});
+    this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.getParameters());
   }
 
 }

@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Expression, FilterExpressionUtils, OFilterBuilderComponent } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
+import { OFilterParameter } from 'ontimize-web-ngx-report/lib/types/filter-parameter.type';
 
 @Component({
   selector: 'employees-home',
@@ -57,10 +58,10 @@ export class EmployeesHomeComponent {
   }
 
   fillReportFilter() {
-    let filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
-      'filter': this.filterBuilder.getBasicExpression()
-    }
-    this.reportStoreService.openFillReport("c27490e0-1a69-42ac-9083-bf7548f9f66d", {}, filter);
+    let filter: OFilterParameter = {
+      'filter': this.filterBuilder.getBasicExpression() === undefined ? {} : this.filterBuilder.getBasicExpression()
+    };
+    this.reportStoreService.openFillReport("c27490e0-1a69-42ac-9083-bf7548f9f66d", [], filter);
   }
 
 }

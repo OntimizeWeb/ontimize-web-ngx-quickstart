@@ -11,12 +11,12 @@ export class CustomersHomeComponent implements AfterViewInit {
 
   @ViewChild('table', { static: true }) table: OTableComponent;
 
-  @ViewChild('button', { static: false })
+  @ViewChild('button', { static: true })
   protected button: OTableButtonComponent;
 
   ngAfterViewInit() {
     this.button.onClick.subscribe(event => {
-      this.reportStoreService.openFillReport("94fa9d2a-e9cc-458a-a680-9bc576e14a38", {}, {});
+      this.reportStoreService.openFillReport("94fa9d2a-e9cc-458a-a680-9bc576e14a38");
     });
   }
 
