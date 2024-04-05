@@ -3,6 +3,7 @@ import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { Constants } from '../../../shared/constant';
+import { OReportStoreParamValue } from 'ontimize-web-ngx-report/lib/types/report-store-param.type';
 
 @Component({
   selector: 'accounts-detail',
@@ -194,16 +195,18 @@ export class AccountsDetailComponent {
 
   }
 
-  getParameters() {
-    const params = {
-      'id': this.id
-    }
+  getParameters(): Array<OReportStoreParamValue> {
+    const params: Array<OReportStoreParamValue> = [
+      {
+        'name': 'id',
+        'value': this.id
+      }
+    ];
     return params;
   }
 
   fillReport(e: Event) {
-    const params = this.getParameters();
-    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", params, {});
+    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.getParameters());
   }
 
 }

@@ -1,6 +1,7 @@
 import { Injector, ViewChild, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe, ONIFInputComponent } from 'ontimize-web-ngx';
 import { OReportStoreService } from 'ontimize-web-ngx-report';
+import { OReportStoreParamValue } from 'ontimize-web-ngx-report/lib/types/report-store-param.type';
 
 @Component({
   selector: 'customers-detail',
@@ -99,16 +100,17 @@ export class CustomersDetailComponent implements OnInit {
     this.params = this.getParameters();
   }
 
-  getParameters() {
-    let params = {
-      'id': this.id.getValue()
-    }
+  getParameters(): Array<OReportStoreParamValue> {
+    let params = [{
+      'name': 'id',
+      'value': this.id.getValue()
+    }];
 
     return params;
   }
 
   fillReport(e: Event) {
-    this.reportStoreService.openFillReport("6e1439f4-9b76-4d2d-ae73-6797682078c9", this.params, {});
+    this.reportStoreService.openFillReport("6e1439f4-9b76-4d2d-ae73-6797682078c9", this.getParameters());
   }
 
 }
