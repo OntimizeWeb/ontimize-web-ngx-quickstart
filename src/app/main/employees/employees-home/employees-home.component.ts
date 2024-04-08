@@ -39,7 +39,7 @@ export class EmployeesHomeComponent {
 
     // Build complex expression
     if (filters.length > 0) {
-      return filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
+      return filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND), null);
     } else {
       return null;
     }
