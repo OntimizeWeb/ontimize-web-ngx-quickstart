@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OReportModule, OReportRoutingModule } from 'ontimize-web-ngx-report';
+import { OReportRoutingModule } from 'ontimize-web-ngx-report';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    OReportRoutingModule,
-    OReportModule
+    SharedModule,
+    OReportRoutingModule
   ]
 })
 export class ReportsModule { }
