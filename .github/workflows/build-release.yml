@@ -117,11 +117,6 @@ jobs:
         run: |
           npm version $(npm version minor --no-git-tag-version)-SNAPSHOT-0 --no-git-tag-version
 
-      - name: Update Chart values.yml
-        run: |
-          version=$(cat ./charts/$REPO_NAME/values.yaml | grep version: | awk '{print $2}')
-          sed -i "s#$version#${{ env.DEVELOP_BRANCH }}#" ./charts/$REPO_NAME/values.yaml
-
       - name: Create sync branch
         run: |
           version=${{ steps.project.outputs.version }}
