@@ -11,6 +11,6 @@ export const environment = {
     charts: '"15.0.0',
     filemanager: '15.0.0',
     map: '15.0.0',
-    report: '15.0.0'
+    report: '15.0.1'
   }
 };

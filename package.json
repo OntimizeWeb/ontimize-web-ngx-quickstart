@@ -36,7 +36,7 @@
     "ontimize-web-ngx-charts": "15.0.0",
     "ontimize-web-ngx-filemanager": "15.0.0",
     "ontimize-web-ngx-map": "15.0.0",
-    "ontimize-web-ngx-report": "15.0.0",
+    "ontimize-web-ngx-report": "15.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
