@@ -1,0 +1,63 @@
+name: Deploy Snapshot
+on:
+  push:
+    branches: [8.x.x]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v3
+
+      - name: "Cache node modules"
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node 12.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12.13.0
+
+      - name: npm install and npm run build
+        run: |
+          npm i --legacy-peer-deps
+          npm run development-aot-serverpwa
+          mkdir -p dist/ftp && tar -cvf dist/ftp/dist.tar dist/*
+
+      - name: backup previous deploy
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /home/systems/ftp-demos && ls -l -a && ./backup-project quickstart8-snapshot
+          host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
+          username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
+          password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
+        env:
+          CI: true
+
+      - name: 📂 Sync files
+        uses: wangyucode/sftp-upload-action@v2.0.2
+        with:
+          host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
+          username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
+          password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
+          localDir: dist/ftp/
+          remoteDir: /home/systems/ftp-demos/quickstart8-snapshot/
+
+      - name: deploy pm2
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /home/systems/ftp-demos && ls -l -a && echo ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }} | sudo -S ./deploy-project quickstart8-snapshot
+          host: ${{ secrets.OWEB_CLOUD_DEMOS_HOST }}
+          port: ${{ secrets.OWEB_CLOUD_DEMOS_PORT }}
+          username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
+          password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
+        env:
+          CI: true
