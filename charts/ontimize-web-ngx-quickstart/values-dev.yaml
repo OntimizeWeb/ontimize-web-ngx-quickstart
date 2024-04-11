@@ -6,7 +6,7 @@ image:
   pullPolicy: IfNotPresent
   ## provided as basic setup. replace as needed
   repository: ghcr.io/ontimizeweb/ontimize-web-ngx-quickstart
-  version: 15.3.0
+  version: 15.x.x
 imagePullSecrets:
   - name: github-ecr-cred
 nameOverride: ""
@@ -61,7 +61,7 @@ configmap:
 
 # Service configuration. Annotations are used by cert-manager to generate certificates using cluster-issuer
 service:
-  name: ontimize-web-ngx-quickstart-15x
+  name: dev-oweb-quickstart-15x
   type: ClusterIP
   externalPort: 41500
   internalPort: 80
@@ -71,9 +71,9 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: cert-manager-letsencrypt-production-route53
-  host: ontimize-web-ngx-quickstart.ontimize.com
+  host: ontimize-web-ngx-quickstart.dev.ontimize.com
   tls:
-    secretName: ontimize-web-ngx-quickstart-tls
+    secretName: dev-oweb-quickstart-tls
     enabled: true
 
 # Kafka. If used. Will be provided as environment variables to the pods.
