@@ -1,0 +1,84 @@
+# This is a YAML-formatted file.
+
+# Deployment configuration
+replicaCount: 1
+image:
+  pullPolicy: IfNotPresent
+  ## provided as basic setup. replace as needed
+  repository: ghcr.io/ontimizeweb/ontimize-web-ngx-quickstart
+  version: 8.x.x
+imagePullSecrets:
+  - name: github-ecr-cred
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+# Add labels to the pods
+podsLabels: {}
+# Add labels to the deployment
+deploymentLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+## liveness/readiness probes. standard ontimize endpoints
+probePath: /index.html
+probePort: 80
+livenessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 15
+  successThreshold: 1
+  timeoutSeconds: 1
+  ### Optional distinct liveness probe path, if empty the probePath is used
+  probePath: /index.html
+readinessProbe:
+  initialDelaySeconds: 70
+  failureThreshold: 3
+  periodSeconds: 15
+  successThreshold: 1
+  timeoutSeconds: 1
+  ### Optional distinct readiness probe path, if empty the probePath is used
+  probePath: /index.html
+## Adapt resources if needed
+resources:
+  limits:
+    cpu: 400m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+## Be sure to set API key in secret *******-grafana-api-key, key apiKey
+grafana:
+  enabled: false
+
+# Optional configmap.
+configmap:
+  enabled: false
+  data:
+
+
+# Service configuration. Annotations are used by cert-manager to generate certificates using cluster-issuer
+service:
+  name: dev-oweb-quickstart-8x
+  type: ClusterIP
+  externalPort: 4816
+  internalPort: 80
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: cert-manager-letsencrypt-production-route53
+  host: ontimize-web-ngx-quickstart-8x.dev.ontimize.com
+  tls:
+    secretName: dev-oweb-quickstart-8x-tls
+    enabled: true
+
+# Kafka. If used. Will be provided as environment variables to the pods.
+kafka:
+  enabled: false
+
+s3:
+  enabled: false
