@@ -11,7 +11,7 @@ export class CustomersHomeComponent implements AfterViewInit {
 
   @ViewChild('table', { static: true }) table: OTableComponent;
 
-  @ViewChild('button', { static: false })
+  @ViewChild('button', { static: true })
   protected button: OTableButtonComponent;
 
   ngAfterViewInit() {

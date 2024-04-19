@@ -4,6 +4,7 @@ import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration 
 import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 import { ThemeService } from '../../../shared/theme.service';
+import { OReportStoreParamValue } from 'ontimize-web-ngx-report/lib/types/report-store-param.type';
 
 declare var d3: any;
 
@@ -201,8 +202,18 @@ export class AccountsDetailComponent {
     }];
   }
 
+  getParameters(): Array<OReportStoreParamValue> {
+    const params: Array<OReportStoreParamValue> = [
+      {
+        'name': 'id',
+        'value': this.id
+      }
+    ];
+    return params;
+  }
+
   fillReport(e: Event) {
-    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f");
+    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.getParameters());
   }
 
 }

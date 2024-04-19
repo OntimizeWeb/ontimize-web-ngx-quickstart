@@ -17,9 +17,10 @@ env:
   NPM_REGISTRY: https://registry.npmjs.org/
   CI_EMAIL: ontimize-web@imatia.com
   CI_USERNAME: ontimize-web
-  MAIN_BRANCH: master
+  MAIN_BRANCH: main.8.x
   DEVELOP_BRANCH: 8.x.x
-  
+  REPO_NAME: ${{ github.event.repository.name }}
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -39,13 +40,13 @@ jobs:
           echo "isHotfix=$isHotfix" >> $GITHUB_OUTPUT
 
       - name: Checkout merge commit
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ env.BASELINE_BRANCH }}
           fetch-depth: 0
 
       - name: Node 12.x
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 12.13.0
           registry-url: ${{ env.NPM_REGISTRY }}
@@ -74,6 +75,11 @@ jobs:
         run: |
           npm version patch --no-git-tag-version
           echo "RELEASE_VERSION=$(node -pe "require('./package.json')['version']")" >> $GITHUB_ENV
+
+      - name: Update Chart values.yml
+        run: |
+          version=$(cat ./charts/$REPO_NAME/values.yaml | grep version: | awk '{print $2}')
+          sed -i "s#$version#${{ env.RELEASE_VERSION }}#" ./charts/$REPO_NAME/values.yaml
 
       - name: Create release branch
         if: ${{ steps.parameters.outputs.isHotfix == false }}

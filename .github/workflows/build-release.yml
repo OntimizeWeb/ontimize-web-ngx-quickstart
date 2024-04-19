@@ -4,13 +4,13 @@ name: Build Release
 on:
   pull_request:
     types: [closed]
-    branches: [master]
+    branches: [main.8.x]
   workflow_dispatch:
     inputs:
       BASELINE:
         description: 'Release branch'
         required: true
-        default: 'master'
+        default: 'main.8.x'
 
 env:
   NPM_REGISTRY: https://registry.npmjs.org/
@@ -29,13 +29,13 @@ jobs:
           echo "BASELINE_BRANCH=${{ github.event.inputs.BASELINE || github.ref }}" >> $GITHUB_ENV
 
       - name: Checkout merge commit
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ env.BASELINE_BRANCH }}
           fetch-depth: 0
 
       - name: 'Cache node modules'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -43,7 +43,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Node 12.x
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 12.13.0
           registry-url: ${{ env.NPM_REGISTRY }}
@@ -98,7 +98,7 @@ jobs:
           CI: true
 
       - name: GitHub Release / Create release
-        uses:  ncipollo/release-action@2792aea87063cfd0d27953ac38e3ab45afacc154
+        uses:  ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5
         with:
           commit: ${{ env.BASELINE_BRANCH }}
           tag: ${{ steps.project.outputs.version }}
@@ -130,9 +130,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
         run: |
           version=${{ steps.project.outputs.version }}
+
           MESSAGE="
           Automated pull request for synchronizing released version ($version) into develop branch
 
           ### 💡 Merge Strategy: Create a merge commit
           "
           gh pr create -B ${{ env.DEVELOP_BRANCH }} -H sync/release-$version-to-develop --title "Sync release $version to develop" --body "$(echo -e "$MESSAGE")"
+
