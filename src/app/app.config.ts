@@ -21,6 +21,7 @@ export const CONFIG: Config = {
   //  Language of the application.
   locale: 'en',
 
+  serviceType: 'JSONAPI',
   // Configuration parameters of application services.
   servicesConfiguration: SERVICE_CONFIG,
 
@@ -30,6 +31,7 @@ export const CONFIG: Config = {
 
   exportConfiguration: {
     path: '/export'
-  }
+  },
+  startSessionPath:'/auth/login'
 
 };

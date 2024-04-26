@@ -2,24 +2,31 @@
 export const SERVICE_CONFIG: Object = {
 
   'users': {
-    'path': '/users'
+    'path': '/User'
   },
 
   'customers': {
-    'path': '/customers',
-    'fileManagerPath': '/filemanager'
+    'path': '/Customer',
+    'fileManagerPath': '/Filemanager'
   },
 
+  'customerType': {
+    'path':'/Customertype'
+  },
+
+  'customeraccounts': {
+    'path':'/Customeraccount'
+  },
   'branches': {
-    'path': '/branches'
+    'path': '/Branch'
   },
 
   'movements': {
-    'path': '/movements'
+    'path': '/Movement'
   },
 
   'employees': {
-    'path': '/employees'
+    'path': '/Employee'
   },
 
   'test': {
