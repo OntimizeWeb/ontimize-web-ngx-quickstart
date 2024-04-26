@@ -2,7 +2,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { FilterExpressionUtils, Expression, OFormComponent, OListComponent, OFilterBuilderComponent } from 'ontimize-web-ngx';
-import { OReportStoreService } from 'ontimize-web-ngx-report';
+// import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'accounts-home',
@@ -31,7 +31,8 @@ export class AccountsHomeComponent implements OnDestroy {
 
   constructor(changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    private reportStoreService: OReportStoreService) {
+    // private reportStoreService: OReportStoreService
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -48,7 +49,7 @@ export class AccountsHomeComponent implements OnDestroy {
     values.forEach(fil => {
       if (fil.value) {
 
-        if (fil.attr === 'ENTITYID' || fil.attr === 'OFFICEID' || fil.attr === 'ANID') {
+        if (fil.attr === 'entityid' || fil.attr === 'OFFICEID' || fil.attr === 'ANID') {
           filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
         }
 
@@ -121,7 +122,7 @@ export class AccountsHomeComponent implements OnDestroy {
     const filter = this.filterBuilder.getBasicExpression() === undefined ? {} : {
       'filter': this.filterBuilder.getBasicExpression()
     }
-    this.reportStoreService.openFillReport("2abdb71f-6ea7-4d13-b255-b0df406c8f0b", {}, filter);
+    // this.reportStoreService.openFillReport("2abdb71f-6ea7-4d13-b255-b0df406c8f0b", {}, filter);
   }
 
 }

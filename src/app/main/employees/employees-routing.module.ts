@@ -7,7 +7,7 @@ import { EmployeesHomeComponent } from './employees-home/employees-home.componen
 const routes: Routes = [
   { path: '', component: EmployeesHomeComponent },
   { path: 'new', component: EmployeesDetailComponent },
-  { path: ':EMPLOYEEID', component: EmployeesDetailComponent }
+  { path: ':employeeid', component: EmployeesDetailComponent }
 ];
 
 @NgModule({

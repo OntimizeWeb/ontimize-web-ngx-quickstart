@@ -9,7 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'main',
-    canActivate: [AuthGuardService],
+   // canActivate: [AuthGuardService],
     // canActivateChild: [PermissionsGuardService],
     loadChildren: () => import('./main/main.module').then(m => m.MainModule)
   },

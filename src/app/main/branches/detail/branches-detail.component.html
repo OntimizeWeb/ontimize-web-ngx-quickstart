@@ -1,10 +1,9 @@
-<o-form editable-detail="true" show-header="yes" header-actions="R;D" service="branches" entity="branch" keys="OFFICEID" #oForm
-  columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT"
+<o-form editable-detail="true" show-header="yes" header-actions="R;D" service="branches" entity="branch" keys="officeid" #oForm
+  columns="officeid;name;address;startdate;details;phone;officexml;branchplan;minlatitude;maxlatitude;minlongitude;maxlongitude;geometrylayout"
   show-header-navigation="yes" layout-direction="column" (onDataLoaded)="onFormDataLoaded($event)">
 
   <div o-form-toolbar-buttons>
-    <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)"
-      attr="fillreport">
+    <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)" attr="fillreport">
       <mat-icon>description</mat-icon>
       <span>{{ 'FILL_REPORT' | oTranslate }}</span>
     </button>
@@ -14,13 +13,13 @@
     <div fxLayout="row wrap" fxLayoutGap="14px" fxLayoutAlign="space-between">
       <o-column title="BRANCH_INFO" icon="info" fxFlex="55" fxFlex.md="100" class="vertical-margin-10">
         <div fxLayout="row wrap" fxLayoutGap="14px">
-          <o-text-input #officeId attr="OFFICEID" fxFlex="20" class="form-field"></o-text-input>
-          <o-text-input attr="NAME" fxFlex class="form-field"></o-text-input>
+          <o-text-input #officeId attr="officeid" fxFlex="20" class="form-field"></o-text-input>
+          <o-text-input attr="name" fxFlex class="form-field"></o-text-input>
         </div>
-        <o-text-input attr="ADDRESS" class="form-field"></o-text-input>
+        <o-text-input attr="address" class="form-field"></o-text-input>
         <div fxLayout="row wrap" fxLayoutGap="14px">
-          <o-text-input attr="PHONE" fxFlex="35" class="form-field"></o-text-input>
-          <o-date-input attr="STARTDATE" label="OPENING_DATE" fxFlex="35" class="form-field"></o-date-input>
+          <o-text-input attr="phone" fxFlex="35" class="form-field"></o-text-input>
+          <o-date-input attr="startdate" label="OPENING_DATE" fxFlex="35" class="form-field"></o-date-input>
         </div>
 
       </o-column>
@@ -36,14 +35,13 @@
 
     <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div layout-padding>
-        <o-table #accountsTable service="customers" entity="customerAccount" title="ACCOUNTS"
-          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE"
-          visible-columns="ACCOUNT;CUSTOMER;BALANCE;STARTDATE" updateentityeditablecolumns="ACCOUNT;BALANCE;STARTDATE" sort-columns="STARTDATE"
-          keys="ACCOUNTID" parent-keys="OFFICEID" query-on-init="false" query-rows="10" quick-filter="yes" edit-button-in-row="no" pageable="no"
-          delete-button="no" insert-button="no" fixed-header="true">
+        <o-table #accountsTable service="customeraccounts" entity="Customeraccount" title="ACCOUNTS"
+          columns="accountid;entityid;officeid;cdid;anid;account;balance;customerid;customer;startdate"
+          visible-columns="account;customer;balance;startdate" sort-columns="startdate" keys="accountid" parent-keys="officeid" query-on-init="false"
+          query-rows="10" quick-filter="yes" edit-button-in-row="no" pageable="no" delete-button="no" insert-button="no" fixed-header="true">
 
-          <o-table-column attr="STARTDATE" title="OPENING_DATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+          <o-table-column attr="startdate" title="OPENING_DATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="balance" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
             decimal-separator=",">
           </o-table-column>
         </o-table>

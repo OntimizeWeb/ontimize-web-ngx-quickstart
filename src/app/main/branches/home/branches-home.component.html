@@ -1,15 +1,15 @@
 <div class="container">
-  <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home">
+  <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="name" separator="" attr="o-form-layout-branches-home">
     <div fxFill fxLayout="column" fxLayoutAlign="start">
-      <o-table #table attr="branches" service="branches" entity="branch" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-        visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="10" pageable="no" row-height="medium">
+      <o-table #table attr="branches" service="branches" entity="Branch" title="BRANCHES" columns="officeid;name;address;startdate"
+        visible-columns="officeid;name;address;startdate" sort-columns="name" keys="officeid" query-rows="10" pageable="no" row-height="medium">
         <o-table-button #button attr="button" label="FILL_REPORT" icon="description" (onClick)="openBranchReportStore()"></o-table-button>
-        <o-table-column attr="OFFICEID" title="OFFICEID" width="15%" class="o-table-column-centered"></o-table-column>
-        <o-table-column attr="STARTDATE" title="OPENING_DATE" width="22%" type="date" format="LL"></o-table-column>
+        <o-table-column attr="officeid" title="OFFICEID" width="15%" class="o-table-column-centered"></o-table-column>
+        <o-table-column attr="startdate" title="OPENING_DATE" width="22%" type="date" format="LL"></o-table-column>
         <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
           <ng-template let-row>
             <o-expandable-container [targets]="[branchEmployeesTable]" [data]="row">
-              <o-table #branchEmployeesTable service="employees" entity="employee" parent-keys="OFFICEID" keys="EMPLOYEEID"
+              <o-table #branchEmployeesTable service="employees" entity="employee" parent-keys="officeid" keys="EMPLOYEEID"
                 columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;EMPLOYEEPHOTO"
                 visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;EMPLOYEETYPEID"
                 query-on-init="no" query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none">

@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: '', component: CustomersHomeComponent },
   { path: 'new', component: CustomersNewComponent },
   {
-    path: ':CUSTOMERID',
+    path: ':customerid',
     component: CustomersDetailComponent,
     data: {
       oPermission: {

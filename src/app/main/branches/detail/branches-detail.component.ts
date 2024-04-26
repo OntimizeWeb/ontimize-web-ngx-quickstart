@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { OTextInputComponent, OTranslateService } from 'ontimize-web-ngx';
-import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 
 @Component({
@@ -27,7 +26,7 @@ export class BranchesDetailComponent implements OnInit {
   constructor(
     public snackBar: MatSnackBar,
     private translateService: OTranslateService,
-    private reportStoreService: OReportStoreService
+  //  private reportStoreService: OReportStoreService
   ) { }
 
   ngOnInit() { }
@@ -68,7 +67,7 @@ export class BranchesDetailComponent implements OnInit {
   }
 
   fillReport(e: Event) {
-    this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.params, {});
+    // this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.params, {});
   }
 
 }

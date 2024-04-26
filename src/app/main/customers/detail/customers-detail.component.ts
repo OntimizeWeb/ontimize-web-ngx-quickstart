@@ -1,6 +1,5 @@
 import { Injector, ViewChild, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe, ONIFInputComponent } from 'ontimize-web-ngx';
-import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 @Component({
   selector: 'customers-detail',
@@ -32,7 +31,8 @@ export class CustomersDetailComponent implements OnInit {
   availableAccountsToAdd: Array<any> = [];
 
   constructor(protected injector: Injector,
-    private reportStoreService: OReportStoreService) {
+   // private reportStoreService: OReportStoreService
+  ) {
     this.service = this.injector.get(OntimizeService);
     this.realPipe = new ORealPipe(this.injector);
   }
@@ -62,11 +62,11 @@ export class CustomersDetailComponent implements OnInit {
     };
 
     this.service.query(accountFilter,
-      ['ACCOUNTID', 'ENTITYID', 'OFFICEID', 'CDID', 'ANID', 'BALANCE', 'ACCOUNTTYP'],
+      ['ACCOUNTID', 'entityid', 'OFFICEID', 'CDID', 'ANID', 'BALANCE', 'ACCOUNTTYP'],
       'EAccounts').subscribe((resp) => {
         if (resp.code === 0) {
           resp.data.forEach(element => {
-            element['ACCOUNT'] = element['ENTITYID'] + ' ' + element['OFFICEID'] + ' ' + element['CDID'] + ' ' + element['ANID'];
+            element['ACCOUNT'] = element['entityid'] + ' ' + element['OFFICEID'] + ' ' + element['CDID'] + ' ' + element['ANID'];
             element['BALANCE'] = this.realPipe.transform(element['BALANCE'], {
               grouping: true,
               minDecimalDigits: 2,
@@ -87,8 +87,8 @@ export class CustomersDetailComponent implements OnInit {
   onNewAccountSelected(accountId) {
     if (accountId && this.customerId) {
       this.service.insert({
-        ACCOUNTID: accountId,
-        CUSTOMERID: this.customerId
+        accountid: accountId,
+        customerid: this.customerId
       }, 'ECustomerAccounts').subscribe((resp) => {
         this.accountsTable.reloadData();
       });
@@ -108,7 +108,7 @@ export class CustomersDetailComponent implements OnInit {
   }
 
   fillReport(e: Event) {
-    this.reportStoreService.openFillReport("6e1439f4-9b76-4d2d-ae73-6797682078c9", this.params, {});
+    //this.reportStoreService.openFillReport("6e1439f4-9b76-4d2d-ae73-6797682078c9", this.params, {});
   }
 
 }

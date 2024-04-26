@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { OntimizeService, OTranslateService } from 'ontimize-web-ngx';
 import { ChartSeries, LinePlusBarFocusChartConfiguration, PieChartConfiguration } from 'ontimize-web-ngx-charts';
-import { OReportStoreService } from 'ontimize-web-ngx-report';
+//import { OReportStoreService } from 'ontimize-web-ngx-report';
 import { Constants } from '../../../shared/constant';
 
 @Component({
@@ -38,7 +38,7 @@ export class AccountsDetailComponent {
   constructor(
     private ontimizeService: OntimizeService,
     private translateService: OTranslateService,
-    private reportStoreService: OReportStoreService
+    //private reportStoreService: OReportStoreService
   ) {
 
     //alpha 30
@@ -203,7 +203,7 @@ export class AccountsDetailComponent {
 
   fillReport(e: Event) {
     const params = this.getParameters();
-    this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", params, {});
+   // this.reportStoreService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", params, {});
   }
 
 }

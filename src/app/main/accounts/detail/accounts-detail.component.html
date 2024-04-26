@@ -1,7 +1,7 @@
 <div class="container">
-  <o-form-container breadcrumb="yes" breadcrumb-label-columns="ENTITYID;OFFICEID;CDID;ANID" breadcrumb-separator="-">
-    <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="ACCOUNTID" keys-sql-types="INTEGER"
-      columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R"
+  <o-form-container breadcrumb="yes" breadcrumb-label-columns="entityid;OFFICEID;CDID;ANID" breadcrumb-separator="-">
+    <o-form #oForm attr="account_detail_form" service="branches" entity="account" keys="accountid" keys-sql-types="INTEGER"
+      columns="ACCOUNTID;BALANCE;entityid;OFFICEID;CDID;ANID;ACCOUNTTYP;STARTDATE" editable-detail="false" show-header="yes" header-actions="R"
       [label-header]="formLabel" show-header-navigation="yes" include-breadcrumb="yes" (onDataLoaded)="onFormDataLoaded($event)"
       layout-align="start stretch">
 
@@ -31,8 +31,8 @@
 
             <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
               <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
-              <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
-                columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
+              <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERaccountid" parent-keys="accountid"
+                columns="customerid;accountid;name;surname;isowner" query-on-init="no" query-on-bind="yes" controls="no">
                 <div class="customers-border">
                   <mat-list-item *ngFor="let customer of customerList.dataArray">
                     <mat-icon *ngIf="customer.ISOWNER" color="accent">person</mat-icon>
@@ -49,7 +49,7 @@
                 }} €</span>
               <span>{{ 'LAST_MOVEMENT' | oTranslate}}</span>
             </div>
-            <o-chart type="discreteBar" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
+            <o-chart type="discreteBar" parent-keys="accountid" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
               chart-height="250"  [chart-parameters]="balanceChartParams" class="balance-chart" fxFlex="80"></o-chart>
           </o-row>
         </div>
@@ -58,7 +58,7 @@
           <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
             <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
               dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
-              <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
+              <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="accountid"
                 columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
                 class="movement-list">
                 <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" fxLayout="row" fxLayoutAlign="start center"
@@ -86,7 +86,7 @@
             </o-form-layout-manager>
           </o-column>
           <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60" fxLayoutAlign="center center">
-            <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
+            <o-chart type="pie" service="movements" entity="movement" parent-keys="accountid" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
               query-on-init="no" [color]="scheme" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
             <div fxFlex="35" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
               <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>

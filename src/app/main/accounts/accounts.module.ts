@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { OChartModule } from 'ontimize-web-ngx-charts';
-import { OReportModule } from 'ontimize-web-ngx-report';
+//import { OReportModule } from 'ontimize-web-ngx-report';
 
 import { SharedModule } from '../../shared/shared.module';
 import { ACCOUNTS_MODULE_DECLARATIONS, AccountsRoutingModule } from './accounts-routing.module';
@@ -13,7 +13,7 @@ import { AccountTransactionsDetailComponent } from './detail/transaction/account
         OntimizeWebModule,
         OChartModule,
         AccountsRoutingModule,
-        OReportModule
+        //OReportModule
     ],
     declarations: ACCOUNTS_MODULE_DECLARATIONS,
     exports: ACCOUNTS_MODULE_DECLARATIONS

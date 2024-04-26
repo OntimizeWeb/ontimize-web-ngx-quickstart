@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: '', component: BranchesHomeComponent },
   { path: 'new', component: BranchesEditComponent },
   {
-    path: ':OFFICEID', component: BranchesDetailComponent,
+    path: ':officeid', component: BranchesDetailComponent,
     data: {
       oPermission: {
         permissionId: 'branch-detail-permissions',
@@ -24,8 +24,8 @@ export const routes: Routes = [
       }
     }
   },
-  { path: ':OFFICEID/edit', component: BranchesEditComponent },
-  { path: ':OFFICEID/accounts', loadChildren: () => import('../accounts/accounts.module').then(m => m.AccountsModule) }
+  { path: ':officeid/edit', component: BranchesEditComponent },
+  { path: ':officeid/accounts', loadChildren: () => import('../accounts/accounts.module').then(m => m.AccountsModule) }
 ];
 
 @NgModule({
