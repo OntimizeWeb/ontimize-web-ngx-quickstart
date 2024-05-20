@@ -27,10 +27,10 @@ export class EmployeesHomeComponent {
     const filters: Expression[] = [];
     values.forEach(fil => {
       if (fil.value) {
-        if (fil.attr === 'EMPLOYEENAME' || fil.attr === 'EMPLOYEESURNAME' || fil.attr === 'EMPLOYEEEMAIL') {
+        if (fil.attr === 'employeename' || fil.attr === 'employeesurname' || fil.attr === 'employeemail') {
           filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
         }
-        if (fil.attr === 'EMPLOYEETYPEID' || fil.attr === 'OFFICEID') {
+        if (fil.attr === 'employeetypeid' || fil.attr === 'officeid') {
           filters.push(FilterExpressionUtils.buildExpressionEquals(fil.attr, fil.value));
         }
       }

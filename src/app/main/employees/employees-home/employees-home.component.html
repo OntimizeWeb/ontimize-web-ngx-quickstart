@@ -11,7 +11,7 @@
           <o-text-input attr="EMAIL" read-only="no" fxFlex="25%"></o-text-input>
         </div>
         <div fxLayout="row" fxLayoutGap="32px">
-          <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="Branch" columns="officeid;name" value-column="officeid"
+          <o-combo #branch attr="office" read-only="no" service="branches" entity="Branch" columns="officeid;name" value-column="officeid"
             keys="officeid" visible-columns="name" fxFlex="calc(25% - 32px)"></o-combo>
           <div fxFlex="75%" fxFill class="filter_btn" fxLayoutAlign="flex-end flex-end">
 
@@ -26,7 +26,7 @@
       </div>
       <o-filter-builder #filterBuilder attr="thefilter"
         filters="employeename:name;employeesurname:surname;employeetypeid:employeetype;employeeemail:email;officeid:office" [target]="grid"
-        [expression-builder]="createFilter"></o-filter-builder>
+        [expression-builder]="createFilter"></o-filter-builder> -->
     </o-column-collapsible>
 
 
@@ -45,7 +45,7 @@
               <div class="image">
                 <img [src]="getImageSrc(item.employeephoto)">
               </div>
-              <mat-divider fxFlex></mat-divider>
+             <mat-divider fxFlex></mat-divider>
             </div>
 
             <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">

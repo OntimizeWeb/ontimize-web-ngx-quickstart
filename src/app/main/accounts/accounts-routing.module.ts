@@ -18,9 +18,9 @@ export const ACCOUNTS_MODULE_DECLARATIONS = [
 export const routes: Routes = [
   { path: '', component: AccountsHomeComponent },
   { path: 'new', component: AccountsNewComponent },
-  { path: ':ACCOUNTID', component: AccountsDetailComponent },
-  { path: ':ACCOUNTID/edit', component: AccountsEditComponent },
-  { path: ':ACCOUNTID/:MOVEMENTID', component: AccountTransactionsDetailComponent }
+  { path: ':accountid', component: AccountsDetailComponent },
+  { path: ':accountid/edit', component: AccountsEditComponent },
+  { path: ':accountid/:movementid', component: AccountTransactionsDetailComponent }
 ];
 
 @NgModule({
