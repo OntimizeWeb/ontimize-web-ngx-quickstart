@@ -3,10 +3,10 @@
 # Deployment configuration
 replicaCount: 1
 image:
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   ## provided as basic setup. replace as needed
   repository: ghcr.io/ontimizeweb/ontimize-web-ngx-quickstart
-  version: feature-conf-redirection
+  version: 15.x.x
 imagePullSecrets:
   - name: github-ecr-cred
 nameOverride: ""

@@ -3,7 +3,7 @@
 # Deployment configuration
 replicaCount: 1
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   ## provided as basic setup. replace as needed
   repository: ghcr.io/ontimizeweb/ontimize-web-ngx-quickstart
   version: 15.x.x

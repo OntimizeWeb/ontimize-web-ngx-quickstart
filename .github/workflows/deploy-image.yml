@@ -3,7 +3,7 @@ name: Create and publish Docker image
 
 on:
   push:
-    branches: ['15.x.x', 'feature/conf-redirection']
+    branches: ['15.x.x']
     tags:
       - 15.*
 
