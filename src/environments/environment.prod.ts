@@ -1,5 +1,5 @@
 export const environment = {
-  apiEndpoint: 'https://try.imatia.com/ontimizeweb/services/qsallcomponents-jee/services/rest',
+  apiEndpoint: 'https://appwsc-qsallcomponents.ontimize.com/qsallcomponents-jee/services/rest',
   production: true,
   versions: {
     core: '15.0.3',
