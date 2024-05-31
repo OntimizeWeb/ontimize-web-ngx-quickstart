@@ -10,12 +10,22 @@
       {
         "attr": "data",
         "visible": true,
+        "enabled": true
+      },
+      {
+        "attr": "customers",
+        "visible": false,
+        "enabled": false
+      },
+      {
+        "attr": "accounts",
+        "visible": true,
         "enabled": false
       },
       {
         "attr": "management",
         "visible": true,
-        "enabled": false
+        "enabled": true
       }
     ]
   }
