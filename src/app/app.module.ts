@@ -6,6 +6,7 @@ import {
   APP_CONFIG,
   O_INPUTS_OPTIONS,
   O_MAT_ERROR_OPTIONS,
+  O_PERMISSION_SERVICE,
   ONTIMIZE_MODULES,
   ONTIMIZE_PROVIDERS,
   OntimizeWebModule,
@@ -18,6 +19,7 @@ import { CONFIG } from './app.config';
 import { D3LocaleService } from './shared/d3-locale/d3Locale.service';
 import { StyleManager } from './shared/style-manager/style-manager';
 import { ThemeService } from './shared/theme.service';
+import { CustomPermissionsService } from './shared/custom-permission.service';
 
 // Defining custom providers (if needed)...
 export const customProviders: any = [
@@ -26,7 +28,8 @@ export const customProviders: any = [
   ThemeService,
   { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } },
   { provide: O_INPUTS_OPTIONS, useValue: { iconColor: 'accent' } },
-  { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
+  { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+  { provide: O_PERMISSION_SERVICE, useValue: CustomPermissionsService }
 ];
 
 

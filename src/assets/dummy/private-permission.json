@@ -1,0 +1,22 @@
+{
+  "code": 0,
+  "data": {
+    "menu": [
+      {
+        "attr": "home",
+        "visible": true,
+        "enabled": false
+      },
+      {
+        "attr": "data",
+        "visible": true,
+        "enabled": false
+      },
+      {
+        "attr": "management",
+        "visible": true,
+        "enabled": false
+      }
+    ]
+  }
+}

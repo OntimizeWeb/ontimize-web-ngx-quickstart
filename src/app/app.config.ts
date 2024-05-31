@@ -30,6 +30,11 @@ export const CONFIG: Config = {
 
   exportConfiguration: {
     path: '/export'
+  },
+  //permissionsServiceType: 'OntimizeEEPermissions',
+
+  permissionsConfiguration: {
+    service: 'permissions'
   }
 
 };

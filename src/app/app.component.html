@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+
+<o-bar-menu></o-bar-menu>
+<o-app-layout show-user-info="yes" [opened-sidenav-image]="openedSidenavImage" [closed-sidenav-image]="closedSidenavImage" show-header="yes"
+  show-language-selector="no">
+  <o-user-info-configuration show-profile="no">
+    <o-user-info-configuration-item name="About" icon="help_outline" [action]="openAbout" confirm="no">
+    </o-user-info-configuration-item>
+  </o-user-info-configuration>
+  <router-outlet></router-outlet>
+</o-app-layout>
+

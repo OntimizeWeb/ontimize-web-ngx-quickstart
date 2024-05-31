@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.addControl('password', this.pwdCtrl);
 
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['../'], { relativeTo: this.actRoute });
+      this.router.navigate(['../main'], { relativeTo: this.actRoute });
     } else {
       this.authService.clearSessionData();
     }
@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(userName, password)
         .subscribe(() => {
           self.sessionExpired = false;
-          self.router.navigate(['../'], { relativeTo: this.actRoute });
+          self.router.navigate(['../main'], { relativeTo: this.actRoute });
         }, this.handleError);
     }
   }

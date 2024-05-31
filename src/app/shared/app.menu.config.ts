@@ -6,9 +6,9 @@ import { CustomersCardComponent } from './customers-card/customers-card.componen
 import { EmployeesCardComponent } from './employees-card/employees-card.component';
 
 export const MENU_CONFIG: MenuRootItem[] = [
-  { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
+  { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home', visible: false },
   {
-    id: 'data', name: 'DATA_', icon: 'remove_red_eye', opened: true,
+    id: 'data', name: 'DATA_', icon: 'remove_red_eye', opened: true, visible: false,
     items: [
       {
         id: 'customers',
@@ -49,7 +49,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
     ]
   },
   {
-    id: 'management', name: 'MANAGEMENT', icon: 'info_outline', opened: false,
+    id: 'management', name: 'MANAGEMENT', icon: 'info_outline', opened: false, visible: false,
     items: [
       {
         id: 'reports',
