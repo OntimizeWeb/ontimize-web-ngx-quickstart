@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "8.7.0",
+  "version": "8.7.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4800",
