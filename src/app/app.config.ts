@@ -32,6 +32,8 @@ export const CONFIG: Config = {
   exportConfiguration: {
     path: '/export'
   },
-  startSessionPath:'/auth/login'
+  startSessionPath: '/auth/login',
+
+  nameConvention:'lower'
 
 };
