@@ -1,6 +1,5 @@
 @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
-@use 'ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'as filemanager;
 @use 'ontimize-web-ngx-map/ontimize-web-ngx-map-theme.scss'as map;
 
 
@@ -22,13 +21,10 @@
 }
 
 .o-dark {
-  @include filemanager.o-filemanager-table-theme(theme.$dark-theme);
   @include map.o-map-theme(theme.$dark-theme);
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
   @include app-themes(theme.$dark-theme);
 }
-
-@include filemanager.o-filemanager-table-theme(theme.$theme);
 
 /*
 * Propagate theme to screen styles definition.

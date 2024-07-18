@@ -31,6 +31,14 @@ export const SERVICE_CONFIG: Object = {
 
   'test': {
     'path': '/test/dummyPermission'
-  }
+  },
+
+  'reportstore':{
+    'path': '/Report'
+  },
+
+  'preferences': {
+    'path': '/Preference'
+  },
 
 };
