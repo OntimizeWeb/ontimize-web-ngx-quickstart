@@ -5,36 +5,36 @@
 
     <o-column title="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
       <div fxLayout="row" fxLayoutAlign="start center" class="gap">
-        <o-nif-input attr="nif" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
-        <o-date-input attr="startdate" required="yes"></o-date-input>
+        <o-nif-input attr="NIF" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
+        <o-date-input attr="STARTDATE" required="yes"></o-date-input>
         <div fxFlex></div>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="start center" class="gap">
-        <o-text-input attr="name" class="margin-right-24" fxFlex.lg="30" fxFlex.xl="30" fxFlex="50"></o-text-input>
-        <o-text-input attr="surname" fxFlex="50" required="yes"></o-text-input>
+        <o-text-input attr="NAME" class="margin-right-24" fxFlex.lg="30" fxFlex.xl="30" fxFlex="50"></o-text-input>
+        <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="start center" class="gap">
-        <o-list-picker attr="customertypeid" fxFlex="30" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
-          value-column="customertypeid" service="customerType" entity="Customertype" keys="customertypeid" columns="customertypeid;description"
-          visible-columns="description" separator=" - ">
+        <o-list-picker attr="CUSTOMERTYPEID" fxFlex="30" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
+          value-column="CUSTOMERTYPEID" service="customerType" entity="Customertype" keys="customertypeid" columns="CUSTOMERTYPEID;DESCRIPTION"
+          visible-columns="DESCRIPTION" separator=" - ">
         </o-list-picker>
       </div>
 
     </o-column>
     <o-column fxFlex="40" layout-align="center center">
-      <o-image attr="photo" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+      <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
     </o-column>
   </o-row>
 
   <div layout-padding></div>
 
   <o-column attr="other_data" title="CONTACT_DATA" layout-padding layout-align="start stretch">
-    <o-text-input attr="address" class="gap"></o-text-input>
-    <o-email-input attr="email" class="gap"></o-email-input>
-    <o-phone-input attr="phone" class="gap"></o-phone-input>
-    <o-textarea-input attr="comments" rows="6"></o-textarea-input>
+    <o-text-input attr="ADDRESS" class="gap"></o-text-input>
+    <o-email-input attr="EMAIL" class="gap"></o-email-input>
+    <o-phone-input attr="PHONE" class="gap"></o-phone-input>
+    <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>
   </o-column>
 
 </o-form>
