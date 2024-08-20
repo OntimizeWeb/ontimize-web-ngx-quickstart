@@ -33,7 +33,7 @@
     "@angular/upgrade": "^15.2.9",
     "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-15.1.0-JSONAPI-SNAPSHOT-5.tgz",
     "ontimize-web-ngx-report": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-report/dist/ontimize-web-ngx-report-15.1.0-JSONAPI-SNAPSHOT-0.tgz",
-    "ontimize-web-ngx-charts": "15.0.0",
+    "ontimize-web-ngx-charts": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-charts/dist/ontimize-web-ngx-charts-15.2.0-JSONAPI-SNAPSHOT-0.tgz",
     "ontimize-web-ngx-filemanager": "15.0.0",
     "ontimize-web-ngx-map": "15.0.0",
     "rxjs": "~7.8.0",
