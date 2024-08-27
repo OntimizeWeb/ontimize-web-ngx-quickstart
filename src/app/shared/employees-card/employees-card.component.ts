@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
-import { OntimizeService } from 'ontimize-web-ngx';
+import { JSONAPIService, OntimizeService } from 'ontimize-web-ngx';
 import { MultiBarHorizontalChartConfiguration } from 'ontimize-web-ngx-charts';
 
 import { Constants } from '../constant';
@@ -19,15 +19,15 @@ export class EmployeesCardComponent {
   public chartParameters: MultiBarHorizontalChartConfiguration;
   scheme;
   constructor(
-    private ontimizeService: OntimizeService,
+    private ontimizeService: JSONAPIService,
     private cd: ChangeDetectorRef
   ) {
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('employees'));
-    this.ontimizeService.query(void 0, ['EMPLOYEEID'], 'employee').subscribe(
-      res => this.employeesAmount = (res.data && res.data.length) ? res.data.length : void 0,
-      err => console.log(err),
-      () => this.cd.detectChanges()
-    );
+    // this.ontimizeService.query({fields:'COUNTRY',type:'branch' }).subscribe(
+    //   res => this.employeesAmount = (res.data && res.data.length) ? res.data.length : void 0,
+    //   err => console.log(err),
+    //   () => this.cd.detectChanges()
+    // );
 
     this.chartParameters = new MultiBarHorizontalChartConfiguration();
     this.chartParameters.height = 100;

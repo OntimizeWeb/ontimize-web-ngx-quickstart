@@ -20,6 +20,9 @@ export const SERVICE_CONFIG: Object = {
   'branches': {
     'path': '/Branch'
   },
+  'accounts': {
+    'path': '/Account'
+  },
 
   'movements': {
     'path': '/Movement'

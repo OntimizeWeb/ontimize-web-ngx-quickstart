@@ -32,12 +32,9 @@
 
     <div fxLayout="column" fxFlex="1 1 auto">
       <o-grid #grid attr="employees" service="employees" entity="Employee"
-        columns="employeeid;employeetypeid;employeename;employeesurname;employeeaddress;employeestartdate;employeeemail;officeid;employeephoto;employeephone;name"
-        quick-filter-columns="employeename;employeesurname;employeeaddress;employeeemail;officeid" keys="employeid" sort-columns="employeesurname"
-        pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px" detail-mode="none">
-        <o-button o-grid-toolbar position="end" (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description"
-          [matTooltip]="'FILL_REPORT' | oTranslate">
-        </o-button>
+        columns="LastName;OnLoanDepartmentId;WorksForDepartmentId;Salary;ProperSalary;EmployeeType;Dues;FirstName;Id;Title;TitleOfCourtesy;BirthDate;HireDate;Address;City;Region;PostalCode;Country;HomePhone;Extension;ReportsTo;PhotoPath;Notes"
+        keys="Id" sort-columns="LastName" pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px"
+        detail-mode="none">
         <o-grid-item *ngFor="let item of grid.dataArray">
           <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item mat-elevation-z1">
             <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
@@ -45,7 +42,7 @@
               <div class="image">
                 <img [src]="getImageSrc(item.employeephoto)">
               </div>
-             <mat-divider fxFlex></mat-divider>
+              <mat-divider fxFlex></mat-divider>
             </div>
 
             <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">

@@ -21,16 +21,16 @@ export class BranchesCardComponent {
   ) {
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('branches'));
     const self = this;
-    this.ontimizeService.query(void 0, ['COUNTRY'], 'branch').subscribe(
-      res => {
-        if (res && res.data.length) {
-          self.nationalBranches = res.data.filter((e: any) => e['COUNTRY'] === 'Spain').length;
-          self.internationalBranches = res.data.length - self.nationalBranches;
-        }
-      },
-      err => console.log(err),
-      () => this.cd.detectChanges()
-    );
+    // this.ontimizeService.query({ fields: { 'COUNTRY'}, entity: 'branch' }).subscribe(
+    //   res => {
+    //     if (res && res.data.length) {
+    //       self.nationalBranches = res.data.filter((e: any) => e['COUNTRY'] === 'Spain').length;
+    //       self.internationalBranches = res.data.length - self.nationalBranches;
+    //     }
+    //   },
+    //   err => console.log(err),
+    //   () => this.cd.detectChanges()
+    // );
   }
 
 }

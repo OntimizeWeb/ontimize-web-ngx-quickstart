@@ -46,8 +46,8 @@
 
         <div fxLayout="column" fxLayoutAlign="start start" class="flex-container" fxLayoutGap="18px" fxFlex>
           <div class="fill-remaining">
-            <o-list #listAccount service="branches" entity="Account" keys="accountid" class="list-accounts"
-              columns="accountid;entityid;officeid;cdid;anid;balance;startdate;enddate;intresrate;accounttyp;accounttypeid;accounttypename"
+            <o-list #listAccount service="accounts" entity="Account" keys="ACCOUNTID" class="list-accounts"
+              columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTRESRATE;ACCOUNTTYP;ACCOUNTTYPEID;ACCOUNTTYPENAME"
               controls="no" fxFlex.gt-lg="list-accounts-60" pageable="yes">
 
 
@@ -58,30 +58,30 @@
                     <div fxLayout="column" fxLayoutAlign="start start" fxFlexFill>
                       <div fxLayout="row" class="info-iban" fxLayoutGap="12px">
                         <label>{{ 'ACCOUNT_NUMBER'| oTranslate }}</label>
-                        <span>{{ account.entityid }} {{ account.officeid }} {{ account.cdid }} {{ account.anid }}</span>
+                        <span>{{ account.ENTITYID }} {{ account.OFFICEID }} {{ account.CDID }} {{ account.ANID }}</span>
                       </div>
                       <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px">
                         <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
-                          <label>{{ 'entityid'| oTranslate }}</label>
-                          <span>{{ account.entityid }}</span>
+                          <label>{{ 'ENTITYID'| oTranslate }}</label>
+                          <span>{{ account.ENTITYID }}</span>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
                           <label>{{ 'cdid'| oTranslate }}</label>
-                          <span> <span>{{ account.cdid }}</span></span>
+                          <span> <span>{{ account.CDID }}</span></span>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
                           <label><label>{{ 'accounttyp'| oTranslate }}</label></label>
-                          <span> <span>{{ account.accounttyp }}</span></span>
+                          <span> <span>{{ account.ACCOUNTTYPEID }}</span></span>
                         </div>
                       </div>
                       <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px">
                         <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
                           <label>{{ 'officeid'| oTranslate }}</label>
-                          <span>{{ account.officeid }}</span>
+                          <span>{{ account.OFFICEID }}</span>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
                           <label>{{'ACCOUNTTYPEID'| oTranslate}}</label>
-                          <span> <span>{{account.accounttypename}}</span></span>
+                          <span> <span>{{account.ACCOUNTTYPENAME}}</span></span>
                         </div>
                       </div>
                     </div>
@@ -89,10 +89,10 @@
 
                   <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40" fxFlex.lt-lg="100" class="balance-account">
                     <label>{{ 'AVAILABLE_BALANCE'| oTranslate }}</label>
-                    <span>{{ account.balance | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
+                    <span>{{ account.BALANCE | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
                       €</span>
                     <div fxLayout="row" fxLayoutAlign="end" fxFill>
-                      <span class="date">{{ account.startdate | date:'longDate' }} </span>
+                      <span class="date">{{ account.STARTDATE | date:'longDate' }} </span>
                     </div>
                   </div>
                 </div>

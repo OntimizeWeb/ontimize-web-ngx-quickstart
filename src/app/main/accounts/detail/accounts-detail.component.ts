@@ -171,26 +171,26 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.height = 320;
     this.movementTypesChartParams.showLeyend = false;
     this.movementTypesChartParams.labelType = 'value';
-    this.movementTypesChartParams.colorData = [{
-      value: 'Salary',
-      color: AccountsDetailComponent.colorSalary
-    },
-    {
-      value: 'Direct debit',
-      color: AccountsDetailComponent.colorDebit
-    },
-    {
-      value: 'Transfer',
-      color: AccountsDetailComponent.colorTransfer
-    },
-    {
-      value: 'Automatic Cash',
-      color: AccountsDetailComponent.colorCash
-    },
-    {
-      value: 'Banking fees',
-      color: AccountsDetailComponent.colorBalance
-    }];
+    // this.movementTypesChartParams.colorData = [{
+    //   value: '3',
+    //   color: AccountsDetailComponent.colorSalary
+    // },
+    // {
+    //   value: '4',
+    //   color: AccountsDetailComponent.colorDebit
+    // },
+    // {
+    //   value: '1',
+    //   color: AccountsDetailComponent.colorTransfer
+    // },
+    // {
+    //   value: '2',
+    //   color: AccountsDetailComponent.colorCash
+    // },
+    // {
+    //   value: '5',
+    //   color: AccountsDetailComponent.colorBalance
+    // }];
 
   }
 
