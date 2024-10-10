@@ -31,7 +31,7 @@
 
             <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
               <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
-              <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERID;ACCOUNTID" parent-keys="ACCOUNTID"
+              <o-list #customerList service="customers" entity="Customeraccount" keys="CUSTOMERID;ACCOUNTID" parent-keys="ACCOUNTID"
                 columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
                 <div class="customers-border">
                   <mat-list-item *ngFor="let customer of customerList.dataArray">
