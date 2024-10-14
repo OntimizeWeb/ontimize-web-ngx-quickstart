@@ -5,7 +5,7 @@
 
 export const environment = {
   //apiEndpoint: 'http://localhost:5656/ontimizeweb/services/qsallcomponents-jee/services/rest',
-  apiEndpoint: 'http://localhost:5656/api',
+  apiEndpoint: 'http://localhost:5657/api',
   production: false,
   versions: {
     core: '15.0.2',
