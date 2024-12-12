@@ -20,7 +20,6 @@ export class AccountsCardComponent {
     this.chartParameters = new DonutChartConfiguration();
     this.chartParameters.width = 280;
     this.chartParameters.height = 200;
-    this.chartParameters.showLeyend = false;
     this.chartParameters.margin.top = 0;
     this.chartParameters.margin.right = 0;
     this.chartParameters.margin.bottom = 0;
