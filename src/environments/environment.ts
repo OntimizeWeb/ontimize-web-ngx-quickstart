@@ -4,13 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  apiEndpoint: 'https://try.imatia.com/ontimizeweb/services/qsallcomponents-jee/services/rest',
+  apiEndpoint: 'https://appwsc-qsallcomponents.ontimize.com/qsallcomponents-jee/services/rest',
   production: false,
   versions: {
-    core: '15.0.3',
-    charts: '"15.0.0',
+    core: '15.3.3',
+    charts: '"15.1.3',
     filemanager: '15.0.0',
-    map: '15.0.0',
-    report: '15.0.1'
+    map: '15.0.1',
+    report: '15.0.3'
   }
 };
