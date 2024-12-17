@@ -170,7 +170,6 @@ export class AccountsDetailComponent {
     this.movementTypesChartParams.margin.bottom = 0;
     this.movementTypesChartParams.margin.left = 0;
     this.movementTypesChartParams.height = 320;
-    this.movementTypesChartParams.showLeyend = false;
     this.movementTypesChartParams.labelType = 'value';
     this.movementTypesChartParams.colorData = [{
       value: 'Salary',
