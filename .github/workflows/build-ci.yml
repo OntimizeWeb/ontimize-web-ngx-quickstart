@@ -1,0 +1,61 @@
+name: Build CI
+
+concurrency:
+  group: build-ci-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  NEXUS_REGISTRY: https://nexus.imatia.com/repository/npm-group/
+
+on:
+  push:
+    branches: [15.x.x, hotfix/15.*]
+    paths: ['src/**']
+  pull_request:
+    types: [opened, synchronize, labeled]
+    paths: ['src/**']
+  workflow_dispatch:
+    inputs:
+      snapshot_mode:
+        description: "Using SNAPSHOT dependencies from private Nexus repository"
+        type: choice
+        required: true
+        default: 'false'
+        options:
+          - true
+          - false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v4
+
+      - name: 'Cache node modules'
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.10.0
+
+      - name: Setup Node registry
+        if: (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'snapshot')) ||
+            (github.event_name == 'workflow_dispatch' && github.event.inputs.snapshot_mode == 'true')
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_NEXUS_AUTH_TOKEN }}
+        run: |
+          npm set registry=${{ env.NEXUS_REGISTRY }}
+          npm set _auth=$NPM_AUTH_TOKEN
+
+      - name: npm install and npm run build
+        run: |
+          npm i
+          npm run production
