@@ -1,3 +1,7 @@
-<span class="card-title">{{ 'ACCOUNTS_TYPE' | oTranslate }}</span>
-<o-chart type="donutChart" service="branches" entity="accountTypeAggregate" x-axis="ACCOUNTTYPENAME" y-axis="AMOUNT"
-  [chart-parameters]="chartParameters" [color]="scheme" class="accounts-card-chart"></o-chart>
+<div fxLayout="column">
+  <span class="card-title">{{ 'ACCOUNTS_TYPE' | oTranslate }}</span>
+  <div fxLayoutAlign="center center" fxFlex="1 1 auto">
+    <o-chart type="donutChart" service="branches" entity="accountTypeAggregate" x-axis="ACCOUNTTYPENAME" y-axis="AMOUNT"
+      [chart-parameters]="chartParameters" [color]="scheme" class="accounts-card-chart"></o-chart>
+  </div>
+</div>

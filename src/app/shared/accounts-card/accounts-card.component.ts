@@ -16,19 +16,14 @@ export class AccountsCardComponent {
 
   public chartParameters: DonutChartConfiguration;
   scheme;
-  constructor( ) {
+  constructor() {
     this.chartParameters = new DonutChartConfiguration();
-    this.chartParameters.width = 280;
+    this.chartParameters.width = 150;
     this.chartParameters.height = 200;
-    this.chartParameters.margin.top = 0;
-    this.chartParameters.margin.right = 0;
-    this.chartParameters.margin.bottom = 0;
-    this.chartParameters.margin.left = 0;
     this.chartParameters.labelType = 'value';
     this.chartParameters.labelSunbeamLayout = false;
     this.chartParameters.valueType = 'intGrouped';
-    this.chartParameters.showTooltip = false;
-
+    this.chartParameters.showTooltip = true;
 
     let primary = Constants.THEME.primary.replace('#', '');
     let splitColor = primary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
