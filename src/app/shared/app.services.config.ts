@@ -1,5 +1,5 @@
 
-export const SERVICE_CONFIG: Object = {
+export const SERVICE_CONFIG = {
 
   'users': {
     'path': '/users'
