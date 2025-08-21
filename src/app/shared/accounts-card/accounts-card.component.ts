@@ -23,7 +23,6 @@ export class AccountsCardComponent {
     this.chartParameters.labelType = 'value';
     this.chartParameters.labelSunbeamLayout = false;
     this.chartParameters.valueType = 'intGrouped';
-    this.chartParameters.showTooltip = true;
 
     let primary = Constants.THEME.primary.replace('#', '');
     let splitColor = primary.match(/.{1,2}/g).map(function (hex) { return parseInt(hex, 16); });
