@@ -32,7 +32,7 @@
 
     <div fxLayout="column" fxFlex="1 1 auto">
       <o-grid #grid attr="employees" service="employees" entity="employee"
-        columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE;NAME"
+        columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE"
         quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID" keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME"
         pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px" detail-mode="none">
         <o-button o-grid-toolbar position="end" (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description"
