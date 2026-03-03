@@ -18,10 +18,11 @@ export class EmployeesHomeComponent {
   @ViewChild('filterBuilder', { static: true })
   filterBuilder: OFilterBuilderComponent;
 
-  tableCfg = { 
+  tableCfg = {
     visibleColumns: "EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS",
-    showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption:'no', showConfigurationOption:'no', detailMode:'none', multipleSort:'yes'};
-  gridCfg = { cols: 4, gutterSize: '18px', quickFilterColumns: 'EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID', showPageSize: "yes", insertButtonFloatable: 'no'};
+    showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', detailMode: 'none', multipleSort: 'yes'
+  };
+  gridCfg = { cols: 4, gutterSize: '18px', quickFilterColumns: 'EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID', showPageSize: "no", insertButtonFloatable: 'no' };
 
 
   constructor(

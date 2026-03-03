@@ -30,50 +30,32 @@
     </o-column-collapsible>
 
     <div fxLayout="column" fxFlex="1 1 auto">
-      <o-data-view #employees attr="employees" service="employees" entity="employee" keys="EMPLOYEEID" 
+      <o-data-view #employees attr="employees" service="employees" entity="employee" keys="EMPLOYEEID"
         columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS"
         sort-columns="EMPLOYEESURNAME" refresh-button="no" insert-button="no" delete-button="no" toggle-on-toolbar="yes" show-buttons-text="no"
-        pageable="yes" query-rows="16" fixed-header="yes" detail-mode="none"
-        [table-config]="tableCfg" [grid-config]="gridCfg" fxFlex="1 1 auto">
+        pageable="yes" query-rows="16" fixed-header="yes" detail-mode="none" [table-config]="tableCfg" [grid-config]="gridCfg" fxFlex="1 1 auto">
 
         <ng-template oDataViewTableColumns>
-          <!-- filter by columns -->
-          <!-- <o-table-columns-filter columns="name;location;price;duration;score"></o-table-columns-filter>
-
-          <o-table-columns-grouping columns="score"></o-table-columns-grouping>
-          <o-table-column attr="name" title-align="start" editable="yes" width="400px"></o-table-column>
-          <o-table-column attr="location" title-align="start" editable="yes" width="500px"></o-table-column>
-          <o-table-column attr="price" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"
-            title-align="end"></o-table-column>
-          <o-table-column attr="score" title-align="end" filterable="yes" sortable="yes">
-            <o-table-cell-renderer-real></o-table-cell-renderer-real>
-          </o-table-column> -->
-
-          <!-- Table paginator -->
-          <!-- <o-table-paginator page-size-options="5;10;15"></o-table-paginator> -->
-
-          <o-table-column async-load="true" width="48px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image"
-            image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-          </o-table-column> 
+          <o-table-column async-load="true" width="48px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" image-type="base64"
+            empty-image="assets/images/no-image.png" avatar="yes">
+          </o-table-column>
           <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME"></o-table-column>
           <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
           <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
-            <o-table-cell-renderer-service service="employees" entity="employeeType"
-              value-column="EMPLOYEETYPENAME" translate="no"
+            <o-table-cell-renderer-service service="employees" entity="employeeType" value-column="EMPLOYEETYPENAME" translate="no"
               columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" visible-columns="EMPLOYEETYPENAME">
             </o-table-cell-renderer-service>
           </o-table-column>
           <o-table-column attr="OFFICEID" title="OFFICEID">
-            <o-table-cell-renderer-service service="branches" entity="branch"
-              value-column="NAME" translate="no"
-              columns="OFFICEID;NAME" visible-columns="NAME">
+            <o-table-cell-renderer-service service="branches" entity="branch" value-column="NAME" translate="no" columns="OFFICEID;NAME"
+              visible-columns="NAME">
             </o-table-cell-renderer-service>
           </o-table-column>
 
         </ng-template>
 
         <ng-template oDataViewGridItem let-item>
-          <mat-card >
+          <mat-card class="grid-card">
             <mat-card-content>
               <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item">
                 <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
@@ -103,36 +85,3 @@
 
   </o-form>
 </div>
-
-
-
-<!-- 
-<o-grid #grid attr="employees" service="employees" entity="employee"
-        columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE"
-        quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID" keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME"
-        pageable="yes" query-rows="16" fixed-header="yes" refresh-button="no" gutter-size="18px" detail-mode="none">
-        <o-button o-grid-toolbar position="end" (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description"
-          [matTooltip]="'FILL_REPORT' | oTranslate">
-        </o-button>
-        <o-grid-item *ngFor="let item of grid.dataArray">
-          <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item mat-elevation-z1">
-            <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
-              <mat-divider fxFlex></mat-divider>
-              <div class="image">
-                <img [src]="getImageSrc(item.EMPLOYEEPHOTO)">
-              </div>
-              <mat-divider fxFlex></mat-divider>
-            </div>
-
-            <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
-              <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
-              <span>{{ item.EMPLOYEEEMAIL }}</span>
-              <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.NAME]} }}
-                <div class="square"></div>
-                {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}
-              </span>
-              <span>{{ item.ADDRESS }}</span>
-            </div>
-          </div>
-        </o-grid-item>
-      </o-grid> -->

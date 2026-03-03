@@ -135,6 +135,8 @@
   "ACCONT_OWNERS": "Titulares",
   "FILTERS_EMPLOYEES": "Filtrar empleados",
   "EMPLOYEETYPE": "Tipo empleado",
+  "EMPLOYEEPHOTO": " ",
+  "EMPLOYEEPHONE": "Teléfono",
   "EMPLOYEE_BRANCH": "Sucursal: {0}",
   "EMPLOYEETYPE_6380": "Gerente",
   "EMPLOYEETYPE_6381": "Cajero",

@@ -55,61 +55,71 @@
   height: 100%;
 }
 
-.employee-item {
-  cursor: pointer;
-  height: 90%;
-  width: 90%;
-  z-index: 3;
+.grid-card {
+  width: 320px;
+  height: 218px;
 
-  .image-container {
-    height: 35%;
-    width: 100%;
+  .mat-mdc-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .mat-divider {
-      margin: 0 12px 30px;
-    }
+    .employee-item {
+      cursor: pointer;
+      width: 90%;
+      z-index: 3;
 
-    .image {
-      align-items: center;
-      border-radius: 50%;
-      display: flex;
-      height: 100px;
-      justify-content: center;
-      max-height: 100px;
-      max-width: 100px;
-      overflow: hidden;
-      width: 100px;
+      .image-container {
+        height: 35%;
+        width: 100%;
 
-      img {
-        height: auto;
-        max-height: 100px;
-        max-width: 100px;
-        width: auto;
-      }
-    }
-  }
+        .mat-divider {
+          margin: 0 12px 30px;
+        }
 
-  .employee-data {
-    height: 35%;
-    width: 100%;
+        .image {
+          align-items: center;
+          border-radius: 50%;
+          display: flex;
+          height: 100px;
+          justify-content: center;
+          max-height: 100px;
+          max-width: 100px;
+          overflow: hidden;
+          width: 100px;
 
-    span {
-      font-size: 14px;
-      max-width: 90%;
-      overflow: hidden;
-      padding: 4px 0;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      &.employee-name {
-        font-size: 18px;
+          img {
+            height: auto;
+            max-height: 100px;
+            max-width: 100px;
+            width: auto;
+          }
+        }
       }
 
-      .square {
-        display: inline-block;
-        height: 10px;
-        margin: 0 6px;
-        width: 10px;
+      .employee-data {
+        height: 35%;
+        width: 100%;
+
+        span {
+          font-size: 14px;
+          max-width: 90%;
+          overflow: hidden;
+          padding: 4px 0;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &.employee-name {
+            font-size: 18px;
+          }
+
+          .square {
+            display: inline-block;
+            height: 10px;
+            margin: 0 6px;
+            width: 10px;
+          }
+        }
       }
     }
   }

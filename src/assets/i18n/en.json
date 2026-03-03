@@ -135,6 +135,8 @@
   "ACCONT_OWNERS": "Account owners",
   "FILTERS_EMPLOYEES": "Filters employees",
   "EMPLOYEETYPE": "Employee type",
+  "EMPLOYEEPHOTO": " ",
+  "EMPLOYEEPHONE": "Phone",
   "EMPLOYEE_BRANCH": "Branch: {0}",
   "EMPLOYEETYPE_6380": "Manager",
   "EMPLOYEETYPE_6381": "Cashier",
