@@ -25,13 +25,14 @@
         </div>
       </div>
       <o-filter-builder #filterBuilder attr="thefilter"
-        filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID:EMPLOYEETYPE;EMPLOYEEEMAIL:EMAIL;OFFICEID:OFFICE" [target]="employees"
+        filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID:EMPLOYEETYPE;EMPLOYEEEMAIL:EMAIL;OFFICEID:OFFICE" [target]="dataview"
         [expression-builder]="createFilter"></o-filter-builder>
     </o-column-collapsible>
 
     <div fxLayout="column" fxFlex="1 1 auto">
-      <o-data-view #employees attr="employees" service="employees" entity="employee" keys="EMPLOYEEID"
+      <o-data-view #dataview attr="employees" service="employees" entity="employee" keys="EMPLOYEEID"
         columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS"
+        quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID"
         sort-columns="EMPLOYEESURNAME" refresh-button="no" insert-button="no" delete-button="no" toggle-on-toolbar="yes" show-buttons-text="no"
         pageable="yes" query-rows="16" fixed-header="yes" detail-mode="none" [table-config]="tableCfg" [grid-config]="gridCfg" fxFlex="1 1 auto">
 

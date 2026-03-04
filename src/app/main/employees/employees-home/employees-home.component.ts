@@ -6,6 +6,7 @@ import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 import { OFilterParameter } from 'ontimize-web-ngx-report/lib/types/filter-parameter.type';
+import { GridConfig, TableConfig } from 'ontimize-web-ngx-extra-components';
 
 @Component({
   selector: 'employees-home',
@@ -18,11 +19,11 @@ export class EmployeesHomeComponent {
   @ViewChild('filterBuilder', { static: true })
   filterBuilder: OFilterBuilderComponent;
 
-  tableCfg = {
+  tableCfg: TableConfig = {
     visibleColumns: "EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS",
     showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', detailMode: 'none', multipleSort: 'yes'
   };
-  gridCfg = { cols: 4, gutterSize: '18px', quickFilterColumns: 'EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID', showPageSize: "no", insertButtonFloatable: 'no' };
+  gridCfg: GridConfig = { cols: 4, gutterSize: '18px', quickFilterColumns: 'EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID', showPageSize: "no", insertButtonFloatable: 'no' };
 
 
   constructor(
