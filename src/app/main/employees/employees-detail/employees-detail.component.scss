@@ -1,12 +1,13 @@
 .employee-detail {
+  padding: 48px 24px;
   .image {
-    align-items: center;
+    // align-items: center;
     border-radius: 50%;
     display: flex;
-    height: 130px;
+    height: 200px;
     justify-content: center;
     overflow: hidden;
-    width: 130px;
+    width: 200px;
 
     img {
       height: auto;
@@ -37,6 +38,7 @@
   }
 
   .employee-data {
+    margin-top:48px;
     span {
       align-items: center;
       display: flex;
