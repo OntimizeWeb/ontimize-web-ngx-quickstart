@@ -14,4 +14,5 @@ export class AboutComponent {
   public vFilemanager: string = environment.versions.filemanager;
   public vMap: string = environment.versions.map;
   public vReport: string = environment.versions.report;
+  public vExtraComponents:string = environment.versions.extraComponentes
 }

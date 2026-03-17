@@ -20,14 +20,13 @@ export class EmployeesHomeComponent {
   filterBuilder: OFilterBuilderComponent;
 
   tableCfg: TableConfig = {
-    visibleColumns: "EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS",
-    showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', detailMode: 'none', multipleSort: 'yes'
+    visibleColumns: "EMPLOYEEPHOTO;EMPLOYEESURNAME;EMPLOYEENAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS;OFFICEID",
+    showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', multipleSort: 'yes'
   };
   gridCfg: GridConfig = { cols: 4, gutterSize: '18px', quickFilterColumns: 'EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID', showPageSize: "no", insertButtonFloatable: 'no' };
 
 
   constructor(
-    protected dialog: MatDialog,
     protected sanitizer: DomSanitizer,
     private reportStoreService: OReportStoreService
   ) { }
@@ -56,14 +55,6 @@ export class EmployeesHomeComponent {
 
   public getImageSrc(base64: string): any {
     return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64) : './assets/images/no-image-transparent.png';
-  }
-
-  public openDetail(data: any): void {
-    this.dialog.open(EmployeesDetailComponent, {
-      height: '330px',
-      width: '520px',
-      data: data
-    });
   }
 
   fillReportFilter() {
