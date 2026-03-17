@@ -6,6 +6,7 @@ import { OReportStoreService } from 'ontimize-web-ngx-report';
 
 import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 import { OFilterParameter } from 'ontimize-web-ngx-report/lib/types/filter-parameter.type';
+import { GridConfig, TableConfig } from 'ontimize-web-ngx-extra-components';
 
 @Component({
   selector: 'employees-home',
@@ -18,8 +19,14 @@ export class EmployeesHomeComponent {
   @ViewChild('filterBuilder', { static: true })
   filterBuilder: OFilterBuilderComponent;
 
+  tableCfg: TableConfig = {
+    visibleColumns: "EMPLOYEEPHOTO;EMPLOYEESURNAME;EMPLOYEENAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS;OFFICEID",
+    showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', multipleSort: 'yes'
+  };
+  gridCfg: GridConfig = { cols: 4, gutterSize: '18px', quickFilterColumns: 'EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID', showPageSize: "no", insertButtonFloatable: 'no' };
+
+
   constructor(
-    protected dialog: MatDialog,
     protected sanitizer: DomSanitizer,
     private reportStoreService: OReportStoreService
   ) { }
@@ -48,14 +55,6 @@ export class EmployeesHomeComponent {
 
   public getImageSrc(base64: string): any {
     return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64) : './assets/images/no-image-transparent.png';
-  }
-
-  public openDetail(data: any): void {
-    this.dialog.open(EmployeesDetailComponent, {
-      height: '330px',
-      width: '520px',
-      data: data
-    });
   }
 
   fillReportFilter() {

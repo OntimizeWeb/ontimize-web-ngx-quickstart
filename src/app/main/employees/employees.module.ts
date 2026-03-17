@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { OReportModule } from 'ontimize-web-ngx-report';
+import { OExtraComponentsModule } from 'ontimize-web-ngx-extra-components';
 
 import { SharedModule } from '../../shared/shared.module';
 import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
@@ -12,7 +13,8 @@ import { EmployeesRoutingModule } from './employees-routing.module';
     SharedModule,
     OntimizeWebModule,
     EmployeesRoutingModule,
-    OReportModule
+    OReportModule,
+    OExtraComponentsModule
   ],
   declarations: [EmployeesHomeComponent, EmployeesDetailComponent]
 })

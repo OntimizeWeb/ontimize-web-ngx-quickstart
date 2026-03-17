@@ -1,5 +1,5 @@
 <div class="container">
-  <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home">
+  <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home" show-fullscreen-button="yes">
     <div fxFill fxLayout="column" fxLayoutAlign="start">
       <o-table #table attr="branches" service="branches" entity="branch" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
         visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="10" pageable="no" row-height="medium">
