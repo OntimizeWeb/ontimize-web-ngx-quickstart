@@ -1,16 +1,16 @@
 <span class="card-title">{{ 'BRANCHES_TOTAL' | oTranslate }}</span>
-<div fxLayout="column">
-  <div fxLayout="row" class="branches-card-item">
-    <img src="assets/images/national.svg" class="branches-card-image" fxFlex="30" />
-    <div fxLayout="column" fxLayoutAlign="center start" class="branches-card-item-info">
+<div class="o-flex-column">
+  <div class="o-flex-row branches-card-item">
+    <img src="assets/images/national.svg" class="branches-card-image" style="flex:0 0 30%" />
+    <div class="o-flex-column o-layout-align-center-start branches-card-item-info">
       <span class="branches-card-title">{{ 'BRANCHES_NATIONAL' | oTranslate }}</span>
       <span class="branches-card-branches-amount">{{ nationalBranches }}</span>
     </div>
   </div>
   <mat-divider></mat-divider>
-  <div fxLayout="row" class="branches-card-item">
-    <img src="assets/images/international.svg" class="branches-card-image" fxFlex="30" />
-    <div fxLayout="column" fxLayoutAlign="center start" class="branches-card-item-info">
+  <div class="o-flex-row branches-card-item">
+    <img src="assets/images/international.svg" class="branches-card-image" style="flex:0 0 30%" />
+    <div class="o-flex-column o-layout-align-center-start branches-card-item-info">
       <span class="branches-card-title">{{ 'BRANCHES_INTERNATIONAL' | oTranslate }}</span>
       <span class="branches-card-branches-amount">{{ internationalBranches }}</span>
     </div>
