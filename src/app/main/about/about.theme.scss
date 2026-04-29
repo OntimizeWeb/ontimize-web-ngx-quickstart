@@ -1,5 +1,4 @@
 @use '@angular/material' as mat;
-@use '@angular/material/theming';
 @use 'sass:map';
 
 @mixin about-theme($theme) {
@@ -8,7 +7,7 @@
 
   app-about {
     .mat-divider {
-      border-top-color: mat.get-color-from-palette($accent);
+      border-top-color: mat.m2-get-color-from-palette($accent);
     }
   }
 }

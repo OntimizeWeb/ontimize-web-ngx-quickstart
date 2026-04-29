@@ -1,24 +1,16 @@
-@use '@angular/material'as mat;
-@use 'sass:map';
-
 @mixin login-theme($theme) {
-  $primary: map.get($theme, color, primary);
-  $accent: map.get($theme, color, accent);
-  $warn: map.get($theme, color, warn);
-  $background: map.get($theme, color, background);
-  $foreground: map.get($theme, color, foreground);
 
   .login-outer-container {
-    background-color: mat.get-color-from-palette($background, background);
+    background-color: var(--o-bg-background);
 
     .wrapp-login {
-      background-color: mat.get-color-from-palette($background, dialog);
+      background-color: var(--o-bg-card);
 
       .login-inner-container {
-        background-color: mat.get-color-from-palette($background, dialog);
+        background-color: var(--o-bg-card);
 
         .logo-container {
-          background-color: mat.get-color-from-palette($background, dialog);
+          background-color: var(--o-bg-card);
         }
 
         .session-expired {
@@ -27,11 +19,11 @@
 
         .title_text,
         .login_info {
-          color: mat.get-color-from-palette($foreground, text);
+          color: var(--o-fg-text);
         }
 
         .link_text {
-          color: mat.get-color-from-palette($primary);
+          color: var(--o-primary-500);
         }
       }
 
@@ -39,7 +31,7 @@
   }
 
   .footer-container {
-    background-color: mat.get-color-from-palette($primary);
+    background-color: var(--o-primary-500);
 
     div {
       span {

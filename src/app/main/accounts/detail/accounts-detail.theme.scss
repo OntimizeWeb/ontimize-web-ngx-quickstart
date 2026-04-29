@@ -1,30 +1,19 @@
-@use '@angular/material'as mat;
-@use 'sass:map';
-
 @mixin accounts-detail-theme($theme) {
-  $primary: map.get($theme, color, primary);
   $color-salary: #eeeeee;
-  $color-debit: change-color(mat.get-color-from-palette($primary), $alpha: 0.6);
   $color-transfer: #c5c5c5;
-  $color-cash: change-color(mat.get-color-from-palette($primary), $alpha: 0.3);
   $color-red-numbers: #f44336;
   $color-gray: #bcbcbe;
-  $background: map.get($theme, color, background);
-  $foreground: map.get($theme, color, foreground);
-  $is-dark: map.get($theme, color, is-dark);
 
   .balance-chart {
     text {
-      @if $is-dark {
-        color: #cccccc !important;
-        fill: #cccccc !important;
-      }
+      color: var(--o-fg-text) !important;
+      fill: var(--o-fg-text) !important;
     }
   }
 
   .account-form-label,
   .customers .customers-list-title {
-    color: mat.get-color-from-palette($foreground, secondary-text);
+    color: var(--o-fg-secondary-text);
   }
 
   .account-form-value.balance.red-numbers {
@@ -32,13 +21,14 @@
   }
 
   .movement-list.o-list .movement-list-item.mat-mdc-list-item {
-    border-botton-color: mat.get-color-from-palette($background, divider);
+    border-botton-color: var(--o-fg-divider);
+
     &.movement-list-item-transfer {
       border-color: $color-transfer;
     }
 
     &.movement-list-item-cash {
-      border-color: $color-cash;
+      border-color: color-mix(in srgb, var(--o-primary-500) 30%, transparent);
     }
 
     &.movement-list-item-salary {
@@ -46,44 +36,40 @@
     }
 
     &.movement-list-item-debit {
-      border-color: $color-debit;
+      border-color: color-mix(in srgb, var(--o-primary-500) 60%, transparent);
     }
 
     .mdc-list-item__content {
       border-color: $color-gray;
     }
-
   }
 
   .account-info-container,
   .balance-chart-container,
   .movement-chart-container,
   .movement-list-container {
-    @if $is-dark {
-      background: change-color(mat.get-color-from-palette($background, unselected-chip), $alpha: 0.2);
-    }
+    background: var(--o-bg-level-04);
   }
 
   .account-form-value {
     &.balance {
-      color: mat.get-color-from-palette($primary);
+      color: var(--o-primary-500);
     }
   }
 
   .data-container {
     .balance-border {
-      border-color: mat.get-color-from-palette($primary);
+      border-color: var(--o-primary-500);
     }
   }
 
   .customers-border {
-    border-color: change-color(mat.get-color-from-palette($foreground, secondary-text), $alpha: 0.12);
+    border-color: color-mix(in srgb, var(--o-fg-secondary-text) 12%, transparent);
   }
 
   .last-movement-div {
     .last-movement {
-      color: mat.get-color-from-palette($primary);
+      color: var(--o-primary-500);
     }
   }
-
 }

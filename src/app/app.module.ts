@@ -25,7 +25,6 @@ export const customProviders: any = [
     BrowserModule,
     BrowserAnimationsModule,
     OntimizeWebModule.forRoot(CONFIG),
-    OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
