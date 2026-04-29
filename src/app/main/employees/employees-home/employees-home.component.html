@@ -1,0 +1,92 @@
+<div class="container">
+  <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
+
+    <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="legacy" expanded="no" icon="filter_list" class="collapsible">
+      <div class="filter_style" fxLayout="column" fxLayoutGap="14px">
+        <div fxLayout="row wrap" fxLayoutGap="32px">
+          <o-text-input attr="NAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+          <o-text-input attr="SURNAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+          <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+            value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="calc(25% - 32px)"></o-combo>
+          <o-text-input attr="EMAIL" read-only="no" fxFlex="25%"></o-text-input>
+        </div>
+        <div fxLayout="row" fxLayoutGap="32px">
+          <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID"
+            keys="OFFICEID" visible-columns="NAME" fxFlex="calc(25% - 32px)"></o-combo>
+          <div fxFlex="75%" fxFill class="filter_btn" fxLayoutAlign="flex-end flex-end">
+
+            <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="STROKED" label="Clear" layout-padding>
+            </o-button>
+            <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="STROKED" label="Filter" layout-padding color="accent">
+            </o-button>
+            <o-filter-builder-menu [oFilterBuilder]="filterBuilder" show-filter-option="no" show-clear-filter-option="no"
+              layout-padding></o-filter-builder-menu>
+          </div>
+        </div>
+      </div>
+      <o-filter-builder #filterBuilder attr="thefilter"
+        filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID:EMPLOYEETYPE;EMPLOYEEEMAIL:EMAIL;OFFICEID:OFFICE" [target]="dataview"
+        [expression-builder]="createFilter"></o-filter-builder>
+    </o-column-collapsible>
+
+    <div fxLayout="column" fxFlex="1 1 auto">
+      <o-form-layout-manager mode="sidenav" label-columns="EMPLOYEENAME;EMPLOYEESURNAME" separator=", " attr="o-form-layout-employee-home"
+        title-data-origin="employee_form_edit" fxFlexFill sidenav-width="30%">
+
+        <o-data-view #dataview attr="employees" service="employees" entity="employee" keys="EMPLOYEEID"
+          columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS"
+          quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID" sort-columns="EMPLOYEESURNAME"
+          refresh-button="no" insert-button="no" delete-button="no" toggle-on-toolbar="yes" show-buttons-text="no" pageable="yes" query-rows="16"
+          fixed-header="yes" [table-config]="tableCfg" [grid-config]="gridCfg" fxFlex="1 1 auto">
+          <ng-template oDataViewTableColumns>
+            <o-table-column async-load="true" width="48px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" image-type="base64"
+              empty-image="assets/images/no-image.png" avatar="yes">
+            </o-table-column>
+            <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME"></o-table-column>
+            <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
+            <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
+              <o-table-cell-renderer-service service="employees" entity="employeeType" value-column="EMPLOYEETYPENAME" translate="no"
+                columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" visible-columns="EMPLOYEETYPENAME">
+              </o-table-cell-renderer-service>
+            </o-table-column>
+            <o-table-column attr="OFFICEID" title="OFFICEID">
+              <o-table-cell-renderer-service service="branches" entity="branch" value-column="NAME" translate="no" columns="OFFICEID;NAME"
+                visible-columns="NAME">
+              </o-table-cell-renderer-service>
+            </o-table-column>
+
+          </ng-template>
+
+          <ng-template oDataViewGridItem let-item>
+
+            <mat-card class="grid-card">
+              <mat-card-content>
+                <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item">
+                  <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
+                    <mat-divider fxFlex></mat-divider>
+                    <div class="image">
+                      <img [src]="getImageSrc(item.EMPLOYEEPHOTO)">
+                    </div>
+                    <mat-divider fxFlex></mat-divider>
+                  </div>
+
+                  <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
+                    <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
+                    <span>{{ item.EMPLOYEEEMAIL }}</span>
+                    <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.NAME]} }}
+                      <div class="square"></div>
+                      {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}
+                    </span>
+                    <span>{{ item.ADDRESS }}</span>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </ng-template>
+
+        </o-data-view>
+      </o-form-layout-manager>
+    </div>
+
+  </o-form>
+</div>

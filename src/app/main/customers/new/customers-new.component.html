@@ -1,0 +1,40 @@
+<o-form attr="customers_form_insert" service="customers" entity="customer" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;U;D"
+  #oForm after-insert-mode="detail" class="standalone-form-container">
+
+  <o-row attr="row1" layout-align="start stretch">
+
+    <o-column title="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+      <div fxLayout="row" fxLayoutAlign="start center" class="gap">
+        <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
+        <o-date-input attr="STARTDATE" required="yes"></o-date-input>
+        <div fxFlex></div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="gap">
+        <o-text-input attr="NAME" class="margin-right-24" fxFlex.lg="30" fxFlex.xl="30" fxFlex="50"></o-text-input>
+        <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="gap">
+        <o-list-picker attr="CUSTOMERTYPEID" fxFlex="30" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
+          value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+          visible-columns="DESCRIPTION" separator=" - ">
+        </o-list-picker>
+      </div>
+
+    </o-column>
+    <o-column fxFlex="40" layout-align="center center">
+      <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+    </o-column>
+  </o-row>
+
+  <div layout-padding></div>
+
+  <o-column attr="other_data" title="CONTACT_DATA" layout-padding layout-align="start stretch">
+    <o-text-input attr="ADDRESS" class="gap"></o-text-input>
+    <o-email-input attr="EMAIL" class="gap"></o-email-input>
+    <o-phone-input attr="PHONE" class="gap"></o-phone-input>
+    <o-textarea-input attr="COMMENTS" rows="6"></o-textarea-input>
+  </o-column>
+
+</o-form>

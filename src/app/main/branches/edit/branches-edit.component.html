@@ -1,0 +1,16 @@
+<o-form fxLayout="column" show-header="yes" header-actions="R;I;U;D" service="branches" entity="branch" keys="OFFICEID" #oForm
+  columns="OFFICEID;NAME;ADDRESS;STARTDATE;DETAILS;PHONE;OFFICEXML;BRANCHPLAN;MINLATITUDE;MAXLATITUDE;MINLONGITUDE;MAXLONGITUDE;GEOMETRYLAYOUT" layout-align="start stretch">
+
+  <o-column class="rounded-panel" fxFill title="BRANCH_INFO">
+    <div fxLayout="row" class="gap">
+      <o-text-input attr="OFFICEID" fxFlex="20" class="margin-right-24"></o-text-input>
+      <o-text-input attr="PHONE" fxFlex="15" class="margin-right-24"></o-text-input>
+      <o-date-input attr="STARTDATE" fxFlex="15" class="margin-right-24"></o-date-input>
+    </div>
+    <div fxLayout="row">
+      <o-text-input attr="NAME" fxFlex="35" class="margin-right-24"></o-text-input>
+      <o-text-input attr="ADDRESS" fxFlex="65" class="margin-right-24"></o-text-input>
+    </div>
+  </o-column>
+
+</o-form>

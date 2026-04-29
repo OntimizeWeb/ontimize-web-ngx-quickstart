@@ -1,0 +1,109 @@
+<div class="container">
+  <o-form #formFilter editable-detail="no" show-header="no">
+    <mat-sidenav-container class="mat-sidenav-container-account-home">
+      <mat-sidenav #sidenav opened [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" class="mat-sidenav-filters">
+
+        <!--FORM FILTERS-->
+        <div fxLayout="column" fxLayoutGap="18px" class="accounts-filters">
+
+          <!--ENTITYID FILTER-->
+          <o-text-input #entityid attr="ENTITYID" read-only="no"></o-text-input>
+          <!--OFFICEID FILTER-->
+          <o-text-input attr="OFFICEID" read-only="no"></o-text-input>
+          <!--ACCOUNTTYPEID FILTER-->
+          <o-combo attr="ACCOUNTTYPEID" read-only="no" service="branches" entity="accountTypeAggregate" columns="ACCOUNTTYPEID;ACCOUNTTYPENAME"
+            value-column="ACCOUNTTYPEID" keys="ACCOUNTTYPEID" visible-columns="ACCOUNTTYPENAME" sql-type="INTEGER"></o-combo>
+          <!--ANID FILTER-->
+          <o-text-input attr="ANID" read-only="no"></o-text-input>
+          <o-date-input attr="STARTDATE" read-only="no"></o-date-input>
+          <o-date-input attr="ENDDATE" read-only="no"></o-date-input>
+          <!--BALANCE FILTER-->
+          <span class=" label-balance">{{ 'FILTER_BALANCE' | oTranslate }}</span>
+          <o-slider attr="BALANCE" read-only="no" min="0" max="100000" step="1000" thumb-label="true" [display-with]="formatLabelSlider"></o-slider>
+
+          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+            <o-button attr="applyfilter" type="STROKED" label="APPLY_FILTER" [oFilterBuilderQuery]="filterBuilder">
+            </o-button>
+            <o-button attr="deletefilter" type="BASIC" icon="delete" [oFilterBuilderClear]="filterBuilder" label="DELETE_FILTER"></o-button>
+          </div>
+          <o-filter-builder #filterBuilder attr="thefilter" filters="ENTITYID;OFFICEID;ACCOUNTTYPEID;ANID;STARTDATE;ENDDATE;BALANCE"
+            [target]="listAccount" query-on-change="no" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
+
+        </div>
+
+      </mat-sidenav>
+
+      <mat-sidenav-content class="mat-sidenav-content">
+
+        <!--BUTTONS-->
+        <div class="buttons" fxLayoutGap="18px">
+          <o-button (click)="toogleSidenav()" icon="filter_list" type="STROKED" label="FILTER"
+            [matTooltip]="(sidenav.opened?'HIDE_FILTERS':'SHOW_FILTERS') | oTranslate"></o-button>
+          <o-button (click)="reloadData()" label="REFRESH" type="STROKED" icon="refresh" [matTooltip]="'RELOAD_DATA' | oTranslate"></o-button>
+          <o-button (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate">
+          </o-button>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="start start" class="flex-container" fxLayoutGap="18px" fxFlex>
+          <div class="fill-remaining">
+            <o-list #listAccount service="branches" entity="account" keys="ACCOUNTID" class="list-accounts"
+              columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP;ACCOUNTTYPEID;ACCOUNTTYPENAME"
+              controls="no" fxFlex.gt-lg="list-accounts-60" pageable="yes">
+
+
+              <mat-card *ngFor="let account of listAccount.dataArray; trackBy:trackByIndex" o-list-item>
+                <div fxLayout="row wrap" fxLayoutAlign="center center">
+                  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex="60" fxFlex.lt-lg="100" class="info-account"
+                    ngClass.lt-lg="border-bottom" ngClass="border-right">
+                    <div fxLayout="column" fxLayoutAlign="start start" fxFlexFill>
+                      <div fxLayout="row" class="info-iban" fxLayoutGap="12px">
+                        <label>{{ 'ACCOUNT_NUMBER'| oTranslate }}</label>
+                        <span>{{ account.ENTITYID }} {{ account.OFFICEID }} {{ account.CDID }} {{ account.ANID }}</span>
+                      </div>
+                      <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px">
+                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                          <label>{{ 'ENTITYID'| oTranslate }}</label>
+                          <span>{{ account.ENTITYID }}</span>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                          <label>{{ 'CDID'| oTranslate }}</label>
+                          <span> <span>{{ account.CDID }}</span></span>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                          <label><label>{{ 'ACCOUNTTYP'| oTranslate }}</label></label>
+                          <span> <span>{{ account.ACCOUNTTYP }}</span></span>
+                        </div>
+                      </div>
+                      <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px">
+                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                          <label>{{ 'OFFICEID'| oTranslate }}</label>
+                          <span>{{ account.OFFICEID }}</span>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                          <label>{{'ACCOUNTTYPEID'| oTranslate}}</label>
+                          <span> <span>{{account.ACCOUNTTYPENAME}}</span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40" fxFlex.lt-lg="100" class="balance-account">
+                    <label>{{ 'AVAILABLE_BALANCE'| oTranslate }}</label>
+                    <span>{{ account.BALANCE | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
+                      €</span>
+                    <div fxLayout="row" fxLayoutAlign="end" fxFill>
+                      <span class="date">{{ account.STARTDATE | date:'longDate' }} </span>
+                    </div>
+                  </div>
+                </div>
+
+              </mat-card>
+            </o-list>
+          </div>
+        </div>
+
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+  </o-form>
+</div>

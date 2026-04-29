@@ -1,0 +1,89 @@
+@use '@angular/material'as mat;
+@use 'sass:map';
+
+@mixin accounts-detail-theme($theme) {
+  $primary: map.get($theme, color, primary);
+  $color-salary: #eeeeee;
+  $color-debit: change-color(mat.get-color-from-palette($primary), $alpha: 0.6);
+  $color-transfer: #c5c5c5;
+  $color-cash: change-color(mat.get-color-from-palette($primary), $alpha: 0.3);
+  $color-red-numbers: #f44336;
+  $color-gray: #bcbcbe;
+  $background: map.get($theme, color, background);
+  $foreground: map.get($theme, color, foreground);
+  $is-dark: map.get($theme, color, is-dark);
+
+  .balance-chart {
+    text {
+      @if $is-dark {
+        color: #cccccc !important;
+        fill: #cccccc !important;
+      }
+    }
+  }
+
+  .account-form-label,
+  .customers .customers-list-title {
+    color: mat.get-color-from-palette($foreground, secondary-text);
+  }
+
+  .account-form-value.balance.red-numbers {
+    color: $color-red-numbers;
+  }
+
+  .movement-list.o-list .movement-list-item.mat-mdc-list-item {
+    border-botton-color: mat.get-color-from-palette($background, divider);
+    &.movement-list-item-transfer {
+      border-color: $color-transfer;
+    }
+
+    &.movement-list-item-cash {
+      border-color: $color-cash;
+    }
+
+    &.movement-list-item-salary {
+      border-color: $color-salary;
+    }
+
+    &.movement-list-item-debit {
+      border-color: $color-debit;
+    }
+
+    .mdc-list-item__content {
+      border-color: $color-gray;
+    }
+
+  }
+
+  .account-info-container,
+  .balance-chart-container,
+  .movement-chart-container,
+  .movement-list-container {
+    @if $is-dark {
+      background: change-color(mat.get-color-from-palette($background, unselected-chip), $alpha: 0.2);
+    }
+  }
+
+  .account-form-value {
+    &.balance {
+      color: mat.get-color-from-palette($primary);
+    }
+  }
+
+  .data-container {
+    .balance-border {
+      border-color: mat.get-color-from-palette($primary);
+    }
+  }
+
+  .customers-border {
+    border-color: change-color(mat.get-color-from-palette($foreground, secondary-text), $alpha: 0.12);
+  }
+
+  .last-movement-div {
+    .last-movement {
+      color: mat.get-color-from-palette($primary);
+    }
+  }
+
+}

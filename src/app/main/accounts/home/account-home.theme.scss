@@ -1,0 +1,42 @@
+@use '@angular/material'as mat;
+@use 'sass:map';
+
+@mixin account-home-theme($theme) {
+  $accent: map.get($theme, color, accent);
+  $primary: map.get($theme, color, primary);
+  $foreground: map.get($theme, color, foreground);
+  $is-dark: map.get($theme, color, is-dark);
+
+  .filter-border {
+    border-color: mat.get-color-from-palette($accent);
+  }
+
+  .mat-sidenav-container-account-home {
+
+    .accounts-filters {
+      border-color: mat.get-color-from-palette($accent);
+    }
+
+    .list-accounts {
+
+      span {
+        color: mat.get-color-from-palette($foreground, secondary-text);
+      }
+
+      label {
+        color: mat.get-color-from-palette($foreground, primary-text);
+      }
+
+      .mat-mdc-card {
+        @if $is-dark==true {
+          background-color: change-color(mat.get-color-from-palette(mat.$grey-palette, 700), $alpha: 0.2);
+        }
+
+        .info-account.border-bottom,
+        .info-account.border-right {
+          border-color: mat.get-color-from-palette($accent);
+        }
+      }
+    }
+  }
+}

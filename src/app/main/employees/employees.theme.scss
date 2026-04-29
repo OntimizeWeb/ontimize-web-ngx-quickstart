@@ -1,0 +1,46 @@
+@use '@angular/material'as mat;
+@use 'sass:map';
+
+@mixin employees-theme($theme) {
+  $accent: map.get($theme, color, accent);
+  $emp-icon-color: #b8b8b8;
+  $foreground: map.get($theme, color, foreground);
+  $border-color: mat.get-color-from-palette($foreground, divider);
+
+  employees-home {
+    .employee-item {
+      .image-container .mat-divider {
+        border-top-color: mat.get-color-from-palette($accent);
+      }
+
+      .employee-data span .square {
+        background-color: mat.get-color-from-palette($accent);
+      }
+    }
+
+    .o-column-collapsible.collapsible {
+      .filter_style {
+        border-color: mat.get-color-from-palette($accent);
+      }
+
+      .o-container .o-container-title.mat-expansion-panel-header-title,
+      .o-container .o-row-collapsible>.o-container .o-container-title.mat-expansion-panel-header-title {
+        border-color: $border-color;
+      }
+    }
+  }
+
+  employees-detail {
+    .mat-divider {
+      border-top-color: mat.get-color-from-palette($accent);
+    }
+
+    .employee-data span .mat-icon,
+    .employee-type {
+      color: $emp-icon-color;
+    }
+  }
+
+
+
+}
