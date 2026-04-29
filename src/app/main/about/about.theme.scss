@@ -1,13 +1,8 @@
-@use '@angular/material' as mat;
-@use 'sass:map';
-
 @mixin about-theme($theme) {
-  $accent: map.get($theme, color, accent);
-  $emp-icon-color: #b8b8b8;
 
   app-about {
     .mat-divider {
-      border-top-color: mat.m2-get-color-from-palette($accent);
+      border-top-color: var(--o-accent-500);
     }
   }
 }
