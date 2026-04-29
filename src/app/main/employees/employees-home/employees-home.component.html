@@ -1,19 +1,19 @@
 <div class="container">
-  <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
+  <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form o-flex-fill">
 
     <o-column-collapsible title="{{ 'FILTERS_EMPLOYEES' | oTranslate }}" appearance="legacy" expanded="no" icon="filter_list" class="collapsible">
-      <div class="filter_style" fxLayout="column" fxLayoutGap="14px">
-        <div fxLayout="row wrap" fxLayoutGap="32px">
-          <o-text-input attr="NAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
-          <o-text-input attr="SURNAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+      <div class="filter_style o-flex-column" style="gap:14px">
+        <div class="o-flex-row" style="flex-wrap:wrap;gap:32px">
+          <o-text-input attr="NAME" read-only="no" style="flex:0 0 calc(25% - 32px)"></o-text-input>
+          <o-text-input attr="SURNAME" read-only="no" style="flex:0 0 calc(25% - 32px)"></o-text-input>
           <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
-            value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="calc(25% - 32px)"></o-combo>
-          <o-text-input attr="EMAIL" read-only="no" fxFlex="25%"></o-text-input>
+            value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" style="flex:0 0 calc(25% - 32px)"></o-combo>
+          <o-text-input attr="EMAIL" read-only="no" style="flex:0 0 25%"></o-text-input>
         </div>
-        <div fxLayout="row" fxLayoutGap="32px">
+        <div class="o-flex-row" style="gap:32px">
           <o-combo #branch attr="OFFICE" read-only="no" service="branches" entity="branch" columns="OFFICEID;NAME" value-column="OFFICEID"
-            keys="OFFICEID" visible-columns="NAME" fxFlex="calc(25% - 32px)"></o-combo>
-          <div fxFlex="75%" fxFill class="filter_btn" fxLayoutAlign="flex-end flex-end">
+            keys="OFFICEID" visible-columns="NAME" style="flex:0 0 calc(25% - 32px)"></o-combo>
+          <div class="o-flex-fill o-flex-fill filter_btn o-layout-align-flex-end-flex-end">
 
             <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="STROKED" label="Clear" layout-padding>
             </o-button>
@@ -29,15 +29,15 @@
         [expression-builder]="createFilter"></o-filter-builder>
     </o-column-collapsible>
 
-    <div fxLayout="column" fxFlex="1 1 auto">
+    <div class="o-flex-column" style="flex:1 1 auto">
       <o-form-layout-manager mode="sidenav" label-columns="EMPLOYEENAME;EMPLOYEESURNAME" separator=", " attr="o-form-layout-employee-home"
-        title-data-origin="employee_form_edit" fxFlexFill sidenav-width="30%">
+        title-data-origin="employee_form_edit" class="o-flex-fill" sidenav-width="30%">
 
         <o-data-view #dataview attr="employees" service="employees" entity="employee" keys="EMPLOYEEID"
           columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS"
           quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;OFFICEID" sort-columns="EMPLOYEESURNAME"
           refresh-button="no" insert-button="no" delete-button="no" toggle-on-toolbar="yes" show-buttons-text="no" pageable="yes" query-rows="16"
-          fixed-header="yes" [table-config]="tableCfg" [grid-config]="gridCfg" fxFlex="1 1 auto">
+          fixed-header="yes" [table-config]="tableCfg" [grid-config]="gridCfg" style="flex:1 1 auto">
           <ng-template oDataViewTableColumns>
             <o-table-column async-load="true" width="48px" attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" image-type="base64"
               empty-image="assets/images/no-image.png" avatar="yes">
@@ -61,16 +61,16 @@
 
             <mat-card class="grid-card">
               <mat-card-content>
-                <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center" class="employee-item">
-                  <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
-                    <mat-divider fxFlex></mat-divider>
+                <div (click)="openDetail(item)" class="o-flex-column o-layout-align-space-evenly-center employee-item">
+                  <div class="o-flex-row o-layout-align-space-between-end image-container">
+                    <mat-divider class="o-flex"></mat-divider>
                     <div class="image">
                       <img [src]="getImageSrc(item.EMPLOYEEPHOTO)">
                     </div>
-                    <mat-divider fxFlex></mat-divider>
+                    <mat-divider class="o-flex"></mat-divider>
                   </div>
 
-                  <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
+                  <div class="o-flex-column o-layout-align-start-center employee-data">
                     <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
                     <span>{{ item.EMPLOYEEEMAIL }}</span>
                     <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.NAME]} }}

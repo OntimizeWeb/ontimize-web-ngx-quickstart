@@ -1,6 +1,6 @@
 <div class="container">
   <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home" show-fullscreen-button="yes">
-    <div fxFill fxLayout="column" fxLayoutAlign="start">
+    <div class="o-flex-fill o-flex-column o-layout-align-start">
       <o-table #table attr="branches" service="branches" entity="branch" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
         visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="10" pageable="no" row-height="medium">
         <o-table-button #button attr="button" label="FILL_REPORT" icon="description" (onClick)="openBranchReportStore()"></o-table-button>

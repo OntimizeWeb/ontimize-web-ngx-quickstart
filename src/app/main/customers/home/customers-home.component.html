@@ -1,7 +1,7 @@
 <o-form-layout-manager mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=", " attr="o-form-layout-customer-home"
   title-data-origin="customers_form_edit">
-  <div fxFill fxLayout="column" fxLayoutAlign="start">
-    <o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+  <div class="o-flex-fill o-flex-column o-layout-align-start">
+    <o-table class="o-flex" attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
       row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
 

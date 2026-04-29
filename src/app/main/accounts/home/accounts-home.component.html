@@ -4,7 +4,7 @@
       <mat-sidenav #sidenav opened [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" class="mat-sidenav-filters">
 
         <!--FORM FILTERS-->
-        <div fxLayout="column" fxLayoutGap="18px" class="accounts-filters">
+        <div class="o-flex-column accounts-filters" style="gap:18px">
 
           <!--ENTITYID FILTER-->
           <o-text-input #entityid attr="ENTITYID" read-only="no"></o-text-input>
@@ -21,7 +21,7 @@
           <span class=" label-balance">{{ 'FILTER_BALANCE' | oTranslate }}</span>
           <o-slider attr="BALANCE" read-only="no" min="0" max="100000" step="1000" thumb-label="true" [display-with]="formatLabelSlider"></o-slider>
 
-          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+          <div class="o-flex-column o-layout-align-center-center" style="gap:12px">
             <o-button attr="applyfilter" type="STROKED" label="APPLY_FILTER" [oFilterBuilderQuery]="filterBuilder">
             </o-button>
             <o-button attr="deletefilter" type="BASIC" icon="delete" [oFilterBuilderClear]="filterBuilder" label="DELETE_FILTER"></o-button>
@@ -36,7 +36,7 @@
       <mat-sidenav-content class="mat-sidenav-content">
 
         <!--BUTTONS-->
-        <div class="buttons" fxLayoutGap="18px">
+        <div class="buttons" style="gap:18px">
           <o-button (click)="toogleSidenav()" icon="filter_list" type="STROKED" label="FILTER"
             [matTooltip]="(sidenav.opened?'HIDE_FILTERS':'SHOW_FILTERS') | oTranslate"></o-button>
           <o-button (click)="reloadData()" label="REFRESH" type="STROKED" icon="refresh" [matTooltip]="'RELOAD_DATA' | oTranslate"></o-button>
@@ -44,42 +44,41 @@
           </o-button>
         </div>
 
-        <div fxLayout="column" fxLayoutAlign="start start" class="flex-container" fxLayoutGap="18px" fxFlex>
+        <div class="o-flex-column o-layout-align-start-start o-flex flex-container" style="gap:18px">
           <div class="fill-remaining">
             <o-list #listAccount service="branches" entity="account" keys="ACCOUNTID" class="list-accounts"
               columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP;ACCOUNTTYPEID;ACCOUNTTYPENAME"
-              controls="no" fxFlex.gt-lg="list-accounts-60" pageable="yes">
+              controls="no" pageable="yes">
 
 
               <mat-card *ngFor="let account of listAccount.dataArray; trackBy:trackByIndex" o-list-item>
-                <div fxLayout="row wrap" fxLayoutAlign="center center">
-                  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="14px" fxFlex="60" fxFlex.lt-lg="100" class="info-account"
-                    ngClass.lt-lg="border-bottom" ngClass="border-right">
-                    <div fxLayout="column" fxLayoutAlign="start start" fxFlexFill>
-                      <div fxLayout="row" class="info-iban" fxLayoutGap="12px">
+                <div class="o-flex-row" style="flex-wrap:wrap;align-items:center;justify-content:center">
+                  <div class="o-flex-column o-layout-align-start-start info-account" style="flex:0 0 60%;gap:14px">
+                    <div class="o-flex-column o-layout-align-start-start o-flex-fill">
+                      <div class="o-flex-row info-iban" style="gap:12px">
                         <label>{{ 'ACCOUNT_NUMBER'| oTranslate }}</label>
                         <span>{{ account.ENTITYID }} {{ account.OFFICEID }} {{ account.CDID }} {{ account.ANID }}</span>
                       </div>
-                      <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px">
-                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                      <div class="o-flex-row" style="flex-wrap:wrap;align-items:flex-start;justify-content:flex-start;gap:12px">
+                        <div class="o-flex-row o-layout-align-start-start" style="gap:12px">
                           <label>{{ 'ENTITYID'| oTranslate }}</label>
                           <span>{{ account.ENTITYID }}</span>
                         </div>
-                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                        <div class="o-flex-row o-layout-align-start-start" style="gap:12px">
                           <label>{{ 'CDID'| oTranslate }}</label>
                           <span> <span>{{ account.CDID }}</span></span>
                         </div>
-                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                        <div class="o-flex-row o-layout-align-start-start" style="gap:12px">
                           <label><label>{{ 'ACCOUNTTYP'| oTranslate }}</label></label>
                           <span> <span>{{ account.ACCOUNTTYP }}</span></span>
                         </div>
                       </div>
-                      <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="12px">
-                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                      <div class="o-flex-row" style="flex-wrap:wrap;align-items:flex-start;justify-content:flex-start;gap:12px">
+                        <div class="o-flex-row o-layout-align-start-start" style="gap:12px">
                           <label>{{ 'OFFICEID'| oTranslate }}</label>
                           <span>{{ account.OFFICEID }}</span>
                         </div>
-                        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+                        <div class="o-flex-row o-layout-align-start-start" style="gap:12px">
                           <label>{{'ACCOUNTTYPEID'| oTranslate}}</label>
                           <span> <span>{{account.ACCOUNTTYPENAME}}</span></span>
                         </div>
@@ -87,11 +86,11 @@
                     </div>
                   </div>
 
-                  <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40" fxFlex.lt-lg="100" class="balance-account">
+                  <div class="o-flex-column o-layout-align-center-center balance-account" style="flex:0 0 40%">
                     <label>{{ 'AVAILABLE_BALANCE'| oTranslate }}</label>
                     <span>{{ account.BALANCE | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
                       €</span>
-                    <div fxLayout="row" fxLayoutAlign="end" fxFill>
+                    <div class="o-flex-row o-layout-align-end o-flex-fill">
                       <span class="date">{{ account.STARTDATE | date:'longDate' }} </span>
                     </div>
                   </div>
