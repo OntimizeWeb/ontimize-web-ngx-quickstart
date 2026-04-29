@@ -165,32 +165,7 @@ export class AccountsDetailComponent {
 
   private _configurePieChart(): void {
     this.movementTypesChartParams = new PieChartConfiguration();
-    this.movementTypesChartParams.margin.top = 0;
-    this.movementTypesChartParams.margin.right = 0;
-    this.movementTypesChartParams.margin.bottom = 0;
-    this.movementTypesChartParams.margin.left = 0;
     this.movementTypesChartParams.height = 320;
-    this.movementTypesChartParams.labelType = 'value';
-    this.movementTypesChartParams.colorData = [{
-      value: 'Salary',
-      color: AccountsDetailComponent.colorSalary
-    },
-    {
-      value: 'Direct debit',
-      color: AccountsDetailComponent.colorDebit
-    },
-    {
-      value: 'Transfer',
-      color: AccountsDetailComponent.colorTransfer
-    },
-    {
-      value: 'Automatic Cash',
-      color: AccountsDetailComponent.colorCash
-    },
-    {
-      value: 'Banking fees',
-      color: AccountsDetailComponent.colorBalance
-    }];
 
   }
 
