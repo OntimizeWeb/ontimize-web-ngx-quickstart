@@ -71,7 +71,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: cert-manager-letsencrypt-production-route53
-  host: ontimize-web-ngx-quickstart-18x.dev.ontimize.com
+  host: dev-oweb-quickstart-18x.ontimize.com
   tls:
     secretName: dev-oweb-quickstart-18x-tls
     enabled: true
