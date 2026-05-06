@@ -8,6 +8,7 @@
     "test-ci": "ng test --no-watch --code-coverage --browsers ChromeHeadless",
     "lint": "ng lint",
     "build": "ng build",
+    "dev": "ng build --configuration production",
     "production": "ng build --configuration production --base-href /v18/quickstart/",
     "production-aot-server": "ng build --configuration production --base-href /ontimizeweb/v18/quickstart/",
     "production-aot-serverpwa": "ng build --configuration production --base-href /ontimizeweb/v18/quickstart/ && npm run build-ngsw",

@@ -6,14 +6,15 @@ FROM node:20.18.3-alpine as build
 WORKDIR /usr/local/app
 
 COPY package*.json .
+COPY *.tgz ./  
 
 # Install all the dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
 # Generate the build of the application
-RUN npm run production
+RUN npm run dev
 
 
 # Stage 2: Serve app with nginx server
