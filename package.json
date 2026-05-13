@@ -33,7 +33,7 @@
     "@angular/upgrade": "^18.2.0",
     "luxon": "^3.4.0",
     "moment": "^2.29.4",
-    "ontimize-web-ngx": "18.0.0-next.1",
+    "ontimize-web-ngx": "18.0.0-next.2",
     "ontimize-web-ngx-charts": "18.0.0-next.0",
     "ontimize-web-ngx-extra-components": "18.0.0-next.1",
     "ontimize-web-ngx-filemanager": "18.0.0-next.0",

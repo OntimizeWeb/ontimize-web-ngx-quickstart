@@ -30,17 +30,17 @@
 
   .branches-card-branches-amount,
   .employees-card-employees-amount {
-    color: var(--o-primary-500);
+    color: var(--mat-sys-primary);
   }
 
   .o-card-menu-item div ngx-charts-bar-horizontal .textDataLabel {
-    fill: var(--o-primary-500);
+    fill: var(--mat-sys-primary);
     font-family: var(--o-font-family);
   }
 
   .theme-option-background {
     .mat-icon.mat-accent {
-      color: var(--o-accent-900);
+      color: var(--mat-sys-on-tertiary-container);
     }
   }
 }
