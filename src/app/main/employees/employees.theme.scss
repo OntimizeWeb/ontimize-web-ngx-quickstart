@@ -4,17 +4,17 @@
   employees-home {
     .employee-item {
       .image-container .mat-divider {
-        border-top-color: var(--o-accent-500);
+        border-top-color: var(--mat-sys-tertiary);
       }
 
       .employee-data span .square {
-        background-color: var(--o-accent-500);
+        background-color: var(--mat-sys-tertiary);
       }
     }
 
     .o-column-collapsible.collapsible {
       .filter_style {
-        border-color: var(--o-accent-500);
+        border-color: var(--mat-sys-tertiary);
       }
 
       .o-container .o-container-title.mat-expansion-panel-header-title,
@@ -26,7 +26,7 @@
 
   employees-detail {
     .mat-divider {
-      border-top-color: var(--o-accent-500);
+      border-top-color: var(--mat-sys-tertiary);
     }
 
     .employee-data span .mat-icon,

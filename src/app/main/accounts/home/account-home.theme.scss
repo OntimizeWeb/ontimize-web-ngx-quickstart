@@ -1,13 +1,13 @@
 @mixin account-home-theme($theme) {
 
   .filter-border {
-    border-color: var(--o-accent-500);
+    border-color: var(--mat-sys-tertiary);
   }
 
   .mat-sidenav-container-account-home {
 
     .accounts-filters {
-      border-color: var(--o-accent-500);
+      border-color: var(--mat-sys-tertiary);
     }
 
     .list-accounts {
@@ -23,7 +23,7 @@
       .mat-mdc-card {
         .info-account.border-bottom,
         .info-account.border-right {
-          border-color: var(--o-accent-500);
+          border-color: var(--mat-sys-tertiary);
         }
       }
     }
