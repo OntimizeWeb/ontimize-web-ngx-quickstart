@@ -58,5 +58,5 @@ jobs:
 
       - name: npm install and npm run build
         run: |
-          npm i
+          npm i --legacy-peer-deps
           npm run production
