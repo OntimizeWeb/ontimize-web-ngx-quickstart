@@ -12,6 +12,8 @@ COPY *.tgz ./
 
 # Install all the dependencies
 RUN npm install --legacy-peer-deps
+# Reinstall platform-specific optional deps that npm may have resolved for Windows in the lockfile
+RUN npm install --legacy-peer-deps --os linux --cpu x64 @rollup/rollup-linux-x64-gnu
 
 COPY . .
 
