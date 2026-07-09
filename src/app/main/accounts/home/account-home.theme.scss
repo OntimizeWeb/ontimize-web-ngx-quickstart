@@ -10,20 +10,29 @@
       border-color: var(--mat-sys-tertiary);
     }
 
-    .list-accounts {
-
-      span {
-        color: var(--o-fg-secondary-text);
-      }
+    .list-accounts .o-list-content {
 
       label {
-        color: var(--o-fg-text);
+        color: var(--mat-sys-on-surface-variant);
+      }
+
+      span {
+        color: var(--mat-sys-on-surface);
       }
 
       .mat-mdc-card {
-        .info-account.border-bottom,
-        .info-account.border-right {
+        .info-account {
           border-color: var(--mat-sys-tertiary);
+        }
+
+        .balance-account {
+          .balance-amount {
+            color: var(--mat-sys-primary);
+          }
+
+          span.date {
+            color: var(--mat-sys-on-surface-variant);
+          }
         }
       }
     }

@@ -11,6 +11,7 @@
 @import '../../app/main/about/about.theme.scss';
 
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
+@include ontimize-style.ontimize-theme-density-extended(-4);
 
 @mixin app-themes($theme) {
   @include main-theme($theme);
