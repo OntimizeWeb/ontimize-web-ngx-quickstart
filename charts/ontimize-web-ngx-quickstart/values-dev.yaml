@@ -6,7 +6,7 @@ image:
   pullPolicy: Always
   ## provided as basic setup. replace as needed
   repository: ghcr.io/ontimizeweb/ontimize-web-ngx-quickstart
-  version: migration-18.x.x
+  version: 18.x.x
 imagePullSecrets:
   - name: github-ecr-cred
 nameOverride: ""
