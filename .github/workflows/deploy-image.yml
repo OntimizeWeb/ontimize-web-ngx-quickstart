@@ -3,7 +3,7 @@ name: Create and publish Docker image
 
 on:
   push:
-    branches: ['18.x.x', 'migration/18.x.x']
+    branches: ['18.x.x']
     tags:
       - 18.*
 
@@ -22,7 +22,7 @@ jobs:
       #
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Determine Dockerfile
         id: dockerfile
