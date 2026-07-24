@@ -9,18 +9,18 @@ env:
 
 on:
   push:
-    branches: [15.x.x, hotfix/15.*]
-    paths: ['src/**']
+    branches: [18.x.x, hotfix/18.*]
+    paths: ["src/**"]
   pull_request:
     types: [opened, synchronize, labeled]
-    paths: ['src/**']
+    paths: ["src/**"]
   workflow_dispatch:
     inputs:
       snapshot_mode:
         description: "Using SNAPSHOT dependencies from private Nexus repository"
         type: choice
         required: true
-        default: 'false'
+        default: "false"
         options:
           - true
           - false
@@ -30,25 +30,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Checkout code'
-        uses: actions/checkout@v4
+      - name: "Checkout code"
+        uses: actions/checkout@v6
 
-      - name: 'Cache node modules'
-        uses: actions/cache@v4
+      - name: "Cache node modules"
+        uses: actions/cache@v5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Node 18.x
-        uses: actions/setup-node@v4
+      - name: Configure Node
+        uses: actions/setup-node@v6
         with:
-          node-version: 18.10.0
+          node-version: ${{ vars.V18_NODE_VERSION }}
 
       - name: Setup Node registry
-        if: (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'snapshot')) ||
-            (github.event_name == 'workflow_dispatch' && github.event.inputs.snapshot_mode == 'true')
+        if:
+          (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'snapshot')) ||
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.snapshot_mode == 'true')
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_NEXUS_AUTH_TOKEN }}
         run: |
@@ -57,5 +58,5 @@ jobs:
 
       - name: npm install and npm run build
         run: |
-          npm i
+          npm i --legacy-peer-deps
           npm run production

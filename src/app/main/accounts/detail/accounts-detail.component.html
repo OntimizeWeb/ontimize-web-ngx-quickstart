@@ -12,11 +12,11 @@
         </button>
       </div>
 
-      <div fxLayout="column" fxLayoutAlign="start stretch" class="max-height">
+      <div class="o-flex-column o-layout-align-start-stretch max-height">
 
-        <div fxLayout="row">
-          <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" fxFlex="40" layout-align="space-around start">
-            <div fxLayout="column" class="data-container" layout-padding fxFlex="50">
+        <div class="o-flex-row">
+          <o-row title="ACCOUNT_INFO" class="account-info-container mat-elevation-z1" style="flex:0 0 40%" layout-align="space-around start">
+            <div class="o-flex-column data-container" layout-padding style="flex:0 0 50%">
               <span class="account-form-label balance">{{ 'BALANCE' | oTranslate }}</span>
               <span class="account-form-value balance" [class.red-numbers]="oForm.getDataValue('BALANCE').value < 0">{{
                 oForm.getDataValue('BALANCE').value | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 } }}
@@ -29,7 +29,7 @@
               <span class="account-form-value">{{ oForm.getDataValue('STARTDATE').value | date:'d MMM, y' }}</span>
             </div>
 
-            <div fxLayout="column" class="data-container customers" layout-padding fxFlex="40">
+            <div class="o-flex-column data-container customers" layout-padding style="flex:0 0 40%">
               <span class="account-form-label customers-list-title">{{ 'Account owners' | oTranslate }}</span>
               <o-list #customerList service="customers" entity="customerAccount" keys="CUSTOMERACCOUNTID" parent-keys="ACCOUNTID"
                 columns="CUSTOMERID;ACCOUNTID;NAME;SURNAME;ISOWNER" query-on-init="no" query-on-bind="yes" controls="no">
@@ -43,29 +43,29 @@
               </o-list>
             </div>
           </o-row>
-          <o-row title="BALANCE" class="balance-chart-container mat-elevation-z1" fxFlex="60">
-            <div class="last-movement-div" fxLayout="column" fxFlex="20">
+          <o-row title="BALANCE" class="balance-chart-container mat-elevation-z1" style="flex:0 0 60%">
+            <div class="last-movement-div o-flex-column" style="flex:0 0 20%">
               <span class="last-movement">{{last_mov | oReal: { grouping: true, minDecimalDigits: 2, maxDecimalDigits: 2 }
                 }} €</span>
               <span>{{ 'LAST_MOVEMENT' | oTranslate}}</span>
             </div>
             <o-chart type="discreteBar" parent-keys="ACCOUNTID" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" query-on-init="no"
-              chart-height="250"  [chart-parameters]="balanceChartParams" class="balance-chart" fxFlex="80"></o-chart>
+              chart-height="250"  [chart-parameters]="balanceChartParams" class="balance-chart o-flex" style="flex:0 0 80%"></o-chart>
           </o-row>
         </div>
 
-        <div fxLayout="row">
-          <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" fxFlex="40">
+        <div class="o-flex-row">
+          <o-column title="MOVEMENTS" class="movement-list-container mat-elevation-z1" style="flex:0 0 40%">
             <o-form-layout-manager mode="dialog" attr="flmMovements" title="MOVEMENT" label-columns="CONCEPT" dialog-min-width="50%"
-              dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" fxFill>
+              dialog-max-width="90%" dialog-height="50%" dialog-class="account-transaction-dialog" class="o-flex-fill">
               <o-list #list attr="movementsList" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
                 columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-on-init="no" pageable="yes" controls="no"
                 class="movement-list">
-                <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" fxLayout="row" fxLayoutAlign="start center"
+                <mat-list-item *ngFor="let row of list.dataArray" [o-list-item]="row" class="o-flex-row o-layout-align-start-center"
                   [class.movement-list-item-transfer]="row.MOVEMENTTYPEID===1" [class.movement-list-item-cash]="row.MOVEMENTTYPEID===2"
                   [class.movement-list-item-salary]="row.MOVEMENTTYPEID===3" [class.movement-list-item-debit]="row.MOVEMENTTYPEID===4"
                   class="movement-list-item">
-                  <div fxLayout="row" fxLayoutAlign="start center">
+                  <div class="o-flex-row o-layout-align-start-center">
                     <div mat-list-icon>
                       <img *ngIf="row.MOVEMENTTYPEID === 1" src="./assets/images/movementTypes/transfer.svg" alt="{{ 'Transfer' | oTranslate }}" />
                       <img *ngIf="row.MOVEMENTTYPEID === 2" src="./assets/images/movementTypes/cash.svg" alt="{{ 'Automatic Cash' | oTranslate }}" />
@@ -74,7 +74,7 @@
                         alt="{{ 'Direct debit' | oTranslate }}" />
                       <img *ngIf="row.MOVEMENTTYPEID === 5" src="./assets/images/movementTypes/bankfee.svg" alt="{{ 'Banking fees' | oTranslate }}" />
                     </div>
-                    <div class="concept-date" fxLayout="column" fxLayoutGap="8px">
+                    <div class="concept-date o-flex-column" style="gap:8px">
                       <span class="concept">{{ row.CONCEPT }}</span>
                       <span class="date">{{ row.DATE_ | date: 'h:mm a, d MMM y' }}</span>
                     </div>
@@ -85,10 +85,10 @@
 
             </o-form-layout-manager>
           </o-column>
-          <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1" fxFlex="60" fxLayoutAlign="center center">
+          <o-row title="MOVEMENTTYPES" class="movement-chart-container mat-elevation-z1 o-layout-align-center-center" style="flex:0 0 60%">
             <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
-              query-on-init="no" [color]="scheme" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
-            <div fxFlex="35" fxLayoutAlign="center start" fxLayout="column" fxLayoutGap="5px">
+              query-on-init="no" [color]="scheme" [chart-parameters]="movementTypesChartParams" class="movements-chart" style="flex:0 0 65%"></o-chart>
+            <div class="o-flex-column o-layout-align-center-start" style="flex:0 0 35%;gap:5px">
               <span class="last-movement">{{ 'LAST_MOVEMENT' | oTranslate}} {{ mov_date | date: ' d MMM y, h:mm a' }}</span>
               <div>
                 <strong>

@@ -1,40 +1,38 @@
-@use '@angular/material'as mat;
-@use 'sass:map';
-
 @mixin account-home-theme($theme) {
-  $accent: map.get($theme, color, accent);
-  $primary: map.get($theme, color, primary);
-  $foreground: map.get($theme, color, foreground);
-  $is-dark: map.get($theme, color, is-dark);
 
   .filter-border {
-    border-color: mat.get-color-from-palette($accent);
+    border-color: var(--mat-sys-tertiary);
   }
 
   .mat-sidenav-container-account-home {
 
     .accounts-filters {
-      border-color: mat.get-color-from-palette($accent);
+      border-color: var(--mat-sys-tertiary);
     }
 
-    .list-accounts {
-
-      span {
-        color: mat.get-color-from-palette($foreground, secondary-text);
-      }
+    .list-accounts .o-list-content {
 
       label {
-        color: mat.get-color-from-palette($foreground, primary-text);
+        color: var(--mat-sys-on-surface-variant);
+      }
+
+      span {
+        color: var(--mat-sys-on-surface);
       }
 
       .mat-mdc-card {
-        @if $is-dark==true {
-          background-color: change-color(mat.get-color-from-palette(mat.$grey-palette, 700), $alpha: 0.2);
+        .info-account {
+          border-color: var(--mat-sys-tertiary);
         }
 
-        .info-account.border-bottom,
-        .info-account.border-right {
-          border-color: mat.get-color-from-palette($accent);
+        .balance-account {
+          .balance-amount {
+            color: var(--mat-sys-primary);
+          }
+
+          span.date {
+            color: var(--mat-sys-on-surface-variant);
+          }
         }
       }
     }

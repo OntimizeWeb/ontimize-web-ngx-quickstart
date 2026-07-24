@@ -3,14 +3,14 @@ name: Create and publish Docker image
 
 on:
   push:
-    branches: ['15.x.x']
+    branches: ['18.x.x']
     tags:
-      - 15.*
+      - 18.*
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  MAIN_BRANCH: main.15.x
+  MAIN_BRANCH: main.18.x
 
 jobs:
   build-and-push-image:
@@ -22,7 +22,16 @@ jobs:
       #
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Determine Dockerfile
+        id: dockerfile
+        run: |
+          if [[ "${{ github.ref }}" == refs/heads/* ]]; then
+            echo "file=Dockerfile-dev" >> $GITHUB_OUTPUT
+          else
+            echo "file=Dockerfile" >> $GITHUB_OUTPUT
+          fi
 
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
@@ -48,6 +57,7 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
+          file: ${{ steps.dockerfile.outputs.file }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

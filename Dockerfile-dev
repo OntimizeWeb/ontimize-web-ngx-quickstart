@@ -1,19 +1,24 @@
 # Stage 1: Compile and Build angular codebase
 # Use official node image as the base image
-FROM node:20.18.3-alpine as build
+FROM node:20.18.3-slim AS build
 
 # Set the working directory
 WORKDIR /usr/local/app
 
+RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt/lists/*
+
 COPY package*.json .
+COPY *.tgz ./
 
 # Install all the dependencies
 RUN npm install --legacy-peer-deps
+# Reinstall platform-specific optional deps that npm may have resolved for Windows in the lockfile
+RUN npm install --legacy-peer-deps --os linux --cpu x64 @rollup/rollup-linux-x64-gnu
 
 COPY . .
 
 # Generate the build of the application
-RUN npm run production
+RUN npm run dev
 
 
 # Stage 2: Serve app with nginx server

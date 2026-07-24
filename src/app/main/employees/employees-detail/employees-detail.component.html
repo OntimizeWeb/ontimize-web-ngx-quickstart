@@ -1,10 +1,10 @@
 <o-form #form attr="employee_form_edit" service="employees" entity="employee" keys="EMPLOYEEID" keys-sql-types="INTEGER"
   (onDataLoaded)="onDataLoaded($event)" editable-detail="no" show-header="no" layout-direction="column"
   columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHONE;EMPLOYEETYPEID;EMPLOYEEADDRESS">
-  <div fxLayout="column" fxLayoutAlign="space-evenly stretch" class="employee-detail" fxFill>
+  <div class="o-flex-column o-layout-align-space-evenly-stretch o-flex-fill employee-detail">
 
 
-      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="30">
+      <div class="o-flex-column o-layout-align-center-center" style="flex:0 0 30%">
         <div class="image">
           <img [src]="getImageSrc(data?.EMPLOYEEPHOTO)" >
         </div>
@@ -13,7 +13,7 @@
         <span class="employee-type">{{ 'EMPLOYEETYPE_' + data.EMPLOYEETYPEID | oTranslate }}</span>
         <mat-divider></mat-divider>
       </div>
-      <o-column title="EMPLOYEE_DATA" fxLayout="column" class="employee-data" icon="account_circle">
+      <o-column title="EMPLOYEE_DATA" class="o-flex-column employee-data" icon="account_circle">
         <span *ngIf="data.EMPLOYEEEMAIL">
           <mat-icon>email</mat-icon>{{ data.EMPLOYEEEMAIL }}
         </span>
