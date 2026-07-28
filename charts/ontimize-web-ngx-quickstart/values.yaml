@@ -67,14 +67,6 @@ service:
   internalPort: 80
 ingress:
   enabled: false
-  # annotations:
-  #   kubernetes.io/ingress.class: nginx
-  #   kubernetes.io/tls-acme: "true"
-  #   cert-manager.io/cluster-issuer: cert-manager-letsencrypt-production-route53
-  # host: ontimize-web-ngx-quickstart.ontimize.com
-  # tls:
-  #   secretName: ontimize-web-ngx-quickstart-tls
-  #   enabled: true
 
 # Kafka. If used. Will be provided as environment variables to the pods.
 kafka:
