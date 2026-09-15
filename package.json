@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-quickstart",
-  "version": "18.0.0",
+  "version": "18.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4800",
@@ -33,9 +33,9 @@
     "@angular/upgrade": "^18.2.0",
     "luxon": "^3.4.0",
     "moment": "^2.29.4",
-    "ontimize-web-ngx": "18.0.0-next.9",
+    "ontimize-web-ngx": "18.0.0-next.20",
     "ontimize-web-ngx-charts": "18.0.0-next.0",
-    "ontimize-web-ngx-extra-components": "18.0.0-next.1",
+    "ontimize-web-ngx-extra-components": "18.0.0-next.5",
     "ontimize-web-ngx-filemanager": "18.0.0-next.0",
     "ontimize-web-ngx-map": "18.0.0-next.0",
     "ontimize-web-ngx-report": "18.0.0-next.0",
@@ -53,10 +53,13 @@
     "@angular/cli": "^18.2.0",
     "@angular/compiler-cli": "^18.2.0",
     "@angular/language-service": "^18.2.0",
+    "@angular/material-luxon-adapter": "^18.2.0",
     "@angular/service-worker": "^18.2.0",
+
     "@types/jasmine": "~5.1.0",
     "@types/luxon": "^3.4.0",
     "@types/node": "^20.0.0",
+
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "ajv": "^7.2.4",

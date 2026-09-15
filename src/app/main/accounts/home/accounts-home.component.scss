@@ -42,6 +42,7 @@
   }
 
   .mat-sidenav-content {
+    display: flex;
     flex-direction: column;
     max-height: 100%;
 
@@ -67,7 +68,6 @@
             max-height: 100%;
 
             .o-list-content {
-              padding-bottom: 48px;
               max-height: 100%;
             }
 
